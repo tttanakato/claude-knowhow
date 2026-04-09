@@ -1,6 +1,34 @@
 {
   "tips": [
     {
+      "id": 305,
+      "title": "Claudeへの指示に「なぜやるか」の理由を付け加えて精度を向上させる",
+      "point": "指示の背景にある理由・文脈をClaude に伝えることで、目標をより深く理解した応答が得られる。例：「省略記号を使わないでください」より「テキスト読み上げエンジンで読むため省略記号の発音ができないので、省略記号を使わないでください」の方が確実に機能する。Claude 4.xは推測ではなく明示された意図に従って動作するよう訓練されている。",
+      "source_title": "プロンプトのベストプラクティス - Anthropic公式",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/claude-4-best-practices",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-04-09",
+      "last_date": "2026-04-09",
+      "appearances": 16
+    },
+    {
+      "id": 310,
+      "title": "過剰エンジニアリング防止プロンプトで余分なコード生成を抑制する",
+      "point": "Claude Opus 4.5/4.6は余分なファイル作成・不要な抽象化・リクエスト外の機能追加をしやすい。「直接リクエストされた変更のみ行う」「一回限り操作のヘルパーを作らない」「docstring/コメントを変更していないコードに追加しない」という制約をシステムプロンプトに追加することで抑制できる。",
+      "source_title": "プロンプトのベストプラクティス - Anthropic公式",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/claude-4-best-practices",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-09",
+      "last_date": "2026-04-09",
+      "appearances": 16
+    },
+    {
       "id": 262,
       "title": "メモリ機能が全ユーザー（無料含む）に拡大",
       "point": "チャット履歴からの記憶機能（Memory）が全ユーザーに開放。ChatGPT・Gemini・Grok から蓄積した記憶・設定を Claude にインポートする機能も提供されており、乗り換え時に設定をゼロから作り直す手間が不要。",
@@ -130,6 +158,20 @@
       "appearances": 7
     },
     {
+      "id": 311,
+      "title": "Built-In Self-Check（組み込み自己検証チェックリスト）をプロンプトに追加する",
+      "point": "プロンプトの末尾に「フォーマット要件を満たしているか確認し、不確かな主張を特定してください」というチェックリストを付け加えることで、出力の正確性と完全性が向上する。特に構造化出力（JSON、テーブル）や技術文書生成で効果的。Anthropicの実験でも有効性が確認されている。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-04-09",
+      "last_date": "2026-04-09",
+      "appearances": 6
+    },
+    {
       "id": 298,
       "title": "Git Worktree × iTerm2 で並列セッション管理",
       "point": "`git worktree add` で各タスク用に独立したワーキングディレクトリを作成し、iTerm2 のペインごとに別々の Claude Code セッションを起動する。各セッションが「会話履歴全体を記憶」したまま継続でき、3〜4タスクを並列進行させることが可能。従来の「stash して切り替え」フローを完全に置き換えられる。",
@@ -224,6 +266,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 316,
+      "title": "Claude Code Channels でDiscord/Telegram/iMessageからリモート操作する",
+      "point": "Claude Code ChannelsはMCPサーバーを介し、Discord・Telegram・iMessage・カスタムアプリなどのプラットフォームからClaude Codeセッションにリモートアクセスする機能。デスクトップで作業を開始してモバイルで継続するといったクロスデバイスワークフローが可能になり、チーム共有のAIワークフローにも活用できる。現時点ではリモートからのファイル作成・操作に制限あり。",
+      "source_title": "How Claude Code Channels Finally Untether AI Workflows from Your Desktop",
+      "source_url": "https://www.geeky-gadgets.com/custom-claude-channels-guide/",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-04-10",
+      "last_date": "2026-04-10",
+      "appearances": 5
     },
     {
       "id": 166,
@@ -349,6 +406,19 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 307,
+      "title": "アダプティブ思考（Adaptive Thinking）とeffortパラメータを活用する",
+      "point": "Claude Opus 4.6では、従来の`budget_tokens`による拡張思考から、`thinking: {type: \"adaptive\"}`と`effort`パラメータ（high/max/medium/low）の組み合わせに移行。クエリの複雑さに応じて思考深度を自動調整し、内部評価では拡張思考より確実に高品質な結果が得られる。移行コード例：`thinking={\"type\": \"adaptive\"}, output_config={\"effort\": \"high\"}`",
+      "source_title": "プロンプトのベストプラクティス - Anthropic公式",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/claude-4-best-practices",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-04-09",
+      "last_date": "2026-04-09",
+      "appearances": 4
     },
     {
       "id": 302,
@@ -717,6 +787,76 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 320,
+      "title": "Claude Code `statusLine` の `refreshInterval` 設定で作業ステータスをリアルタイム監視",
+      "point": "v2.1.97でstatusLineに`refreshInterval`設定が追加され、コマンドをN秒ごとに再実行してステータス行を動的に更新できるようになった。CI/CDパイプラインの状態やバックグラウンドビルドの進捗をClaude Code画面内で常時確認するワークフローに有効。",
+      "source_title": "Claude Code Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-04-10",
+      "last_date": "2026-04-10",
+      "appearances": 3
+    },
+    {
+      "id": 321,
+      "title": "プロンプト80/20ルール：「目的・制約・1〜3例示」の3点のみに集中する",
+      "point": "プロンプト設計で効果の80%は「目的と制約の明示」「1〜3件の具体的な例示」「構造化した出力形式（JSON/箇条書き）」の3要素から生まれる。「簡潔に書いて」のような形容詞より「5箇条・各14語以内」のような数値指定のほうが一貫した出力を得やすい。長い指示書より短くても精密な3点に絞るほうが初回正答率が高い。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-04-10",
+      "last_date": "2026-04-10",
+      "appearances": 3
+    },
+    {
+      "id": 306,
+      "title": "攻撃的な語調（CRITICAL!, YOU MUST NEVER）を避けて出力品質を改善する",
+      "point": "Claude Opus 4.5/4.6は以前のモデルよりシステムプロンプトへの感度が高く、「CRITICAL: You MUST use this tool when...」のような強調表現がオーバートリガーを引き起こす。「Use this tool when...」のような通常の表現に置き換えるだけで品質が改善する。攻撃的な言語は新しいモデルの出力を積極的に悪化させる。",
+      "source_title": "プロンプトのベストプラクティス - Anthropic公式",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/claude-4-best-practices",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-09",
+      "last_date": "2026-04-09",
+      "appearances": 3
+    },
+    {
+      "id": 312,
+      "title": "フロントエンドデザインで「AIスロップ」美学を避ける",
+      "point": "Claude Opus 4.5/4.6はフロントエンドコード生成時にInterフォント・紫グラデーション・汎用コンポーネントなど「AIスロップ」パターンに陥りやすい。`<frontend_aesthetics>`XMLタグを使ったシステムプロンプトで「ユニークなフォント」「コンテキスト固有カラーテーマ」「micro-animationの活用」を明示指示することで品質が向上する。Anthropicの公式スキルとしても提供されている。",
+      "source_title": "プロンプトのベストプラクティス - Anthropic公式",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/claude-4-best-practices",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-09",
+      "last_date": "2026-04-09",
+      "appearances": 3
+    },
+    {
+      "id": 313,
+      "title": "「何をするか」ではなく「何をしないか」でフォーマットを制御する",
+      "point": "「マークダウンを使わないでください」より「応答は流れるような散文の段落で書いてください」と正の形で指示する方が効果的。XMLフォーマットインジケーター（`<smoothly_flowing_prose_paragraphs>`タグ）でも制御可能。プロンプト自体のフォーマットスタイルを希望する出力スタイルに合わせることも重要。",
+      "source_title": "プロンプトのベストプラクティス - Anthropic公式",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/claude-4-best-practices",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-04-09",
+      "last_date": "2026-04-09",
+      "appearances": 3
     },
     {
       "id": 303,
@@ -1419,6 +1559,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 309,
+      "title": "プリフィル応答からの移行（Claude Opus 4.6以降）",
+      "point": "Claude Opus 4.6からアシスタントターン末尾へのプリフィルが非推奨に。「前置きなしで直接回答してください。『Here is...』『Based on...』などで始めないでください」のようなシステムプロンプト指示で代替可能。分類タスクにはenum付き構造化出力やツール呼び出しを使用。以前のモデルとの互換性は維持される。",
+      "source_title": "プロンプトのベストプラクティス - Anthropic公式",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/claude-4-best-practices",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-09",
+      "last_date": "2026-04-09",
+      "appearances": 2
     },
     {
       "id": 292,
@@ -2141,6 +2296,93 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 314,
+      "title": "Claude Code v2.1.97：`Ctrl+O` フォーカスビューでセッション全体を即時把握する",
+      "point": "2026年4月9日リリースのv2.1.97で追加された`Ctrl+O`は、NO_FLICKERモード時にプロンプトとツール呼び出しの要約を表示するフォーカスビューを切り替えるショートカット。長時間セッションでスクロールせずに現在地を把握できる。同バージョンではCedar政策ファイルのシンタックスハイライトやCJK文字対応の改善も含まれる。",
+      "source_title": "Claude Code Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "新機能"
+      ],
+      "first_date": "2026-04-10",
+      "last_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": 315,
+      "title": "Claude Haiku 3 廃止（4月19日期限）— Sonnet 4.6 または Opus 4.6 への移行を急ぐ",
+      "point": "`claude-3-haiku-20240307`モデルは2026年4月19日に退役する。1Mトークンのコンテキストウィンドウを継続利用する場合は、Claude Sonnet 4.6またはOpus 4.6へ移行する（ベータヘッダ不要で標準価格のまま1Mトークンに対応）。API呼び出しでHaiku 3を指定しているコードやワークフローのすべてを確認・更新が必要。",
+      "source_title": "AI Updates Today (April 2026)",
+      "source_url": "https://llm-stats.com/llm-updates",
+      "tags": [
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-04-10",
+      "last_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": 317,
+      "title": "Claude Code Analytics API でチームのAI利用状況を定量把握する",
+      "point": "AnthropicがClaude Code Analytics APIを公開し、組織のClaude Code利用状況（日次集計指標）をプログラムで取得できるようになった。チームのトークン消費量・コスト・機能利用パターンなどをダッシュボード化し、AIコーディングの費用対効果を可視化する用途に活用できる。",
+      "source_title": "AI Updates Today (April 2026)",
+      "source_url": "https://llm-stats.com/llm-updates",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-04-10",
+      "last_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": 318,
+      "title": "Amazon Bedrock経由でClaude Enterpriseユーザーのデフォルトエフォートレベルが向上",
+      "point": "Claude Code v2.1.94（4月8日）でAmazon Bedrock（Mantle経由）のサポートが追加され、エンタープライズユーザー向けにデフォルトのエフォートレベルが引き上げられた。AWSインフラでClaudeを運用している組織は追加設定なしで推論深度が向上する恩恵を受けられる。",
+      "source_title": "Claude Code Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-04-10",
+      "last_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": 319,
+      "title": "Claude全18機能を段階的に習得するロードマップ",
+      "point": "Claudeの機能は「基本5機能（チャット/Web検索/Artifacts/ファイル作成/メモリ）」→「管理4機能（Projects/Skills/Plugins/プロンプト生成）」→「連携5機能（MCP/Chrome/Slack/Excel/PowerPoint）」→「開発4機能（Cowork/Code/Agent Team/API）」の4段階で習得するのが最も効率的。一度に全機能を把握しようとせず、実務で使う層から順に拡張する。",
+      "source_title": "【2026年最新】AI Claude全機能ガイド｜18の機能を実務で使いこなすための完全マップ",
+      "source_url": "https://koheicloud.com/claude_full_features/",
+      "tags": [
+        "API",
+        "プロンプト",
+        "エージェント",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-04-10",
+      "last_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": 308,
+      "title": "マルチコンテキストウィンドウワークフロー：tests.jsonで状態を管理する",
+      "point": "複数セッションにまたがる長期タスクでは、`tests.json`（構造化状態ファイル）と`progress.txt`（自由形式メモ）を組み合わせた状態管理が有効。新しいコンテキストウィンドウ開始時に「progress.txt、tests.json、gitログを確認してください」と指示するだけで、Claude 4.xはローカルファイルシステムから状態を再構築できる。圧縮よりも新規コンテキスト開始の方が効果的な場合もある。",
+      "source_title": "プロンプトのベストプラクティス - Anthropic公式",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/claude-4-best-practices",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-04-09",
+      "last_date": "2026-04-09",
+      "appearances": 1
     },
     {
       "id": 299,
@@ -4064,6 +4306,14 @@
   ],
   "daily": [
     {
+      "date": "2026-04-10",
+      "highlights": []
+    },
+    {
+      "date": "2026-04-09",
+      "highlights": []
+    },
+    {
       "date": "2026-04-07",
       "highlights": [
         "Git Worktree × iTerm2 で並列セッション管理：複数タスクをClaude Codeで同時進行させることで、待ち時間ゼロの10倍生産性を実現する実践的手法が注目されています。",
@@ -4263,5 +4513,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-07T06:59:02.005224"
+  "generated_at": "2026-04-10T05:45:11.992525"
 }
