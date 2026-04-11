@@ -42,14 +42,15 @@
     {
       "id": 323,
       "title": "CLAUDE.mdに「5つのルール」でClaude動作を最適化する",
-      "point": "①指示ではなくルールを書く（300行以内）、②自動検証を組み込む（lint/test/チェック）、③Builder/Reviewerの役割を分ける、④ミスログを残す（セッション間で同じミスを繰り返さないため）、⑤スコープを絞る（1リクエスト1機能）。核心は「ハーネスエンジニアリング」—AIの限界と戦うのではなく、その周囲に構造を作る考え方。",
-      "source_title": "5 Rules for CLAUDE.md to Make Claude AI Dramatically Smarter（mindwiredai.com）",
+      "point": "①ルールとしてファイルに書く（300行以内）、②検証手順を自動化する（lint・テスト・UIレンダリング確認など）、③ビルダーとレビュアーは別コンテキストで実行する（AIは自分の評価が甘くなる）、④AIのミスをバグログに記録してエラーの再発を防ぐ、⑤一度に一機能のみリクエストして大きなタスクはサブタスクに分解してから着手する。この設定で毎セッションの指示繰り返しが不要になり、予測可能な動作が得られる。",
+      "source_title": "5 Rules for CLAUDE.md to Make Claude AI Dramatically Smarter",
       "source_url": "https://mindwiredai.com/2026/04/05/5-rules-claude-md-smarter/",
       "tags": [
-        "Claude Code"
+        "Claude Code",
+        "自動化"
       ],
       "first_date": "2026-04-11",
-      "last_date": "2026-04-11",
+      "last_date": "2026-04-12",
       "appearances": 9
     },
     {
@@ -183,6 +184,32 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 166,
+      "title": "不確実性を明示的に許可してハルシネーションを削減する",
+      "point": "プロンプトに「わからない場合は推測せず、わからないと言ってください」を加えるだけで、誤情報の生成（ハルシネーション）を大幅に減らせる。AIに不確実性を表明する許可を与えることが、信頼性向上の鍵。",
+      "source_title": "Claude AI Prompt Codes That Actually Work (2026)",
+      "source_url": "https://www.buildfastwithai.com/blogs/claude-ai-prompt-codes-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-03-18",
+      "last_date": "2026-04-12",
+      "appearances": 6
+    },
+    {
+      "id": 332,
+      "title": "AI出力の検証手順をプロンプト内に組み込む（Built-in Verification）",
+      "point": "プロンプトの末尾に「出力を返す前に次を確認すること：構文エラーなし、要件を満たしているか、エッジケースを考慮しているか」などの確認リストを加えることで、AIの自己検証精度が大きく向上する。\"完了したように見える\"だけでなく実際に正しく動作する出力を得やすくなる。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-04-12",
+      "last_date": "2026-04-12",
+      "appearances": 6
     },
     {
       "id": 322,
@@ -334,20 +361,6 @@
       ],
       "first_date": "2026-04-10",
       "last_date": "2026-04-10",
-      "appearances": 5
-    },
-    {
-      "id": 166,
-      "title": "不確実性を明示的に許可してハルシネーションを削減する",
-      "point": "プロンプトに「If unsure, say so explicitly. Do not guess（不確かな場合は明示的に述べよ、推測するな）」を追記するだけでハルシネーションが大幅に減少する。Claude 4.5以降は指示を文字通りに解釈する傾向があるため、この一文の有無で品質が変わる。",
-      "source_title": "Claude Prompt Engineering: We Tested 25 Popular Practices (These 5 Worked)",
-      "source_url": "https://www.dreamhost.com/blog/claude-prompt-engineering/",
-      "tags": [
-        "プロンプト",
-        "モデル"
-      ],
-      "first_date": "2026-03-18",
-      "last_date": "2026-04-07",
       "appearances": 5
     },
     {
@@ -1641,6 +1654,33 @@
       "appearances": 3
     },
     {
+      "id": 330,
+      "title": "Claude Cowork 正式GA：macOS/Windows 対応と Analytics API 統合",
+      "point": "Claude Cowork（デスクトップ版アジェンティック作業スペース）が2026年4月9日に正式GAとなった。Analytics APIとの統合により企業はエンゲージメント・採用指標を追跡可能。OpenTelemetryサポートでシステムパフォーマンスの深い観測も実現。Team/EnterpriseプランではCowork向けの詳細使用分析にアクセスできる。",
+      "source_title": "Claude Release Notes - April 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "API",
+        "製品機能"
+      ],
+      "first_date": "2026-04-12",
+      "last_date": "2026-04-12",
+      "appearances": 2
+    },
+    {
+      "id": 335,
+      "title": "Claude Skills オープンスタンダード（Agent Skills）：Atlassian・Canva・Notionなどと連携",
+      "point": "ClaudeのSkillsがオープンスタンダード（Agent Skills）として公開され、Atlassian・Canva・Notionなど主要サービスとの相互運用が可能に。Team/EnterpriseプランではOrganization全体へのスキル展開と管理ディレクトリが利用可能。パートナー製スキルも増加中。",
+      "source_title": "The Complete Guide to Every Claude Update in Q1 2026",
+      "source_url": "https://aimaker.substack.com/p/anthropic-claude-updates-q1-2026-guide",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-04-12",
+      "last_date": "2026-04-12",
+      "appearances": 2
+    },
+    {
       "id": 309,
       "title": "プリフィル応答からの移行（Claude Opus 4.6以降）",
       "point": "Claude Opus 4.6からアシスタントターン末尾へのプリフィルが非推奨に。「前置きなしで直接回答してください。『Here is...』『Based on...』などで始めないでください」のようなシステムプロンプト指示で代替可能。分類タスクにはenum付き構造化出力やツール呼び出しを使用。以前のモデルとの互換性は維持される。",
@@ -2376,6 +2416,42 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 331,
+      "title": "Enterprise ロールベースアクセス制御（RBAC）でチームごとにClaude機能を管理する",
+      "point": "Enterpriseプラン管理者は、ユーザーをグループに分類（手動またはSCIM統合）し、グループごとにアクセスできるClaude機能をカスタムロールで定義できるようになった。部門別に機能を段階的に展開・制限でき、IT統制の柔軟性が向上。",
+      "source_title": "Claude Release Notes - April 2026",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [],
+      "first_date": "2026-04-12",
+      "last_date": "2026-04-12",
+      "appearances": 1
+    },
+    {
+      "id": 333,
+      "title": "制約を設けることでAIのパフォーマンスが向上する",
+      "point": "AIは無制限の自由を与えられると逆にパフォーマンスが落ちる。「要約は3文以内、各文20語以下」のように具体的な制約を与えることで出力が安定する。リクエストを1機能に絞ることで、コンテキストの迷走（ドリフト）を防ぎ、予測可能な結果が得られる。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026: Checklist + Templates",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [],
+      "first_date": "2026-04-12",
+      "last_date": "2026-04-12",
+      "appearances": 1
+    },
+    {
+      "id": 334,
+      "title": "Claude Code のベストプラクティス：反復的改善と構造化された開発手順",
+      "point": "Claude Codeでの開発は一度で完璧な結果を求めるのではなく、繰り返しの練習と文書化された手順による反復改善がカギ。最良の実践は共有リポジトリ（living document）として継続更新する。出力品質は入力の質（プロンプトの明確さ）に正比例するため、プロンプト設計に投資することが重要。",
+      "source_title": "Claude Code Best Practice: Guide for Perfect AI Coding",
+      "source_url": "https://aitoolly.com/ai-news/article/2026-04-01-claude-code-best-practice-essential-guidelines-for-optimizing-ai-driven-development-workflows",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-04-12",
+      "last_date": "2026-04-12",
+      "appearances": 1
     },
     {
       "id": 328,
@@ -4413,6 +4489,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-12",
+      "highlights": [
+        "Claude Cowork が正式GA（一般提供） — macOS・Windows の Claude デスクトップアプリで完全利用可能となり、Analytics API統合やOpenTelemetryサポートも追加。チーム展開の観測性が大幅強化。",
+        "CLAUDE.mdに5つのルール — 10分の初期設定でセッションをまたいだ一貫した動作を実現。CLAUDE.mdはClaude Codeを使いこなす鍵。"
+      ]
+    },
+    {
       "date": "2026-04-11",
       "highlights": [
         "Claude Code v2.1.98〜v2.1.100 がリリース。Bash権限バイパスのセキュリティバグ修正、Google Vertex AI設定ウィザード追加、サブプロセスサンドボックス実装など盛りだくさん。",
@@ -4627,5 +4710,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-11T08:00:02.122916"
+  "generated_at": "2026-04-12T08:01:42.357716"
 }
