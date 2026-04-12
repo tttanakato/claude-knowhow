@@ -46,7 +46,7 @@
       "source_title": "5 Rules for CLAUDE.md to Make Claude AI Dramatically Smarter",
       "source_url": "https://mindwiredai.com/2026/04/05/5-rules-claude-md-smarter/",
       "tags": [
-        "Claude Code",
+        "CLAUDE.md",
         "自動化"
       ],
       "first_date": "2026-04-11",
@@ -85,7 +85,7 @@
       "source_title": "Building with AI: My (Still Evolving) Workflow with Claude Code - DEV Community",
       "source_url": "https://dev.to/yooi/building-with-ai-my-still-evolving-workflow-with-claude-code-365b",
       "tags": [
-        "Claude Code"
+        "CLAUDE.md"
       ],
       "first_date": "2026-04-07",
       "last_date": "2026-04-07",
@@ -112,6 +112,7 @@
       "source_title": "Claude Code ベストプラクティス10選（Uravation）",
       "source_url": "https://uravation.com/media/claude-code-best-practices-top10-2026/",
       "tags": [
+        "CLAUDE.md",
         "Claude Code",
         "自動化"
       ],
@@ -313,7 +314,7 @@
       "source_title": "Best Practices for Claude Code - Claude Code Docs",
       "source_url": "https://code.claude.com/docs/en/best-practices",
       "tags": [
-        "Claude Code"
+        "CLAUDE.md"
       ],
       "first_date": "2026-03-12",
       "last_date": "2026-03-12",
@@ -326,7 +327,7 @@
       "source_title": "CLAUDE.md Best Practices — UX Planet（2026年3月）",
       "source_url": "https://uxplanet.org/claude-md-best-practices-1ef4f861ce7c",
       "tags": [
-        "Claude Code",
+        "CLAUDE.md",
         "エージェント"
       ],
       "first_date": "2026-03-10",
@@ -340,7 +341,7 @@
       "source_title": "Claude Code Best Practices: 15 Tips from 6 Projects (2026)",
       "source_url": "https://aiorg.dev/blog/claude-code-best-practices",
       "tags": [
-        "Claude Code",
+        "CLAUDE.md",
         "プロンプト",
         "生産性"
       ],
@@ -414,7 +415,7 @@
       "source_title": "claude-code-tips: 45 Tricks for Terminal AI Mastery - BrightCoding",
       "source_url": "https://www.blog.brightcoding.dev/2026/03/20/claude-code-tips-45-revolutionary-tricks-for-terminal-ai-mastery",
       "tags": [
-        "Claude Code"
+        "CLAUDE.md"
       ],
       "first_date": "2026-03-24",
       "last_date": "2026-03-24",
@@ -468,6 +469,7 @@
       "source_title": "GitHub - claude-code-best-practice",
       "source_url": "https://github.com/shanraisshan/claude-code-best-practice",
       "tags": [
+        "CLAUDE.md",
         "Claude Code"
       ],
       "first_date": "2026-03-05",
@@ -1882,7 +1884,7 @@
       "source_title": "Claude Code Rules Guide | Zenn",
       "source_url": "https://zenn.dev/katsuhisa_/articles/claude-code-rules-guide?locale=en",
       "tags": [
-        "Claude Code",
+        "CLAUDE.md",
         "エージェント"
       ],
       "first_date": "2026-03-28",
@@ -2032,7 +2034,7 @@
       "source_title": "Best AI Prompt Tips March 2026 | The Neuron",
       "source_url": "https://www.theneuron.ai/ai-news-digests/the-neurons-ai-skill-of-the-day-digest-march-2026/",
       "tags": [
-        "Claude Code",
+        "CLAUDE.md",
         "エージェント",
         "生産性"
       ],
@@ -2777,6 +2779,7 @@
       "source_title": "Claude Code 完全リファレンス — 全機能網羅+意外と知らない便利機能トップ10 | Qiita",
       "source_url": "https://qiita.com/nogataka/items/5e64037cc452c5d497fa",
       "tags": [
+        "CLAUDE.md",
         "Claude Code"
       ],
       "first_date": "2026-04-03",
@@ -3524,6 +3527,7 @@
       "source_title": "Claude Code：AIエージェントが全部自分でやる問題をclaude-naggerで物理的に止める（Qiita）",
       "source_url": "https://qiita.com/hollySizzle/items/245953164af826812dbb",
       "tags": [
+        "CLAUDE.md",
         "Claude Code",
         "API",
         "自動化",
@@ -3835,7 +3839,7 @@
       "source_title": "Claude Code: Tips and Tricks for Advanced Users - Cuttlesoft",
       "source_url": "https://cuttlesoft.com/blog/2026/02/03/claude-code-for-advanced-users/",
       "tags": [
-        "Claude Code"
+        "CLAUDE.md"
       ],
       "first_date": "2026-03-02",
       "last_date": "2026-03-02",
@@ -4121,7 +4125,7 @@
       "source_title": "50 Claude Code Tips & Tricks for Daily Coding in 2026 - Geeky Gadgets",
       "source_url": "https://www.geeky-gadgets.com/claude-code-tips-2/",
       "tags": [
-        "Claude Code"
+        "CLAUDE.md"
       ],
       "first_date": "2026-02-28",
       "last_date": "2026-02-28",
@@ -4412,6 +4416,7 @@
       "source_title": "【2026年最新版】Claude Code 完全入門ガイド - note",
       "source_url": "https://note.com/chaen_channel/n/n170fbfcd94bf",
       "tags": [
+        "CLAUDE.md",
         "Claude Code"
       ],
       "first_date": "2026-02-26",
@@ -4710,5 +4715,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-12T08:01:42.357716"
+  "generated_at": "2026-04-13T04:55:01.856135"
 }
