@@ -1656,6 +1656,22 @@
       "appearances": 3
     },
     {
+      "id": 341,
+      "title": "Claude Code `/powerup` コマンドでClaude Code機能をインタラクティブ学習する",
+      "point": "バージョン2.1.90以上で利用可能なインタラクティブチュートリアルシステム。Hooks・MCP・サブエージェント・コンテキスト管理などを端末内でアニメーション付きのレッスン形式で学べる。無料で全プランから利用可能。Claude Codeの高度な機能を手軽に習得するのに最適。",
+      "source_title": "Anthropic Quietly Shipped 3 Claude Code Commands This Week - Medium",
+      "source_url": "https://medium.com/@guljabeen222/anthropic-quietly-shipped-3-claude-code-commands-this-week-heres-how-to-actually-use-them-13f9836d0e5e",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-04-13",
+      "last_date": "2026-04-13",
+      "appearances": 2
+    },
+    {
       "id": 330,
       "title": "Claude Cowork 正式GA：macOS/Windows 対応と Analytics API 統合",
       "point": "Claude Cowork（デスクトップ版アジェンティック作業スペース）が2026年4月9日に正式GAとなった。Analytics APIとの統合により企業はエンゲージメント・採用指標を追跡可能。OpenTelemetryサポートでシステムパフォーマンスの深い観測も実現。Team/EnterpriseプランではCowork向けの詳細使用分析にアクセスできる。",
@@ -2418,6 +2434,116 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 336,
+      "title": "Advisor Tool パブリックベータ：高速executorと高知性advisorをペアリングする",
+      "point": "2026年4月9日に公開された新ツール。高速なexecutorモデル（例：Haiku）がトークン生成の大部分を担い、高知性なadvisorモデル（例：Opus）が生成途中に戦略的アドバイスを提供する仕組み。長時間エージェントワークロードで「advisor単独並みの品質をexecutor単独並みのコスト」で実現できる。利用にはリクエストヘッダー `advisor-tool-2026-03-01` が必要。",
+      "source_title": "Claude Platform Release Notes - April 2026",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-04-13",
+      "last_date": "2026-04-13",
+      "appearances": 1
+    },
+    {
+      "id": 337,
+      "title": "Claude Managed Agents パブリックベータ：自律エージェントを本番運用する",
+      "point": "2026年4月8日にパブリックベータ開始。安全なサンドボックス・組み込みツール・Server-Sent Eventsストリーミングを備えた完全管理型エージェント基盤。「エージェント定義」「環境設定（コンテナ）」「セッション起動」の3ステップで動く。bash・ファイル操作・Web検索などが標準装備。コストはClaudeトークン代＋$0.08/セッション時間。マルチエージェント調整は現在リサーチプレビュー段階。利用にはヘッダー `managed-agents-2026-04-01` が必要。",
+      "source_title": "Claude Managed Agents overview - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/managed-agents/overview",
+      "tags": [
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-04-13",
+      "last_date": "2026-04-13",
+      "appearances": 1
+    },
+    {
+      "id": 338,
+      "title": "ant CLI：Claude API用コマンドラインクライアントを活用する",
+      "point": "2026年4月8日に公開されたAnthropicの公式CLIツール。Claude APIとのより高速なやり取り、Claude Codeとのネイティブ統合、APIリソースのYAMLファイルによるバージョン管理が可能。スクリプトやCI/CDパイプラインからClaude APIを直接呼び出したい開発者にとって便利なツール。",
+      "source_title": "Claude Platform Release Notes - April 2026",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化"
+      ],
+      "first_date": "2026-04-13",
+      "last_date": "2026-04-13",
+      "appearances": 1
+    },
+    {
+      "id": 339,
+      "title": "Claude Code `/ultraplan` でプランニングをOpus 4.6クラウドセッションに委託する",
+      "point": "`/ultraplan` コマンドを実行すると、プランニング作業をOpus 4.6が動くクラウドセッション（最大30分の計算時間）に委託でき、ローカルターミナルはフリーのまま。ただし「Claude Code on the web」と「GitHubリポジトリへの接続」が必要条件。接続なしで実行すると警告なく失敗するため、事前確認が必須。",
+      "source_title": "Anthropic Quietly Shipped 3 Claude Code Commands This Week - Medium",
+      "source_url": "https://medium.com/@guljabeen222/anthropic-quietly-shipped-3-claude-code-commands-this-week-heres-how-to-actually-use-them-13f9836d0e5e",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-04-13",
+      "last_date": "2026-04-13",
+      "appearances": 1
+    },
+    {
+      "id": 340,
+      "title": "Claude Code `/insights` で1ヶ月の使用パターンをHTML分析レポートに変換する",
+      "point": "`/insights` コマンドを実行すると、過去1ヶ月のClaude Code利用状況を分析したHTMLレポートが `~/.claude/usage-data/report.html` に生成される。自分の使い方の傾向・ツール利用状況・コスト分布などが可視化され、ワークフロー改善のヒントを得られる。全プランで無料利用可。",
+      "source_title": "Anthropic Quietly Shipped 3 Claude Code Commands This Week - Medium",
+      "source_url": "https://medium.com/@guljabeen222/anthropic-quietly-shipped-3-claude-code-commands-this-week-heres-how-to-actually-use-them-13f9836d0e5e",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-04-13",
+      "last_date": "2026-04-13",
+      "appearances": 1
+    },
+    {
+      "id": 342,
+      "title": "`/init` でCLAUDE.mdを自動生成し、セッション終了時に知見を追記する",
+      "point": "新しいリポジトリで `/init` コマンドを実行すると、コードベースを分析してプロジェクト構造・主要技術・コーディング規約・ビルドコマンドを記載したCLAUDE.mdが自動生成される。さらに作業終了時に「Add new findings to CLAUDE.md」と指示することで、その日発見した非公式なノウハウ（隠れたバグ・設計上の注意点など）が継続的に蓄積される。これで毎セッション同じ説明を繰り返す無駄がなくなる。",
+      "source_title": "Two Simple Tricks That Will Dramatically Improve Your Productivity with Claude - Medium",
+      "source_url": "https://julsimon.medium.com/two-simple-tricks-that-will-dramatically-improve-your-productivity-with-claude-db90ce784931",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-04-13",
+      "last_date": "2026-04-13",
+      "appearances": 1
+    },
+    {
+      "id": 343,
+      "title": "Sonnet 4.5/4 の1Mトークンβ終了（4/30）：Sonnet 4.6/Opus 4.6への移行が必要",
+      "point": "2026年4月30日をもって、Claude Sonnet 4.5とClaude Sonnet 4の1Mトークンコンテキストβ（`context-1m-2025-08-07` ヘッダー）が終了。以降はこのヘッダーが無効化され、200kを超えるリクエストはエラーになる。1Mトークンを引き続き使うには Claude Sonnet 4.6 または Claude Opus 4.6 への移行が必要（標準料金、追加ヘッダー不要）。",
+      "source_title": "Claude Platform Release Notes - March 30, 2026",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-04-13",
+      "last_date": "2026-04-13",
+      "appearances": 1
+    },
+    {
+      "id": 344,
+      "title": "ソクラテス式プロンプティング：実行前にClaudeに質問させる",
+      "point": "プロンプトに「実行前に質問してください」と加えるだけで出力品質が大幅に向上する。Claudeが問いを立てることで隠れた前提条件が明示化され、指示の曖昧さが解消される。また「なぜその結果を求めているのか」を整理する思考整理の効果もある。特に複雑な要件や初めて取り組むタスクに有効。",
+      "source_title": "Claude best practices 2026: the complete power user guide - The AI Corner",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-04-13",
+      "last_date": "2026-04-13",
+      "appearances": 1
     },
     {
       "id": 331,
@@ -4494,6 +4620,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-13",
+      "highlights": [
+        "Advisor Tool パブリックベータ — 高速executor モデルと高知性 advisor モデルをペアリングして、精度と速度を同時に実現。長時間のエージェントタスクに最適。",
+        "Claude Managed Agents パブリックベータ — サンドボックス、ツール実行、ストリーミングを含む完全管理型エージェント基盤がAPI経由で利用可能に。本番エージェントの立ち上げが格段に速くなる。"
+      ]
+    },
+    {
       "date": "2026-04-12",
       "highlights": [
         "Claude Cowork が正式GA（一般提供） — macOS・Windows の Claude デスクトップアプリで完全利用可能となり、Analytics API統合やOpenTelemetryサポートも追加。チーム展開の観測性が大幅強化。",
@@ -4715,5 +4848,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-13T04:55:01.856135"
+  "generated_at": "2026-04-13T12:37:22.147958"
 }
