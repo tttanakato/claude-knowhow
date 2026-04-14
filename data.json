@@ -120,21 +120,6 @@
       "appearances": 7
     },
     {
-      "id": 354,
-      "title": "HooksでClaude Codeのルール遵守率を100%に高める",
-      "point": "CLAUDE.mdへの記述だけではルール遵守率は約70%。Hooksを使い、ルール違反の操作を`exit code 2`でブロックすることで100%遵守を実現できる。CLAUDE.md記述よりもHooksの方が確実性が高い。",
-      "source_title": "Claude Code ベストプラクティス10選（Uravation）",
-      "source_url": "https://uravation.com/media/claude-code-best-practices-top10-2026/",
-      "tags": [
-        "CLAUDE.md",
-        "Claude Code",
-        "自動化"
-      ],
-      "first_date": "2026-04-11",
-      "last_date": "2026-04-11",
-      "appearances": 7
-    },
-    {
       "id": 259,
       "title": "Claude Code `/voice` コマンドで音声入力",
       "point": "`/voice` コマンドでプッシュ・トゥ・トーク（スペースキー長押し）による音声入力が可能。20言語対応。手が塞がっているときやペアプログラミング中の素早い指示入力に最適。",
@@ -235,19 +220,6 @@
       "tags": [
         "Claude Code",
         "新機能"
-      ],
-      "first_date": "2026-04-11",
-      "last_date": "2026-04-11",
-      "appearances": 6
-    },
-    {
-      "id": 356,
-      "title": "コンテキスト使用量を監視し20〜60%超えで/compactを使う",
-      "point": "コンテキスト使用量が20〜40%から品質劣化が始まり、60%超で顕著になる。`/compact`コマンドで重要情報を要約・圧縮してセッションを継続できる。MCPのTool Searchを活用するとコンテキスト消費を最大95%削減できる。",
-      "source_title": "Claude Code ベストプラクティス10選（Uravation）",
-      "source_url": "https://uravation.com/media/claude-code-best-practices-top10-2026/",
-      "tags": [
-        "MCP/プラグイン"
       ],
       "first_date": "2026-04-11",
       "last_date": "2026-04-11",
@@ -503,19 +475,6 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
-    },
-    {
-      "id": 355,
-      "title": "テスト駆動開発（TDD）でClaude Codeの出力品質を保証する",
-      "point": "実装前にテストを書くことでコンテキストが埋まっても正確性を維持できる。テストは「外部検証システム」として機能し、Claudeが自己評価の過大評価に陥るのを防ぐ。実装→テストの順番より、テスト→実装の順番の方がAI品質管理に向いている。",
-      "source_title": "Claude Code ベストプラクティス10選（Uravation）",
-      "source_url": "https://uravation.com/media/claude-code-best-practices-top10-2026/",
-      "tags": [
-        "Claude Code"
-      ],
-      "first_date": "2026-04-11",
-      "last_date": "2026-04-11",
-      "appearances": 4
     },
     {
       "id": 307,
@@ -4980,5 +4939,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-14T22:10:28.265743"
+  "generated_at": "2026-04-14T22:17:18.292286"
 }
