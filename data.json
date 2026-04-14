@@ -79,6 +79,20 @@
       "appearances": 9
     },
     {
+      "id": 367,
+      "title": "Claude Code v2.1.105：`/proactive`コマンドが`/loop`のエイリアスとして追加",
+      "point": "v2.1.105で`/proactive`が`/loop`コマンドの新エイリアスとして追加された。`/loop`は指定した間隔でプロンプトを自動再実行する機能で、「能動的に繰り返す」という意図をより直感的に表す`/proactive`でも同じ機能を呼び出せるようになった。",
+      "source_title": "Claude Code Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-04-15",
+      "last_date": "2026-04-15",
+      "appearances": 8
+    },
+    {
       "id": 300,
       "title": "CLAUDE.mdは200行以内に保ちルール/スキルファイルに分割する",
       "point": "CLAUDE.md が200行を超えるとコンテキスト消費が増大し、指示への遵守率が低下する。肥大化した場合はルール別・スキル別の個別ファイルに分割してCLAUDE.mdからインクルードする構成にする。1ファイルに詰め込まず「生きたドキュメント」として分散管理するのがベストプラクティス。",
@@ -2506,6 +2520,132 @@
       "appearances": 2
     },
     {
+      "id": 360,
+      "title": "Claude Code v2.1.108：`/recap`でセッションコンテキストを瞬時に要約する",
+      "point": "2026年4月14日リリースのv2.1.108に`/recap`コマンドが追加された。長期化したセッションに戻ったとき、`/recap`を実行するだけで現在の作業状況・決定事項・残課題を要約して表示する。`/config`からデフォルト動作の有効/無効を切り替えることも可能。長いClaude Codeセッションで「どこまで進んでいたか」を素早く把握したい場面に最適。",
+      "source_title": "Claude Code Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-04-15",
+      "last_date": "2026-04-15",
+      "appearances": 1
+    },
+    {
+      "id": 361,
+      "title": "Claude Code v2.1.108：`ENABLE_PROMPT_CACHING_1H`環境変数で1時間キャッシュを有効化",
+      "point": "環境変数`ENABLE_PROMPT_CACHING_1H`を設定すると、Claude API全プラットフォームでプロンプトキャッシュの1時間TTLを有効化。セッション内の繰り返しは自動キャッシュされるため、この設定の効果は「セッション間」での再利用時に大きい（定期ジョブ・複数日の同じプロンプト実行など）。1時間以内の再実行でAPIコスト最大90%削減・応答速度3倍高速化を実現。",
+      "source_title": "Claude Code Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-04-15",
+      "last_date": "2026-04-15",
+      "appearances": 1
+    },
+    {
+      "id": 362,
+      "title": "Claude Code v2.1.108：組み込みスラッシュコマンドをSkill Toolから自動呼び出しに対応",
+      "point": "v2.1.108より、Claude自身が`Skill tool`経由で組み込みスラッシュコマンド（`/init`・`/review`・`/security-review`）を自動発見・実行できるようになった。効率化される一方、ツール選択判定の追加トークン消費と不要な自動呼び出しのリスクがある。コスト・制御を優先する場合は、セッション性質に応じて手動/自動を明示的に切り替えるのが推奨。",
+      "source_title": "Claude Code Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-04-15",
+      "last_date": "2026-04-15",
+      "appearances": 1
+    },
+    {
+      "id": 363,
+      "title": "Claude Code v2.1.108：`/model`切替時にコンテキスト影響を事前警告",
+      "point": "v2.1.108では、セッション途中で`/model`コマンドによるモデル切替を試みると、コンテキストへの影響について警告を表示するようになった。会話の継続性が変わる可能性をあらかじめ確認してから切り替えられるため、意図しない動作変化を防ぎやすくなる。また`/resume`のピッカーがデフォルトで現在ディレクトリのセッションを優先表示し、`Ctrl+A`で全プロジェクトに切り替えられるようになった。",
+      "source_title": "Claude Code Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-04-15",
+      "last_date": "2026-04-15",
+      "appearances": 1
+    },
+    {
+      "id": 364,
+      "title": "Claude Code v2.1.105：PreCompactフックでコンパクションをブロック制御する",
+      "point": "v2.1.105（4月13日リリース）でPreCompactフックが追加された。フックスクリプトからexit code `2`を返すと、自動コンパクションの実行を阻止できる。コンテキストを意図せず圧縮されたくない重要な作業フェーズや、圧縮前に独自のチェックを挟みたい場合に活用できる。",
+      "source_title": "Claude Code Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "新機能"
+      ],
+      "first_date": "2026-04-15",
+      "last_date": "2026-04-15",
+      "appearances": 1
+    },
+    {
+      "id": 365,
+      "title": "Claude Code v2.1.105：Background Plugin Monitorsでセッション開始時に自動起動",
+      "point": "プラグインのマニフェストに`monitors`キーを追加すると、Claude Codeセッション開始時にそのプラグインが自動的に起動してバックグラウンド監視を開始する。コード品質チェックや外部サービス連携を常時監視するプラグインを手動で呼び出す手間がなくなる。",
+      "source_title": "Claude Code Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-04-15",
+      "last_date": "2026-04-15",
+      "appearances": 1
+    },
+    {
+      "id": 366,
+      "title": "Claude Code v2.1.105：Skill説明文の文字数上限が250→1,536文字に拡張",
+      "point": "v2.1.105でSkillの説明文（`description`フィールド）の文字数上限が250文字から1,536文字に大幅拡張された。SkillがどのようなコンテキストでClaudeに選択されるかを詳しく記述できるため、トリガー精度の向上や複雑なWorkflowを持つSkillの利便性向上が見込める。",
+      "source_title": "Claude Code Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-04-15",
+      "last_date": "2026-04-15",
+      "appearances": 1
+    },
+    {
+      "id": 368,
+      "title": "Memory Import：ChatGPT・Gemini・GrokのメモリをClaudeへ移行する",
+      "point": "Claudeのメモリインポート機能（実験的機能）を使うと、他のAIサービスで蓄積した設定やコンテキストをClaudeに引き継げる。手順は①[claude.com/import-memory](https://claude.com/import-memory)で抽出プロンプトを取得→②移行元AI（ChatGPT等）にペースト→③出力されたメモリブロックをClaudeに貼り付け、の3ステップ。全プランで無料で利用でき、既存メモリを上書きせず追記する形で動作する。",
+      "source_title": "How to Import Memory into Claude from ChatGPT, Gemini, or Grok",
+      "source_url": "https://medium.com/@unicodeveloper/how-to-import-memory-into-claude-from-chatgpt-gemini-or-grok-step-by-step-guide-c78ac8f7e4a4",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-04-15",
+      "last_date": "2026-04-15",
+      "appearances": 1
+    },
+    {
+      "id": 369,
+      "title": "Claude Code v2.1.105：主要バグ修正まとめ（添付画像ドロップ・空白画面・文字化け）",
+      "point": "v2.1.105では実用面で重要なバグが複数修正された。(1)キューに積まれたメッセージへの画像添付がドロップされる問題、(2)長い会話でプロンプト入力が複数行になると画面が空白になる問題、(3)Bashツール出力のクリック可能なファイルリンク表示の文字化け、(4)マーケットプレイスのプラグインが依存関係込みで自動インストールされない問題、が修正された。",
+      "source_title": "Claude Code Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-04-15",
+      "last_date": "2026-04-15",
+      "appearances": 1
+    },
+    {
       "id": 346,
       "title": "Claude Code /team-onboarding コマンドで新メンバーオンボーディングを自動化",
       "point": "v2.1.101（2026年4月10日）で追加された `/team-onboarding` コマンド。自分のClaude Code利用履歴を分析し、チームの新メンバー向けクイックスタートガイドを自動生成する。よく使うコマンド・ワークフロー・コーディング規約などが自動でまとめられるため、チームへのAIプログラミング慣行の展開を大幅に加速できる。",
@@ -4704,6 +4844,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-15",
+      "highlights": [
+        "Claude Code v2.1.108：`/recap`コマンドで長セッションを瞬時に要約 — 長期化したセッションに戻った際、`/recap`を実行するだけで作業コンテキストを即時把握できる新機能が追加。",
+        "PreCompactフック＋Background Plugin Monitors — exit code 2でコンパクションをブロックできるPreCompactフックと、セッション開始時に自動起動するプラグイン監視機能が追加され、Claude Codeの自動化が一段進化。"
+      ]
+    },
+    {
       "date": "2026-04-14",
       "highlights": [
         "Claude Mythos Preview + Project Glasswing — Anthropic史上最高性能モデルが限定公開。ゼロデイ脆弱性を自律発見する能力を持つが、防衛的サイバーセキュリティ用途のみ招待制で提供。",
@@ -4939,5 +5086,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-14T22:17:18.292286"
+  "generated_at": "2026-04-15T04:41:34.157506"
 }
