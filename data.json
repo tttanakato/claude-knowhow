@@ -106,6 +106,20 @@
       "appearances": 8
     },
     {
+      "id": 352,
+      "title": "Sonnet 4.5/4の1Mトークンβ 4月30日終了：早めにSonnet 4.6へ移行",
+      "point": "Claude Sonnet 4.5とSonnet 4で利用していた1Mトークンコンテキストウィンドウベータ（`context-1m-2025-08-07` ヘッダー）が2026年4月30日に終了する。以降はヘッダーが無効化され、200kを超えるリクエストはエラーになる。引き続き1Mトークンを使いたい場合はClaude Sonnet 4.6またはOpus 4.6への移行が必要（追加ヘッダー不要・標準料金）。移行期限まで残り2週間。",
+      "source_title": "Claude Platform Release Notes - March 30, 2026",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-04-14",
+      "last_date": "2026-04-14",
+      "appearances": 7
+    },
+    {
       "id": 324,
       "title": "HooksでClaude Codeのルール遵守率を100%に高める",
       "point": "CLAUDE.mdへの記述だけではルール遵守率は約70%。Hooksを使い、ルール違反の操作を`exit code 2`でブロックすることで100%遵守を実現できる。CLAUDE.md記述よりもHooksの方が確実性が高い。",
@@ -348,6 +362,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 349,
+      "title": "Coworkでコンピュータ使用が利用可能に：ProとMaxユーザーはセットアップ不要",
+      "point": "Claude ProおよびMaxプランのユーザーは、CoworkモードでClaudeにコンピュータ使用権限を付与できるようになった。ファイルを開く、開発ツールを起動する、クリック・ナビゲートするなど、画面上の操作を自律的に実行可能。これまでClaude Codeが必要だったコンピュータ使用が、ノンコーダーも使えるCoworkのGUIから利用できる点が大きな前進。セットアップは不要。",
+      "source_title": "Everything Claude Has Shipped in 2026 - The AI Corner",
+      "source_url": "https://www.the-ai-corner.com/p/everything-claude-shipped-2026-complete-guide",
+      "tags": [
+        "Claude Code",
+        "製品機能"
+      ],
+      "first_date": "2026-04-14",
+      "last_date": "2026-04-14",
+      "appearances": 5
     },
     {
       "id": 316,
@@ -869,6 +897,32 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 347,
+      "title": "コンテキストエンジニアリング：2026年のClaude活用の核心",
+      "point": "2026年現在、モデル品質が向上した結果、プロンプトの「言い回し」より「構造」が重要になっている。システムプロンプト・ファイル・メモリ・例示・制約など、Claudeに渡す情報全体を設計する「コンテキストエンジニアリング」が真のレバレッジポイント。具体的には：①自分の仕事内容を記述したidentityファイル、②文体・思考パターンを記録したvoice profileファイル、③Claude的な言い回しを禁止するanti-AI-writingファイルの3ファイルを整備するだけで、毎回の説明が不要になる。",
+      "source_title": "Claude best practices 2026: the complete power user guide - The AI Corner",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-14",
+      "last_date": "2026-04-14",
+      "appearances": 3
+    },
+    {
+      "id": 350,
+      "title": "チャット履歴からのメモリ機能が全ユーザー（無料含む）に開放",
+      "point": "Claudeの「チャット履歴からのメモリ」機能が無料ユーザーを含む全ユーザーに展開された。過去の会話からClaudeが自動的に好み・背景情報・事実を記録し、次回以降の会話で活用する。設定から確認・編集・削除も可能。仕事の文脈や個人の好みを毎回説明する手間が省けるため、ヘビーユーザーほど恩恵が大きい。",
+      "source_title": "Everything Claude Has Shipped in 2026 - The AI Corner",
+      "source_url": "https://www.the-ai-corner.com/p/everything-claude-shipped-2026-complete-guide",
+      "tags": [],
+      "first_date": "2026-04-14",
+      "last_date": "2026-04-14",
+      "appearances": 3
     },
     {
       "id": 327,
@@ -1656,6 +1710,63 @@
       "appearances": 3
     },
     {
+      "id": 345,
+      "title": "Claude Mythos Preview + Project Glasswing：史上最強モデルが招待制で限定公開",
+      "point": "Anthropicが「Claude Mythos Preview」を発表。Opus 4.6を大幅に超える推論・コーディング・サイバーセキュリティ能力を持ち、Firefoxの脆弱性タスクで181回成功（Opus 4.6は2回）。27年前のOpenBSDバグや16年前のFFmpegバグを自律発見。公開リリースは行わず、Amazon・Apple・Google・Microsoft等10社のコンソーシアム「Project Glasswing」経由で招待制提供。防衛的セキュリティ用途に特化し、AnthropicはGlasswing向けに$1億ドルのクレジットを提供する。",
+      "source_title": "Anthropic Releases Claude Mythos Preview with Cybersecurity Capabilities - InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/04/anthropic-claude-mythos/",
+      "tags": [
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-04-14",
+      "last_date": "2026-04-14",
+      "appearances": 2
+    },
+    {
+      "id": 348,
+      "title": "データ先行・指示後置のプロンプト構造で回答品質が最大30%向上",
+      "point": "プロンプトの構造として「データ（資料・背景情報）を先に書き、指示を最後に書く」パターンが有効。Claudeは文脈を読んだ上で指示を受け取ることで、より正確な回答を生成できる。通常の逆順（指示→データ）より最大30%の品質向上が報告されている。例：「以下の契約書を読んだうえで…（長い文書）…問題点を3つリストアップして」という形式が望ましい。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026 - Prompt Builder",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-04-14",
+      "last_date": "2026-04-14",
+      "appearances": 2
+    },
+    {
+      "id": 351,
+      "title": "Message Batches APIのmax_tokens上限が30万トークンに引き上げ",
+      "point": "2026年3月30日の更新で、Claude Opus 4.6とSonnet 4.6を使ったMessage Batches APIの `max_tokens` 上限が300,000トークンまで引き上げられた（ベータヘッダー `output-300k-2026-03-24` が必要）。長文コンテンツ・構造化データ・大規模コード生成など、1回のバッチリクエストで大量テキストを生成するユースケースに対応。非同期処理のため標準価格の50%コストでこの恩恵を受けられる。",
+      "source_title": "Claude Platform Release Notes - March 30, 2026",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-04-14",
+      "last_date": "2026-04-14",
+      "appearances": 2
+    },
+    {
+      "id": 353,
+      "title": "Claude Haiku 3 API サポート 4月19日終了：5日以内に移行が必要",
+      "point": "Claude Haiku 3（`claude-3-haiku-20240307`）のAPI提供が2026年4月19日（あと5日）に終了する。以降はすべてのリクエストがエラーになる。後継モデルのClaude Haiku 4.5（`claude-haiku-4-5-20251001`）は大幅に性能が向上しており、価格帯も同水準。本番環境でHaiku 3を使っているシステムは早急な移行対応が必要。",
+      "source_title": "Claude Platform Release Notes - February 19, 2026",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-04-14",
+      "last_date": "2026-04-14",
+      "appearances": 2
+    },
+    {
       "id": 341,
       "title": "Claude Code `/powerup` コマンドでClaude Code機能をインタラクティブ学習する",
       "point": "バージョン2.1.90以上で利用可能なインタラクティブチュートリアルシステム。Hooks・MCP・サブエージェント・コンテキスト管理などを端末内でアニメーション付きのレッスン形式で学べる。無料で全プランから利用可能。Claude Codeの高度な機能を手軽に習得するのに最適。",
@@ -2434,6 +2545,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 346,
+      "title": "Claude Code /team-onboarding コマンドで新メンバーオンボーディングを自動化",
+      "point": "v2.1.101（2026年4月10日）で追加された `/team-onboarding` コマンド。自分のClaude Code利用履歴を分析し、チームの新メンバー向けクイックスタートガイドを自動生成する。よく使うコマンド・ワークフロー・コーディング規約などが自動でまとめられるため、チームへのAIプログラミング慣行の展開を大幅に加速できる。",
+      "source_title": "Claude Code v2.1.101: Enhanced Team Collaboration and Enterprise Support - ClaudeWorld",
+      "source_url": "https://claude-world.com/articles/claude-code-21101-release/",
+      "tags": [
+        "Claude Code",
+        "自動化"
+      ],
+      "first_date": "2026-04-14",
+      "last_date": "2026-04-14",
+      "appearances": 1
     },
     {
       "id": 336,
@@ -4620,6 +4745,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-14",
+      "highlights": [
+        "Claude Mythos Preview + Project Glasswing — Anthropic史上最高性能モデルが限定公開。ゼロデイ脆弱性を自律発見する能力を持つが、防衛的サイバーセキュリティ用途のみ招待制で提供。",
+        "Claude Code /team-onboarding コマンド — 自分の利用履歴から新メンバー向けのオンボーディングガイドを自動生成。チームでのClaude Code展開が格段に楽になる。"
+      ]
+    },
+    {
       "date": "2026-04-13",
       "highlights": [
         "Advisor Tool パブリックベータ — 高速executor モデルと高知性 advisor モデルをペアリングして、精度と速度を同時に実現。長時間のエージェントタスクに最適。",
@@ -4848,5 +4980,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-13T12:37:22.147958"
+  "generated_at": "2026-04-14T12:37:28.140155"
 }
