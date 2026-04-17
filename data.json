@@ -215,6 +215,20 @@
       "appearances": 7
     },
     {
+      "id": 376,
+      "title": "CoworkでComputer Use（コンピューター使用）機能を有効化する",
+      "point": "ClaudeがCowork上でユーザーのPC画面を直接操作（クリック・入力・アプリ起動）できる「Computer Use」機能が研究プレビューとしてPro/Maxプランで利用可能になった。Claude Desktopの設定から「Computer use」トグルをオンにするだけで有効化できる。銀行・医療などの機密情報を扱うアプリへのアクセス許可は避け、デスクトップをアクティブに保つ必要がある点に注意。コネクターが存在しないツールへのアクセスをClaudeが自律的に補完できるようになる。",
+      "source_title": "Let Claude use your computer in Cowork | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork",
+      "tags": [
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-04-16",
+      "last_date": "2026-04-16",
+      "appearances": 6
+    },
+    {
       "id": 166,
       "title": "不確実性を明示的に許可してハルシネーションを削減する",
       "point": "プロンプトに「わからない場合は推測せず、わからないと言ってください」を加えるだけで、誤情報の生成（ハルシネーション）を大幅に減らせる。AIに不確実性を表明する許可を与えることが、信頼性向上の鍵。",
@@ -378,6 +392,20 @@
       "appearances": 6
     },
     {
+      "id": 380,
+      "title": "Adaptive Thinking：Claudeが推論深度を自律決定する",
+      "point": "Sonnet 4.6でのAdaptive Thinkingモードは、タスクの複雑さに応じてClaudeが推論深度（= thinking量）を自律的に決定する。単純なタスクでは最小限の思考、複雑な推論では深い思考を自動選択するため、effortを毎回手動指定する手間がなくなる。Sonnet 4.6のデフォルト推奨モードであり、コスト・速度・精度のバランスを自動最適化したい場合に特に有効。APIでは`thinking: {type: \"auto\"}`で指定できる。",
+      "source_title": "What's new in Claude 4.6 - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-6",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-04-16",
+      "last_date": "2026-04-16",
+      "appearances": 5
+    },
+    {
       "id": 349,
       "title": "Coworkでコンピュータ使用が利用可能に：ProとMaxユーザーはセットアップ不要",
       "point": "Claude ProおよびMaxプランのユーザーは、CoworkモードでClaudeにコンピュータ使用権限を付与できるようになった。ファイルを開く、開発ツールを起動する、クリック・ナビゲートするなど、画面上の操作を自律的に実行可能。これまでClaude Codeが必要だったコンピュータ使用が、ノンコーダーも使えるCoworkのGUIから利用できる点が大きな前進。セットアップは不要。",
@@ -517,6 +545,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 379,
+      "title": "コンテキストエンジニアリング：プロンプトの言葉より「情報の配置」が品質を決める",
+      "point": "2026年時点でのClaude活用の核心は「何を言うか（プロンプティング）」より「何をどこに置くか（コンテキストエンジニアリング）」にシフトしている。システムプロンプト・ファイル・メモリ・例示・役割設定・制約をタスクの前後にどう構造化するかがアウトプット品質を左右する。具体的には：役割設定→制約→例示の順で情報を配置し、タスク直前に最重要コンテキストを置くのが効果的とされる。",
+      "source_title": "Claude best practices 2026: the complete power user guide | The AI Corner",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-04-16",
+      "last_date": "2026-04-16",
+      "appearances": 4
     },
     {
       "id": 371,
@@ -1724,6 +1766,35 @@
       "appearances": 3
     },
     {
+      "id": 344,
+      "title": "ソクラテス式プロンプティング：実行前にClaudeに質問させる",
+      "point": "曖昧なタスクや大規模な実装の前に「まず実行前に不明点を質問してください」と指示すると、見落とされがちな仮定・エッジケース・トレードオフが浮かび上がり、最終的なアウトプット品質が向上する。プランニングフェーズで決定を「ほぼ100%」の精度で固めてから実行に移ることで、後戻りが大幅に減少する。Claude Code・Cowork双方で応用可能。",
+      "source_title": "Claude best practices 2026: the complete power user guide | The AI Corner",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "Claude Code",
+        "製品機能"
+      ],
+      "first_date": "2026-04-13",
+      "last_date": "2026-04-16",
+      "appearances": 2
+    },
+    {
+      "id": 378,
+      "title": "持続的コンテキスト3ファイル戦略：about-me / voice-profile / anti-AI-writingを設定する",
+      "point": "CoworkまたはClaude Codeのグローバル設定に「自分が誰で何に取り組んでいるか（about-me.md）」「思考・文体スタイル（voice-profile.md）」「Claudeに絶対使ってほしくない言葉・構造（anti-AI-writing.md）」の3ファイルを自動読み込みさせると、毎回の自己紹介が不要になり出力品質が一貫して向上する。モデルを切り替えるよりもこの設定の効果が大きいとされている。",
+      "source_title": "Claude best practices 2026: the complete power user guide | The AI Corner",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "Claude Code",
+        "モデル",
+        "製品機能"
+      ],
+      "first_date": "2026-04-16",
+      "last_date": "2026-04-16",
+      "appearances": 2
+    },
+    {
       "id": 345,
       "title": "Claude Mythos Preview + Project Glasswing：史上最強モデルが招待制で限定公開",
       "point": "Anthropicが「Claude Mythos Preview」を発表。Opus 4.6を大幅に超える推論・コーディング・サイバーセキュリティ能力を持ち、Firefoxの脆弱性タスクで181回成功（Opus 4.6は2回）。27年前のOpenBSDバグや16年前のFFmpegバグを自律発見。公開リリースは行わず、Amazon・Apple・Google・Microsoft等10社のコンソーシアム「Project Glasswing」経由で招待制提供。防衛的セキュリティ用途に特化し、AnthropicはGlasswing向けに$1億ドルのクレジットを提供する。",
@@ -2561,6 +2632,65 @@
       "appearances": 2
     },
     {
+      "id": 373,
+      "title": "Claude Code Routines（ルーティンズ）：スケジュール/API/GitHubイベントで自動化",
+      "point": "2026年4月14日、AnthropicはClaude Codeに「Routines」機能を研究プレビューとして追加した。RoutinesはプロンプトとリポジトリとコネクターをひとまとめにしたCloudベースの自動化ユニット。スケジュール（毎夜など）・API呼び出し・GitHubイベント（PR作成など）の3種類のトリガーを設定でき、Macがオフラインでも動作する。1日の実行上限はPro 5回・Max 15回・Team/Enterprise 25回。`/schedule`コマンドまたはclaude.ai/code/routinesから作成・管理する。",
+      "source_title": "Introducing routines in Claude Code | Claude Blog",
+      "source_url": "https://claude.com/blog/introducing-routines-in-claude-code",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-04-16",
+      "last_date": "2026-04-16",
+      "appearances": 1
+    },
+    {
+      "id": 374,
+      "title": "Claude Code デスクトップアプリ リデザイン：並列セッション・統合ターミナル・ドラッグ＆ドロップレイアウト",
+      "point": "同じく4月14日、Claude Code Mac/Windowsのデスクトップアプリが大幅リデザインされた。新サイドバーで複数セッションをステータス・プロジェクト別にフィルタリングしながら一括管理できる。統合ターミナル・ファイルエディタ・再構築されたdiffビューア・HTML/PDF/ローカルサーバー対応プレビューが一画面に収まり、各パネルはドラッグ＆ドロップで配置変更が可能。Verboseなど3種の表示モードも選択できる（Pro以上対象）。",
+      "source_title": "Anthropic Rebuilds Claude Code Desktop App Around Parallel Sessions - MacRumors",
+      "source_url": "https://www.macrumors.com/2026/04/15/anthropic-rebuilds-claude-code-desktop-app/",
+      "tags": [
+        "Claude Code",
+        "生産性"
+      ],
+      "first_date": "2026-04-16",
+      "last_date": "2026-04-16",
+      "appearances": 1
+    },
+    {
+      "id": 375,
+      "title": "Claude Code Side Chat（Command+;）でメインセッションを妨げずに横道質問",
+      "point": "リデザインされたClaude Codeデスクトップには「Side Chat」機能が追加された。`Command+;`（Mac）で呼び出せるサイドパネルで、メインスレッドにコンテキストを追加せずに質問を分岐できる。CLIの`/btw`コマンドと同様の概念で、進行中のタスクを止めずに「ちょっと聞きたいこと」を解決できる。長いコーディングセッションで頻繁に発生する「このライブラリのAPIどうなってたっけ」問題に最適。",
+      "source_title": "Anthropic adds routines to redesigned Claude Code, here's how it works - 9to5Mac",
+      "source_url": "https://9to5mac.com/2026/04/14/anthropic-adds-repeatable-routines-feature-to-claude-code-heres-how-it-works/",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-04-16",
+      "last_date": "2026-04-16",
+      "appearances": 1
+    },
+    {
+      "id": 377,
+      "title": "Cowork並列処理：10ファイルを約30分→約4分に短縮する",
+      "point": "Coworkで複数ファイルを「1件ずつ順番」ではなく「並列」で処理するよう指示するだけで処理時間が大幅に短縮できる。10ファイルの場合、順番処理の約30分が並列処理なら約4分になるとされている。「これら10件のファイルそれぞれについて、1ページのサマリーを個別に作成してください」のようにアウトカム志向で並列性が明確な指示文を書くのがポイント。大量のPDF分析・メール返信ドラフト作成などに応用できる。",
+      "source_title": "How to Maximize Claude Cowork | Towards Data Science",
+      "source_url": "https://towardsdatascience.com/how-to-maximize-claude-cowork/",
+      "tags": [
+        "生産性",
+        "製品機能"
+      ],
+      "first_date": "2026-04-16",
+      "last_date": "2026-04-16",
+      "appearances": 1
+    },
+    {
       "id": 360,
       "title": "Claude Code v2.1.108：`/recap`でセッションコンテキストを瞬時に要約する",
       "point": "2026年4月14日リリースのv2.1.108に`/recap`コマンドが追加された。長期化したセッションに戻ったとき、`/recap`を実行するだけで現在の作業状況・決定事項・残課題を要約して表示する。`/config`からデフォルト動作の有効/無効を切り替えることも可能。長いClaude Codeセッションで「どこまで進んでいたか」を素早く把握したい場面に最適。",
@@ -2792,19 +2922,6 @@
       "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
       "tags": [
         "モデル"
-      ],
-      "first_date": "2026-04-13",
-      "last_date": "2026-04-13",
-      "appearances": 1
-    },
-    {
-      "id": 344,
-      "title": "ソクラテス式プロンプティング：実行前にClaudeに質問させる",
-      "point": "プロンプトに「実行前に質問してください」と加えるだけで出力品質が大幅に向上する。Claudeが問いを立てることで隠れた前提条件が明示化され、指示の曖昧さが解消される。また「なぜその結果を求めているのか」を整理する思考整理の効果もある。特に複雑な要件や初めて取り組むタスクに有効。",
-      "source_title": "Claude best practices 2026: the complete power user guide - The AI Corner",
-      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
-      "tags": [
-        "プロンプト"
       ],
       "first_date": "2026-04-13",
       "last_date": "2026-04-13",
@@ -4885,6 +5002,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-16",
+      "highlights": [
+        "Claude Code Routines（ルーティンズ）正式登場 — スケジュール・API・GitHubイベントでClaudeを自動実行。ラップトップを開かずにクラウドで動作する新しい自動化の仕組み。",
+        "Claude Code デスクトップアプリ リデザイン — 並列セッション管理・統合ターミナル・Side Chat機能など、開発ワークフローを一新する大幅刷新が4月14日にリリース。"
+      ]
+    },
+    {
       "date": "2026-04-15",
       "highlights": [
         "Claude Code v2.1.108：`/recap`コマンドで長セッションを瞬時に要約 — 長期化したセッションに戻った際、`/recap`を実行するだけで作業コンテキストを即時把握できる新機能が追加。",
@@ -5127,5 +5251,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-16T13:52:58.302357"
+  "generated_at": "2026-04-17T10:37:47.647944"
 }
