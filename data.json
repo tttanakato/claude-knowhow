@@ -79,6 +79,20 @@
       "appearances": 9
     },
     {
+      "id": 384,
+      "title": "Opus 4.7 自己検証（rigor）機能でタスク完了前に検証ステップを自動実施",
+      "point": "Opus 4.7は「rigor（厳密性）」を発揮するよう再調整されており、タスク報告前に自ら検証ステップを考案・実行する。従来はプロンプトに自己検証チェックリストを明示的に組み込む必要があったが、Opus 4.7ではモデルがネイティブに実施するため、品質担保のコストが削減できる。",
+      "source_title": "Anthropic reveals new Opus 4.7 model with focus on advanced software engineering",
+      "source_url": "https://9to5mac.com/2026/04/16/anthropic-reveals-new-opus-4-7-model-with-focus-on-advanced-software-engineering/",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-18",
+      "last_date": "2026-04-18",
+      "appearances": 8
+    },
+    {
       "id": 367,
       "title": "Claude Code v2.1.105：`/proactive`コマンドが`/loop`のエイリアスとして追加",
       "point": "v2.1.105で`/proactive`が`/loop`コマンドの新エイリアスとして追加された。`/loop`は指定した間隔でプロンプトを自動再実行する機能で、「能動的に繰り返す」という意図をより直感的に表す`/proactive`でも同じ機能を呼び出せるようになった。",
@@ -390,6 +404,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 390,
+      "title": "コンテキストエンジニアリング公式ガイド：「情報量を保ちつつタイトに」",
+      "point": "Anthropicがコンテキストエンジニアリングの公式ガイドを更新。システムプロンプト・ツール定義・例示・メッセージ履歴など全コンテキスト要素について「informativeかつtight（無駄なく）」を保つことを推奨。20K+トークンの長文は処理タスクより前に配置するのが効果的。",
+      "source_title": "Effective Context Engineering for AI Agents",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-04-18",
+      "last_date": "2026-04-18",
+      "appearances": 5
     },
     {
       "id": 380,
@@ -953,6 +982,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 387,
+      "title": "xhigh effort レベル：highとmaxの間の新粒度で推論コストを制御する",
+      "point": "Opus 4.7に合わせて新しい effort レベル「xhigh」が追加。`think` → `think hard` → `high` → `xhigh` → `max` の順で推論深度が上がり、遅延・コストとのトレードオフを細かく調整できる。`/effort` コマンドを引数なしで呼び出すと矢印キーで操作できるインタラクティブスライダーが表示され、確認はEnter。Maxプラン向け。",
+      "source_title": "Claude Code by Anthropic - Release Notes - April 2026 Latest Updates",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-18",
+      "last_date": "2026-04-18",
+      "appearances": 3
     },
     {
       "id": 347,
@@ -2630,6 +2673,108 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 381,
+      "title": "Claude Opus 4.7 正式リリース：上位モデルの使い分けを更新する",
+      "point": "Anthropicが4月16日にClaude Opus 4.7を正式公開。Opus 4.6と同価格（入力$5/MTok・出力$25/MTok）で、高難度ソフトウェアエンジニアリングと複雑な長時間タスクの一貫性が向上。指示を字義通り厳格に実行するよう再調整されており、既存のプロンプトライブラリの見直しが推奨される。",
+      "source_title": "Introducing Claude Opus 4.7",
+      "source_url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-04-18",
+      "last_date": "2026-04-18",
+      "appearances": 1
+    },
+    {
+      "id": 382,
+      "title": "Claude Design リサーチプレビュー開始：テキストからビジュアルを即生成",
+      "point": "Anthropicが4月17日にClaude Designを発表。Pro・Max・Team・Enterpriseプラン向けに段階展開中。テキストプロンプトからスライド・プロトタイプ・ワンページャーを生成し、PDF・URL・PPTX・Canvaへのエクスポートが可能。コードベースやデザインファイルを読み取ってチームのデザインシステムを学習する機能も搭載。",
+      "source_title": "Anthropic launches Claude Design, a new product for creating quick visuals",
+      "source_url": "https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/",
+      "tags": [
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-04-18",
+      "last_date": "2026-04-18",
+      "appearances": 1
+    },
+    {
+      "id": 383,
+      "title": "Opus 4.7 高解像度画像処理：最長辺2,576px（3.75MP）対応",
+      "point": "Opus 4.7は画像処理能力が大幅向上し、長辺最大2,576ピクセル（約3.75メガピクセル）まで対応。Opus 4.6比で3倍以上の解像度。設計図・UI仕様書・図面など精細な画像を含むタスクで威力を発揮する。",
+      "source_title": "Anthropic's Claude Opus 4.7: 5 features that could make your work faster and smarter",
+      "source_url": "https://www.businesstoday.in/technology/story/anthropics-claude-opus-47-5-features-that-could-make-your-work-faster-and-smarter-526251-2026-04-17",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-04-18",
+      "last_date": "2026-04-18",
+      "appearances": 1
+    },
+    {
+      "id": 385,
+      "title": "Claude Code v2.1.111：/ultrareview でクラウド並列マルチエージェントコードレビュー",
+      "point": "`/ultrareview` コマンドが追加された。引数なしで現在のブランチを、`/ultrareview <PR番号>` で特定のGitHub PRをレビュー対象に指定できる。複数エージェントがクラウド上で並列分析・批評を行うため、深いコードレビューが高速に得られる。Max購読者向けに4月16日リリース。",
+      "source_title": "Claude Code Ultra Review: I Watched It Hunt Bugs",
+      "source_url": "https://www.mejba.me/blog/claude-code-ultra-review-tested",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "新機能",
+        "生産性"
+      ],
+      "first_date": "2026-04-18",
+      "last_date": "2026-04-18",
+      "appearances": 1
+    },
+    {
+      "id": 386,
+      "title": "Claude Code v2.1.111：/less-permission-prompts で許可ダイアログを削減する",
+      "point": "`/less-permission-prompts` スキルがClaude Codeに追加。過去のトランスクリプトをスキャンして読み取り専用BashコマンドとMCPツール呼び出しの頻出パターンを抽出し、`.claude/settings.json` への allowlist 追加を優先順位付きで提案する。繰り返し出るダイアログを一括解消できる。",
+      "source_title": "Run Claude Code Without Permission Prompts (2026 Guide)",
+      "source_url": "https://daveswift.com/claude-without-permission/",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-04-18",
+      "last_date": "2026-04-18",
+      "appearances": 1
+    },
+    {
+      "id": 388,
+      "title": "Opus 4.7 トークナイザー変更への対応：同じ入力で最大1.35倍のトークン消費",
+      "point": "Opus 4.7は新しいトークナイザーを採用しており、同じ入力テキストでも従来比1.0〜1.35倍のトークンを消費する場合がある。コスト予算管理のためにBudgetパラメータやeffortレベル調整を活用し、既存ワークフローのトークン消費量を再測定しておくことが推奨される。",
+      "source_title": "Anthropic Ships Claude Opus 4.7 as Mythos Stays Under Lock and Key",
+      "source_url": "https://bravenewcoin.com/insights/anthropic-ships-claude-opus-4-7-as-mythos-stays-under-lock-and-key",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-04-18",
+      "last_date": "2026-04-18",
+      "appearances": 1
+    },
+    {
+      "id": 389,
+      "title": "Opus 4.7 の指示遵守厳格化：「行間を読む」挙動が減少、プロンプト再調整が必要",
+      "point": "Opus 4.7は曖昧なプロンプトを解釈せずに字義通りに実行するよう設計が変わった。過去の「察してくれる」挙動を前提に書かれたプロンプトは想定外の結果を生む可能性がある。既存のプロンプトライブラリをOpts 4.7でテストし、意図が明示されているか確認・修正することが推奨される。",
+      "source_title": "Anthropic Cloud Opus 4.7: Should You Upgrade from 4.6?",
+      "source_url": "https://www.geeky-gadgets.com/cloud-opus-4-7-vs-methus/",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-18",
+      "last_date": "2026-04-18",
+      "appearances": 1
     },
     {
       "id": 373,
@@ -5002,6 +5147,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-18",
+      "highlights": [
+        "Claude Opus 4.7 正式リリース — 高度なコーディング・高解像度画像対応の新フラッグシップモデルが登場（4/16〜）",
+        "Claude Design リサーチプレビュー — テキストからスライド・プロトタイプを即座に生成する新ビジュアルツールが登場（4/17〜）"
+      ]
+    },
+    {
       "date": "2026-04-16",
       "highlights": [
         "Claude Code Routines（ルーティンズ）正式登場 — スケジュール・API・GitHubイベントでClaudeを自動実行。ラップトップを開かずにクラウドで動作する新しい自動化の仕組み。",
@@ -5251,5 +5403,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-17T10:37:47.647944"
+  "generated_at": "2026-04-18T09:23:22.296615"
 }
