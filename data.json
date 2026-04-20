@@ -229,6 +229,21 @@
       "appearances": 7
     },
     {
+      "id": 403,
+      "title": "コンテキストエンジニアリング：プロンプトの「書き方」より「構造」が重要な時代",
+      "point": "巧みな言葉選びより、Claudeに渡す情報全体の構造化（システムプロンプト・ファイル・メモリ・例・ロール・制約）の方がアウトプット品質に直結するようになった。XMLタグでcontext・task・constraints・examplesを分離する構造的アプローチが効果的。特にClaude 4系は構造への感度が高い。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-20",
+      "last_date": "2026-04-20",
+      "appearances": 6
+    },
+    {
       "id": 376,
       "title": "CoworkでComputer Use（コンピューター使用）機能を有効化する",
       "point": "ClaudeがCowork上でユーザーのPC画面を直接操作（クリック・入力・アプリ起動）できる「Computer Use」機能が研究プレビューとしてPro/Maxプランで利用可能になった。Claude Desktopの設定から「Computer use」トグルをオンにするだけで有効化できる。銀行・医療などの機密情報を扱うアプリへのアクセス許可は避け、デスクトップをアクティブに保つ必要がある点に注意。コネクターが存在しないツールへのアクセスをClaudeが自律的に補完できるようになる。",
@@ -982,6 +997,44 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 404,
+      "title": "Claude Opus 4.7 xhigh努力レベル：コーディングタスクは「high」または「xhigh」から開始",
+      "point": "Opus 4.7 で新設された `xhigh` 努力レベル（100kトークン）はコーディングベンチマークで71%を達成し、Opus 4.6 の max（200k）を超える。コーディング・複雑な推論タスクでは `effort: \"high\"` または `effort: \"xhigh\"` から始めることを推奨。新tokenizer導入でトークン使用量が増加する場合があるため `effort` パラメータで予算調整する。",
+      "source_title": "Introducing Claude Opus 4.7",
+      "source_url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-04-20",
+      "last_date": "2026-04-20",
+      "appearances": 3
+    },
+    {
+      "id": 408,
+      "title": "セッション引き継ぎドキュメントでコンテキストを永続化",
+      "point": "パフォーマンス低下やトピック変更時に新規セッションを開始する前に、「実施した内容・決定事項・次ステップ」を簡潔にまとめた引き継ぎドキュメントを作成しておく。新セッションの冒頭でこのドキュメントを渡すことで、コンテキスト喪失を防ぎつつクリーンな状態から作業を続けられる。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [],
+      "first_date": "2026-04-20",
+      "last_date": "2026-04-20",
+      "appearances": 3
+    },
+    {
+      "id": 409,
+      "title": "Sonnet 4.5・Sonnet 4 の 1M トークンコンテキスト窓ベータが 4/30 退役",
+      "point": "2026年4月30日に Claude Sonnet 4.5 と Claude Sonnet 4 向け 1M トークンコンテキスト窓ベータが終了。ベータヘッダー `context-1m-2025-08-07` はその日以降無効となり、200kを超えるリクエストはエラーを返す。1Mコンテキストを継続利用するには Claude Sonnet 4.6 または Claude Opus 4.6 への移行が必要（どちらも追加ヘッダー不要で標準価格対応）。",
+      "source_title": "Claude API Release Notes - March 30, 2026",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-04-20",
+      "last_date": "2026-04-20",
+      "appearances": 3
     },
     {
       "id": 391,
@@ -1821,6 +1874,67 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 401,
+      "title": "Claude Design 正式公開：Figmaに挑戦するビジュアル作成ツール",
+      "point": "2026年4月17日にAnthropicがAnthropicLabsの新製品「Claude Design」をリリース。デザイン、インタラクティブプロトタイプ、スライド、ワンページャーなどをチャット形式で作成できる。チームのコードベース・デザインファイルを読み込みブランドカラー・タイポグラフィを自動適用。Claude Pro・Max・Team・Enterprise加入者から段階的に公開中。",
+      "source_title": "Introducing Claude Design by Anthropic Labs",
+      "source_url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-04-20",
+      "last_date": "2026-04-20",
+      "appearances": 2
+    },
+    {
+      "id": 405,
+      "title": "Claude Managed Agents：セキュアなサンドボックス付き完全マネージドエージェント基盤",
+      "point": "2026年4月8日よりAPIパブリックベータとして提供開始。セキュアサンドボックス・組み込みツール・SSEストリーミングを備えた完全マネージドのエージェント実行基盤。$0.08/実行時間（月24/7稼働で約$58）＋標準モデル使用量の価格体系。全エンドポイントに `managed-agents-2026-04-01` ベータヘッダーが必要。",
+      "source_title": "Claude Managed Agents overview",
+      "source_url": "https://platform.claude.com/docs/en/managed-agents/overview",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-04-20",
+      "last_date": "2026-04-20",
+      "appearances": 2
+    },
+    {
+      "id": 406,
+      "title": "ant CLI：Claude APIをコマンドラインから操作する新ツール",
+      "point": "2026年4月8日に正式リリースされた `ant` CLI は、Claude API への高速アクセス・Claude Code とのネイティブ統合・API リソースの YAML ファイルバージョン管理を提供する。既存の API キーでそのまま利用可能で、Claude API の機能をターミナルから直接呼び出せる。",
+      "source_title": "Claude API Release Notes - April 8, 2026",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "Claude Code",
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-04-20",
+      "last_date": "2026-04-20",
+      "appearances": 2
+    },
+    {
+      "id": 407,
+      "title": "advisor tool：高コスト Advisor + 高速 Executor の組み合わせでコスト削減",
+      "point": "2026年4月9日にAPIパブリックベータで提供開始。高知能の Advisor モデルが長文生成の途中で戦略的指示を提供し、大部分のトークン生成は低コストの Executor モデルが担う。長期エージェントワークロードで Advisor 単体に近い品質をリクエストの大半は Executor レートで実現。ベータヘッダー `advisor-tool-2026-03-01` が必要。",
+      "source_title": "advisor tool - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-04-20",
+      "last_date": "2026-04-20",
+      "appearances": 2
     },
     {
       "id": 344,
@@ -2687,6 +2801,28 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 402,
+      "title": "Socraticプロンプティング：指示より「質問」から始めて見落としをなくす",
+      "point": "複雑なタスクは最小限の指示で始め、「実行前に質問してください」とClaude に促す方法が効果的。例：「[タスク] を達成したい。実装詳細・エッジケース・トレードオフについて私にインタビューしてから実行してください」。要件定義の漏れを防ぎ、想定外の手戻りを大幅に削減できる。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [],
+      "first_date": "2026-04-20",
+      "last_date": "2026-04-20",
+      "appearances": 1
+    },
+    {
+      "id": 410,
+      "title": "Claude Skills のEvals＋A/Bテストで成功率94%を実現",
+      "point": "Skills の品質向上には評価フレームワークとA/Bテストの組み合わせが効果的。テストなし：45%、マニュアルテスト（5件）：67%、構造化評価（10件以上）：89%、評価+A/Bテスト：94%というデータが示す。Skillsには「機能拡張型」（初期状態でできない領域の補完）と「ワークフロー・嗜好型」（ユーザー独自の形式・基準）の2種類があり、後者は長期的に価値を保持しやすい。",
+      "source_title": "Claude Skills 2.0: Complete Guide 2026",
+      "source_url": "https://www.the-ai-corner.com/p/claude-skills-complete-guide-2026",
+      "tags": [],
+      "first_date": "2026-04-20",
+      "last_date": "2026-04-20",
+      "appearances": 1
     },
     {
       "id": 392,
@@ -5287,6 +5423,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-20",
+      "highlights": [
+        "Claude Design 正式公開 — Anthropic Labsがデザイン・プロトタイプ作成ツール「Claude Design」をリリース。ProおよびMaxユーザーが利用可能（過去1回）",
+        "Socraticプロンプティング — 指示より先に「質問してほしい」と伝えることで、見落としを防ぎ出力品質を大幅に向上できる実践テクニック"
+      ]
+    },
+    {
       "date": "2026-04-19",
       "highlights": [
         "Claude Haiku 3 本日正式退役 — `claude-3-haiku-20240307` が本日（4/19）付でAPI利用不可に。未移行の場合は即座にリクエストがエラーを返す（過去2回）",
@@ -5550,5 +5693,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-19T08:00:03.211942"
+  "generated_at": "2026-04-20T11:26:36.903700"
 }
