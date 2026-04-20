@@ -591,6 +591,19 @@
       "appearances": 5
     },
     {
+      "id": 412,
+      "title": "Claude Code `/btw` コマンドで作業を中断せずにサイド質問する",
+      "point": "進行中のタスクを中断せず `/btw` でオーバーレイ表示の回答を得られる。メインコンテキストを汚さず「ちなみに〇〇って？」を挟める設計で、会話履歴への影響もなく Claude はメインタスクを継続する。コードレビュー中に別の仕様を確認したい場面に最適。",
+      "source_title": "Claude Code's creator keeps sharing tips — XDA Developers",
+      "source_url": "https://www.xda-developers.com/claude-codes-creator-keeps-sharing-tips-and-they-all-made-my-experience-better/",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-04-21",
+      "last_date": "2026-04-21",
+      "appearances": 4
+    },
+    {
       "id": 379,
       "title": "コンテキストエンジニアリング：プロンプトの言葉より「情報の配置」が品質を決める",
       "point": "2026年時点でのClaude活用の核心は「何を言うか（プロンプティング）」より「何をどこに置くか（コンテキストエンジニアリング）」にシフトしている。システムプロンプト・ファイル・メモリ・例示・役割設定・制約をタスクの前後にどう構造化するかがアウトプット品質を左右する。具体的には：役割設定→制約→例示の順で情報を配置し、タスク直前に最重要コンテキストを置くのが効果的とされる。",
@@ -997,6 +1010,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 417,
+      "title": "Message Batches API の max_tokens が 300k トークンに引き上げ",
+      "point": "Claude Opus 4.6 と Sonnet 4.6 向け Message Batches API で、ベータヘッダー `output-300k-2026-03-24` を付与することで max_tokens を 300k まで指定可能になった。報告書・コード一括出力など単発の長文生成に有効。通常の 8192 上限を大幅に超える応答が取得できる。",
+      "source_title": "Claude Platform API Release Notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-04-21",
+      "last_date": "2026-04-21",
+      "appearances": 3
     },
     {
       "id": 404,
@@ -1874,6 +1902,45 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 416,
+      "title": "Claude Opus 4.7 が AWS Bedrock 全顧客にセルフサービスで開放",
+      "point": "Claude Opus 4.7 と Claude Haiku 4.5 が Amazon Bedrock コンソールから全 AWS 顧客向けにセルフサービスで利用可能に。27 AWS リージョンで `/anthropic/v1/messages` エンドポイントから即時利用できる。別途申請不要で、既存 Bedrock アカウントから直接呼び出せる。",
+      "source_title": "Claude Platform API Release Notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-04-21",
+      "last_date": "2026-04-21",
+      "appearances": 2
+    },
+    {
+      "id": 418,
+      "title": "Claude Sonnet 4 / Opus 4 廃止予告：6月15日に Claude API が退役",
+      "point": "`claude-sonnet-4-20250514` と `claude-opus-4-20250514` が 2026年6月15日に Claude API で退役予定。移行先は Sonnet 4.6（`claude-sonnet-4-6-20260305`）と Opus 4.7（`claude-opus-4-7-20260416`）が推奨される。期限前に API コードの model 文字列を確認し移行計画を立てておくこと。",
+      "source_title": "Claude Platform API Release Notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-04-21",
+      "last_date": "2026-04-21",
+      "appearances": 2
+    },
+    {
+      "id": 420,
+      "title": "Ultraplan でクラウドプランをWebエディタでレビューしてから実行する",
+      "point": "`Ultraplan` は CLI でクラウド上にプランをドラフトし、ブラウザのWebエディタでコメント・レビューした後に、リモートまたはローカルで実行できる機能。初回実行時はクラウド環境が自動作成される。大規模リファクタリングや複数人が関与するタスクの計画・承認フローに最適。",
+      "source_title": "Claude Code — What's New (Week 15)",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [],
+      "first_date": "2026-04-21",
+      "last_date": "2026-04-21",
+      "appearances": 2
     },
     {
       "id": 401,
@@ -2801,6 +2868,73 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 411,
+      "title": "Claude Code `--add-dir` フラグで複数ディレクトリへのアクセスを事前付与する",
+      "point": "`claude --add-dir ~/path/to/project2` のように起動時にフラグを指定すると、複数フォルダへのアクセスを事前に許可できる。複数プロジェクト横断・モノレポ環境で都度ダイアログが出ることを防ぎ、作業フローが格段にスムーズになる。Claude Code 作成者 Boris Cherny 自身が推薦する実践ティップ。",
+      "source_title": "Claude Code's creator keeps sharing tips — XDA Developers",
+      "source_url": "https://www.xda-developers.com/claude-codes-creator-keeps-sharing-tips-and-they-all-made-my-experience-better/",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-04-21",
+      "last_date": "2026-04-21",
+      "appearances": 1
+    },
+    {
+      "id": 413,
+      "title": "Claude Code `/teleport` でセッションをデバイス間でシームレスに移動する",
+      "point": "デスクトップで進行中のセッションをスマートフォンへ（またはその逆に）`/teleport` コマンドで即座に移動できる。長時間セッションを中断せず外出先へ持ち出すことが可能で、`/remote-control` と合わせてスマホからラップトップのセッションを操作する使い方も実現する。",
+      "source_title": "Claude Code's creator keeps sharing tips — XDA Developers",
+      "source_url": "https://www.xda-developers.com/claude-codes-creator-keeps-sharing-tips-and-they-all-made-my-experience-better/",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-04-21",
+      "last_date": "2026-04-21",
+      "appearances": 1
+    },
+    {
+      "id": 414,
+      "title": "Claude Cowork が正式GA：OpenTelemetry サポートと Enterprise RBAC を追加",
+      "point": "Claude Cowork が macOS/Windows の Claude Desktop アプリで正式一般公開（GA）。新たに OpenTelemetry によるオブザーバビリティ統合と Enterprise プラン向けロールベースアクセス制御（RBAC）が追加。チームごとに Claude 機能の権限を細かく制御でき、詳細な利用分析も可能になる。",
+      "source_title": "Release notes — Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-04-21",
+      "last_date": "2026-04-21",
+      "appearances": 1
+    },
+    {
+      "id": 415,
+      "title": "API のコード実行が Web Search / Web Fetch 併用時に無料化",
+      "point": "Claude API でサンドボックスコード実行（code execution）を web search または web fetch ツールと組み合わせた場合、コード実行の利用料が無料になった。モデルの能力向上とトークン効率改善が目的とされており、エージェント型ワークロードの実質的なコスト削減につながる。",
+      "source_title": "Claude Platform API Release Notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-04-21",
+      "last_date": "2026-04-21",
+      "appearances": 1
+    },
+    {
+      "id": 419,
+      "title": "Claude Code Monitor ツールでバックグラウンドプロセスをリアルタイム監視する",
+      "point": "Claude Code の Monitor ツールを使うと、バックグラウンドプロセスのログをセッション内にストリーム表示でき、Claude がリアルタイムでログ内容に反応できる。ビルド出力やテスト結果を Claude が監視しながら自動修正を行う「tail & fix」ワークフローが実現し、デバッグサイクルを大幅に短縮できる。",
+      "source_title": "Claude Code — What's New (Week 15)",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-04-21",
+      "last_date": "2026-04-21",
+      "appearances": 1
     },
     {
       "id": 402,
@@ -5423,6 +5557,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-21",
+      "highlights": [
+        "Claude Code `--add-dir` フラグ — 複数プロジェクト横断セッションで都度許可を求められるストレスを解消する実践的フラグ",
+        "API コード実行の無料化 — Web Search / Web Fetch と組み合わせるとサンドボックスコード実行が無料に。エージェント系ワークロードのコスト削減に直結"
+      ]
+    },
+    {
       "date": "2026-04-20",
       "highlights": [
         "Claude Design 正式公開 — Anthropic Labsがデザイン・プロトタイプ作成ツール「Claude Design」をリリース。ProおよびMaxユーザーが利用可能（過去1回）",
@@ -5693,5 +5834,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-20T11:26:36.903700"
+  "generated_at": "2026-04-21T08:00:03.060644"
 }
