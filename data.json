@@ -229,6 +229,21 @@
       "appearances": 7
     },
     {
+      "id": 426,
+      "title": "コンテキストエンジニアリング：identity・voice・anti-AIの3ファイル戦略でClaudeを「自分仕様」にする",
+      "point": "2026年のClaude活用で最も効果的な手法は、3つの参照ファイルをシステムプロンプトやCLAUDE.mdに組み込む構造化アプローチ。①identity file（自分の職種・目標・優先事項）、②voice profile（自分の文体・思考スタイル・よく使う語句）、③anti-AI-writing file（使ってほしくない表現・語調・クリシェのリスト）。この3ファイルを渡すだけで出力品質が大幅に向上し、AIらしさが消える。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-04-25",
+      "last_date": "2026-04-25",
+      "appearances": 6
+    },
+    {
       "id": 403,
       "title": "コンテキストエンジニアリング：プロンプトの「書き方」より「構造」が重要な時代",
       "point": "巧みな言葉選びより、Claudeに渡す情報全体の構造化（システムプロンプト・ファイル・メモリ・例・ロール・制約）の方がアウトプット品質に直結するようになった。XMLタグでcontext・task・constraints・examplesを分離する構造的アプローチが効果的。特にClaude 4系は構造への感度が高い。",
@@ -1010,6 +1025,47 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 422,
+      "title": "Claude Managed Agents メモリ機能パブリックベータ：セッション横断の記憶で97%エラー削減",
+      "point": "2026年4月23日よりClaude Managed Agentsにメモリ機能がパブリックベータで追加。ファイルシステムベースのメモリがエージェントセッションをまたいで情報を保持し、複数エージェント間で共有できる。変更は全てaudit logに記録され、ロールバック・バージョン管理が可能。楽天の事例では初回パスエラーが97%削減。全エンドポイントに `managed-agents-2026-04-01` ベータヘッダーが必要。",
+      "source_title": "Built-in memory for Claude Managed Agents",
+      "source_url": "https://claude.com/blog/claude-managed-agents-memory",
+      "tags": [
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-04-25",
+      "last_date": "2026-04-25",
+      "appearances": 3
+    },
+    {
+      "id": 427,
+      "title": "Claude Mythos Preview：英国AI安全研究所がゼロデイ発見能力を公式評価",
+      "point": "英国政府のAI安全研究所（AISI）がClaude Mythos Previewのサイバーセキュリティ能力を正式評価・公表。ブラウザ・OSサンドボックスを突破するゼロデイ脆弱性の連鎖攻撃、ネットワークへの自律多段階侵入が可能なことを確認。Anthropicは防御的セキュリティ研究のみに限定する招待制「Project Glasswing」でのみ提供しており、一般公開・セルフサインアップは不可。",
+      "source_title": "Our evaluation of Claude Mythos Preview's cyber capabilities — UK AISI",
+      "source_url": "https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-cyber-capabilities",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-04-25",
+      "last_date": "2026-04-25",
+      "appearances": 3
+    },
+    {
+      "id": 429,
+      "title": "Claude Design + Opus 4.7：テキスト指示だけでブランドコンシャスなビジュアルを生成",
+      "point": "Anthropic LabsのClaude Designが、Opus 4.7バックエンドでコードベース・デザインファイルのブランドカラー・フォントを自動読み込みし適用するようになった。「このスライドをブランドカラーで作り直して」などの自然言語指示だけでプロトタイプ・スライド・ワンページャーを生成。Claude Pro・Max・Team・Enterpriseユーザー向けにリサーチプレビュー中。",
+      "source_title": "Anthropic launches Claude Design — TechCrunch",
+      "source_url": "https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-04-25",
+      "last_date": "2026-04-25",
+      "appearances": 3
     },
     {
       "id": 417,
@@ -1902,6 +1958,30 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 423,
+      "title": "Anthropic「Claudeは広告なし」を正式コミット：AI広告競争から距離を置く",
+      "point": "AnthropicはOpenAIがChatGPT無料ユーザー向けに広告テストを開始したのに対抗し、「Claudeは広告スペースになりません」と正式宣言。広告インセンティブはAIアシスタントの有用性と根本的に相容れないとの立場。スポンサーリンク・広告主からの回答誘導・プロダクトプレースメントは一切行わず、サブスクリプションと法人契約を収益基盤とする方針を明確化。",
+      "source_title": "Anthropic commits to no-ads policy for Claude AI — Neowin",
+      "source_url": "https://www.neowin.net/news/anthropic-commits-to-no-ads-policy-for-claude-ai/",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-04-25",
+      "last_date": "2026-04-25",
+      "appearances": 2
+    },
+    {
+      "id": 428,
+      "title": "Memory Import：ChatGPT・Gemini・GrokのメモリをClaudeへ一括移行する",
+      "point": "Claudeのメモリ設定画面から他AIサービスに蓄積したメモリ・設定・好みを直接インポートできる機能が全ユーザーに提供中（無料含む）。数ヶ月かけて他サービスで構築したプロファイルをゼロから再設定することなくClaudeで継続利用できる。Claude.ai設定→「メモリ」→「インポート」から手順に従い実行。",
+      "source_title": "Release notes — Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [],
+      "first_date": "2026-04-25",
+      "last_date": "2026-04-25",
+      "appearances": 2
     },
     {
       "id": 416,
@@ -2868,6 +2948,49 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 421,
+      "title": "Claude Code Proプラン除外A/Bテスト：新規ユーザーの2%でClaude Codeを非表示化",
+      "point": "Anthropicは2026年4月21〜22日頃、$20/月のProプラン新規登録者の約2%に対してClaude Codeを除外するA/Bテストを実施。価格ページでProにX印、Max 5x（$100）以上のみチェック印が表示された。既存ユーザーへの影響はなく、問い合わせ殺到後にテストを終了。重量ユーザーをMax以上へ誘導する価格戦略の方向性を示している。",
+      "source_title": "Anthropic tests reaction to yanking Claude Code from Pro — The Register",
+      "source_url": "https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-04-25",
+      "last_date": "2026-04-25",
+      "appearances": 1
+    },
+    {
+      "id": 424,
+      "title": "Opus 4.7 × Claude Code ベストプラクティス：推論オーバーヘッドを意識した使い方",
+      "point": "AnthropicがOpus 4.7とClaude Code組み合わせのベストプラクティスガイドを公開。Opus 4.7はユーザーターン毎に推論オーバーヘッドが発生するため、単純なサブタスクには `effort: \"low\"` を、複雑なコーディングには `effort: \"high\"` または `effort: \"xhigh\"` を指定するとトークン効率が向上する。また、大きなタスクを前段で計画フェーズ（低コスト）→後段で実装（最適effort）に分割するパターンが推奨されている。",
+      "source_title": "Anthropic published a best practices guide for Opus 4.7 with Claude Code — @mikeMaher / X",
+      "source_url": "https://x.com/mikeMaher/status/2045490048380829911",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-04-25",
+      "last_date": "2026-04-25",
+      "appearances": 1
+    },
+    {
+      "id": 425,
+      "title": "Claude Code「Nerfing疑惑」完全解消：v2.1.116でコーディング品質の3件バグを修正",
+      "point": "2026年4月中旬以降、ユーザーがClaude Codeの品質低下（Nerfing）を報告していた問題がv2.1.116（4月20日）で全面解消。修正内容は①デフォルト推論努力の復元、②思考履歴を削除していたキャッシュバグの修正、③コーディング品質を低下させていた冗長性プロンプト変更の差し戻し。最新安定版はv2.1.119（4月24日）。",
+      "source_title": "Anthropic resolves Claude Code bugs after nerfing allegations — TechBriefly",
+      "source_url": "https://techbriefly.com/2026/04/24/anthropic-resolves-claude-code-bugs-after-nerfing-allegations/",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-04-25",
+      "last_date": "2026-04-25",
+      "appearances": 1
     },
     {
       "id": 411,
@@ -5557,6 +5680,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-25",
+      "highlights": [
+        "Claude Managed Agentsにメモリ機能 — セッションを超えた記憶を保持し複数エージェント間でも共有、過去の失敗から学習して初回エラーを97%削減（Netflix・楽天事例）",
+        "Claude Code「Nerfing問題」完全解消 — 推論努力の低下・キャッシュバグ・冗長性プロンプトの3件がv2.1.116で修正完了。v2.1.119が最新安定版"
+      ]
+    },
+    {
       "date": "2026-04-21",
       "highlights": [
         "Claude Code `--add-dir` フラグ — 複数プロジェクト横断セッションで都度許可を求められるストレスを解消する実践的フラグ",
@@ -5834,5 +5964,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-24T08:00:02.530688"
+  "generated_at": "2026-04-25T08:00:02.238027"
 }
