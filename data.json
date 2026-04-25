@@ -606,6 +606,20 @@
       "appearances": 5
     },
     {
+      "id": 439,
+      "title": "Claude Code Compaction：コンテキスト上限に近づくと自動要約で会話を継続する",
+      "point": "Claude CodeのCompaction機能は、コンテキスト窓が上限に近づくと自動的に会話履歴を要約・圧縮して継続可能な状態を維持する機能。2026年のバージョンではCompaction・/planコマンド・Agentツールの3機能がデフォルトで連携し、大規模コードベースでの長時間セッションも途中でリセット不要で継続できる。手動で`/compact`コマンドを呼ぶことで任意のタイミングで圧縮を実行することも可能。",
+      "source_title": "Effective Claude Code Workflows in 2026 — Medium",
+      "source_url": "https://medium.com/@sean.j.moran/effective-claude-code-workflows-in-2026-what-changed-and-what-works-now-c93ebc6f8f50",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-04-26",
+      "last_date": "2026-04-26",
+      "appearances": 4
+    },
+    {
       "id": 412,
       "title": "Claude Code `/btw` コマンドで作業を中断せずにサイド質問する",
       "point": "進行中のタスクを中断せず `/btw` でオーバーレイ表示の回答を得られる。メインコンテキストを汚さず「ちなみに〇〇って？」を挟める設計で、会話履歴への影響もなく Claude はメインタスクを継続する。コードレビュー中に別の仕様を確認したい場面に最適。",
@@ -1025,6 +1039,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 437,
+      "title": "Context Engineering 4要素フレームワーク：INSTRUCTIONS / CONTEXT / TASK / OUTPUT FORMAT",
+      "point": "2026年のClaude活用で標準化された構造的プロンプト設計。①INSTRUCTIONS（役割・ルール・制約）、②CONTEXT（背景・データ・ドキュメント）、③TASK（今回の具体的なリクエスト）、④OUTPUT FORMAT（出力形式・長さ・構造）の4要素を明示的に分離して記述する。特に長文コンテキストでは最重要情報を先頭か末尾に配置することが推奨されている。プロンプトの最適長は150〜300語が実用上の目安。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026 — Prompt Builder",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-04-26",
+      "last_date": "2026-04-26",
+      "appearances": 3
     },
     {
       "id": 422,
@@ -1958,6 +1985,34 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 431,
+      "title": "カスタムサブエージェントを`.claude/agents/`に定義する：独立コンテキストで専門タスクを分離",
+      "point": "YAMLフロントマター（name, description, tools, model）付きMarkdownファイルを`.claude/agents/`に置くだけでサブエージェントが使えるようになる。サブエージェントは独自のコンテキスト窓・ツール権限・システムプロンプトを持ち、メインエージェントへは最終メッセージだけを返すため、ログや検索結果でメインコンテキストが汚染されない。`~/.claude/agents/`に置けば全プロジェクト共通で利用可能。`/agents`コマンドでGUI作成・編集もできる。",
+      "source_title": "Create custom subagents — Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/sub-agents",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-04-26",
+      "last_date": "2026-04-26",
+      "appearances": 2
+    },
+    {
+      "id": 438,
+      "title": "ALL-CAPS・「NEVER EVER」命令はClaudeには逆効果：強調は簡潔な記述で十分",
+      "point": "強調のつもりで使われる「YOU MUST」「NEVER EVER」「ABSOLUTELY」などのALL-CAPS命令はClaude（Sonnet 4.6以降）でむしろ出力品質を低下させることが確認されている。過剰な命令語がモデルを「過緊張」状態にさせ、細かい指示への追従性が下がる。代わりに「Please」「When doing X, do Y」など自然な指示形式を使い、制約は箇条書きで簡潔に列挙するのが効果的。",
+      "source_title": "Stop Wasting Claude AI: Prompt Guide for Engineers — Medium",
+      "source_url": "https://medium.com/@simutecra/stop-wasting-claude-ai-prompt-guide-for-engineers-simutecra-65466f8debb6",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-04-26",
+      "last_date": "2026-04-26",
+      "appearances": 2
     },
     {
       "id": 423,
@@ -2948,6 +3003,92 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 430,
+      "title": "Claude CodeでAgentic OSを構築する：CLAUDE.md＋Skills＋Sub-agentsの3層アーキテクチャ",
+      "point": "Claude Codeをコーディング補助ではなく「自律エージェントOS」として設計する手法。①CLAUDE.mdに全体ルール・プロジェクト構造を記述、②`.claude/skills/`に再利用可能なワークフロースクリプトを配置、③`.claude/agents/`にタスク特化サブエージェントを定義する3層構成が基本。これらが揃うと「コードレビュー→テスト→デプロイ」の一連フローを人手なしで実行できる。最長辺定義のロジック分割により、複雑な実装が4時間→45分に短縮された事例もある。",
+      "source_title": "The Ultimate Guide to Building a Claude Code-Based Agentic OS",
+      "source_url": "https://www.franksworld.com/2026/04/20/the-ultimate-guide-to-building-a-claude-code-based-agentic-os/",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-04-26",
+      "last_date": "2026-04-26",
+      "appearances": 1
+    },
+    {
+      "id": 432,
+      "title": "awesome-claude-code-subagents：コミュニティ製100+のサブエージェントをそのまま活用する",
+      "point": "VoltAgentがGitHubで公開しているオープンコレクション「awesome-claude-code-subagents」には、コードレビュー・テスト生成・ドキュメント作成・セキュリティスキャンなど100以上のサブエージェント定義が収録されている。`.claude/agents/`にファイルをコピーするだけで即利用可能。自作コストを省いて実績あるプロンプト設計をそのまま利用できるのがメリット。",
+      "source_title": "awesome-claude-code-subagents — GitHub",
+      "source_url": "https://github.com/VoltAgent/awesome-claude-code-subagents",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-04-26",
+      "last_date": "2026-04-26",
+      "appearances": 1
+    },
+    {
+      "id": 433,
+      "title": "Claude Code `/plan` コマンドで探索フェーズと実装フェーズを分離する",
+      "point": "`/plan`コマンドを使うとClaude Codeがread-only探索フェーズに入り、コードベースを読み込んで実装計画を提示した後、ユーザーの明示的な承認を待ってから変更を開始する。事前に計画フェーズを挟むことで「意図しないファイル変更」「見当違いのアーキテクチャ選択」を防ぎやすくなる。大規模リファクタリングや未知のコードベースへの初回実装で特に有効。",
+      "source_title": "Effective Claude Code Workflows in 2026 — Medium",
+      "source_url": "https://medium.com/@sean.j.moran/effective-claude-code-workflows-in-2026-what-changed-and-what-works-now-c93ebc6f8f50",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-04-26",
+      "last_date": "2026-04-26",
+      "appearances": 1
+    },
+    {
+      "id": 434,
+      "title": "split-and-mergeパターン：最大10並列サブエージェントで大量タスクを高速処理する",
+      "point": "Claude Codeのsplit-and-mergeワークフローは、独立した大量サブタスク（テストファイル生成・翻訳・データ変換など）を最大10個のサブエージェントに同時展開し、完了後にオーケストレーターが結果を統合するパターン。依存関係のない並列作業に最適で、シングル会話対比で処理時間を大幅短縮できる。前段でoperatorパターンで計画を立て、後段でsplit-and-mergeで実行する組み合わせが推奨されている。",
+      "source_title": "5 Claude Code Agentic Workflow Patterns — MindStudio",
+      "source_url": "https://www.mindstudio.ai/blog/claude-code-agentic-workflow-patterns",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-04-26",
+      "last_date": "2026-04-26",
+      "appearances": 1
+    },
+    {
+      "id": 435,
+      "title": "Opus 4.7 Task Budget：トークン目標を事前に渡すとエージェントループが最適化される",
+      "point": "Opus 4.7では`task_budget`パラメータでエージェントループ全体（thinking・ツール呼び出し・結果・最終出力）のトークン目標を事前に指示できる。大雑把な目標値でも与えるだけでClaude自身が配分を調整し、無駄な思考やツール呼び出しを省略するようになる。簡単なサブタスクには低予算を設定してコストを削減しつつ、複雑なコーディングには高予算を割り当てるメリハリ運用が効果的。",
+      "source_title": "What's new in Claude Opus 4.7 — Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-04-26",
+      "last_date": "2026-04-26",
+      "appearances": 1
+    },
+    {
+      "id": 436,
+      "title": "Few-shot Chain-of-Thoughtの役割変化：2026年では「推論向上」ではなく「フォーマット整合」が目的",
+      "point": "2026年のLLM研究が明らかにした重要な変化として、Few-shot CoT（思考ステップ付き例示）はもはやモデルの推論精度を上げる効果を持たなくなっている。現在のClaude（Opus 4.7等）は例示なしでも高度な推論を行えるため、CoT例示の唯一の有効用途は「期待する出力フォーマットを見せる」ことに絞られた。不要なCoT例示を省くことでプロンプトを短縮しコストと応答速度を改善できる。",
+      "source_title": "Context Engineering Guide 2026 — The AI Corner",
+      "source_url": "https://www.the-ai-corner.com/p/context-engineering-guide-2026",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-26",
+      "last_date": "2026-04-26",
+      "appearances": 1
     },
     {
       "id": 421,
@@ -5680,6 +5821,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-26",
+      "highlights": [
+        "Claude CodeでAgentic OSを構築する — CLAUDE.md・Skills・Sub-agentsを3層に分けることで、コーディングタスクを4時間→45分に短縮した実績も",
+        "Few-shot CoTの役割が変わった — 2026年ではChain-of-Thought例示は「推論向上」ではなく「フォーマット整合」のみが目的"
+      ]
+    },
+    {
       "date": "2026-04-25",
       "highlights": [
         "Claude Managed Agentsにメモリ機能 — セッションを超えた記憶を保持し複数エージェント間でも共有、過去の失敗から学習して初回エラーを97%削減（Netflix・楽天事例）",
@@ -5964,5 +6112,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-25T08:00:02.238027"
+  "generated_at": "2026-04-26T08:00:02.141811"
 }
