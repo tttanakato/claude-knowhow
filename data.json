@@ -79,6 +79,21 @@
       "appearances": 9
     },
     {
+      "id": 440,
+      "title": "Sonnet 4.5/4の1Mトークンβ 4月30日終了まであと3日：APIヘッダー削除とモデル移行の手順",
+      "point": "4月30日をもって `anthropic-beta: context-1m-2025-08-07` ヘッダーはSonnet 4.5・Sonnet 4に対して無効化され、200kトークンを超えるリクエストはエラーになる。移行手順は2ステップのみ。①`anthropic-beta: context-1m-2025-08-07` ヘッダーを削除、②モデルIDを `claude-sonnet-4-6` または `claude-opus-4-6` に更新。Sonnet 4.6は2026年2月17日にGA済みで、1Mコンテキストがデフォルト最大値として利用可能。",
+      "source_title": "The April 30 Cliff: Migrating Off Sonnet 4.5's 1M Context Beta — Riptide Insights",
+      "source_url": "https://www.riptideconsulting.com/insights/april-30-context-beta-migration",
+      "tags": [
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-04-27",
+      "last_date": "2026-04-27",
+      "appearances": 8
+    },
+    {
       "id": 384,
       "title": "Opus 4.7 自己検証（rigor）機能でタスク完了前に検証ステップを自動実施",
       "point": "Opus 4.7は「rigor（厳密性）」を発揮するよう再調整されており、タスク報告前に自ら検証ステップを考案・実行する。従来はプロンプトに自己検証チェックリストを明示的に組み込む必要があったが、Opus 4.7ではモデルがネイティブに実施するため、品質担保のコストが削減できる。",
@@ -132,6 +147,19 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 447,
+      "title": "Cowork Extended Thinkingを有効化する：デフォルトOFFの深度推論をオンにする",
+      "point": "Coworkでは拡張思考（Extended Thinking）がデフォルトでオフになっている。複雑なタスク・長期計画・多段階推論を伴う作業では、設定（Settings）から手動でオンにすることで出力品質が大幅に向上する。特にコードレビュー・戦略分析・要件整理など「正確な推論が必要な業務タスク」で顕著な差が出る。チャット型の通常Claude.aiとは設定が別管理のため、Coworkを新規設定した際は必ず確認すること。",
+      "source_title": "How to turn Claude from chatbot into productivity powerhouse with Cowork — How Do I Use AI",
+      "source_url": "https://www.howdoiuseai.com/blog/2026-04-25-how-to-turn-claude-from-chatbot-into-productivity-",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-04-27",
+      "last_date": "2026-04-27",
+      "appearances": 7
     },
     {
       "id": 352,
@@ -604,6 +632,49 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 443,
+      "title": "Coworkスケジュールタスクで繰り返し業務を完全自動化する",
+      "point": "Coworkのスケジュールタスク機能を使うと、定時実行・Slack検索・ファイル操作・Webリサーチ・レポート生成などを人手なしで実行できる。設定手順はCoworkで `+ New task` → プロンプトを入力 → `/schedule` コマンドで頻度を指定。インストール済みのコネクタとプラグインが全て使えるため、複数サービスをまたいだ自動化も可能。通常のチャット画面では不可能な「定期自律実行」がCoworkの最大の差別化ポイント。",
+      "source_title": "How to turn Claude from chatbot into productivity powerhouse with Cowork — How Do I Use AI",
+      "source_url": "https://www.howdoiuseai.com/blog/2026-04-25-how-to-turn-claude-from-chatbot-into-productivity-",
+      "tags": [
+        "プロンプト",
+        "自動化",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-04-27",
+      "last_date": "2026-04-27",
+      "appearances": 4
+    },
+    {
+      "id": 446,
+      "title": "ソクラテス式プロンプト「I want to [X] so that [Y]. Ask me questions before you execute」",
+      "point": "実行を指示する前に「I want to [タスク] so that [成功基準]. Ask me questions before you execute.」と書くことで、ClaudeがタスクをAI目線で質問してくれる手法。Claudeが質問してくる内容は「自分が見落としていた前提・エッジケース・トレードオフ」であることが多く、直接実行させるより最終出力の品質が上がる。複雑なタスクや長文アウトプットを伴う作業で特に効果が高い。日本語でも「〇〇をしたいです。目的は〇〇です。実行前に質問してください。」と書けば有効。",
+      "source_title": "Claude best practices 2026: the complete power user guide — The AI Corner",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-04-27",
+      "last_date": "2026-04-27",
+      "appearances": 4
+    },
+    {
+      "id": 449,
+      "title": "Claude Skillsで業務プロセスを「1回設定・永続再利用」する",
+      "point": "Skillは業務ワークフローを教え込むフォルダで、1回構築すればClaudeが毎回同じ手順で実行する。「The AI Corner」の2026年分析によると、Claude活用で最大の生産性差が出るのは「プロンプトの書き方を工夫する」より「Skillシステムを構築して繰り返し業務を標準化する」段階への移行。社内固有のドキュメントスタイル・承認フロー・報告書フォーマットをSkillに落とし込むだけで、担当者依存のバラつきがなくなる。",
+      "source_title": "The Single Best Productivity Decision You Can Make With Claude Right Now — The AI Corner",
+      "source_url": "https://www.the-ai-corner.com/p/claude-skills-complete-guide-2026",
+      "tags": [
+        "プロンプト",
+        "生産性"
+      ],
+      "first_date": "2026-04-27",
+      "last_date": "2026-04-27",
+      "appearances": 4
     },
     {
       "id": 439,
@@ -1987,6 +2058,20 @@
       "appearances": 3
     },
     {
+      "id": 445,
+      "title": "Opus 4.7の指示遵守厳格化：「行間を読む」挙動が減少、プロンプト再調整が必要",
+      "point": "Opus 4.7はOpus 4.6比で指示遵守の厳密性が高まり、明示的に書かれていない内容を「推察して補完する」挙動が減少した。これにより「あいまいなプロンプトを意図通りに解釈してくれた」経験があるユーザーは、プロンプトの明示度を上げる調整が必要。具体的には「条件X の場合はY、そうでない場合はZ」のように分岐を明文化し、暗黙の前提はすべて書き出すこと。指示が詳細なほど出力品質が向上する傾向が確認されている。",
+      "source_title": "What's new in Claude Opus 4.7 — Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-27",
+      "last_date": "2026-04-27",
+      "appearances": 2
+    },
+    {
       "id": 431,
       "title": "カスタムサブエージェントを`.claude/agents/`に定義する：独立コンテキストで専門タスクを分離",
       "point": "YAMLフロントマター（name, description, tools, model）付きMarkdownファイルを`.claude/agents/`に置くだけでサブエージェントが使えるようになる。サブエージェントは独自のコンテキスト窓・ツール権限・システムプロンプトを持ち、メインエージェントへは最終メッセージだけを返すため、ログや検索結果でメインコンテキストが汚染されない。`~/.claude/agents/`に置けば全プロジェクト共通で利用可能。`/agents`コマンドでGUI作成・編集もできる。",
@@ -3003,6 +3088,61 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 441,
+      "title": "Claude Code v2.1.119：設定の永続化・マルチプラットフォームPR・PowerShell自動承認",
+      "point": "v2.1.119（4月23日リリース）の主要変更点。①テーマ・エディタモード・verboseなどの設定が `~/.claude/settings.json` に永続保存されるようになり、プロジェクト/ローカル/ポリシーの優先順位に従って上書きが可能。②`--from-pr` がGitLab MR・Bitbucket PR・GitHub Enterprise URLに対応。③PowerShellコマンドがBash同様にパーミッションモードで自動承認を受けられるように。バグ修正としてiTerm2+tmux環境でのターミナル表示ちらつき、LSP診断の誤表示、`/clear`でセッション名が消える問題なども解消。",
+      "source_title": "Releases · anthropics/claude-code — GitHub",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-04-27",
+      "last_date": "2026-04-27",
+      "appearances": 1
+    },
+    {
+      "id": 442,
+      "title": "Coworkワークスペースフォルダ設定：専用ディレクトリとコンテキストファイルでClaude自分仕様化",
+      "point": "Coworkで最も効果的な初期設定は、専用ワークスペースフォルダ（例：`~/Claude-Workspace/`）を作成し、Claude自身に自分のコンテキストを教えるファイルを置くこと。推奨ファイル構成は①自己紹介ファイル（職業・プロジェクト・役割）、②ボイスプロファイル（自分の思考・書き方のスタイル）、③AI文体禁止リスト（避けてほしい語彙・フレーズ・トーン）。この3ファイルを整備するだけで、新しいタスクの出力精度が大幅に向上する。",
+      "source_title": "How to turn Claude from chatbot into productivity powerhouse with Cowork — How Do I Use AI",
+      "source_url": "https://www.howdoiuseai.com/blog/2026-04-25-how-to-turn-claude-from-chatbot-into-productivity-",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-04-27",
+      "last_date": "2026-04-27",
+      "appearances": 1
+    },
+    {
+      "id": 444,
+      "title": "Rate Limits API：組織のAPIレート制限をプログラムから取得・管理する",
+      "point": "Anthropicが新たにRate Limits APIを公開。組織・ワークスペース単位でのレート制限設定を管理者がプログラムから照会できるようになった。CI/CDパイプラインやエージェントシステムで利用上限に近づいた際の自動スロットリングや警告通知の実装が容易になる。Enterpriseプランの管理者はAdmin設定 → APIキー管理から詳細設定が可能。",
+      "source_title": "Claude Platform Release Notes — Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-04-27",
+      "last_date": "2026-04-27",
+      "appearances": 1
+    },
+    {
+      "id": 448,
+      "title": "毎朝Claudeに「今日の計画」を投げる1日計画プロンプト：生産性12倍の測定事例",
+      "point": "毎朝、Slack確認・メール確認の前にClaudeを開き、「仕事の会議・予定・プロジェクト進捗・個人的なToDo」をすべて文章で伝えて1日の計画を立てさせる習慣が効果的。eesel AI調査では、AI活用ユーザーの平均タスク完了時間はAI非使用比で約12倍短縮（平均14.8分 vs 3.8時間）。単純化の工夫（複雑なプロンプトを廃止してシンプルな朝の習慣に集中）が生産性向上の鍵とされている。",
+      "source_title": "I've ditched complex prompts for this 10-second Claude habit to boost productivity — Tom's Guide",
+      "source_url": "https://www.tomsguide.com/ai/ive-ditched-complex-prompts-for-this-10-second-claude-habit-to-boost-productivity",
+      "tags": [
+        "プロンプト",
+        "生産性"
+      ],
+      "first_date": "2026-04-27",
+      "last_date": "2026-04-27",
+      "appearances": 1
     },
     {
       "id": 430,
@@ -5821,6 +5961,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-27",
+      "highlights": [
+        "Sonnet 4.5/4の1Mトークンβ終了まであと3日 — 4月30日までにAPIヘッダー削除・モデルIDをSonnet 4.6に更新しないとリクエストがエラーになる",
+        "Claude Code v2.1.119リリース — 設定ファイルの永続化・GitLab/Bitbucket PRサポート・PowerShell自動承認など大型アップデート"
+      ]
+    },
+    {
       "date": "2026-04-26",
       "highlights": [
         "Claude CodeでAgentic OSを構築する — CLAUDE.md・Skills・Sub-agentsを3層に分けることで、コーディングタスクを4時間→45分に短縮した実績も",
@@ -6112,5 +6259,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-26T08:00:02.141811"
+  "generated_at": "2026-04-27T08:00:02.164545"
 }
