@@ -79,6 +79,20 @@
       "appearances": 9
     },
     {
+      "id": 459,
+      "title": "コンテキストエンジニアリング 構造化メモ技法（Structured Note-taking）でエージェントの長期記憶を実現",
+      "point": "Anthropic が推奨する「構造化メモ取り（Structured Note-taking）」とは、エージェントが定期的にコンテキストウィンドウ外のメモリにノートを書き出し、次のターンで必要な部分だけ引き戻す手法。メモリの中身はコンテキスト外に永続化されるため、セッションを跨いで情報が維持できる。Compaction（全体要約）より粒度が細かく、記憶の選択的な保持・廃棄が可能。",
+      "source_title": "Effective context engineering for AI agents - Anthropic",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-04-28",
+      "last_date": "2026-04-28",
+      "appearances": 8
+    },
+    {
       "id": 440,
       "title": "Sonnet 4.5/4の1Mトークンβ 4月30日終了まであと3日：APIヘッダー削除とモデル移行の手順",
       "point": "4月30日をもって `anthropic-beta: context-1m-2025-08-07` ヘッダーはSonnet 4.5・Sonnet 4に対して無効化され、200kトークンを超えるリクエストはエラーになる。移行手順は2ステップのみ。①`anthropic-beta: context-1m-2025-08-07` ヘッダーを削除、②モデルIDを `claude-sonnet-4-6` または `claude-opus-4-6` に更新。Sonnet 4.6は2026年2月17日にGA済みで、1Mコンテキストがデフォルト最大値として利用可能。",
@@ -632,6 +646,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 458,
+      "title": "Claude Sonnet 4 / Opus 4 廃止（6月15日）：model IDを設定変数化して将来の移行を簡素化",
+      "point": "`claude-sonnet-4-0` と `claude-opus-4-0` は2026年6月15日に退役し、API呼び出しがエラーを返す。移行先はそれぞれ `claude-sonnet-4-5`（または最新の `claude-sonnet-4-6`）と `claude-opus-4-7`。今回の移行を機に、model ID をハードコードせず設定変数・環境変数に集約すると、次回以降の廃止対応がワンライン変更で完了するようになる。",
+      "source_title": "Claude Sonnet 4 and Opus 4 Deprecation Migration Guide - MindStudio",
+      "source_url": "https://www.mindstudio.ai/blog/claude-sonnet-4-opus-4-deprecation-migration-guide",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-04-28",
+      "last_date": "2026-04-28",
+      "appearances": 4
     },
     {
       "id": 443,
@@ -2058,6 +2086,19 @@
       "appearances": 3
     },
     {
+      "id": 457,
+      "title": "Claude Managed Agents メモリ：変更ごとにイミュータブルバージョン生成で監査証跡を保持",
+      "point": "Managed Agents のメモリストアは、エージェントがファイルに書き込むたびに「イミュータブルなメモリバージョン」を自動生成する。変更履歴がすべて保持されるため、ポイントインタイムでの復元・監査証跡の確保が容易。Rakuten の導入事例では、セッション横断メモリにより初回エラーを97%削減した実績がある。",
+      "source_title": "Using agent memory - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/managed-agents/memory",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-04-28",
+      "last_date": "2026-04-28",
+      "appearances": 2
+    },
+    {
       "id": 445,
       "title": "Opus 4.7の指示遵守厳格化：「行間を読む」挙動が減少、プロンプト再調整が必要",
       "point": "Opus 4.7はOpus 4.6比で指示遵守の厳密性が高まり、明示的に書かれていない内容を「推察して補完する」挙動が減少した。これにより「あいまいなプロンプトを意図通りに解釈してくれた」経験があるユーザーは、プロンプトの明示度を上げる調整が必要。具体的には「条件X の場合はY、そうでない場合はZ」のように分岐を明文化し、暗黙の前提はすべて書き出すこと。指示が詳細なほど出力品質が向上する傾向が確認されている。",
@@ -3088,6 +3129,101 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 450,
+      "title": "Claude Code v2.1.119: Vimビジュアルモード（v/V）で本格的なテキスト選択が可能に",
+      "point": "Claude Code の入力編集に Vim ビジュアルモード（`v`で文字選択、`V`で行選択）が追加された。選択ハイライトとオペレーター（`d`, `y`, `c` 等）をフルサポート。従来の挿入モードから `Esc` を押しても入力中メッセージが引き戻されなくなり、再度 Esc で中断できるよう改善された。",
+      "source_title": "Claude Code Changelog - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-04-28",
+      "last_date": "2026-04-28",
+      "appearances": 1
+    },
+    {
+      "id": 451,
+      "title": "Claude Code `/theme` コマンドでカスタムテーマを作成・管理する",
+      "point": "`/theme` コマンドから名前付きカスタムテーマを新規作成・切り替えできるようになった。テーマ定義は `~/.claude/themes/` 以下にJSONファイルとして保存され、手動編集も可能。プラグイン開発者はプラグインの `themes/` ディレクトリにテーマを同梱して配布できる。",
+      "source_title": "Claude Code v2.1.118 Release - ClaudeWorld",
+      "source_url": "https://claude-world.com/articles/claude-code-21118-release/",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-04-28",
+      "last_date": "2026-04-28",
+      "appearances": 1
+    },
+    {
+      "id": 452,
+      "title": "Hooks が type: \"mcp_tool\" で直接 MCPツールを呼び出せるようになった",
+      "point": "Claude Code の Hooks 定義に `type: \"mcp_tool\"` を指定すると、フック内から直接 MCP ツールを呼び出せるようになった。これにより、ツール実行後の自動通知・ログ書き込み・外部 API 連携を Hooks だけで完結できる。また `PostToolUse` / `PostToolUseFailure` フックの入力に `duration_ms`（ツール実行時間）が追加され、パフォーマンス計測も可能になった。",
+      "source_title": "Claude Code Changelog - code.claude.com",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-04-28",
+      "last_date": "2026-04-28",
+      "appearances": 1
+    },
+    {
+      "id": 453,
+      "title": "`/cost` と `/stats` が `/usage` に統合：コスト・利用状況を1コマンドで確認",
+      "point": "これまで個別に存在していた `/cost`（コスト内訳表示）と `/stats`（統計表示）が `/usage` コマンドに統合された。両コマンドはエイリアスとして引き続き機能し、それぞれのタブが `/usage` 画面内で開く。コスト把握とレート制限確認を同一画面で行えるようになった。",
+      "source_title": "Claude Code Changelog - ClaudeLog",
+      "source_url": "https://claudelog.com/claude-code-changelog/",
+      "tags": [],
+      "first_date": "2026-04-28",
+      "last_date": "2026-04-28",
+      "appearances": 1
+    },
+    {
+      "id": 454,
+      "title": "コンテキストロット（Context Rot）：コンテキスト量が増えるほど想起精度が低下する",
+      "point": "Anthropic のエンジニアリングブログが「Context Rot」という現象を明示した。コンテキストウィンドウ内のトークン数が増えるにつれ、モデルが必要な情報を正確に想起できる確率が下がる。コンテキストは「増やせばいい」ではなく「高信号なトークンを最小限に絞る」ことが品質の鍵。大容量コンテキストウィンドウでも無制限に情報を詰め込むのは逆効果。",
+      "source_title": "Effective context engineering for AI agents - Anthropic",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-04-28",
+      "last_date": "2026-04-28",
+      "appearances": 1
+    },
+    {
+      "id": 455,
+      "title": "Just-in-Timeコンテキスト戦略：軽量参照を保持しランタイムにデータを動的ロード",
+      "point": "エージェント設計で注目されている「Just-in-Time コンテキスト」戦略では、ファイルパス・ストアドクエリ・URLなどの軽量な識別子だけを保持し、実行時にツールを使って必要なデータをオンデマンドにコンテキストへ読み込む。全データを事前にコンテキストへ詰め込むより大幅にトークンを節約でき、Context Rot を回避できる。",
+      "source_title": "Effective context engineering for AI agents - Anthropic",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-04-28",
+      "last_date": "2026-04-28",
+      "appearances": 1
+    },
+    {
+      "id": 456,
+      "title": "Managed Agents ツール結果クリア（Tool Result Clearing）でコンテキスト汚染を軽量解消",
+      "point": "Claude Developer Platform に「ツール結果クリア」機能が追加された。会話履歴からツール呼び出し結果だけを選択的に削除できる最も軽量なコンパクション手法。フル要約よりコストが低く、繰り返し大量データを参照するエージェントループに特に有効。Anthropic の公式コンテキストエンジニアリングガイドが最初の軽量対策として推奨している。",
+      "source_title": "Context engineering: memory, compaction, and tool clearing - Claude Cookbook",
+      "source_url": "https://platform.claude.com/cookbook/tool-use-context-engineering-context-engineering-tools",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-04-28",
+      "last_date": "2026-04-28",
+      "appearances": 1
     },
     {
       "id": 441,
@@ -5961,6 +6097,14 @@
   ],
   "daily": [
     {
+      "date": "2026-04-28",
+      "highlights": [
+        "コンテキストロット（Context Rot） — コンテキスト量を増やすほど想起精度が低下する逆説的な現象をAnthropicが解説",
+        "Hooks が直接MCPツールを呼び出せるようになった — type: \"mcp_tool\" 指定で自律化ワークフローが大幅に拡張",
+        "Managed Agents ツール結果クリア — 最も軽量なコンテキスト汚染対策として公式ガイドが推奨"
+      ]
+    },
+    {
       "date": "2026-04-27",
       "highlights": [
         "Sonnet 4.5/4の1Mトークンβ終了まであと3日 — 4月30日までにAPIヘッダー削除・モデルIDをSonnet 4.6に更新しないとリクエストがエラーになる",
@@ -6259,5 +6403,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-27T08:00:02.164545"
+  "generated_at": "2026-04-28T08:00:02.231288"
 }
