@@ -1140,6 +1140,20 @@
       "appearances": 4
     },
     {
+      "id": 466,
+      "title": "AGENTS.md + CLAUDE.md ポータブルパターン：エージェント横断で設定を共有する",
+      "point": "AGENTS.md は Copilot・Codex 等の複数コーディングエージェントが読む新興コミュニティ標準ファイル。本体コンテンツをAGENTS.mdに書き、CLAUDE.mdには `@AGENTS.md` の1行インポートのみを置くことで、将来他エージェントへ移行してもコンテキスト設定を使い回せる。CLAUDE.mdは200行以内を目安に保つ。",
+      "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
+      "source_url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "tags": [
+        "CLAUDE.md",
+        "エージェント"
+      ],
+      "first_date": "2026-04-29",
+      "last_date": "2026-04-29",
+      "appearances": 3
+    },
+    {
       "id": 437,
       "title": "Context Engineering 4要素フレームワーク：INSTRUCTIONS / CONTEXT / TASK / OUTPUT FORMAT",
       "point": "2026年のClaude活用で標準化された構造的プロンプト設計。①INSTRUCTIONS（役割・ルール・制約）、②CONTEXT（背景・データ・ドキュメント）、③TASK（今回の具体的なリクエスト）、④OUTPUT FORMAT（出力形式・長さ・構造）の4要素を明示的に分離して記述する。特に長文コンテキストでは最重要情報を先頭か末尾に配置することが推奨されている。プロンプトの最適長は150〜300語が実用上の目安。",
@@ -3129,6 +3143,128 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 460,
+      "title": "Rate Limits API：組織のレート制限をプログラムで取得する",
+      "point": "2026年4月25日、Anthropic が Rate Limits API をリリース。管理者がAPIを通じて自組織・ワークスペースのレート制限を構造化データとして取得できるようになった。コンソールを手動確認する必要がなくなり、CI/CD パイプラインや監視ダッシュボードへの組み込みが可能。",
+      "source_title": "Audit Claude Rate Limits in 90 Minutes (Apr 2026) - FindSkill.ai",
+      "source_url": "https://findskill.ai/blog/anthropic-rate-limits-api-3-step-audit/",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-04-29",
+      "last_date": "2026-04-29",
+      "appearances": 1
+    },
+    {
+      "id": 461,
+      "title": "セッションレトロスペクティブ：Claudeに「今日の学び」を聞いてCLAUDE.mdへ蓄積する",
+      "point": "セッション終了時に \"What did you learn during this session?\" と聞き、回答をプロジェクト別に分類して保存する。一般的な概念はCLAUDE.md、コーディング規約はルールファイル、技術的能力はSkillファイル、アーキテクチャ選択はADRへ。セッション間でのメモリがない制約をドキュメント化で補完できる。",
+      "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
+      "source_url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-04-29",
+      "last_date": "2026-04-29",
+      "appearances": 1
+    },
+    {
+      "id": 462,
+      "title": "/simplify と /review でコードの自己改善ループを完結する",
+      "point": "人間がレビューする前に /simplify（過剰な抽象化・不要なジェネリクス・推測的エラーハンドリングを除去）と /review（バグ・問題を自己検出して修正）の2コマンドを順に実行する。人間レビューに届く時点でコードが整理済みになり、レビュー速度が大幅に上がる。",
+      "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
+      "source_url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "tags": [],
+      "first_date": "2026-04-29",
+      "last_date": "2026-04-29",
+      "appearances": 1
+    },
+    {
+      "id": 463,
+      "title": "Context7プラグインでバージョン固定ライブラリドキュメントをClaude に精確に提供する",
+      "point": "Claudeにオンライン検索でドキュメントを取得させると、古いバージョンのAPIシグネチャをハルシネーションするリスクがある。Context7（context7.com）はライブラリドキュメントを正確なバージョン単位でインデックス化し、必要なページだけをClaudeに直接提供する。よく使うフレームワークのドキュメントをContext7経由にするだけで精度が大きく改善する。",
+      "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
+      "source_url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "tags": [
+        "API",
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-04-29",
+      "last_date": "2026-04-29",
+      "appearances": 1
+    },
+    {
+      "id": 464,
+      "title": "rtk CLIでコマンド出力を圧縮してコンテキスト消費を削減する",
+      "point": "rtk（github.com/rtk-ai/rtk）はCLIコマンドの出力をLLMコンテキストに渡す前にフィルタリング・圧縮するツール。テストやビルドのログ出力がそのままコンテキストに流入するのを防ぎ、トークン消費を最適化する。Claude Code のサブエージェントが大量のコマンド出力を処理するケースで特に効果的。",
+      "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
+      "source_url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-04-29",
+      "last_date": "2026-04-29",
+      "appearances": 1
+    },
+    {
+      "id": 465,
+      "title": "インタビューファースト：複雑タスクはClaude に先に質問させてから依頼する",
+      "point": "大きなタスクや曖昧なタスクには、最小限のプロンプトから「まず私にインタビューしてください」と依頼する。実装詳細・エッジケース・トレードオフについてClaudeが質問を出し、考慮漏れを事前に潰せる。インタビュー後に依頼すると、直接依頼と比べて一貫して最終出力の品質が向上する。",
+      "source_title": "Claude best practices 2026: the complete power user guide - The AI Corner",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-04-29",
+      "last_date": "2026-04-29",
+      "appearances": 1
+    },
+    {
+      "id": 467,
+      "title": "Opus 1Mコンテキストの経験則：400k超で精度低下、デフォルト窓で95%のタスクは十分",
+      "point": "Opus の1Mトークンコンテキストウィンドウを常用するのは非効率。実験では400k超でエージェントの出力関連性が低下し、追加コンテキストは特定の大規模タスクにのみ有効。通常業務の95%はデフォルトのコンテキストサイズで十分であり、不必要な1M利用は速度低下とコスト増だけをもたらす。",
+      "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
+      "source_url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-04-29",
+      "last_date": "2026-04-29",
+      "appearances": 1
+    },
+    {
+      "id": 468,
+      "title": "Snyk MCPサーバー統合でコードセキュリティと依存脆弱性をClaude連携チェック",
+      "point": "Snyk MCPサーバーをClaude Code に接続することで、コードのセキュリティ問題や依存パッケージの脆弱性をClaudeが直接チェックできるようになる。/security コマンドでの定期レビューと組み合わせることで、セキュリティ確認をAIに一部委譲できる。ただし最終的な保証は開発者の責任で行う必要がある。",
+      "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
+      "source_url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-04-29",
+      "last_date": "2026-04-29",
+      "appearances": 1
+    },
+    {
+      "id": 469,
+      "title": "プロンプト3,000トークン超で推論品質が劣化：スイートスポットは150〜300語",
+      "point": "長いシステムプロンプトや詳細すぎる指示は推論品質を下げる。最新の調査では、推論の劣化は約3,000トークンから始まる。実用的な最適域は150〜300語（約500〜1,000文字）。ALL-CAPS・「NEVER EVER」・「YOU MUST」等の強調過多も逆効果で、簡潔な記述の方がClaudeはより正確に従う。",
+      "source_title": "Prompt Engineering in 2026: Advanced Techniques - DEV Community",
+      "source_url": "https://dev.to/lufumeiying/prompt-engineering-in-2026-advanced-techniques-for-better-ai-results-2o52",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-04-29",
+      "last_date": "2026-04-29",
+      "appearances": 1
     },
     {
       "id": 450,
@@ -6097,6 +6233,13 @@
   ],
   "daily": [
     {
+      "date": "2026-04-29",
+      "highlights": [
+        "Rate Limits API 正式リリース — 組織のレート制限をプログラムで取得できる新エンドポイントが4/25公開",
+        "セッションレトロスペクティブで学習を蓄積 — セッション終了後に「今日の学び」をClaude に聞いてCLAUDE.md・ルールへ蓄積する習慣"
+      ]
+    },
+    {
       "date": "2026-04-28",
       "highlights": [
         "コンテキストロット（Context Rot） — コンテキスト量を増やすほど想起精度が低下する逆説的な現象をAnthropicが解説",
@@ -6403,5 +6546,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-28T08:00:02.231288"
+  "generated_at": "2026-04-29T08:00:02.572419"
 }
