@@ -648,6 +648,19 @@
       "appearances": 5
     },
     {
+      "id": 488,
+      "title": "Sonnet 4.5・Sonnet 4の1Mトークンβ昨日（4/30）終了：早急にSonnet 4.6へ移行を",
+      "point": "2026年4月30日をもってSonnet 4.5およびSonnet 4の1Mトークンコンテキストβ機能が正式終了。1Mトークンを使用しているワークフローは即座にSonnet 4.6（または Opus 4.6/4.7）に切り替えが必要。Sonnet 4.6では追加料金なしで1Mトークンが利用可能で、パフォーマンスも向上している。",
+      "source_title": "Anthropic Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-05-01",
+      "last_date": "2026-05-01",
+      "appearances": 4
+    },
+    {
       "id": 470,
       "title": "Sonnet 4.5・Sonnet 4の1Mトークンコンテキスト窓ベータが本日4/30退役：Sonnet 4.6へ移行を",
       "point": "1Mトークンコンテキスト窓ベータが本日（4/30）終了。`anthropic-beta: max-tokens-3-5-sonnet-2024-07-15` ヘッダーを使用中のアプリは動作停止する。移行先はClaude Sonnet 4.6またはOpus 4.6で、これらは追加ヘッダーなしで標準価格のまま1Mコンテキストを利用できる。",
@@ -2173,6 +2186,60 @@
       "appearances": 3
     },
     {
+      "id": 445,
+      "title": "Opus 4.7の指示遵守厳格化：「行間を読む」挙動が減少、プロンプト再調整が必要",
+      "point": "Opus 4.6は指示が曖昧でも「意図を汲んで」動作していたが、4.7は指示に忠実に従う設計に変わった。4.6ベースのワークフローが「Claudeが自動補完してくれる」前提で作られている場合、4.7では想定外の挙動（確認を求める・指示通りの最小限しか実行しない）が出る。既存プロンプトに「なぜそのタスクを行うか」の目的と「何を期待するか」の詳細を追記して再調整が必要。",
+      "source_title": "The Ultimate Guide to Claude Opus 4.7 - Product Compass",
+      "source_url": "https://www.productcompass.pm/p/claude-opus-4-7-guide",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-04-27",
+      "last_date": "2026-05-01",
+      "appearances": 2
+    },
+    {
+      "id": 485,
+      "title": "ロール指定の具体化：経験年数・資格・専門スタンダードまで明記して精度向上",
+      "point": "「あなたは構造エンジニアです」より「あなたはAISC 360とAWS D1.1に精通した産業用鉄骨構造設計15年のシニア構造エンジニアです」と指定すると、出力の精度・深度が大きく変わる。役割の名称だけでなく、経験年数・専門分野・準拠スタンダードを具体的に記述することで、実務レベルの知識に即した回答が得られる。",
+      "source_title": "Stop Wasting Claude AI: Prompt Guide for Engineers - Medium",
+      "source_url": "https://medium.com/@simutecra/stop-wasting-claude-ai-prompt-guide-for-engineers-simutecra-65466f8debb6",
+      "tags": [],
+      "first_date": "2026-05-01",
+      "last_date": "2026-05-01",
+      "appearances": 2
+    },
+    {
+      "id": 486,
+      "title": "ポジティブフレーミング：Claude 4.xは禁止形より肯定形の指示に顕著に反応",
+      "point": "「情報をでっち上げるな」より「以下のコンテキスト内のデータのみ使用せよ」という指示の方が、Claude 4.xでは一貫して高品質な出力が得られる。禁止語句ではなく「何をすべきか」を明示することで、モデルが正確な行動を選択しやすくなる。プロンプト全体をできる限り肯定形に書き換えると全体的な精度向上につながる。",
+      "source_title": "Claude 4.x Prompt Engineering: A Practical Guide - Medium",
+      "source_url": "https://ai-engineering-trend.medium.com/claude-4-x-prompt-engineering-a-practical-guide-for-medium-developers-4d1068ba0100",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-01",
+      "last_date": "2026-05-01",
+      "appearances": 2
+    },
+    {
+      "id": 487,
+      "title": "Claude Managed Agentsメモリβ：セッション横断の記憶でエラー率97%削減",
+      "point": "Claude Managed AgentsのメモリAPIがパブリックベータに入り（`managed-agents-2026-04-01`ヘッダーで有効化）、エージェントがセッションをまたいで過去の判断・設定・コンテキストを記憶できるようになった。Anthropicの報告ではエラー率が最大97%削減されるケースあり。長時間・複数セッションにわたるエージェントワークフローで特に効果的。",
+      "source_title": "Claude Managed Agents Overview - Anthropic Docs",
+      "source_url": "https://platform.claude.com/docs/en/managed-agents/overview",
+      "tags": [
+        "API",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-05-01",
+      "last_date": "2026-05-01",
+      "appearances": 2
+    },
+    {
       "id": 473,
       "title": "Claude Codeプロンプトキャッシュ制御：1時間強制と5分セッションキャッシュでAPI費用を削減",
       "point": "Claude Codeに新たなキャッシュ制御オプションが追加。1時間強制キャッシュと5分セッション内キャッシュを明示的に切り替えられる。長い固定コンテキスト（CLAUDE.md、大きなファイル読み込み）には1時間キャッシュを使い、会話履歴には5分キャッシュを使うことでAPI費用を最大90%削減できる。",
@@ -2228,20 +2295,6 @@
       ],
       "first_date": "2026-04-28",
       "last_date": "2026-04-28",
-      "appearances": 2
-    },
-    {
-      "id": 445,
-      "title": "Opus 4.7の指示遵守厳格化：「行間を読む」挙動が減少、プロンプト再調整が必要",
-      "point": "Opus 4.7はOpus 4.6比で指示遵守の厳密性が高まり、明示的に書かれていない内容を「推察して補完する」挙動が減少した。これにより「あいまいなプロンプトを意図通りに解釈してくれた」経験があるユーザーは、プロンプトの明示度を上げる調整が必要。具体的には「条件X の場合はY、そうでない場合はZ」のように分岐を明文化し、暗黙の前提はすべて書き出すこと。指示が詳細なほど出力品質が向上する傾向が確認されている。",
-      "source_title": "What's new in Claude Opus 4.7 — Claude API Docs",
-      "source_url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7",
-      "tags": [
-        "プロンプト",
-        "モデル"
-      ],
-      "first_date": "2026-04-27",
-      "last_date": "2026-04-27",
       "appearances": 2
     },
     {
@@ -3261,6 +3314,72 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 480,
+      "title": "Claude Codeセッション終了時にレトロスペクティブを実施して知識を永続化する",
+      "point": "セッション終了時に「このセッションで学んだことは何か？」とClaudeに尋ね、出力を適切な場所（一般概念→CLAUDE.md、コーディング規則→Rules、技術スキル→Skillファイル、設計判断→ADR）に振り分けて保存する。次のセッションでClaudeがそれを読み込むことで同じミスを繰り返さない。特に「soft deleteを使うテーブル名」「useListContextはListBase内のみ有効」などのプロジェクト固有知識の蓄積に効果的。",
+      "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
+      "source_url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code"
+      ],
+      "first_date": "2026-05-01",
+      "last_date": "2026-05-01",
+      "appearances": 1
+    },
+    {
+      "id": 481,
+      "title": "Claude Codeのバグ修正は「調査→Docs更新→修正」の順に実施させる",
+      "point": "Claudeがバグを生成したとき、自分で直したくなるが我慢。代わりにClaudeに「バグを調査し、なぜ起きたかをプロジェクトドキュメントに記録してから修正せよ」と指示する。セッション間でメモリはなくても、ドキュメントは残るため、次のセッションでClaudeが同一のバグを繰り返すリスクを排除できる。",
+      "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
+      "source_url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-01",
+      "last_date": "2026-05-01",
+      "appearances": 1
+    },
+    {
+      "id": 482,
+      "title": "`/simplify` と `/review` をヒューマンレビュー前に実行する",
+      "point": "Claudeが生成したコードは過剰抽象・不要なジェネリクス・投機的エラーハンドリングを含みがち。`/simplify` でそれを除去し、次に `/review` でClaudeに自己の問題を発見・修正させる。この2ステップ後にヒューマンレビューに入ると、コードが整理済みでレビュー効率が大幅向上する。",
+      "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
+      "source_url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "tags": [],
+      "first_date": "2026-05-01",
+      "last_date": "2026-05-01",
+      "appearances": 1
+    },
+    {
+      "id": 483,
+      "title": "Claude Codeには「最初の1ステップだけ」要求してから次を指示する",
+      "point": "「機能全体を実装して」と指示するとClaudeは暴走しやすい。代わりに「ステップ1だけ実施して」→レビュー→「次のステップ」という流れを繰り返す。面倒に見えるが、作業が細かくレビュー可能になりミスが早期に発見される。複雑なタスクほど1ステップずつの指示が有効。",
+      "source_title": "50 Claude Code Tips and Best Practices For Daily Use - Builder.io",
+      "source_url": "https://www.builder.io/blog/claude-code-tips-best-practices",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-01",
+      "last_date": "2026-05-01",
+      "appearances": 1
+    },
+    {
+      "id": 484,
+      "title": "Context7 MCPプラグインで最新ライブラリドキュメントをClaudeに正確に提供する",
+      "point": "Claudeにオンラインのライブラリドキュメントを検索させると、フェッチ・解析・関連箇所の特定に時間がかかり、古いAPIシグネチャをハルシネーションすることもある。Context7プラグイン（context7.com）はライブラリをバージョン単位でインデックスし、Claudeに必要なページを1ツールコールで正確に届ける。react-adminや各フレームワークのドキュメント管理に特に有効。",
+      "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
+      "source_url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "tags": [
+        "API",
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-01",
+      "last_date": "2026-05-01",
+      "appearances": 1
     },
     {
       "id": 471,
@@ -6379,6 +6498,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-01",
+      "highlights": [
+        "Claude Codeセッション後レトロスペクティブ — 「今日学んだことは？」とClaudeに聞いてCLAUDE.md/Rules/Skillsに永続保存する運用で組織知識が蓄積する",
+        "Context7 MCPでライブラリドキュメントを精度よくClaudeに渡す — バージョン対応の正確なAPIドキュメントをワンコール提供、ハルシネーション大幅減"
+      ]
+    },
+    {
       "date": "2026-04-30",
       "highlights": [
         "Sonnet 4.5・Sonnet 4の1Mコンテキスト窓ベータが本日退役 — 本日4/30が期限。APIで使用中の場合はSonnet 4.6への移行が必要",
@@ -6699,5 +6825,5 @@
       ]
     }
   ],
-  "generated_at": "2026-04-30T08:00:02.209021"
+  "generated_at": "2026-05-01T08:00:01.955425"
 }
