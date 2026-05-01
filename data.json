@@ -648,6 +648,19 @@
       "appearances": 5
     },
     {
+      "id": 493,
+      "title": "Claude for Excel / PowerPoint：Skillsサポートが新たに追加、アドイン間でフルコンテキスト共有",
+      "point": "2026年5月のアップデートで、Claude for ExcelとClaude for PowerPointの両アドインにSkillsサポートが追加された。さらにアドイン間で会話の全コンテキストを共有できるようになり、Excelで集計・分析したデータをClaudeが理解した状態でPowerPointに引き継いでスライドを生成できる。Amazon Bedrock・Google Cloud Vertex AI・Microsoft Foundry経由での接続にも対応。",
+      "source_title": "AI Updates Today (May 2026) – llm-stats.com",
+      "source_url": "https://llm-stats.com/llm-updates",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-05-02",
+      "last_date": "2026-05-02",
+      "appearances": 4
+    },
+    {
       "id": 488,
       "title": "Sonnet 4.5・Sonnet 4の1Mトークンβ昨日（4/30）終了：早急にSonnet 4.6へ移行を",
       "point": "2026年4月30日をもってSonnet 4.5およびSonnet 4の1Mトークンコンテキストβ機能が正式終了。1Mトークンを使用しているワークフローは即座にSonnet 4.6（または Opus 4.6/4.7）に切り替えが必要。Sonnet 4.6では追加料金なしで1Mトークンが利用可能で、パフォーマンスも向上している。",
@@ -2186,6 +2199,92 @@
       "appearances": 3
     },
     {
+      "id": 491,
+      "title": "Claude in Chrome ベータが全有料プラン向けに拡大",
+      "point": "ブラウジングエージェント「Claude in Chrome」が、一部限定ユーザーから全有料プラン（Pro・Max・Team・Enterprise）加入者向けに正式に拡大。ブラウザ上でウェブページの読み取り・フォーム操作・複数タブの横断リサーチなどをClaudeに委任できる。既存の有料ユーザーはChromeに拡張機能をインストールするだけで利用開始可能。",
+      "source_title": "AI Updates Today (May 2026) – llm-stats.com",
+      "source_url": "https://llm-stats.com/llm-updates",
+      "tags": [
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-05-02",
+      "last_date": "2026-05-02",
+      "appearances": 2
+    },
+    {
+      "id": 492,
+      "title": "3段階モデルルーティング：Haiku（分類）→Sonnet（主力）→Opus（高度推論専用）でAPIコスト60-70%削減",
+      "point": "2026年の最先端プロダクションシステムが採用する3段階ルーティング戦略。Haiku 4.5がリクエストを分類し、シンプルなものはそのまま処理。Sonnet 4.6がコード生成・ドキュメント分析・データ抽出などの大多数のタスクを担当。Opus 4.6/4.7は複雑な多段推論・Agent Teams・大規模コードベース分析など全体の10-15%のみに使用。この配分でOpus一本使いに比べてAPI費用が60-70%削減できるとされる。",
+      "source_title": "Claude Sonnet 4.6 vs Opus 4.6: Which Model Should You Use — Shawn Kanungo",
+      "source_url": "https://shawnkanungo.com/blog/claude-sonnet-46-vs-opus-46-whats-the-difference-and-which-one-should-you-use",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-05-02",
+      "last_date": "2026-05-02",
+      "appearances": 2
+    },
+    {
+      "id": 495,
+      "title": "ポジティブ例示（positive examples）を優先：ネガティブ例示・禁止形プロンプトより具体的な正例が効果的",
+      "point": "「してはいけないこと」を示すネガティブ例示より、「こう答えてほしい」という正例を示すポジティブ例示の方が、Claude 4.xでは一貫して高品質な出力が得られる。Few-shotプロンプトを設計する際は、まず1件の正例（one-shot）から始め、出力が目標に近づかない場合のみ追加例を増やす。禁止リストを長くするより、理想の出力サンプルを丁寧に作成することに時間を投資すべき。",
+      "source_title": "Prompting best practices - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-02",
+      "last_date": "2026-05-02",
+      "appearances": 2
+    },
+    {
+      "id": 496,
+      "title": "effortパラメータ＋xhigh設定：コーディング・エージェントタスクでのコスト対品質を最適化",
+      "point": "AnthropicのAPIに導入された`effort`パラメータを使うと、Claude の知性レベルとトークン消費量のバランスを調整できる。コーディングやエージェントユースケースでは新たに追加された`xhigh`レベルをデフォルトとして使用することが公式に推奨されている。一方、定型フォーマット変換・分類・要約などシンプルなタスクでは低effortに設定してコストを抑える。タスク複雑度に合わせたeffort設定が全体的なコスト最適化に直結する。",
+      "source_title": "Prompting best practices - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-05-02",
+      "last_date": "2026-05-02",
+      "appearances": 2
+    },
+    {
+      "id": 497,
+      "title": "Just-in-Time コンテキスト戦略：軽量IDを保持しランタイムでデータを動的ロードする",
+      "point": "Anthropicのエンジニアリングブログが推奨するエージェント向けコンテキスト管理手法。エージェントが全データをコンテキストに保持するのではなく、軽量な参照ID（ドキュメントIDや行キーなど）だけを保持し、実際にデータが必要になった瞬間にツール経由で動的にロードする。これにより「コンテキストロット（精度劣化）」を防ぎ、最小限の高シグナルトークンだけで長期間の高品質な処理を維持できる。",
+      "source_title": "Effective context engineering for AI agents - Anthropic Engineering",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-05-02",
+      "last_date": "2026-05-02",
+      "appearances": 2
+    },
+    {
+      "id": 498,
+      "title": "Anthropic 2026エージェントコーディングトレンドレポート：コード生成から自律マルチエージェント開発へ移行",
+      "point": "Anthropicが公開した「2026年エージェントコーディングトレンドレポート」によれば、AIを活用する開発チームの多くがコード生成の段階を超え、複数のClaudeエージェントが独立して計画・実装・テストを分担する「マルチエージェント自律開発」へ移行しつつある。並列エージェントを活用するチームはスループットが最大5倍向上し、チーム構成やコードレビューフローの根本的な見直しを迫られている。",
+      "source_title": "2026 Agentic Coding Trends Report - Anthropic",
+      "source_url": "https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf",
+      "tags": [
+        "API",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-02",
+      "last_date": "2026-05-02",
+      "appearances": 2
+    },
+    {
       "id": 445,
       "title": "Opus 4.7の指示遵守厳格化：「行間を読む」挙動が減少、プロンプト再調整が必要",
       "point": "Opus 4.6は指示が曖昧でも「意図を汲んで」動作していたが、4.7は指示に忠実に従う設計に変わった。4.6ベースのワークフローが「Claudeが自動補完してくれる」前提で作られている場合、4.7では想定外の挙動（確認を求める・指示通りの最小限しか実行しない）が出る。既存プロンプトに「なぜそのタスクを行うか」の目的と「何を期待するか」の詳細を追記して再調整が必要。",
@@ -3314,6 +3413,49 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 489,
+      "title": "Claude Security ベータ：Enterprise向けコードベース脆弱性スキャン＆パッチ自動生成が可能に",
+      "point": "Anthropicが2026年5月1日、「Claude Security」のパブリックベータをEnterprise顧客向けに発表。セキュリティチームがコードベース全体をスキャンし、脆弱性を発見後にパッチを自動生成できる。Claude Opus 4.7を搭載し、2026年2月にリサーチプレビュー版として公開された「Claude Code Security」から昇格。大手テクノロジー企業や金融機関での採用が進んでいる。",
+      "source_title": "Anthropic announces Claude Security beta for enterprise customers - Business Standard",
+      "source_url": "https://www.business-standard.com/technology/tech-news/anthropic-announces-claude-security-beta-for-enterprise-customers-126050100019_1.html",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-02",
+      "last_date": "2026-05-02",
+      "appearances": 1
+    },
+    {
+      "id": 490,
+      "title": "Anthropic Enterprise プランがウェブからセルフ購入可能に、HIPAA対応オプションも提供",
+      "point": "これまでEnterprise契約は営業チームとの交渉が必須だったが、今後は組織がウェブサイトから直接購入できるようになった。また、個人健康情報（PHI）を処理する必要がある組織向けに、HIPAA対応バージョンのClaudeもEnterpriseプランで提供開始。医療・ヘルスケア分野でのClaude活用のハードルが大幅に低下する。",
+      "source_title": "Claude Release Notes - Anthropic",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-02",
+      "last_date": "2026-05-02",
+      "appearances": 1
+    },
+    {
+      "id": 494,
+      "title": "画像タスクの精度向上：Crop スキルを提供してClaudeに「ズームイン」能力を付与する",
+      "point": "Anthropicのプロンプトエンジニアリングガイドで明らかにされた手法。画像評価タスクでClaudeにクロップ（切り取り）ツールまたはスキルを与えると、必要な領域を「ズームイン」して詳細を確認できるようになり、画像評価ベンチマークで一貫した性能向上が確認されている。図面・医療画像・スキャン文書など細部の確認が重要な業務での画像解析精度が大幅に改善される。",
+      "source_title": "Prompting best practices - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "tags": [
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-05-02",
+      "last_date": "2026-05-02",
+      "appearances": 1
     },
     {
       "id": 480,
@@ -6498,6 +6640,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-02",
+      "highlights": [
+        "Claude Security ベータ公開 — Enterprise向けにコードベース脆弱性スキャン＆パッチ自動生成が可能に。Claude Opus 4.7搭載で2月のリサーチプレビューから正式ベータへ昇格",
+        "Anthropic Enterprise プランのセルフ購入対応 — 従来は営業窓口経由のみだったEnterpriseプランがウェブサイトから直接購入可能に、HIPAA対応オプションも提供開始"
+      ]
+    },
+    {
       "date": "2026-05-01",
       "highlights": [
         "Claude Codeセッション後レトロスペクティブ — 「今日学んだことは？」とClaudeに聞いてCLAUDE.md/Rules/Skillsに永続保存する運用で組織知識が蓄積する",
@@ -6825,5 +6974,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-01T08:00:01.955425"
+  "generated_at": "2026-05-02T08:00:02.712576"
 }
