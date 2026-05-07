@@ -647,6 +647,20 @@
       "appearances": 5
     },
     {
+      "id": 548,
+      "title": "Claude Mythos Preview：27年前のOpenBSD脆弱性を自律発見、Project Glasswing経由で提供中",
+      "point": "Claude Security パブリックベータと並行して、セキュリティ研究用特化モデル「Claude Mythos Preview」のProject Glasswing経由パートナー提供が継続中。キーノートでもMythosがOpenBSDソースツリーを読み込み27年物の脆弱性を発見した事例が紹介された。Mythosはエリート人間専門家を匹敵・凌駕するレベルのゼロデイ発見・エクスプロイト構築能力を持ち、Claude Securityとは別に招待制・防衛的研究用途限定で提供。",
+      "source_title": "Anthropic's Powerful New Cybersecurity Tool | Inc.",
+      "source_url": "https://www.inc.com/chloe-aiello/anthropics-powerful-new-cybersecurity-tool-is-designed-to-find-vulnerabilities-in-your-code-and-patch-them/91338485",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-08",
+      "last_date": "2026-05-08",
+      "appearances": 4
+    },
+    {
       "id": 503,
       "title": "ant CLI：Anthropic公式GoベースCLIでClaude APIをYAML・フラグで型安全に操作",
       "point": "Anthropic公式のGoベースCLIツール「ant」はcurl＋手書きJSONの代替として、フラグやYAMLパイプでAPIリクエストを構造化できる。macOSでは `brew install anthropics/tap/ant` でインストール可能。基本的な使い方は `ant messages create --model claude-opus-4-7 --max-tokens 1024 --message '{role: user, content: \"...\"}'` のように `ant [resource] <command> [flags...]` 形式。Claude Codeも内部でantを利用しており、スクリプトやCI/CDでAPIを扱う際の標準ツールとして定着しつつある。",
@@ -1209,6 +1223,35 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 544,
+      "title": "Claude Security パブリックベータ：Opus 4.7でコードベース脆弱性を自動スキャン＆パッチ生成",
+      "point": "EnterpriseプランのClaude.ai上でコードベース全体をスキャンし、セキュリティ脆弱性を発見後にパッチ候補を自動生成する機能がパブリックベータ公開中。Claude Opus 4.7を搭載し、従来の「Claude Code Security」クローズドプレビューから昇格。TeamおよびMaxプランへの対応拡大も予定。セキュリティチームが見落としがちな問題を広い範囲でカバーできる。",
+      "source_title": "Claude Security is now in public beta",
+      "source_url": "https://claude.com/blog/claude-security-public-beta",
+      "tags": [
+        "Claude Code",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-08",
+      "last_date": "2026-05-08",
+      "appearances": 3
+    },
+    {
+      "id": 547,
+      "title": "Advisor Strategy：Opus 4.7をアドバイザーとして小型モデルとペアリングしコスト削減",
+      "point": "Code w/ Claude 2026でも再確認された実践パターン。Sonnet等の高速・低コストモデルが実行役として動き、Opus 4.7がオンデマンドで助言を提供する「advisor戦略」。採用事例（eve社）では「フロンティアモデル品質をコスト5分の1で実現」と報告。Managed Agentsでも同パターンが有効で、スペシャリストエージェントにOpus Advisorを組み合わせることで精度向上とコスト最適化を両立できる。",
+      "source_title": "Live blog: Code w/ Claude 2026 | Simon Willison",
+      "source_url": "https://simonwillison.net/2026/May/6/code-w-claude-2026/",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-05-08",
+      "last_date": "2026-05-08",
+      "appearances": 3
     },
     {
       "id": 530,
@@ -3542,6 +3585,108 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 539,
+      "title": "Claude Managed Agents: Dreaming — 過去セッションを自律レビューして自己改善する",
+      "point": "2026年5月6日の「Code w/ Claude」イベントで発表。Dreamingはエージェントが就業外にバックグラウンドで動き、過去セッション・メモリストアを解析してパターン（繰り返すミス・収束するワークフロー・チーム共通の好みなど）を抽出し、`descent-playbook.md`のような実用ドキュメントを生成する。単一エージェントでは見えない俯瞰的な知見が自動蓄積される。現在はリサーチプレビューで要事前申請（claude.com/form/claude-managed-agents）。",
+      "source_title": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
+      "source_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-05-08",
+      "last_date": "2026-05-08",
+      "appearances": 1
+    },
+    {
+      "id": 540,
+      "title": "Claude Managed Agents: Outcomes — 成功ルーブリックを設定してエージェントに反復改善させる",
+      "point": "Outcomesでは「成功とはどういう状態か」をルーブリックとして記述するだけで、エージェントがその基準に向けて自律的に繰り返し改善する。独立したグレーダーが自分のコンテキストウィンドウで出力を評価し、不足点を特定したうえでエージェントが次のパスを実行。内部テストでは標準プロンプトループより最大10ポイントのタスク成功率向上（特に難易度の高い問題で顕著）。パブリックベータ、`managed-agents-2026-04-01` ベータヘッダーで利用可能。",
+      "source_title": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
+      "source_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-05-08",
+      "last_date": "2026-05-08",
+      "appearances": 1
+    },
+    {
+      "id": 541,
+      "title": "Claude Managed Agents: マルチエージェントオーケストレーション（パブリックベータ）",
+      "point": "1つのエージェントで処理しきれない大規模タスクを、リードエージェントが分解してスペシャリストに委任するオーケストレーション機能がパブリックベータに。各スペシャリストは独自のモデル・プロンプト・ツールを持ち、共有ファイルシステム上で並列稼働する。例えばリードエージェントが調査を統括しつつ、デプロイ履歴・エラーログ・メトリクス・サポートチケットを担当するサブエージェントが同時並走する構成が可能。APIヘッダー1行で有効化できる。",
+      "source_title": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
+      "source_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "tags": [
+        "API",
+        "プロンプト",
+        "エージェント",
+        "モデル",
+        "新機能",
+        "生産性"
+      ],
+      "first_date": "2026-05-08",
+      "last_date": "2026-05-08",
+      "appearances": 1
+    },
+    {
+      "id": 542,
+      "title": "AnthropicがSpaceX Colossusと提携：300MW・22万GPU超でインフラ大幅増強",
+      "point": "「Code w/ Claude 2026」キーノートで、AnthropicがSpaceXのColossus 1データセンターの全コンピューティング容量を利用する契約を発表。300MW超・22万基以上のNVIDIA GPUが月内に追加される見込み。これを受けて即日、Claude CodeおよびAPIのレート制限引き上げが実施された。AnthropicのAPI利用量は前年比17倍の成長を記録している。",
+      "source_title": "Live blog: Code w/ Claude 2026 | Simon Willison",
+      "source_url": "https://simonwillison.net/2026/May/6/code-w-claude-2026/",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-05-08",
+      "last_date": "2026-05-08",
+      "appearances": 1
+    },
+    {
+      "id": 543,
+      "title": "Claude Code 5時間レート制限を即日2倍に：Pro/Max/Enterprise顧客向け",
+      "point": "Code w/ Claude 2026キーノートの発表に合わせ、Claude Code の5時間ウィンドウにおけるレート制限がPro・Max・Enterprise顧客全員に対して即日2倍に引き上げられた。ピークアワー制限の削減も撤廃済みで、長時間の自律コーディングセッションや大規模エージェントタスクがよりスムーズに動作するようになった。",
+      "source_title": "Live blog: Code w/ Claude 2026 | Simon Willison",
+      "source_url": "https://simonwillison.net/2026/May/6/code-w-claude-2026/",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-05-08",
+      "last_date": "2026-05-08",
+      "appearances": 1
+    },
+    {
+      "id": 545,
+      "title": "「次のモデルに向けて設計せよ」：今動かなくても次の更新で動く前提でアーキテクチャを組む",
+      "point": "Code w/ Claude 2026キーノートで強調された実践哲学。現行モデルで完全に機能しないユースケースでも、次のモデルアップデートで機能するという前提でビルドを進めることが推奨された。モデル性能の急成長ペースを考慮すると、「今動かないから諦める」より「今設計して次のモデルで稼働させる」ほうが競争優位につながる。特にアエンティックなループや高度な推論が必要な機能に有効な戦略。",
+      "source_title": "Live blog: Code w/ Claude 2026 | Simon Willison",
+      "source_url": "https://simonwillison.net/2026/May/6/code-w-claude-2026/",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-08",
+      "last_date": "2026-05-08",
+      "appearances": 1
+    },
+    {
+      "id": 546,
+      "title": "Code w/ Claude 2026 キーノート：Claudeで最も成果を上げているチームの3要素",
+      "point": "Anthropicの研究プロダクトヘッドDianne Na Pennが「最もClaudeを活かしているチームに共通する3要素」を示した。①**自動eval（評価）の整備**：人手レビューに頼らずアウトプット品質を定量化する基盤を持つ。②**シンプルなスキャフォールディング**：複雑なフレームワークより薄い接続層でモデルを活かす。③**他の誰もまだやっていない独自の活用法**：既存ユースケースを真似るのではなく想像力で新たな適用領域を開拓する。",
+      "source_title": "Live blog: Code w/ Claude 2026 | Simon Willison",
+      "source_url": "https://simonwillison.net/2026/May/6/code-w-claude-2026/",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-05-08",
+      "last_date": "2026-05-08",
+      "appearances": 1
     },
     {
       "id": 526,
@@ -7250,6 +7395,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-08",
+      "highlights": [
+        "Claude Managed Agents: Dreaming（リサーチプレビュー） — エージェントが過去セッションを自律レビューし、自分で気づけなかったパターンを発見して自己改善する革新的機能",
+        "AnthropicがSpaceX Colossusと提携：300MW・22万GPU超を確保 — Claude Code 5時間制限を即日2倍に引き上げ、API量は前年比17倍成長"
+      ]
+    },
+    {
       "date": "2026-05-07",
       "highlights": [
         "Claude Code 2.1.129：`--plugin-url` でURLからプラグインをその場でロード — プラグイン配布が単一URLで完結、チームへの共有が格段に手軽に",
@@ -7619,5 +7771,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-07T20:58:55.771314"
+  "generated_at": "2026-05-08T08:00:02.973175"
 }
