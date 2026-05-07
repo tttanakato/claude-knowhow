@@ -29,6 +29,20 @@
       "appearances": 16
     },
     {
+      "id": 515,
+      "title": "Claude Opus 4.7：より高解像度の画像認識でビジョンタスクの精度向上",
+      "point": "Opus 4.7は旧モデルより高解像度で画像を認識できるようになった。詳細な図面・スキャン文書・複雑なUI画像の解析精度が向上。$5/$25 per MTokのOpus 4.6と同一価格で利用できる最上位モデルとして、ビジョンを要するエージェント開発に適している。",
+      "source_title": "AI Updates Today (May 2026)",
+      "source_url": "https://llm-stats.com/llm-updates",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-05-05",
+      "last_date": "2026-05-05",
+      "appearances": 12
+    },
+    {
       "id": 262,
       "title": "メモリ機能が全ユーザー（無料含む）に拡大",
       "point": "チャット履歴からの記憶機能（Memory）が全ユーザーに開放。ChatGPT・Gemini・Grok から蓄積した記憶・設定を Claude にインポートする機能も提供されており、乗り換え時に設定をゼロから作り直す手間が不要。",
@@ -38,6 +52,19 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 12
+    },
+    {
+      "id": 506,
+      "title": "Claude Design × Canva：Brand Kitを初稿から自動適用してブランド一貫性のあるデザインを生成",
+      "point": "2026年5月2日、Claude DesignとCanvaの統合においてBrand Kit適用機能が正式リリースされた。Claude DesignでデザインをCanvaにエクスポートする際、CanvaのBrand Kit（ブランドカラー・フォント・ボイス）が最初から反映された状態で出力される。AI生成デザインをブランドガイドラインに合わせるための手直し時間を大幅に短縮できる。Canvaのプレゼンテーション・スライド・ワンページャー等あらゆるドキュメントタイプで利用可能。",
+      "source_title": "Introducing Canva in Claude Design by Anthropic Labs - Canva Newsroom",
+      "source_url": "https://www.canva.com/newsroom/news/canva-claude-design/",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-05-04",
+      "last_date": "2026-05-04",
+      "appearances": 11
     },
     {
       "id": 323,
@@ -79,7 +106,7 @@
       "appearances": 9
     },
     {
-      "id": 459,
+      "id": 450,
       "title": "コンテキストエンジニアリング 構造化メモ技法（Structured Note-taking）でエージェントの長期記憶を実現",
       "point": "Anthropic が推奨する「構造化メモ取り（Structured Note-taking）」とは、エージェントが定期的にコンテキストウィンドウ外のメモリにノートを書き出し、次のターンで必要な部分だけ引き戻す手法。メモリの中身はコンテキスト外に永続化されるため、セッションを跨いで情報が維持できる。Compaction（全体要約）より粒度が細かく、記憶の選択的な保持・廃棄が可能。",
       "source_title": "Effective context engineering for AI agents - Anthropic",
@@ -93,7 +120,7 @@
       "appearances": 8
     },
     {
-      "id": 440,
+      "id": 431,
       "title": "Sonnet 4.5/4の1Mトークンβ 4月30日終了まであと3日：APIヘッダー削除とモデル移行の手順",
       "point": "4月30日をもって `anthropic-beta: context-1m-2025-08-07` ヘッダーはSonnet 4.5・Sonnet 4に対して無効化され、200kトークンを超えるリクエストはエラーになる。移行手順は2ステップのみ。①`anthropic-beta: context-1m-2025-08-07` ヘッダーを削除、②モデルIDを `claude-sonnet-4-6` または `claude-opus-4-6` に更新。Sonnet 4.6は2026年2月17日にGA済みで、1Mコンテキストがデフォルト最大値として利用可能。",
       "source_title": "The April 30 Cliff: Migrating Off Sonnet 4.5's 1M Context Beta — Riptide Insights",
@@ -108,7 +135,7 @@
       "appearances": 8
     },
     {
-      "id": 384,
+      "id": 375,
       "title": "Opus 4.7 自己検証（rigor）機能でタスク完了前に検証ステップを自動実施",
       "point": "Opus 4.7は「rigor（厳密性）」を発揮するよう再調整されており、タスク報告前に自ら検証ステップを考案・実行する。従来はプロンプトに自己検証チェックリストを明示的に組み込む必要があったが、Opus 4.7ではモデルがネイティブに実施するため、品質担保のコストが削減できる。",
       "source_title": "Anthropic reveals new Opus 4.7 model with focus on advanced software engineering",
@@ -122,7 +149,7 @@
       "appearances": 8
     },
     {
-      "id": 367,
+      "id": 361,
       "title": "Claude Code v2.1.105：`/proactive`コマンドが`/loop`のエイリアスとして追加",
       "point": "v2.1.105で`/proactive`が`/loop`コマンドの新エイリアスとして追加された。`/loop`は指定した間隔でプロンプトを自動再実行する機能で、「能動的に繰り返す」という意図をより直感的に表す`/proactive`でも同じ機能を呼び出せるようになった。",
       "source_title": "Claude Code Releases · anthropics/claude-code",
@@ -163,7 +190,7 @@
       "appearances": 8
     },
     {
-      "id": 447,
+      "id": 438,
       "title": "Cowork Extended Thinkingを有効化する：デフォルトOFFの深度推論をオンにする",
       "point": "Coworkでは拡張思考（Extended Thinking）がデフォルトでオフになっている。複雑なタスク・長期計画・多段階推論を伴う作業では、設定（Settings）から手動でオンにすることで出力品質が大幅に向上する。特にコードレビュー・戦略分析・要件整理など「正確な推論が必要な業務タスク」で顕著な差が出る。チャット型の通常Claude.aiとは設定が別管理のため、Coworkを新規設定した際は必ず確認すること。",
       "source_title": "How to turn Claude from chatbot into productivity powerhouse with Cowork — How Do I Use AI",
@@ -187,21 +214,6 @@
       ],
       "first_date": "2026-04-14",
       "last_date": "2026-04-14",
-      "appearances": 7
-    },
-    {
-      "id": 370,
-      "title": "HooksでClaude Codeのルール遵守率を100%に高める",
-      "point": "CLAUDE.mdへの記述だけではルール遵守率は約70%。Hooksを使い、ルール違反の操作を`exit code 2`でブロックすることで100%遵守を実現できる。CLAUDE.md記述よりもHooksの方が確実性が高い。",
-      "source_title": "Claude Code ベストプラクティス10選（Uravation）",
-      "source_url": "https://uravation.com/media/claude-code-best-practices-top10-2026/",
-      "tags": [
-        "CLAUDE.md",
-        "Claude Code",
-        "自動化"
-      ],
-      "first_date": "2026-04-11",
-      "last_date": "2026-04-11",
       "appearances": 7
     },
     {
@@ -271,7 +283,7 @@
       "appearances": 7
     },
     {
-      "id": 426,
+      "id": 417,
       "title": "コンテキストエンジニアリング：identity・voice・anti-AIの3ファイル戦略でClaudeを「自分仕様」にする",
       "point": "2026年のClaude活用で最も効果的な手法は、3つの参照ファイルをシステムプロンプトやCLAUDE.mdに組み込む構造化アプローチ。①identity file（自分の職種・目標・優先事項）、②voice profile（自分の文体・思考スタイル・よく使う語句）、③anti-AI-writing file（使ってほしくない表現・語調・クリシェのリスト）。この3ファイルを渡すだけで出力品質が大幅に向上し、AIらしさが消える。",
       "source_title": "Claude best practices 2026: the complete power user guide",
@@ -286,7 +298,7 @@
       "appearances": 6
     },
     {
-      "id": 403,
+      "id": 394,
       "title": "コンテキストエンジニアリング：プロンプトの「書き方」より「構造」が重要な時代",
       "point": "巧みな言葉選びより、Claudeに渡す情報全体の構造化（システムプロンプト・ファイル・メモリ・例・ロール・制約）の方がアウトプット品質に直結するようになった。XMLタグでcontext・task・constraints・examplesを分離する構造的アプローチが効果的。特にClaude 4系は構造への感度が高い。",
       "source_title": "Claude best practices 2026: the complete power user guide",
@@ -301,7 +313,7 @@
       "appearances": 6
     },
     {
-      "id": 376,
+      "id": 367,
       "title": "CoworkでComputer Use（コンピューター使用）機能を有効化する",
       "point": "ClaudeがCowork上でユーザーのPC画面を直接操作（クリック・入力・アプリ起動）できる「Computer Use」機能が研究プレビューとしてPro/Maxプランで利用可能になった。Claude Desktopの設定から「Computer use」トグルをオンにするだけで有効化できる。銀行・医療などの機密情報を扱うアプリへのアクセス許可は避け、デスクトップをアクティブに保つ必要がある点に注意。コネクターが存在しないツールへのアクセスをClaudeが自律的に補完できるようになる。",
       "source_title": "Let Claude use your computer in Cowork | Claude Help Center",
@@ -349,19 +361,6 @@
       "tags": [
         "Claude Code",
         "新機能"
-      ],
-      "first_date": "2026-04-11",
-      "last_date": "2026-04-11",
-      "appearances": 6
-    },
-    {
-      "id": 372,
-      "title": "コンテキスト使用量を監視し20〜60%超えで/compactを使う",
-      "point": "コンテキスト使用量が20〜40%から品質劣化が始まり、60%超で顕著になる。`/compact`コマンドで重要情報を要約・圧縮してセッションを継続できる。MCPのTool Searchを活用するとコンテキスト消費を最大95%削減できる。",
-      "source_title": "Claude Code ベストプラクティス10選（Uravation）",
-      "source_url": "https://uravation.com/media/claude-code-best-practices-top10-2026/",
-      "tags": [
-        "MCP/プラグイン"
       ],
       "first_date": "2026-04-11",
       "last_date": "2026-04-11",
@@ -478,7 +477,7 @@
       "appearances": 6
     },
     {
-      "id": 390,
+      "id": 381,
       "title": "コンテキストエンジニアリング公式ガイド：「情報量を保ちつつタイトに」",
       "point": "Anthropicがコンテキストエンジニアリングの公式ガイドを更新。システムプロンプト・ツール定義・例示・メッセージ履歴など全コンテキスト要素について「informativeかつtight（無駄なく）」を保つことを推奨。20K+トークンの長文は処理タスクより前に配置するのが効果的。",
       "source_title": "Effective Context Engineering for AI Agents",
@@ -493,7 +492,7 @@
       "appearances": 5
     },
     {
-      "id": 380,
+      "id": 371,
       "title": "Adaptive Thinking：Claudeが推論深度を自律決定する",
       "point": "Sonnet 4.6でのAdaptive Thinkingモードは、タスクの複雑さに応じてClaudeが推論深度（= thinking量）を自律的に決定する。単純なタスクでは最小限の思考、複雑な推論では深い思考を自動選択するため、effortを毎回手動指定する手間がなくなる。Sonnet 4.6のデフォルト推奨モードであり、コスト・速度・精度のバランスを自動最適化したい場合に特に有効。APIでは`thinking: {type: \"auto\"}`で指定できる。",
       "source_title": "What's new in Claude 4.6 - Claude API Docs",
@@ -648,7 +647,23 @@
       "appearances": 5
     },
     {
-      "id": 493,
+      "id": 503,
+      "title": "ant CLI：Anthropic公式GoベースCLIでClaude APIをYAML・フラグで型安全に操作",
+      "point": "Anthropic公式のGoベースCLIツール「ant」はcurl＋手書きJSONの代替として、フラグやYAMLパイプでAPIリクエストを構造化できる。macOSでは `brew install anthropics/tap/ant` でインストール可能。基本的な使い方は `ant messages create --model claude-opus-4-7 --max-tokens 1024 --message '{role: user, content: \"...\"}'` のように `ant [resource] <command> [flags...]` 形式。Claude Codeも内部でantを利用しており、スクリプトやCI/CDでAPIを扱う際の標準ツールとして定着しつつある。",
+      "source_title": "GitHub - anthropics/anthropic-cli",
+      "source_url": "https://github.com/anthropics/anthropic-cli",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化",
+        "モデル"
+      ],
+      "first_date": "2026-05-04",
+      "last_date": "2026-05-04",
+      "appearances": 4
+    },
+    {
+      "id": 484,
       "title": "Claude for Excel / PowerPoint：Skillsサポートが新たに追加、アドイン間でフルコンテキスト共有",
       "point": "2026年5月のアップデートで、Claude for ExcelとClaude for PowerPointの両アドインにSkillsサポートが追加された。さらにアドイン間で会話の全コンテキストを共有できるようになり、Excelで集計・分析したデータをClaudeが理解した状態でPowerPointに引き継いでスライドを生成できる。Amazon Bedrock・Google Cloud Vertex AI・Microsoft Foundry経由での接続にも対応。",
       "source_title": "AI Updates Today (May 2026) – llm-stats.com",
@@ -661,7 +676,7 @@
       "appearances": 4
     },
     {
-      "id": 488,
+      "id": 479,
       "title": "Sonnet 4.5・Sonnet 4の1Mトークンβ昨日（4/30）終了：早急にSonnet 4.6へ移行を",
       "point": "2026年4月30日をもってSonnet 4.5およびSonnet 4の1Mトークンコンテキストβ機能が正式終了。1Mトークンを使用しているワークフローは即座にSonnet 4.6（または Opus 4.6/4.7）に切り替えが必要。Sonnet 4.6では追加料金なしで1Mトークンが利用可能で、パフォーマンスも向上している。",
       "source_title": "Anthropic Release Notes - Releasebot",
@@ -674,7 +689,7 @@
       "appearances": 4
     },
     {
-      "id": 470,
+      "id": 461,
       "title": "Sonnet 4.5・Sonnet 4の1Mトークンコンテキスト窓ベータが本日4/30退役：Sonnet 4.6へ移行を",
       "point": "1Mトークンコンテキスト窓ベータが本日（4/30）終了。`anthropic-beta: max-tokens-3-5-sonnet-2024-07-15` ヘッダーを使用中のアプリは動作停止する。移行先はClaude Sonnet 4.6またはOpus 4.6で、これらは追加ヘッダーなしで標準価格のまま1Mコンテキストを利用できる。",
       "source_title": "Claude Platform Release Notes",
@@ -689,7 +704,7 @@
       "appearances": 4
     },
     {
-      "id": 474,
+      "id": 465,
       "title": "Claude Codeのエフォートスケールが5段階に拡張：xhighが新デフォルト",
       "point": "思考深度オプションが `low / medium / high / xhigh / max` の5段階に。`xhigh`（以前の `extended` に相当）が新デフォルトとなり、maxより低コストで高品質な推論を提供。大半のコーディングタスクはxhighで十分、複雑なアーキテクチャ設計のみmaxを使うのが推奨される運用。",
       "source_title": "What's new in Claude Opus 4.7",
@@ -702,7 +717,7 @@
       "appearances": 4
     },
     {
-      "id": 478,
+      "id": 469,
       "title": "Claude Designでテキスト指示からUIプロトタイプ・スライドを直接生成する",
       "point": "Anthropic Labsの新製品Claude Design（Opus 4.7を搭載）は、テキストプロンプトだけでデザイン・プロトタイプ・スライドデッキ・ワンページャーを生成できる。従来のFigmaやPowerPointで時間がかかっていたモックアップ作成が大幅に高速化。生成物はそのまま編集可能で、Claudeとの対話的なイテレーションが可能。",
       "source_title": "Introducing Claude Opus 4.7",
@@ -717,7 +732,7 @@
       "appearances": 4
     },
     {
-      "id": 458,
+      "id": 449,
       "title": "Claude Sonnet 4 / Opus 4 廃止（6月15日）：model IDを設定変数化して将来の移行を簡素化",
       "point": "`claude-sonnet-4-0` と `claude-opus-4-0` は2026年6月15日に退役し、API呼び出しがエラーを返す。移行先はそれぞれ `claude-sonnet-4-5`（または最新の `claude-sonnet-4-6`）と `claude-opus-4-7`。今回の移行を機に、model ID をハードコードせず設定変数・環境変数に集約すると、次回以降の廃止対応がワンライン変更で完了するようになる。",
       "source_title": "Claude Sonnet 4 and Opus 4 Deprecation Migration Guide - MindStudio",
@@ -731,7 +746,7 @@
       "appearances": 4
     },
     {
-      "id": 443,
+      "id": 434,
       "title": "Coworkスケジュールタスクで繰り返し業務を完全自動化する",
       "point": "Coworkのスケジュールタスク機能を使うと、定時実行・Slack検索・ファイル操作・Webリサーチ・レポート生成などを人手なしで実行できる。設定手順はCoworkで `+ New task` → プロンプトを入力 → `/schedule` コマンドで頻度を指定。インストール済みのコネクタとプラグインが全て使えるため、複数サービスをまたいだ自動化も可能。通常のチャット画面では不可能な「定期自律実行」がCoworkの最大の差別化ポイント。",
       "source_title": "How to turn Claude from chatbot into productivity powerhouse with Cowork — How Do I Use AI",
@@ -747,7 +762,7 @@
       "appearances": 4
     },
     {
-      "id": 446,
+      "id": 437,
       "title": "ソクラテス式プロンプト「I want to [X] so that [Y]. Ask me questions before you execute」",
       "point": "実行を指示する前に「I want to [タスク] so that [成功基準]. Ask me questions before you execute.」と書くことで、ClaudeがタスクをAI目線で質問してくれる手法。Claudeが質問してくる内容は「自分が見落としていた前提・エッジケース・トレードオフ」であることが多く、直接実行させるより最終出力の品質が上がる。複雑なタスクや長文アウトプットを伴う作業で特に効果が高い。日本語でも「〇〇をしたいです。目的は〇〇です。実行前に質問してください。」と書けば有効。",
       "source_title": "Claude best practices 2026: the complete power user guide — The AI Corner",
@@ -760,7 +775,7 @@
       "appearances": 4
     },
     {
-      "id": 449,
+      "id": 440,
       "title": "Claude Skillsで業務プロセスを「1回設定・永続再利用」する",
       "point": "Skillは業務ワークフローを教え込むフォルダで、1回構築すればClaudeが毎回同じ手順で実行する。「The AI Corner」の2026年分析によると、Claude活用で最大の生産性差が出るのは「プロンプトの書き方を工夫する」より「Skillシステムを構築して繰り返し業務を標準化する」段階への移行。社内固有のドキュメントスタイル・承認フロー・報告書フォーマットをSkillに落とし込むだけで、担当者依存のバラつきがなくなる。",
       "source_title": "The Single Best Productivity Decision You Can Make With Claude Right Now — The AI Corner",
@@ -774,7 +789,7 @@
       "appearances": 4
     },
     {
-      "id": 439,
+      "id": 430,
       "title": "Claude Code Compaction：コンテキスト上限に近づくと自動要約で会話を継続する",
       "point": "Claude CodeのCompaction機能は、コンテキスト窓が上限に近づくと自動的に会話履歴を要約・圧縮して継続可能な状態を維持する機能。2026年のバージョンではCompaction・/planコマンド・Agentツールの3機能がデフォルトで連携し、大規模コードベースでの長時間セッションも途中でリセット不要で継続できる。手動で`/compact`コマンドを呼ぶことで任意のタイミングで圧縮を実行することも可能。",
       "source_title": "Effective Claude Code Workflows in 2026 — Medium",
@@ -788,7 +803,7 @@
       "appearances": 4
     },
     {
-      "id": 412,
+      "id": 403,
       "title": "Claude Code `/btw` コマンドで作業を中断せずにサイド質問する",
       "point": "進行中のタスクを中断せず `/btw` でオーバーレイ表示の回答を得られる。メインコンテキストを汚さず「ちなみに〇〇って？」を挟める設計で、会話履歴への影響もなく Claude はメインタスクを継続する。コードレビュー中に別の仕様を確認したい場面に最適。",
       "source_title": "Claude Code's creator keeps sharing tips — XDA Developers",
@@ -801,7 +816,7 @@
       "appearances": 4
     },
     {
-      "id": 379,
+      "id": 370,
       "title": "コンテキストエンジニアリング：プロンプトの言葉より「情報の配置」が品質を決める",
       "point": "2026年時点でのClaude活用の核心は「何を言うか（プロンプティング）」より「何をどこに置くか（コンテキストエンジニアリング）」にシフトしている。システムプロンプト・ファイル・メモリ・例示・役割設定・制約をタスクの前後にどう構造化するかがアウトプット品質を左右する。具体的には：役割設定→制約→例示の順で情報を配置し、タスク直前に最重要コンテキストを置くのが効果的とされる。",
       "source_title": "Claude best practices 2026: the complete power user guide | The AI Corner",
@@ -812,19 +827,6 @@
       ],
       "first_date": "2026-04-16",
       "last_date": "2026-04-16",
-      "appearances": 4
-    },
-    {
-      "id": 371,
-      "title": "テスト駆動開発（TDD）でClaude Codeの出力品質を保証する",
-      "point": "実装前にテストを書くことでコンテキストが埋まっても正確性を維持できる。テストは「外部検証システム」として機能し、Claudeが自己評価の過大評価に陥るのを防ぐ。実装→テストの順番より、テスト→実装の順番の方がAI品質管理に向いている。",
-      "source_title": "Claude Code ベストプラクティス10選（Uravation）",
-      "source_url": "https://uravation.com/media/claude-code-best-practices-top10-2026/",
-      "tags": [
-        "Claude Code"
-      ],
-      "first_date": "2026-04-11",
-      "last_date": "2026-04-11",
       "appearances": 4
     },
     {
@@ -1209,7 +1211,79 @@
       "appearances": 4
     },
     {
-      "id": 476,
+      "id": 530,
+      "title": "Claude Code 2.1.129：プロンプトキャッシュTTL 1時間が5分に誤縮小されるバグを修正",
+      "point": "本来1時間のプロンプトキャッシュTTLが、バグにより黙って5分に短縮されていた問題が解消された。このバグは本番APIコストに直接影響するため、修正により大規模ワークロードのキャッシュ効率が本来の設計通りに機能するようになる。TTL設定を手動で調整していた場合は設定を見直す価値がある。",
+      "source_title": "Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-05-07",
+      "last_date": "2026-05-07",
+      "appearances": 3
+    },
+    {
+      "id": 508,
+      "title": "Claude Code：PowerShellツール有効時にWindowsでPowerShellが主シェルに昇格",
+      "point": "`CLAUDE_CODE_USE_POWERSHELL_TOOL=1` 設定時、WindowsのClaudeはBashではなくPowerShellを主シェルとして扱うように変更。pwsh.exe（PowerShell 7+）→ powershell.exe（5.1）の順で自動検出され、Windows固有ツールとの互換性が向上する。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-05",
+      "last_date": "2026-05-05",
+      "appearances": 3
+    },
+    {
+      "id": 504,
+      "title": "`claude ultrareview [target]`でCI/スクリプトから非インタラクティブにコードレビューを実行",
+      "point": "`claude ultrareview [target]` サブコマンドが追加され、CLIからCI・スクリプト経由で非インタラクティブにコードレビューを実行できるようになった。`--json` フラグでJSON形式の出力を取得でき、終了コード0が正常完了・1が失敗を示すため、CI/CDパイプラインの品質ゲートとして組み込める。引数なしの場合は現在のブランチ全体を、`/ultrareview <PR#>` では特定のGitHub PRを対象にクラウド並列エージェントでレビューする。",
+      "source_title": "Anthropic Claude Code Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "自動化",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-04",
+      "last_date": "2026-05-04",
+      "appearances": 3
+    },
+    {
+      "id": 496,
+      "title": "5つのClaudeワークフローパターンを選んで組み合わせる：sequential / operator / split-and-merge / agent teams / headless",
+      "point": "Claude Codeのアジェンティックワークフローには5つの基本パターンがある。①sequential（前工程の出力を次工程の入力にする直列処理）、②operator（Claudeが複数ツールを選択・使用）、③split-and-merge（タスクを並列サブタスクに分割後統合）、④agent teams（複数Claudeが役割分担して協調）、⑤headless（UI不要のバックグラウンド処理）。これらを組み合わせることで、コードレビュー→テスト→ドキュメント生成などの複雑パイプラインを設計できる。",
+      "source_title": "Beyond One-Shot Prompts: 5 Claude Code Workflow Patterns Explained - MindStudio",
+      "source_url": "https://www.mindstudio.ai/blog/claude-code-agentic-workflow-patterns",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-03",
+      "last_date": "2026-05-03",
+      "appearances": 3
+    },
+    {
+      "id": 497,
+      "title": "Cowork成果委任型プロンプト：細かい手順指示より「達成したい結果」を記述して自律処理させる",
+      "point": "Coworkで最も効果的なプロンプトは手順を列挙した指示書ではなく、ゴール（達成したい結果）を端的に記述したものだということが多数の実践事例で確認されている。「1. ○○を開いて、2. △△をコピーして、3. □□に貼り付けて」ではなく、「△△の情報を□□の形式にまとめておいて」と記述するだけで、Coworkが最適な手順を自律的に判断して実行する。手順列挙型プロンプトはエラー時のリカバリー能力を低下させる副作用もある。",
+      "source_title": "How to turn Claude from chatbot into productivity powerhouse with Cowork - howdoiuseai.com",
+      "source_url": "https://www.howdoiuseai.com/blog/2026-04-25-how-to-turn-claude-from-chatbot-into-productivity-",
+      "tags": [
+        "プロンプト",
+        "製品機能"
+      ],
+      "first_date": "2026-05-03",
+      "last_date": "2026-05-03",
+      "appearances": 3
+    },
+    {
+      "id": 467,
       "title": "ant CLIでClaude Managed Agentsをコマンドラインから作成・管理する",
       "point": "Anthropicが提供する `ant` CLIは、Managed Agentsをコードなしで作成・管理できるツール。`ant beta:agents create --toolset agent_toolset_20260401` でbash・ファイル操作・Web検索などのツールセットを持つエージェントを即座に立ち上げられる。Claude Codeとのネイティブ統合も備え、APIリソースのYAML管理もできる。",
       "source_title": "Claude Managed Agents Overview",
@@ -1225,7 +1299,7 @@
       "appearances": 3
     },
     {
-      "id": 477,
+      "id": 468,
       "title": "Managed Agentsメモリ：TTLとmax_entriesを設定してトークン消費の肥大化を防ぐ",
       "point": "Managed Agentsのメモリ機能（公開ベータ中）は設定なしで使うとメモリストアが無制限に成長し、コンテキストウィンドウのトークン消費増加・応答遅延・費用増大を引き起こす。必ず `ttl`（有効期限）と `max_entries`（最大件数）を設定すること。メモリには「このユーザーは前回Xについて聞いた」のような文脈情報のみを格納するのがベストプラクティス。",
       "source_title": "Using agent memory - Claude API Docs",
@@ -1239,7 +1313,7 @@
       "appearances": 3
     },
     {
-      "id": 466,
+      "id": 457,
       "title": "AGENTS.md + CLAUDE.md ポータブルパターン：エージェント横断で設定を共有する",
       "point": "AGENTS.md は Copilot・Codex 等の複数コーディングエージェントが読む新興コミュニティ標準ファイル。本体コンテンツをAGENTS.mdに書き、CLAUDE.mdには `@AGENTS.md` の1行インポートのみを置くことで、将来他エージェントへ移行してもコンテキスト設定を使い回せる。CLAUDE.mdは200行以内を目安に保つ。",
       "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
@@ -1253,7 +1327,7 @@
       "appearances": 3
     },
     {
-      "id": 437,
+      "id": 428,
       "title": "Context Engineering 4要素フレームワーク：INSTRUCTIONS / CONTEXT / TASK / OUTPUT FORMAT",
       "point": "2026年のClaude活用で標準化された構造的プロンプト設計。①INSTRUCTIONS（役割・ルール・制約）、②CONTEXT（背景・データ・ドキュメント）、③TASK（今回の具体的なリクエスト）、④OUTPUT FORMAT（出力形式・長さ・構造）の4要素を明示的に分離して記述する。特に長文コンテキストでは最重要情報を先頭か末尾に配置することが推奨されている。プロンプトの最適長は150〜300語が実用上の目安。",
       "source_title": "Claude Prompt Engineering Best Practices 2026 — Prompt Builder",
@@ -1266,7 +1340,7 @@
       "appearances": 3
     },
     {
-      "id": 422,
+      "id": 413,
       "title": "Claude Managed Agents メモリ機能パブリックベータ：セッション横断の記憶で97%エラー削減",
       "point": "2026年4月23日よりClaude Managed Agentsにメモリ機能がパブリックベータで追加。ファイルシステムベースのメモリがエージェントセッションをまたいで情報を保持し、複数エージェント間で共有できる。変更は全てaudit logに記録され、ロールバック・バージョン管理が可能。楽天の事例では初回パスエラーが97%削減。全エンドポイントに `managed-agents-2026-04-01` ベータヘッダーが必要。",
       "source_title": "Built-in memory for Claude Managed Agents",
@@ -1280,7 +1354,7 @@
       "appearances": 3
     },
     {
-      "id": 427,
+      "id": 418,
       "title": "Claude Mythos Preview：英国AI安全研究所がゼロデイ発見能力を公式評価",
       "point": "英国政府のAI安全研究所（AISI）がClaude Mythos Previewのサイバーセキュリティ能力を正式評価・公表。ブラウザ・OSサンドボックスを突破するゼロデイ脆弱性の連鎖攻撃、ネットワークへの自律多段階侵入が可能なことを確認。Anthropicは防御的セキュリティ研究のみに限定する招待制「Project Glasswing」でのみ提供しており、一般公開・セルフサインアップは不可。",
       "source_title": "Our evaluation of Claude Mythos Preview's cyber capabilities — UK AISI",
@@ -1293,7 +1367,7 @@
       "appearances": 3
     },
     {
-      "id": 429,
+      "id": 420,
       "title": "Claude Design + Opus 4.7：テキスト指示だけでブランドコンシャスなビジュアルを生成",
       "point": "Anthropic LabsのClaude Designが、Opus 4.7バックエンドでコードベース・デザインファイルのブランドカラー・フォントを自動読み込みし適用するようになった。「このスライドをブランドカラーで作り直して」などの自然言語指示だけでプロトタイプ・スライド・ワンページャーを生成。Claude Pro・Max・Team・Enterpriseユーザー向けにリサーチプレビュー中。",
       "source_title": "Anthropic launches Claude Design — TechCrunch",
@@ -1307,7 +1381,7 @@
       "appearances": 3
     },
     {
-      "id": 417,
+      "id": 408,
       "title": "Message Batches API の max_tokens が 300k トークンに引き上げ",
       "point": "Claude Opus 4.6 と Sonnet 4.6 向け Message Batches API で、ベータヘッダー `output-300k-2026-03-24` を付与することで max_tokens を 300k まで指定可能になった。報告書・コード一括出力など単発の長文生成に有効。通常の 8192 上限を大幅に超える応答が取得できる。",
       "source_title": "Claude Platform API Release Notes",
@@ -1322,7 +1396,7 @@
       "appearances": 3
     },
     {
-      "id": 404,
+      "id": 395,
       "title": "Claude Opus 4.7 xhigh努力レベル：コーディングタスクは「high」または「xhigh」から開始",
       "point": "Opus 4.7 で新設された `xhigh` 努力レベル（100kトークン）はコーディングベンチマークで71%を達成し、Opus 4.6 の max（200k）を超える。コーディング・複雑な推論タスクでは `effort: \"high\"` または `effort: \"xhigh\"` から始めることを推奨。新tokenizer導入でトークン使用量が増加する場合があるため `effort` パラメータで予算調整する。",
       "source_title": "Introducing Claude Opus 4.7",
@@ -1335,7 +1409,7 @@
       "appearances": 3
     },
     {
-      "id": 408,
+      "id": 399,
       "title": "セッション引き継ぎドキュメントでコンテキストを永続化",
       "point": "パフォーマンス低下やトピック変更時に新規セッションを開始する前に、「実施した内容・決定事項・次ステップ」を簡潔にまとめた引き継ぎドキュメントを作成しておく。新セッションの冒頭でこのドキュメントを渡すことで、コンテキスト喪失を防ぎつつクリーンな状態から作業を続けられる。",
       "source_title": "Claude best practices 2026: the complete power user guide",
@@ -1346,7 +1420,7 @@
       "appearances": 3
     },
     {
-      "id": 409,
+      "id": 400,
       "title": "Sonnet 4.5・Sonnet 4 の 1M トークンコンテキスト窓ベータが 4/30 退役",
       "point": "2026年4月30日に Claude Sonnet 4.5 と Claude Sonnet 4 向け 1M トークンコンテキスト窓ベータが終了。ベータヘッダー `context-1m-2025-08-07` はその日以降無効となり、200kを超えるリクエストはエラーを返す。1Mコンテキストを継続利用するには Claude Sonnet 4.6 または Claude Opus 4.6 への移行が必要（どちらも追加ヘッダー不要で標準価格対応）。",
       "source_title": "Claude API Release Notes - March 30, 2026",
@@ -1360,7 +1434,7 @@
       "appearances": 3
     },
     {
-      "id": 391,
+      "id": 382,
       "title": "Claude Haiku 3 API 本日正式退役：即座に claude-haiku-4-5 へ移行",
       "point": "`claude-3-haiku-20240307` の退役が本日2026/4/19付で実施。以降のリクエストはすべてエラーを返す。移行先は `claude-haiku-4-5-20251001`（Claude Haiku 4.5）。推論精度・速度ともに向上しており、価格は旧Haikuより低コスト。コードベース内のモデル名文字列を全文検索して置換することを推奨。",
       "source_title": "Model deprecations - Claude API Docs",
@@ -1374,7 +1448,7 @@
       "appearances": 3
     },
     {
-      "id": 387,
+      "id": 378,
       "title": "xhigh effort レベル：highとmaxの間の新粒度で推論コストを制御する",
       "point": "Opus 4.7に合わせて新しい effort レベル「xhigh」が追加。`think` → `think hard` → `high` → `xhigh` → `max` の順で推論深度が上がり、遅延・コストとのトレードオフを細かく調整できる。`/effort` コマンドを引数なしで呼び出すと矢印キーで操作できるインタラクティブスライダーが表示され、確認はEnter。Maxプラン向け。",
       "source_title": "Claude Code by Anthropic - Release Notes - April 2026 Latest Updates",
@@ -2199,7 +2273,77 @@
       "appearances": 3
     },
     {
-      "id": 491,
+      "id": 524,
+      "title": "Opus 4.7 ベストプラクティス：「詳細な計画が勝つ」— リテラリズム時代のプロンプト設計",
+      "point": "Opus 4.7の最大の変化は「リテラリズム（文字通り実行）」。暗黙の前提を自動補完していた4.6と異なり、4.7は指示された内容だけを厳密に実行する。成功パターンは「明示的な意図・成功基準・制約をプロンプトに盛り込む」こと。曖昧なプロンプトには厳しく、詳細プランには強く応える設計になっている。",
+      "source_title": "Claude Opus 4.7 Best Practices: Detailed Plans Win",
+      "source_url": "https://claudefa.st/blog/guide/development/opus-4-7-best-practices",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-06",
+      "last_date": "2026-05-06",
+      "appearances": 2
+    },
+    {
+      "id": 525,
+      "title": "Vertex AI × Claude Code ウェビナー（5/6）：Ship Code Faster の実践法",
+      "point": "Anthropicが「Ship Code Faster with Claude Code on Vertex AI」ウェビナーを2026年5月6日に開催。Google Cloud上でClaudeを使った高速コーディングの実践例、Vertex AI経由のAPIアクセス最適化、エンタープライズ向けデプロイパターンを解説。録画・資料はAnthropicイベントページで公開予定。",
+      "source_title": "Events \\\\ Anthropic",
+      "source_url": "https://www.anthropic.com/events",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-05-06",
+      "last_date": "2026-05-06",
+      "appearances": 2
+    },
+    {
+      "id": 369,
+      "title": "持続的コンテキスト3ファイル戦略：about-me / voice-profile / anti-AI-writingを設定する",
+      "point": "2026年のコンテキストエンジニアリングの最重要実践として再注目。最低限3ファイルを作成する：①自分が誰で何を取り組んでいるかを記したidentityファイル、②自分の思考・文体スタイルを記録したvoice profileファイル、③Claudeが自分として書く際に使ってはいけない単語・表現・トーンを列挙したanti-AI-writingファイル。これをClaude Projectsのシステムプロンプトに読み込むことで、全会話で一貫した出力が得られる。",
+      "source_title": "Claude best practices 2026: the complete power user guide - the-ai-corner.com",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-04-16",
+      "last_date": "2026-05-03",
+      "appearances": 2
+    },
+    {
+      "id": 494,
+      "title": "Claude Live Artifacts：開くたびにコネクターデータが更新される永続インタラクティブワークスペース",
+      "point": "Claude Live Artifactsは一回限りの回答を超えた「生きたページ」として機能する。プロジェクトボード・採用パイプライン・サポートキュー等のステータスページ、週次メトリクスや定期レポート、コネクターデータのインタラクティブエクスプローラーなど、定期的に見返す内容に適する。画面右上の「Reload」ボタンで最新データを取得でき、連携コネクターを通じて自動的に情報が更新される。MarkdownテーブルやリストになりやすいコネクターデータをLive Artifactに変換することで、生産性が大幅に向上する。",
+      "source_title": "Claude Live Artifacts: Persistent AI Workspace Guide (2026) - eigent.ai",
+      "source_url": "https://www.eigent.ai/blog/claude-live-artifacts-guide",
+      "tags": [
+        "MCP/プラグイン",
+        "生産性"
+      ],
+      "first_date": "2026-05-03",
+      "last_date": "2026-05-03",
+      "appearances": 2
+    },
+    {
+      "id": 495,
+      "title": "Cowork並列ファイル処理で30分→4分：タスクを並列処理可能な形で明示的に記述する",
+      "point": "複数ファイルを順番に処理するのではなく並列処理するよう指示するだけで、作業時間が大幅に短縮できる。具体例：「10個のドキュメントを1つずつ要約して」ではなく「10個のドキュメントを並列で同時に要約して」と指示すると、約30分かかる作業が約4分に短縮されたケースが報告されている。Coworkが自然言語の指示から並列処理の意図を読み取るため、フレーミングを変えるだけでスループットが劇的に改善する。",
+      "source_title": "10 Claude Cowork Workflows That Actually Work - the-ai-corner.com",
+      "source_url": "https://www.the-ai-corner.com/p/10-claude-cowork-workflows-that-actually",
+      "tags": [
+        "生産性",
+        "製品機能"
+      ],
+      "first_date": "2026-05-03",
+      "last_date": "2026-05-03",
+      "appearances": 2
+    },
+    {
+      "id": 482,
       "title": "Claude in Chrome ベータが全有料プラン向けに拡大",
       "point": "ブラウジングエージェント「Claude in Chrome」が、一部限定ユーザーから全有料プラン（Pro・Max・Team・Enterprise）加入者向けに正式に拡大。ブラウザ上でウェブページの読み取り・フォーム操作・複数タブの横断リサーチなどをClaudeに委任できる。既存の有料ユーザーはChromeに拡張機能をインストールするだけで利用開始可能。",
       "source_title": "AI Updates Today (May 2026) – llm-stats.com",
@@ -2213,7 +2357,7 @@
       "appearances": 2
     },
     {
-      "id": 492,
+      "id": 483,
       "title": "3段階モデルルーティング：Haiku（分類）→Sonnet（主力）→Opus（高度推論専用）でAPIコスト60-70%削減",
       "point": "2026年の最先端プロダクションシステムが採用する3段階ルーティング戦略。Haiku 4.5がリクエストを分類し、シンプルなものはそのまま処理。Sonnet 4.6がコード生成・ドキュメント分析・データ抽出などの大多数のタスクを担当。Opus 4.6/4.7は複雑な多段推論・Agent Teams・大規模コードベース分析など全体の10-15%のみに使用。この配分でOpus一本使いに比べてAPI費用が60-70%削減できるとされる。",
       "source_title": "Claude Sonnet 4.6 vs Opus 4.6: Which Model Should You Use — Shawn Kanungo",
@@ -2228,7 +2372,7 @@
       "appearances": 2
     },
     {
-      "id": 495,
+      "id": 486,
       "title": "ポジティブ例示（positive examples）を優先：ネガティブ例示・禁止形プロンプトより具体的な正例が効果的",
       "point": "「してはいけないこと」を示すネガティブ例示より、「こう答えてほしい」という正例を示すポジティブ例示の方が、Claude 4.xでは一貫して高品質な出力が得られる。Few-shotプロンプトを設計する際は、まず1件の正例（one-shot）から始め、出力が目標に近づかない場合のみ追加例を増やす。禁止リストを長くするより、理想の出力サンプルを丁寧に作成することに時間を投資すべき。",
       "source_title": "Prompting best practices - Claude API Docs",
@@ -2242,7 +2386,7 @@
       "appearances": 2
     },
     {
-      "id": 496,
+      "id": 487,
       "title": "effortパラメータ＋xhigh設定：コーディング・エージェントタスクでのコスト対品質を最適化",
       "point": "AnthropicのAPIに導入された`effort`パラメータを使うと、Claude の知性レベルとトークン消費量のバランスを調整できる。コーディングやエージェントユースケースでは新たに追加された`xhigh`レベルをデフォルトとして使用することが公式に推奨されている。一方、定型フォーマット変換・分類・要約などシンプルなタスクでは低effortに設定してコストを抑える。タスク複雑度に合わせたeffort設定が全体的なコスト最適化に直結する。",
       "source_title": "Prompting best practices - Claude API Docs",
@@ -2256,7 +2400,7 @@
       "appearances": 2
     },
     {
-      "id": 497,
+      "id": 488,
       "title": "Just-in-Time コンテキスト戦略：軽量IDを保持しランタイムでデータを動的ロードする",
       "point": "Anthropicのエンジニアリングブログが推奨するエージェント向けコンテキスト管理手法。エージェントが全データをコンテキストに保持するのではなく、軽量な参照ID（ドキュメントIDや行キーなど）だけを保持し、実際にデータが必要になった瞬間にツール経由で動的にロードする。これにより「コンテキストロット（精度劣化）」を防ぎ、最小限の高シグナルトークンだけで長期間の高品質な処理を維持できる。",
       "source_title": "Effective context engineering for AI agents - Anthropic Engineering",
@@ -2270,7 +2414,7 @@
       "appearances": 2
     },
     {
-      "id": 498,
+      "id": 489,
       "title": "Anthropic 2026エージェントコーディングトレンドレポート：コード生成から自律マルチエージェント開発へ移行",
       "point": "Anthropicが公開した「2026年エージェントコーディングトレンドレポート」によれば、AIを活用する開発チームの多くがコード生成の段階を超え、複数のClaudeエージェントが独立して計画・実装・テストを分担する「マルチエージェント自律開発」へ移行しつつある。並列エージェントを活用するチームはスループットが最大5倍向上し、チーム構成やコードレビューフローの根本的な見直しを迫られている。",
       "source_title": "2026 Agentic Coding Trends Report - Anthropic",
@@ -2285,7 +2429,7 @@
       "appearances": 2
     },
     {
-      "id": 445,
+      "id": 436,
       "title": "Opus 4.7の指示遵守厳格化：「行間を読む」挙動が減少、プロンプト再調整が必要",
       "point": "Opus 4.6は指示が曖昧でも「意図を汲んで」動作していたが、4.7は指示に忠実に従う設計に変わった。4.6ベースのワークフローが「Claudeが自動補完してくれる」前提で作られている場合、4.7では想定外の挙動（確認を求める・指示通りの最小限しか実行しない）が出る。既存プロンプトに「なぜそのタスクを行うか」の目的と「何を期待するか」の詳細を追記して再調整が必要。",
       "source_title": "The Ultimate Guide to Claude Opus 4.7 - Product Compass",
@@ -2299,7 +2443,7 @@
       "appearances": 2
     },
     {
-      "id": 485,
+      "id": 476,
       "title": "ロール指定の具体化：経験年数・資格・専門スタンダードまで明記して精度向上",
       "point": "「あなたは構造エンジニアです」より「あなたはAISC 360とAWS D1.1に精通した産業用鉄骨構造設計15年のシニア構造エンジニアです」と指定すると、出力の精度・深度が大きく変わる。役割の名称だけでなく、経験年数・専門分野・準拠スタンダードを具体的に記述することで、実務レベルの知識に即した回答が得られる。",
       "source_title": "Stop Wasting Claude AI: Prompt Guide for Engineers - Medium",
@@ -2310,7 +2454,7 @@
       "appearances": 2
     },
     {
-      "id": 486,
+      "id": 477,
       "title": "ポジティブフレーミング：Claude 4.xは禁止形より肯定形の指示に顕著に反応",
       "point": "「情報をでっち上げるな」より「以下のコンテキスト内のデータのみ使用せよ」という指示の方が、Claude 4.xでは一貫して高品質な出力が得られる。禁止語句ではなく「何をすべきか」を明示することで、モデルが正確な行動を選択しやすくなる。プロンプト全体をできる限り肯定形に書き換えると全体的な精度向上につながる。",
       "source_title": "Claude 4.x Prompt Engineering: A Practical Guide - Medium",
@@ -2324,7 +2468,7 @@
       "appearances": 2
     },
     {
-      "id": 487,
+      "id": 478,
       "title": "Claude Managed Agentsメモリβ：セッション横断の記憶でエラー率97%削減",
       "point": "Claude Managed AgentsのメモリAPIがパブリックベータに入り（`managed-agents-2026-04-01`ヘッダーで有効化）、エージェントがセッションをまたいで過去の判断・設定・コンテキストを記憶できるようになった。Anthropicの報告ではエラー率が最大97%削減されるケースあり。長時間・複数セッションにわたるエージェントワークフローで特に効果的。",
       "source_title": "Claude Managed Agents Overview - Anthropic Docs",
@@ -2339,7 +2483,7 @@
       "appearances": 2
     },
     {
-      "id": 473,
+      "id": 464,
       "title": "Claude Codeプロンプトキャッシュ制御：1時間強制と5分セッションキャッシュでAPI費用を削減",
       "point": "Claude Codeに新たなキャッシュ制御オプションが追加。1時間強制キャッシュと5分セッション内キャッシュを明示的に切り替えられる。長い固定コンテキスト（CLAUDE.md、大きなファイル読み込み）には1時間キャッシュを使い、会話履歴には5分キャッシュを使うことでAPI費用を最大90%削減できる。",
       "source_title": "Anthropic Release Notes",
@@ -2355,7 +2499,7 @@
       "appearances": 2
     },
     {
-      "id": 475,
+      "id": 466,
       "title": "タスクバジェットでOpus 4.7エージェントループの優先順位と完了基準を明示する",
       "point": "Opus 4.7のタスクバジェット機能は、エージェントに「全体でこれだけのトークンを使って良い」という目安を渡す仕組み。モデルは残バジェットのカウントダウンを見ながら作業の優先順位を調整し、バジェット消費に応じてタスクを完結させる。無制限に走り続けるループを防ぎ、コストを予測可能にする。",
       "source_title": "The Ultimate Guide to Claude Opus 4.7",
@@ -2369,7 +2513,7 @@
       "appearances": 2
     },
     {
-      "id": 479,
+      "id": 470,
       "title": "/ultrareviewコマンドで通常より多角的・徹底的なコードレビューを実施する",
       "point": "Claude Code（Opus 4.7以降）の `/ultrareview` コマンドは通常のコードレビューより広い視点でレビューを行う。セキュリティ・パフォーマンス・可読性・テスト網羅性の全観点を同時にカバーし、潜在的な問題を洗い出す。大型PR・リリース前最終確認など、「とにかく徹底的に見てほしい」場面で活用。",
       "source_title": "Claude Opus 4.7 Complete Guide",
@@ -2384,7 +2528,7 @@
       "appearances": 2
     },
     {
-      "id": 457,
+      "id": 448,
       "title": "Claude Managed Agents メモリ：変更ごとにイミュータブルバージョン生成で監査証跡を保持",
       "point": "Managed Agents のメモリストアは、エージェントがファイルに書き込むたびに「イミュータブルなメモリバージョン」を自動生成する。変更履歴がすべて保持されるため、ポイントインタイムでの復元・監査証跡の確保が容易。Rakuten の導入事例では、セッション横断メモリにより初回エラーを97%削減した実績がある。",
       "source_title": "Using agent memory - Claude API Docs",
@@ -2397,7 +2541,7 @@
       "appearances": 2
     },
     {
-      "id": 431,
+      "id": 422,
       "title": "カスタムサブエージェントを`.claude/agents/`に定義する：独立コンテキストで専門タスクを分離",
       "point": "YAMLフロントマター（name, description, tools, model）付きMarkdownファイルを`.claude/agents/`に置くだけでサブエージェントが使えるようになる。サブエージェントは独自のコンテキスト窓・ツール権限・システムプロンプトを持ち、メインエージェントへは最終メッセージだけを返すため、ログや検索結果でメインコンテキストが汚染されない。`~/.claude/agents/`に置けば全プロジェクト共通で利用可能。`/agents`コマンドでGUI作成・編集もできる。",
       "source_title": "Create custom subagents — Claude Code Docs",
@@ -2412,7 +2556,7 @@
       "appearances": 2
     },
     {
-      "id": 438,
+      "id": 429,
       "title": "ALL-CAPS・「NEVER EVER」命令はClaudeには逆効果：強調は簡潔な記述で十分",
       "point": "強調のつもりで使われる「YOU MUST」「NEVER EVER」「ABSOLUTELY」などのALL-CAPS命令はClaude（Sonnet 4.6以降）でむしろ出力品質を低下させることが確認されている。過剰な命令語がモデルを「過緊張」状態にさせ、細かい指示への追従性が下がる。代わりに「Please」「When doing X, do Y」など自然な指示形式を使い、制約は箇条書きで簡潔に列挙するのが効果的。",
       "source_title": "Stop Wasting Claude AI: Prompt Guide for Engineers — Medium",
@@ -2425,7 +2569,7 @@
       "appearances": 2
     },
     {
-      "id": 423,
+      "id": 414,
       "title": "Anthropic「Claudeは広告なし」を正式コミット：AI広告競争から距離を置く",
       "point": "AnthropicはOpenAIがChatGPT無料ユーザー向けに広告テストを開始したのに対抗し、「Claudeは広告スペースになりません」と正式宣言。広告インセンティブはAIアシスタントの有用性と根本的に相容れないとの立場。スポンサーリンク・広告主からの回答誘導・プロダクトプレースメントは一切行わず、サブスクリプションと法人契約を収益基盤とする方針を明確化。",
       "source_title": "Anthropic commits to no-ads policy for Claude AI — Neowin",
@@ -2438,7 +2582,7 @@
       "appearances": 2
     },
     {
-      "id": 428,
+      "id": 419,
       "title": "Memory Import：ChatGPT・Gemini・GrokのメモリをClaudeへ一括移行する",
       "point": "Claudeのメモリ設定画面から他AIサービスに蓄積したメモリ・設定・好みを直接インポートできる機能が全ユーザーに提供中（無料含む）。数ヶ月かけて他サービスで構築したプロファイルをゼロから再設定することなくClaudeで継続利用できる。Claude.ai設定→「メモリ」→「インポート」から手順に従い実行。",
       "source_title": "Release notes — Claude Help Center",
@@ -2449,7 +2593,7 @@
       "appearances": 2
     },
     {
-      "id": 416,
+      "id": 407,
       "title": "Claude Opus 4.7 が AWS Bedrock 全顧客にセルフサービスで開放",
       "point": "Claude Opus 4.7 と Claude Haiku 4.5 が Amazon Bedrock コンソールから全 AWS 顧客向けにセルフサービスで利用可能に。27 AWS リージョンで `/anthropic/v1/messages` エンドポイントから即時利用できる。別途申請不要で、既存 Bedrock アカウントから直接呼び出せる。",
       "source_title": "Claude Platform API Release Notes",
@@ -2463,7 +2607,7 @@
       "appearances": 2
     },
     {
-      "id": 418,
+      "id": 409,
       "title": "Claude Sonnet 4 / Opus 4 廃止予告：6月15日に Claude API が退役",
       "point": "`claude-sonnet-4-20250514` と `claude-opus-4-20250514` が 2026年6月15日に Claude API で退役予定。移行先は Sonnet 4.6（`claude-sonnet-4-6-20260305`）と Opus 4.7（`claude-opus-4-7-20260416`）が推奨される。期限前に API コードの model 文字列を確認し移行計画を立てておくこと。",
       "source_title": "Claude Platform API Release Notes",
@@ -2477,7 +2621,7 @@
       "appearances": 2
     },
     {
-      "id": 420,
+      "id": 411,
       "title": "Ultraplan でクラウドプランをWebエディタでレビューしてから実行する",
       "point": "`Ultraplan` は CLI でクラウド上にプランをドラフトし、ブラウザのWebエディタでコメント・レビューした後に、リモートまたはローカルで実行できる機能。初回実行時はクラウド環境が自動作成される。大規模リファクタリングや複数人が関与するタスクの計画・承認フローに最適。",
       "source_title": "Claude Code — What's New (Week 15)",
@@ -2488,7 +2632,7 @@
       "appearances": 2
     },
     {
-      "id": 401,
+      "id": 392,
       "title": "Claude Design 正式公開：Figmaに挑戦するビジュアル作成ツール",
       "point": "2026年4月17日にAnthropicがAnthropicLabsの新製品「Claude Design」をリリース。デザイン、インタラクティブプロトタイプ、スライド、ワンページャーなどをチャット形式で作成できる。チームのコードベース・デザインファイルを読み込みブランドカラー・タイポグラフィを自動適用。Claude Pro・Max・Team・Enterprise加入者から段階的に公開中。",
       "source_title": "Introducing Claude Design by Anthropic Labs",
@@ -2502,7 +2646,7 @@
       "appearances": 2
     },
     {
-      "id": 405,
+      "id": 396,
       "title": "Claude Managed Agents：セキュアなサンドボックス付き完全マネージドエージェント基盤",
       "point": "2026年4月8日よりAPIパブリックベータとして提供開始。セキュアサンドボックス・組み込みツール・SSEストリーミングを備えた完全マネージドのエージェント実行基盤。$0.08/実行時間（月24/7稼働で約$58）＋標準モデル使用量の価格体系。全エンドポイントに `managed-agents-2026-04-01` ベータヘッダーが必要。",
       "source_title": "Claude Managed Agents overview",
@@ -2518,7 +2662,7 @@
       "appearances": 2
     },
     {
-      "id": 406,
+      "id": 397,
       "title": "ant CLI：Claude APIをコマンドラインから操作する新ツール",
       "point": "2026年4月8日に正式リリースされた `ant` CLI は、Claude API への高速アクセス・Claude Code とのネイティブ統合・API リソースの YAML ファイルバージョン管理を提供する。既存の API キーでそのまま利用可能で、Claude API の機能をターミナルから直接呼び出せる。",
       "source_title": "Claude API Release Notes - April 8, 2026",
@@ -2533,7 +2677,7 @@
       "appearances": 2
     },
     {
-      "id": 407,
+      "id": 398,
       "title": "advisor tool：高コスト Advisor + 高速 Executor の組み合わせでコスト削減",
       "point": "2026年4月9日にAPIパブリックベータで提供開始。高知能の Advisor モデルが長文生成の途中で戦略的指示を提供し、大部分のトークン生成は低コストの Executor モデルが担う。長期エージェントワークロードで Advisor 単体に近い品質をリクエストの大半は Executor レートで実現。ベータヘッダー `advisor-tool-2026-03-01` が必要。",
       "source_title": "advisor tool - Claude API Docs",
@@ -2559,21 +2703,6 @@
         "製品機能"
       ],
       "first_date": "2026-04-13",
-      "last_date": "2026-04-16",
-      "appearances": 2
-    },
-    {
-      "id": 378,
-      "title": "持続的コンテキスト3ファイル戦略：about-me / voice-profile / anti-AI-writingを設定する",
-      "point": "CoworkまたはClaude Codeのグローバル設定に「自分が誰で何に取り組んでいるか（about-me.md）」「思考・文体スタイル（voice-profile.md）」「Claudeに絶対使ってほしくない言葉・構造（anti-AI-writing.md）」の3ファイルを自動読み込みさせると、毎回の自己紹介が不要になり出力品質が一貫して向上する。モデルを切り替えるよりもこの設定の効果が大きいとされている。",
-      "source_title": "Claude best practices 2026: the complete power user guide | The AI Corner",
-      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
-      "tags": [
-        "Claude Code",
-        "モデル",
-        "製品機能"
-      ],
-      "first_date": "2026-04-16",
       "last_date": "2026-04-16",
       "appearances": 2
     },
@@ -3415,7 +3544,488 @@
       "appearances": 2
     },
     {
-      "id": 489,
+      "id": 526,
+      "title": "Claude Code 2.1.129：`--plugin-url` フラグでURLからプラグインをその場でロード",
+      "point": "`--plugin-url <url>` フラグを使うと、`.zip` プラグインアーカイブをURLで直接指定してセッション単位でロードできるようになった。ローカルにダウンロード不要でプラグインをテスト・共有でき、チームやCI環境への展開が単一URLで完結する。`--plugin-dir` に加えてURL経由も選べる点が実用的。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-07",
+      "last_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": 527,
+      "title": "Claude Code 2.1.129：`CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE` で自動アップデート管理",
+      "point": "この環境変数を設定すると、Homebrew（macOS/Linux）またはWinGet（Windows）でインストールした場合に、バックグラウンドでアップグレードコマンドを自動実行し、再起動を促すプロンプトを表示する。常に最新版を維持したいチーム環境や個人開発者に特に便利。",
+      "source_title": "Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "新機能"
+      ],
+      "first_date": "2026-05-07",
+      "last_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": 528,
+      "title": "Claude Code 2.1.129：Ctrl+R 履歴ピッカーが全プロジェクト横断検索に復元",
+      "point": "2.1.124で変更されたCtrl+Rの挙動が元に戻り、再び全プロジェクトのプロンプト履歴を横断して検索できるようになった。現在のプロジェクトやセッションに絞りたい場合はCtrl+Sで切り替えられる。頻繁に再利用するプロンプトを過去のプロジェクトから呼び出す運用が復活。",
+      "source_title": "Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-05-07",
+      "last_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": 529,
+      "title": "Claude Code 2.1.129：`skillOverrides` 設定でスキルの可視性をモデル・UIから個別制御",
+      "point": "`skillOverrides` 設定が正式に機能するようになった。`off` はモデルと `/` コマンド両方から非表示、`user-invocable-only` はモデルには非表示でUIからのみ呼び出し可能、`name-only` は説明を折りたたんでスキル名のみ表示する。大規模なスキルセットを運用する際のコンテキスト管理に有効。",
+      "source_title": "Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-05-07",
+      "last_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": 531,
+      "title": "Claude Code 2.1.129：`/context` が会話に約1.6kトークンの可視化グリッドを流し込むバグを修正",
+      "point": "`/context` コマンドを実行するたびに、ASCII文字のコンテキスト可視化グリッドが会話履歴に書き込まれ、約1,600トークンを無駄に消費していたバグが修正された。コンテキスト管理のために `/context` を頻繁に使う場合のトークン節約効果が大きい。",
+      "source_title": "Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-07",
+      "last_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": 532,
+      "title": "Claude Code 2.1.129：ポリシー拒否エラーにAPI Request IDを追加でサポート対応が効率化",
+      "point": "組織ポリシーによりリクエストが拒否された場合のエラーメッセージに、API Request IDが含まれるようになった。サポートチームへの問い合わせ時にリクエストIDを伝えるだけで問題を特定できるようになり、エンタープライズ環境でのトラブルシューティングが大幅に効率化される。",
+      "source_title": "Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-05-07",
+      "last_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": 533,
+      "title": "Claude Code 2.1.129：Bedrock/Vertex/Foundry等のサードパーティ環境でAnthropicスピナーTipsを非表示化",
+      "point": "Bedrock、Vertex AI、Foundry、または `ANTHROPIC_BASE_URL` ゲートウェイ経由でClaudeを利用している場合、処理中スピナーに表示されていたAnthropicファーストパーティサービスへの誘導Tipsが非表示になった。サードパーティデプロイ環境での混乱を防ぐ実用的な改善。",
+      "source_title": "Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-05-07",
+      "last_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": 534,
+      "title": "Claude Code 2.1.131：VS Code拡張機能のWindowsでの起動失敗バグを修正",
+      "point": "バンドルされたSDKのビルドパスがハードコードされていたことが原因で、VS Code拡張機能がWindowsで有効化に失敗する問題（`createRequire` ポリフィルバグ）が修正された。WindowsユーザーがVS Code上でClaudeを使っていて拡張機能が動作しない場合は、2.1.131へのアップデートで解消される可能性が高い。",
+      "source_title": "Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-05-07",
+      "last_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": 535,
+      "title": "Claude Code 2.1.131：Mantleエンドポイント認証の `x-api-key` ヘッダー欠落バグを修正",
+      "point": "Mantleエンドポイントへのリクエストで `x-api-key` ヘッダーが付与されず認証に失敗していたバグが修正された。Mantleを使ったエンタープライズ統合環境でAPI呼び出しが意図せずエラーになっていた場合は、この修正で解消される。",
+      "source_title": "Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-05-07",
+      "last_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": 516,
+      "title": "Claude Code 2.1.128：`/mcp` コマンドがツール数を表示・0ツールサーバーをフラグ",
+      "point": "`/mcp` コマンドが接続済みMCPサーバーのツール数を一覧表示するようになった。ツール数が0のサーバーには警告フラグが立ち、設定ミスや接続不完全なサーバーをひと目で把握できる。MCP活用が増えるほどこの診断機能は重宝する。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-06",
+      "last_date": "2026-05-06",
+      "appearances": 1
+    },
+    {
+      "id": 517,
+      "title": "Claude Code 2.1.128：`/color` 引数なしでランダムセッションカラーを即設定",
+      "point": "`/color` コマンドを引数なしで実行するとランダムなカラーがセッションに割り当てられる。複数のClaudeセッションを並列で走らせる場合に、色でセッションを識別する運用がさらに手軽になった。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "生産性"
+      ],
+      "first_date": "2026-05-06",
+      "last_date": "2026-05-06",
+      "appearances": 1
+    },
+    {
+      "id": 518,
+      "title": "Claude Code 2.1.128：`--plugin-dir` が `.zip` アーカイブに対応",
+      "point": "`--plugin-dir` フラグにディレクトリに加えて `.zip` プラグインアーカイブを直接渡せるようになった。プラグインの配布・インストールが単一ファイルで完結し、チームへの展開や自動化スクリプトとの統合が簡略化される。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-06",
+      "last_date": "2026-05-06",
+      "appearances": 1
+    },
+    {
+      "id": 519,
+      "title": "Claude Code 2.1.128：`--channels` がコンソール（APIキー）認証で動作",
+      "point": "これまでOAuthログインが必要だった `--channels` フラグが、コンソール（APIキー）認証でも機能するようになった。コンソール組織でChannelsを有効にするには `channelsEnabled: true` をManaged Settingsに設定する必要がある。CI/CDやサーバー環境からのChannels利用が現実的になった。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-05-06",
+      "last_date": "2026-05-06",
+      "appearances": 1
+    },
+    {
+      "id": 520,
+      "title": "Claude Code 2.1.128：`/resume` が大規模セッションで最大67%高速化",
+      "point": "40MB超の大型セッションでの `/resume` 復帰速度が最大67%向上した。またdead-forkエントリを多数含むセッションの処理効率も改善。長期プロジェクトや大量のサブエージェント履歴を持つセッションの再開がストレスなく行えるようになった。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-05-06",
+      "last_date": "2026-05-06",
+      "appearances": 1
+    },
+    {
+      "id": 521,
+      "title": "Claude Code 2.1.128：MCP reconnect 時のツール名フラッド防止と `workspace` 予約名化",
+      "point": "MCPサーバー再接続のたびに全ツール名リストが会話に流れ込む問題が解消され、再アナウンス時はサーバープレフィックスで要約される。また `workspace` がMCPサーバーの予約名となり、同名の既存サーバーはスキップ警告が表示されるようになった。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-06",
+      "last_date": "2026-05-06",
+      "appearances": 1
+    },
+    {
+      "id": 522,
+      "title": "Claude Code 2.1.128：サブプロセスが OTEL_* 環境変数を非継承",
+      "point": "Bash・Hooks・MCP・LSP等のサブプロセスが `OTEL_*` 環境変数を引き継がなくなった。これにより、BashツールでOpenTelemetry計装済みアプリを実行した際にCLI自身のOTLPエンドポイントが誤検知される問題が解消。本番監視環境との干渉なしにコードを安全に実行できる。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-06",
+      "last_date": "2026-05-06",
+      "appearances": 1
+    },
+    {
+      "id": 523,
+      "title": "Claude Code 2.1.126：PID-namespace サブプロセスサンドボックスでLinuxのセキュリティを強化",
+      "point": "`CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` 環境変数を設定すると、Linux上でBashサブプロセスをPID-namespaceでサンドボックス化できるようになった（2.1.126）。さらにバックグラウンドスクリプトのストリーミングイベントを監視するMonitorツールも同バージョンで追加。エージェントの安全な自律実行がさらに強化された。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-05-06",
+      "last_date": "2026-05-06",
+      "appearances": 1
+    },
+    {
+      "id": 507,
+      "title": "Claude Code：ReadツールのマルウェアアセスメントSystemリマインダーを削除",
+      "point": "ファイル読込のたびに挿入され\"これはマルウェアではない\"等の誤拒否を引き起こしていたper-fileマルウェア評価リマインダーが削除された。特にサブエージェントでのOpus使用時に正規コード修正がブロックされる問題が解消。エージェントワークフローの安定性が向上する。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-05-05",
+      "last_date": "2026-05-05",
+      "appearances": 1
+    },
+    {
+      "id": 509,
+      "title": "Claude Code：Ctrl+Zターミナルハングバグを修正（ラッパープロセス経由起動時）",
+      "point": "npx・bun run等のラッパープロセス経由でClaude Codeを起動した場合にCtrl+Zでターミナルがハングする問題を修正。あわせてターミナルリサイズや大量出力時のインラインモードでのスクロールバック重複も解消された。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-05",
+      "last_date": "2026-05-05",
+      "appearances": 1
+    },
+    {
+      "id": 510,
+      "title": "Claude Code：/doctorコマンドがClaude実行中でも起動可能に",
+      "point": "以前はClaudeの回答が終わるまで待つ必要があった/doctorコマンドが、実行中いつでも開けるようになった。短いターミナル高さでの検索ダイアログはみ出しバグも修正され、診断体験が全体的に改善。",
+      "source_title": "Releases · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-05",
+      "last_date": "2026-05-05",
+      "appearances": 1
+    },
+    {
+      "id": 511,
+      "title": "Claude Code：/reload-pluginsとプラグイン自動更新で不足依存関係を自動インストール",
+      "point": "`/reload-plugins`コマンドおよびバックグラウンドのプラグイン自動更新が、すでに追加済みマーケットプレイスから不足プラグイン依存関係を自動インストールするように改善。プラグイン管理の手間が大幅に削減される。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-05",
+      "last_date": "2026-05-05",
+      "appearances": 1
+    },
+    {
+      "id": 512,
+      "title": "ANTHROPIC_BEDROCK_SERVICE_TIER環境変数でAWS Bedrockのサービス層を制御",
+      "point": "新しい環境変数`ANTHROPIC_BEDROCK_SERVICE_TIER`でdefault・flex・priorityの3段階からBedrockサービス層を選択できるようになった。優先リソース割り当て（priority）でレイテンシを最小化したり、flex層でコスト最適化が可能。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-05",
+      "last_date": "2026-05-05",
+      "appearances": 1
+    },
+    {
+      "id": 513,
+      "title": "Gemini CLIをClaude Codeのミニオン（下請けワーカー）として活用",
+      "point": "Claude Codeが指示を出し、Gemini CLIが個別タスクを並列実行する「ミニオン構成」が注目されている。Claude CodeがGemini CLIにサブタスクを委任することで、複数タスクの同時処理が可能になり、単一インスタンスでは難しいコンテキスト分散が実現できる。",
+      "source_title": "claude-code-tips - GitHub ykdojo",
+      "source_url": "https://github.com/ykdojo/claude-code-tips",
+      "tags": [
+        "Claude Code",
+        "生産性"
+      ],
+      "first_date": "2026-05-05",
+      "last_date": "2026-05-05",
+      "appearances": 1
+    },
+    {
+      "id": 514,
+      "title": "Claude Agent SDKでオペレーター／サブエージェントパターンのマルチエージェントを構築",
+      "point": "AnthropicのClaude Agent SDKでは、オペレーター（計画・委任役）とサブエージェント（実行役）の役割分担が明確に設計されている。公式リファレンスのエージェント間通信パターン・ツール呼び出し・エラー処理を参照することでプロダクション品質の実装が加速する。",
+      "source_title": "Building agents with the Claude Agent SDK | Anthropic",
+      "source_url": "https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-05-05",
+      "last_date": "2026-05-05",
+      "appearances": 1
+    },
+    {
+      "id": 498,
+      "title": "Claude Code 2.1.126：`claude project purge` でプロジェクト状態を完全リセット",
+      "point": "新コマンド `claude project purge [path]` が追加され、プロジェクトの transcripts・tasks・file history・config entry をまとめて削除できるようになった。`--dry-run` オプションで削除対象を事前確認してから実行できる。`-y/--yes` で確認スキップ、`--interactive` で対話式削除、`--all` で全プロジェクト一括削除も可能。環境をクリーンにしたい場面や機密履歴を削除したい場面で有効。",
+      "source_title": "Anthropic Claude Code Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-04",
+      "last_date": "2026-05-04",
+      "appearances": 1
+    },
+    {
+      "id": 499,
+      "title": "Claude Code 2.1.126：Opus 4.7セッションのコンテキストウィンドウ誤算バグを修正（200K→1M）",
+      "point": "旧バージョンではOpus 4.7のコンテキストウィンドウが誤って200Kとして計算されており、実際は1Mあるにもかかわらず `/context` パーセンテージが過剰に膨らみ、早すぎるオートコンパクトが発生していた。2.1.126でこのバグが修正され、正しく1Mで計算されるようになった。Opus 4.7を使用しているチームはアップデート後に `/context` を確認してオートコンパクト設定を見直すと良い。",
+      "source_title": "Anthropic Claude Code Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-04",
+      "last_date": "2026-05-04",
+      "appearances": 1
+    },
+    {
+      "id": 500,
+      "title": "Claude Code 2.1.126：WSL2・SSH・コンテナ環境でのOAuth loginがターミナル貼り付けに対応",
+      "point": "ブラウザのOAuthコールバックがlocalhostに到達できないWSL2・SSH・Dockerコンテナ等の環境でも、`claude auth login` 実行後にブラウザで取得したOAuthコードをターミナルに貼り付けるだけでログインできるようになった。従来はこれらの環境ではログインが困難だったが、開発コンテナやリモートサーバー上での認証が大幅に簡素化される。",
+      "source_title": "Anthropic Claude Code Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-04",
+      "last_date": "2026-05-04",
+      "appearances": 1
+    },
+    {
+      "id": 501,
+      "title": "Claude Code 2.1.126：2000px超の画像ペーストが自動ダウンスケールされセッションクラッシュを防止",
+      "point": "2000pxを超える大きな画像をセッションに貼り付けた場合、以前はセッションがクラッシュすることがあったが、2.1.126からは自動的にダウンスケールして処理するようになった。また、過去の会話履歴内にある大きな画像も自動的に除去されリクエストが再試行される。スクリーンショットや高解像度の図面をClaudeに渡すワークフローで安定性が向上する。",
+      "source_title": "Anthropic Claude Code Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-04",
+      "last_date": "2026-05-04",
+      "appearances": 1
+    },
+    {
+      "id": 502,
+      "title": "Claude Code 2.1.126：Windowsのno-flicker modeで日本語・韓国語・中国語の文字化けを解消",
+      "point": "Claude Code for Windowsのno-flicker modeで、日本語・韓国語・中国語などのマルチバイト文字が文字化けして表示される不具合が修正された。日本語環境で利用しているWindows版Claude Codeユーザーは2.1.126へのアップデートにより日本語テキストが正しく表示されるようになる。`claude update` コマンドでアップデートできる。",
+      "source_title": "Anthropic Claude Code Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-05-04",
+      "last_date": "2026-05-04",
+      "appearances": 1
+    },
+    {
+      "id": 505,
+      "title": "Claude Opus 4.7の新トークナイザー：旧モデル比で最大35%多くのトークンを消費する可能性",
+      "point": "Claude Opus 4.7では新しいトークナイザーが採用されており、同じテキストを処理する場合でも旧モデルに比べて約1x〜1.35x（最大35%増）のトークンを使用する可能性がある（コンテンツの種類によって異なる）。Opus 4.7を採用するAPIユーザーは事前にトークン消費量をテストし、月次コスト見積もりをバッファを持って更新することが推奨される。特にバッチ処理や大量のドキュメントを扱うシステムでの影響が大きい。",
+      "source_title": "Claude Opus 4.7: Vision, Coding Gains, and xhigh Effort - claudefa.st",
+      "source_url": "https://claudefa.st/blog/models/claude-opus-4-7",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-05-04",
+      "last_date": "2026-05-04",
+      "appearances": 1
+    },
+    {
+      "id": 490,
+      "title": "9つのクリエイティブコネクター：Blender・Adobe・Autodesk・Ableton・Splice等が全プランで利用可能に（4/28）",
+      "point": "2026年4月28日、Anthropicがクリエイティブ分野向けに9つのコネクターを同時リリース。対応ツールはBlender（3Dシーン分析・スクリプト生成）、Adobe（Photoshop/Premiere等50以上のCC ツール）、Autodesk Fusion（自然言語で3Dモデル生成・修正）、Ableton（公式製品ドキュメント連携）、Splice、Affinity by Canva（制作タスク自動化）、SketchUp、Resolume Arena/Wire。すべての無料プランを含む全プランで即時利用可能。",
+      "source_title": "Anthropic releases 9 Claude connectors for creative tools, including Blender and Adobe - 9to5Mac",
+      "source_url": "https://9to5mac.com/2026/04/28/anthropic-releases-9-new-claude-connectors-for-creative-tools-including-blender-and-adobe/",
+      "tags": [
+        "API",
+        "自動化",
+        "モデル",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-03",
+      "last_date": "2026-05-03",
+      "appearances": 1
+    },
+    {
+      "id": 491,
+      "title": "Blender開発にAnthropicが財政支援：Python API開発を加速しオープンソースコネクター普及を促進（4/30）",
+      "point": "Anthropicはコネクターリリースと同時にBlenderプロジェクトへの寄付を発表。コネクターを支えるBlenderのPython APIをさらに強化・発展させることが目的。Blender連携では、Claudeが3Dシーン全体を解析・デバッグしたり、オブジェクトに一括変更を加えるカスタムスクリプトを生成したり、Blenderのインターフェイスに新ツールを直接追加したりすることが可能。Anthropicがオープンソースエコシステムへ直接投資する初の公式事例となった。",
+      "source_title": "Anthropic funds Blender, ships Claude connector - DIGITAL PRODUCTION",
+      "source_url": "https://digitalproduction.com/2026/04/30/anthropic-funds-blender-ships-claude-connector/",
+      "tags": [
+        "API",
+        "自動化",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-03",
+      "last_date": "2026-05-03",
+      "appearances": 1
+    },
+    {
+      "id": 492,
+      "title": "Cowork「アンチToDoリスト」戦略：嫌いなタスクを起点にAI自動化の対象を体系的に発掘する",
+      "point": "Lenny's Newsletter等が紹介する効果的なCowork活用法。まず「スパムメールの手動削除」「会議アクションアイテムのAsana入力」「未読Slackのトリアージ」など「自分が嫌いなタスク」のリストを作成し、それを起点にCoworkでの自動化を体系的に設計する。「好きなタスク」から自動化を始めると効果が出にくいが、「苦手タスク」を起点にすると継続的に時間を節約できる。",
+      "source_title": "This week on How I AI: Claude Cowork tutorial for non-engineers - Lenny's Newsletter",
+      "source_url": "https://www.lennysnewsletter.com/p/this-week-on-how-i-ai-claude-cowork",
+      "tags": [
+        "自動化",
+        "製品機能"
+      ],
+      "first_date": "2026-05-03",
+      "last_date": "2026-05-03",
+      "appearances": 1
+    },
+    {
+      "id": 493,
+      "title": "Cloud Routines：デバイス電源オフ・アプリ未起動でもスケジュールタスクがクラウドで自動実行",
+      "point": "Coworkのスケジュールタスクはこれまで「PCが起きていてClaude Desktopが開いている」ことが実行の前提だったが、Cloud Routinesの導入でこの制約が解消。デバイスが完全にオフの状態でも、設定した時刻にクラウド側でタスクが実行される。モバイルのみで作業するユーザーや、夜間・週末の無人自動化を検討していたユーザーにとって自動化の実用性が大幅に向上する。",
+      "source_title": "Claude Cowork scheduled tasks: 6 ways I automated my work on repeat - aiblewmymind.substack.com",
+      "source_url": "https://aiblewmymind.substack.com/p/claude-cowork-scheduled-tasks-6-ways",
+      "tags": [
+        "自動化",
+        "製品機能"
+      ],
+      "first_date": "2026-05-03",
+      "last_date": "2026-05-03",
+      "appearances": 1
+    },
+    {
+      "id": 480,
       "title": "Claude Security ベータ：Enterprise向けコードベース脆弱性スキャン＆パッチ自動生成が可能に",
       "point": "Anthropicが2026年5月1日、「Claude Security」のパブリックベータをEnterprise顧客向けに発表。セキュリティチームがコードベース全体をスキャンし、脆弱性を発見後にパッチを自動生成できる。Claude Opus 4.7を搭載し、2026年2月にリサーチプレビュー版として公開された「Claude Code Security」から昇格。大手テクノロジー企業や金融機関での採用が進んでいる。",
       "source_title": "Anthropic announces Claude Security beta for enterprise customers - Business Standard",
@@ -3431,7 +4041,7 @@
       "appearances": 1
     },
     {
-      "id": 490,
+      "id": 481,
       "title": "Anthropic Enterprise プランがウェブからセルフ購入可能に、HIPAA対応オプションも提供",
       "point": "これまでEnterprise契約は営業チームとの交渉が必須だったが、今後は組織がウェブサイトから直接購入できるようになった。また、個人健康情報（PHI）を処理する必要がある組織向けに、HIPAA対応バージョンのClaudeもEnterpriseプランで提供開始。医療・ヘルスケア分野でのClaude活用のハードルが大幅に低下する。",
       "source_title": "Claude Release Notes - Anthropic",
@@ -3444,7 +4054,7 @@
       "appearances": 1
     },
     {
-      "id": 494,
+      "id": 485,
       "title": "画像タスクの精度向上：Crop スキルを提供してClaudeに「ズームイン」能力を付与する",
       "point": "Anthropicのプロンプトエンジニアリングガイドで明らかにされた手法。画像評価タスクでClaudeにクロップ（切り取り）ツールまたはスキルを与えると、必要な領域を「ズームイン」して詳細を確認できるようになり、画像評価ベンチマークで一貫した性能向上が確認されている。図面・医療画像・スキャン文書など細部の確認が重要な業務での画像解析精度が大幅に改善される。",
       "source_title": "Prompting best practices - Claude API Docs",
@@ -3458,7 +4068,7 @@
       "appearances": 1
     },
     {
-      "id": 480,
+      "id": 471,
       "title": "Claude Codeセッション終了時にレトロスペクティブを実施して知識を永続化する",
       "point": "セッション終了時に「このセッションで学んだことは何か？」とClaudeに尋ね、出力を適切な場所（一般概念→CLAUDE.md、コーディング規則→Rules、技術スキル→Skillファイル、設計判断→ADR）に振り分けて保存する。次のセッションでClaudeがそれを読み込むことで同じミスを繰り返さない。特に「soft deleteを使うテーブル名」「useListContextはListBase内のみ有効」などのプロジェクト固有知識の蓄積に効果的。",
       "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
@@ -3472,7 +4082,7 @@
       "appearances": 1
     },
     {
-      "id": 481,
+      "id": 472,
       "title": "Claude Codeのバグ修正は「調査→Docs更新→修正」の順に実施させる",
       "point": "Claudeがバグを生成したとき、自分で直したくなるが我慢。代わりにClaudeに「バグを調査し、なぜ起きたかをプロジェクトドキュメントに記録してから修正せよ」と指示する。セッション間でメモリはなくても、ドキュメントは残るため、次のセッションでClaudeが同一のバグを繰り返すリスクを排除できる。",
       "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
@@ -3485,7 +4095,7 @@
       "appearances": 1
     },
     {
-      "id": 482,
+      "id": 473,
       "title": "`/simplify` と `/review` をヒューマンレビュー前に実行する",
       "point": "Claudeが生成したコードは過剰抽象・不要なジェネリクス・投機的エラーハンドリングを含みがち。`/simplify` でそれを除去し、次に `/review` でClaudeに自己の問題を発見・修正させる。この2ステップ後にヒューマンレビューに入ると、コードが整理済みでレビュー効率が大幅向上する。",
       "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
@@ -3496,7 +4106,7 @@
       "appearances": 1
     },
     {
-      "id": 483,
+      "id": 474,
       "title": "Claude Codeには「最初の1ステップだけ」要求してから次を指示する",
       "point": "「機能全体を実装して」と指示するとClaudeは暴走しやすい。代わりに「ステップ1だけ実施して」→レビュー→「次のステップ」という流れを繰り返す。面倒に見えるが、作業が細かくレビュー可能になりミスが早期に発見される。複雑なタスクほど1ステップずつの指示が有効。",
       "source_title": "50 Claude Code Tips and Best Practices For Daily Use - Builder.io",
@@ -3509,7 +4119,7 @@
       "appearances": 1
     },
     {
-      "id": 484,
+      "id": 475,
       "title": "Context7 MCPプラグインで最新ライブラリドキュメントをClaudeに正確に提供する",
       "point": "Claudeにオンラインのライブラリドキュメントを検索させると、フェッチ・解析・関連箇所の特定に時間がかかり、古いAPIシグネチャをハルシネーションすることもある。Context7プラグイン（context7.com）はライブラリをバージョン単位でインデックスし、Claudeに必要なページを1ツールコールで正確に届ける。react-adminや各フレームワークのドキュメント管理に特に有効。",
       "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
@@ -3524,7 +4134,7 @@
       "appearances": 1
     },
     {
-      "id": 471,
+      "id": 462,
       "title": "/model opusエイリアスで最新Opusを常に自動追跡する",
       "point": "Claude Codeで `/model opus` と入力するだけで、常に最新のOpusモデルが選択される。`claude-opus-4-7` のような完全モデルIDを手動で更新する必要がなくなる。`/model sonnet` や `/model haiku` も同様に機能し、バージョンアップ時に自動で最新版に追従する。",
       "source_title": "Claude Opus 4.7 Best Practices",
@@ -3538,7 +4148,7 @@
       "appearances": 1
     },
     {
-      "id": 472,
+      "id": 463,
       "title": "Claude Code セッションレキャップ：作業の中断・再開をスムーズに行う",
       "point": "Claude Codeの新機能「セッションレキャップ」は、前回セッションの要点を自動的にまとめて次セッションの冒頭に提示する。`/compact` よりも軽量で、コンテキストウィンドウを消費しない。長期プロジェクトで複数日にわたって作業を継続する際に特に有効。",
       "source_title": "Anthropic Release Notes",
@@ -3552,7 +4162,7 @@
       "appearances": 1
     },
     {
-      "id": 460,
+      "id": 451,
       "title": "Rate Limits API：組織のレート制限をプログラムで取得する",
       "point": "2026年4月25日、Anthropic が Rate Limits API をリリース。管理者がAPIを通じて自組織・ワークスペースのレート制限を構造化データとして取得できるようになった。コンソールを手動確認する必要がなくなり、CI/CD パイプラインや監視ダッシュボードへの組み込みが可能。",
       "source_title": "Audit Claude Rate Limits in 90 Minutes (Apr 2026) - FindSkill.ai",
@@ -3566,7 +4176,7 @@
       "appearances": 1
     },
     {
-      "id": 461,
+      "id": 452,
       "title": "セッションレトロスペクティブ：Claudeに「今日の学び」を聞いてCLAUDE.mdへ蓄積する",
       "point": "セッション終了時に \"What did you learn during this session?\" と聞き、回答をプロジェクト別に分類して保存する。一般的な概念はCLAUDE.md、コーディング規約はルールファイル、技術的能力はSkillファイル、アーキテクチャ選択はADRへ。セッション間でのメモリがない制約をドキュメント化で補完できる。",
       "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
@@ -3579,7 +4189,7 @@
       "appearances": 1
     },
     {
-      "id": 462,
+      "id": 453,
       "title": "/simplify と /review でコードの自己改善ループを完結する",
       "point": "人間がレビューする前に /simplify（過剰な抽象化・不要なジェネリクス・推測的エラーハンドリングを除去）と /review（バグ・問題を自己検出して修正）の2コマンドを順に実行する。人間レビューに届く時点でコードが整理済みになり、レビュー速度が大幅に上がる。",
       "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
@@ -3590,7 +4200,7 @@
       "appearances": 1
     },
     {
-      "id": 463,
+      "id": 454,
       "title": "Context7プラグインでバージョン固定ライブラリドキュメントをClaude に精確に提供する",
       "point": "Claudeにオンライン検索でドキュメントを取得させると、古いバージョンのAPIシグネチャをハルシネーションするリスクがある。Context7（context7.com）はライブラリドキュメントを正確なバージョン単位でインデックス化し、必要なページだけをClaudeに直接提供する。よく使うフレームワークのドキュメントをContext7経由にするだけで精度が大きく改善する。",
       "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
@@ -3605,7 +4215,7 @@
       "appearances": 1
     },
     {
-      "id": 464,
+      "id": 455,
       "title": "rtk CLIでコマンド出力を圧縮してコンテキスト消費を削減する",
       "point": "rtk（github.com/rtk-ai/rtk）はCLIコマンドの出力をLLMコンテキストに渡す前にフィルタリング・圧縮するツール。テストやビルドのログ出力がそのままコンテキストに流入するのを防ぎ、トークン消費を最適化する。Claude Code のサブエージェントが大量のコマンド出力を処理するケースで特に効果的。",
       "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
@@ -3619,7 +4229,7 @@
       "appearances": 1
     },
     {
-      "id": 465,
+      "id": 456,
       "title": "インタビューファースト：複雑タスクはClaude に先に質問させてから依頼する",
       "point": "大きなタスクや曖昧なタスクには、最小限のプロンプトから「まず私にインタビューしてください」と依頼する。実装詳細・エッジケース・トレードオフについてClaudeが質問を出し、考慮漏れを事前に潰せる。インタビュー後に依頼すると、直接依頼と比べて一貫して最終出力の品質が向上する。",
       "source_title": "Claude best practices 2026: the complete power user guide - The AI Corner",
@@ -3632,7 +4242,7 @@
       "appearances": 1
     },
     {
-      "id": 467,
+      "id": 458,
       "title": "Opus 1Mコンテキストの経験則：400k超で精度低下、デフォルト窓で95%のタスクは十分",
       "point": "Opus の1Mトークンコンテキストウィンドウを常用するのは非効率。実験では400k超でエージェントの出力関連性が低下し、追加コンテキストは特定の大規模タスクにのみ有効。通常業務の95%はデフォルトのコンテキストサイズで十分であり、不必要な1M利用は速度低下とコスト増だけをもたらす。",
       "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
@@ -3646,7 +4256,7 @@
       "appearances": 1
     },
     {
-      "id": 468,
+      "id": 459,
       "title": "Snyk MCPサーバー統合でコードセキュリティと依存脆弱性をClaude連携チェック",
       "point": "Snyk MCPサーバーをClaude Code に接続することで、コードのセキュリティ問題や依存パッケージの脆弱性をClaudeが直接チェックできるようになる。/security コマンドでの定期レビューと組み合わせることで、セキュリティ確認をAIに一部委譲できる。ただし最終的な保証は開発者の責任で行う必要がある。",
       "source_title": "Claude Code Tips I Wish I'd Had From Day One - Marmelab",
@@ -3660,7 +4270,7 @@
       "appearances": 1
     },
     {
-      "id": 469,
+      "id": 460,
       "title": "プロンプト3,000トークン超で推論品質が劣化：スイートスポットは150〜300語",
       "point": "長いシステムプロンプトや詳細すぎる指示は推論品質を下げる。最新の調査では、推論の劣化は約3,000トークンから始まる。実用的な最適域は150〜300語（約500〜1,000文字）。ALL-CAPS・「NEVER EVER」・「YOU MUST」等の強調過多も逆効果で、簡潔な記述の方がClaudeはより正確に従う。",
       "source_title": "Prompt Engineering in 2026: Advanced Techniques - DEV Community",
@@ -3674,7 +4284,7 @@
       "appearances": 1
     },
     {
-      "id": 450,
+      "id": 441,
       "title": "Claude Code v2.1.119: Vimビジュアルモード（v/V）で本格的なテキスト選択が可能に",
       "point": "Claude Code の入力編集に Vim ビジュアルモード（`v`で文字選択、`V`で行選択）が追加された。選択ハイライトとオペレーター（`d`, `y`, `c` 等）をフルサポート。従来の挿入モードから `Esc` を押しても入力中メッセージが引き戻されなくなり、再度 Esc で中断できるよう改善された。",
       "source_title": "Claude Code Changelog - Releasebot",
@@ -3687,7 +4297,7 @@
       "appearances": 1
     },
     {
-      "id": 451,
+      "id": 442,
       "title": "Claude Code `/theme` コマンドでカスタムテーマを作成・管理する",
       "point": "`/theme` コマンドから名前付きカスタムテーマを新規作成・切り替えできるようになった。テーマ定義は `~/.claude/themes/` 以下にJSONファイルとして保存され、手動編集も可能。プラグイン開発者はプラグインの `themes/` ディレクトリにテーマを同梱して配布できる。",
       "source_title": "Claude Code v2.1.118 Release - ClaudeWorld",
@@ -3701,7 +4311,7 @@
       "appearances": 1
     },
     {
-      "id": 452,
+      "id": 443,
       "title": "Hooks が type: \"mcp_tool\" で直接 MCPツールを呼び出せるようになった",
       "point": "Claude Code の Hooks 定義に `type: \"mcp_tool\"` を指定すると、フック内から直接 MCP ツールを呼び出せるようになった。これにより、ツール実行後の自動通知・ログ書き込み・外部 API 連携を Hooks だけで完結できる。また `PostToolUse` / `PostToolUseFailure` フックの入力に `duration_ms`（ツール実行時間）が追加され、パフォーマンス計測も可能になった。",
       "source_title": "Claude Code Changelog - code.claude.com",
@@ -3717,7 +4327,7 @@
       "appearances": 1
     },
     {
-      "id": 453,
+      "id": 444,
       "title": "`/cost` と `/stats` が `/usage` に統合：コスト・利用状況を1コマンドで確認",
       "point": "これまで個別に存在していた `/cost`（コスト内訳表示）と `/stats`（統計表示）が `/usage` コマンドに統合された。両コマンドはエイリアスとして引き続き機能し、それぞれのタブが `/usage` 画面内で開く。コスト把握とレート制限確認を同一画面で行えるようになった。",
       "source_title": "Claude Code Changelog - ClaudeLog",
@@ -3728,7 +4338,7 @@
       "appearances": 1
     },
     {
-      "id": 454,
+      "id": 445,
       "title": "コンテキストロット（Context Rot）：コンテキスト量が増えるほど想起精度が低下する",
       "point": "Anthropic のエンジニアリングブログが「Context Rot」という現象を明示した。コンテキストウィンドウ内のトークン数が増えるにつれ、モデルが必要な情報を正確に想起できる確率が下がる。コンテキストは「増やせばいい」ではなく「高信号なトークンを最小限に絞る」ことが品質の鍵。大容量コンテキストウィンドウでも無制限に情報を詰め込むのは逆効果。",
       "source_title": "Effective context engineering for AI agents - Anthropic",
@@ -3742,7 +4352,7 @@
       "appearances": 1
     },
     {
-      "id": 455,
+      "id": 446,
       "title": "Just-in-Timeコンテキスト戦略：軽量参照を保持しランタイムにデータを動的ロード",
       "point": "エージェント設計で注目されている「Just-in-Time コンテキスト」戦略では、ファイルパス・ストアドクエリ・URLなどの軽量な識別子だけを保持し、実行時にツールを使って必要なデータをオンデマンドにコンテキストへ読み込む。全データを事前にコンテキストへ詰め込むより大幅にトークンを節約でき、Context Rot を回避できる。",
       "source_title": "Effective context engineering for AI agents - Anthropic",
@@ -3755,7 +4365,7 @@
       "appearances": 1
     },
     {
-      "id": 456,
+      "id": 447,
       "title": "Managed Agents ツール結果クリア（Tool Result Clearing）でコンテキスト汚染を軽量解消",
       "point": "Claude Developer Platform に「ツール結果クリア」機能が追加された。会話履歴からツール呼び出し結果だけを選択的に削除できる最も軽量なコンパクション手法。フル要約よりコストが低く、繰り返し大量データを参照するエージェントループに特に有効。Anthropic の公式コンテキストエンジニアリングガイドが最初の軽量対策として推奨している。",
       "source_title": "Context engineering: memory, compaction, and tool clearing - Claude Cookbook",
@@ -3769,7 +4379,7 @@
       "appearances": 1
     },
     {
-      "id": 441,
+      "id": 432,
       "title": "Claude Code v2.1.119：設定の永続化・マルチプラットフォームPR・PowerShell自動承認",
       "point": "v2.1.119（4月23日リリース）の主要変更点。①テーマ・エディタモード・verboseなどの設定が `~/.claude/settings.json` に永続保存されるようになり、プロジェクト/ローカル/ポリシーの優先順位に従って上書きが可能。②`--from-pr` がGitLab MR・Bitbucket PR・GitHub Enterprise URLに対応。③PowerShellコマンドがBash同様にパーミッションモードで自動承認を受けられるように。バグ修正としてiTerm2+tmux環境でのターミナル表示ちらつき、LSP診断の誤表示、`/clear`でセッション名が消える問題なども解消。",
       "source_title": "Releases · anthropics/claude-code — GitHub",
@@ -3783,7 +4393,7 @@
       "appearances": 1
     },
     {
-      "id": 442,
+      "id": 433,
       "title": "Coworkワークスペースフォルダ設定：専用ディレクトリとコンテキストファイルでClaude自分仕様化",
       "point": "Coworkで最も効果的な初期設定は、専用ワークスペースフォルダ（例：`~/Claude-Workspace/`）を作成し、Claude自身に自分のコンテキストを教えるファイルを置くこと。推奨ファイル構成は①自己紹介ファイル（職業・プロジェクト・役割）、②ボイスプロファイル（自分の思考・書き方のスタイル）、③AI文体禁止リスト（避けてほしい語彙・フレーズ・トーン）。この3ファイルを整備するだけで、新しいタスクの出力精度が大幅に向上する。",
       "source_title": "How to turn Claude from chatbot into productivity powerhouse with Cowork — How Do I Use AI",
@@ -3796,7 +4406,7 @@
       "appearances": 1
     },
     {
-      "id": 444,
+      "id": 435,
       "title": "Rate Limits API：組織のAPIレート制限をプログラムから取得・管理する",
       "point": "Anthropicが新たにRate Limits APIを公開。組織・ワークスペース単位でのレート制限設定を管理者がプログラムから照会できるようになった。CI/CDパイプラインやエージェントシステムで利用上限に近づいた際の自動スロットリングや警告通知の実装が容易になる。Enterpriseプランの管理者はAdmin設定 → APIキー管理から詳細設定が可能。",
       "source_title": "Claude Platform Release Notes — Anthropic",
@@ -3810,7 +4420,7 @@
       "appearances": 1
     },
     {
-      "id": 448,
+      "id": 439,
       "title": "毎朝Claudeに「今日の計画」を投げる1日計画プロンプト：生産性12倍の測定事例",
       "point": "毎朝、Slack確認・メール確認の前にClaudeを開き、「仕事の会議・予定・プロジェクト進捗・個人的なToDo」をすべて文章で伝えて1日の計画を立てさせる習慣が効果的。eesel AI調査では、AI活用ユーザーの平均タスク完了時間はAI非使用比で約12倍短縮（平均14.8分 vs 3.8時間）。単純化の工夫（複雑なプロンプトを廃止してシンプルな朝の習慣に集中）が生産性向上の鍵とされている。",
       "source_title": "I've ditched complex prompts for this 10-second Claude habit to boost productivity — Tom's Guide",
@@ -3824,7 +4434,7 @@
       "appearances": 1
     },
     {
-      "id": 430,
+      "id": 421,
       "title": "Claude CodeでAgentic OSを構築する：CLAUDE.md＋Skills＋Sub-agentsの3層アーキテクチャ",
       "point": "Claude Codeをコーディング補助ではなく「自律エージェントOS」として設計する手法。①CLAUDE.mdに全体ルール・プロジェクト構造を記述、②`.claude/skills/`に再利用可能なワークフロースクリプトを配置、③`.claude/agents/`にタスク特化サブエージェントを定義する3層構成が基本。これらが揃うと「コードレビュー→テスト→デプロイ」の一連フローを人手なしで実行できる。最長辺定義のロジック分割により、複雑な実装が4時間→45分に短縮された事例もある。",
       "source_title": "The Ultimate Guide to Building a Claude Code-Based Agentic OS",
@@ -3840,7 +4450,7 @@
       "appearances": 1
     },
     {
-      "id": 432,
+      "id": 423,
       "title": "awesome-claude-code-subagents：コミュニティ製100+のサブエージェントをそのまま活用する",
       "point": "VoltAgentがGitHubで公開しているオープンコレクション「awesome-claude-code-subagents」には、コードレビュー・テスト生成・ドキュメント作成・セキュリティスキャンなど100以上のサブエージェント定義が収録されている。`.claude/agents/`にファイルをコピーするだけで即利用可能。自作コストを省いて実績あるプロンプト設計をそのまま利用できるのがメリット。",
       "source_title": "awesome-claude-code-subagents — GitHub",
@@ -3854,7 +4464,7 @@
       "appearances": 1
     },
     {
-      "id": 433,
+      "id": 424,
       "title": "Claude Code `/plan` コマンドで探索フェーズと実装フェーズを分離する",
       "point": "`/plan`コマンドを使うとClaude Codeがread-only探索フェーズに入り、コードベースを読み込んで実装計画を提示した後、ユーザーの明示的な承認を待ってから変更を開始する。事前に計画フェーズを挟むことで「意図しないファイル変更」「見当違いのアーキテクチャ選択」を防ぎやすくなる。大規模リファクタリングや未知のコードベースへの初回実装で特に有効。",
       "source_title": "Effective Claude Code Workflows in 2026 — Medium",
@@ -3867,7 +4477,7 @@
       "appearances": 1
     },
     {
-      "id": 434,
+      "id": 425,
       "title": "split-and-mergeパターン：最大10並列サブエージェントで大量タスクを高速処理する",
       "point": "Claude Codeのsplit-and-mergeワークフローは、独立した大量サブタスク（テストファイル生成・翻訳・データ変換など）を最大10個のサブエージェントに同時展開し、完了後にオーケストレーターが結果を統合するパターン。依存関係のない並列作業に最適で、シングル会話対比で処理時間を大幅短縮できる。前段でoperatorパターンで計画を立て、後段でsplit-and-mergeで実行する組み合わせが推奨されている。",
       "source_title": "5 Claude Code Agentic Workflow Patterns — MindStudio",
@@ -3882,7 +4492,7 @@
       "appearances": 1
     },
     {
-      "id": 435,
+      "id": 426,
       "title": "Opus 4.7 Task Budget：トークン目標を事前に渡すとエージェントループが最適化される",
       "point": "Opus 4.7では`task_budget`パラメータでエージェントループ全体（thinking・ツール呼び出し・結果・最終出力）のトークン目標を事前に指示できる。大雑把な目標値でも与えるだけでClaude自身が配分を調整し、無駄な思考やツール呼び出しを省略するようになる。簡単なサブタスクには低予算を設定してコストを削減しつつ、複雑なコーディングには高予算を割り当てるメリハリ運用が効果的。",
       "source_title": "What's new in Claude Opus 4.7 — Claude API Docs",
@@ -3896,7 +4506,7 @@
       "appearances": 1
     },
     {
-      "id": 436,
+      "id": 427,
       "title": "Few-shot Chain-of-Thoughtの役割変化：2026年では「推論向上」ではなく「フォーマット整合」が目的",
       "point": "2026年のLLM研究が明らかにした重要な変化として、Few-shot CoT（思考ステップ付き例示）はもはやモデルの推論精度を上げる効果を持たなくなっている。現在のClaude（Opus 4.7等）は例示なしでも高度な推論を行えるため、CoT例示の唯一の有効用途は「期待する出力フォーマットを見せる」ことに絞られた。不要なCoT例示を省くことでプロンプトを短縮しコストと応答速度を改善できる。",
       "source_title": "Context Engineering Guide 2026 — The AI Corner",
@@ -3910,7 +4520,7 @@
       "appearances": 1
     },
     {
-      "id": 421,
+      "id": 412,
       "title": "Claude Code Proプラン除外A/Bテスト：新規ユーザーの2%でClaude Codeを非表示化",
       "point": "Anthropicは2026年4月21〜22日頃、$20/月のProプラン新規登録者の約2%に対してClaude Codeを除外するA/Bテストを実施。価格ページでProにX印、Max 5x（$100）以上のみチェック印が表示された。既存ユーザーへの影響はなく、問い合わせ殺到後にテストを終了。重量ユーザーをMax以上へ誘導する価格戦略の方向性を示している。",
       "source_title": "Anthropic tests reaction to yanking Claude Code from Pro — The Register",
@@ -3924,7 +4534,7 @@
       "appearances": 1
     },
     {
-      "id": 424,
+      "id": 415,
       "title": "Opus 4.7 × Claude Code ベストプラクティス：推論オーバーヘッドを意識した使い方",
       "point": "AnthropicがOpus 4.7とClaude Code組み合わせのベストプラクティスガイドを公開。Opus 4.7はユーザーターン毎に推論オーバーヘッドが発生するため、単純なサブタスクには `effort: \"low\"` を、複雑なコーディングには `effort: \"high\"` または `effort: \"xhigh\"` を指定するとトークン効率が向上する。また、大きなタスクを前段で計画フェーズ（低コスト）→後段で実装（最適effort）に分割するパターンが推奨されている。",
       "source_title": "Anthropic published a best practices guide for Opus 4.7 with Claude Code — @mikeMaher / X",
@@ -3939,7 +4549,7 @@
       "appearances": 1
     },
     {
-      "id": 425,
+      "id": 416,
       "title": "Claude Code「Nerfing疑惑」完全解消：v2.1.116でコーディング品質の3件バグを修正",
       "point": "2026年4月中旬以降、ユーザーがClaude Codeの品質低下（Nerfing）を報告していた問題がv2.1.116（4月20日）で全面解消。修正内容は①デフォルト推論努力の復元、②思考履歴を削除していたキャッシュバグの修正、③コーディング品質を低下させていた冗長性プロンプト変更の差し戻し。最新安定版はv2.1.119（4月24日）。",
       "source_title": "Anthropic resolves Claude Code bugs after nerfing allegations — TechBriefly",
@@ -3953,7 +4563,7 @@
       "appearances": 1
     },
     {
-      "id": 411,
+      "id": 402,
       "title": "Claude Code `--add-dir` フラグで複数ディレクトリへのアクセスを事前付与する",
       "point": "`claude --add-dir ~/path/to/project2` のように起動時にフラグを指定すると、複数フォルダへのアクセスを事前に許可できる。複数プロジェクト横断・モノレポ環境で都度ダイアログが出ることを防ぎ、作業フローが格段にスムーズになる。Claude Code 作成者 Boris Cherny 自身が推薦する実践ティップ。",
       "source_title": "Claude Code's creator keeps sharing tips — XDA Developers",
@@ -3966,7 +4576,7 @@
       "appearances": 1
     },
     {
-      "id": 413,
+      "id": 404,
       "title": "Claude Code `/teleport` でセッションをデバイス間でシームレスに移動する",
       "point": "デスクトップで進行中のセッションをスマートフォンへ（またはその逆に）`/teleport` コマンドで即座に移動できる。長時間セッションを中断せず外出先へ持ち出すことが可能で、`/remote-control` と合わせてスマホからラップトップのセッションを操作する使い方も実現する。",
       "source_title": "Claude Code's creator keeps sharing tips — XDA Developers",
@@ -3979,7 +4589,7 @@
       "appearances": 1
     },
     {
-      "id": 414,
+      "id": 405,
       "title": "Claude Cowork が正式GA：OpenTelemetry サポートと Enterprise RBAC を追加",
       "point": "Claude Cowork が macOS/Windows の Claude Desktop アプリで正式一般公開（GA）。新たに OpenTelemetry によるオブザーバビリティ統合と Enterprise プラン向けロールベースアクセス制御（RBAC）が追加。チームごとに Claude 機能の権限を細かく制御でき、詳細な利用分析も可能になる。",
       "source_title": "Release notes — Claude Help Center",
@@ -3992,7 +4602,7 @@
       "appearances": 1
     },
     {
-      "id": 415,
+      "id": 406,
       "title": "API のコード実行が Web Search / Web Fetch 併用時に無料化",
       "point": "Claude API でサンドボックスコード実行（code execution）を web search または web fetch ツールと組み合わせた場合、コード実行の利用料が無料になった。モデルの能力向上とトークン効率改善が目的とされており、エージェント型ワークロードの実質的なコスト削減につながる。",
       "source_title": "Claude Platform API Release Notes",
@@ -4007,7 +4617,7 @@
       "appearances": 1
     },
     {
-      "id": 419,
+      "id": 410,
       "title": "Claude Code Monitor ツールでバックグラウンドプロセスをリアルタイム監視する",
       "point": "Claude Code の Monitor ツールを使うと、バックグラウンドプロセスのログをセッション内にストリーム表示でき、Claude がリアルタイムでログ内容に反応できる。ビルド出力やテスト結果を Claude が監視しながら自動修正を行う「tail & fix」ワークフローが実現し、デバッグサイクルを大幅に短縮できる。",
       "source_title": "Claude Code — What's New (Week 15)",
@@ -4020,7 +4630,7 @@
       "appearances": 1
     },
     {
-      "id": 402,
+      "id": 393,
       "title": "Socraticプロンプティング：指示より「質問」から始めて見落としをなくす",
       "point": "複雑なタスクは最小限の指示で始め、「実行前に質問してください」とClaude に促す方法が効果的。例：「[タスク] を達成したい。実装詳細・エッジケース・トレードオフについて私にインタビューしてから実行してください」。要件定義の漏れを防ぎ、想定外の手戻りを大幅に削減できる。",
       "source_title": "Claude best practices 2026: the complete power user guide",
@@ -4031,7 +4641,7 @@
       "appearances": 1
     },
     {
-      "id": 410,
+      "id": 401,
       "title": "Claude Skills のEvals＋A/Bテストで成功率94%を実現",
       "point": "Skills の品質向上には評価フレームワークとA/Bテストの組み合わせが効果的。テストなし：45%、マニュアルテスト（5件）：67%、構造化評価（10件以上）：89%、評価+A/Bテスト：94%というデータが示す。Skillsには「機能拡張型」（初期状態でできない領域の補完）と「ワークフロー・嗜好型」（ユーザー独自の形式・基準）の2種類があり、後者は長期的に価値を保持しやすい。",
       "source_title": "Claude Skills 2.0: Complete Guide 2026",
@@ -4042,7 +4652,7 @@
       "appearances": 1
     },
     {
-      "id": 392,
+      "id": 383,
       "title": "Claude Sonnet 4 / Opus 4 廃止予告：6月15日のAPI退役までに移行が必要",
       "point": "Anthropicが4月14日に `claude-sonnet-4-20250514` と `claude-opus-4-20250514` の廃止を発表。APIでの退役は2026年6月15日。移行先はそれぞれ Claude Sonnet 4.6（`claude-sonnet-4-6-20260217`）と Claude Opus 4.7（`claude-opus-4-7-20260416`）。両モデルとも旧バージョンより高性能で同等価格帯。約2ヶ月のうちに移行計画を立てておくことを推奨。",
       "source_title": "Claude API Release Notes - April 14, 2026",
@@ -4056,7 +4666,7 @@
       "appearances": 1
     },
     {
-      "id": 393,
+      "id": 384,
       "title": "Claude in Amazon Bedrock が全 AWS 顧客にセルフサービス開放",
       "point": "4月16日より Claude in Amazon Bedrock が全 Amazon Bedrock 顧客に開放。Claude Opus 4.7 と Claude Haiku 4.5 が Bedrock コンソールからセルフサービスで利用可能になり、27リージョンで `/anthropic/v1/messages` エンドポイント（Claude APIと同一のリクエスト形式）経由でアクセスできる。グローバルおよびリージョンエンドポイントの両方を選択可能。",
       "source_title": "Introducing Claude Opus 4.7 - Anthropic",
@@ -4070,7 +4680,7 @@
       "appearances": 1
     },
     {
-      "id": 394,
+      "id": 385,
       "title": "Claude Code v2.1.113：CLIがネイティブバイナリ起動に移行（パフォーマンス向上）",
       "point": "v2.1.113 より Claude Code の CLI がバンドル済み JavaScript ではなくネイティブバイナリを直接起動するように変更された。起動時間・メモリ効率が改善され、長時間セッションでの安定性も向上。ユーザー側での設定変更は不要で、更新するだけで恩恵を受けられる。",
       "source_title": "Claude Code CHANGELOG - v2.1.113",
@@ -4083,7 +4693,7 @@
       "appearances": 1
     },
     {
-      "id": 395,
+      "id": 386,
       "title": "Claude Code v2.1.113：`sandbox.network.deniedDomains` でエージェントの通信先をブロック",
       "point": "`.claude/settings.json` の `sandbox.network.deniedDomains` に配列形式でドメインを列挙すると、サンドボックス内のエージェントがそのドメインへアクセスするのを禁止できる。機密環境での情報漏洩リスクを低減したり、不要な外部呼び出しを防ぐ際に有効。企業環境やCI/CDパイプラインでのエージェント利用で特に重要になるセキュリティ制御。",
       "source_title": "Claude Code CHANGELOG - v2.1.113",
@@ -4097,7 +4707,7 @@
       "appearances": 1
     },
     {
-      "id": 396,
+      "id": 387,
       "title": "Claude Code v2.1.113：Bash拒否ルールが `env`/`sudo`/`watch` でラップされたコマンドにも適用",
       "point": "これまで Bash 拒否ルール（deny rules）は単独コマンドにしか適用されず、`env VAR=1 <cmd>` や `sudo <cmd>`、`watch -n1 <cmd>` のようにラップした場合に回避されることがあった。v2.1.113 でこのギャップが修正され、ラッパー越しでも正しく拒否ルールが適用される。セキュリティ要件の厳しいエージェント運用環境では早めのアップデートを推奨。",
       "source_title": "Claude Code CHANGELOG - v2.1.113",
@@ -4112,7 +4722,7 @@
       "appearances": 1
     },
     {
-      "id": 397,
+      "id": 388,
       "title": "Claude Code v2.1.113：サブエージェントが10分間停止すると自動的にエラーを返す",
       "point": "v2.1.113 からサブエージェントがストリームの途中で停止（ハング）した場合、10分後に自動的に明確なエラーメッセージを返すようになった。以前はサブエージェントが無限に待機しセッション全体が凍結することがあった。長時間の並列エージェントタスクでの原因不明のハングを自動検知できるようになり、デバッグが容易になる。",
       "source_title": "Claude Code CHANGELOG - v2.1.113",
@@ -4127,7 +4737,7 @@
       "appearances": 1
     },
     {
-      "id": 398,
+      "id": 389,
       "title": "Claude Code v2.1.113：`/extra-usage` と `@` ファイル補完が Remote Control から利用可能に",
       "point": "v2.1.113 で Remote Control クライアント（モバイルアプリや外部ブラウザ）から `/extra-usage` コマンドを実行できるようになった。また Remote Control から `@` を入力するとファイル補完候補が取得できるようになり、ローカル環境のファイルをリモートから参照する際の操作性が向上した。出張中や移動中にスマートフォンからセッションを管理するユーザーに特に有効。",
       "source_title": "Claude Code CHANGELOG - v2.1.113",
@@ -4141,7 +4751,7 @@
       "appearances": 1
     },
     {
-      "id": 399,
+      "id": 390,
       "title": "Claude Code v2.1.113：マルチライン入力でのカーソル操作改善（Ctrl+A/E・Ctrl+Backspace）",
       "point": "v2.1.113 でマルチライン入力ボックスの操作性が改善。`Ctrl+A` で行頭・`Ctrl+E` で行末に移動できるようになり、長いプロンプトを書くときの編集が快適になった。Windows では `Ctrl+Backspace` で前の単語を一括削除可能。また Fullscreen モードでは `Shift+↑/↓` がビューポートをスクロールするように変更された。",
       "source_title": "Claude Code CHANGELOG - v2.1.113",
@@ -4155,7 +4765,7 @@
       "appearances": 1
     },
     {
-      "id": 400,
+      "id": 391,
       "title": "Anthropic が Google Cloud Next 2026 に登壇（4/22 ライブストリーム）",
       "point": "Anthropicが4月22日（日本時間4/23早朝）に Google Cloud Next 2026 へ登壇予定。ライブストリームは太平洋時間 2:48PM（JST 4/23 06:48）に公開される。Claude の Google Cloud 連携に関する最新情報が発表される可能性が高く、Vertex AI 経由で Claude を活用している開発者は注目しておくと良い。",
       "source_title": "Anthropic at Google Cloud Next 2026",
@@ -4168,7 +4778,7 @@
       "appearances": 1
     },
     {
-      "id": 381,
+      "id": 372,
       "title": "Claude Opus 4.7 正式リリース：上位モデルの使い分けを更新する",
       "point": "Anthropicが4月16日にClaude Opus 4.7を正式公開。Opus 4.6と同価格（入力$5/MTok・出力$25/MTok）で、高難度ソフトウェアエンジニアリングと複雑な長時間タスクの一貫性が向上。指示を字義通り厳格に実行するよう再調整されており、既存のプロンプトライブラリの見直しが推奨される。",
       "source_title": "Introducing Claude Opus 4.7",
@@ -4184,7 +4794,7 @@
       "appearances": 1
     },
     {
-      "id": 382,
+      "id": 373,
       "title": "Claude Design リサーチプレビュー開始：テキストからビジュアルを即生成",
       "point": "Anthropicが4月17日にClaude Designを発表。Pro・Max・Team・Enterpriseプラン向けに段階展開中。テキストプロンプトからスライド・プロトタイプ・ワンページャーを生成し、PDF・URL・PPTX・Canvaへのエクスポートが可能。コードベースやデザインファイルを読み取ってチームのデザインシステムを学習する機能も搭載。",
       "source_title": "Anthropic launches Claude Design, a new product for creating quick visuals",
@@ -4198,7 +4808,7 @@
       "appearances": 1
     },
     {
-      "id": 383,
+      "id": 374,
       "title": "Opus 4.7 高解像度画像処理：最長辺2,576px（3.75MP）対応",
       "point": "Opus 4.7は画像処理能力が大幅向上し、長辺最大2,576ピクセル（約3.75メガピクセル）まで対応。Opus 4.6比で3倍以上の解像度。設計図・UI仕様書・図面など精細な画像を含むタスクで威力を発揮する。",
       "source_title": "Anthropic's Claude Opus 4.7: 5 features that could make your work faster and smarter",
@@ -4211,7 +4821,7 @@
       "appearances": 1
     },
     {
-      "id": 385,
+      "id": 376,
       "title": "Claude Code v2.1.111：/ultrareview でクラウド並列マルチエージェントコードレビュー",
       "point": "`/ultrareview` コマンドが追加された。引数なしで現在のブランチを、`/ultrareview <PR番号>` で特定のGitHub PRをレビュー対象に指定できる。複数エージェントがクラウド上で並列分析・批評を行うため、深いコードレビューが高速に得られる。Max購読者向けに4月16日リリース。",
       "source_title": "Claude Code Ultra Review: I Watched It Hunt Bugs",
@@ -4227,7 +4837,7 @@
       "appearances": 1
     },
     {
-      "id": 386,
+      "id": 377,
       "title": "Claude Code v2.1.111：/less-permission-prompts で許可ダイアログを削減する",
       "point": "`/less-permission-prompts` スキルがClaude Codeに追加。過去のトランスクリプトをスキャンして読み取り専用BashコマンドとMCPツール呼び出しの頻出パターンを抽出し、`.claude/settings.json` への allowlist 追加を優先順位付きで提案する。繰り返し出るダイアログを一括解消できる。",
       "source_title": "Run Claude Code Without Permission Prompts (2026 Guide)",
@@ -4243,7 +4853,7 @@
       "appearances": 1
     },
     {
-      "id": 388,
+      "id": 379,
       "title": "Opus 4.7 トークナイザー変更への対応：同じ入力で最大1.35倍のトークン消費",
       "point": "Opus 4.7は新しいトークナイザーを採用しており、同じ入力テキストでも従来比1.0〜1.35倍のトークンを消費する場合がある。コスト予算管理のためにBudgetパラメータやeffortレベル調整を活用し、既存ワークフローのトークン消費量を再測定しておくことが推奨される。",
       "source_title": "Anthropic Ships Claude Opus 4.7 as Mythos Stays Under Lock and Key",
@@ -4256,7 +4866,7 @@
       "appearances": 1
     },
     {
-      "id": 389,
+      "id": 380,
       "title": "Opus 4.7 の指示遵守厳格化：「行間を読む」挙動が減少、プロンプト再調整が必要",
       "point": "Opus 4.7は曖昧なプロンプトを解釈せずに字義通りに実行するよう設計が変わった。過去の「察してくれる」挙動を前提に書かれたプロンプトは想定外の結果を生む可能性がある。既存のプロンプトライブラリをOpts 4.7でテストし、意図が明示されているか確認・修正することが推奨される。",
       "source_title": "Anthropic Cloud Opus 4.7: Should You Upgrade from 4.6?",
@@ -4270,7 +4880,7 @@
       "appearances": 1
     },
     {
-      "id": 373,
+      "id": 364,
       "title": "Claude Code Routines（ルーティンズ）：スケジュール/API/GitHubイベントで自動化",
       "point": "2026年4月14日、AnthropicはClaude Codeに「Routines」機能を研究プレビューとして追加した。RoutinesはプロンプトとリポジトリとコネクターをひとまとめにしたCloudベースの自動化ユニット。スケジュール（毎夜など）・API呼び出し・GitHubイベント（PR作成など）の3種類のトリガーを設定でき、Macがオフラインでも動作する。1日の実行上限はPro 5回・Max 15回・Team/Enterprise 25回。`/schedule`コマンドまたはclaude.ai/code/routinesから作成・管理する。",
       "source_title": "Introducing routines in Claude Code | Claude Blog",
@@ -4287,7 +4897,7 @@
       "appearances": 1
     },
     {
-      "id": 374,
+      "id": 365,
       "title": "Claude Code デスクトップアプリ リデザイン：並列セッション・統合ターミナル・ドラッグ＆ドロップレイアウト",
       "point": "同じく4月14日、Claude Code Mac/Windowsのデスクトップアプリが大幅リデザインされた。新サイドバーで複数セッションをステータス・プロジェクト別にフィルタリングしながら一括管理できる。統合ターミナル・ファイルエディタ・再構築されたdiffビューア・HTML/PDF/ローカルサーバー対応プレビューが一画面に収まり、各パネルはドラッグ＆ドロップで配置変更が可能。Verboseなど3種の表示モードも選択できる（Pro以上対象）。",
       "source_title": "Anthropic Rebuilds Claude Code Desktop App Around Parallel Sessions - MacRumors",
@@ -4301,7 +4911,7 @@
       "appearances": 1
     },
     {
-      "id": 375,
+      "id": 366,
       "title": "Claude Code Side Chat（Command+;）でメインセッションを妨げずに横道質問",
       "point": "リデザインされたClaude Codeデスクトップには「Side Chat」機能が追加された。`Command+;`（Mac）で呼び出せるサイドパネルで、メインスレッドにコンテキストを追加せずに質問を分岐できる。CLIの`/btw`コマンドと同様の概念で、進行中のタスクを止めずに「ちょっと聞きたいこと」を解決できる。長いコーディングセッションで頻繁に発生する「このライブラリのAPIどうなってたっけ」問題に最適。",
       "source_title": "Anthropic adds routines to redesigned Claude Code, here's how it works - 9to5Mac",
@@ -4315,7 +4925,7 @@
       "appearances": 1
     },
     {
-      "id": 377,
+      "id": 368,
       "title": "Cowork並列処理：10ファイルを約30分→約4分に短縮する",
       "point": "Coworkで複数ファイルを「1件ずつ順番」ではなく「並列」で処理するよう指示するだけで処理時間が大幅に短縮できる。10ファイルの場合、順番処理の約30分が並列処理なら約4分になるとされている。「これら10件のファイルそれぞれについて、1ページのサマリーを個別に作成してください」のようにアウトカム志向で並列性が明確な指示文を書くのがポイント。大量のPDF分析・メール返信ドラフト作成などに応用できる。",
       "source_title": "How to Maximize Claude Cowork | Towards Data Science",
@@ -4329,7 +4939,7 @@
       "appearances": 1
     },
     {
-      "id": 360,
+      "id": 354,
       "title": "Claude Code v2.1.108：`/recap`でセッションコンテキストを瞬時に要約する",
       "point": "2026年4月14日リリースのv2.1.108に`/recap`コマンドが追加された。長期化したセッションに戻ったとき、`/recap`を実行するだけで現在の作業状況・決定事項・残課題を要約して表示する。`/config`からデフォルト動作の有効/無効を切り替えることも可能。長いClaude Codeセッションで「どこまで進んでいたか」を素早く把握したい場面に最適。",
       "source_title": "Claude Code Releases · anthropics/claude-code",
@@ -4343,7 +4953,7 @@
       "appearances": 1
     },
     {
-      "id": 361,
+      "id": 355,
       "title": "Claude Code v2.1.108：`ENABLE_PROMPT_CACHING_1H`環境変数で1時間キャッシュを有効化",
       "point": "環境変数`ENABLE_PROMPT_CACHING_1H`を設定すると、Claude API全プラットフォームでプロンプトキャッシュの1時間TTLを有効化。セッション内の繰り返しは自動キャッシュされるため、この設定の効果は「セッション間」での再利用時に大きい（定期ジョブ・複数日の同じプロンプト実行など）。1時間以内の再実行でAPIコスト最大90%削減・応答速度3倍高速化を実現。",
       "source_title": "Claude Code Releases · anthropics/claude-code",
@@ -4358,7 +4968,7 @@
       "appearances": 1
     },
     {
-      "id": 362,
+      "id": 356,
       "title": "Claude Code v2.1.108：組み込みスラッシュコマンドをSkill Toolから自動呼び出しに対応",
       "point": "v2.1.108より、Claude自身が`Skill tool`経由で組み込みスラッシュコマンド（`/init`・`/review`・`/security-review`）を自動発見・実行できるようになった。効率化される一方、ツール選択判定の追加トークン消費と不要な自動呼び出しのリスクがある。コスト・制御を優先する場合は、セッション性質に応じて手動/自動を明示的に切り替えるのが推奨。",
       "source_title": "Claude Code Releases · anthropics/claude-code",
@@ -4371,7 +4981,7 @@
       "appearances": 1
     },
     {
-      "id": 363,
+      "id": 357,
       "title": "Claude Code v2.1.108：`/model`切替時にコンテキスト影響を事前警告",
       "point": "v2.1.108では、セッション途中で`/model`コマンドによるモデル切替を試みると、コンテキストへの影響について警告を表示するようになった。会話の継続性が変わる可能性をあらかじめ確認してから切り替えられるため、意図しない動作変化を防ぎやすくなる。また`/resume`のピッカーがデフォルトで現在ディレクトリのセッションを優先表示し、`Ctrl+A`で全プロジェクトに切り替えられるようになった。",
       "source_title": "Claude Code Releases · anthropics/claude-code",
@@ -4385,7 +4995,7 @@
       "appearances": 1
     },
     {
-      "id": 364,
+      "id": 358,
       "title": "Claude Code v2.1.105：PreCompactフックでコンパクションをブロック制御する",
       "point": "v2.1.105（4月13日リリース）でPreCompactフックが追加された。フックスクリプトからexit code `2`を返すと、自動コンパクションの実行を阻止できる。コンテキストを意図せず圧縮されたくない重要な作業フェーズや、圧縮前に独自のチェックを挟みたい場合に活用できる。",
       "source_title": "Claude Code Releases · anthropics/claude-code",
@@ -4400,7 +5010,7 @@
       "appearances": 1
     },
     {
-      "id": 365,
+      "id": 359,
       "title": "Claude Code v2.1.105：Background Plugin Monitorsでセッション開始時に自動起動",
       "point": "プラグインのマニフェストに`monitors`キーを追加すると、Claude Codeセッション開始時にそのプラグインが自動的に起動してバックグラウンド監視を開始する。コード品質チェックや外部サービス連携を常時監視するプラグインを手動で呼び出す手間がなくなる。",
       "source_title": "Claude Code Releases · anthropics/claude-code",
@@ -4414,7 +5024,7 @@
       "appearances": 1
     },
     {
-      "id": 366,
+      "id": 360,
       "title": "Claude Code v2.1.105：Skill説明文の文字数上限が250→1,536文字に拡張",
       "point": "v2.1.105でSkillの説明文（`description`フィールド）の文字数上限が250文字から1,536文字に大幅拡張された。SkillがどのようなコンテキストでClaudeに選択されるかを詳しく記述できるため、トリガー精度の向上や複雑なWorkflowを持つSkillの利便性向上が見込める。",
       "source_title": "Claude Code Releases · anthropics/claude-code",
@@ -4427,7 +5037,7 @@
       "appearances": 1
     },
     {
-      "id": 368,
+      "id": 362,
       "title": "Memory Import：ChatGPT・Gemini・GrokのメモリをClaudeへ移行する",
       "point": "Claudeのメモリインポート機能（実験的機能）を使うと、他のAIサービスで蓄積した設定やコンテキストをClaudeに引き継げる。手順は①[claude.com/import-memory](https://claude.com/import-memory)で抽出プロンプトを取得→②移行元AI（ChatGPT等）にペースト→③出力されたメモリブロックをClaudeに貼り付け、の3ステップ。全プランで無料で利用でき、既存メモリを上書きせず追記する形で動作する。",
       "source_title": "How to Import Memory into Claude from ChatGPT, Gemini, or Grok",
@@ -4440,7 +5050,7 @@
       "appearances": 1
     },
     {
-      "id": 369,
+      "id": 363,
       "title": "Claude Code v2.1.105：主要バグ修正まとめ（添付画像ドロップ・空白画面・文字化け）",
       "point": "v2.1.105では実用面で重要なバグが複数修正された。(1)キューに積まれたメッセージへの画像添付がドロップされる問題、(2)長い会話でプロンプト入力が複数行になると画面が空白になる問題、(3)Bashツール出力のクリック可能なファイルリンク表示の文字化け、(4)マーケットプレイスのプラグインが依存関係込みで自動インストールされない問題、が修正された。",
       "source_title": "Claude Code Releases · anthropics/claude-code",
@@ -6640,6 +7250,41 @@
   ],
   "daily": [
     {
+      "date": "2026-05-07",
+      "highlights": [
+        "Claude Code 2.1.129：`--plugin-url` でURLからプラグインをその場でロード — プラグイン配布が単一URLで完結、チームへの共有が格段に手軽に",
+        "Claude Code 2.1.129：プロンプトキャッシュTTL 1時間が5分に短縮されるバグを修正 — API本番環境でコスト最適化が再び正常に機能するように"
+      ]
+    },
+    {
+      "date": "2026-05-06",
+      "highlights": [
+        "Claude Code 2.1.128：`/mcp` がツール数表示＆0ツールサーバーをフラグ — MCP接続状況の把握が格段にしやすくなり、設定ミスを即座に発見できるように",
+        "Claude Code 2.1.128：`/resume` が大規模セッションで最大67%高速化 — 40MB超のセッション復帰が劇的に速くなり、大型プロジェクトの中断・再開が実用的に"
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "highlights": [
+        "Claude Code ReadツールのマルウェアアセスメントSystemリマインダー削除 — ファイル読込ごとに誤拒否を引き起こしていたシステムリマインダーが削除され、サブエージェントでの正規コード修正がブロックされる問題が解消",
+        "Gemini CLIをClaude Codeのミニオン（下請けワーカー）として活用 — Claude Codeの指示のもとGemini CLIが補助タスクを実行する分散エージェント構成で並列処理能力を大幅向上"
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "highlights": [
+        "Claude Code 2.1.126 大型アップデート — `claude project purge` 新設・Opus 4.7の1Mコンテキスト誤算修正・Windows日本語文字化け解消など実務直結の改善が多数",
+        "Opus 4.7 新トークナイザー注意 — 旧モデル比で最大35%多くのトークンを消費する可能性があり、API料金見積もりの見直しが必要"
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "highlights": [
+        "9つのクリエイティブコネクター（4/28リリース） — Blender・Adobe・Autodesk・Ableton等が全プランで利用可能に。デザイナー・エンジニア・クリエイターのワークフローがClaude連携で一変する",
+        "Cloud Routines：スケジュールタスクがデバイス非依存に — PCをオフにしても定期タスクがクラウドで自動実行。Coworkの最大の制約だった「PCをスリープさせられない問題」が解消"
+      ]
+    },
+    {
       "date": "2026-05-02",
       "highlights": [
         "Claude Security ベータ公開 — Enterprise向けにコードベース脆弱性スキャン＆パッチ自動生成が可能に。Claude Opus 4.7搭載で2月のリサーチプレビューから正式ベータへ昇格",
@@ -6974,5 +7619,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-02T08:00:02.712576"
+  "generated_at": "2026-05-07T20:58:55.771314"
 }
