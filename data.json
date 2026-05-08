@@ -3,14 +3,14 @@
     {
       "id": 305,
       "title": "Claudeへの指示に「なぜやるか」の理由を付け加えて精度を向上させる",
-      "point": "指示の背景にある理由・文脈をClaude に伝えることで、目標をより深く理解した応答が得られる。例：「省略記号を使わないでください」より「テキスト読み上げエンジンで読むため省略記号の発音ができないので、省略記号を使わないでください」の方が確実に機能する。Claude 4.xは推測ではなく明示された意図に従って動作するよう訓練されている。",
-      "source_title": "プロンプトのベストプラクティス - Anthropic公式",
-      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/claude-4-best-practices",
+      "point": "指示文に「なぜその作業をするか」の文脈を1〜2文付け加えるだけでアウトプットの精度が向上する。例：「このコードをリファクタリングして」→「新しいチームメンバーが読みやすいように、このコードをリファクタリングして」。Claudeが目的を理解することで、単純な字義通り実行ではなく目的に沿った判断が働く。Opus 4.7の文字通り解釈傾向と組み合わせて使うと、「理由」が暗黙の文脈を補完する役割を果たし特に効果的。",
+      "source_title": "How to Set Up Claude Custom Instructions (7 Tips, 2026)",
+      "source_url": "https://www.jamout.ai/blog/how-to-set-up-custom-instructions-in-claude-the-right-way-7-tips-that-make-your-ai-actually-sound-like-you-not-a-robot",
       "tags": [
         "モデル"
       ],
       "first_date": "2026-04-09",
-      "last_date": "2026-04-09",
+      "last_date": "2026-05-09",
       "appearances": 16
     },
     {
@@ -283,6 +283,19 @@
       "appearances": 7
     },
     {
+      "id": 556,
+      "title": "Claude Design × コードリポジトリ連携でプロダクションレディなプロトタイプを作成する",
+      "point": "Claude Designのオンボーディング時にコードリポジトリをリンクすると、Claudeが既存コンポーネント・アーキテクチャ・スタイルパターンを読み込み、生成するプロトタイプが実際のコードベースに対応した形になる。出力はPPTX・PDF・Canva・スタンドアロンHTMLへエクスポート可能。PMはFeatureフローをスケッチしてClaude Codeに渡し実装させる連携フローが特に好評。現在Claude Pro/Max/Team/Enterpriseユーザー向けリサーチプレビュー提供中。",
+      "source_title": "Introducing Claude Design by Anthropic Labs",
+      "source_url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-09",
+      "last_date": "2026-05-09",
+      "appearances": 6
+    },
+    {
       "id": 417,
       "title": "コンテキストエンジニアリング：identity・voice・anti-AIの3ファイル戦略でClaudeを「自分仕様」にする",
       "point": "2026年のClaude活用で最も効果的な手法は、3つの参照ファイルをシステムプロンプトやCLAUDE.mdに組み込む構造化アプローチ。①identity file（自分の職種・目標・優先事項）、②voice profile（自分の文体・思考スタイル・よく使う語句）、③anti-AI-writing file（使ってほしくない表現・語調・クリシェのリスト）。この3ファイルを渡すだけで出力品質が大幅に向上し、AIらしさが消える。",
@@ -475,6 +488,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 555,
+      "title": "カスタム指示を「3つのコアファイル」で構成してOutput品質を最大化する",
+      "point": "パワーユーザーが実践する「3コアファイル」構成：①**Identityファイル**（自分の名前・仕事・役割・対象顧客を2〜3文で）、②**Voice Profileファイル**（自分の思考・文体パターンをキャプチャ）、③**Anti-AI-writingファイル**（Claudeに使わせたくない単語・構造・トーンのリスト）。この3ファイルを常時ロードするだけでアウトプット品質はモデル切り替え以上に改善すると報告されている。特にアンチリストは「使わないこと」の明示が最も効果的な制約として機能する。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-05-09",
+      "last_date": "2026-05-09",
+      "appearances": 5
     },
     {
       "id": 381,
@@ -1223,6 +1249,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 557,
+      "title": "「Claudeにインタビューさせる」：大規模タスクは先にClaudeから質問を引き出す",
+      "point": "大きくて曖昧なタスクは最小限のプロンプトから始め「私にインタビューしてください」と依頼する技法が有効。Claudeは実装の詳細・エッジケース・トレードオフなど自分では思いつかなかった観点から質問を行い、要件の穴を埋めてくれる。インタビュー後に得た情報を整理したうえで本番タスクを投入すると、最初から詳細な指示を書くより質の高いアウトプットが得られる。Opus 4.7の「文字通り解釈」特性とも相性が良く、事前の要件整理が品質を左右する。",
+      "source_title": "You're Using Claude Wrong! Here's How to be Ahead of 99% of Users",
+      "source_url": "https://artificialcorner.com/p/claude-levels",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-09",
+      "last_date": "2026-05-09",
+      "appearances": 3
     },
     {
       "id": 544,
@@ -2314,6 +2354,79 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 552,
+      "title": "claude-mem：Claude Codeにセッション横断の永続メモリを追加する",
+      "point": "thedotmack製のOSSプラグイン「claude-mem」がGitHub 65.8K星を達成。`npx claude-mem install`一発でインストール可能。Claude Codeのセッションライフサイクルフックに組み込まれ、ツール使用・ファイル操作・編集内容を自動キャプチャしClaudeのagent-SDKでAI圧縮してSQLiteに保存。次回セッション開始時に関連文脈を自動注入することで「前回の作業をまた一から説明する」手間を完全に排除できる。Linux/macOS/Windows対応、Cursor・Gemini CLIなど他のAIコーディングツールとも連携可能。",
+      "source_title": "claude-mem hits 65.8K stars as a persistent memory plugin for Claude Code",
+      "source_url": "https://www.augmentcode.com/learn/claude-mem-65k-stars",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-09",
+      "last_date": "2026-05-09",
+      "appearances": 2
+    },
+    {
+      "id": 554,
+      "title": "Opus 4.7 アダプティブシンキング：思考バジェットは「プロンプトで誘導」に変化",
+      "point": "Opus 4.7では固定の思考バジェット指定が廃止され、モデルがコンテキストに応じて推論量を自律決定する「アダプティブシンキング」に移行。深く考えさせたい場合は「回答前に慎重に考えてください」、速度優先なら「素早く回答することを優先してください」のようにプロンプトで誘導する。また `temperature`・`top_p`・`top_k` をデフォルト以外に設定すると400エラーが返るようになったため、既存コードでこれらを指定している場合は即座にパラメータを削除する移行が必要。",
+      "source_title": "What's new in Claude Opus 4.7 - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-09",
+      "last_date": "2026-05-09",
+      "appearances": 2
+    },
+    {
+      "id": 558,
+      "title": "/batch コマンドで大規模マイグレーションを並列ワークツリーに自動分散する",
+      "point": "Claude Codeの `/batch` コマンドはマイグレーション内容についてインタビューを行ったのち、作業を必要な数のワークツリーエージェントに自動分散する。各エージェントは独立した環境で作業・テスト・PR作成まで完結するため、大規模リファクタリングや一括ファイル変換を人手で分割管理する必要がなくなる。2026年5月現在のClaude Code最新版でCI/スクリプトから非対話式実行できる `claude ultrareview [target]` とセットで活用すると、移行検証まで自動化できる。",
+      "source_title": "Claude Code power user tips | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-09",
+      "last_date": "2026-05-09",
+      "appearances": 2
+    },
+    {
+      "id": 559,
+      "title": "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE：Homebrew/WinGetインストールを自動更新する",
+      "point": "環境変数 `CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE` を設定すると、Homebrew（macOS）またはWinGet（Windows）経由でインストールされたClaude Codeが起動時にバックグラウンドで自動アップグレードを実行し、再起動を促すプロンプトを表示する。手動 `brew upgrade claude-code` や `winget upgrade` を忘れて古いバージョンで作業し続ける問題を解消できる。頻繁に更新されるClaude Codeをチームで常に最新に保つ場合の運用コストを大幅に削減する。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-05-09",
+      "last_date": "2026-05-09",
+      "appearances": 2
+    },
+    {
+      "id": 560,
+      "title": "Claude Code WSL2/SSH環境でのOAuth認証改善：ブラウザ未到達時もコード貼り付けでログイン可能に",
+      "point": "`claude auth login` が改善され、WSL2・SSH・コンテナなどブラウザのコールバックがlocalhostに到達できない環境でも、表示されたOAuthコードをターミナルに貼り付けるだけで認証が完了するようになった。従来はリモート環境でのClaude Code認証に別途トークン設定などの回避策が必要だったが、この改善により標準のOAuthフローがそのまま機能する。DevContainer・GitHub Codespaces・リモートサーバー上での開発環境構築が大幅に簡略化される。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-09",
+      "last_date": "2026-05-09",
+      "appearances": 2
     },
     {
       "id": 524,
@@ -3585,6 +3698,23 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 553,
+      "title": "Opus 4.7 × Claude Code：「有能なエンジニアへの委任」として扱う",
+      "point": "AnthropicはOpus 4.7の公式ガイドでClaudeを「ペアプログラミング相手」ではなく「信頼できるエンジニアへの委任」として扱うことを推奨。Opus 4.7は4.6より指示を文字通りに解釈するため、暗黙の文脈に頼らず「何を・どこまで・どのように達成してほしいか」を明示的に記述することが重要。並列化が必要な場合も「サブエージェントを使って並列実行してください」と明示しなければデフォルトでは単一レスポンスで処理される。",
+      "source_title": "Best practices for using Claude Opus 4.7 with Claude Code",
+      "source_url": "https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "モデル",
+        "生産性"
+      ],
+      "first_date": "2026-05-09",
+      "last_date": "2026-05-09",
+      "appearances": 1
     },
     {
       "id": 539,
@@ -7395,6 +7525,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-09",
+      "highlights": [
+        "claude-mem：Claude Codeにセッション横断の永続メモリを追加する無料プラグイン — NPX一発インストール、65.8K星獲得のOSSプラグインがセッション間の文脈断絶を解消",
+        "Opus 4.7 × Claude Code：「有能なエンジニアへの委任」として扱う新指針 — AnthropicがOpus 4.7の活用法を刷新、より明示的な指示で真価を発揮"
+      ]
+    },
+    {
       "date": "2026-05-08",
       "highlights": [
         "Claude Managed Agents: Dreaming（リサーチプレビュー） — エージェントが過去セッションを自律レビューし、自分で気づけなかったパターンを発見して自己改善する革新的機能",
@@ -7771,5 +7908,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-08T08:00:02.973175"
+  "generated_at": "2026-05-09T08:00:02.997767"
 }
