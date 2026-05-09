@@ -2356,6 +2356,21 @@
       "appearances": 3
     },
     {
+      "id": 573,
+      "title": "コンテキストウィンドウ有効活用：400kトークン超で精度低下、/compactと定期クリアで対処",
+      "point": "Claude Code・Managed Agentsともに、コンテキスト使用量が400kトークンを超えると想起精度が低下し始めることが実験的に確認されている。長時間セッションでは`/compact`コマンドでサマリー圧縮するか、定期的に`/clear`で会話をリセット（CLAUDE.mdは維持）するのが有効。Just-in-Timeコンテキスト戦略（軽量IDを保持しランタイムで動的ロード）と組み合わせると効果的。",
+      "source_title": "Claude AI's Upgrade Adds Infinite Context Memory - Tech Times",
+      "source_url": "https://www.techtimes.com/articles/316434/20260508/claude-ais-upgrade-adds-infinite-context-memory-complex-workflows-productivity.htm",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-05-10",
+      "last_date": "2026-05-10",
+      "appearances": 2
+    },
+    {
       "id": 552,
       "title": "claude-mem：Claude Codeにセッション横断の永続メモリを追加する",
       "point": "thedotmack製のOSSプラグイン「claude-mem」がGitHub 65.8K星を達成。`npx claude-mem install`一発でインストール可能。Claude Codeのセッションライフサイクルフックに組み込まれ、ツール使用・ファイル操作・編集内容を自動キャプチャしClaudeのagent-SDKでAI圧縮してSQLiteに保存。次回セッション開始時に関連文脈を自動注入することで「前回の作業をまた一から説明する」手間を完全に排除できる。Linux/macOS/Windows対応、Cursor・Gemini CLIなど他のAIコーディングツールとも連携可能。",
@@ -3698,6 +3713,135 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 564,
+      "title": "Claude Code 2.1.133：/release-notes・/mcpスクロール・スラッシュ補完の3バグを修正",
+      "point": "最新版2.1.133（約20時間前リリース）で3件の不具合が解消。①`/release-notes`が古いバージョンのまま固まるバグ、②`/mcp`サーバーリストがターミナル表示行数を超えるとスクロールできないバグ、③入力途中のスラッシュコマンドオートコンプリートが機能しないバグ。日常的なClaude Code操作の安定性が向上した。",
+      "source_title": "claude-code/releases · GitHub",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-10",
+      "last_date": "2026-05-10",
+      "appearances": 1
+    },
+    {
+      "id": 565,
+      "title": "Claude Code 2.1.132：CLAUDE_CODE_SESSION_IDをBashサブプロセス環境変数に追加",
+      "point": "Bashツールのサブプロセス環境に`CLAUDE_CODE_SESSION_ID`が自動注入されるようになった。Hooksで使われる`session_id`と同一の値が渡されるため、シェルスクリプト側からセッションを識別・ログ収集・外部システム連携が容易になる。マルチエージェント環境や監査ログが必要な用途で特に有効。",
+      "source_title": "Anthropic Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-05-10",
+      "last_date": "2026-05-10",
+      "appearances": 1
+    },
+    {
+      "id": 566,
+      "title": "Claude Code 2.1.132：CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1でフルスクリーン描画をオプトアウト",
+      "point": "環境変数`CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1`を設定すると、フルスクリーンの代替スクリーンレンダラーを無効化できる。CI/CD環境・ログ収集ツール・ターミナルマルチプレクサとの相性問題が解消される。同バージョンでは外部SIGINTのグレースフルシャットダウン未実行バグ、JetBrains IDE 2025.2ターミナルのスクロールバグ、macOSでのAlt+T（思考トグル）不動作なども修正。",
+      "source_title": "anthropics/claude-code v2.1.132 - newreleases.io",
+      "source_url": "https://newreleases.io/project/github/anthropics/claude-code/release/v2.1.132",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-10",
+      "last_date": "2026-05-10",
+      "appearances": 1
+    },
+    {
+      "id": 567,
+      "title": "金融サービス向けエージェントテンプレート10種を公式リリース（5/5）",
+      "point": "Anthropicが「Pitchbook builder」「KYC screener」「Month-end closer」「Earnings reviewer」「General ledger reconciler」など10種の実務特化エージェントテンプレートを公開。Claude Cowork/Claude Codeのプラグインとして即インストールでき、Claude Managed Agentsのクックブックとしても利用可能。FactSet・PitchBook・Moody's・Dun & Bradstreetなど主要金融データプロバイダーのコネクターも同時追加。ソースコードは[financial-services marketplace](https://github.com/anthropics/financial-services)で公開中。",
+      "source_title": "Agents for financial services - Anthropic",
+      "source_url": "https://www.anthropic.com/news/finance-agents",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "新機能",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-05-10",
+      "last_date": "2026-05-10",
+      "appearances": 1
+    },
+    {
+      "id": 568,
+      "title": "Claude for Outlook パブリックベータ近日公開：Excel・Word・PowerPointに続き4アプリで文脈共有",
+      "point": "Claude for Microsoft 365（Excel・PowerPoint・Word add-in）が正式GAとなり、Claude for Outlookのパブリックベータが近日公開予定。4アプリ間でコンテキストが自動継承されるため、Excelで作ったモデルをPowerPointのスライドに引き継ぐ際に再説明が不要になる。Outlookでは受信箱のトリアージ・会議調整・自分の文体でのドラフト作成を「チーフオブスタッフ的」にClaudeが担う設計。",
+      "source_title": "Agents for financial services - Anthropic",
+      "source_url": "https://www.anthropic.com/news/finance-agents",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-10",
+      "last_date": "2026-05-10",
+      "appearances": 1
+    },
+    {
+      "id": 569,
+      "title": "Opus 4.7が金融エージェントベンチマーク首位：Vals AI Finance Agent Benchmark 64.37%",
+      "point": "Claude Opus 4.7がVals AIの金融エージェントベンチマークで業界トップスコア64.37%を記録。金融タスク向け10種エージェントテンプレートはすべてOpus 4.7での利用が推奨されている。$5/$25 per MTokという価格はOpus 4.6と同等を維持しており、金融・法務・リサーチなど精度重視の業務でOpus 4.6からの移行を検討する価値がある。",
+      "source_title": "Agents for financial services - Anthropic",
+      "source_url": "https://www.anthropic.com/news/finance-agents",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-05-10",
+      "last_date": "2026-05-10",
+      "appearances": 1
+    },
+    {
+      "id": 570,
+      "title": "Anthropic Institute 研究議題を公表：経済波及・脅威と回復力・AI in the Wild・AI駆動R&D（5/7）",
+      "point": "Anthropicが独立研究機関「The Anthropic Institute」の4研究領域を公式発表。①Economic diffusion（AIが経済・社会に及ぼす影響）、②Threats and resilience（AIを悪用した脅威と回復力）、③AI systems in the wild（実世界でのAI動作の観察・測定）、④AI-driven R&D（AIが科学・技術研究を加速する方法）。調査結果は広く一般に共有される予定。",
+      "source_title": "Focus areas for The Anthropic Institute",
+      "source_url": "https://www.anthropic.com/research/anthropic-institute-agenda",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-10",
+      "last_date": "2026-05-10",
+      "appearances": 1
+    },
+    {
+      "id": 571,
+      "title": "Anthropic × Google Cloud/Broadcom：複数ギガワット規模の次世代コンピュートパートナーシップ",
+      "point": "AnthropicがGoogle CloudおよびBroadcomと大型コンピュートパートナーシップを締結し、複数ギガワット規模の次世代処理能力を確保。スペースX Colossus（300MW・22万GPU超）に続く第2弾のインフラ増強策。ClaudeのAPI/Pro/Max/Enterpriseレート制限を2倍化した施策の継続的な技術的裏付けとなる。",
+      "source_title": "Anthropic expands partnership with Google and Broadcom",
+      "source_url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-10",
+      "last_date": "2026-05-10",
+      "appearances": 1
+    },
+    {
+      "id": 572,
+      "title": "Anthropic社内AI活用報告：60%の業務でClaude使用・生産性50%向上",
+      "point": "AnthropicがAI活用の自社事例を公表。社員が業務の約60%でClaudeを使っており、平均50%の生産性向上（前年比2〜3倍）を自己報告。特にコーディング・研究・コミュニケーション業務での効果が大きい。実際の業務に即したAI活用の参考事例として、自社チームのワークフロー設計に応用できる。",
+      "source_title": "How AI Is Transforming Work at Anthropic",
+      "source_url": "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic",
+      "tags": [
+        "API",
+        "生産性"
+      ],
+      "first_date": "2026-05-10",
+      "last_date": "2026-05-10",
+      "appearances": 1
     },
     {
       "id": 553,
@@ -7525,6 +7669,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-10",
+      "highlights": [
+        "金融サービス向けエージェントテンプレート10種公開 — Cowork/Claude Code/Managed Agentsで即展開、Opus 4.7がVals AIベンチマーク首位",
+        "Claude Code 2.1.132/2.1.133リリース — セッションID環境変数の追加・フルスクリーン無効化オプション・複数バグ修正"
+      ]
+    },
+    {
       "date": "2026-05-09",
       "highlights": [
         "claude-mem：Claude Codeにセッション横断の永続メモリを追加する無料プラグイン — NPX一発インストール、65.8K星獲得のOSSプラグインがセッション間の文脈断絶を解消",
@@ -7908,5 +8059,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-09T08:00:02.997767"
+  "generated_at": "2026-05-10T08:00:02.988909"
 }
