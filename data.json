@@ -2356,6 +2356,49 @@
       "appearances": 3
     },
     {
+      "id": 583,
+      "title": "Dreaming機能：Managed Agentsが過去セッションをバックグラウンドでレビューして記憶を蒸留（研究プレビュー）",
+      "point": "DreamingはManaged Agentsのスケジュール型プロセスで、単一エージェントでは見えないパターン（繰り返しのミス・収束したワークフロー・チーム共通の好み）を過去セッションから抽出し、記憶ストアを自動更新する。更新は「自動適用モード」と「レビュー後適用モード」を選択可能。現在は研究プレビューのため利用にはアクセスリクエストが必要。",
+      "source_title": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
+      "source_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "tags": [
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-05-11",
+      "last_date": "2026-05-11",
+      "appearances": 2
+    },
+    {
+      "id": 584,
+      "title": "Managed Agents Outcomes：成功ルーブリック＋独立グレーダーで反復改善し成功率最大10ポイント向上",
+      "point": "Outcomesは「成功の定義」をルーブリックとして設定する機能。エージェントの出力を別のコンテキストウィンドウの独立グレーダーが評価し、不合格なら何を改善すべきかフィードバックを渡して再試行させる。エージェント自身の推論に引きずられない独立した評価が高精度を実現し、Anthropic社内実験では通常プロンプティングループ比でタスク成功率が最大10ポイント向上。現在パブリックベータとして利用可能。",
+      "source_title": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
+      "source_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "tags": [
+        "API",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-05-11",
+      "last_date": "2026-05-11",
+      "appearances": 2
+    },
+    {
+      "id": 585,
+      "title": "Opus 4.7アダプティブシンキング：固定思考バジェット廃止 — 思考量はプロンプトで柔軟に誘導",
+      "point": "Opus 4.7では固定thinking budgetがなくなり、各ステップで必要かどうか自動判断する「アダプティブシンキング」に変わった。思考を増やしたいときは「一歩一歩慎重に考えてから回答してください、この問題は見た目より難しい」、減らしたいときは「深く考えるより素早く回答することを優先してください」と明示的に指示する。軽微なクエリでは素早く応答し、困難な問題では自動的に深く推論するため、全体的なレイテンシとコストのバランスが改善されている。",
+      "source_title": "Best practices for using Claude Opus 4.7 with Claude Code",
+      "source_url": "https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-11",
+      "last_date": "2026-05-11",
+      "appearances": 2
+    },
+    {
       "id": 573,
       "title": "コンテキストウィンドウ有効活用：400kトークン超で精度低下、/compactと定期クリアで対処",
       "point": "Claude Code・Managed Agentsともに、コンテキスト使用量が400kトークンを超えると想起精度が低下し始めることが実験的に確認されている。長時間セッションでは`/compact`コマンドでサマリー圧縮するか、定期的に`/clear`で会話をリセット（CLAUDE.mdは維持）するのが有効。Just-in-Timeコンテキスト戦略（軽量IDを保持しランタイムで動的ロード）と組み合わせると効果的。",
@@ -3713,6 +3756,97 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 577,
+      "title": "Opus 4.7のデフォルトトーンが変化：直接的・意見性が高い — ウォームトーン指示で4.6スタイルに調整",
+      "point": "Opus 4.7はOpus 4.6よりも直接的・意見性の高い文体になり、絵文字や共感的フレーズが少なくなった。4.6のウォームなスタイルを維持したい場合は「Use a warm, collaborative tone. Acknowledge the user's framing before answering.」とシステムプロンプトに追加するだけで再現できる。長さも複雑さに応じて自動調整されるため、固定長が必要なら明示的に指定する。",
+      "source_title": "Best practices for using Claude Opus 4.7 with Claude Code",
+      "source_url": "https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-11",
+      "last_date": "2026-05-11",
+      "appearances": 1
+    },
+    {
+      "id": 578,
+      "title": "Opus 4.7のサブエージェント生成が控えめに — 並列処理が必要な場合は明示的に「複数エージェントを起動せよ」と指示",
+      "point": "Opus 4.7はサブエージェントへの委任をより慎重に判断するため、4.6と同じプロンプトでは並列処理が起動しないことがある。並列サブエージェントが必要なタスク（ファイル横断検索・独立タスクのファンアウト等）では「同一ターン内で複数のサブエージェントを起動せよ。直接応答できる作業にはサブエージェントを使うな」と明示的に記述することで意図した動作を得られる。",
+      "source_title": "Best practices for using Claude Opus 4.7 with Claude Code",
+      "source_url": "https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "モデル",
+        "生産性"
+      ],
+      "first_date": "2026-05-11",
+      "last_date": "2026-05-11",
+      "appearances": 1
+    },
+    {
+      "id": 579,
+      "title": "Opus 4.7はツール呼び出しより推論を優先 — 積極的なツール活用には「いつ・なぜ使うか」を明示",
+      "point": "Opus 4.7はOpus 4.6よりもツールを少なく呼び出し、代わりに推論で解決しようとする。ファイル検索・Webアクセス等を積極的に使わせたい場合は「ファイル変更を検討する前に必ず関連ファイルを検索し、内容を確認すること」のようにツールを使う条件と理由をプロンプトで説明する必要がある。多くのケースでは推論優先の挙動が高品質につながるが、エージェント作業での能動的な情報収集が期待どおりに動かないときはここを見直す。",
+      "source_title": "Best practices for using Claude Opus 4.7 with Claude Code",
+      "source_url": "https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-05-11",
+      "last_date": "2026-05-11",
+      "appearances": 1
+    },
+    {
+      "id": 580,
+      "title": "Claude Code Routinesの利用上限：Pro=5回/日・Max=15回/日・Team/Enterprise=25回/日、超過は追加課金",
+      "point": "Routinesはサブスクリプション利用枠と同様にカウントされるが、上限はプラン別に固定されている。最初の自動化は1つの繰り返しタスクから始め、2週間運用しながらプロンプトを調整してから追加する段階的アプローチが推奨。上限を超えた分は追加使用量として課金される。ドキュメントドリフト検出（週1回、マージPRをスキャンしてAPIと乖離したドキュメントを修正PRとして提出）が最初のRoutineとして人気。",
+      "source_title": "Introducing routines in Claude Code",
+      "source_url": "https://claude.com/blog/introducing-routines-in-claude-code",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-05-11",
+      "last_date": "2026-05-11",
+      "appearances": 1
+    },
+    {
+      "id": 581,
+      "title": "Cyber Verification Program：合法的セキュリティ用途向けにOpus 4.7のサイバー機能制限を解除申請可能",
+      "point": "Opus 4.7はサイバーセキュリティ機能を意図的に制限した設計で、高リスクな用途は自動ブロックされる。脆弱性研究・ペネトレーションテスト・レッドチームなど正当なセキュリティ業務には「Cyber Verification Program」への参加申請が可能。申請により制限が緩和され、セキュリティ専門業務に活用できる。Claude Securityパブリックベータ（Enterpriseユーザー向け）も同時に利用できる。",
+      "source_title": "Introducing Claude Opus 4.7",
+      "source_url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-11",
+      "last_date": "2026-05-11",
+      "appearances": 1
+    },
+    {
+      "id": 582,
+      "title": "プロンプトキャッシュ設計の鉄則：静的コンテンツ先頭・動的コンテンツ末尾でコスト最大90%削減",
+      "point": "プロンプトキャッシュはプレフィックス一致で動作するため、変わらない静的コンテンツ（ツール定義・ルール・長文ドキュメント）を必ず先頭に配置し、変わる動的コンテンツ（日時・ファイル変更・ユーザー入力）は末尾に置く。システムプロンプトに動的な日付やファイル変更を埋め込むとキャッシュが毎回無効化される — 代わりに`<system-reminder>`タグでメッセージとして渡す。キャッシュヒット率が90%ならAPIコストをキャッシュ前の1/10（$0.50/MTok）まで削減可能。（過去2回）",
+      "source_title": "Lessons from building Claude Code: Prompt caching is everything",
+      "source_url": "https://claude.com/blog/lessons-from-building-claude-code-prompt-caching-is-everything",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-05-11",
+      "last_date": "2026-05-11",
+      "appearances": 1
     },
     {
       "id": 564,
@@ -7669,6 +7803,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-11",
+      "highlights": [
+        "Opus 4.7の隠れた挙動変化3点 — トーン・サブエージェント・ツール呼び出しがすべて4.6から変化、プロンプト再調整が必要",
+        "Claude Code Routines利用上限をプラン別に把握 — Pro=5回/日・Max=15回/日・Team/Enterprise=25回/日"
+      ]
+    },
+    {
       "date": "2026-05-10",
       "highlights": [
         "金融サービス向けエージェントテンプレート10種公開 — Cowork/Claude Code/Managed Agentsで即展開、Opus 4.7がVals AIベンチマーク首位",
@@ -8059,5 +8200,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-10T08:00:02.988909"
+  "generated_at": "2026-05-11T08:00:02.958888"
 }
