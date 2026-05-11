@@ -106,6 +106,20 @@
       "appearances": 9
     },
     {
+      "id": 594,
+      "title": "Opus 4.7エフォートレベル対応表：用途別にhigh/xhigh/maxを使い分ける",
+      "point": "推奨対応表：`low`=タイトル・リライトなど使い捨て草稿、`medium`=クリーンなソースからの要約・単純抽出、`high`=会議合成・レポート・仕様書（日常の知識業務のデフォルト）、`xhigh`=複数ソース研究・厳格フォーマット・監査、`max`=最難度コーディング・推論サブ問題（承認制推奨）。xhigh/maxは文脈量増加でトークンコストも上昇するため、vague なプロンプトが組み合わさると逆効果になる点に注意。",
+      "source_title": "How to Use Claude Opus 4.7: Prompt Upgrades, Effort Settings",
+      "source_url": "https://ticnote.com/en/blog/how-to-use-claude-opus-4-7",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-12",
+      "last_date": "2026-05-12",
+      "appearances": 8
+    },
+    {
       "id": 450,
       "title": "コンテキストエンジニアリング 構造化メモ技法（Structured Note-taking）でエージェントの長期記憶を実現",
       "point": "Anthropic が推奨する「構造化メモ取り（Structured Note-taking）」とは、エージェントが定期的にコンテキストウィンドウ外のメモリにノートを書き出し、次のターンで必要な部分だけ引き戻す手法。メモリの中身はコンテキスト外に永続化されるため、セッションを跨いで情報が維持できる。Compaction（全体要約）より粒度が細かく、記憶の選択的な保持・廃棄が可能。",
@@ -2356,6 +2370,38 @@
       "appearances": 3
     },
     {
+      "id": 595,
+      "title": "Claude Code v2.1.128：Sub-agentサマリーがプロンプトキャッシュをヒット — 作成コストが約1/3に",
+      "point": "v2.1.128でSub-agentのプログレスサマリーがプロンプトキャッシュにヒットするよう最適化された。`cache_creation` コストが約3倍削減される。また静的なトランスクリプトに対してサマリーが繰り返し発火していた不具合も修正された。長時間エージェントタスクのコスト削減に直結する。",
+      "source_title": "Claude Code Changelog: All Release Notes (2026)",
+      "source_url": "https://claudefa.st/blog/guide/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-05-12",
+      "last_date": "2026-05-12",
+      "appearances": 2
+    },
+    {
+      "id": 598,
+      "title": "Opus 4.7プロンプト：「ネガティブルール」を「ポジティブな具体例」に置き換える",
+      "point": "「冗長にするな」より「140〜180字・箇条書き5件以内・前置きなし」のほうが4.7には効く。悪いルールの例：`\"Here is a comprehensive analysis...\"` → 良いアウトプット例：`\"Decision: Launch beta Friday. Risk: API quota. Owner: Maya.\"` のように、チームが実際に使う形式（JSONスキーマ・Markdownレポート・デシジョンマトリクス）を明示して渡すと精度が安定する。",
+      "source_title": "How to Use Claude Opus 4.7: Prompt Upgrades, Effort Settings",
+      "source_url": "https://ticnote.com/en/blog/how-to-use-claude-opus-4-7",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-12",
+      "last_date": "2026-05-12",
+      "appearances": 2
+    },
+    {
       "id": 583,
       "title": "Dreaming機能：Managed Agentsが過去セッションをバックグラウンドでレビューして記憶を蒸留（研究プレビュー）",
       "point": "DreamingはManaged Agentsのスケジュール型プロセスで、単一エージェントでは見えないパターン（繰り返しのミス・収束したワークフロー・チーム共通の好み）を過去セッションから抽出し、記憶ストアを自動更新する。更新は「自動適用モード」と「レビュー後適用モード」を選択可能。現在は研究プレビューのため利用にはアクセスリクエストが必要。",
@@ -3756,6 +3802,94 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 589,
+      "title": "alwaysLoad MCP設定：特定サーバーのツールをツール検索スキップで常時有効化する",
+      "point": "MCP サーバー設定に `\"alwaysLoad\": true` を追加すると、そのサーバーのすべてのツールがツール検索による遅延ロードをスキップして常時利用可能になる。頻繁に使うDBやAPIサーバーに設定することで、会話の最初のターンから即座にツールを呼び出せる。",
+      "source_title": "Claude Code Changelog: All Release Notes (2026)",
+      "source_url": "https://claudefa.st/blog/guide/changelog",
+      "tags": [
+        "API",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-12",
+      "last_date": "2026-05-12",
+      "appearances": 1
+    },
+    {
+      "id": 590,
+      "title": "`claude plugin prune`で孤立プラグイン依存を一括削除する",
+      "point": "`claude plugin prune` コマンドを実行すると、他のプラグインが依存していない自動インストール済み依存パッケージを検出・削除できる。`plugin uninstall --prune` オプションでアンインストール時にカスケード削除も可能。肥大化したプラグイン環境をクリーンに保てる。",
+      "source_title": "Claude Code Changelog: All Release Notes (2026)",
+      "source_url": "https://claudefa.st/blog/guide/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-12",
+      "last_date": "2026-05-12",
+      "appearances": 1
+    },
+    {
+      "id": 591,
+      "title": "/skillsフィルター検索ボックス：大量スキルから即座に絞り込む",
+      "point": "v2.1.121 から `/skills` ダイアログにタイプで絞り込めるフィルター検索ボックスが追加された。スキル数が増えてきた場合でも、スクロールせずにキーワード入力だけで目的のスキルを素早く発見できる。",
+      "source_title": "Claude Code Changelog: All Release Notes (2026)",
+      "source_url": "https://claudefa.st/blog/guide/changelog",
+      "tags": [],
+      "first_date": "2026-05-12",
+      "last_date": "2026-05-12",
+      "appearances": 1
+    },
+    {
+      "id": 592,
+      "title": "`${CLAUDE_EFFORT}`変数でスキル内の処理をエフォートレベルに応じて分岐させる",
+      "point": "v2.1.120 からスキルのコンテンツ内で `${CLAUDE_EFFORT}` 変数を参照できる。現在のエフォートレベル（low/medium/high/xhigh/max）に応じてスキルの詳細度・出力形式を動的に変えることで、コストと品質を自動調整するスキルが実現できる。",
+      "source_title": "Claude Code Changelog: All Release Notes (2026)",
+      "source_url": "https://claudefa.st/blog/guide/changelog",
+      "tags": [],
+      "first_date": "2026-05-12",
+      "last_date": "2026-05-12",
+      "appearances": 1
+    },
+    {
+      "id": 593,
+      "title": "Opus 4.7プロンプト4要素フレームワーク：目標・対象読者・制約・完了定義を先頭に置く",
+      "point": "Opus 4.7は「行間を読む」挙動が減り、指示の文字通りに動く。効果的なプロンプトの先頭には①ゴール②対象読者③制約（スコープ・除外事項）④完了の定義、の4項目を明記する。また「〜するな」の禁止ルールより、「〜字以内・〜箇条書きで」といったポジティブな出力例で具体的に指示するほうが安定する。",
+      "source_title": "How to Use Claude Opus 4.7: Prompt Upgrades, Effort Settings",
+      "source_url": "https://ticnote.com/en/blog/how-to-use-claude-opus-4-7",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-12",
+      "last_date": "2026-05-12",
+      "appearances": 1
+    },
+    {
+      "id": 596,
+      "title": "Opus 4.7マイグレーション：4.6から4.7への段階移行チェックリスト",
+      "point": "全ワークフローを一度に切り替えず、①コーディングチケット・調査要約・会議ブリーフなど20〜50件の実タスクを同一入力で4.6/4.7 high/4.7 xhighで比較実行→②「役に立つ推測」に依存していたプロンプトを特定→③意図・フォーマット・短い例・終了条件を追加して修正→④コスト/承認済みアウトプット比（トークン＋修正時間）で判定、という流れが推奨される。",
+      "source_title": "How to Use Claude Opus 4.7: Prompt Upgrades, Effort Settings",
+      "source_url": "https://ticnote.com/en/blog/how-to-use-claude-opus-4-7",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-12",
+      "last_date": "2026-05-12",
+      "appearances": 1
+    },
+    {
+      "id": 597,
+      "title": "`/resume`検索ボックスにPR URLをペーストしてセッションを直接ジャンプする",
+      "point": "v2.1.122 から `/resume` の検索欄にGitHub・GitLab・Bitbucket・GHEのPR URLを貼り付けると、そのPRを作成したセッションが即座に見つかる。コードレビュー後に元の作業セッションへ素早く戻ったり、過去の変更経緯を確認したりするのに有用。",
+      "source_title": "Claude Code Changelog: All Release Notes (2026)",
+      "source_url": "https://claudefa.st/blog/guide/changelog",
+      "tags": [],
+      "first_date": "2026-05-12",
+      "last_date": "2026-05-12",
+      "appearances": 1
     },
     {
       "id": 577,
@@ -7803,6 +7937,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-12",
+      "highlights": [
+        "alwaysLoad MCP設定 — 特定MCPサーバーのツールをツール検索スキップで常時有効化、毎回の検索遅延を解消",
+        "Opus 4.7プロンプト4要素フレームワーク — 目標・対象読者・制約・完了定義を先頭に置くだけで出力品質が大幅向上"
+      ]
+    },
+    {
       "date": "2026-05-11",
       "highlights": [
         "Opus 4.7の隠れた挙動変化3点 — トーン・サブエージェント・ツール呼び出しがすべて4.6から変化、プロンプト再調整が必要",
@@ -8200,5 +8341,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-11T08:00:02.958888"
+  "generated_at": "2026-05-12T08:00:02.939684"
 }
