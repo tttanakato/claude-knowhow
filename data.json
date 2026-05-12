@@ -3804,6 +3804,136 @@
       "appearances": 2
     },
     {
+      "id": 602,
+      "title": "Claude Code 2.1.139：Agent View（研究プレビュー）— 全セッション一覧を`claude agents`で管理",
+      "point": "`claude agents`コマンドを実行すると「実行中・ユーザー応答待ち・完了」の全セッションが1つのダッシュボードに表示される。並行して複数のAIワークフローを管理するユーザー向けの新機能（研究プレビュー）。",
+      "source_title": "Claude Code v2.1.139: Agent View, Goal Setting, and Enhanced Workflow Control",
+      "source_url": "https://claude-world.com/articles/claude-code-21139-release/",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-05-13",
+      "last_date": "2026-05-13",
+      "appearances": 1
+    },
+    {
+      "id": 603,
+      "title": "Claude Code 2.1.139：/goalコマンド — 完了条件設定で複数ターン自律作業",
+      "point": "`/goal <条件>`を入力するとClaudeはその条件が満たされるまで複数ターンにわたって自律的に作業を継続する。インタラクティブモード・`-p`フラグ・Remote Controlのいずれでも動作し、オーバーレイパネルに経過時間・ターン数・トークン使用量がリアルタイム表示される。",
+      "source_title": "Claude Code v2.1.139: Agent View, Goal Setting, and Enhanced Workflow Control",
+      "source_url": "https://claude-world.com/articles/claude-code-21139-release/",
+      "tags": [
+        "Claude Code",
+        "製品機能"
+      ],
+      "first_date": "2026-05-13",
+      "last_date": "2026-05-13",
+      "appearances": 1
+    },
+    {
+      "id": 604,
+      "title": "Claude Code 2.1.139：/scroll-speedコマンドとトランスクリプトナビゲーション改善",
+      "point": "`/scroll-speed`でマウスホイール速度をライブプレビュー付きで調整可能に。トランスクリプト表示では`?`でショートカット一覧表示、`{`/`}`でユーザープロンプト間をジャンプ、`v`でショートカットパネルのオン/オフが可能になった。",
+      "source_title": "Claude Code v2.1.139: Agent View, Goal Setting, and Enhanced Workflow Control",
+      "source_url": "https://claude-world.com/articles/claude-code-21139-release/",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-05-13",
+      "last_date": "2026-05-13",
+      "appearances": 1
+    },
+    {
+      "id": 605,
+      "title": "Claude Code 2.1.139：Hookの強化 — `args: string[]`とcontinueOnBlock",
+      "point": "Hookに`args: string[]`フィールドが追加され、シェル経由でなくコマンドを直接実行可能に（パス中の引用符エスケープ不要）。また`PostToolUse`フックに`continueOnBlock`オプションが追加され、ブロックされても作業を継続する制御が可能になった。",
+      "source_title": "Release v2.1.139 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.139",
+      "tags": [
+        "Claude Code",
+        "自動化"
+      ],
+      "first_date": "2026-05-13",
+      "last_date": "2026-05-13",
+      "appearances": 1
+    },
+    {
+      "id": 606,
+      "title": "Claude Code 2.1.139：`claude plugin details <name>`でプラグイン詳細を確認",
+      "point": "`claude plugin details <プラグイン名>`を実行するとプラグインのコンポーネント一覧と、セッションあたりの予測トークンコストが表示される。多数のプラグインを運用している環境でのコスト管理・デバッグに有効。",
+      "source_title": "Claude Code v2.1.139: Agent View, Goal Setting, and Enhanced Workflow Control",
+      "source_url": "https://claude-world.com/articles/claude-code-21139-release/",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-13",
+      "last_date": "2026-05-13",
+      "appearances": 1
+    },
+    {
+      "id": 607,
+      "title": "Claude Code 2.1.139：MCPサーバーに`CLAUDE_PROJECT_DIR`環境変数を自動注入",
+      "point": "MCPサーバー起動時に`CLAUDE_PROJECT_DIR`環境変数が自動的に設定されるようになった。MCPサーバー側からプロジェクトルートを参照しやすくなり、パス解決が簡潔になる。あわせてMCP再接続時のツール名フラッド防止も改善されている。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-13",
+      "last_date": "2026-05-13",
+      "appearances": 1
+    },
+    {
+      "id": 608,
+      "title": "Claude Platform on AWS正式提供開始 — IAM認証・AWSビリングでフルAPI機能を利用",
+      "point": "AWS顧客向けにAnthropicが管理するインフラ上でClaude APIのフル機能（Messages API・Agent Skills・コード実行・Managed Agents・プロンプトキャッシュ）をAWS IAM認証・AWSビリングで利用可能になった。既存のAWSアカウントから追加契約なしで利用開始できる。",
+      "source_title": "Introducing the Claude Platform on AWS",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "API",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-05-13",
+      "last_date": "2026-05-13",
+      "appearances": 1
+    },
+    {
+      "id": 609,
+      "title": "Claude Code 2.1.139：バグ修正まとめ — 認証デッドロック・HTTP/SSE上限・ワイルドカード権限",
+      "point": "認証デッドロック問題・`autoAllowBashIfSandboxed`のシェル展開バグ・Hookによるターミナル破損を修正。HTTP/SSE MCPサーバーのレスポンスボディ上限が16MBに制限され、スキルのワイルドカード権限ルールも修正された。",
+      "source_title": "Claude Code v2.1.139: Agent View, Goal Setting, and Enhanced Workflow Control",
+      "source_url": "https://claude-world.com/articles/claude-code-21139-release/",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-13",
+      "last_date": "2026-05-13",
+      "appearances": 1
+    },
+    {
+      "id": 610,
+      "title": "AnthropicのARRが$300億超に到達 — 2025年末比で約3倍超の急成長",
+      "point": "Anthropicの年換算売上高（ARR）が$300億（約4.5兆円）を超えたことが明らかになった。2025年末時点の約$90億から半年弱で3倍超の成長。Claude Codeや企業向け製品の採用拡大が主要因とされる。",
+      "source_title": "Claude Platform on AWS - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-05-13",
+      "last_date": "2026-05-13",
+      "appearances": 1
+    },
+    {
       "id": 589,
       "title": "alwaysLoad MCP設定：特定サーバーのツールをツール検索スキップで常時有効化する",
       "point": "MCP サーバー設定に `\"alwaysLoad\": true` を追加すると、そのサーバーのすべてのツールがツール検索による遅延ロードをスキップして常時利用可能になる。頻繁に使うDBやAPIサーバーに設定することで、会話の最初のターンから即座にツールを呼び出せる。",
@@ -7937,6 +8067,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-13",
+      "highlights": [
+        "Claude Code 2.1.139：Agent View — `claude agents`コマンドで全セッションを1画面で一元管理（研究プレビュー）",
+        "Claude Code 2.1.139：/goalコマンド — 完了条件を設定するとClaudeが複数ターンにわたって自律継続作業"
+      ]
+    },
+    {
       "date": "2026-05-12",
       "highlights": [
         "alwaysLoad MCP設定 — 特定MCPサーバーのツールをツール検索スキップで常時有効化、毎回の検索遅延を解消",
@@ -8341,5 +8478,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-12T08:00:02.939684"
+  "generated_at": "2026-05-13T08:00:03.090755"
 }
