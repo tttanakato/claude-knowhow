@@ -504,6 +504,19 @@
       "appearances": 6
     },
     {
+      "id": 617,
+      "title": "コンパクション精度調整：リコール最大化→精度改善の2ステップチューニング",
+      "point": "コンテキスト上限に近づいた会話を圧縮して新コンテキストで継続する「コンパクション」は、まずリコール最大化（重要情報を全て保持）でプロンプトを調整し、その後に冗長なツール結果等を削除して精度を上げる2段階で行う。最も軽いコンパクション形式はツール結果クリア（tool_useは残し、tool_resultのペイロードを削除）で、これだけでもコンテキスト節約になる",
+      "source_title": "Effective context engineering for AI agents",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-05-14",
+      "last_date": "2026-05-14",
+      "appearances": 5
+    },
+    {
       "id": 555,
       "title": "カスタム指示を「3つのコアファイル」で構成してOutput品質を最大化する",
       "point": "パワーユーザーが実践する「3コアファイル」構成：①**Identityファイル**（自分の名前・仕事・役割・対象顧客を2〜3文で）、②**Voice Profileファイル**（自分の思考・文体パターンをキャプチャ）、③**Anti-AI-writingファイル**（Claudeに使わせたくない単語・構造・トーンのリスト）。この3ファイルを常時ロードするだけでアウトプット品質はモデル切り替え以上に改善すると報告されている。特にアンチリストは「使わないこと」の明示が最も効果的な制約として機能する。",
@@ -1263,6 +1276,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 619,
+      "title": "Cowork スキルスタッキング：複数スキル同時有効化で異ドメインに自動対応",
+      "point": "Coworkでは複数スキルを同時有効化でき、メタデータ先読み（約100トークン）で必要なスキルのみを遅延ロードするため、15スキル有効でもコンテキストを圧迫しない。「データ分析スキル→スライドスキル」のように異なるスキルが1会話内で自動連携する。1つの巨大スキルより機能別に分割した複数スキルの方が精度が高い",
+      "source_title": "Claude Cowork Guide for Power Users",
+      "source_url": "https://karozieminski.substack.com/p/claude-cowork-guide-plugins-memory-sub-agents-tips",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-05-14",
+      "last_date": "2026-05-14",
+      "appearances": 3
     },
     {
       "id": 557,
@@ -2368,6 +2394,32 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 621,
+      "title": "Cowork change log 強制要求：全タスク後にwhat-changed.mdを自動生成させる",
+      "point": "Coworkのタスク指示末尾に必ず「変更内容をwhat-changed.mdに記録せよ」と追加する習慣をつける。Claudeが行った判断・移動・変更が全て追跡可能になりレビューと差し戻しが容易に。重要ファイルを扱う前は必ずダミーデータで事前テストしてから本番適用するのも合わせて推奨",
+      "source_title": "Claude Cowork Guide for Power Users",
+      "source_url": "https://karozieminski.substack.com/p/claude-cowork-guide-plugins-memory-sub-agents-tips",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-05-14",
+      "last_date": "2026-05-14",
+      "appearances": 2
+    },
+    {
+      "id": 623,
+      "title": "コントラスティブプロンプティング：良い例と悪い例の対比でエラー28-30%削減",
+      "point": "2026年版プロンプト技法の実証テストで最も効果的だった手法の一つ。「こうしてほしくない例」と「こうしてほしい例」を対比して提示することで、構造化タスクのエラーを約28-30%削減。XMLタグで`<bad_example>`と`<good_example>`に分けて提示するのが効果的",
+      "source_title": "6 Months Testing Every AI Prompting Technique: What Actually Works in 2026",
+      "source_url": "https://medium.com/@christianaistudio/6-months-testing-every-ai-prompting-technique-what-actually-works-in-2026-chatgpt-claude-gemini-e791005795e5",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-05-14",
+      "last_date": "2026-05-14",
+      "appearances": 2
     },
     {
       "id": 595,
@@ -3802,6 +3854,89 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 614,
+      "title": "Claude for Legal 正式ローンチ：12種プラクティスプラグイン＋9種MCPコネクター",
+      "point": "AnthropicがClaude for Legalを公式リリース。Commercial・Employment・Privacy等12種の実務領域プラグインと、DocuSign・LexisNexis・Thomson Reuters・iManage等9種のMCPコネクターを一括提供。1クリックインストールでWordやCoworkに統合。法律部門はCowork内で最も利用率の高い職能分野（他の3倍超）となっており、本リリースはその急拡大を受けたもの",
+      "source_title": "Claude For Legal Launches, May Reshape the Legal Tech World",
+      "source_url": "https://www.artificiallawyer.com/2026/05/12/claude-for-legal-launches-may-reshape-the-legal-tech-world/",
+      "tags": [
+        "API",
+        "新機能",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-05-14",
+      "last_date": "2026-05-14",
+      "appearances": 1
+    },
+    {
+      "id": 615,
+      "title": "コンテキストエンジニアリング：LLMの「注意バジェット」はn²で消費される",
+      "point": "Transformerアーキテクチャではトークン数nに対してn²の注意関係を計算するため、コンテキストが増えるほど注意が希薄化し精度が低下する（Context Rot）。コンテキストウィンドウを「注意バジェット」という有限リソースと捉え、必要最小のトークンで高いシグナル密度を維持する設計が重要。コンテキスト長が増えてもモデルは機能するが、短いシーケンスに比べ情報検索・長距離推論の精度は低下する",
+      "source_title": "Effective context engineering for AI agents",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-05-14",
+      "last_date": "2026-05-14",
+      "appearances": 1
+    },
+    {
+      "id": 616,
+      "title": "just-in-time コンテキスト読み込み：軽量識別子で実行時に必要なデータのみロード",
+      "point": "全データを事前にコンテキストへ詰め込まず、ファイルパス・SQLクエリ・WebリンクなどのLightweight識別子を保持し、実行時にツールで必要なデータだけを動的ロードする戦略。Claude Codeがglob/grepでコードを探索するアプローチと同じ。コンテキスト汚染を防ぎ、長期タスクの精度を維持できる",
+      "source_title": "Effective context engineering for AI agents",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-14",
+      "last_date": "2026-05-14",
+      "appearances": 1
+    },
+    {
+      "id": 618,
+      "title": "Cowork グローバル指示設定：Settings画面でトーン・形式・ツール指示を永続登録",
+      "point": "Claude CoworkのSettings内「Global Instructions」フィールドに、文体・優先ツール・出力フォーマット等のエバーグリーンな設定を登録すると、全セッション横断で保持される。「Claudeに自分のために動いてもらうのではなく、自分と共に動いてもらう」設定の出発点。プロジェクト固有の情報はCLAUDE.mdに分けて補完するのがベストプラクティス",
+      "source_title": "Claude Cowork Guide for Power Users",
+      "source_url": "https://karozieminski.substack.com/p/claude-cowork-guide-plugins-memory-sub-agents-tips",
+      "tags": [
+        "CLAUDE.md",
+        "製品機能"
+      ],
+      "first_date": "2026-05-14",
+      "last_date": "2026-05-14",
+      "appearances": 1
+    },
+    {
+      "id": 620,
+      "title": "Cowork タスク委任3問フレームワーク：「完了状態・コンテキスト・制約」を先に明記",
+      "point": "Coworkへのタスク指示前に「①完了状態はどう見える？ ②Claudeが推測できないコンテキストは？ ③Claudeが推測できない制約は？」の3問に答えることで、非同期エージェントが的確に動く。「Downloadsフォルダを整理して」ではなく「7日以内のファイルのみ残し、photo/document/otherに振り分け、削除禁止、完了後にwhat-moved.mdを作成」という形式に変換する",
+      "source_title": "Claude Cowork Guide for Power Users",
+      "source_url": "https://karozieminski.substack.com/p/claude-cowork-guide-plugins-memory-sub-agents-tips",
+      "tags": [
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-05-14",
+      "last_date": "2026-05-14",
+      "appearances": 1
+    },
+    {
+      "id": 622,
+      "title": "「プロンプティングを止め、命令せよ」：具体的な動詞命令形がClaude 4.xに最も効く",
+      "point": "Claude 4.x世代は「分析して」「考えて」のような曖昧な依頼より、「[対象]を[目的]のために[形式]で[制約]で作れ」という動詞命令形の具体的指示に顕著に反応する。何を「する」か（タスク）＋誰のためか（対象）＋どのように届けるか（形式）＋してはいけないこと（制約）の4要素を命令形で組み立てると品質が大幅に向上する",
+      "source_title": "Stop Prompting. Start Commanding.",
+      "source_url": "https://medium.com/@barronqasem/stop-prompting-start-commanding-why-most-people-are-using-claude-ai-wrong-and-how-to-fix-it-481aeee7d92f",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-05-14",
+      "last_date": "2026-05-14",
+      "appearances": 1
     },
     {
       "id": 602,
@@ -8067,6 +8202,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-14",
+      "highlights": [
+        "Claude for Legal 正式ローンチ — 12種の実務領域プラグインと9種MCPコネクター（LexisNexis・Thomson Reuters等）でClaudeが法律AIの中心基盤に",
+        "注意バジェット（Attention Budget）概念 — LLMの注意はn²で消費される有限リソース、コンテキスト設計の根拠が明確に"
+      ]
+    },
+    {
       "date": "2026-05-13",
       "highlights": [
         "Claude Code 2.1.139：Agent View — `claude agents`コマンドで全セッションを1画面で一元管理（研究プレビュー）",
@@ -8478,5 +8620,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-13T08:00:03.090755"
+  "generated_at": "2026-05-14T08:00:03.997819"
 }
