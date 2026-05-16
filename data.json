@@ -1,6 +1,20 @@
 {
   "tips": [
     {
+      "id": 659,
+      "title": "Subagent対立検証（Opponent Processor）：Engineer役・Auditor役を意図的に分けて意思決定の質を向上",
+      "point": "アーキテクチャ意思決定の場面でSubagentを「支持側」と「反論側」に役割分けして議論させるパターン。非相関なコンテキストウィンドウによって単一エージェントでは見逃しがちなリスクを発見できる。Anthropic社内で実際の大規模コード改修に使われていると報告されている。",
+      "source_title": "Anthropic社員のClaude Code活用術8選 — 公式情報から読み解く実践テクニック",
+      "source_url": "https://zenn.dev/happy_elements/articles/046faa4f61d98f",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-05-17",
+      "last_date": "2026-05-17",
+      "appearances": 18
+    },
+    {
       "id": 305,
       "title": "Claudeへの指示に「なぜやるか」の理由を付け加えて精度を向上させる",
       "point": "指示文に「なぜその作業をするか」の文脈を1〜2文付け加えるだけでアウトプットの精度が向上する。例：「このコードをリファクタリングして」→「新しいチームメンバーが読みやすいように、このコードをリファクタリングして」。Claudeが目的を理解することで、単純な字義通り実行ではなく目的に沿った判断が働く。Opus 4.7の文字通り解釈傾向と組み合わせて使うと、「理由」が暗黙の文脈を補完する役割を果たし特に効果的。",
@@ -52,6 +66,23 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 12
+    },
+    {
+      "id": 656,
+      "title": "コンテキストエンジニアリング：CLAUDE.md・カスタムコマンド・Hooks・Task Diaryの4要素で複利的強化",
+      "point": "Anthropicが発表した「2026 Agentic Coding Trends Report」でも強調されている考え方。単発プロンプトの最適化よりも「Claudeが判断に使える環境全体」を設計することが重要。CLAUDE.mdにプロジェクト規約を蓄積し、カスタムコマンドで頻出ワークフローをテンプレート化、HooksでCIと連動した確定的な品質チェックを組み込み、Task Diaryで知識を複利的に積み上げる4要素が中核をなす。",
+      "source_title": "Anthropic社員のClaude Code活用術8選 — 公式情報から読み解く実践テクニック",
+      "source_url": "https://zenn.dev/happy_elements/articles/046faa4f61d98f",
+      "tags": [
+        "CLAUDE.md",
+        "API",
+        "プロンプト",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-05-17",
+      "last_date": "2026-05-17",
+      "appearances": 11
     },
     {
       "id": 506,
@@ -295,6 +326,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 657,
+      "title": "Plan Mode使い分け戦略：ゴール明確→Plan Mode、不明確→使い捨てプロトタイプ",
+      "point": "Claude Codeの計画戦略は目的によって変わる。PRを書くなどゴールが明確なときはPlan Modeで合意するまで対話し、auto-acceptモードで一発実装。逆に「何が必要か分からない」ときは先にコードを作ってもらい、出力を見て要件を発見してから本番実装に進む。どちらの場合も「手順指示より成功基準を定義する」が共通の原則。",
+      "source_title": "Anthropic社員のClaude Code活用術8選 — 公式情報から読み解く実践テクニック",
+      "source_url": "https://zenn.dev/happy_elements/articles/046faa4f61d98f",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-17",
+      "last_date": "2026-05-17",
+      "appearances": 6
     },
     {
       "id": 556,
@@ -1304,6 +1348,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 655,
+      "title": "Claude for Legal 拡充：20+法律MCPコネクタ＋12プラクティスエリアプラグイン",
+      "point": "5月12日にClaudeの法律業界向け機能が拡充。リサーチ・契約書・ディスカバリー・案件管理・法律支援の各領域に特化したプラクティスエリアプラグインが12種追加された。Freshfields等が既に実案件で運用中。ローンチ時に弁護士2万人が登録。一般的なチャットではなく法律ワークフローそのものへの統合が特徴。",
+      "source_title": "Claude for the legal industry - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-17",
+      "last_date": "2026-05-17",
+      "appearances": 3
     },
     {
       "id": 635,
@@ -2436,6 +2494,36 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 652,
+      "title": "Claudeサブスクリプション刷新：Agent SDK・claude -p利用が6月15日から月次クレジット別枠化",
+      "point": "2026年6月15日より、Agent SDK／claude -pコマンド（非インタラクティブ）／Claude Code GitHub Actionsの利用が、通常のチャット枠とは別のAPI同レートの月次クレジットから消費される。ProならサブスクPriceと同額20ドル分付与。月単位リセットのため従来の週次より枯渇が早まる場合あり。本番用共有自動化はAPIキー利用が推奨。",
+      "source_title": "AnthropicがClaudeサブスク刷新 エージェント利用を別枠化、使い方で実質値上げも 6月15日から",
+      "source_url": "https://www.techno-edge.net/article/2026/05/14/5064.html",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-05-17",
+      "last_date": "2026-05-17",
+      "appearances": 2
+    },
+    {
+      "id": 658,
+      "title": "Task Diary：セッション終了後に学びを記録しCLAUDE.mdへ統合して知識を永続化する",
+      "point": "Claude Codeのコンテキストはセッション終了と同時に消える。これを補う実践として、タスク完了のたびに「何を試みたか・何が成功/失敗したか・その理由」をClaude Codeに日記エントリとして書かせ、CLAUDE.mdへ定期統合する。蓄積された「観察結果（observations）」により以降のセッションが即座に賢くなる「複利的知識蓄積」を実現。",
+      "source_title": "Anthropic社員のClaude Code活用術8選 — 公式情報から読み解く実践テクニック",
+      "source_url": "https://zenn.dev/happy_elements/articles/046faa4f61d98f",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code"
+      ],
+      "first_date": "2026-05-17",
+      "last_date": "2026-05-17",
+      "appearances": 2
     },
     {
       "id": 631,
@@ -3941,6 +4029,53 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 653,
+      "title": "Claude Code v2.1.143：plugin依存関係強化・/pluginコマンドでコスト可視化・worktree背景分離",
+      "point": "最新リリース（5月15日）では、pluginのインストール時に依存関係を自動解決するようになり、/pluginコマンド上で推定コンテキストコストが確認できるようになった。新しいworktree背景分離機能とClaude Agentsの背景セッションオプションも拡充。PowerShellサポート改善・WindowsおよびmacOSの安定性修正も含む。",
+      "source_title": "Claude Code Updates & Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-17",
+      "last_date": "2026-05-17",
+      "appearances": 1
+    },
+    {
+      "id": 654,
+      "title": "Claudeを「スタック」として理解する：仕事の種類でツールを選び直す2026年5月版",
+      "point": "2026年5月時点でClaudeはChat・Projects・Artifacts・Cowork・Claude Code・Microsoft 365 Add-ins・業界専用エージェントという複数のレイヤーで構成される。「どの機能が最強か」を問うより「この仕事はどの面を使うべきか」と問うのが正しいアプローチ。思考・要約ならChat、繰り返し業務ならProjects、ファイル操作ならCowork、コードならCode、と目的で使い分ける。",
+      "source_title": "Claude Changed. The May 2026 Way to Use it",
+      "source_url": "https://emergingai.substack.com/p/claude-changed-the-may-2026-way-to",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-05-17",
+      "last_date": "2026-05-17",
+      "appearances": 1
+    },
+    {
+      "id": 660,
+      "title": "Stop Hookで「テストが通るまで作業継続」を強制：確率的モデルから確定的成果を引き出す",
+      "point": "Claude CodeのStop Hook（ターン完了時に実行されるフック）にテスト実行スクリプトを設定することで、テストが失敗する限り作業が自動継続される。HooksはPostToolUse・SessionStart・PreCompact・Stopの4種類があり、組み合わせることでCIと同等の品質保証を開発ループに組み込める。Anthropic社内での活用実績あり。",
+      "source_title": "Anthropic社員のClaude Code活用術8選 — 公式情報から読み解く実践テクニック",
+      "source_url": "https://zenn.dev/happy_elements/articles/046faa4f61d98f",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化",
+        "モデル"
+      ],
+      "first_date": "2026-05-17",
+      "last_date": "2026-05-17",
+      "appearances": 1
     },
     {
       "id": 640,
@@ -8476,6 +8611,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-17",
+      "highlights": [
+        "Claudeサブスクリプション刷新 — 6月15日よりAgent SDK/claude -p利用が月次クレジット別枠化。エージェント利用が多いユーザーは事前確認必須",
+        "Claude Code v2.1.143リリース — plugin依存関係の強化・worktree背景分離・/pluginコマンドでの推定コスト表示など多数改善"
+      ]
+    },
+    {
       "date": "2026-05-16",
       "highlights": [
         "PwC×Anthropic 3万人AI認定プログラム — 大手コンサルがClaude導入を本格加速、共同CoEを設立",
@@ -8909,5 +9051,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-16T08:00:03.346006"
+  "generated_at": "2026-05-17T08:00:03.453013"
 }
