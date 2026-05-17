@@ -548,6 +548,19 @@
       "appearances": 6
     },
     {
+      "id": 664,
+      "title": "サブエージェントと /btw の役割分担：「既知を問う」vs「未知を探す」",
+      "point": "`/btw` はメインコンテキストの内容を参照しながら回答を得るサイドクエスチョン専用（会話履歴に残らない）。サブエージェントはそれとは逆で、メインの会話を見ずに新しいコンテキストで未知の情報を探索する。「この変数の意味は？」→ `/btw`、「コードベース全体でどう使われているか探して」→ サブエージェント、と使い分けることでトークン消費を最適化できる。",
+      "source_title": "How and when to use subagents in Claude Code",
+      "source_url": "https://claude.com/blog/subagents-in-claude-code",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-05-18",
+      "last_date": "2026-05-18",
+      "appearances": 5
+    },
+    {
       "id": 633,
       "title": "Claude Platform on AWS GA：AWS認証・課金統合でMessages API・Managed Agents等が全利用可能",
       "point": "Claude PlatformがAWS上で一般提供（GA）開始。Messages API・Files API・Message Batches API・Claude Managed Agents・Agent Skills・コード実行・ツールユースがすべてAWS標準エンドポイント経由でアクセス可能に。IAM認証とAWS課金システムに統合されるため、AWSで統一管理している企業はロールベース権限管理やAWSのCommitment消費（前払い割引）が適用できる",
@@ -756,6 +769,22 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 665,
+      "title": "カスタムサブエージェント：`.claude/agents/`に専門エージェントを定義して委任を自動化",
+      "point": "`.claude/agents/` フォルダにMarkdownファイルを置くことで、専門サブエージェントを定義できる。`name`・`description`・`tools`・`model` をフロントマターで指定し、本文にシステムプロンプトを記述。`description` フィールドが委任タイミングのトリガーになるため「いつ使うか」を具体的に書くことが重要。例：セキュリティレビュー用に `tools: Read, Grep, Glob` のみに限定した読み取り専用エージェントを定義すれば、自動的に適切なタスクへ委任される。",
+      "source_title": "How and when to use subagents in Claude Code",
+      "source_url": "https://claude.com/blog/subagents-in-claude-code",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-05-18",
+      "last_date": "2026-05-18",
+      "appearances": 4
     },
     {
       "id": 630,
@@ -1348,6 +1377,33 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 668,
+      "title": "Ctrl+Bでサブエージェントをバックグラウンド送り：`/tasks`で進捗確認",
+      "point": "サブエージェントが時間のかかる調査・処理を実行中に `Ctrl+B` を押すとバックグラウンドに移行し、メインセッションの作業を継続できる。`/tasks` コマンドで全バックグラウンドタスクの状況と最終レスポンスの一部を確認でき、完了した時点で自動的に結果がサーフェスされる。長い並列処理中の待機時間を有効活用できる。",
+      "source_title": "How and when to use subagents in Claude Code",
+      "source_url": "https://claude.com/blog/subagents-in-claude-code",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-18",
+      "last_date": "2026-05-18",
+      "appearances": 3
+    },
+    {
+      "id": 671,
+      "title": "`/rename`でセッション名を付けブランチ感覚で管理：`claude --resume`で復帰",
+      "point": "Claude Code は会話をローカルに保存するため、`/rename oauth-migration` のように作業内容を示す名前を付けることでGitブランチ的に管理できる。`claude --continue` で最新セッションを継続、`claude --resume` でセッション一覧から選んで復帰。数日後に作業を再開する場合でも、コンテキストを再説明する必要がなく前回の議論・コード変更・決定事項がそのまま残っている。",
+      "source_title": "Best practices for Claude Code",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-18",
+      "last_date": "2026-05-18",
+      "appearances": 3
     },
     {
       "id": 655,
@@ -4029,6 +4085,77 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 666,
+      "title": "Haiku 4.5はプロンプトインジェクション保護ゼロ：エージェント設定時の注意点",
+      "point": "Claude Haiku 4.5はコスト効率が高く高速なため、大量処理のサブエージェントやAPIパイプラインに使われることが多い。しかし Anthropic が公式に「Haiku はプロンプトインジェクション保護なし」と明示している。未信頼の外部入力（ユーザー入力・Webコンテンツ・外部APIレスポンス等）を処理するエージェント設定では Haiku を使用せず、Sonnet 以上を選択すること。",
+      "source_title": "Everything Claude Has Shipped in 2026",
+      "source_url": "https://www.the-ai-corner.com/p/everything-claude-shipped-2026-complete-guide",
+      "tags": [
+        "API",
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-05-18",
+      "last_date": "2026-05-18",
+      "appearances": 1
+    },
+    {
+      "id": 667,
+      "title": "`/compact <instructions>`で圧縮内容を指定コントロールする",
+      "point": "コンテキストウィンドウが膨らんできた際、単に `/compact` を実行するだけでなく、`/compact 修正したファイルの一覧と重要な設計決定を必ず保持して` のように指示を付けることで、Claudeが圧縮する際に何を保持するかを制御できる。CLAUDE.md に `コンパクション時は必ずXXXを保持すること` と記載しておくと、自動コンパクション時にも適用される。",
+      "source_title": "Best practices for Claude Code",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-05-18",
+      "last_date": "2026-05-18",
+      "appearances": 1
+    },
+    {
+      "id": 669,
+      "title": "ファンアウトCLIパターン：`claude -p`＋シェルループで大量ファイルを並列処理",
+      "point": "大規模マイグレーションや一括処理には `for file in $(cat files.txt); do claude -p \"ファイル $file を〇〇に変換せよ\" --allowedTools \"Edit,Bash(git commit *)\" ; done` のようなシェルループが有効。`--allowedTools` フラグで権限を最小限に制限し、まず2〜3ファイルで動作確認してからフルスケールで実行するのが安全な手順。`--output-format json` を追加することでスクリプトからの結果パースも容易になる。",
+      "source_title": "Best practices for Claude Code",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "tags": [
+        "自動化",
+        "生産性"
+      ],
+      "first_date": "2026-05-18",
+      "last_date": "2026-05-18",
+      "appearances": 1
+    },
+    {
+      "id": 670,
+      "title": "3段階サブエージェントパイプライン：設計→実装→テストを独立コンテキストで分業",
+      "point": "複雑な機能開発を「①設計サブエージェント（API仕様を docs/api-spec.md に書き出す）→ ②実装サブエージェント（仕様ファイルを元に実装）→ ③テストサブエージェント（実装に対して独立検証）」の3段階パイプラインで構成すると、各フェーズが前フェーズの思い込みに引きずられず客観的な成果を出せる。ファイルを「ハンドオフメカニズム」として使うことで段階間のコンテキスト汚染を防ぐ。",
+      "source_title": "How and when to use subagents in Claude Code",
+      "source_url": "https://claude.com/blog/subagents-in-claude-code",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-05-18",
+      "last_date": "2026-05-18",
+      "appearances": 1
+    },
+    {
+      "id": 672,
+      "title": "サブエージェントを使うべきでないケース：同一ファイル並列編集・連続依存・小タスク",
+      "point": "サブエージェントはオーバーヘッドを持つため、使うべきでないケースを把握することも重要。①同一ファイルを並列サブエージェントで編集すると競合が発生→単一コンテキストで処理。②ステップ2がステップ1の完全な出力に依存する連続作業→メインセッションで継続。③軽い質問や小修正→サブエージェントのスピンアップコストが利益を上回る。④エージェント同士が通信する必要があるタスク→サブエージェント間に直接通信手段はなく、その場合はAgent Teamsを使う。",
+      "source_title": "How and when to use subagents in Claude Code",
+      "source_url": "https://claude.com/blog/subagents-in-claude-code",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-18",
+      "last_date": "2026-05-18",
+      "appearances": 1
     },
     {
       "id": 653,
@@ -8611,6 +8738,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-18",
+      "highlights": [
+        "Haiku 4.5はプロンプトインジェクション保護ゼロ — エージェント設定で未信頼入力を処理させると攻撃リスクあり。使用前に公式ドキュメントを必ず確認",
+        "3段階サブエージェントパイプライン — 設計・実装・テストを独立コンテキストで分業し、各フェーズの品質と集中度を最大化"
+      ]
+    },
+    {
       "date": "2026-05-17",
       "highlights": [
         "Claudeサブスクリプション刷新 — 6月15日よりAgent SDK/claude -p利用が月次クレジット別枠化。エージェント利用が多いユーザーは事前確認必須",
@@ -9051,5 +9185,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-17T08:00:03.453013"
+  "generated_at": "2026-05-18T08:00:03.253773"
 }
