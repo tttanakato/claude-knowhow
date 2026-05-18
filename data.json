@@ -1379,6 +1379,19 @@
       "appearances": 4
     },
     {
+      "id": 682,
+      "title": "Claude for Outlook公開ベータ：受信トレイトリアージ＋4アプリ横断コンテキスト継続",
+      "point": "2026年5月7日より、Claude for Outlook が有料プラン全ユーザー向けに公開ベータ開始。Outlookで受信トレイをトリアージ後、添付ファイルをWordで開くとClaudeがメールの要求を把握した状態でメモ作成を支援し、そのままExcelで数値分析、PowerPointで資料作成までコンテキストが引き継がれる。Excelの数値修正が PowerPointとWordに自動反映される「クロスアプリ連動」も正式対応。Microsoft AppSourceからアドインをデプロイ可能。",
+      "source_title": "Collaborate with Claude across Excel, PowerPoint, Word and Outlook",
+      "source_url": "https://claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-05-19",
+      "last_date": "2026-05-19",
+      "appearances": 3
+    },
+    {
       "id": 668,
       "title": "Ctrl+Bでサブエージェントをバックグラウンド送り：`/tasks`で進捗確認",
       "point": "サブエージェントが時間のかかる調査・処理を実行中に `Ctrl+B` を押すとバックグラウンドに移行し、メインセッションの作業を継続できる。`/tasks` コマンドで全バックグラウンドタスクの状況と最終レスポンスの一部を確認でき、完了した時点で自動的に結果がサーフェスされる。長い並列処理中の待機時間を有効活用できる。",
@@ -2550,6 +2563,36 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 681,
+      "title": "Claude Code agent view：CLIから複数エージェントセッションを一元管理",
+      "point": "Claude Codeに新設された「agent view」機能は、複数のエージェントセッションを1つのCLI画面から管理できるダッシュボード。セッションを起動・バックグラウンド送り・状態確認・最終レスポンスのプレビュー・セッションへの復帰がすべてここで完結する。並列エージェントを使った大規模タスク処理の監視が格段に楽になり、`Ctrl+B`でバックグラウンド送りにしたセッションをあとから一覧で確認できる。",
+      "source_title": "Claude Code 2026: 5 New Agent Features Anthropic Just Shipped",
+      "source_url": "https://www.mindstudio.ai/blog/code-with-claude-2026-new-agent-features",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-19",
+      "last_date": "2026-05-19",
+      "appearances": 2
+    },
+    {
+      "id": 684,
+      "title": "Claude for Small Business GA：QuickBooks・HubSpot等の15種既製ワークフローで中小企業の業務自動化",
+      "point": "2026年5月13日にリリースされた Claude for Small Business は、中小企業が日常業務でClaudeをすぐ活用できるよう、QuickBooks（経理）・HubSpot（CRM）・Canva（デザイン）・Docusign（契約）・PayPal（決済）・Google Workspace・Microsoft 365 との統合に加え、給与計算・請求書処理・営業・マーケティング・月次決算など15種類の既製ワークフローを提供する。APIや開発リソースなしで始められ、中小企業オーナーのClaude活用の入口として機能する。",
+      "source_title": "Claude Changed. The May 2026 Way to Use it",
+      "source_url": "https://emergingai.substack.com/p/claude-changed-the-may-2026-way-to",
+      "tags": [
+        "API",
+        "自動化",
+        "新機能"
+      ],
+      "first_date": "2026-05-19",
+      "last_date": "2026-05-19",
+      "appearances": 2
     },
     {
       "id": 652,
@@ -4085,6 +4128,92 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 676,
+      "title": "PostToolUseフックで全ツールのtool output差し替えが可能に：エージェント後処理の一元制御",
+      "point": "従来MCPツールのみ対応していた `hookSpecificOutput.updatedToolOutput` によるツール出力差し替えが、すべてのツールに拡張された。Claude Codeのエージェントが実行したツールの出力を、PostToolUseフックでフィルタリング・変換・フォーマット変更した上でエージェントのコンテキストに渡せるようになる。出力のノイズ削減、秘匿情報マスキング、形式正規化などに活用できる。",
+      "source_title": "Claude Code Updates & Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-19",
+      "last_date": "2026-05-19",
+      "appearances": 1
+    },
+    {
+      "id": 677,
+      "title": "PostToolUseフックにduration_ms追加：ツール実行時間を計測してパフォーマンスを最適化",
+      "point": "PostToolUseおよびPostToolUseFailureのフック入力に `duration_ms` フィールドが追加された（権限プロンプトとPreToolUseフックの時間は除外した純粋な実行時間）。エージェントパイプラインのどのツールが遅いかを定量的に把握でき、遅延の原因特定やMCPサーバーの選定判断に活用できる。ログ出力やアラート設定と組み合わせて活用するのが効果的。",
+      "source_title": "Claude Code Updates & Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-19",
+      "last_date": "2026-05-19",
+      "appearances": 1
+    },
+    {
+      "id": 678,
+      "title": "Managed AgentsにWebhook統合：Outcome完了時に即座に通知を受け取り非同期処理が実現",
+      "point": "Claude Managed AgentsのOutcome機能にWebhook通知が統合された。`成功ルーブリックを設定 → エージェントを起動 → Webhook登録` の3ステップで、エージェントが基準を満たす出力を生成した時点でPOSTリクエストを受け取れる。エージェントの完了を監視する常時接続ポーリングが不要になり、文書生成・分析ジョブなど長時間バッチ処理との統合がシンプルになる。",
+      "source_title": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
+      "source_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "tags": [
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-05-19",
+      "last_date": "2026-05-19",
+      "appearances": 1
+    },
+    {
+      "id": 679,
+      "title": "/mcpコマンドでMCPサーバーのツール数・ゼロツール接続を自動可視化：設定ミスを即診断",
+      "point": "Claude Codeの `/mcp` コマンドが改善され、接続中のMCPサーバーごとに登録ツール数を表示するようになった。さらにツール数がゼロのサーバー（接続はされているが使えるツールがない状態）を専用フラグで警告表示する。MCP設定ミスやスコープ制限の問題を接続直後に特定できるようになり、「なぜClaudeがツールを使えないのか」という原因究明の時間が大幅に短縮される。",
+      "source_title": "Claude Code Updates & Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-19",
+      "last_date": "2026-05-19",
+      "appearances": 1
+    },
+    {
+      "id": 680,
+      "title": "MCP OAuth refresh tokenの並列競合バグ修正：複数MCPサーバー運用で毎日の再認証が不要に",
+      "point": "複数のリモートMCPサーバーが同時にOAuth refresh tokenを更新しようとすると、トークンが消失して全サーバーで再認証が必要になるバグが修正された。以前は複数のリモートMCPサーバーを使うユーザーが毎日再ログインを求められるケースが頻発していた。Obsidian・Slack・Notionなど複数のMCPコネクタを日常的に使っている場合は特に恩恵が大きい。",
+      "source_title": "Claude Code Updates & Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "MCP/プラグイン",
+        "生産性"
+      ],
+      "first_date": "2026-05-19",
+      "last_date": "2026-05-19",
+      "appearances": 1
+    },
+    {
+      "id": 683,
+      "title": "プロンプト先頭10%・末尾10%に重要情報を集中：LLMの注意バイアスを活かした精度向上",
+      "point": "Claudeを含むLLMは長いコンテキストの「中間部分」に対する注意が相対的に下がる（ロストインザミドル問題）。実用的な対策として、最重要な指示・制約・ゴール設定は必ずプロンプトの先頭10%か末尾10%に配置すること。長い参照ドキュメントや例示はその間に挟む形にする。また最適なプロンプト長は150〜300ワード程度で、それ以上に長くなると逆効果になることも研究で示されている。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-05-19",
+      "last_date": "2026-05-19",
+      "appearances": 1
     },
     {
       "id": 666,
@@ -8738,6 +8867,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-19",
+      "highlights": [
+        "PostToolUseフック全ツール対応 — MCPツール限定だったtool output差し替えが全ツールに拡張。エージェントパイプラインの後処理を一元的に制御できるように",
+        "Managed AgentsにWebhook統合 — アウトカム完了時にリアルタイム通知を受け取り、エージェントの完了を待ち続けずに非同期処理が実現"
+      ]
+    },
+    {
       "date": "2026-05-18",
       "highlights": [
         "Haiku 4.5はプロンプトインジェクション保護ゼロ — エージェント設定で未信頼入力を処理させると攻撃リスクあり。使用前に公式ドキュメントを必ず確認",
@@ -9185,5 +9321,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-18T08:00:03.253773"
+  "generated_at": "2026-05-19T08:00:03.246224"
 }
