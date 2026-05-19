@@ -548,6 +548,20 @@
       "appearances": 6
     },
     {
+      "id": 697,
+      "title": "Opus 4.7の指示厳格化（リテラリズム）：詳細・ポジティブ表現のプロンプトで品質を最大化",
+      "point": "Opus 4.7は4.6よりも指示を文字通りに解釈する「リテラリズム」傾向が強く、行間を読む挙動が減少した。「目標・対象読者・制約・完了定義」を先頭に置く4要素フレームワークが効果的。禁止形（「〜するな」）をポジティブな具体例に置き換えると精度が向上する。タスク説明はエンジニアリングチケット形式（意図・制約・受け入れ基準）で書くことで、曖昧なプロンプトによる想定外の出力を防げる。",
+      "source_title": "Claude Opus 4.7 Best Practices: Detailed Plans Win",
+      "source_url": "https://claudefa.st/blog/guide/development/opus-4-7-best-practices",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-20",
+      "last_date": "2026-05-20",
+      "appearances": 5
+    },
+    {
       "id": 664,
       "title": "サブエージェントと /btw の役割分担：「既知を問う」vs「未知を探す」",
       "point": "`/btw` はメインコンテキストの内容を参照しながら回答を得るサイドクエスチョン専用（会話履歴に残らない）。サブエージェントはそれとは逆で、メインの会話を見ずに新しいコンテキストで未知の情報を探索する。「この変数の意味は？」→ `/btw`、「コードベース全体でどう使われているか探して」→ サブエージェント、と使い分けることでトークン消費を最適化できる。",
@@ -1377,6 +1391,50 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 693,
+      "title": "Claude Code /goalコマンド実践：完了条件設定で複数ターン自律作業を実現",
+      "point": "Claude Code v2.1.139で追加された `/goal` コマンドを使うと、「〇〇が完成するまで作業を続ける」という完了条件を設定でき、各ターン後に小型モデルが条件達成を判定して未達ならば自動的に次のターンを実行する。評価モデルと作業モデルが分離された二層構造のため、基本的な品質ゲートとして機能する。長時間の自律コーディングタスクに有効。インタラクティブモード・`-p`フラグ・Remote Controlの全てで利用可能。",
+      "source_title": "Claude Code /goal: A Field Guide with Games",
+      "source_url": "https://medium.com/@jason.croucher/claude-code-goal-a-field-guide-with-games-f6f3b617ce5b",
+      "tags": [
+        "Claude Code",
+        "モデル",
+        "製品機能"
+      ],
+      "first_date": "2026-05-20",
+      "last_date": "2026-05-20",
+      "appearances": 3
+    },
+    {
+      "id": 694,
+      "title": "Claude Managed Agents Dreaming：バックグラウンドで過去セッションを自律レビューしてメモリを蒸留",
+      "point": "Dreaming（研究プレビュー）はエージェントのセッション間に非同期で実行されるバックグラウンドジョブ。過去の会話トランスクリプトを読み込み、繰り返しパターン・チームの好み・既知エラーを検出してメモリストアに統合する。人間の睡眠中の記憶整理に着想を得た機能で、元データには手を加えない。コードエージェントでも実務エージェントでも「セッションをまたいで賢くなる」エージェントを構築できる。",
+      "source_title": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
+      "source_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "tags": [
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-05-20",
+      "last_date": "2026-05-20",
+      "appearances": 3
+    },
+    {
+      "id": 696,
+      "title": "Opus 4.7タスクバジェット：エージェントループのトークン目標を事前渡しして優先順位を自動管理",
+      "point": "Opus 4.7のタスクバジェット機能では `task_budget: {type: \"tokens\", total: N}` を `output_config` に設定すると、モデルがカウントダウンを意識しながら優先度の高い作業から実行し、バジェット消費に合わせて作業を完結させる。最低20,000トークンが必要で、ソフトキャップとして機能（強制打ち切りではなく強い示唆）。max/xhigh effortで実行する際は64k以上のmax_output_tokensを推奨。beta headerとして `task-budgets-2026-03-13` を使用する。",
+      "source_title": "Opus 4.7 Task Budget Best Practices",
+      "source_url": "https://claudefa.st/blog/guide/development/opus-4-7-best-practices",
+      "tags": [
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-20",
+      "last_date": "2026-05-20",
+      "appearances": 3
     },
     {
       "id": 682,
@@ -2563,6 +2621,23 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 695,
+      "title": "Managed Agentsマルチエージェントオーケストレーション：最大20専門サブエージェントを25並列スレッドで実行",
+      "point": "マルチエージェントオーケストレーション（パブリックベータ）により、リードエージェントが専門サブエージェントにタスクをファンアウトし最大25の並列スレッドで実行できる。各サブエージェントは独自のモデル・プロンプト・ツールを持ち、Claude Consoleでフロー全体が追跡可能。法律AIスタートアップHarveyの実績ではタスク完了率が約6倍に向上したとのこと。並列化が必要な場合は「複数エージェントを起動せよ」と明示的に指示することが推奨される。",
+      "source_title": "Claude Managed Agents: Dreaming, Outcomes, Orchestration",
+      "source_url": "https://chatforest.com/guides/claude-managed-agents-dreaming-outcomes-multiagent/",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "モデル",
+        "新機能",
+        "生産性"
+      ],
+      "first_date": "2026-05-20",
+      "last_date": "2026-05-20",
+      "appearances": 2
     },
     {
       "id": 681,
@@ -4128,6 +4203,80 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 688,
+      "title": "Claude Managed AgentsのMCPサーバー設定を稼働中に動的更新",
+      "point": "Claude Managed Agentsで、エージェントが稼働中でもMCPサーバーとツールの設定を更新できるようになった。これまでは設定変更のためにエージェントを再起動する必要があったが、本番環境のダウンタイムを最小化しながら柔軟にツール構成を変更可能になった。また、100Kトークンを超える大容量出力は自動的にサンドボックス内のファイルに書き出され、モデルは短縮プレビューとファイルパスを受け取ることでコンテキスト汚染を防げる。",
+      "source_title": "Anthropic Release Notes - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "エージェント",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-20",
+      "last_date": "2026-05-20",
+      "appearances": 1
+    },
+    {
+      "id": 689,
+      "title": "Managed Agentsセルフホストサンドボックス：Anthropicインフラ不要で自前環境でのツール実行が可能に",
+      "point": "Claude Managed Agentsのツール実行を、Anthropicのインフラの代わりに自前のサンドボックス環境で行えるセルフホストオプションが正式提供開始。セキュリティポリシーや規制要件によりデータをAnthropicサーバー外で処理したいエンタープライズ顧客にとって重要なアップデート。従来のマネージドサンドボックスとの選択式で、API設定で切り替える。",
+      "source_title": "Anthropic Release Notes - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "API",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-05-20",
+      "last_date": "2026-05-20",
+      "appearances": 1
+    },
+    {
+      "id": 690,
+      "title": "Prompt Cache Diagnosticsパブリックベータ：cache_miss_reasonでキャッシュ最適化の障害点を特定",
+      "point": "Messages APIに `diagnostics.previous_message_id` を渡すと、レスポンスに `cache_miss_reason` フィールドが追加され、プロンプトキャッシュのプレフィックスが前のターンのどこで分岐したかを特定できる。キャッシュヒット率が低いと感じる場合はこのフィールドを確認し、キャッシュミスの原因（システムプロンプト変更・動的コンテンツ混入など）を診断してAPI費用を削減できる。",
+      "source_title": "Claude Platform Release Notes",
+      "source_url": "https://docs.anthropic.com/en/release-notes/overview",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "新機能"
+      ],
+      "first_date": "2026-05-20",
+      "last_date": "2026-05-20",
+      "appearances": 1
+    },
+    {
+      "id": 691,
+      "title": "Web検索ツールのSECファイリングデータ強化：金融エージェント・デューデリジェンス対応が充実",
+      "point": "Claude APIのWeb検索ツールが返すSECファイリングデータがより詳細になり、引用付きで一次資料を参照できるようになった。財務調査エージェントや企業デューデリジェンスワークフローで活用可能。金融サービス向けエージェントにWeb検索ツールを組み込む際は、このSEC統合を積極的に利用することで根拠ある調査結果を自動生成できる。",
+      "source_title": "Anthropic Release Notes - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-05-20",
+      "last_date": "2026-05-20",
+      "appearances": 1
+    },
+    {
+      "id": 692,
+      "title": "Code with Claude London Extended Day（5/20本日開催）：独立開発者・スタートアップ向けApplied AIワークショップ",
+      "point": "Anthropicのアジア・欧州Code with Claudeツアーの一環として、5/20（本日）にロンドンでExtended Dayを開催。独立開発者や早期スタートアップ向けの少人数形式で、FounderストーリーとBuilderのディープダイブ、Applied AI TeamによるLaptops-openワークショップが行われる。参加者はAnthropicチームと直接交流し、エージェントアーキテクチャの実践的なフィードバックを得られる。",
+      "source_title": "Code with Claude: Extended London — May 20, 2026",
+      "source_url": "https://claude.com/code-with-claude/london-extended",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-05-20",
+      "last_date": "2026-05-20",
+      "appearances": 1
     },
     {
       "id": 676,
@@ -8867,6 +9016,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-20",
+      "highlights": [
+        "Claude Managed Agents 3つの新機能 — MCPサーバー動的更新・セルフホストサンドボックス・大容量出力自動スピルがGA",
+        "Code with Claude London Extended Day（本日開催） — 独立開発者・スタートアップ向けApplied AIワークショップが5/20に開催"
+      ]
+    },
+    {
       "date": "2026-05-19",
       "highlights": [
         "PostToolUseフック全ツール対応 — MCPツール限定だったtool output差し替えが全ツールに拡張。エージェントパイプラインの後処理を一元的に制御できるように",
@@ -9321,5 +9477,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-19T08:00:03.246224"
+  "generated_at": "2026-05-20T08:00:03.234793"
 }
