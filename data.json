@@ -1,6 +1,19 @@
 {
   "tips": [
     {
+      "id": 708,
+      "title": "Claude Codeコスト最適化：コンテキスト最小化と明示的出力制御で使用量を大幅削減",
+      "point": "「コンテキストを小さくすること」がClaude Codeコスト削減の核心。①必要な関数・エラーログのみ抽出し全ファイルを貼らない、②「Return only code」「Explain in 2 lines」のように出力量を明示的に指定する、③タスク切り替え時は必ず新セッションを開始してコンテキスト肥大化を防ぐ。これらを組み合わせた事例では使用トークン量が最大90%削減された。",
+      "source_title": "Costly Mistakes to Avoid on Claude Code",
+      "source_url": "https://medium.com/data-science-in-your-pocket/costly-mistakes-to-avoid-on-claude-code-646b1187ddcf",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-21",
+      "last_date": "2026-05-21",
+      "appearances": 21
+    },
+    {
       "id": 659,
       "title": "Subagent対立検証（Opponent Processor）：Engineer役・Auditor役を意図的に分けて意思決定の質を向上",
       "point": "アーキテクチャ意思決定の場面でSubagentを「支持側」と「反論側」に役割分けして議論させるパターン。非相関なコンテキストウィンドウによって単一エージェントでは見逃しがちなリスクを発見できる。Anthropic社内で実際の大規模コード改修に使われていると報告されている。",
@@ -41,6 +54,21 @@
       "first_date": "2026-04-09",
       "last_date": "2026-04-09",
       "appearances": 16
+    },
+    {
+      "id": 706,
+      "title": "セルフホストサンドボックス公開ベータ：機密インフラとManaged Agentsを分離運用",
+      "point": "Managed Agentsのセルフホストサンドボックスが公開ベータに移行。機密ファイル・内部パッケージ・プライベートサービスを自社インフラ上で実行しながら、エージェントループはAnthropicインフラ上に維持できる。Anthropicインフラ不要でツール実行環境を自社管理できるのが最大の特徴。",
+      "source_title": "5 Claude AI Features That Just Changed Everything",
+      "source_url": "https://growwstacks.com/blog/claude-ai-new-features-2026",
+      "tags": [
+        "API",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-05-21",
+      "last_date": "2026-05-21",
+      "appearances": 15
     },
     {
       "id": 515,
@@ -326,6 +354,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 703,
+      "title": "Claude Code 2.1.145：`/resume`がバックグラウンドセッションに対応",
+      "point": "`claude --bg`やエージェントビューで起動したバックグラウンドセッションが`/resume`リストに表示されるようになった（`bg`マーク付き）。バックグラウンドサブエージェント完了通知に経過時間も表示され、長時間タスクの進捗把握が容易になった。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026 - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-05-21",
+      "last_date": "2026-05-21",
+      "appearances": 6
     },
     {
       "id": 657,
@@ -783,6 +825,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 705,
+      "title": "Claude Code `/model`コマンド：現セッションのみモデル変更、`d`キーでデフォルト設定",
+      "point": "`/model`コマンドが現在のセッション限定でモデルを変更するように仕様変更された。モデルピッカーで`d`を押すと新規セッションのデフォルトモデルとして保存される。タスクごとに適切なモデルを使い分けるワークフローが組みやすくなった。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026 - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-05-21",
+      "last_date": "2026-05-21",
+      "appearances": 4
     },
     {
       "id": 665,
@@ -1391,6 +1447,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 707,
+      "title": "法律業務向けMCPコネクタ20種・プラグイン12種が公開",
+      "point": "AnthropicがCode w/ Claude London前後に法律業務特化MCPコネクタを20種以上、実務プラグインを12種公開。法律調査・契約書審査・証拠開示・案件管理・法律支援の各領域でClaudeとシームレスに連携できるエコシステムが整備された。法律事務所・企業内法務チームの業務自動化が大幅に加速する見込み。",
+      "source_title": "Claude AI Updates 2026: Features and Models",
+      "source_url": "https://www.timesofai.com/brand-insights/claude-ai-versions/",
+      "tags": [
+        "API",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-21",
+      "last_date": "2026-05-21",
+      "appearances": 3
     },
     {
       "id": 693,
@@ -2621,6 +2692,36 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 701,
+      "title": "Code w/ Claude London Day 2（本日最終日）：Claude Code APIレートリミット2倍",
+      "point": "Anthropicが5/20〜21のCode w/ Claude Londonカンファレンスで、Claude CodeのAPIレートリミット倍増とOpus APIレート引き上げを正式発表。開発者・スタートアップ・エンタープライズが大規模ビルドをより安定して行えるようになる。Day 2の本日はキーノートとブレイクアウトセッションが配信中。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026 - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-05-21",
+      "last_date": "2026-05-21",
+      "appearances": 2
+    },
+    {
+      "id": 702,
+      "title": "Claude Code 2.1.145：`claude agents --json`でライブセッションをJSON出力",
+      "point": "`claude agents --json`コマンドが追加され、実行中のClaudeセッション一覧をJSON形式で取得できるようになった。tmux-resurrectやステータスバー、セッションピッカーなどのスクリプトから直接セッション情報を参照可能。`agent_id`と`parent_agent_id`属性がOTELスパンに追加され、サブエージェントのトレースも親スパンに正しくネストされる。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-05-21",
+      "last_date": "2026-05-21",
+      "appearances": 2
     },
     {
       "id": 695,
@@ -4203,6 +4304,47 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 704,
+      "title": "Claude Code 2.1.145：プラグイン依存関係の強制管理",
+      "point": "`claude plugin disable`が依存プラグインが存在する場合に無効化を拒否し、コピペ可能な無効化チェーンヒントを表示するようになった。`claude plugin enable`は推移的依存関係を自動で強制有効化。プラグイン管理の整合性が大幅に向上し、依存関係起因の動作不良が減る。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026 - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-21",
+      "last_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": 709,
+      "title": "Bristol Myers Squibb × Anthropic戦略提携：創薬・製造工程にClaude統合",
+      "point": "製薬大手ブリストル・マイヤーズ スクイブ（BMS）がAnthropicと戦略的提携を締結（5/20発表）。研究・臨床開発・製造・商業化の各領域でClaudeを活用する計画。医薬品業界における大規模AI活用の最前線事例として注目を集める。",
+      "source_title": "BMY Forms Partnership with Anthropic to Enhance AI Utilization",
+      "source_url": "https://www.gurufocus.com/news/8871637/bmy-forms-partnership-with-anthropic-to-enhance-ai-utilization",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-21",
+      "last_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": 710,
+      "title": "Anthropicが元Tesla・OpenAI AI研究リードを採用：Claude事前学習チームを強化",
+      "point": "Anthropicが著名なAI研究者（Tesla AI・OpenAI出身）を採用し、Claude大規模言語モデルの事前学習研究を加速する体制を強化。競合他社からの高プロファイル人材獲得は、Claudeの次世代モデル開発スピードの向上を示唆している。",
+      "source_title": "Ex-OpenAI and Tesla AI lead joins Anthropic to accelerate Claude pretraining research",
+      "source_url": "https://www.digitimes.com/news/a20260520PD230/anthropic-tesla-claude-education-openai.html",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-05-21",
+      "last_date": "2026-05-21",
+      "appearances": 1
     },
     {
       "id": 688,
@@ -9016,6 +9158,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-21",
+      "highlights": [
+        "Code w/ Claude London Day 2（本日） — Anthropicがレートリミット2倍を公式発表、Claude Codeの大規模活用がさらに容易に",
+        "Claude Code 2.1.145 新機能群 — `claude agents --json`・バックグラウンド`/resume`・プラグイン依存管理など多数追加"
+      ]
+    },
+    {
       "date": "2026-05-20",
       "highlights": [
         "Claude Managed Agents 3つの新機能 — MCPサーバー動的更新・セルフホストサンドボックス・大容量出力自動スピルがGA",
@@ -9477,5 +9626,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-20T08:00:03.234793"
+  "generated_at": "2026-05-21T08:00:03.256183"
 }
