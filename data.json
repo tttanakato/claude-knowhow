@@ -71,6 +71,21 @@
       "appearances": 15
     },
     {
+      "id": 719,
+      "title": "Claude Skillsがプロンプトエンジニアリングをリプレース：モジュール型再利用可能な指示セットへの移行が加速",
+      "point": "2026年5月、プロンプトエンジニアリングからClaude Skillsへの業界移行が加速。Skillsはドメイン知識・ベストプラクティス・出力基準を束ねた再利用可能指示セット。Anthropic公式のanthropics/skillsリポジトリが参照実装として公開中。チームが毎回Claudeに再説明する手間を排除し、Claudeを専門エージェントとして動作させることが可能になる。",
+      "source_title": "Stop Prompt Engineering! Claude Skills Are the Secret Weapon Top Devs Use",
+      "source_url": "https://www.blog.brightcoding.dev/2026/05/20/stop-prompt-engineering-claude-skills-are-the-secret-weapon-top-devs-use",
+      "tags": [
+        "API",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-05-22",
+      "last_date": "2026-05-22",
+      "appearances": 14
+    },
+    {
       "id": 515,
       "title": "Claude Opus 4.7：より高解像度の画像認識でビジョンタスクの精度向上",
       "point": "Opus 4.7は旧モデルより高解像度で画像を認識できるようになった。詳細な図面・スキャン文書・複雑なUI画像の解析精度が向上。$5/$25 per MTokのOpus 4.6と同一価格で利用できる最上位モデルとして、ビジョンを要するエージェント開発に適している。",
@@ -590,6 +605,35 @@
       "appearances": 6
     },
     {
+      "id": 631,
+      "title": "Claude Code Agent View（Research Preview）：`claude agents`コマンドで全セッションを一元管理",
+      "point": "`claude agents`または左矢印キーでAgent Viewを起動。各セッションの状態（待機中・作業中・完了）・最終応答内容・最終操作時刻を一覧表示。待機中セッションへのインライン返信・全文確認はEnterキーで切替可能。並列エージェント管理が標準ワークフローに定着しつつある。Pro/Max/Team/Enterprise/API全プランで利用可能。",
+      "source_title": "Agent view in Claude Code",
+      "source_url": "https://claude.com/blog/agent-view-in-claude-code",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-15",
+      "last_date": "2026-05-22",
+      "appearances": 5
+    },
+    {
+      "id": 718,
+      "title": "Claude for Outlookパブリックベータ：受信トリアージ・返信下書き・カレンダー管理をClaude経由で",
+      "point": "全有料プランでパブリックベータ利用可能。受信メールを「要返信/下書き代行/ノイズ」に自動分類し、返信はOutlookの作成ペインに宛先・件名・本文入力済みで提示。添付ファイルをWordやExcelで開いた場合、送信者の依頼内容をClaudeが継続把握。送信前に必ず確認が必要な設計でユーザーコントロールを維持。Excel・PowerPoint・WordはすでにGA（一般提供）。",
+      "source_title": "Collaborate with Claude across Excel, PowerPoint, Word and Outlook",
+      "source_url": "https://claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-05-22",
+      "last_date": "2026-05-22",
+      "appearances": 5
+    },
+    {
       "id": 697,
       "title": "Opus 4.7の指示厳格化（リテラリズム）：詳細・ポジティブ表現のプロンプトで品質を最大化",
       "point": "Opus 4.7は4.6よりも指示を文字通りに解釈する「リテラリズム」傾向が強く、行間を読む挙動が減少した。「目標・対象読者・制約・完了定義」を先頭に置く4要素フレームワークが効果的。禁止形（「〜するな」）をポジティブな具体例に置き換えると精度が向上する。タスク説明はエンジニアリングチケット形式（意図・制約・受け入れ基準）で書くことで、曖昧なプロンプトによる想定外の出力を防げる。",
@@ -825,6 +869,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 721,
+      "title": "Managed Agents Dreaming：過去セッションのバックグラウンドレビューで失敗を97%削減する事例も",
+      "point": "Dreamingはスケジュール実行でエージェントの過去セッション・メモリストアを自動レビューし、繰り返しミス・収束ワークフロー・チーム共通の嗜好を抽出してメモリに蒸留する。Harveyでは導入後タスク完了率が約6倍に、Rakutenでは初回エラー率97%削減、Wisedocsでは処理速度30%向上の実績。自動更新と手動レビュー承認のどちらも選択可能。",
+      "source_title": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
+      "source_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "tags": [
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-05-22",
+      "last_date": "2026-05-22",
+      "appearances": 4
     },
     {
       "id": 705,
@@ -1447,6 +1505,38 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 715,
+      "title": "セルフホストサンドボックス拡充：Cloudflare・Daytona・Modal・Vercelから選択可能",
+      "point": "エージェントのオーケストレーション（コンテキスト管理・エラーリカバリ）はAnthropicインフラ側に残しつつ、ツール実行のみ自社環境に分離。機密ファイル・パッケージ・サービスが社外に出ない設計。コンピュートリソース（CPU・メモリ・ランタイムイメージ）は自社で制御可能。パブリックベータで全デベロッパーが利用可能。",
+      "source_title": "New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels",
+      "source_url": "https://claude.com/blog/claude-managed-agents-updates",
+      "tags": [
+        "API",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-05-22",
+      "last_date": "2026-05-22",
+      "appearances": 3
+    },
+    {
+      "id": 717,
+      "title": "Claude Platform on AWS GA：IAM認証・CloudTrail・AWSビリング統合で全API機能が利用可能",
+      "point": "AWS IAM認証・CloudTrail監査ログ・単一AWS請求書での既存コミットメント消化に対応。Managed Agents・Skills・MCPコネクタ・プロンプトキャッシュ・コード実行など全Claude Platform機能がAWSエコシステムから利用可能。Opus 4.7・Sonnet 4.6・Haiku 4.5が対応。Amazon Bedrockとの住み分け：Claude Platformはフル機能優先、Bedrockはデータ処理のAWS境界内保持優先。",
+      "source_title": "Introducing the Claude Platform on AWS",
+      "source_url": "https://claude.com/blog/claude-platform-on-aws",
+      "tags": [
+        "API",
+        "プロンプト",
+        "エージェント",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-22",
+      "last_date": "2026-05-22",
+      "appearances": 3
     },
     {
       "id": 707,
@@ -2694,6 +2784,36 @@
       "appearances": 3
     },
     {
+      "id": 690,
+      "title": "Prompt Cache Diagnosticsパブリックベータ：cache_miss_reasonでキャッシュ最適化の障害点を特定",
+      "point": "MessagesリクエストにdiagnosticsPrevious_message_idを渡すとcache_miss_reasonが返り、プロンプトキャッシュプレフィックスが前ターンとどこで乖離したかを特定できる。キャッシュヒット率低下の原因デバッグが劇的に容易に。APIコスト削減施策の精度向上に直結する実用的な機能。",
+      "source_title": "Anthropic Release Notes - May 2026 Latest Updates",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "API",
+        "プロンプト",
+        "新機能"
+      ],
+      "first_date": "2026-05-20",
+      "last_date": "2026-05-22",
+      "appearances": 2
+    },
+    {
+      "id": 716,
+      "title": "Fast modeがClaude Opus 4.7対応：speed: \"fast\"でフラッグシップモデルの高速トークン生成が可能に",
+      "point": "model: \"claude-opus-4-7\"にspeed: \"fast\"とfast-mode-2026-02-01 betaヘッダーを付与するだけで設定可能。Opus 4.7の高い知性を保ちつつ大幅に高速なレスポンスを実現。レイテンシが重要なリアルタイム用途やインタラクティブエージェントでの利用が期待される。",
+      "source_title": "Anthropic Release Notes - May 2026 Latest Updates",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-22",
+      "last_date": "2026-05-22",
+      "appearances": 2
+    },
+    {
       "id": 701,
       "title": "Code w/ Claude London Day 2（本日最終日）：Claude Code APIレートリミット2倍",
       "point": "Anthropicが5/20〜21のCode w/ Claude Londonカンファレンスで、Claude CodeのAPIレートリミット倍増とOpus APIレート引き上げを正式発表。開発者・スタートアップ・エンタープライズが大規模ビルドをより安定して行えるようになる。Day 2の本日はキーノートとブレイクアウトセッションが配信中。",
@@ -2798,22 +2918,6 @@
       ],
       "first_date": "2026-05-17",
       "last_date": "2026-05-17",
-      "appearances": 2
-    },
-    {
-      "id": 631,
-      "title": "Claude Code Agent View（Research Preview）：`claude agents`コマンドで全セッションを一元管理",
-      "point": "`claude agents`を実行するとAgent Viewが起動し、実行中・入力待ち・完了済みのすべてのClaude Codeセッションを一覧表示。左右矢印キーでセッション間を移動でき、Peekプレビューで別セッションの結果を確認しながら元の作業に戻れる。並列ワークツリーで複数タスクを走らせる場合の進捗管理に特に有効。Pro・Max・Team・Enterprise・Claude APIプランで利用可能（Research Preview）",
-      "source_title": "Claude Updates by Anthropic - May 2026",
-      "source_url": "https://releasebot.io/updates/anthropic/claude",
-      "tags": [
-        "Claude Code",
-        "API",
-        "エージェント",
-        "生産性"
-      ],
-      "first_date": "2026-05-15",
-      "last_date": "2026-05-15",
       "appearances": 2
     },
     {
@@ -4306,6 +4410,34 @@
       "appearances": 2
     },
     {
+      "id": 714,
+      "title": "MCPトンネル：Managed Agentsがプライベートネットワーク内MCPサーバーに外部公開なしでアクセス可能に",
+      "point": "社内ゲートウェイをデプロイしアウトバウンド接続1本でOK。インバウンドファイアウォール変更不要・エンドtoエンド暗号化済み。内部DB・プライベートAPI・ナレッジベース・チケットシステムをエージェントのツールとして活用できる。Claude Platform/Messages API両対応。研究プレビュー（アクセスリクエスト制）。",
+      "source_title": "New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels",
+      "source_url": "https://claude.com/blog/claude-managed-agents-updates",
+      "tags": [
+        "API",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-22",
+      "last_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": 720,
+      "title": "Code w/ Claude 2026 London・Tokyo開催：2都市で開発者カンファレンスが続く",
+      "point": "サンフランシスコ（5/6-7）開催に続き、London（5/20-21）とTokyo（6/5-6）でCode w/ Claude 2026を順次開催。Day 1 Keynoteとブレイクアウトセッションは全てライブ配信予定。SF版のKeynote・ブレイクアウト録画はすでにYouTube公開済み。Anthropicチームやカスタマー事例（Asana・Cursor・GitHub・Replit・Vercel）のセッションを含む。",
+      "source_title": "Code w/ Claude SF 2026 recap: Building on the AI exponential",
+      "source_url": "https://claude.com/blog/code-w-claude-sf-2026-sf",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-22",
+      "last_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
       "id": 704,
       "title": "Claude Code 2.1.145：プラグイン依存関係の強制管理",
       "point": "`claude plugin disable`が依存プラグインが存在する場合に無効化を拒否し、コピペ可能な無効化チェーンヒントを表示するようになった。`claude plugin enable`は推移的依存関係を自動で強制有効化。プラグイン管理の整合性が大幅に向上し、依存関係起因の動作不良が減る。",
@@ -4370,22 +4502,6 @@
       "tags": [
         "API",
         "エージェント",
-        "新機能"
-      ],
-      "first_date": "2026-05-20",
-      "last_date": "2026-05-20",
-      "appearances": 1
-    },
-    {
-      "id": 690,
-      "title": "Prompt Cache Diagnosticsパブリックベータ：cache_miss_reasonでキャッシュ最適化の障害点を特定",
-      "point": "Messages APIに `diagnostics.previous_message_id` を渡すと、レスポンスに `cache_miss_reason` フィールドが追加され、プロンプトキャッシュのプレフィックスが前のターンのどこで分岐したかを特定できる。キャッシュヒット率が低いと感じる場合はこのフィールドを確認し、キャッシュミスの原因（システムプロンプト変更・動的コンテンツ混入など）を診断してAPI費用を削減できる。",
-      "source_title": "Claude Platform Release Notes",
-      "source_url": "https://docs.anthropic.com/en/release-notes/overview",
-      "tags": [
-        "Claude Code",
-        "API",
-        "プロンプト",
         "新機能"
       ],
       "first_date": "2026-05-20",
@@ -9158,6 +9274,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-22",
+      "highlights": [
+        "MCPトンネル正式公開 — Managed Agentsがプライベートネットワーク内MCPサーバーに外部公開なしで接続可能に（May 19）",
+        "セルフホストサンドボックス拡充 — Cloudflare・Daytona・Modal・Vercelから選択可能、企業境界内エージェント実行が本格化"
+      ]
+    },
+    {
       "date": "2026-05-21",
       "highlights": [
         "Code w/ Claude London Day 2（本日） — Anthropicがレートリミット2倍を公式発表、Claude Codeの大規模活用がさらに容易に",
@@ -9626,5 +9749,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-21T08:00:03.256183"
+  "generated_at": "2026-05-22T08:00:03.327333"
 }
