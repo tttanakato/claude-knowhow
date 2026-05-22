@@ -1507,6 +1507,32 @@
       "appearances": 4
     },
     {
+      "id": 727,
+      "title": "Claude Code /code-reviewコマンド新設：旧/simplifyを統合・effortレベル指定でバグ検出深度を選択",
+      "point": "v2.1.147でコマンド体系が整理された。`/simplify`は廃止され、新たな`/code-review`コマンドに統合。`/code-review high`のようにeffortレベル（low/medium/high）を指定することで、コードの正確性バグを選択した深度で検出できる。発見した問題をGitHub PRのインラインコメントとして自動投稿する機能も搭載。ヒューマンレビュー前の自動品質チェックがよりきめ細かく行えるようになった。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026 - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-23",
+      "last_date": "2026-05-23",
+      "appearances": 3
+    },
+    {
+      "id": 731,
+      "title": "Claudeへの指示に「理由（why）」を追記するだけで遵守率が向上",
+      "point": "「XMLタグを使え」より「XMLタグを使うことで構造を明確にしやすくなるから使え」と書く方が、Claudeが指示に従う確率が上がる。2026年のプロンプトエンジニアリング研究では「コンテキスト動機付き指示（context-motivated instructions）」が有効と実証されている。禁止事項・制約・出力フォーマット指定のすべてに一言の理由を付けるだけでよく、プロンプトの大幅な書き直しは不要。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-05-23",
+      "last_date": "2026-05-23",
+      "appearances": 3
+    },
+    {
       "id": 715,
       "title": "セルフホストサンドボックス拡充：Cloudflare・Daytona・Modal・Vercelから選択可能",
       "point": "エージェントのオーケストレーション（コンテキスト管理・エラーリカバリ）はAnthropicインフラ側に残しつつ、ツール実行のみ自社環境に分離。機密ファイル・パッケージ・サービスが社外に出ない設計。コンピュートリソース（CPU・メモリ・ランタイムイメージ）は自社で制御可能。パブリックベータで全デベロッパーが利用可能。",
@@ -2782,6 +2808,57 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 726,
+      "title": "Andrej Karpathy（OpenAI共同創業者・元Tesla AI責任者）がAnthropicに参加",
+      "point": "世界的に著名なAI研究者Andrej Karpathyが5/19にAnthropicへ参加を正式表明。Claude大規模事前学習チームのNick Joseph配下で勤務開始。Claudeそのものを使った事前学習研究の加速を担う新チームの立ち上げを主導する見込み。「次の数年間はLLMのフロンティアにとって特に重要な時期」とX（旧Twitter）に投稿。",
+      "source_title": "OpenAI co-founder Andrej Karpathy joins Anthropic's pre-training team",
+      "source_url": "https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-23",
+      "last_date": "2026-05-23",
+      "appearances": 2
+    },
+    {
+      "id": 730,
+      "title": "claude --add-dirフラグで複数プロジェクトへのアクセスを起動時に一括付与",
+      "point": "Claude Codeはデフォルトで起動ディレクトリのみにアクセスできるが、`claude --add-dir ~/path/to/other`フラグを使うと起動時から追加ディレクトリへのアクセスを付与できる。常に複数フォルダを跨いで作業する場合は、`settings.json`に記載しておくと毎回の入力が不要になる。Claude Codeの作成者Boris Chernyが推奨しているTipsの一つ。",
+      "source_title": "Claude Code's creator keeps sharing tips, and they all made my experience better",
+      "source_url": "https://www.xda-developers.com/claude-codes-creator-keeps-sharing-tips-and-they-all-made-my-experience-better/",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-23",
+      "last_date": "2026-05-23",
+      "appearances": 2
+    },
+    {
+      "id": 732,
+      "title": "effortパラメータをxhighに設定してコーディング・エージェントタスクの推論深度を最大化",
+      "point": "Anthropic APIのeffortパラメータは`low`・`medium`・`high`・`xhigh`の4段階で設定可能。コーディングや長期エージェントタスクには`xhigh`が推奨される。`xhigh`は最も多くの推論トークンを使用するが、複雑な問題での正確性が大幅に向上する。日常的な要約・分類タスクでは`low`または`medium`に設定してAPIコストを抑えるハイブリッド戦略が現在のベストプラクティスとなっている。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026: Checklist + Templates",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-05-23",
+      "last_date": "2026-05-23",
+      "appearances": 2
+    },
+    {
+      "id": 733,
+      "title": "Claudeの自己批評ループ：実行後に「改善点は？」と追加して出力品質を高める",
+      "point": "一度Claudeに出力させた後、「この出力の改善点を3つ挙げてそれぞれ修正してください」と続けるだけで品質が大幅に向上するケースが多い。Claudeは最初の出力では見落としていた問題に気づき、自己批評を通じて修正できる。複雑な文書作成やコードレビューでは、この「生成→批評→改善」の2ステッププロセスを標準ワークフローに組み込むことが推奨されている。",
+      "source_title": "Claude Prompt Engineering: 15 Best Practices for Better Results (2026)",
+      "source_url": "https://claudecodedevelopers.com/blog/claude-prompt-engineering-best-practices",
+      "tags": [],
+      "first_date": "2026-05-23",
+      "last_date": "2026-05-23",
+      "appearances": 2
     },
     {
       "id": 690,
@@ -4408,6 +4485,50 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 725,
+      "title": "KPMG × Anthropic グローバル戦略提携：Digital Gatewayへ27.6万人全社員向けにClaudeを統合（5/19）",
+      "point": "Big Four会計事務所KPMGとAnthropicが世界規模の戦略提携を締結。KPMGの社内業務ポータル「Digital Gateway」にClaudeを組み込み、税務・法律クライアント向けツールから順次展開。KPMGをプライベートエクイティ分野の優先パートナーに指定し、PE向けClaudeプロダクトを共同開発する予定。Microsoft Azure上での本格稼働は2026年9月を目標とする。",
+      "source_title": "KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance",
+      "source_url": "https://www.anthropic.com/news/anthropic-kpmg",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-23",
+      "last_date": "2026-05-23",
+      "appearances": 1
+    },
+    {
+      "id": 728,
+      "title": "Claude Code v2.1.147：Ctrl+Tでバックグラウンドセッションをピン留め・アイドル時も自動維持・更新",
+      "point": "`claude agents`画面でCtrl+Tを押すと、バックグラウンドセッションをピン留めできるようになった。ピン留めされたセッションはアイドル状態でも自動的に生存し、Claude Codeのアップデートが入った際はその場で再起動して最新バージョンを適用する。メモリ逼迫時もピン留めセッションは最後まで保護される。長時間タスクを安全に走らせ続けられる点で実務上の信頼性が大きく向上。",
+      "source_title": "Changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-05-23",
+      "last_date": "2026-05-23",
+      "appearances": 1
+    },
+    {
+      "id": 729,
+      "title": "Claude Code v2.1.148（5/22）：BashツールがExit Code 127を返すリグレッションを修正",
+      "point": "v2.1.147で混入したBashツールのリグレッションが翌5/22のv2.1.148で修正された。このバグはBashツールが正常に実行完了した場合でも「コマンド未発見」を意味するExit Code 127を返してしまう問題で、一部ユーザーのスクリプト実行が意図せずエラー扱いになっていた。バグ修正リリースが翌日に出た速さはAnthropicのリリースサイクルの速さを示している。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026 - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化",
+        "新機能"
+      ],
+      "first_date": "2026-05-23",
+      "last_date": "2026-05-23",
+      "appearances": 1
     },
     {
       "id": 714,
@@ -9274,6 +9395,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-23",
+      "highlights": [
+        "KPMG × Anthropic グローバル戦略提携 — Big Fourの大手KPMGが27.6万人の全社員にClaudeを展開、Digital Gatewayに統合開始（5/19発表）",
+        "Claude Code /code-reviewコマンド新設 — 旧/simplifyを統合・effortレベル指定でバグ検出深度を自在にコントロール（v2.1.147）"
+      ]
+    },
+    {
       "date": "2026-05-22",
       "highlights": [
         "MCPトンネル正式公開 — Managed Agentsがプライベートネットワーク内MCPサーバーに外部公開なしで接続可能に（May 19）",
@@ -9749,5 +9877,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-22T08:00:03.327333"
+  "generated_at": "2026-05-23T08:00:03.286667"
 }
