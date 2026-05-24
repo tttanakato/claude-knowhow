@@ -71,6 +71,22 @@
       "appearances": 15
     },
     {
+      "id": 745,
+      "title": "コンテキストエンジニアリング2026：プロンプトを磨くより「前提ファイル」を整備する方がClaude活用効率が高い",
+      "point": "2026年の実践知として、Claude使いこなしの重点は「プロンプトエンジニアリング」から「コンテキストエンジニアリング」へ移行している。毎回の会話でClaudeを再教育するのではなく、CLAUDE.md・about-me・voice-profileなどの「前提ファイル」をセッション前に読み込ませることで、ゼロスタートを避けて継続的な品質を担保する考え方。実用的な実装としては①CLAUDE.md（プロジェクト・ルール）②about-me（自分の役割・コンテキスト）③voice-profile（望むトーン・スタイル）の3ファイルを整備し、Cowork/Claude Codeのプロジェクト設定に追加するのが推奨パターン。",
+      "source_title": "Everything Claude Has Shipped in 2026. And How to Actually Use It",
+      "source_url": "https://www.the-ai-corner.com/p/everything-claude-shipped-2026-complete-guide",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト",
+        "製品機能"
+      ],
+      "first_date": "2026-05-24",
+      "last_date": "2026-05-24",
+      "appearances": 14
+    },
+    {
       "id": 719,
       "title": "Claude Skillsがプロンプトエンジニアリングをリプレース：モジュール型再利用可能な指示セットへの移行が加速",
       "point": "2026年5月、プロンプトエンジニアリングからClaude Skillsへの業界移行が加速。Skillsはドメイン知識・ベストプラクティス・出力基準を束ねた再利用可能指示セット。Anthropic公式のanthropics/skillsリポジトリが参照実装として公開中。チームが毎回Claudeに再説明する手間を排除し、Claudeを専門エージェントとして動作させることが可能になる。",
@@ -139,6 +155,21 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 755,
+      "title": "コンテキストエンジニアリング：identity・voice・anti-AI 3ファイル戦略",
+      "point": "2026年最も効果が実証されているClaude自分仕様化手法。① **about-me**（自己紹介・職種・現在のプロジェクト文脈）、② **voice-profile**（思考スタイル・文体・好みの構造）、③ **anti-AI-writing**（避けるべきAI臭い単語・表現リスト）の3ファイルを永続コンテキストとして設定する。毎回のプロンプトでゼロから説明するより一貫性が高くなり、出力トーンのブレが大幅に減少。Coworkのカスタム指示やCLAUDE.mdとの組み合わせが効果的。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "CLAUDE.md",
+        "プロンプト",
+        "製品機能"
+      ],
+      "first_date": "2026-05-25",
+      "last_date": "2026-05-25",
+      "appearances": 9
     },
     {
       "id": 323,
@@ -369,6 +400,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 741,
+      "title": "Claude Mythos Preview：サイバーセキュリティ特化の研究プレビューモデルで防御用途にゲートアクセス提供中",
+      "point": "Claude Mythos Previewは数学・長文推論・ソフトウェアエンジニアリング・サイバーセキュリティで前モデルを大幅に上回る能力を持つ。現在は防御的サイバーセキュリティ用途を優先した研究プレビューとして、審査制のゲートアクセスで提供中。通常のClaude ProやAPIとは別の申請フォームからアクセスリクエストが可能。Amazon BedrockおよびGoogle Cloud Vertex AIでも提供されている。製品化前の段階ではあるが、脆弱性発見・セキュリティ評価を行う組織は早期アクセスの申請を検討する価値がある。",
+      "source_title": "Claude Mythos Preview \\\\ red.anthropic.com",
+      "source_url": "https://red.anthropic.com/2026/mythos-preview/",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-05-24",
+      "last_date": "2026-05-24",
+      "appearances": 6
     },
     {
       "id": 703,
@@ -869,6 +914,34 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 751,
+      "title": "Claude Code v2.1.147：/simplifyが/code-reviewに改称・統合",
+      "point": "従来の`/simplify`コマンドが`/code-review`に正式改称。`effort`レベルの指定でバグ検出の深度を選択できるようになった。コードのシンプル化とレビューの目的が一本化され、`/ultrareview`（クラウド並列エージェントによる大規模レビュー）との使い分けが明確になった。",
+      "source_title": "Claude Code What's New",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-25",
+      "last_date": "2026-05-25",
+      "appearances": 4
+    },
+    {
+      "id": 739,
+      "title": "Project Glasswing 5/22最新情報：Mythosが検出した脆弱性を世界のソフトウェア開発者へ修正パッチで配布開始",
+      "point": "5/22のProject Glasswing進捗報告により、Claude Mythos Previewが主要OS・ブラウザ・OSS全般で数千件のゼロデイ脆弱性を検出した成果が実際の修正として世界に届き始めた実態が明らかに。OpenBSDに27年間潜んだ脆弱性やFFmpegに16年間存在した問題など、自動テストが500万回実行しても検出できなかった欠陥をMythosが特定。Anthropic・AWS・Apple・Google・Microsoft・NVIDIAなどが参加するGlasswing連合がパッチを供給するパイプラインを整備。AIがOSSのセキュリティ基盤を底上げする世界規模のプロジェクトとして具体的な成果が積み重なっている。",
+      "source_title": "Project Glasswing: An initial update",
+      "source_url": "https://www.anthropic.com/research/glasswing-initial-update",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-24",
+      "last_date": "2026-05-24",
+      "appearances": 4
     },
     {
       "id": 721,
@@ -1505,6 +1578,22 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 754,
+      "title": "Claude Sonnet 4.8：5月24日時点で未リリース確認",
+      "point": "Claude Codeのソースコード流出でSonnet 4.8（4.7をスキップ）の存在が示唆されていたが、5月24日時点でPolymarketの予測市場が確率3%で終了。APIモデルID・ベンチマーク・リリース日のいずれも未発表のまま。リークされた仕様ではOpus 4.7の視覚精度・コーディング改善をSonnet価格帯（$3/MTok）で提供することが示唆されており、正式発表を待つ段階。",
+      "source_title": "Claude Sonnet 4.8: Release Date, Status, and What's Real vs Rumored",
+      "source_url": "https://codersera.com/blog/claude-sonnet-4-8-release-date-whats-new-2026/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-25",
+      "last_date": "2026-05-25",
+      "appearances": 3
     },
     {
       "id": 727,
@@ -2808,6 +2897,75 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 750,
+      "title": "Claude Code v2.1.147：Ctrl+Tでバックグラウンドセッションをピン留め",
+      "point": "`claude agents`画面でCtrl+Tを押すとバックグラウンドセッションをピン留めできる。ピン留めされたセッションはアイドル状態でも自動的に維持され、Claude Codeのアップデート時には自動で再起動される。メモリ不足が発生した場合、非ピン留めセッションが先に解放されるため、重要な長時間タスクを安定継続できる。",
+      "source_title": "Claude Code What's New",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-05-25",
+      "last_date": "2026-05-25",
+      "appearances": 2
+    },
+    {
+      "id": 753,
+      "title": "Claude Compliance API：28社セキュリティ/DLPパートナーとのガバナンス統合",
+      "point": "CrowdStrike・Wiz・Palo Altoなど28社のセキュリティ・コンプライアンスツールとClaude Compliance APIが統合。ITおよびセキュリティチームがClaude製品群全体のガバナンス管理をシングルパネルで実施できるようになった。エンタープライズ導入時のコンプライアンス要件クリアの障壁が大幅に低減。",
+      "source_title": "Anthropic Release Notes - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-25",
+      "last_date": "2026-05-25",
+      "appearances": 2
+    },
+    {
+      "id": 742,
+      "title": "SpaceX × Anthropic コンピュート提携：ClaudeのMax/Team/Enterprise利用上限が事実上2倍に",
+      "point": "5/6の発表でAnthropicはSpaceXとのコンピュート供給契約を締結、これに連動してMax・Team・Enterpriseプランのメッセージ使用量上限を大幅に引き上げた。具体的な上限数は公表していないが、ヘビーユーザーから「同じ使い方でも制限に当たらなくなった」との報告が増えている。SpaceXのStarlink宇宙インフラとAnthropicのAI開発の協力関係も始動しており、両社の長期的なパートナーシップの第一歩とみられている。",
+      "source_title": "Higher usage limits for Claude and a compute deal with SpaceX",
+      "source_url": "https://www.anthropic.com/news/higher-limits-spacex",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-24",
+      "last_date": "2026-05-24",
+      "appearances": 2
+    },
+    {
+      "id": 743,
+      "title": "PwC × Anthropic：30,000人の専門家認定プログラムと共同CoE設立でエンタープライズDXを加速",
+      "point": "5/14に発表されたPwCとAnthropicの拡大提携では、PwCが米国チームからClaude CodeとCoworkの展開を開始し、グローバル数十万人の従業員規模へ拡大予定。Joint Center of Excellence（CoE）を設立し、30,000人のPwC専門家がClaude認定を取得するプログラムも始動する。PwCはすでにコード近代化・M&A・エンタープライズ業務革新のクライアントプロジェクトにClaudeを活用開始しており、コンサルティング業界でAI活用が本格化している。",
+      "source_title": "PwC is deploying Claude to build technology, execute deals, and reinvent enterprise functions",
+      "source_url": "https://www.anthropic.com/news/pwc-expanded-partnership",
+      "tags": [
+        "Claude Code",
+        "API",
+        "製品機能"
+      ],
+      "first_date": "2026-05-24",
+      "last_date": "2026-05-24",
+      "appearances": 2
+    },
+    {
+      "id": 744,
+      "title": "Gates Foundation × Anthropic：4年間$2億のパートナーシップでグローバルヘルス・教育・経済分野にClaude展開",
+      "point": "5/14の発表でAnthropicはBill & Melinda Gates Foundationと4年間・$2億相当（補助金・Claudeクレジット・技術支援を含む）のパートナーシップを締結。グローバルヘルス・生命科学・教育・経済的流動性の4分野にClaudeのAI能力を活用することが目的。Claude for Small BusinessやClaude for Nonprofitsとともに、Claudeが商業ユースケースを超えた社会インパクトへの活用を本格化させた重要な動き。途上国の医療・教育アクセス改善にAIがどう貢献するかを示す旗艦プロジェクトとなる見通し。",
+      "source_title": "Anthropic forms $200 million partnership with the Gates Foundation",
+      "source_url": "https://www.anthropic.com/news/gates-foundation-partnership",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-24",
+      "last_date": "2026-05-24",
+      "appearances": 2
     },
     {
       "id": 726,
@@ -4485,6 +4643,124 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 746,
+      "title": "Claude Code v2.1.149：/usageがカテゴリ別内訳に進化",
+      "point": "`/usage`コマンドがスキル・サブエージェント・プラグイン・MCPサーバーごとのコスト内訳を表示するように強化。どの機能がレート制限を押し上げているかを特定しやすくなった。複数プラグインや並列サブエージェントを運用しているチームでのコスト最適化に直結する変化。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "MCP/プラグイン",
+        "生産性"
+      ],
+      "first_date": "2026-05-25",
+      "last_date": "2026-05-25",
+      "appearances": 1
+    },
+    {
+      "id": 747,
+      "title": "Claude Code v2.1.149：/diffのキーボードスクロール対応",
+      "point": "`/diff`の詳細ビューで矢印キー・`j`/`k`・`PgUp`/`PgDn`・`Space`・`Home`/`End`によるキーボードスクロールが可能に。大きな差分ファイルをマウス不要で素早く確認できる。コードレビュー時のキーボードオンリーワークフローが完結するようになった。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-25",
+      "last_date": "2026-05-25",
+      "appearances": 1
+    },
+    {
+      "id": 748,
+      "title": "Claude Code v2.1.149：GFMタスクリストをチェックボックスでレンダリング",
+      "point": "Markdownの`- [ ] todo` / `- [x] done`形式（GFM タスクリスト構文）がClaude Codeの出力でチェックボックスとして正しくレンダリングされるように。プロジェクト計画や作業リストを会話内で視覚的に管理できる。以前はプレーンバレットとして表示されていたため、CLAUDE.md内のチェックリストを活用していたユーザーに特に恩恵が大きい。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code"
+      ],
+      "first_date": "2026-05-25",
+      "last_date": "2026-05-25",
+      "appearances": 1
+    },
+    {
+      "id": 749,
+      "title": "Claude Code v2.1.149：allowAllClaudeAiMcpsでクラウドMCPを一括読み込み",
+      "point": "エンタープライズのマネージド設定に`allowAllClaudeAiMcps`が追加。有効にすると`managed-mcp.json`に加え、claude.aiクラウドMCPコネクターをポリシー経由で一括読み込みできる。管理者がチーム全体のMCP接続を一元コントロールする際の手間が大幅に削減。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-25",
+      "last_date": "2026-05-25",
+      "appearances": 1
+    },
+    {
+      "id": 752,
+      "title": "Claude Managed Agents：MCPトンネル＋セルフホストサンドボックスでプライベートネットワーク対応（5/19）",
+      "point": "2つの新機能が追加。①**MCPトンネル**：エージェントがプライベートネットワーク内のMCPサーバーにアクセスする際、外部公開なしで利用可能。ゲートウェイが単一のアウトバウンド接続を張るだけでよく、ファイアウォール設定不要。②**セルフホストサンドボックス**：ツール実行を自社インフラ（またはCloudflare・Daytona・Modal・Vercel）に移し、機密ファイルを外部に出さずに済む。エージェントループはAnthropicインフラが担う分離設計。MCPトンネルは限定研究プレビュー、セルフホストサンドボックスはパブリックベータ。",
+      "source_title": "Anthropic enhances Claude Managed Agents with two new privacy and security features - 9to5Mac",
+      "source_url": "https://9to5mac.com/2026/05/19/anthropic-enhances-claude-managed-agents-with-two-new-privacy-and-security-features/",
+      "tags": [
+        "API",
+        "エージェント",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-25",
+      "last_date": "2026-05-25",
+      "appearances": 1
+    },
+    {
+      "id": 737,
+      "title": "Claude Compliance API：CrowdStrike・Wiz・Palo Alto等28社のセキュリティ/DLPパートナーとのガバナンス統合（5/21公式発表）",
+      "point": "Anthropicが5/21に企業向けセキュリティ・コンプライアンスツール28社との統合を発表。Claude Compliance APIにより、ITセキュリティチームがClaude EnterpriseのチャットログやファイルへのDLP・SASE・SIEMポリシーの適用、管理者操作ログの取得を既存ツール経由で行えるようになった。参加パートナーはCloudflare・Cribl・CrowdStrike・Datadog・Microsoft Purview・Okta・Palo Alto Networks・Proofpoint・SailPoint・Varonis・Wiz（Google Cloud傘下）・Zscalerなど多岐にわたる。エンタープライズでClaudeの安全な全社展開を推進したい組織に必須の情報。",
+      "source_title": "Claude now works with more security and compliance tools",
+      "source_url": "https://claude.com/blog/compliance-api-security-partners",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-24",
+      "last_date": "2026-05-24",
+      "appearances": 1
+    },
+    {
+      "id": 738,
+      "title": "AnthropicがStainlessを買収：SDK/MCPサーバー自動生成の内製化でClaude APIの開発者体験を強化（5/18）",
+      "point": "AnthropicがSDK・MCP自動生成スタートアップのStainlessを買収した。StainlessはAnthropicの公式SDK（TypeScript・Python・Go・Java等）を創業初期から担ってきた実績を持ち、API仕様から各言語ネイティブな高品質クライアントを自動生成する技術を持つ。Anthropicが「MCPを作ったのに次はMCPサーバーツールも内製化」という流れで、CLaudeに接続できるツール・データ・エージェントのエコシステムを自ら育てる戦略が鮮明になった。開発者はAnthropicが品質保証するSDK・MCP生成基盤の恩恵を受けることになる。",
+      "source_title": "Anthropic acquires Stainless",
+      "source_url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
+      "tags": [
+        "API",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-24",
+      "last_date": "2026-05-24",
+      "appearances": 1
+    },
+    {
+      "id": 740,
+      "title": "Claude Sonnet 4.8 リーク：次期Sonnetの性能改善が示唆、リリースは2026年内と予測",
+      "point": "2026年3月のClaude Code npmパッケージに誤配信されたソースコードから、次期SonnetはClaude Sonnet 4.8（4.7は存在せず）となることが判明している。リークされた内容から予想される主な改善点はOpus 4.7で導入された高解像度ビジョン機能の引き継ぎ、長文コンテキスト処理の強化、エージェント推論の精度向上など。AnthropicはOpus発表から1〜4週後にSonnetをリリースするパターンがあるため、5〜6月リリースの可能性もある。ただし本情報はリーク起源であり、Anthropicの公式確認はない点に注意が必要。",
+      "source_title": "Claude Sonnet 4.8 (Not 4.7): Release Date, Features & What to Expect (2026)",
+      "source_url": "https://www.nxcode.io/resources/news/claude-sonnet-4-8-release-date-features-what-to-expect-2026",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-24",
+      "last_date": "2026-05-24",
+      "appearances": 1
     },
     {
       "id": 725,
@@ -9395,6 +9671,20 @@
   ],
   "daily": [
     {
+      "date": "2026-05-25",
+      "highlights": [
+        "Claude Code v2.1.149 大量改善 — /usageカテゴリ別内訳・/diffキーボード操作・GFMチェックボックスなど実用機能が一気に強化（5/23リリース）",
+        "Managed Agents：MCPトンネル＋セルフホストサンドボックス — プライベートネットワーク内MCPサーバーへの外部公開なしアクセスと自社インフラでのツール実行が可能に（5/19公開）"
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "highlights": [
+        "Claude Compliance API 28社統合 — CrowdStrike・Wiz・Palo Alto等のセキュリティ大手とのガバナンス統合が5/21に公式公開。企業のDLP/SIEM基盤と同じ仕組みでClaudeを管理可能に",
+        "AnthropicがStainlessを買収 — SDK/MCPサーバー自動生成のパイオニアを内製化。Claude APIのデベロッパー体験とエージェント接続性を次世代へ（5/18）"
+      ]
+    },
+    {
       "date": "2026-05-23",
       "highlights": [
         "KPMG × Anthropic グローバル戦略提携 — Big Fourの大手KPMGが27.6万人の全社員にClaudeを展開、Digital Gatewayに統合開始（5/19発表）",
@@ -9877,5 +10167,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-23T08:00:03.286667"
+  "generated_at": "2026-05-25T08:00:02.988438"
 }
