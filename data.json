@@ -4645,6 +4645,140 @@
       "appearances": 2
     },
     {
+      "id": 759,
+      "title": "Anthropic Cowork Salesウェビナー（本日5/26 10:00 PT）：3つの販売ワークフロー自動化をライブデモ",
+      "point": "Anthropic Head of US Mid-Market GTM Travis Bryantが登壇し「①日次カスタマーコールブリーフ自動生成（Googleカレンダー×Salesforce）、②週次予測レポートを月曜朝に自動配信、③4,000アカウントを一夜でスコアリングしてインタラクティブダッシュボードを自動生成」の3ワークフローをライブデモ。Sales Pluginがベースキットとして提供されており、自社のプロセスに合わせてカスタマイズ可能。",
+      "source_title": "How Anthropic's sales team run their week with Cowork (Webinar)",
+      "source_url": "https://www.anthropic.com/webinars/how-anthropics-sales-leader-runs-his-week-with-claude",
+      "tags": [
+        "API",
+        "自動化",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-05-26",
+      "last_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": 760,
+      "title": "Claude Coworkスケジュールタスク × Salesforce/BigQuery：「深夜4,000アカウント自動スコアリング」の実現方法",
+      "point": "技術職ではない営業リーダーがCoworkのスケジュールタスク機能でSalesforceとBigQueryを接続し、4,000アカウントを5次元スコアリング（エージェント機会・内部変革・AI投資度・ホワイトスペース・業種適合性）して自動ダッシュボード生成。以前は部門横断で数百時間かかった作業を一夜で完了。プロンプトは「スコアリングの次元を定義→テスト実行→重みの調整→全体展開」の流れで技術知識不要。",
+      "source_title": "How an Anthropic sales leader uses Claude Cowork to run a 4,000-account book",
+      "source_url": "https://claude.com/blog/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book",
+      "tags": [
+        "プロンプト",
+        "自動化",
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-05-26",
+      "last_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": 761,
+      "title": "AnthropicファイナンスチームのClaude活用：FP&Aデータ自動集計と「数字の背後の物語」自動生成（5/22）",
+      "point": "AnthropicのファイナンスチームがClaudeを使ってFP&Aレポートの数値集計・整形を自動化し、月次CFOレポートの「ナラティブ（解説文）」まで自動生成する実例が公開。単なる数値羅列から「なぜそのトレンドが起きたか」の文章もClaudeが生成するため、アナリストが戦略的分析と洞察の深掘りに集中できる。BigQuery・スプレッドシートとの連携でデータ取得も自動化されている。",
+      "source_title": "How Anthropic's finance team uses Claude to shape the narrative behind the numbers",
+      "source_url": "https://claude.com/blog/how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers",
+      "tags": [
+        "API",
+        "自動化"
+      ],
+      "first_date": "2026-05-26",
+      "last_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": 762,
+      "title": "Opus 4.7 × セキュリティパートナー活用事例（5/21）：オフェンシブAI対抗に向けた脆弱性スキャン・パッチ自動生成",
+      "point": "Anthropicがセキュリティ分野でのOpus 4.7活用パートナー事例集を公開。Opus 4.7の高精度コード理解と長文推論能力を活かし、脅威インテリジェンス分析・コード脆弱性の自動検出・修正パッチの自動生成を実施。攻撃側がAIを使って攻撃を高速化している現状に対して、防御側も同等のAI能力で対抗できる段階になったと評価されている。セキュリティ用途でのOpus活用はCyber Verification Programで申請可能。",
+      "source_title": "How our partners are putting Opus to work for cybersecurity",
+      "source_url": "https://claude.com/blog/how-our-partners-are-putting-opus-to-work-for-cybersecurity",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-05-26",
+      "last_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": 763,
+      "title": "Claude Code 大規模コードベース実践ガイド（公式5/14）：タスク範囲明確化・CLAUDE.md整備・並列サブエージェント分割の3原則",
+      "point": "Anthropicが大規模コードベースでのClaude Code活用ガイドを公開。3原則は①タスクを小さく明確に分割して「目標ドリフト」を防ぐ（「認証システムを直して」より「JWTトークン検証の失敗時エラーハンドリングを修正して」）、②CLAUDE.mdにアーキテクチャ・依存関係・コーディング規約を記述してコンテキスト汚染を削減、③依存関係のない並列タスクはサブエージェントに分割して処理時間を短縮。既存コードを理解させるにはREADME・テスト・型定義の3ファイルを優先的に提供するのが効果的。",
+      "source_title": "How Claude Code works in large codebases: Best practices and where to start",
+      "source_url": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "API",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-26",
+      "last_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": 764,
+      "title": "ClaudeのコンピューターUse・ブラウザUse公式ベストプラクティス（5/13）：具体的ステップ指示とロールバック設計が成功の鍵",
+      "point": "Anthropicがコンピューター・ブラウザ操作エージェントの設計ガイドを公開。重要ポイントは①「左上のメニューをクリック」等の具体的ステップで記述（抽象的な目標のみは失敗しやすい）、②スクリーンショット取得で現在状態を確認させる、③破壊的操作前に確認ポイントを設ける、④ロールバック可能な設計（バックアップ・ドライランモード）を最初から組み込む。失敗時の回復ルートを事前に定義することで成功率が大幅に向上する。",
+      "source_title": "Best practices for computer and browser use with Claude",
+      "source_url": "https://claude.com/blog/best-practices-for-computer-and-browser-use-with-claude",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-05-26",
+      "last_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": 765,
+      "title": "AIネイティブスタートアップの創業者プレイブック（5/14）：Claude Codeで「探索→実装→洗練」3フェーズを加速",
+      "point": "Anthropicが公開したAIネイティブスタートアップ向けガイドでは、「探索フェーズでClaude Codeに複数プロトタイプを並列生成させ最良を選択する」「実装フェーズでは人間が指示・Claude Codeが実行」「洗練フェーズでコードレビューをClaudeと協働して高速化」の3フェーズが有効とされる。初期プロダクトに必要な機能をスコープ外にすることの重要性と、CLAUDE.mdを早期に整備してコンテキストを共有する点が特に強調されている。",
+      "source_title": "The founder's playbook: Building an AI-native startup",
+      "source_url": "https://claude.com/blog/the-founders-playbook",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "API",
+        "生産性"
+      ],
+      "first_date": "2026-05-26",
+      "last_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": 766,
+      "title": "「フロンティアAIについての会話を広げる」（Anthropic 5/19）：多様なステークホルダーとのAI安全対話体制を整備",
+      "point": "Anthropicが「AI開発のペースと影響について幅広い層との対話が不可欠」として、政策立案者・市民社会・倫理研究者・一般市民も含めた多面的対話体制の強化を公式宣言。外部専門家との評価連携・公開コメント収集・Claude開発の透明性向上の3点を柱として整備する。急速なAI進歩がもたらす社会的影響に対して、一企業だけでなくより広い視野での意思決定を求める姿勢を示した。",
+      "source_title": "Widening the conversation on frontier AI",
+      "source_url": "https://www.anthropic.com/news/widening-conversation-ai",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-26",
+      "last_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": 767,
+      "title": "Claude Code「HTMLの不合理なほどの有効性」（5/20）：フレームワーク不要でAI生成ツールを即デプロイ",
+      "point": "Anthropicエンジニアが「なぜClaude CodeはVue/Reactより生のHTMLを好むのか」を検証。理由は①HTML単一ファイルは依存関係ゼロでブラウザさえあれば動作、②LLMはHTML構文に最も習熟しているため生成品質が高い、③デバッグ・検証が高速。実用アドバイスは「プロトタイプは先ずHTML一枚で作らせ、後から必要に応じてフレームワークへ移行する」こと。ダッシュボード・データビジュアライゼーション・社内ツールは最終的にもHTMLで完結する事例が多い。",
+      "source_title": "Using Claude Code: The unreasonable effectiveness of HTML",
+      "source_url": "https://claude.com/blog/using-claude-code-the-unreasonable-effectiveness-of-html",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-05-26",
+      "last_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
       "id": 746,
       "title": "Claude Code v2.1.149：/usageがカテゴリ別内訳に進化",
       "point": "`/usage`コマンドがスキル・サブエージェント・プラグイン・MCPサーバーごとのコスト内訳を表示するように強化。どの機能がレート制限を押し上げているかを特定しやすくなった。複数プラグインや並列サブエージェントを運用しているチームでのコスト最適化に直結する変化。",
@@ -9671,6 +9805,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-26",
+      "highlights": [
+        "Anthropic Cowork Salesウェビナー（本日開催） — Salesforce・BigQuery連携で4,000アカウントを深夜スコアリングする実例を公開",
+        "Anthropic社員によるClaude実用ノウハウが続々公開 — セールス・ファイナンス・サイバーセキュリティ3部門の活用事例と公式ベストプラクティスが揃う"
+      ]
+    },
+    {
       "date": "2026-05-25",
       "highlights": [
         "Claude Code v2.1.149 大量改善 — /usageカテゴリ別内訳・/diffキーボード操作・GFMチェックボックスなど実用機能が一気に強化（5/23リリース）",
@@ -10167,5 +10308,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-25T08:00:02.988438"
+  "generated_at": "2026-05-26T08:00:02.928059"
 }
