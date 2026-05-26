@@ -102,6 +102,20 @@
       "appearances": 14
     },
     {
+      "id": 775,
+      "title": "コンテキストエンジニアリング：最小高信号トークン戦略でn²注意コストを抑制する",
+      "point": "Anthropic公式解説の核心：LLMのTransformerアーキテクチャはn²のペアワイズ関係を処理するため、トークン数増加とともに注意精度は低下する（Context Rot）。コンテキストエンジニアリングの目標は「望む成果の可能性を最大化する最小の高信号トークンセット」を見つけること。冗長なツール出力や古い会話履歴を積極的に削除し、エージェントが本当に必要な情報のみをコンテキストに保持する。",
+      "source_title": "Effective context engineering for AI agents - Anthropic Engineering",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-05-27",
+      "last_date": "2026-05-27",
+      "appearances": 13
+    },
+    {
       "id": 515,
       "title": "Claude Opus 4.7：より高解像度の画像認識でビジョンタスクの精度向上",
       "point": "Opus 4.7は旧モデルより高解像度で画像を認識できるようになった。詳細な図面・スキャン文書・複雑なUI画像の解析精度が向上。$5/$25 per MTokのOpus 4.6と同一価格で利用できる最上位モデルとして、ビジョンを要するエージェント開発に適している。",
@@ -914,6 +928,35 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 772,
+      "title": "Project Glasswing 5/22アップデート：AnthropicがMythos Previewの脆弱性対応進捗を公式発表",
+      "point": "5月22日、Project Glasswing（Anthropic・AWS・Apple・Microsoft・Googleなど主要テック12社連合）の初期進捗が公式発表された。Claude Mythos Previewが発見した脆弱性に対する修正パッチの配布状況や、英国AI安全研究所によるゼロデイ発見能力の公式評価などが含まれる。セキュリティ用途のMyths Previewは引き続き招待制で、Claude Code/Claude Securityを通じて提供されている。",
+      "source_title": "Project Glasswing: An initial update",
+      "source_url": "https://www.anthropic.com/research/glasswing-initial-update",
+      "tags": [
+        "Claude Code",
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-05-27",
+      "last_date": "2026-05-27",
+      "appearances": 4
+    },
+    {
+      "id": 778,
+      "title": "Claude Sonnet 4 / Opus 4 廃止（6月15日）：model IDを設定変数化して将来の移行コストを最小化する",
+      "point": "claude-sonnet-4-20250514およびclaude-opus-4-20250514は2026年6月15日にAPI退役。今後の移行を容易にするための実践的対策：コードベース内でモデルIDをハードコーディングせず、環境変数（例：`CLAUDE_MODEL=claude-sonnet-4-6`）や設定ファイルで一元管理する。これにより次回の廃止・移行時に1箇所を変えるだけで対応できる。まだ移行していない場合は即対応が必要。",
+      "source_title": "Claude Updates by Anthropic - May 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-05-27",
+      "last_date": "2026-05-27",
+      "appearances": 4
     },
     {
       "id": 751,
@@ -2899,6 +2942,49 @@
       "appearances": 3
     },
     {
+      "id": 776,
+      "title": "コンパクション精度チューニング：リコール最大化→精度改善の2ステップで長期エージェントの文脈を維持する",
+      "point": "Claude Codeでも使われるコンパクション（コンテキスト要約）のチューニング手順：まず「リコール最大化」フェーズで全情報を漏れなく保持するプロンプトを設計し、次に「精度改善」フェーズで余分な内容を削減する。軽量な最初のステップとしては「ツール呼び出し結果のクリア」が有効で、古い生ツール出力を保持し続ける必要はない。積極的すぎるコンパクションは後で重要になる微妙なコンテキストを失うリスクがある。",
+      "source_title": "Effective context engineering for AI agents - Anthropic Engineering",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-05-27",
+      "last_date": "2026-05-27",
+      "appearances": 2
+    },
+    {
+      "id": 777,
+      "title": "構造化メモ（NOTES.md）でエージェントのセッション間継続性を実現する",
+      "point": "エージェント向け「構造化メモ取り」は、コンテキストウィンドウ外に記録を書き出し、後のターンで再読み込みするパターン。Claude Codeのto-doリスト管理やClaudeがポケモンをプレイする事例では、「ルート1でピカチュウを1234ステップ訓練し、目標レベル10まであと2レベル」などの詳細を何千ターンにわたって維持した。コンテキストリセット後もエージェントが自分のメモを読んで作業継続できる。自分のエージェントにNOTES.mdファイルや専用メモリツールを活用させると長期一貫性が大幅向上。",
+      "source_title": "Effective context engineering for AI agents - Anthropic Engineering",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-05-27",
+      "last_date": "2026-05-27",
+      "appearances": 2
+    },
+    {
+      "id": 779,
+      "title": "Few-Shot例示の2026年的役割変化：「推論向上」ではなく「フォーマット整合」に特化する",
+      "point": "2024〜2025年に推奨されていた「Few-shotで推論を改善させる」アプローチは、モデル性能向上により2026年では効果が薄れた。現在のFew-shot例示の主な価値は「出力フォーマットの整合」にある。例：特定のJSONスキーマ、特定の文体スタイル、特定の応答構造を安定させるために使う。推論そのものはモデルの能力に任せ、フォーマット固定に例示を集中投資するのが2026年の最適解。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-27",
+      "last_date": "2026-05-27",
+      "appearances": 2
+    },
+    {
       "id": 750,
       "title": "Claude Code v2.1.147：Ctrl+Tでバックグラウンドセッションをピン留め",
       "point": "`claude agents`画面でCtrl+Tを押すとバックグラウンドセッションをピン留めできる。ピン留めされたセッションはアイドル状態でも自動的に維持され、Claude Codeのアップデート時には自動で再起動される。メモリ不足が発生した場合、非ピン留めセッションが先に解放されるため、重要な長時間タスクを安定継続できる。",
@@ -4643,6 +4729,63 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 771,
+      "title": "ローマ教皇Leo XIV世のAI回勅「Magnifica humanitas」（5/25）：Anthropic共同創業者が倫理的AIガバナンスの重要性を訴える",
+      "point": "5月25日、ローマ教皇Leo XIV世がAIに関する初の回勅「Magnifica humanitas」（235頁）を発表。発表会にはAnthropicの共同創業者Chris OlahがVatican市に招かれ、「すべてのAIフロンティアラボは、時に正しい行動と衝突しうる利害・制約の中で動いている」と認め、AI開発の恩恵を世界的に共有するための「Church（教会）のような独立した道徳的声」の必要性を訴えた。Claude開発を行うAnthropicも「人類に対するAIの長期的影響」を真剣に考えるパートナーとして、宗教・倫理機関との対話を重視していることが示された。",
+      "source_title": "Anthropic co-founder Chris Olah's remarks on Pope Leo XIV's encyclical",
+      "source_url": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-27",
+      "last_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": 773,
+      "title": "システムプロンプト「正しい高度（right altitude）」原則：過剰ルールと曖昧指示の中間を狙う",
+      "point": "Anthropic Engineering公式ガイドが指摘する重要な原則。失敗モードは2つある：①if-elseを多用した過剰に具体的なルール記述（脆弱で保守コスト増）と②「ユーザーを助ける」のような曖昧な高レベル指示（共有コンテキストを誤って仮定）。最適なシステムプロンプトはその中間「正しい高度」を狙い、行動を効果的に誘導しつつモデルに判断の余地を与えるヒューリスティクスを提供する。",
+      "source_title": "Effective context engineering for AI agents - Anthropic Engineering",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-27",
+      "last_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": 774,
+      "title": "エージェントのツール設計最小化原則：機能重複のないツールセットが判断精度を高める",
+      "point": "Anthropic Engineeringが「最もよく見るエラーパターン」として挙げるのは「過剰なツールセット」。ツールの機能が重複していたり、どのツールを使うべきか人間エンジニアが迷うほど多いと、AIエージェントも迷う。推奨は「多様で典型的な例示を提示する最小限のツールセット」。ツールごとに「いつ・なぜ使うか」を明確にし、LLMの強みを活かした入力パラメータ設計を心がける。",
+      "source_title": "Effective context engineering for AI agents - Anthropic Engineering",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "API",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-05-27",
+      "last_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": 780,
+      "title": "Claude Code autoMode.hard_deny：Auto Modeの行動を例外なく完全ブロックする",
+      "point": "Claude Code設定の`autoMode.hard_deny`フィールドに禁止パターンを追加すると、Auto Modeがどんな条件下でも対象アクションを実行できなくなる（通常のallow例外も無効化）。誤ってプロダクション環境を変更するリスクがあるコマンドや、機密ファイルへのアクセスなどを完全ロックしたい場合に活用する。v2.1.136で追加された機能。例：`\"autoMode\": { \"hard_deny\": [\"rm -rf\", \"git push --force\"] }`",
+      "source_title": "7 Hidden Claude Code Features Most Developers Miss",
+      "source_url": "https://www.geeky-gadgets.com/master-claude-code-2026/",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-27",
+      "last_date": "2026-05-27",
+      "appearances": 1
     },
     {
       "id": 759,
@@ -9805,6 +9948,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-27",
+      "highlights": [
+        "ローマ教皇Leo XIV世のAI回勅とAnthropicの応答 — Anthropic共同創業者Chris Olahが「テクノロジー業界には利害に左右されない批判者が必要」と発言",
+        "システムプロンプト「正しい高度」原則 — 過剰なルール記述と曖昧な高レベル指示の中間を狙う"
+      ]
+    },
+    {
       "date": "2026-05-26",
       "highlights": [
         "Anthropic Cowork Salesウェビナー（本日開催） — Salesforce・BigQuery連携で4,000アカウントを深夜スコアリングする実例を公開",
@@ -10308,5 +10458,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-26T08:00:02.928059"
+  "generated_at": "2026-05-27T08:00:02.977796"
 }
