@@ -323,6 +323,22 @@
       "appearances": 8
     },
     {
+      "id": 805,
+      "title": "6月15日課金変更準備チェックリスト",
+      "point": "6月15日から課金が「対話型」「プログラマティック型」に分離。Agent SDK・`claude -p`・Claude Code GitHub Actions経由の利用は月額クレジット（Pro: $20、Max 5x: $100、Max 20x: $200）から引かれる。対応手順：①モデルIDを確認（旧IDは6/15で廃止）②SDKパッケージを更新③クレジットにオプトイン。従来のClaude Code CLIをターミナルで対話的に使う分は引き続き既存プランの制限内で利用可能。",
+      "source_title": "Anthropic's June 15 Billing Change: What Every Claude Code & Agent SDK User Must Do",
+      "source_url": "https://codersera.com/blog/anthropic-june-2026-billing-change-claude-code/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-05-29",
+      "last_date": "2026-05-29",
+      "appearances": 7
+    },
+    {
       "id": 438,
       "title": "Cowork Extended Thinkingを有効化する：デフォルトOFFの深度推論をオンにする",
       "point": "Coworkでは拡張思考（Extended Thinking）がデフォルトでオフになっている。複雑なタスク・長期計画・多段階推論を伴う作業では、設定（Settings）から手動でオンにすることで出力品質が大幅に向上する。特にコードレビュー・戦略分析・要件整理など「正確な推論が必要な業務タスク」で顕著な差が出る。チャット型の通常Claude.aiとは設定が別管理のため、Coworkを新規設定した際は必ず確認すること。",
@@ -414,6 +430,32 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 803,
+      "title": "Managed Agents Dreaming：バックグラウンドで過去セッションをレビューして記憶を蒸留する",
+      "point": "Dreamingは過去のエージェントセッションをバックグラウンドでレビューし、繰り返されるミス・共通ワークフロー・チーム固有のパターンを抽出してメモリに蒸留する機能。次回以降のセッション品質が自動で向上するため、エージェント稼働初期より長期利用で真価を発揮する。",
+      "source_title": "Anthropic updates Claude Managed Agents with three new features - 9to5Mac",
+      "source_url": "https://9to5mac.com/2026/05/07/anthropic-updates-claude-managed-agents-with-three-new-features/",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-05-29",
+      "last_date": "2026-05-29",
+      "appearances": 6
+    },
+    {
+      "id": 804,
+      "title": "Compliance APIとセキュリティツールのガバナンス統合（5/21公式発表）",
+      "point": "2026年5月21日、AnthropicはClaude Compliance APIとCrowdStrike・Wiz・Palo Alto Networksを含む28社のセキュリティ/DLPパートナーとの統合を発表。IT・セキュリティチームが既存のガバナンスフレームワーク内でClaudeを管理できるようになった。Enterprise導入の障壁だった「AI固有のセキュリティ管理」問題に直接応える形。",
+      "source_title": "Release notes | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-29",
+      "last_date": "2026-05-29",
+      "appearances": 6
     },
     {
       "id": 741,
@@ -942,6 +984,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 802,
+      "title": "Claude Code Routinesのベストプラクティス",
+      "point": "最初に設定すべきルーティンは「週次ドキュメントドリフトチェック」。最悪ケースが「更新漏れ」に留まるため安全に試せる。次点は「夜間イシュートリアージ」で、朝始業時にバックログが整理済みになる複利効果がある。ルーティンのプロンプトは自己完結型（背景・成功条件・検証方法を含む）で書くことが必須。",
+      "source_title": "Claude Code Routines Tutorial: Schedule, API, and GitHub Triggers Explained",
+      "source_url": "https://www.builder.io/blog/claude-code-routines",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-05-29",
+      "last_date": "2026-05-29",
+      "appearances": 4
     },
     {
       "id": 786,
@@ -3012,6 +3068,17 @@
       "appearances": 3
     },
     {
+      "id": 801,
+      "title": "インタビューファースト：複雑タスクはClaudeに先に質問させてから依頼する",
+      "point": "複雑なタスクをいきなり丸投げするのではなく、「まず実装内容・エッジケース・トレードオフについて私に質問してください」と指示してから本番依頼に入る手法。Claudeが質問を先に行うことで、最終出力の品質が一貫して向上するとされる。",
+      "source_title": "You're Using Claude Wrong! Here's How to be Ahead of 99% of Users",
+      "source_url": "https://artificialcorner.com/p/claude-levels",
+      "tags": [],
+      "first_date": "2026-05-29",
+      "last_date": "2026-05-29",
+      "appearances": 2
+    },
+    {
       "id": 787,
       "title": "Managed Agentsマルチエージェントオーケストレーション：リードがスペシャリストを並列委任（パブリックベータ）",
       "point": "リードエージェントがジョブを分割し、それぞれ独自のモデル・プロンプト・ツールを持つスペシャリストサブエージェントに委任して並列実行する新機能（2026年5月6日〜パブリックベータ）。Netflixはこの機能でビルド履歴を数百件並列分析し、WisedocsはドキュメントレビューをAI+マルチエージェントで50%短縮。共有ファイルシステムでサブエージェント間の成果物共有も可能。",
@@ -4859,6 +4926,62 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 797,
+      "title": "Claude Code週次利用制限50%増（7月13日まで限定）",
+      "point": "2026年5月から7月13日まで限定で、Claude Codeの週次利用制限が通常比50%増量された。大規模リファクタリング、並列セッション実験、新機能の検証など「使い倒す」タイミングとして活用したい。制限増加は自動適用で設定変更は不要。",
+      "source_title": "Claude Code週次利用制限が50%増加｜7月13日まで限定",
+      "source_url": "https://note.com/tothinks/n/ne489f28d6b01",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "生産性"
+      ],
+      "first_date": "2026-05-29",
+      "last_date": "2026-05-29",
+      "appearances": 1
+    },
+    {
+      "id": 798,
+      "title": "Prompt Template Libraryで繰り返し作業を標準化する",
+      "point": "毎週同じ種類のタスクをClaudeに依頼しているなら、プロンプトテンプレートをライブラリとして管理すると効果的。タスクの種別ごとに「確定構造」を作り、変動部分だけを差し替える設計にすることで、毎回ゼロから書くコストをなくし出力品質も安定させられる。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-05-29",
+      "last_date": "2026-05-29",
+      "appearances": 1
+    },
+    {
+      "id": 799,
+      "title": "ロールプロンプトで出力の精度とトーンをコントロールする",
+      "point": "Claudeに質問する前に「あなたは〇〇の専門家です」と役割（ロール）を与えると、語彙・トーン・詳細レベルが専門分野に最適化される。汎用的な返答から脱却したい場合の基本テクニック。役割は短く具体的に設定するほど効果が高い。",
+      "source_title": "10 AI Prompting Tips That Improve ChatGPT, Claude, and Gemini Results",
+      "source_url": "https://www.eweek.com/news/ai-prompting-tips-chatgpt-claude-gemini-2026/",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-05-29",
+      "last_date": "2026-05-29",
+      "appearances": 1
+    },
+    {
+      "id": 800,
+      "title": "MCPパブリックサーバー1.7万本時代：用途別サーバー選定のポイント",
+      "point": "2026年5月時点でMCPパブリックサーバーは1万7千本以上、SDKダウンロード数は月9700万回に達した。AWSが54本、Google CloudがBigQuery・Vertex AI向け公式サーバーを公開。Claude Codeで活用する際は「公式 or 主要OSS製」を優先し、untrustedサーバーは--permission-modeで権限を制限して使うのが安全策。",
+      "source_title": "Claude Code MCPおすすめサーバー15選【2026年5月版】",
+      "source_url": "https://ai-career-japan.jp/posts/claude-code-mcp-%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-05-29",
+      "last_date": "2026-05-29",
+      "appearances": 1
     },
     {
       "id": 784,
@@ -10091,6 +10214,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-29",
+      "highlights": [
+        "Claude Code週次利用制限50%増（7月13日まで限定） — Pro/Maxユーザーは大規模リファクタリングや並列セッション活用の絶好機",
+        "6月15日課金変更の準備チェックリスト — 対話型とプログラマティック型が課金分離、Agent SDK利用者は今月中に対応必須"
+      ]
+    },
+    {
       "date": "2026-05-28",
       "highlights": [
         "Anthropic韓国ソウルオフィス開設 — KiYoung Choi氏を韓国代表取締役に任命（5/26付）。韓国はClaude使用率が人口比3.5倍のアジア最活発市場",
@@ -10608,5 +10738,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-28T08:00:02.587722"
+  "generated_at": "2026-05-29T08:00:03.347796"
 }
