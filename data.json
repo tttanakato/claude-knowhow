@@ -4928,6 +4928,156 @@
       "appearances": 2
     },
     {
+      "id": 809,
+      "title": "Claude Opus 4.8 正式リリース：SWE-bench Pro 69.2%・Fast Mode 2.5倍速・3倍安価",
+      "point": "2026年5月28日、Opus 4.8がリリース。SWE-bench Pro 64.3%→69.2%、Knowledge Work Score 1753→1890、USAMO 2026で96.7%（Opus 4.7は69.3%）と大幅改善。Fast Modeは2.5倍速で料金は標準の2倍（旧比3倍安価）。価格はOpus 4.7と同一（入力$5/出力$25 per Mトークン）。「より正直で不確実性を明示しやすい」と設計された点も特徴。",
+      "source_title": "Anthropic upgrades Claude with new Opus 4.8 model, details here - 9to5Mac",
+      "source_url": "https://9to5mac.com/2026/05/28/anthropic-upgrades-claude-with-new-opus-4-8-model-heres-whats-new/",
+      "tags": [
+        "プロンプト",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-30",
+      "last_date": "2026-05-30",
+      "appearances": 1
+    },
+    {
+      "id": 810,
+      "title": "Dynamic Workflows（研究プレビュー）：最大1,000サブエージェントを並列オーケストレーション",
+      "point": "Claude Code 2.1.154で導入された研究プレビュー機能。プロンプトに「workflow」を含めるか、ultracodeモードをオンにするとClaudeがJavaScriptスクリプトを自動生成し、数十〜1,000台のサブエージェントを並列実行。コードベース全体のバグスイープや500ファイル規模の移行など「チームレベルの作業量」を1命令で委任可能。実行状況は`/workflows`コマンドで確認。Max・Team・Enterprise（管理者有効化が必要）プランで利用可能。",
+      "source_title": "Introducing dynamic workflows in Claude Code",
+      "source_url": "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "自動化",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-30",
+      "last_date": "2026-05-30",
+      "appearances": 1
+    },
+    {
+      "id": 811,
+      "title": "Ultracodeモード：effortをxhigh設定＋Dynamic Workflows自動活用を一括有効化",
+      "point": "Claude Code 2.1.154で追加された新設定。effortメニューからUltracodeをオンにすると、自動でeffortレベルがxhighに設定され、さらにClaudeがタスクに応じてDynamic Workflowsを自動判断で使用する。「難しいタスクは徹底的に」「巨大なスコープは並列エージェントで」という2つの最適化を同時に得られる。トークン消費が大幅に増える可能性があるため、初回は小規模タスクで試してコストを把握してから本番利用を推奨。",
+      "source_title": "Claude Code Dynamic Workflows: Official Step-by-Step Guide",
+      "source_url": "https://agentpedia.codes/blog/claude-opus-4-8-claude-code-workflows",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-05-30",
+      "last_date": "2026-05-30",
+      "appearances": 1
+    },
+    {
+      "id": 812,
+      "title": "Messages APIが会話中途のsystem メッセージに対応：プロンプトキャッシュを破壊せずに指示更新",
+      "point": "Opus 4.8のリリースと同時に、Messages APIがmessages配列内のrole: \"system\"エントリを受け付けるようになった（ユーザーターンの直後に配置）。これにより、長時間のエージェントタスク中にClaudeへの指示をプロンプトキャッシュを壊さず更新でき、ユーザーターン経由で迂回させる必要がなくなった。エージェントループの設計を大幅に柔軟化できる。",
+      "source_title": "Anthropic upgrades Claude with Opus 4.8 release | Let's Data Science",
+      "source_url": "https://letsdatascience.com/news/anthropic-upgrades-claude-with-opus-48-release-c94772d7",
+      "tags": [
+        "API",
+        "プロンプト",
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-30",
+      "last_date": "2026-05-30",
+      "appearances": 1
+    },
+    {
+      "id": 813,
+      "title": "Claude Code 2.1.154：リーンシステムプロンプトがデフォルト化でトークン効率向上",
+      "point": "Haiku・Sonnet・Opus 4.7以前を除く全モデルで、リーン（軽量）なシステムプロンプトがデフォルトになった。従来の重いシステムプロンプトから移行することで、コンテキスト消費が削減される。また、Claudeが十分なコンテキストを持っている場合には複数選択肢の質問を出さなくなり、本当に判断できないときのみ質問するよう改善された（不要な確認待ちが減少）。",
+      "source_title": "Claude Code v2.1.154 Major Updates - Opus 4.8 is here! | DevelopersIO",
+      "source_url": "https://dev.classmethod.jp/en/articles/20260529-claude-code-updates-v2-1-154/",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-05-30",
+      "last_date": "2026-05-30",
+      "appearances": 1
+    },
+    {
+      "id": 814,
+      "title": "`! <command>`でバックグラウンドシェルセッションを起動：着脱可能なセッションで長時間タスクを管理",
+      "point": "claude agentsビュー内で`! <command>`と入力すると、シェルコマンドをアタッチ/デタッチ可能なバックグラウンドセッションとして起動できるようになった。同様の機能は`claude --bg --exec '<command>'`でも利用可能。長時間かかるビルドやテスト実行をバックグラウンドに送り、他の作業を並行させるユースケースに適している。",
+      "source_title": "Claude Code v2.1.154 Major Updates - Opus 4.8 is here! | DevelopersIO",
+      "source_url": "https://dev.classmethod.jp/en/articles/20260529-claude-code-updates-v2-1-154/",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-05-30",
+      "last_date": "2026-05-30",
+      "appearances": 1
+    },
+    {
+      "id": 815,
+      "title": "claude.ai・CoworkにエフォートUIを追加：モデルセレクタ横で思考深度を即調整",
+      "point": "claude.aiとCoworkのUIで、モデルセレクタの横にエフォート制御スライダーが追加された。コーディングやエージェントタスクで「もっと深く考えてほしい」と感じたとき、設定ファイルを変更せずその場でeffortレベルを調整できる。API経由と同様、消費トークンが増えるため重要なタスクに絞って活用するのが費用対効果が高い。",
+      "source_title": "Claude Opus 4.8: Benchmarks, Effort & Dynamic Workflows",
+      "source_url": "https://www.digitalapplied.com/blog/claude-opus-4-8-release-dynamic-workflows-2026",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル",
+        "製品機能"
+      ],
+      "first_date": "2026-05-30",
+      "last_date": "2026-05-30",
+      "appearances": 1
+    },
+    {
+      "id": 816,
+      "title": "Opus 4.8のeffortデフォルト変更：high effortが標準・xhigh以上は追加コストで最高品質",
+      "point": "Opus 4.8はhigh effortをデフォルトに設定。Anthropicによれば、highはOpus 4.7のコーディングタスクと同程度のトークンを消費しつつ性能が向上している。より難しいタスクや長時間の非同期ワークフローには「extra」（Claude Codeでは`/effort xhigh`）または「max」を選択すると、さらに多くのトークンを使って品質を最大化できる。レート制限も高effortレベルに対応して引き上げられた。",
+      "source_title": "Claude Opus 4.8: \"a modest but tangible improvement\" - Simon Willison",
+      "source_url": "https://simonwillison.net/2026/May/28/claude-opus-4-8/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-05-30",
+      "last_date": "2026-05-30",
+      "appearances": 1
+    },
+    {
+      "id": 817,
+      "title": "`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE`廃止：2026年6月1日削除前に移行が必要",
+      "point": "環境変数`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE`が非推奨となり、**6月1日（月）に削除予定**。Opus 4.6のFast Modeを引き続き使いたい場合は、`/model claude-opus-4-6[1m]`に切り替えた後に`/fast on`を実行することで同等の動作を得られる。CI/CDパイプラインや`.env`ファイルで利用している場合は至急対応が必要。",
+      "source_title": "Claude Code v2.1.154 Major Updates - Opus 4.8 is here! | DevelopersIO",
+      "source_url": "https://dev.classmethod.jp/en/articles/20260529-claude-code-updates-v2-1-154/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-05-30",
+      "last_date": "2026-05-30",
+      "appearances": 1
+    },
+    {
+      "id": 818,
+      "title": "Claude Code 2.1.154セキュリティ修正：`rm -rf $HOME`パスブロックのギャップと自動流出検知を強化",
+      "point": "重要なセキュリティ修正が2件。①`HOME`環境変数に末尾スラッシュが付いている場合に`rm -rf $HOME`が危険パスとしてブロックされないギャップを修正（ホームディレクトリ削除リスクを排除）。②Auto Modeの分類器がリポジトリ内容の一括転送などのデータ流出を検出する精度を向上。エージェントに広い権限を与えて運用している場合は特にv2.1.154への更新を推奨。",
+      "source_title": "Anthropic Ships Claude Opus 4.8 Alongside Dynamic Workflows - MarkTechPost",
+      "source_url": "https://www.marktechpost.com/2026/05/28/anthropic-ships-claude-opus-4-8-alongside-dynamic-workflows-and-cheaper-fast-mode-with-workflows-capped-at-1000-subagents/",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-05-30",
+      "last_date": "2026-05-30",
+      "appearances": 1
+    },
+    {
       "id": 797,
       "title": "Claude Code週次利用制限50%増（7月13日まで限定）",
       "point": "2026年5月から7月13日まで限定で、Claude Codeの週次利用制限が通常比50%増量された。大規模リファクタリング、並列セッション実験、新機能の検証など「使い倒す」タイミングとして活用したい。制限増加は自動適用で設定変更は不要。",
@@ -10214,6 +10364,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-30",
+      "highlights": [
+        "Claude Opus 4.8 正式リリース — SWE-bench Pro 69.2%・Fast Mode 2.5倍速・3倍安価、同価格で提供開始（5/28）",
+        "Dynamic Workflows（研究プレビュー） — 最大1,000サブエージェントを並列オーケストレーション、Claude Code 2.1.154で提供開始"
+      ]
+    },
+    {
       "date": "2026-05-29",
       "highlights": [
         "Claude Code週次利用制限50%増（7月13日まで限定） — Pro/Maxユーザーは大規模リファクタリングや並列セッション活用の絶好機",
@@ -10738,5 +10895,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-29T08:00:03.347796"
+  "generated_at": "2026-05-30T08:00:03.378651"
 }
