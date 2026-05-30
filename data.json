@@ -706,6 +706,19 @@
       "appearances": 6
     },
     {
+      "id": 831,
+      "title": "Claude Code v2.1.152（5/27）：`/code-review --fix` がレビュー後にワーキングツリーへ修正を直接適用",
+      "point": "v2.1.152 で `/code-review --fix` の挙動が更新された。レビュー完了後に「再利用・簡略化・効率化・抽象度」の観点で見つかった修正をワーキングツリーに直接適用するようになった。`/simplify` は `cleanup-only` なレビューを実行してそのまま修正まで完結する形に変更。バグ検出目的には `/code-review high` のように effort レベルを指定し、修正を含まないレポートのみ生成する使い方と使い分けるのが良い。",
+      "source_title": "Claude Code Changelog - Anthropic",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-31",
+      "last_date": "2026-05-31",
+      "appearances": 5
+    },
+    {
       "id": 785,
       "title": "Managed Agents Dreaming：過去セッションをバックグラウンドでレビューして記憶を蒸留",
       "point": "DreamingはManaged Agentsのスケジュール実行プロセスで、エージェントの過去セッションとメモリを自動レビューし、繰り返すミスや収束するワークフローを抽出してlong-term memoryに書き戻す。人手による再トレーニングなしでエージェントが自己改善するため、長期運用ほど恩恵が大きい。自動更新モードと人間レビューモードを選択可能。2026年5月6日より研究プレビュー中。",
@@ -4926,6 +4939,131 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 822,
+      "title": "Anthropic シリーズH 650億ドル調達：OpenAI超え・時価総額9650億ドルでIPO前最終ラウンドか",
+      "point": "2026年5月28日、AnthropicがシリーズHで650億ドルを調達し、時価総額が9650億ドルに到達。Altimeter Capital・Sequoia Capital・ Dragoneer などが主導し、Samsung・SK Hynix・Micronといった半導体戦略パートナーも参加。今月の月次収益ランレートは470億ドル超と報道されており、2026年2月時点の3800億ドル評価額から約2.5倍に跳ね上がった。IPO前の最後の資金調達になる可能性が高いとされる。Claude API利用者・企業展開を検討している組織にとって「Anthropicの長期存続性への懸念」は大幅に払拭された。",
+      "source_title": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
+      "source_url": "https://www.anthropic.com/news/series-h",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-05-31",
+      "last_date": "2026-05-31",
+      "appearances": 1
+    },
+    {
+      "id": 823,
+      "title": "Claude Code v2.1.158（5/30）：Bedrock・Vertex・FoundryでAuto modeをオプトイン対応",
+      "point": "Claude Code v2.1.158で、AWS Bedrock・Google Vertex AI・Microsoft Foundry 経由のユーザーも Auto mode が利用可能になった。有効化は環境変数 `CLAUDE_CODE_ENABLE_AUTO_MODE=1` を設定するだけ。対象モデルは Opus 4.7 および Opus 4.8。クラウド基盤経由で Claude Code をチーム展開している企業は、自律実行モードへの移行が容易になる。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026 - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-05-31",
+      "last_date": "2026-05-31",
+      "appearances": 1
+    },
+    {
+      "id": 824,
+      "title": "Claude Code v2.1.156（5/29）：Opus 4.8 思考ブロック修正 — API 400 エラーを解消",
+      "point": "v2.1.154（Opus 4.8 対応版）で発生した思考ブロック（thinking blocks）の改変による API 400 エラーを修正するホットフィックス。Opus 4.8 を使用中に「API errors」が出ていたユーザーはアップデートで解消される。Claude Code を最新に保つ重要性を改めて示した事例でもある（`claude update` で即時更新可能）。",
+      "source_title": "Claude Code Changelog - Anthropic",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-05-31",
+      "last_date": "2026-05-31",
+      "appearances": 1
+    },
+    {
+      "id": 825,
+      "title": "Claude Code v2.1.152（5/27）：Auto mode のオプトイン不要化 — モードピッカーにデフォルト表示",
+      "point": "v2.1.152 から Auto mode がオプトイン不要となり、VS Code などの IDE でもモードピッカーに常時表示されるようになった。以前はバイパス権限設定（bypass-permissions）が必要だったが、今後は新規セッション画面に説明付きの通知が表示される形に変更。Auto mode でどこまで自律実行させるかを `autoMode.hard_deny` で明示的に制限する運用が推奨される。",
+      "source_title": "Claude Code Updates by Anthropic - May 2026 - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-31",
+      "last_date": "2026-05-31",
+      "appearances": 1
+    },
+    {
+      "id": 826,
+      "title": "Claude Code v2.1.152（5/27）：`/reload-skills` でセッション中スキルを即リロード — 再起動不要",
+      "point": "新コマンド `/reload-skills` を使うとスキルディレクトリを再スキャンし、セッションを再起動せずに新しく追加・変更したスキルを即時有効化できる。`SessionStart` フックからも `reloadSkills: true` を返すことで、フック実行後に新しいスキルを同じセッションで利用可能にできる。スキルをイテレーティブに開発するワークフローで特に有効。",
+      "source_title": "Claude Code Changelog - Anthropic",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-31",
+      "last_date": "2026-05-31",
+      "appearances": 1
+    },
+    {
+      "id": 827,
+      "title": "Claude Code v2.1.152（5/27）：Skills フロントマターの `disallowed-tools` でツールをスキル実行中に制限",
+      "point": "スキル（SKILL.md）およびスラッシュコマンドのフロントマターに `disallowed-tools:` フィールドを追加することで、そのスキルがアクティブな間だけ特定のツールをモデルから除外できる。例：コードレビュースキルに `disallowed-tools: Write, Edit` を設定して書き込み操作を禁止し、読み取り専用のレビューのみを強制する使い方が典型。エージェント定義の `disallowedTools`（エージェント全体への設定）と組み合わせて多段階の権限制御が可能になる。",
+      "source_title": "Claude Code Changelog - Anthropic",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-05-31",
+      "last_date": "2026-05-31",
+      "appearances": 1
+    },
+    {
+      "id": 828,
+      "title": "Claude Code v2.1.153（5/28）：`/model` のデフォルト挙動が変更 — 選択が新規セッションのデフォルトに保存",
+      "point": "v2.1.153 で `/model` ピッカーの挙動が変更された。**選択したモデルがデフォルトとして保存される**ようになり（IDE の挙動に合わせた変更）、今のセッションのみ切り替えたい場合は `s` キーを使う。以前（v2.1.144〜）は逆で「デフォルト変更 = `d` キー、セッションのみ = 選択するだけ」だった。`keybindings.json` で `modelPicker:setAsDefault` をカスタマイズしていた場合は `modelPicker:thisSessionOnly` にリネームが必要。",
+      "source_title": "Claude Code Changelog - Anthropic",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-05-31",
+      "last_date": "2026-05-31",
+      "appearances": 1
+    },
+    {
+      "id": 829,
+      "title": "Claude Code v2.1.152（5/27）：`MessageDisplay` フックでアシスタントメッセージをリアルタイム変換・非表示化",
+      "point": "新フックイベント `MessageDisplay` が追加され、Claude のアシスタントメッセージが表示される直前にその内容を変換したり非表示にしたりできるようになった。用途例：特定キーワードを含む応答に警告バナーを付加する、機密情報が含まれる応答を端末に表示させない、出力スタイルをカスタムレンダラーに差し替えるなど。Enterprise 環境でのコンプライアンス対応や、チーム向けカスタムUIの実装に応用できる。",
+      "source_title": "Claude Code Changelog - Anthropic",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-05-31",
+      "last_date": "2026-05-31",
+      "appearances": 1
+    },
+    {
+      "id": 830,
+      "title": "Claude Code v2.1.153（5/28）：`claude agents` ディスパッチ入力でネイティブコマンド・スキルをオートコンプリート",
+      "point": "`claude agents` のディスパッチ入力（バックグラウンドエージェントへのコマンド送信欄）で、ネイティブスラッシュコマンドおよびバンドルスキルがオートコンプリートで表示されるようになった。以前はプロジェクトスキルのみが候補に出ていた。`/code-review`・`/workflows` などの組み込みコマンドも入力補完で呼び出せるため、エージェントへの指示ミスが減る。",
+      "source_title": "Claude Code Changelog - Anthropic",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-05-31",
+      "last_date": "2026-05-31",
+      "appearances": 1
     },
     {
       "id": 809,
@@ -10364,6 +10502,13 @@
   ],
   "daily": [
     {
+      "date": "2026-05-31",
+      "highlights": [
+        "Anthropic シリーズH 650億ドル調達 — OpenAIを超え時価総額9650億ドル、IPO前最後の資金調達と見られる大型ラウンド",
+        "Bedrock/Vertex/Foundry で Auto mode 正式対応（v2.1.158） — 環境変数1行でオプトイン、クラウド基盤経由のClaude Code利用者に待望の機能"
+      ]
+    },
+    {
       "date": "2026-05-30",
       "highlights": [
         "Claude Opus 4.8 正式リリース — SWE-bench Pro 69.2%・Fast Mode 2.5倍速・3倍安価、同価格で提供開始（5/28）",
@@ -10895,5 +11040,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-30T08:00:03.378651"
+  "generated_at": "2026-05-31T08:00:03.379187"
 }
