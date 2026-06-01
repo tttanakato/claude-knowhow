@@ -28,6 +28,17 @@
       "appearances": 18
     },
     {
+      "id": 844,
+      "title": "Claudeへの指示に「なぜやるか」の目的を明示して精度と一貫性を向上させる",
+      "point": "「〇〇を書いて」ではなく「〇〇を書いて（目的：△△のため）」と記述するだけで、Claudeはコンテキストに沿ったより適切な判断ができる。目的を伝えることでClaudeは制約の解釈・トーン・詳細度を自動調整する。「SNS投稿を30文字で書いて」より「エンジニア採用のためのLinkedIn投稿を30文字で書いて」の方が結果が一貫する。",
+      "source_title": "Prompting best practices - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "tags": [],
+      "first_date": "2026-06-01",
+      "last_date": "2026-06-01",
+      "appearances": 17
+    },
+    {
       "id": 305,
       "title": "Claudeへの指示に「なぜやるか」の理由を付け加えて精度を向上させる",
       "point": "指示文に「なぜその作業をするか」の文脈を1〜2文付け加えるだけでアウトプットの精度が向上する。例：「このコードをリファクタリングして」→「新しいチームメンバーが読みやすいように、このコードをリファクタリングして」。Claudeが目的を理解することで、単純な字義通り実行ではなく目的に沿った判断が働く。Opus 4.7の文字通り解釈傾向と組み合わせて使うと、「理由」が暗黙の文脈を補完する役割を果たし特に効果的。",
@@ -704,6 +715,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 843,
+      "title": "Claude Sonnet 4 / Opus 4 廃止（6/15）まで残り2週間：model IDを設定変数化して将来の移行コストを最小化",
+      "point": "2026年6月15日にClaude Sonnet 4・Claude Opus 4がAPIから退役する。残り約2週間。ハードコードされたモデルIDを環境変数（例：`MODEL_ID=claude-opus-4-8`）に移行することで、次回のモデル変更時の修正が1ヶ所で済む。移行先の推奨モデルはclaude-sonnet-4-6・claude-opus-4-7またはclaude-opus-4-8。今すぐ環境変数化してCI/CDをテストしておくことを推奨。",
+      "source_title": "Anthropic Claude Model Release Timeline - hidekazu-konishi.com",
+      "source_url": "https://hidekazu-konishi.com/entry/anthropic_claude_model_release_timeline.html",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-06-01",
+      "last_date": "2026-06-01",
+      "appearances": 5
     },
     {
       "id": 831,
@@ -1718,6 +1743,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 842,
+      "title": "Claudeサブスクリプション刷新（6/15）：Agent SDK・claude -pが月次クレジット別枠化 — 6/8のメールを見逃さず",
+      "point": "2026年6月15日から、Agent SDK・claude -p・Claude Code GitHub Actions経由の利用が専用の月次クレジットプールから引かれる。クレジット額はPro $20/月・Max5x $100/月・Max20x $200/月（使い切り・繰り越しなし）。Anthropicから6/8にクレジット請求メールが届く予定。対応しない場合はAgent SDKを使用するサードパーティアプリが制限される可能性がある。",
+      "source_title": "Anthropic's June 15 Billing Change: What Every Claude Code & Agent SDK User Must Do",
+      "source_url": "https://codersera.com/blog/anthropic-june-2026-billing-change-claude-code/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-06-01",
+      "last_date": "2026-06-01",
+      "appearances": 3
     },
     {
       "id": 790,
@@ -3079,6 +3119,49 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 835,
+      "title": "`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` 本日（6/1）削除：`/model claude-opus-4-6[1m]` → `/fast on` で移行",
+      "point": "Opus 4.6のFast Modeを有効化する環境変数 `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` が本日削除された。代替手順は①`/model claude-opus-4-6[1m]` でモデルを選択、②`/fast on` でFast Modeを有効化。CI/CDパイプラインや `.env` ファイルに旧変数が残っている場合は即刻削除が必要。起動エラーを防ぐために `claude --version` で最新版への更新も合わせて推奨。",
+      "source_title": "Claude Code Changelog - code.claude.com",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-01",
+      "last_date": "2026-06-01",
+      "appearances": 2
+    },
+    {
+      "id": 836,
+      "title": "Claude Code v2.1.157（5/29）：`.claude/skills`内プラグインがマーケットプレイス不要で自動読み込みに対応",
+      "point": "v2.1.157から、プロジェクトの `.claude/skills` ディレクトリに配置したプラグインがマーケットプレイスへの登録なしで自動読み込みされる。新コマンド `claude plugin init <name>` でディレクトリ内に新プラグインをスキャフォールドできる。ローカルで開発中のプラグインをすばやく試すワークフローが大幅に簡素化された。`/plugin` コマンドの引数もオートコンプリートに対応（サブコマンド・プラグイン名・マーケットプレイス候補）。",
+      "source_title": "Claude Code Changelog - code.claude.com",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-01",
+      "last_date": "2026-06-01",
+      "appearances": 2
+    },
+    {
+      "id": 841,
+      "title": "Code with Claude Tokyo（6/10）：Anthropicの開発者会議が東京初上陸 — 無料参加またはライブ配信",
+      "point": "Anthropicの開発者会議「Code with Claude 2026」が2026年6月10日（水）に東京で開催される。SF（5/6）・ロンドン（5/19）に続く3都市目の初の海外開催地。入場・ライブ配信ともに無料。Managed Agents・Dynamic Workflows・Claude Code最新機能などのハンズオンセッションが予定されており、日本の開発者コミュニティがAnthropicと直接交流できる機会。",
+      "source_title": "Code with Claude Conference 2026 - AI for Anything",
+      "source_url": "https://www.aiforanything.io/blog/code-with-claude-conference-anthropic-developer-events-2026",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-06-01",
+      "last_date": "2026-06-01",
+      "appearances": 2
     },
     {
       "id": 801,
@@ -4939,6 +5022,61 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 837,
+      "title": "`EnterWorktree` がセッション中途のWorktree切り替えに対応（v2.1.157）",
+      "point": "v2.1.157で `EnterWorktree` がClaudeが管理する複数Worktree間をセッション中に動的に切り替えられるようになった。以前はセッション開始時にWorktreeを固定する必要があったが、サブエージェントが展開中でも別のWorktreeへ移動できる。複数ブランチを並列開発するマルチWorktreeワークフローの柔軟性が大幅に向上し、コンテキストスイッチのコストが低減する。",
+      "source_title": "Claude Code Changelog - code.claude.com",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-06-01",
+      "last_date": "2026-06-01",
+      "appearances": 1
+    },
+    {
+      "id": 838,
+      "title": "Workflowキーワードトリガー設定（v2.1.157）：「workflow」という単語でDynamic Workflowsが誤起動しなくなる",
+      "point": "v2.1.157で `/config` に「Workflow keyword trigger」設定が追加された。この設定がオンの場合（デフォルト）、プロンプト中に「workflow」が含まれると自動でDynamic Workflowsが起動する。不要な場合はオフにすることで誤起動を防げる。バックスペースでキーワードを消せばその場でキャンセルも可能。日常会話や説明文で「workflow」を頻繁に使うユーザーはオフ設定推奨。",
+      "source_title": "Claude Code Changelog - code.claude.com",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-01",
+      "last_date": "2026-06-01",
+      "appearances": 1
+    },
+    {
+      "id": 839,
+      "title": "ロールプロンプティング：役割・タスク・文脈・形式・制約の5要素でClaudeを専門家として定義する",
+      "point": "Claudeへの指示に ROLE（役割）・TASK（タスク）・CONTEXT（文脈）・FORMAT（出力形式）・CONSTRAINTS（制約）の5要素を明示することで、出力の一貫性と専門性が大幅に向上する。「専門家として回答して」ではなく「SaaS企業向けFP&Aを15年経験したアナリストとして、経営層向けに箇条書き3点でまとめて」と定義するのが鍵。さらにXMLタグで各要素を囲むとClaudeの解釈精度が高まる。",
+      "source_title": "Giving Claude a role with a system prompt - Claude Docs",
+      "source_url": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/system-prompts",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-01",
+      "last_date": "2026-06-01",
+      "appearances": 1
+    },
+    {
+      "id": 840,
+      "title": "Claude Opus 4.8 が GitHub Copilot で正式GA（5/28）：CopilotユーザーもOpus 4.8の推論力を利用可能に",
+      "point": "2026年5月28日、Claude Opus 4.8がGitHub Copilotで正式一般公開された。GitHub Copilotユーザーはエディタ内で最新のClaude Opus 4.8（SWE-bench Pro 69.2%・USAMO 96.7%）を直接利用できるようになる。Claude Codeとは別のエコシステムで動作するため、既存のCopilotワークフローを維持しながらClaudeの高度な推論能力を享受できる点が特徴。",
+      "source_title": "Claude Opus 4.8 is generally available for GitHub Copilot - GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-05-28-claude-opus-4-8-is-generally-available-for-github-copilot/",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-06-01",
+      "last_date": "2026-06-01",
+      "appearances": 1
     },
     {
       "id": 822,
@@ -10502,6 +10640,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-01",
+      "highlights": [
+        "`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` 本日削除 — 本日6月1日に廃止確定。CI/CD・.envに旧変数が残っている場合は今すぐ移行が必要",
+        "Workflowキーワードトリガー制御（v2.1.157） — プロンプト中の「workflow」が誤ってDynamic Workflowsを起動する問題を `/config` で解消できるように"
+      ]
+    },
+    {
       "date": "2026-05-31",
       "highlights": [
         "Anthropic シリーズH 650億ドル調達 — OpenAIを超え時価総額9650億ドル、IPO前最後の資金調達と見られる大型ラウンド",
@@ -11040,5 +11185,5 @@
       ]
     }
   ],
-  "generated_at": "2026-05-31T08:00:03.379187"
+  "generated_at": "2026-06-01T12:44:26.609977"
 }
