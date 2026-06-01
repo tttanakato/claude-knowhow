@@ -1024,6 +1024,36 @@
       "appearances": 5
     },
     {
+      "id": 851,
+      "title": "Advisor Tool（beta）：高速Executor＋高知性Advisorの2モデルペアで長時間エージェントのコスト構造を最適化する",
+      "point": "Advisor Tool（ベータ）を使うと、Sonnet または Haiku がタスク全体を実行し、判断が困難な局面にのみ Opus が「アドバイザー」として中間介入するペアリングパターンが実現する。Opus を常時稼働させるよりコストを大幅削減しながら、高度な推論が必要な瞬間だけ Opus の知性を活用できる。API リクエスト時に `betas: [\"advisor-tool-2026-03-01\"]` ヘッダーの追加が必要。長時間のコーディングや文書処理エージェントでの効果が大きい。",
+      "source_title": "Advisor tool - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-06-02",
+      "last_date": "2026-06-02",
+      "appearances": 4
+    },
+    {
+      "id": 853,
+      "title": "Dynamic WorkflowsをJavaScriptファイルで定義：/workflowsコマンドでオーケストレーションを再利用可能なスクリプトに保存する",
+      "point": "Dynamic Workflows では、繰り返し発生する大規模タスクをJavaScriptファイルとして定義し、`/workflows` コマンドで管理・実行できる。従来の中央オーケストレーターを介さず直接サブエージェントが実行するためトークン消費が削減され、信頼性も向上する。一度定義したワークフローは複数プロジェクトで再利用可能。テスト・デプロイ・ドキュメント生成など定型オーケストレーション処理を持つチームに特に効果的。",
+      "source_title": "Claude Code Workflows: Reduce Token Tax and Automate Tasks",
+      "source_url": "https://www.geeky-gadgets.com/anthropic-claude-code-workflows/",
+      "tags": [
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-06-02",
+      "last_date": "2026-06-02",
+      "appearances": 4
+    },
+    {
       "id": 802,
       "title": "Claude Code Routinesのベストプラクティス",
       "point": "最初に設定すべきルーティンは「週次ドキュメントドリフトチェック」。最悪ケースが「更新漏れ」に留まるため安全に試せる。次点は「夜間イシュートリアージ」で、朝始業時にバックログが整理済みになる複利効果がある。ルーティンのプロンプトは自己完結型（背景・成功条件・検証方法を含む）で書くことが必須。",
@@ -1743,6 +1773,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 854,
+      "title": "プロンプトチェーン3段階（Discovery→Planning→Review）で大型プロジェクトの出力品質を底上げする",
+      "point": "大型プロジェクトには3段階のプロンプト連鎖が効果的。①Discovery：「私はXを構築しています。どんな質問をすべきですか？」→②Planning：「議論に基づき、アプローチを概説してください」→③Review：「構築したものを確認してください。何を見落としましたか？」の順に進める。各段階が前段階の成果を引き継ぎ、Claude が会話全体でコンテキストを維持するため、単一プロンプトと比べて最終品質が大幅に向上する。",
+      "source_title": "Claude AI Productivity 2026 | Work Faster, Output More, Stress Less",
+      "source_url": "https://marketinc.io/claude-ai-productivity/",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-02",
+      "last_date": "2026-06-02",
+      "appearances": 3
     },
     {
       "id": 842,
@@ -3119,6 +3162,34 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 849,
+      "title": "Claude Code v2.1.158（5/30）：Bedrock・Vertex・FoundryでAuto modeをオプトイン有効化",
+      "point": "v2.1.158 から `CLAUDE_CODE_ENABLE_AUTO_MODE=1` を設定することで、AWS Bedrock・Google Vertex AI・Microsoft Foundry 経由の Claude Code インスタンスでも Auto mode が利用可能になった（Opus 4.7/4.8 対応）。Auto mode は入力の複雑さに応じてエフォートを自動調整し、シンプルなタスクではトークンコストを削減しながら複雑な推論では高品質な出力を維持する。サードパーティクラウド環境での本番利用が大幅に改善される。",
+      "source_title": "Claude Code Updates & Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-06-02",
+      "last_date": "2026-06-02",
+      "appearances": 2
+    },
+    {
+      "id": 855,
+      "title": "10秒シンプル習慣：複雑なプロンプトを捨て「目的1文＋依頼」に切り替えることで生産性が向上する",
+      "point": "長い指示文を書く代わりに「目的: ○○のため」という1文を先頭に置いてからシンプルな依頼を続けるだけで、Claude は出力のトーン・詳細度・判断軸を自動調整する。この「10秒の意図明示」習慣は複雑な構造化プロンプトよりも一貫して高品質な出力を生み出すことが多く、特に反復的な業務タスクでの効果が高い。",
+      "source_title": "I've ditched complex prompts for this 10-second Claude habit to boost productivity",
+      "source_url": "https://www.tomsguide.com/ai/ive-ditched-complex-prompts-for-this-10-second-claude-habit-to-boost-productivity",
+      "tags": [
+        "プロンプト",
+        "生産性"
+      ],
+      "first_date": "2026-06-02",
+      "last_date": "2026-06-02",
+      "appearances": 2
     },
     {
       "id": 835,
@@ -5022,6 +5093,49 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 848,
+      "title": "security-guidanceプラグイン：コード変更を自動でセキュリティレビューし、脆弱性発見と修正を同セッションで完結",
+      "point": "Claude Code に security-guidance プラグインを追加すると、コード編集のたびに高速パターンチェックを実施し、各ターン終了時にモデルレビューを、コミット・プッシュ時に深いエージェントレビューを自動で実行する。脆弱性の検出と修正が同セッション内で完結するため、外部ツールに切り替えずにセキュアなコーディングワークフローを実現できる。`/plugins` コマンドから有効化可能。",
+      "source_title": "50 Claude Code Tips and Best Practices For Daily Use",
+      "source_url": "https://www.builder.io/blog/claude-code-tips-best-practices",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-02",
+      "last_date": "2026-06-02",
+      "appearances": 1
+    },
+    {
+      "id": 850,
+      "title": "Enterpriseコネクタへのカスタムロール権限設定（5/28）：コネクタとツール単位で部門別アクセスを細かく制御",
+      "point": "2026年5月28日のアップデートで、Enterpriseプランのカスタムロール機能がコネクタ権限まで拡張された。管理者はどのコネクタを・どのツール単位で・どのカスタムロールに割り当てるかを個別設定できる。たとえば「マーケティングチームには CRM コネクタのみ許可し、データ書き込みツールは禁止」といった細粒度の制御が可能。Admin設定 → カスタムロール → コネクタ権限から設定する。",
+      "source_title": "Release notes — Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-02",
+      "last_date": "2026-06-02",
+      "appearances": 1
+    },
+    {
+      "id": 852,
+      "title": "1会話1タスク原則：コンテキスト汚染を防ぐため、新トピックは必ず新しい会話で開始する",
+      "point": "複数の無関係なタスクを1つの会話に詰め込むと、以前のタスクのコンテキストが後続の指示精度を低下させる「コンテキスト汚染」が発生する。コンテキストウィンドウが満杯に近づくと Claude が初期指示を「忘れる」現象も起きやすい。新しいトピックには新しい会話を開始し、サブエージェントにリサーチを委任し、タスクを1点に集中することで、セッション全体を通じた出力品質が安定する。",
+      "source_title": "50 Claude Code Tips and Best Practices For Daily Use",
+      "source_url": "https://www.builder.io/blog/claude-code-tips-best-practices",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-02",
+      "last_date": "2026-06-02",
+      "appearances": 1
     },
     {
       "id": 837,
@@ -10640,6 +10754,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-02",
+      "highlights": [
+        "security-guidanceプラグイン — コード編集ごとにパターンチェック・コミット前に深いエージェントセキュリティレビューを自動実行",
+        "Enterpriseコネクタへのカスタムロール権限設定（5/28） — コネクタ・ツール単位でチーム別アクセス制御が可能に"
+      ]
+    },
+    {
       "date": "2026-06-01",
       "highlights": [
         "`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` 本日削除 — 本日6月1日に廃止確定。CI/CD・.envに旧変数が残っている場合は今すぐ移行が必要",
@@ -11185,5 +11306,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-01T12:44:26.609977"
+  "generated_at": "2026-06-02T08:00:04.435821"
 }
