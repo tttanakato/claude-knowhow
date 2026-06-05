@@ -1,6 +1,19 @@
 {
   "tips": [
     {
+      "id": 876,
+      "title": "Managed Agentsメモリ：イミュータブルバージョン管理と監査証跡の保持",
+      "point": "Claude Managed Agentsのメモリは変更のたびにイミュータブルなバージョンが生成され、監査証跡として機能する。「数字を下げても最大値が保持される」仕様に注意しつつ、TTLとmax_entriesを設定してトークン消費の肥大化を防ぐことが長期安定運用のカギ。Dreamingと組み合わせると自己改善サイクルが完成する。",
+      "source_title": "Using agent memory - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/managed-agents/memory",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-06",
+      "last_date": "2026-06-06",
+      "appearances": 21
+    },
+    {
       "id": 708,
       "title": "Claude Codeコスト最適化：コンテキスト最小化と明示的出力制御で使用量を大幅削減",
       "point": "「コンテキストを小さくすること」がClaude Codeコスト削減の核心。①必要な関数・エラーログのみ抽出し全ファイルを貼らない、②「Return only code」「Explain in 2 lines」のように出力量を明示的に指定する、③タスク切り替え時は必ず新セッションを開始してコンテキスト肥大化を防ぐ。これらを組み合わせた事例では使用トークン量が最大90%削減された。",
@@ -37,6 +50,19 @@
       "first_date": "2026-06-01",
       "last_date": "2026-06-01",
       "appearances": 17
+    },
+    {
+      "id": 874,
+      "title": "コンテキストエンジニアリング：プロンプトの先頭10%と末尾10%に最重要情報を配置",
+      "point": "Claudeのアテンションメカニズムはプロンプトの先頭と末尾の情報を最も重く扱う。長いプロンプトを書く場合、最重要な指示・制約・コンテキストを最初の10%と最後の10%に配置すると応答精度が向上する。中間部は補足情報や例示に使う。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-06",
+      "last_date": "2026-06-06",
+      "appearances": 16
     },
     {
       "id": 305,
@@ -113,6 +139,19 @@
       "appearances": 14
     },
     {
+      "id": 877,
+      "title": "XMLタグ構造化プロンプト：Markdownより高精度な出力分離をClaudeが特別訓練済み",
+      "point": "ClaudeはXML形式のタグを認識・尊重するよう特別にトレーニングされており、Markdownや平文の区切り文字より高い精度で情報を分離・処理できる。複数の入力（コード・指示・例示・制約）を扱うプロンプトでは `<instructions>` `<context>` `<examples>` `<constraints>` のようにXMLタグで囲むと出力の一貫性が大幅に向上する。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-06",
+      "last_date": "2026-06-06",
+      "appearances": 13
+    },
+    {
       "id": 775,
       "title": "コンテキストエンジニアリング：最小高信号トークン戦略でn²注意コストを抑制する",
       "point": "Anthropic公式解説の核心：LLMのTransformerアーキテクチャはn²のペアワイズ関係を処理するため、トークン数増加とともに注意精度は低下する（Context Rot）。コンテキストエンジニアリングの目標は「望む成果の可能性を最大化する最小の高信号トークンセット」を見つけること。冗長なツール出力や古い会話履歴を積極的に削除し、エージェントが本当に必要な情報のみをコンテキストに保持する。",
@@ -180,6 +219,37 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 870,
+      "title": "6月15日課金変更まであと9日：Agent SDK別クレジットプールへの移行準備",
+      "point": "6月15日からAgent SDK・`claude -p`（非対話モード）・Claude Code GitHub Actions・サードパーティアプリ経由の利用がサブスクリプション限度から切り離され、別の月次クレジットプールで課金される。Pro $20・Max 5x $100・Max 20x $200のプール上限を超えるとAPI単価で請求される。対応手順：①Anthropicからの請求確認メール（6/8頃）を見落とさずクレジットを受け取る、②「使用量クレジット」設定をオン/オフどちらにするか決める。",
+      "source_title": "Anthropic's June 15 Billing Change",
+      "source_url": "https://codersera.com/blog/anthropic-june-2026-billing-change-claude-code/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-06-06",
+      "last_date": "2026-06-06",
+      "appearances": 9
+    },
+    {
+      "id": 873,
+      "title": "Dreaming機能の最適設定：「成功定義→スケジュール→メモリ読み込み」の3ステップ",
+      "point": "Dreaming（Managed Agentsの自己改善機能）を機能させるには以下の3ステップが重要。①成功定義を先に用意する：Dreamingは「どのパターンが良いか」を判断するために成功の基準が必要。②スケジュールを設定する：多くの本番ワークフローでは「毎日」が適切なデフォルト。③エージェントのシステムプロンプトにメモリ読み込みステップを追加する：セッション開始時にメモリストアを取得しなければ蓄積された知識が活用されない。",
+      "source_title": "How to Set Up Claude Dreaming for Persistent Agent Memory",
+      "source_url": "https://www.mindstudio.ai/blog/claude-dreaming-persistent-agent-memory-setup-guide",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-06-06",
+      "last_date": "2026-06-06",
+      "appearances": 9
     },
     {
       "id": 755,
@@ -441,6 +511,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 875,
+      "title": "エフォートレベル5段階の実践使い分け：タスク別に最適なレベルを選ぶ",
+      "point": "Claude Code v2.1以降のエフォートレベルは低→高の順に `low / medium / high（旧デフォルト）/ xhigh（現デフォルト）/ max` の5段階。さらに `ultracode` で自動Dynamic Workflows起動が加わる。ルーティン作業はhigh、複雑な1回限りの問題はxhigh、大規模コードベース移行はultracode、と使い分けるとコスト効率が改善する。",
+      "source_title": "How to Use Claude Code Effort Levels",
+      "source_url": "https://www.mindstudio.ai/blog/claude-code-effort-levels-guide",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-06-06",
+      "last_date": "2026-06-06",
+      "appearances": 6
     },
     {
       "id": 803,
@@ -1022,6 +1105,22 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 872,
+      "title": "Dynamic Workflowsのコスト管理：最初はスコープを限定したタスクから始める",
+      "point": "Dynamic Workflowsは最大1,000サブエージェントを並列で起動できるが、通常のClaude Codeセッションよりも大幅にトークンを消費する。Anthropic自身も「まずは小さく絞ったタスクで感触を掴むこと」を推奨している。トークン消費量を把握してから本番の大規模タスクに適用するのが安全。",
+      "source_title": "Anthropic releases Opus 4.8 with new 'dynamic workflow' tool",
+      "source_url": "https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-06-06",
+      "last_date": "2026-06-06",
+      "appearances": 4
     },
     {
       "id": 851,
@@ -3164,6 +3263,30 @@
       "appearances": 3
     },
     {
+      "id": 869,
+      "title": "Enterpriseカスタムロールに管理者権限追加（6/2）",
+      "point": "既存のカスタムロールフレームワークに「管理者権限」が追加され、Ownerにしなくても請求やプライバシー管理の権限を特定メンバーに付与できるようになった。部門別の権限設計をしているEnterpriseチームは速やかに確認・設定したい。",
+      "source_title": "Release notes - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [],
+      "first_date": "2026-06-06",
+      "last_date": "2026-06-06",
+      "appearances": 2
+    },
+    {
+      "id": 871,
+      "title": "Ultracodeモード：`/effort ultracode` でセッション全体をxhigh+自動Dynamic Workflowsに設定",
+      "point": "`ultracode` はeffortをxhighに設定しつつ、実質的なタスクに対してDynamic Workflowsを自動的に起動させるショートカット設定。単一プロンプトにキーワード `ultracode` を書けばそのターンだけ有効にすることも可能。使用後はルーティン作業に戻る際に `/effort high` で元に戻すことを忘れずに。コスト・時間は増えるがコードベース規模の移行作業などに有効。",
+      "source_title": "ultracode & Effort Controls in Claude Code",
+      "source_url": "https://qcode.cc/en/claude-code-ultracode-guide",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-06",
+      "last_date": "2026-06-06",
+      "appearances": 2
+    },
+    {
       "id": 849,
       "title": "Claude Code v2.1.158（5/30）：Bedrock・Vertex・FoundryでAuto modeをオプトイン有効化",
       "point": "v2.1.158 から `CLAUDE_CODE_ENABLE_AUTO_MODE=1` を設定することで、AWS Bedrock・Google Vertex AI・Microsoft Foundry 経由の Claude Code インスタンスでも Auto mode が利用可能になった（Opus 4.7/4.8 対応）。Auto mode は入力の複雑さに応じてエフォートを自動調整し、シンプルなタスクではトークンコストを削減しながら複雑な推論では高品質な出力を維持する。サードパーティクラウド環境での本番利用が大幅に改善される。",
@@ -5093,6 +5216,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 868,
+      "title": "Claude Code v2.1.162：エージェント管理・JSON状態・Windowsビルドの安定化（6/4）",
+      "point": "v2.1.162では `claude agents` コマンドのエージェント一覧・バックグラウンド処理のJSON状態出力改善、パーミッション検証の信頼性向上、セッションハンドリングの安定化、Windows/ネイティブビルドの静かな起動など多数の polish が追加された。大規模エージェントを運用するチームは特に恩恵を受ける。",
+      "source_title": "Claude Code Updates by Anthropic - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-06-06",
+      "last_date": "2026-06-06",
+      "appearances": 1
     },
     {
       "id": 848,
@@ -10754,6 +10891,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-06",
+      "highlights": [
+        "6月15日課金変更まであと9日 — Agent SDK利用が別クレジットプールに分離。対応が必要なユーザーはメール確認と設定変更を今週中に完了",
+        "Claude Code v2.1.162リリース — エージェント管理・JSON状態・Windowsビルド等の安定化が多数改善"
+      ]
+    },
+    {
       "date": "2026-06-02",
       "highlights": [
         "security-guidanceプラグイン — コード編集ごとにパターンチェック・コミット前に深いエージェントセキュリティレビューを自動実行",
@@ -11306,5 +11450,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-05T08:00:03.398919"
+  "generated_at": "2026-06-06T08:00:04.098612"
 }
