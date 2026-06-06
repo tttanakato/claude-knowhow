@@ -108,6 +108,19 @@
       "appearances": 15
     },
     {
+      "id": 890,
+      "title": "XMLタグ構造化プロンプト：Markdownより高精度な出力分離",
+      "point": "指示・参考資料・出力例などを `<instructions>` `<context>` `<example>` のようにXMLタグで囲むと、Claudeが各要素を明確に区別して処理しやすくなる。Claudeはこの形式に特別訓練されており、長く複雑なプロンプトほど効果が高い。",
+      "source_title": "プロンプトエンジニアリング概要",
+      "source_url": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-07",
+      "last_date": "2026-06-07",
+      "appearances": 14
+    },
+    {
       "id": 745,
       "title": "コンテキストエンジニアリング2026：プロンプトを磨くより「前提ファイル」を整備する方がClaude活用効率が高い",
       "point": "2026年の実践知として、Claude使いこなしの重点は「プロンプトエンジニアリング」から「コンテキストエンジニアリング」へ移行している。毎回の会話でClaudeを再教育するのではなく、CLAUDE.md・about-me・voice-profileなどの「前提ファイル」をセッション前に読み込ませることで、ゼロスタートを避けて継続的な品質を担保する考え方。実用的な実装としては①CLAUDE.md（プロジェクト・ルール）②about-me（自分の役割・コンテキスト）③voice-profile（望むトーン・スタイル）の3ファイルを整備し、Cowork/Claude Codeのプロジェクト設定に追加するのが推奨パターン。",
@@ -219,6 +232,19 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 889,
+      "title": "Microsoft 365 アドインがGA：Excel・PowerPoint・Word",
+      "point": "Excel・PowerPoint・Word 向けの Claude アドインが一般提供（GA）に。Outlook は有料プランでパブリックベータとして利用可能になった。日常のオフィス文書作業にClaudeを直接組み込める。",
+      "source_title": "Claude Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-06-07",
+      "last_date": "2026-06-07",
+      "appearances": 9
     },
     {
       "id": 870,
@@ -404,6 +430,21 @@
       "appearances": 8
     },
     {
+      "id": 885,
+      "title": "6月15日課金変更：Agent SDK・claude -p が別クレジット枠へ",
+      "point": "6月15日から claude.ai で通常チャットする利用には変更はないが、スクリプトやプログラムから自動でClaudeを動かす使い方では新設の「Agent SDKクレジット」専用枠から消費される。自動化を多用する場合は事前に消費枠と運用を確認しておく。",
+      "source_title": "Release notes | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "API",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-06-07",
+      "last_date": "2026-06-07",
+      "appearances": 7
+    },
+    {
       "id": 805,
       "title": "6月15日課金変更準備チェックリスト",
       "point": "6月15日から課金が「対話型」「プログラマティック型」に分離。Agent SDK・`claude -p`・Claude Code GitHub Actions経由の利用は月額クレジット（Pro: $20、Max 5x: $100、Max 20x: $200）から引かれる。対応手順：①モデルIDを確認（旧IDは6/15で廃止）②SDKパッケージを更新③クレジットにオプトイン。従来のClaude Code CLIをターミナルで対話的に使う分は引き続き既存プランの制限内で利用可能。",
@@ -511,6 +552,33 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 886,
+      "title": "Claude Sonnet 4 / Opus 4 廃止（6月15日）：model ID を変数化して移行コストを最小化",
+      "point": "`claude-sonnet-4-20250514` と `claude-opus-4-20250514` は非推奨となり、Claude API での廃止は6月15日に予定。Sonnet 4.6・Opus 4.8 への移行が推奨される。コード内の model ID を設定変数化しておくと、将来の切り替えコストを下げられる。",
+      "source_title": "Claude Platform リリースノート",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-06-07",
+      "last_date": "2026-06-07",
+      "appearances": 6
+    },
+    {
+      "id": 888,
+      "title": "Project Glasswing 拡大と Claude Security 追加",
+      "point": "AnthropicがProject Glasswingを拡大し、Claude Mythos Preview へ約150の新組織にアクセスを開放。あわせてコードベーススキャンとパッチ提案を行う Claude Security を追加した。法人のセキュリティ運用にClaudeを組み込む流れが加速している。",
+      "source_title": "Claude Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-06-07",
+      "last_date": "2026-06-07",
+      "appearances": 6
     },
     {
       "id": 875,
@@ -798,6 +866,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 884,
+      "title": "Dynamic Workflows：複雑タスクを数百サブエージェントで並列処理",
+      "point": "Claude にワークフロー作成を依頼すると、オーケストレーションスクリプトを自動生成し作業をサブタスクへ分割、並列実行して結果を検証してから最終回答を提示する。広範なバグ調査・大規模移行・セキュリティ監査など単一エージェントには大きすぎるタスク向け。`/goal` は1エージェントを完了条件まで反復、Dynamic Workflows は多数を並列という使い分け。",
+      "source_title": "Introducing dynamic workflows in Claude Code",
+      "source_url": "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code",
+      "tags": [
+        "自動化",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-06-07",
+      "last_date": "2026-06-07",
+      "appearances": 5
     },
     {
       "id": 843,
@@ -3263,6 +3346,21 @@
       "appearances": 3
     },
     {
+      "id": 887,
+      "title": "security-guidance プラグイン：コード変更を自動でセキュリティレビュー",
+      "point": "Claude のコード変更を脆弱性観点でレビューし、同一セッション内で修正まで完結するプラグイン。各編集に高速なパターンチェック、ターン終了時にモデルレビュー、コミット/プッシュ時に深いエージェントレビューの3段構えで動作する。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "エージェント",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-07",
+      "last_date": "2026-06-07",
+      "appearances": 2
+    },
+    {
       "id": 869,
       "title": "Enterpriseカスタムロールに管理者権限追加（6/2）",
       "point": "既存のカスタムロールフレームワークに「管理者権限」が追加され、Ownerにしなくても請求やプライバシー管理の権限を特定メンバーに付与できるようになった。部門別の権限設計をしているEnterpriseチームは速やかに確認・設定したい。",
@@ -5216,6 +5314,49 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 881,
+      "title": "Claude Code v2.1.163：バージョンガードレールと `/plugin list`",
+      "point": "管理設定 `requiredMinimumVersion` / `requiredMaximumVersion` を指定すると、許可範囲外のバージョンでは起動を拒否し承認済みバージョンへ誘導する。企業の一括管理に有効。新コマンド `/plugin list`（`--enabled`/`--disabled` フィルタ対応）でインストール済みプラグインを確認できる。",
+      "source_title": "Claude Code CHANGELOG",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-07",
+      "last_date": "2026-06-07",
+      "appearances": 1
+    },
+    {
+      "id": 882,
+      "title": "Claude Code v2.1.161：並列ツール呼び出しの障害分離とメトリクスのラベル付け",
+      "point": "並列ツール呼び出しで Bash コマンドが1つ失敗しても、同一バッチ内の他の呼び出しがキャンセルされなくなり各ツールが独立して結果を返す。`OTEL_RESOURCE_ATTRIBUTES` の値がメトリクスのラベルに反映され、チームやリポジトリ単位で利用量を切り分けられる。`/mcp` は未サインインのコネクタを折りたたんで表示。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン",
+        "生産性"
+      ],
+      "first_date": "2026-06-07",
+      "last_date": "2026-06-07",
+      "appearances": 1
+    },
+    {
+      "id": 883,
+      "title": "Claude Code v2.1.160：危険なファイル書き込み前の確認プロンプト追加",
+      "point": "`.zshenv`・`.zlogin`・`.bash_login` などシェル起動ファイルや `~/.config/git/` への書き込み前に確認を挟むようになった。`acceptEdits` モードでもコード実行を許す設定ファイル（`.npmrc`・`.yarnrc`・`bunfig.toml`・`.bazelrc`・`.pre-commit-config.yaml`・`.devcontainer/` 等）への書き込み前に確認する。意図しないコマンド実行を防ぐ安全強化。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-06-07",
+      "last_date": "2026-06-07",
+      "appearances": 1
     },
     {
       "id": 868,
@@ -10891,6 +11032,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-07",
+      "highlights": [
+        "Claude Code v2.1.163 バージョンガードレール — `requiredMinimumVersion`/`requiredMaximumVersion` で組織が許可バージョン範囲外の起動を拒否でき、`/plugin list` でインストール済みプラグインを一覧化",
+        "6月15日課金変更まであと8日 — Agent SDK・`claude -p` が新設の月次クレジット別枠へ移行。自動化スクリプト利用者は今週中に消費枠を確認"
+      ]
+    },
+    {
       "date": "2026-06-06",
       "highlights": [
         "6月15日課金変更まであと9日 — Agent SDK利用が別クレジットプールに分離。対応が必要なユーザーはメール確認と設定変更を今週中に完了",
@@ -11450,5 +11598,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-06T08:00:04.098612"
+  "generated_at": "2026-06-07T08:00:03.520756"
 }
