@@ -108,6 +108,21 @@
       "appearances": 15
     },
     {
+      "id": 902,
+      "title": "コンテキストエンジニアリング：プロンプトより前提ファイル整備",
+      "point": "2026年はモデル品質が向上し、巧妙な言い回しよりタスク周辺の構造が成果を左右する。システムプロンプト・ファイル・メモリ・例示・役割設定を整える「コンテキストエンジニアリング」が、単発のプロンプト磨きより活用効率を高める。",
+      "source_title": "Claude best practices 2026: power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-08",
+      "last_date": "2026-06-08",
+      "appearances": 14
+    },
+    {
       "id": 890,
       "title": "XMLタグ構造化プロンプト：Markdownより高精度な出力分離",
       "point": "指示・参考資料・出力例などを `<instructions>` `<context>` `<example>` のようにXMLタグで囲むと、Claudeが各要素を明確に区別して処理しやすくなる。Claudeはこの形式に特別訓練されており、長く複雑なプロンプトほど効果が高い。",
@@ -234,6 +249,33 @@
       "appearances": 11
     },
     {
+      "id": 895,
+      "title": "Managed Agents サンドボックス＋プライベートMCP（公開β）",
+      "point": "Claude Managed Agentsが自分で管理するサンドボックス内で動作し、社内のプライベートMCPサーバーに接続できるように。ツール実行環境も到達先サービスも企業境界内で完結するため、機密データを扱う自律エージェントを安全に構築できる。",
+      "source_title": "Anthropic Release Notes - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-08",
+      "last_date": "2026-06-08",
+      "appearances": 10
+    },
+    {
+      "id": 903,
+      "title": "大きなタスクは「先にClaudeに質問させる」",
+      "point": "曖昧で大きなタスクは最小限のプロンプトから始め、Claudeにインタビューさせる。実装詳細・エッジケース・トレードオフなど見落としを先に質問させると、いきなり本番出力させるより最終品質が安定して高くなる。",
+      "source_title": "Claude AI Tips and Tricks: 25 Ways (2026)",
+      "source_url": "https://nexasphere.io/blog/claude-ai-tips-tricks-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-08",
+      "last_date": "2026-06-08",
+      "appearances": 9
+    },
+    {
       "id": 889,
       "title": "Microsoft 365 アドインがGA：Excel・PowerPoint・Word",
       "point": "Excel・PowerPoint・Word 向けの Claude アドインが一般提供（GA）に。Outlook は有料プランでパブリックベータとして利用可能になった。日常のオフィス文書作業にClaudeを直接組み込める。",
@@ -330,6 +372,50 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 894,
+      "title": "Dreaming：エージェントが実行間で学習する記憶キュレーション",
+      "point": "過去のエージェントセッションを定期的にレビューし、繰り返すミスや共有ワークフロー、チームの好みを抽出して記憶ストアに整理する新機能。実行と実行の合間にエージェントが自己改善する仕組みで、毎回ゼロからやり直す非効率を解消する。",
+      "source_title": "Code with Claude 2026: 5 New Agent Features",
+      "source_url": "https://www.mindstudio.ai/blog/code-with-claude-2026-new-agent-features",
+      "tags": [
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-06-08",
+      "last_date": "2026-06-08",
+      "appearances": 8
+    },
+    {
+      "id": 896,
+      "title": "マルチエージェント・オーケストレーション：並列専門サブエージェント",
+      "point": "リードエージェントが共有ファイルシステム上で複数の専門サブエージェントに並列委任。各サブはモデル・プロンプト・ツールを個別に持つ。重い調査やログ処理はサブの独立コンテキストで行わせ、要約だけをメインに返すと本体の文脈が汚れない。",
+      "source_title": "Claude Code Subagents: A 2026 Practical Guide",
+      "source_url": "https://www.tembo.io/blog/claude-code-subagents",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "モデル",
+        "生産性"
+      ],
+      "first_date": "2026-06-08",
+      "last_date": "2026-06-08",
+      "appearances": 8
+    },
+    {
+      "id": 898,
+      "title": "/context・/compactによる能動的コンテキスト管理",
+      "point": "`/context`でシステムプロンプト・ツール・メモリ・履歴のトークン内訳を確認。使用率が70〜75%に達したら自動圧縮を待たず手動で`/compact`を実行すると、長い返信やツール結果の「肥大化」を制御しながら整理できる。80%超なら再起動が安全。",
+      "source_title": "Claude Code Context Window: Optimize Token Usage",
+      "source_url": "https://claudefa.st/blog/guide/mechanics/context-management",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-06-08",
+      "last_date": "2026-06-08",
+      "appearances": 8
     },
     {
       "id": 594,
@@ -866,6 +952,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 901,
+      "title": "6月15日：サブスクのプログラム利用が別クレジットプールへ",
+      "point": "2026年6月15日からサブスクリプションプラン経由のプログラム的なClaude利用が、月次の別建てクレジットプールに移行する。Agent SDKやCLIで自動化している場合は課金体系の変更を事前に確認しておきたい。",
+      "source_title": "Claude Credit Overhaul 2026: What Changes on June 15",
+      "source_url": "https://www.digitalapplied.com/blog/anthropic-claude-credit-overhaul-june-15-2026",
+      "tags": [
+        "API",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-06-08",
+      "last_date": "2026-06-08",
+      "appearances": 5
     },
     {
       "id": 884,
@@ -1955,6 +2056,22 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 899,
+      "title": "レート制限の倍増：Claude Code・Opus APIを大規模に",
+      "point": "AnthropicがClaude Codeのレート制限を倍増、Claude OpusのAPI上限も引き上げ。開発者・スタートアップ・企業がスケール時の信頼性を確保しやすくなった。大規模なエージェント運用の障害になりにくくなる。",
+      "source_title": "Claude Updates by Anthropic - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-08",
+      "last_date": "2026-06-08",
+      "appearances": 3
     },
     {
       "id": 854,
@@ -3344,6 +3461,32 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 897,
+      "title": "ultracode設定：効率メニューからxhighを自動制御",
+      "point": "Claude Code専用の新設定「ultracode」がeffortメニューから利用可能に。エフォートレベルをxhighに設定しつつ、ワークフローを使うタイミングはClaude自身が自動判断する。複雑タスクの思考深度を手動調整する手間を削減できる。",
+      "source_title": "Claude Code Updates - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-06-08",
+      "last_date": "2026-06-08",
+      "appearances": 2
+    },
+    {
+      "id": 900,
+      "title": "web検索ツールがSEC財務データを拡充",
+      "point": "web検索ツールがより充実したSEC提出書類データを返すように。財務リサーチエージェント、決算分析、デューデリジェンスのワークフローを、引用付きの一次情報で根拠づけしやすくなった。",
+      "source_title": "Anthropic Release Notes - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-08",
+      "last_date": "2026-06-08",
+      "appearances": 2
     },
     {
       "id": 887,
@@ -11032,6 +11175,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-08",
+      "highlights": [
+        "Dreaming（記憶キュレーション） — 過去セッションを定期レビューしパターンを抽出、エージェントが実行間で賢くなる新機能",
+        "Managed Agents サンドボックスβ — 自前環境＋プライベートMCPでClaudeを自律エージェントとして安全に実行可能に"
+      ]
+    },
+    {
       "date": "2026-06-07",
       "highlights": [
         "Claude Code v2.1.163 バージョンガードレール — `requiredMinimumVersion`/`requiredMaximumVersion` で組織が許可バージョン範囲外の起動を拒否でき、`/plugin list` でインストール済みプラグインを一覧化",
@@ -11598,5 +11748,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-07T08:00:03.520756"
+  "generated_at": "2026-06-08T08:00:03.431804"
 }
