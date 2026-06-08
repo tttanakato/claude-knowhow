@@ -516,6 +516,19 @@
       "appearances": 8
     },
     {
+      "id": 911,
+      "title": "ポジティブ指示：禁止形の羅列より「文脈付き肯定形」がOpus 4.8に効く",
+      "point": "Opus 4.8は否定の羅列より、文脈を伴った肯定形の指示に顕著に反応する。「〜するな」を並べるより「〜してほしい、なぜなら〜」と伝える方が指示遵守が安定する。ALL-CAPSや「NEVER EVER」のような強調はOpus 4.xにはむしろ逆効果で、簡潔な記述で十分。",
+      "source_title": "How to Prompt Claude Opus 4.8 Differently",
+      "source_url": "https://www.mindstudio.ai/blog/how-to-prompt-claude-opus-4-8",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-09",
+      "last_date": "2026-06-09",
+      "appearances": 7
+    },
+    {
       "id": 885,
       "title": "6月15日課金変更：Agent SDK・claude -p が別クレジット枠へ",
       "point": "6月15日から claude.ai で通常チャットする利用には変更はないが、スクリプトやプログラムから自動でClaudeを動かす使い方では新設の「Agent SDKクレジット」専用枠から消費される。自動化を多用する場合は事前に消費枠と運用を確認しておく。",
@@ -638,6 +651,49 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 907,
+      "title": "Dynamic Workflows実践：スコープ・出力形式・検証ルールを明確化する",
+      "point": "6/2公開のDynamic Workflows（リサーチプレビュー）は数十〜数百の並列サブエージェントを1セッションで走らせる。「アプリを改善して」のような曖昧な指示はサブエージェントが収束せずトークンを浪費するため、スコープ・出力形式・検証ルール・編集ポリシーを明示し、callsiteや失敗テスト単位でタスクを分割するのがコツ。最初は範囲を絞ったタスクで使用感を掴むことが推奨。",
+      "source_title": "Introducing dynamic workflows in Claude Code",
+      "source_url": "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-06-09",
+      "last_date": "2026-06-09",
+      "appearances": 6
+    },
+    {
+      "id": 910,
+      "title": "effortは「プロンプトの増幅器」：誤った指示はMaxでも高コストな誤答になる",
+      "point": "effortはプロンプトを増幅するだけで置き換えはしない。悪い指示をMaxで投げると「間違った問いへの丁寧で高価な答え」が返る。max/xhigh運用時はサブエージェントとツール呼び出しの思考余地を確保するため、max output token予算を大きめに設定するのが重要。",
+      "source_title": "Effort - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/effort",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-06-09",
+      "last_date": "2026-06-09",
+      "appearances": 6
+    },
+    {
+      "id": 913,
+      "title": "Managed Agents：自社管理サンドボックス＋プライベートMCP接続",
+      "point": "Claude Managed Agentsが、ユーザーが管理するサンドボックス内で動作し、社内プライベートMCPサーバーに接続できるようになった。エージェントがツールを実行する環境も、到達先サービスも企業の確立した境界内で稼働するため、機密データを外部に出さず自律エージェントを運用できる。AWS上のClaude PlatformではWebhook・マルチエージェントオーケストレーション・セルフホストサンドボックスも提供開始。",
+      "source_title": "Release notes | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "自動化",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-09",
+      "last_date": "2026-06-09",
+      "appearances": 6
     },
     {
       "id": 886,
@@ -952,6 +1008,34 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 909,
+      "title": "Opus 4.8のeffort 5段階を使い分ける：Low / Medium / High / Max / Ultra Code",
+      "point": "Opus 4.8は適応的思考を採用し、思考深度をeffortパラメータで制御する。5段階（Low/Medium/High/Max/Ultra Code）があり、高設定ほど頻繁かつ深く思考し品質が上がるが応答は遅くレート上限の消費も早い。複雑な問題で推論が浅いと感じたら、プロンプトを小細工するよりeffortを上げるのが正攻法。",
+      "source_title": "Claude Opus 4.8 Effort Levels Explained",
+      "source_url": "https://www.mindstudio.ai/blog/claude-opus-4-8-effort-levels-explained",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-09",
+      "last_date": "2026-06-09",
+      "appearances": 5
+    },
+    {
+      "id": 912,
+      "title": "Claude for Microsoft 365 OutlookパブリックベータでInboxトリアージ",
+      "point": "5/7にOutlook連携が全有料プランでパブリックベータ開始（招待不要）。未読受信箱を「要対応／Claude処理可／ノイズ」に仕分け、自分の文体で返信・全員返信・転送の下書きを未送信状態で生成、長いスレッドを決定事項・未決事項・担当者付きで要約する。Excel・Word・PowerPoint・Outlook間で会話コンテキストが継続する。ベータは監査ログ・Compliance API対象外なので送信前確認は必須。",
+      "source_title": "Collaborate with Claude across Excel, PowerPoint, Word and Outlook",
+      "source_url": "https://claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-06-09",
+      "last_date": "2026-06-09",
+      "appearances": 5
     },
     {
       "id": 901,
@@ -1289,6 +1373,19 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 908,
+      "title": "ultracodeモード：effortをxhighに固定し重要タスクのみで使う",
+      "point": "Claude Code固有設定の「ultracode」をオンにするとeffortレベルがxhighに設定され、最難関タスクに最大の推論力を投入できる。ただし常時有効化はトークン消費が大幅増となるため、重要タスク限定で使うのが鉄則。Dynamic Workflows利用時はauto modeも併用すると体験が向上する。",
+      "source_title": "Orchestrate subagents at scale with dynamic workflows",
+      "source_url": "https://code.claude.com/docs/en/workflows",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-06-09",
+      "last_date": "2026-06-09",
+      "appearances": 4
     },
     {
       "id": 872,
@@ -2056,6 +2153,17 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 914,
+      "title": "Enterpriseカスタムロールにadmin権限を委譲できる",
+      "point": "Enterpriseプランで、拡張されたカスタムロール枠組みを通じて、Owner権限を付与せずにメンバーへ請求情報やプライバシー設定へのアクセスを委譲できるようになった。最小権限の原則を保ちながら管理業務を分担でき、ガバナンス設計の柔軟性が増す。",
+      "source_title": "Release notes | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [],
+      "first_date": "2026-06-09",
+      "last_date": "2026-06-09",
+      "appearances": 3
     },
     {
       "id": 899,
@@ -5457,6 +5565,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 915,
+      "title": "Web検索ツールがSEC開示データを拡充：金融リサーチの根拠を強化",
+      "point": "Claude Platformのweb検索ツールが、より richな SEC開示（filing）データを返すようになった。財務リサーチエージェント・決算分析・デューデリジェンスのワークフローを、引用付きで一次情報に根拠づけしやすくなる。出典付きで検証できるため、金融分野のエージェント構築で信頼性が向上する。",
+      "source_title": "Anthropic Release Notes - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-09",
+      "last_date": "2026-06-09",
+      "appearances": 1
     },
     {
       "id": 881,
@@ -11175,6 +11296,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-09",
+      "highlights": [
+        "Dynamic Workflows実践のコツ — スコープ・出力形式・検証ルールを明確化すれば並列サブエージェントが収束し、トークン浪費を防げる",
+        "Managed Agentsの自社管理サンドボックス — エージェントの実行環境と接続先MCPを企業境界内で完結させ、機密データを外に出さず自律処理できる"
+      ]
+    },
+    {
       "date": "2026-06-08",
       "highlights": [
         "Dreaming（記憶キュレーション） — 過去セッションを定期レビューしパターンを抽出、エージェントが実行間で賢くなる新機能",
@@ -11748,5 +11876,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-08T08:00:03.431804"
+  "generated_at": "2026-06-09T08:00:03.457758"
 }
