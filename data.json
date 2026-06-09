@@ -93,6 +93,21 @@
       "appearances": 16
     },
     {
+      "id": 925,
+      "title": "コンテキストエンジニアリング：プロンプトより前提整備が効く",
+      "point": "2026年はプロンプトの言い回しより、システムプロンプト・ファイル・メモリ・例示・役割設定・制約といった「タスクを取り巻く構造」の整備が成果を左右する。モデル性能の向上で構造の重要度が相対的に増した。",
+      "source_title": "Claude best practices 2026: power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-10",
+      "last_date": "2026-06-10",
+      "appearances": 15
+    },
+    {
       "id": 706,
       "title": "セルフホストサンドボックス公開ベータ：機密インフラとManaged Agentsを分離運用",
       "point": "Managed Agentsのセルフホストサンドボックスが公開ベータに移行。機密ファイル・内部パッケージ・プライベートサービスを自社インフラ上で実行しながら、エージェントループはAnthropicインフラ上に維持できる。Anthropicインフラ不要でツール実行環境を自社管理できるのが最大の特徴。",
@@ -247,6 +262,19 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 927,
+      "title": "インタビュー先行プロンプト：実行前にClaudeに質問させる",
+      "point": "複雑なタスクでは最小限の指示から始め、まずClaudeに自分を「インタビュー」させる。実装詳細・エッジケース・トレードオフなど見落としを引き出してから着手する方が、最終成果の品質が安定して高い。",
+      "source_title": "Claude AI Tips and Tricks: 25 Ways (2026)",
+      "source_url": "https://nexasphere.io/blog/claude-ai-tips-tricks-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-10",
+      "last_date": "2026-06-10",
+      "appearances": 10
     },
     {
       "id": 895,
@@ -653,6 +681,20 @@
       "appearances": 7
     },
     {
+      "id": 924,
+      "title": "Claude Platform on AWS：Console利用が可能に",
+      "point": "AWS版Claude Platformの利用者がAnthropicの開発環境Consoleにアクセス可能に。プロンプト改善ツール・プロンプト生成・評価ツールをAWS課金統合のまま利用できる。",
+      "source_title": "Anthropic Release Notes - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-06-10",
+      "last_date": "2026-06-10",
+      "appearances": 6
+    },
+    {
       "id": 907,
       "title": "Dynamic Workflows実践：スコープ・出力形式・検証ルールを明確化する",
       "point": "6/2公開のDynamic Workflows（リサーチプレビュー）は数十〜数百の並列サブエージェントを1セッションで走らせる。「アプリを改善して」のような曖昧な指示はサブエージェントが収束せずトークンを浪費するため、スコープ・出力形式・検証ルール・編集ポリシーを明示し、callsiteや失敗テスト単位でタスクを分割するのがコツ。最初は範囲を絞ったタスクで使用感を掴むことが推奨。",
@@ -1008,6 +1050,32 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 922,
+      "title": "Advisorツール パブリックベータ：実行役と助言役のモデル分離",
+      "point": "高速な実行モデルに、より高知能なアドバイザーモデルが生成途中で戦略的助言を与える構成。長期視野のエージェント処理でコストを抑えつつ判断品質を保てる。",
+      "source_title": "Anthropic Release Notes - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-06-10",
+      "last_date": "2026-06-10",
+      "appearances": 5
+    },
+    {
+      "id": 926,
+      "title": "持続的コンテキスト3ファイル戦略：自分仕様をClaudeに常時読ませる",
+      "point": "毎セッション読み込ませる3ファイル（自分の役割と作業を記すidentity、思考と文体を捉えるvoice-profile、避けるべき語・構造を列挙するanti-AI-writing）を用意すると、出力の一貫性と自分らしさが安定する。",
+      "source_title": "How to Master Claude AI: 2026 Cheat Sheet",
+      "source_url": "https://medium.com/data-and-beyond/how-to-master-claude-ai-in-5-minutes-2026-updated-cheat-sheet-a72a98edce8c",
+      "tags": [],
+      "first_date": "2026-06-10",
+      "last_date": "2026-06-10",
+      "appearances": 5
     },
     {
       "id": 909,
@@ -1373,6 +1441,17 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 923,
+      "title": "Web検索ツールがSEC開示データを拡充",
+      "point": "Web検索ツールがSEC（米証券取引委員会）の開示情報をより充実して返すように。金融リサーチ・決算分析・デューデリジェンスを一次資料と引用付きで根拠付けやすくなった。",
+      "source_title": "Anthropic Release Notes - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [],
+      "first_date": "2026-06-10",
+      "last_date": "2026-06-10",
+      "appearances": 4
     },
     {
       "id": 908,
@@ -3571,6 +3650,19 @@
       "appearances": 3
     },
     {
+      "id": 921,
+      "title": "Claude Code deny-ruleグロブ拡張：権限制御を柔軟化",
+      "point": "拒否ルールのグロブパターン対応が拡充され、生成ファイルや機密ディレクトリへの編集をパターン単位でまとめてブロックしやすくなった。セッション間メッセージのセキュリティも強化。",
+      "source_title": "Claude Code Updates - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-06-10",
+      "last_date": "2026-06-10",
+      "appearances": 2
+    },
+    {
       "id": 897,
       "title": "ultracode設定：効率メニューからxhighを自動制御",
       "point": "Claude Code専用の新設定「ultracode」がeffortメニューから利用可能に。エフォートレベルをxhighに設定しつつ、ワークフローを使うタイミングはClaude自身が自動判断する。複雑タスクの思考深度を手動調整する手間を削減できる。",
@@ -5565,6 +5657,32 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 919,
+      "title": "Foundation Modelsフレームワーク対応：Apple開発者向けSwiftパッケージ",
+      "point": "型付きSwift出力をそのままClaudeに渡し、多段推論・コード生成・Web検索・コード実行・ストリーミング応答をSwiftUIで扱える。iOS 27・iPadOS 27・macOS 27・visionOS 27・watchOS 27に対応。",
+      "source_title": "Anthropic Release Notes - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [],
+      "first_date": "2026-06-10",
+      "last_date": "2026-06-10",
+      "appearances": 1
+    },
+    {
+      "id": 920,
+      "title": "Claude Codeフォールバックモデル：主モデル障害時に自動退避",
+      "point": "主モデルが利用不可・過負荷の際に予備モデルへ自動切替する機能が追加。長時間のエージェント作業が途中で止まりにくくなり、信頼性が向上する。",
+      "source_title": "Claude Code Updates - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-10",
+      "last_date": "2026-06-10",
+      "appearances": 1
     },
     {
       "id": 915,
@@ -11296,6 +11414,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-10",
+      "highlights": [
+        "Foundation Modelsフレームワーク対応 — Apple純正のSwiftパッケージでClaudeの多段推論やコード生成をSwiftUIから直接呼び出せるように",
+        "Advisorツール パブリックベータ — 高速な実行モデルと高知能なアドバイザーモデルをペアにし、長尺エージェント処理を生成途中で軌道修正"
+      ]
+    },
+    {
       "date": "2026-06-09",
       "highlights": [
         "Dynamic Workflows実践のコツ — スコープ・出力形式・検証ルールを明確化すれば並列サブエージェントが収束し、トークン浪費を防げる",
@@ -11876,5 +12001,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-09T08:00:03.457758"
+  "generated_at": "2026-06-10T08:00:03.500634"
 }
