@@ -182,6 +182,20 @@
       "appearances": 14
     },
     {
+      "id": 934,
+      "title": "effortがFable 5の主要制御ノブ：低effortでも旧モデルの高effortを上回る",
+      "point": "公式プロンプトガイドによると、Fable 5では`effort`が知性・レイテンシ・コストを制御する主パラメータ。多くのタスクは`high`で開始し、最重要タスクのみ`xhigh`、定型作業は`medium`/`low`を推奨。Fable 5の低effortが旧モデルの高effortを上回る場合があるため、移行時に全タスクを最大に振る必要はない。スコープ暴走防止に「タスクに必要な範囲を超えた機能追加・リファクタリングはしない」の一文が有効。",
+      "source_title": "Claude Fable 5 Prompting Guide: Migration Notes（KnightLi Blog）",
+      "source_url": "https://knightli.com/en/2026/06/10/claude-fable-5-prompting-guide/",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-11",
+      "last_date": "2026-06-11",
+      "appearances": 13
+    },
+    {
       "id": 877,
       "title": "XMLタグ構造化プロンプト：Markdownより高精度な出力分離をClaudeが特別訓練済み",
       "point": "ClaudeはXML形式のタグを認識・尊重するよう特別にトレーニングされており、Markdownや平文の区切り文字より高い精度で情報を分離・処理できる。複数の入力（コード・指示・例示・制約）を扱うプロンプトでは `<instructions>` `<context>` `<examples>` `<constraints>` のようにXMLタグで囲むと出力の一貫性が大幅に向上する。",
@@ -262,6 +276,19 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 933,
+      "title": "「お守り注意書き」を捨てる：細かな指示より定性的フィードバックが効く",
+      "point": "「必ず確認してね」「ミスしないで」といったお守り的注意書きはFable 5には不要。報告前に自分の作業を自分でレビューする設計のため、代わりに「構成は良い。例え話が硬いので友達に話すようなゆるい例えに」のような感想ベースの定性フィードバックが最も効く。Anthropicからの公式ガイドメールでも「細かな指示よりも定性的なフィードバックの方が効果的」と明言されている。",
+      "source_title": "Claude最強モデル「Fable 5」もったいない使い方と正しい使い方（note/Tinkly）",
+      "source_url": "https://note.com/jake_k547/n/nfac098796460",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-06-11",
+      "last_date": "2026-06-11",
+      "appearances": 10
     },
     {
       "id": 927,
@@ -542,6 +569,19 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 931,
+      "title": "Claude Fable 5一般公開：Mythosクラスの知性を安全装置付きで開放",
+      "point": "6月9日発表のFable 5は、これまで承認組織限定だったMythosクラスモデルを安全機構付きで一般提供する初のモデル。100万トークンコンテキスト・最大12.8万トークン出力に対応し、Stripeの5,000万行コード移行を1日で完了、画像のみでポケモンをクリアするなど長時間自律タスクで他モデルとの差が開く設計。高リスク分野（サイバーセキュリティ等）の質問は5%未満の頻度でOpus 4.8が代理回答する。",
+      "source_title": "Claude Mythos正式版とFable 5が一般公開（GIGAZINE）",
+      "source_url": "https://gigazine.net/gsc_news/en/20260610-claude-mythos-fable/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-11",
+      "last_date": "2026-06-11",
+      "appearances": 7
     },
     {
       "id": 911,
@@ -1050,6 +1090,33 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 932,
+      "title": "Fable 5委任プロンプト3点セット：「ゴール・完成の条件・任せる範囲」だけ渡す",
+      "point": "Fable 5に手順を細かく指示するのは「F1カーでコンビニに行く」使い方。「まず○○して、次に△△して」の往復をやめ、①ゴール（何を完成させるか）②完成の条件（読者・分量・締めの形式など）③任せる範囲（構成・トーンはお任せ等）の3点セットで一括依頼する。Claude Codeなら`/goal`併用で完成条件を満たすまで自動継続する。大きな塊で1回依頼する方が、細かく10回往復するより質もコスパも上。",
+      "source_title": "Claude最強モデル「Fable 5」もったいない使い方と正しい使い方（note/Tinkly）",
+      "source_url": "https://note.com/jake_k547/n/nfac098796460",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-06-11",
+      "last_date": "2026-06-11",
+      "appearances": 5
+    },
+    {
+      "id": 938,
+      "title": "メモファイルを持たせて長期タスク性能を引き上げる：伸び幅がOpus 4.8の3倍",
+      "point": "公式検証のゲームプレイ実験で、メモを書き残せるファイルを持たせるとFable 5の性能の伸び幅がOpus 4.8の3倍になった。長い作業の冒頭に「分かったこと・決めたこと・残りタスクをファイルにメモしながら進めて」と一言添えるだけで効果がある。公式ガイドも「1ファイル1教訓・先頭に1行サマリ・チャット履歴のコピーではなく再利用可能な教訓を保存」というメモリ運用ルールを推奨している。",
+      "source_title": "Claude最強モデル「Fable 5」もったいない使い方と正しい使い方（note/Tinkly）",
+      "source_url": "https://note.com/jake_k547/n/nfac098796460",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-11",
+      "last_date": "2026-06-11",
+      "appearances": 5
     },
     {
       "id": 922,
@@ -2232,6 +2299,22 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 940,
+      "title": "Code with Claude: Extended Tokyo 本日開催：個人開発者向け拡張イベント",
+      "point": "6月10日のCode with Claude Tokyo本会に続き、本日6月11日に個人開発者・アーリーステージ創業者向けの第2弾イベント「Code with Claude: Extended」が東京で開催される。Fable 5リリース直後のタイミングで、最新のエージェント開発・Claude Code活用の情報が共有される見込み。日本のデベロッパーコミュニティ向けにAnthropicが連日イベントを展開するのは初。",
+      "source_title": "Code with Claude: Extended Tokyo — June 11, 2026（Anthropic）",
+      "source_url": "https://claude.com/code-with-claude/tokyo-extended",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-06-11",
+      "last_date": "2026-06-11",
+      "appearances": 3
     },
     {
       "id": 914,
@@ -5657,6 +5740,62 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 935,
+      "title": "進捗報告を「ツール結果の証拠」で裏付けさせる",
+      "point": "長時間エージェント作業では、ツール結果の裏付けがない楽観的な進捗報告が混入しやすい。公式ガイドは「報告前に各主張をセッション内のツール結果と突き合わせ、証拠のある作業のみ報告。未検証は未検証と明示、テスト失敗は失敗出力を報告」という制約をプロンプトに入れることを推奨。追跡・レビュー可能な進捗報告は長期リサーチやデータ処理エージェントで特に重要。",
+      "source_title": "Claude Fable 5 Prompting Guide: Migration Notes（KnightLi Blog）",
+      "source_url": "https://knightli.com/en/2026/06/10/claude-fable-5-prompting-guide/",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-06-11",
+      "last_date": "2026-06-11",
+      "appearances": 1
+    },
+    {
+      "id": 936,
+      "title": "行動境界の明示：「評価のみ」か「実行可」かをプロンプトで定義する",
+      "point": "Fable 5は能動性が高く、頼んでいないメール下書きやバックアップブランチ作成など追加行動を取ることがある。「ユーザーが問題を説明・質問しているだけのときは評価の報告のみで止まり、修正は適用しない。システム状態を変えるコマンドの前に証拠がその行動を支持するか確認する」のように、いつ評価のみで、いつ行動してよいかを明示的に区切る。モデルが有能になるほど権限定義の明確さが重要になる。",
+      "source_title": "Claude Fable 5 Prompting Guide: Migration Notes（KnightLi Blog）",
+      "source_url": "https://knightli.com/en/2026/06/10/claude-fable-5-prompting-guide/",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-11",
+      "last_date": "2026-06-11",
+      "appearances": 1
+    },
+    {
+      "id": 937,
+      "title": "内部推論の再現要求はNG：reasoning_extraction拒否でOpus 4.8へフォールバック",
+      "point": "旧プロンプトやスキルに「思考過程を見せて」「推論を繰り返して」という指示が残っていると、Fable 5では`reasoning_extraction`拒否カテゴリが発動し、Opus 4.8への切り替えが増える。推論の可視化が必要なら通常テキストでなく構造化`thinking`ブロックを読む設計に変更する。長時間タスクの進捗表示には`send_to_user`のような専用ツールを作り、実行を中断せず逐語表示メッセージを送らせるのが推奨パターン。",
+      "source_title": "Claude Fable 5 Prompting Guide: Migration Notes（KnightLi Blog）",
+      "source_url": "https://knightli.com/en/2026/06/10/claude-fable-5-prompting-guide/",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-11",
+      "last_date": "2026-06-11",
+      "appearances": 1
+    },
+    {
+      "id": 939,
+      "title": "Fable 5はサブスク枠内で6/22まで利用可：ただし消費量は大きい",
+      "point": "6月22日までPro/Max/Teamプランのサブスク利用枠内で追加料金なしにFable 5を試せる（6/23以降は前払い式の使用クレジットに移行予定、容量確保後のサブスク復帰が予告）。実測ではMAX 5xプランで思考レベル高の簡単なタスク1回につき5時間枠の4〜6%を消費し、Opus 4.8より重い。単発質問・翻訳・雑談はSonnet/Opusに回し、Fable 5の枠は大物タスクに温存するのが賢い使い方。API価格は入力$10/出力$50（100万トークンあたり）。",
+      "source_title": "Claude最強モデル「Fable 5」もったいない使い方と正しい使い方（note/Tinkly）",
+      "source_url": "https://note.com/jake_k547/n/nfac098796460",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-06-11",
+      "last_date": "2026-06-11",
+      "appearances": 1
     },
     {
       "id": 919,
@@ -11414,6 +11553,14 @@
   ],
   "daily": [
     {
+      "date": "2026-06-11",
+      "highlights": [
+        "Claude Fable 5の正しい使い方が判明 — 「ゴール・完成の条件・任せる範囲」の3点セットで丸ごと委任するのが正解。短い質問の往復は性能の9割を捨てる使い方",
+        "Anthropic公式Fable 5プロンプトガイド公開 — effort設計・証拠ベース進捗報告・行動境界の明示など、Opus 4.8からの移行ポイントを網羅",
+        "Code with Claude: Extended Tokyo 本日開催 — 個人開発者・アーリーステージ創業者向けの拡張イベントが東京で開催"
+      ]
+    },
+    {
       "date": "2026-06-10",
       "highlights": [
         "Foundation Modelsフレームワーク対応 — Apple純正のSwiftパッケージでClaudeの多段推論やコード生成をSwiftUIから直接呼び出せるように",
@@ -12001,5 +12148,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-10T08:00:03.500634"
+  "generated_at": "2026-06-11T08:00:03.386934"
 }
