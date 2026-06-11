@@ -41,6 +41,19 @@
       "appearances": 18
     },
     {
+      "id": 946,
+      "title": "リクエストだけでなく「理由」を伝える",
+      "point": "Fable 5は依頼の背後にある意図を理解しているとき、タスクを関連情報に結びつけてより良い成果を出す。公式推奨フォーマットは「私は［誰のための］［大きなタスク］に取り組んでいる。彼らには［出力が可能にすること］が必要。それを踏まえて：［依頼］」。複数ワークストリームを扱う長時間実行エージェントでは特に効果が大きい。",
+      "source_title": "Claude Fable 5 のプロンプティング（公式・日本語）",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/prompting-claude-fable-5",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-12",
+      "appearances": 17
+    },
+    {
       "id": 844,
       "title": "Claudeへの指示に「なぜやるか」の目的を明示して精度と一貫性を向上させる",
       "point": "「〇〇を書いて」ではなく「〇〇を書いて（目的：△△のため）」と記述するだけで、Claudeはコンテキストに沿ったより適切な判断ができる。目的を伝えることでClaudeは制約の解釈・トーン・詳細度を自動調整する。「SNS投稿を30文字で書いて」より「エンジニア採用のためのLinkedIn投稿を30文字で書いて」の方が結果が一貫する。",
@@ -182,6 +195,21 @@
       "appearances": 14
     },
     {
+      "id": 953,
+      "title": "Fable 5のビジョン実測：スクショからのUI再現とバグの自律調査が向上",
+      "point": "リリース翌日に丸一日Claude Codeで検証した国内レポート。スクリーンショットを渡してのHTML+CSS模写はOpus 4.8より再現度が高く、仕様書へのUI合わせ込みも改善。バグ調査では指示していない他人のアクティブブランチまでpullして原因を特定する自律性を確認。一方でトークン消費は激しく、effort mediumでもOpus 4.8のxhighより待ち時間が長い点は要注意。",
+      "source_title": "Claude Fable 5を1日使ってみて（Qiita）",
+      "source_url": "https://qiita.com/yo_arai/items/30ae4581b8a9b3206b15",
+      "tags": [
+        "Claude Code",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-12",
+      "appearances": 13
+    },
+    {
       "id": 934,
       "title": "effortがFable 5の主要制御ノブ：低effortでも旧モデルの高effortを上回る",
       "point": "公式プロンプトガイドによると、Fable 5では`effort`が知性・レイテンシ・コストを制御する主パラメータ。多くのタスクは`high`で開始し、最重要タスクのみ`xhigh`、定型作業は`medium`/`low`を推奨。Fable 5の低effortが旧モデルの高effortを上回る場合があるため、移行時に全タスクを最大に振る必要はない。スコープ暴走防止に「タスクに必要な範囲を超えた機能追加・リファクタリングはしない」の一文が有効。",
@@ -316,6 +344,21 @@
       "first_date": "2026-06-08",
       "last_date": "2026-06-08",
       "appearances": 10
+    },
+    {
+      "id": 947,
+      "title": "並列サブエージェントは「非同期・長寿命」前提で設計する",
+      "point": "Fable 5は従来モデルより積極的に並列サブエージェントをディスパッチする。各サブエージェントの完了を待ってブロックするのではなく、オーケストレーターとの非同期通信を優先する設計が公式推奨。サブタスク間でコンテキストを保持する長寿命サブエージェントはキャッシュ読み取りで時間とコストを節約し、最も遅いサブエージェントがボトルネックになるのを回避できる。",
+      "source_title": "Claude Fable 5 のプロンプティング（公式・日本語）",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/prompting-claude-fable-5",
+      "tags": [
+        "エージェント",
+        "モデル",
+        "生産性"
+      ],
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-12",
+      "appearances": 9
     },
     {
       "id": 903,
@@ -1090,6 +1133,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 951,
+      "title": "Fable 5は「タスクの形状」で使い分ける：大型は段違い・小タスクは僅差",
+      "point": "海外の第三者実測では、Everyの自社最難関ベンチでFable 5が91点（Opus 4.8は63点）、FrontierCode Diamondで前世代の倍以上と大型タスクで圧倒。一方Terminal-Benchは僅差で「小さな依頼では優位性がほぼ見えず、遅くてトークンを食う」との総評。数時間級の調査・大規模リファクタリング・複雑文書の突き合わせに限定投入し、小タスクはOpus/Sonnetに回すのが合理的。",
+      "source_title": "Claude Fable 5、海外の実使用レビュー総まとめ（ぶちょう）",
+      "source_url": "https://note.com/rivas_bucho/n/n92585302be37",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-12",
+      "appearances": 5
     },
     {
       "id": 932,
@@ -2299,6 +2355,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 950,
+      "title": "生APIには自動フォールバックなし：refusal時の再ルーティングは自前で設計",
+      "point": "Fable 5の安全分類器が作動するとMessages APIは stop_reason: \"refusal\" を返すが、アプリ版と異なり生のAPIでは自動でOpus 4.8に切り替わらない。海外レビューでは正当なセキュリティテストや生物学の質問での誤発動報告が多数。opt-inの fallbacks パラメータ（β）を使うか、refusal検知時にOpus 4.8へ再送するクライアント側フォールバックを実装しておくのが実務上の必須対策。",
+      "source_title": "Claude Fable 5、海外の実使用レビュー総まとめ（ぶちょう）",
+      "source_url": "https://note.com/rivas_bucho/n/n92585302be37",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-12",
+      "appearances": 3
     },
     {
       "id": 940,
@@ -5740,6 +5810,71 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 944,
+      "title": "Fable 5の早期停止には「最後までやり切って」＋自律実行リマインダー",
+      "point": "長いセッションの深い段階で、Fable 5がツール呼び出しを発行せず「これからXを実行します」と宣言だけしてターンを終えることがある。「続けてください」「最後までやり切ってください」の一言で再開できる。自律パイプラインでは「ユーザーは見ていない。可逆なアクションは確認せず進め、ターン終了前に最終段落が計画・質問・約束で終わっていないか確認せよ」というシステムリマインダーの追加が公式推奨。",
+      "source_title": "Claude Fable 5 のプロンプティング（公式・日本語）",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/prompting-claude-fable-5",
+      "tags": [],
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-12",
+      "appearances": 1
+    },
+    {
+      "id": 945,
+      "title": "コンテキストバジェット懸念は「残りは十分」と安心させて抑制する",
+      "point": "非常に長いセッションでFable 5が新規セッションを提案したり、要約引き継ぎを申し出たり、作業を自主的に縮小することがある。残りトークンのカウントダウンをモデルに見せるハーネスで頻発するため、可能なら明示的なバジェット表示を避ける。表示が必要な場合は「コンテキストは十分残っている。コンテキスト制限を理由に停止・要約・新セッション提案をするな」という指示が有効。",
+      "source_title": "Claude Fable 5 のプロンプティング（公式・日本語）",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/prompting-claude-fable-5",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-12",
+      "appearances": 1
+    },
+    {
+      "id": 948,
+      "title": "最終サマリーに「作業中の省略記法」を持ち込ませない",
+      "point": "長いエージェント会話の後、Fable 5は矢印チェーン・造語ラベル・深い実装詳細など読みにくい報告を書くことがある。「ツール呼び出し間の走り書きは良いが、最終サマリーは何も見ていない読者向けに書け。結果を最初の1文で述べ、完全な文で、用語を綴り出し、短さより明瞭さを選べ」という補足指示で軽減できる。夜間実行後の報告品質が大きく変わる。",
+      "source_title": "Claude Fable 5 のプロンプティング（公式・日本語）",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/prompting-claude-fable-5",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-12",
+      "appearances": 1
+    },
+    {
+      "id": 949,
+      "title": "send-to-userツールで「そのまま届く」メッセージ経路を作る",
+      "point": "長時間の非同期エージェントでは、途中経過のテキストが要約されてユーザーに届かないことがある。表示したいメッセージを入力とするクライアントサイドツール（例：send_to_user）を定義し、呼び出されたら入力をUIへ直接レンダリングする構成が公式推奨。生成コードの断片、具体的な数値を含む進捗、ユーザーへの質問など「一字一句そのまま見せたい」内容に有効。",
+      "source_title": "Claude Fable 5 のプロンプティング（公式・日本語）",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/prompting-claude-fable-5",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-12",
+      "appearances": 1
+    },
+    {
+      "id": 952,
+      "title": "Claude Code 2.1.172：ネストサブエージェント（最大5階層）とプラグイン検索",
+      "point": "サブエージェントが自分のサブエージェントを起動できるようになった（最大5階層）。委任構造を多段にでき、オーケストレーター設計の自由度が向上。ほかに /plugin のマーケットプレイス閲覧に検索バーが追加、1Mコンテキスト利用時にセッションが恒久スタックする問題の自動コンパクト化修正、Bedrockの~/.awsリージョン読み取り対応など。",
+      "source_title": "Claude Code changelog（公式）",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-12",
+      "appearances": 1
     },
     {
       "id": 935,
@@ -11553,6 +11688,14 @@
   ],
   "daily": [
     {
+      "date": "2026-06-12",
+      "highlights": [
+        "Fable 5公式プロンプティングガイド（日本語）の実践パターン — 早期停止対策・最終サマリー品質・send-to-userツールなど移行調整の具体プロンプトが公開",
+        "海外実測レビューの結論「タスクの形状で使い分け」 — 大型タスクで段違い、小タスクは僅差。誤発動とコストへの不満も顕在化",
+        "Claude Code 2.1.172 — サブエージェントが自分のサブエージェントを起動可能に（最大5階層）"
+      ]
+    },
+    {
       "date": "2026-06-11",
       "highlights": [
         "Claude Fable 5の正しい使い方が判明 — 「ゴール・完成の条件・任せる範囲」の3点セットで丸ごと委任するのが正解。短い質問の往復は性能の9割を捨てる使い方",
@@ -12148,5 +12291,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-11T08:00:03.386934"
+  "generated_at": "2026-06-12T08:00:03.203276"
 }
