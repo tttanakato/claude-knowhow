@@ -136,6 +136,17 @@
       "appearances": 15
     },
     {
+      "id": 958,
+      "title": "effortダイヤルは「原則high」、Maxは稀な例外",
+      "point": "Fable 5のeffortを5ラウンド実測した結果、簡単な質問ではMax以外ダイヤルはほぼ動かず（思考は適応的で不要なバジェットは無視）、検証可能な数学パズルでは全effortレベルが同じ手法で正解した。上げて買えるのは「再検証と但し書き」であって正答率ではない。実務上の最適設定は「デフォルトでhigh。下げても数秒を取り戻すだけで答えは変わらない。Maxは稀な例外とせよ」。",
+      "source_title": "The Ultimate Guide to Claude Fable 5（Product Compass）",
+      "source_url": "https://www.productcompass.pm/p/claude-fable-5-guide",
+      "tags": [],
+      "first_date": "2026-06-13",
+      "last_date": "2026-06-13",
+      "appearances": 14
+    },
+    {
       "id": 902,
       "title": "コンテキストエンジニアリング：プロンプトより前提ファイル整備",
       "point": "2026年はモデル品質が向上し、巧妙な言い回しよりタスク周辺の構造が成果を左右する。システムプロンプト・ファイル・メモリ・例示・役割設定を整える「コンテキストエンジニアリング」が、単発のプロンプト磨きより活用効率を高める。",
@@ -472,6 +483,21 @@
       "appearances": 9
     },
     {
+      "id": 966,
+      "title": "Fable 5は「速くなってないが、賢いので結果的に速い」",
+      "point": "Claude Code開発者の体感では、応答自体が速くなったわけではなく「賢いので結果的に速い」。Opus 4.8では修正指示を繰り返し1タスク1時間かかったのがFable 5では30分、人間のレビューは5回→1〜2回に激減した。指示しなくても計測・ログ追加・修正検証まで自分でやる自己検証の振る舞いは「プロンプトで指示しておらず、モデルの個性（personality）」とのこと。コスト2倍でも、レビュー時間の削減で回収できるかという観点で評価すべき。",
+      "source_title": "「Fable 5は自分以上に信頼している」Claude Code開発者に聞く（SOMPO Digital Lab）",
+      "source_url": "https://zenn.dev/sompojapan_dx/articles/811ac0999e297b",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-13",
+      "last_date": "2026-06-13",
+      "appearances": 8
+    },
+    {
       "id": 894,
       "title": "Dreaming：エージェントが実行間で学習する記憶キュレーション",
       "point": "過去のエージェントセッションを定期的にレビューし、繰り返すミスや共有ワークフロー、チームの好みを抽出して記憶ストアに整理する新機能。実行と実行の合間にエージェントが自己改善する仕組みで、毎回ゼロからやり直す非効率を解消する。",
@@ -612,6 +638,20 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 965,
+      "title": "plan に検証ステップを書き切ると、聞き返さず数時間自走する",
+      "point": "無人運用のエスカレーション設計は「ルールを精緻化する」のでなく「そもそも聞き返す必要がない plan を最初に作る」のが核心。planに十分な情報、特にテストや明確な検証ステップを書いておくと、完了をモデル自身が自己検証できるため自律性が大きく上がる。Claude Code開発者いわく「Fable 5なら、良い plan を渡せば数時間は自走する」。受け入れ条件やテストを後付けでなくplanの必須項目として最初から書き込む。",
+      "source_title": "「Fable 5は自分以上に信頼している」Claude Code開発者に聞く（SOMPO Digital Lab）",
+      "source_url": "https://zenn.dev/sompojapan_dx/articles/811ac0999e297b",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-06-13",
+      "last_date": "2026-06-13",
+      "appearances": 7
     },
     {
       "id": 931,
@@ -762,6 +802,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 961,
+      "title": "Fable 5は「タスクの形状」で2層ルーティングする",
+      "point": "72時間の実クライアント業務7種（SEO戦略・要件定義・市場調査・競合分析・長文・コードレビュー・データ解釈）で検証。複数ドメインを同時に要する複雑タスクほど差が開き、3,000語超の長文での一貫性が際立った。一方、速度とコストが重要な単純作業はSonnet 4.6が正解。結論は2層ルーティング戦略：複雑な分析・設計・長文生産はFable 5、量産・定型はSonnet 4.6に振り分ける。Fable 5は単価2倍ゆえ全置換は不合理。",
+      "source_title": "I Tested Claude Fable 5 Against Real Client Work（SSNTPL）",
+      "source_url": "https://ssntpl.com/blog-claude-fable-5-real-world-test-review/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-13",
+      "last_date": "2026-06-13",
+      "appearances": 6
     },
     {
       "id": 924,
@@ -1566,6 +1619,19 @@
       "appearances": 5
     },
     {
+      "id": 962,
+      "title": "コードレビューはレース条件まで検出、ただし本番デフォルト化は時期尚早",
+      "point": "Stripe webhook検証のNode.jsコードに3つの意図的バグ（署名検証欠落・未処理Promise・トランザクション欠落による競合）を仕込んだテストで、Fable 5は全てを重大度順に正しく特定し、生ボディ vs パース済みボディというStripe特有の落とし穴も指摘。一方CodeRabbitの評価では「自律コーディングには有望だが、本番コードレビューのデフォルトにはまだしない。精度とコメント量の調整待ち」。明確な予算・停止条件・レビュー地点を与える運用が前提。",
+      "source_title": "Claude Fable 5 Model Review（CodeRabbit）",
+      "source_url": "https://www.coderabbit.ai/blog/fable-5-model-review",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-06-13",
+      "last_date": "2026-06-13",
+      "appearances": 4
+    },
+    {
       "id": 923,
       "title": "Web検索ツールがSEC開示データを拡充",
       "point": "Web検索ツールがSEC（米証券取引委員会）の開示情報をより充実して返すように。金融リサーチ・決算分析・デューデリジェンスを一次資料と引用付きで根拠付けやすくなった。",
@@ -2355,6 +2421,35 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 957,
+      "title": "新モデル導入前に「知識レイヤ監査プロンプト」を回す",
+      "point": "Fable 5はCLAUDE.mdやスキルを読んで、自分自身の指示に潜む矛盾・陳腐化したルールを自発的に指摘してくる。導入前にまず「タスクを与えず、instruction filesを端から端まで読み、(1)矛盾点、(2)弱いモデル向けのガードレールや陳腐化した固定値、(3)禁止パターンを自ら破っている文書、(4)削除候補を報告せよ。修正はするな、報告のみ」という監査プロンプトを実行するとよい。実例では「今日は2026-05-24」という古い固定日付や、em dash禁止ルールがem dashで書かれている矛盾などが発見された。",
+      "source_title": "The Ultimate Guide to Claude Fable 5（Product Compass）",
+      "source_url": "https://www.productcompass.pm/p/claude-fable-5-guide",
+      "tags": [
+        "CLAUDE.md",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-13",
+      "last_date": "2026-06-13",
+      "appearances": 3
+    },
+    {
+      "id": 960,
+      "title": "フロンティアLLM開発の「不可視セーフガード」を可視フォールバックへ変更",
+      "point": "Fable 5にはAI研究（フロンティアLLM開発）用途で「ユーザーに通知せず応答精度を制限する」不可視ルールがあり、研究者から不満が噴出。Anthropicは「不可視を選んだのは誤りだった」と認め、今週中にフラグ付きリクエストをサイバー・生物兵器と同様にOpus 4.8へ「明示的にフォールバック」するよう変更すると発表。API経由では拒否理由を提示する。全セッションの約5%が誤判定する厳しめ設定で、「Hello」「Cancer」でも引っかかる事例が報告されている。",
+      "source_title": "「Claude Fable 5のこっそりナーフ」についてAnthropicが公式声明（GIGAZINE）",
+      "source_url": "https://gigazine.net/news/20260612-claude-fable-5-safeguard-change/",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-06-13",
+      "last_date": "2026-06-13",
+      "appearances": 3
     },
     {
       "id": 950,
@@ -3801,6 +3896,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 959,
+      "title": "「Fableは遅い」は誤解：起動が3秒遅いだけで中身は密",
+      "point": "「単純なタスクでも遅い」という初日の不満をストリームのタイムスタンプで実測。最初の応答開始がOpusの4.7〜5.3秒に対しFableは7.4〜8.2秒と約3秒遅く、この冒頭の空白が「遅い」体感の正体。だが飛行中はむしろ密で、同じ数学問題でFableは出力トークンが約40%少なく5〜9秒早く完了した。「思考量が減ったのではなく、同じことを半分の語数で言っている」。冒頭だけ少し待てば、あとは気にしなくてよい。",
+      "source_title": "The Ultimate Guide to Claude Fable 5（Product Compass）",
+      "source_url": "https://www.productcompass.pm/p/claude-fable-5-guide",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-13",
+      "last_date": "2026-06-13",
+      "appearances": 2
     },
     {
       "id": 921,
@@ -5810,6 +5918,33 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 963,
+      "title": "effortが配分する「3種類のトークン」を意識する",
+      "point": "Code w/ Claude Tokyoの現地レポートより。エージェントが消費するトークンは「Planning（計画・推論）」「Action（ツール呼び出し・コード実行）」「Text（ユーザーへの回答・要約）」の3種に分類できる。effortはこの配分の優先度を指定するダイヤルで、登壇者の比喩では「時間単価をマイクロマネジメントするのでなく優先順位を伝えるようなもの」。適応的思考はその進化形で、\"2+2\"には思考トークンを使わずステップごとにモデル自身が判断する。",
+      "source_title": "「Fable 5は自分以上に信頼している」Claude Code開発者に聞く（SOMPO Digital Lab）",
+      "source_url": "https://zenn.dev/sompojapan_dx/articles/811ac0999e297b",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-13",
+      "last_date": "2026-06-13",
+      "appearances": 1
+    },
+    {
+      "id": 964,
+      "title": "プロンプトで事故るのは、いつも「強すぎる指示」",
+      "point": "本番プロンプトの失敗ケースを直すハンズオンより。「絶対に間違った情報を出すな」という強い指示が、手元の正しいデータまで出し渋らせる。`never`/`always`系のルールは効きすぎるため、逆方向のガイド（「ただし顧客スナップショットは信頼でき直接回答してよい」）をセットで書く。計算は「重要!!」と書き足しても精度は上がらず、計算ツールを渡すのが正解。XMLタグでの構造化・古い条件文の削除という\"prompt hygiene\"も有効。",
+      "source_title": "「Fable 5は自分以上に信頼している」Claude Code開発者に聞く（SOMPO Digital Lab）",
+      "source_url": "https://zenn.dev/sompojapan_dx/articles/811ac0999e297b",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-13",
+      "last_date": "2026-06-13",
+      "appearances": 1
     },
     {
       "id": 944,
@@ -11688,6 +11823,14 @@
   ],
   "daily": [
     {
+      "date": "2026-06-13",
+      "highlights": [
+        "新モデル導入前に「知識レイヤ監査」を回す — CLAUDE.md・スキルは旧モデル向けに書かれている。Fable 5に矛盾や陳腐化したルールを洗い出させる監査プロンプトが有効",
+        "「Fableは遅い」は実測で覆る — 起動が約3秒遅いだけで、出力は約40%少トークンで密。effortは原則highでよく、Maxは稀な例外",
+        "不可視セーフガードを可視フォールバックへ — フロンティアLLM開発関連の「こっそり性能制限」をAnthropicが謝罪、今週中にOpus 4.8への明示的フォールバックに変更"
+      ]
+    },
+    {
       "date": "2026-06-12",
       "highlights": [
         "Fable 5公式プロンプティングガイド（日本語）の実践パターン — 早期停止対策・最終サマリー品質・send-to-userツールなど移行調整の具体プロンプトが公開",
@@ -12291,5 +12434,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-12T08:00:03.203276"
+  "generated_at": "2026-06-13T08:00:03.324530"
 }
