@@ -206,6 +206,19 @@
       "appearances": 14
     },
     {
+      "id": 981,
+      "title": "Opus 4.8プロンプティング：否定制約より「文脈付き肯定指示」",
+      "point": "Opus 4.8は「〜するな」の羅列より「何をどうしてほしいか」を文脈付きで書く方が反応が良い。例：「長すぎないで」ではなく「プレーンな文章で。箇条書きは最大5項目。最後に1文要約」と具体化する。リテラルな指示遵守が強まった4.8では特に効果的。",
+      "source_title": "Prompting Claude Opus 4.8 - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-4-8",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-15",
+      "last_date": "2026-06-15",
+      "appearances": 13
+    },
+    {
       "id": 953,
       "title": "Fable 5のビジョン実測：スクショからのUI再現とバグの自律調査が向上",
       "point": "リリース翌日に丸一日Claude Codeで検証した国内レポート。スクリーンショットを渡してのHTML+CSS模写はOpus 4.8より再現度が高く、仕様書へのUI合わせ込みも改善。バグ調査では指示していない他人のアクティブブランチまでpullして原因を特定する自律性を確認。一方でトークン消費は激しく、effort mediumでもOpus 4.8のxhighより待ち時間が長い点は要注意。",
@@ -287,6 +300,33 @@
       "appearances": 12
     },
     {
+      "id": 982,
+      "title": "Adaptive Thinking：デフォルトoff、明示的に有効化する",
+      "point": "Opus 4.8では思考はデフォルトoff。`thinking: {type: \"adaptive\"}`で有効化するとClaude自身が複雑さに応じて思考の有無と深さを判断する。単純な事実照会では思考をスキップし、多段推論タスクでのみ深く考える。レイテンシが増えるため、品質が明確に上がる場面に限定するのが推奨。",
+      "source_title": "Adaptive thinking - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-15",
+      "last_date": "2026-06-15",
+      "appearances": 11
+    },
+    {
+      "id": 978,
+      "title": "システムプロンプトに役割を具体的に明示する",
+      "point": "システムプロンプト冒頭で「誰として何のために動くか」を具体的に与えると出力品質が上がる。例:「B2B SaaSのマーケコピーを校閲する編集者。明瞭さと直接性を改善するのが役割」。専門分野・視点・基準まで明記するほど効果的。",
+      "source_title": "Prompting best practices - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-06-14",
+      "last_date": "2026-06-14",
+      "appearances": 11
+    },
+    {
       "id": 656,
       "title": "コンテキストエンジニアリング：CLAUDE.md・カスタムコマンド・Hooks・Task Diaryの4要素で複利的強化",
       "point": "Anthropicが発表した「2026 Agentic Coding Trends Report」でも強調されている考え方。単発プロンプトの最適化よりも「Claudeが判断に使える環境全体」を設計することが重要。CLAUDE.mdにプロジェクト規約を蓄積し、カスタムコマンドで頻出ワークフローをテンプレート化、HooksでCIと連動した確定的な品質チェックを組み込み、Task Diaryで知識を複利的に積み上げる4要素が中核をなす。",
@@ -355,6 +395,20 @@
       "first_date": "2026-06-08",
       "last_date": "2026-06-08",
       "appearances": 10
+    },
+    {
+      "id": 975,
+      "title": "Managed Agents「Dreaming」：セッション間で記憶をキュレーションする",
+      "point": "Dreamingはセッション横断の非同期プロセスで、過去のトランスクリプトとメモリを走査してパターン抽出・重複統合・陳腐化エントリの置換を行う。長期/協調型ワークフロー向けで、自動更新か人手レビュー後反映かを選べる。",
+      "source_title": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
+      "source_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "tags": [
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-06-14",
+      "last_date": "2026-06-14",
+      "appearances": 9
     },
     {
       "id": 947,
@@ -481,6 +535,34 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 986,
+      "title": "サブエージェント vs Agent Teams の使い分け",
+      "point": "ワーカー同士が通信不要ならサブエージェント、発見の共有・前提の相互検証・横断的変更の調整が必要ならAgent Teamsを使う。2026年の大半の開発タスクではサブエージェントが正解で、隔離モデルがタスク分割の考え方とよく一致する。",
+      "source_title": "Claude Cowork Guide for Power Users - Karo Zieminski",
+      "source_url": "https://karozieminski.substack.com/p/claude-cowork-guide-plugins-memory-sub-agents-tips",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-15",
+      "last_date": "2026-06-15",
+      "appearances": 8
+    },
+    {
+      "id": 973,
+      "title": "Opus 4.8のeffort=xhigh：コーディング・エージェント作業の推奨設定",
+      "point": "Opus 4.8では推論深度を温度ではなくeffortで制御し、コーディングや高自律タスクはxhighを明示指定するのが最適。xhigh時はサブエージェントやツール呼び出しの余地を残すため、max出力トークンを64k程度から大きめに設定する。完了するが遅すぎる場合のみeffortを下げる。",
+      "source_title": "Prompting Claude Opus 4.8 - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-4-8",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-14",
+      "last_date": "2026-06-14",
+      "appearances": 8
     },
     {
       "id": 966,
@@ -640,6 +722,33 @@
       "appearances": 8
     },
     {
+      "id": 931,
+      "title": "Claude Fable 5一般公開：Mythosクラスの知性を安全装置付きで開放",
+      "point": "Anthropicが一般提供可能な中で最高能力というMythosクラスのFable 5を公開。Claude Codeはv2.1.170以降で利用可能で、1Mコンテキストを既定で備える。委任は「ゴール・完成条件・任せる範囲」だけを渡す形が相性良し。",
+      "source_title": "Introducing Claude Fable 5 / Mythos 5",
+      "source_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-06-11",
+      "last_date": "2026-06-14",
+      "appearances": 7
+    },
+    {
+      "id": 974,
+      "title": "Opus 4.8は否定制約より「文脈付き肯定指示」が効く",
+      "point": "「長くするな」より「プレーンな散文で、列挙は最大5項目まで」のように、やってほしいことを文脈付きで肯定形で指示するとOpus 4.8の追従性が上がる。ALL-CAPSや「NEVER EVER」の強調は逆効果で、簡潔な記述で十分。",
+      "source_title": "How to Prompt Claude Opus 4.8 Differently",
+      "source_url": "https://www.mindstudio.ai/blog/how-to-prompt-claude-opus-4-8",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-14",
+      "last_date": "2026-06-14",
+      "appearances": 7
+    },
+    {
       "id": 965,
       "title": "plan に検証ステップを書き切ると、聞き返さず数時間自走する",
       "point": "無人運用のエスカレーション設計は「ルールを精緻化する」のでなく「そもそも聞き返す必要がない plan を最初に作る」のが核心。planに十分な情報、特にテストや明確な検証ステップを書いておくと、完了をモデル自身が自己検証できるため自律性が大きく上がる。Claude Code開発者いわく「Fable 5なら、良い plan を渡せば数時間は自走する」。受け入れ条件やテストを後付けでなくplanの必須項目として最初から書き込む。",
@@ -651,19 +760,6 @@
       ],
       "first_date": "2026-06-13",
       "last_date": "2026-06-13",
-      "appearances": 7
-    },
-    {
-      "id": 931,
-      "title": "Claude Fable 5一般公開：Mythosクラスの知性を安全装置付きで開放",
-      "point": "6月9日発表のFable 5は、これまで承認組織限定だったMythosクラスモデルを安全機構付きで一般提供する初のモデル。100万トークンコンテキスト・最大12.8万トークン出力に対応し、Stripeの5,000万行コード移行を1日で完了、画像のみでポケモンをクリアするなど長時間自律タスクで他モデルとの差が開く設計。高リスク分野（サイバーセキュリティ等）の質問は5%未満の頻度でOpus 4.8が代理回答する。",
-      "source_title": "Claude Mythos正式版とFable 5が一般公開（GIGAZINE）",
-      "source_url": "https://gigazine.net/gsc_news/en/20260610-claude-mythos-fable/",
-      "tags": [
-        "モデル"
-      ],
-      "first_date": "2026-06-11",
-      "last_date": "2026-06-11",
       "appearances": 7
     },
     {
@@ -802,6 +898,22 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 983,
+      "title": "Claude Code 6月版：Opus 4.8デフォルト化・レート制限2倍・Safe Mode",
+      "point": "6月のClaude CodeはOpus 4.8を新デフォルトに採用。Pro/Max/Enterprise向け5時間レート制限を即日2倍化、Opus APIの上限も引き上げ済み。加えてトラブル切り分け用の「Safe Mode」、動的ワークフロー、セキュリティ指針プラグイン、より速く低価格なfast modeを追加。",
+      "source_title": "Claude Code June 2026 Update: Safe Mode, Opus 4.8, and Doubled Rate Limits",
+      "source_url": "https://jangwook.net/en/blog/en/claude-code-june-2026-new-features-changelog-developer-guide/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-15",
+      "last_date": "2026-06-15",
+      "appearances": 6
     },
     {
       "id": 961,
@@ -1186,6 +1298,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 988,
+      "title": "/usage の内訳でプラグイン内のトークン消費を特定する",
+      "point": "新しい`/usage`内訳は、プラグイン全体ではなくプラグイン内のどのコンポーネントが実際にトークンを消費しているかまで表示する。プラグイン・スキル・フック・バックグラウンドジョブごとの消費を可視化でき、コスト最適化の当たりを付けやすくなった。",
+      "source_title": "Claude Code Updates by Anthropic - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-15",
+      "last_date": "2026-06-15",
+      "appearances": 5
     },
     {
       "id": 951,
@@ -1617,6 +1742,19 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 985,
+      "title": "サブエージェントはread-only中心に、編集は親に集約する",
+      "point": "コスト最適化の定石は、サブエージェントをread-onlyツールセットに制限し、Edit / Write / NotebookEdit / Bashなど承認を伴う作業は親エージェントに集約すること。エージェント間のメッセージはすべて課金対象の往復になるため、通信回数を減らす設計が効く。",
+      "source_title": "Claude Code Sub-Agents Explained - MindStudio",
+      "source_url": "https://www.mindstudio.ai/blog/claude-code-sub-agents-explained",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-15",
+      "last_date": "2026-06-15",
+      "appearances": 4
     },
     {
       "id": 962,
@@ -2421,6 +2559,34 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 952,
+      "title": "Claude Code 2.1.172：ネストサブエージェント（最大5階層）とプラグイン検索",
+      "point": "サブエージェントが自分のサブエージェントを生成可能になり、最大5階層までネストできる。`/plugin`のマーケットプレイス閲覧に検索バーを追加。1Mコンテキストでクレジット切れ時のセッション停止バグや、複数画像処理エラーなど多数の不具合も修正。",
+      "source_title": "Claude Code Updates by Anthropic - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-15",
+      "appearances": 3
+    },
+    {
+      "id": 977,
+      "title": "1会話1タスク原則：コンテキストの「鮮度」を保つ",
+      "point": "Claudeの作業記憶は鮮度が落ちやすく、古い会話を積み増すと精度が下がる。大きなタスクごとに新しい会話を開始してコンテキスト汚染を防ぐのが基本。Claude Codeでは/clearや/compactで能動的に管理する。",
+      "source_title": "10 Claude AI Code Tips to 10x Your Productivity in 2026",
+      "source_url": "https://medium.com/@tamzidulhaque/10-claude-ai-code-tips-to-10x-your-productivity-in-2026-e07555ee034f",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-06-14",
+      "last_date": "2026-06-14",
+      "appearances": 3
     },
     {
       "id": 957,
@@ -3896,6 +4062,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 976,
+      "title": "Agent Skills構築の5原則：ルーティング的description・決定的コードを徹底する",
+      "point": "良いスキルは「ルーティングルールのように読めるdescription」「決定的処理は決定的コードで」「SKILL.mdは薄く詳細は遅延読み込みする補助ファイルへ」「1スキル1ジョブ」「抽象ルールより具体例」の5点を共有する。",
+      "source_title": "9 Tips for Building Claude Agent Skills",
+      "source_url": "https://medium.com/@tahirbalarabe2/9-tips-for-building-claude-agent-skills-3bca85c47a26",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-14",
+      "last_date": "2026-06-14",
+      "appearances": 2
     },
     {
       "id": 959,
@@ -5920,6 +6099,59 @@
       "appearances": 2
     },
     {
+      "id": 984,
+      "title": "Claude Code 2.1.176：セッションタイトルを会話の言語で自動生成",
+      "point": "セッションタイトルが会話で使われている言語で生成されるようになった（言語設定で固定も可能）。あわせてフッターのリンクバッジ用`footerLinksRegexes`設定、Bedrock資格情報の有効期限までのキャッシュ、JetBrains端末のちらつき修正などを実装。日本語ユーザーには履歴の視認性向上が嬉しい改善。",
+      "source_title": "Claude Code Updates by Anthropic - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-06-15",
+      "last_date": "2026-06-15",
+      "appearances": 1
+    },
+    {
+      "id": 987,
+      "title": "スキル化とスラッシュコマンドの使い分け",
+      "point": "「このプロンプトテンプレートを差し込むだけ」ならスラッシュコマンド、ドメインロジック・構造化された入力パラメータ・付属ヘルパーファイルがあるならスキルにする。ワークフローをスキルとして符号化するたびに、以降の全セッションで再説明の手間が省ける。",
+      "source_title": "Claude Cowork Guide for Power Users - Karo Zieminski",
+      "source_url": "https://karozieminski.substack.com/p/claude-cowork-guide-plugins-memory-sub-agents-tips",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-15",
+      "last_date": "2026-06-15",
+      "appearances": 1
+    },
+    {
+      "id": 979,
+      "title": "Claude Code 2.1.173：Fable 5モデル名正規化とWindows sandbox警告の修正",
+      "point": "Fable 5は1Mコンテキストが既定のため、`[1m]`サフィックス付きモデル名を自動で除去するよう修正。Windowsでsandbox有効時に出ていた誤った「sandbox dependencies missing」起動警告も解消。",
+      "source_title": "Claude Code Updates by Anthropic - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-06-14",
+      "last_date": "2026-06-14",
+      "appearances": 1
+    },
+    {
+      "id": 980,
+      "title": "Claude法務向けMCPコネクタ20種超＋実務領域プラグイン12種を追加",
+      "point": "リサーチ・契約・ディスカバリ・案件管理・法律扶助など、法律事務所や社内法務の業務を横断する20以上の法務MCPコネクタと12の実務領域プラグインを公開。接続ツールの活用範囲とカスタマイズ性が拡大。",
+      "source_title": "Anthropic Release Notes - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-14",
+      "last_date": "2026-06-14",
+      "appearances": 1
+    },
+    {
       "id": 963,
       "title": "effortが配分する「3種類のトークン」を意識する",
       "point": "Code w/ Claude Tokyoの現地レポートより。エージェントが消費するトークンは「Planning（計画・推論）」「Action（ツール呼び出し・コード実行）」「Text（ユーザーへの回答・要約）」の3種に分類できる。effortはこの配分の優先度を指定するダイヤルで、登壇者の比喩では「時間単価をマイクロマネジメントするのでなく優先順位を伝えるようなもの」。適応的思考はその進化形で、\"2+2\"には思考トークンを使わずステップごとにモデル自身が判断する。",
@@ -5991,21 +6223,6 @@
       "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/prompting-claude-fable-5",
       "tags": [
         "エージェント"
-      ],
-      "first_date": "2026-06-12",
-      "last_date": "2026-06-12",
-      "appearances": 1
-    },
-    {
-      "id": 952,
-      "title": "Claude Code 2.1.172：ネストサブエージェント（最大5階層）とプラグイン検索",
-      "point": "サブエージェントが自分のサブエージェントを起動できるようになった（最大5階層）。委任構造を多段にでき、オーケストレーター設計の自由度が向上。ほかに /plugin のマーケットプレイス閲覧に検索バーが追加、1Mコンテキスト利用時にセッションが恒久スタックする問題の自動コンパクト化修正、Bedrockの~/.awsリージョン読み取り対応など。",
-      "source_title": "Claude Code changelog（公式）",
-      "source_url": "https://code.claude.com/docs/en/changelog",
-      "tags": [
-        "Claude Code",
-        "エージェント",
-        "MCP/プラグイン"
       ],
       "first_date": "2026-06-12",
       "last_date": "2026-06-12",
@@ -11823,6 +12040,20 @@
   ],
   "daily": [
     {
+      "date": "2026-06-15",
+      "highlights": [
+        "Opus 4.8は「文脈付き肯定指示」が効く — 禁止形の羅列より「何をしてほしいか＋文脈」を書く方が指示遵守が安定する",
+        "Claude Code 6月大型アップデート — Opus 4.8が新デフォルト、5時間レート制限が2倍、トラブル切り分け用Safe Modeを追加"
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "highlights": [
+        "Opus 4.8はeffort=xhighがコーディングの標準 — エージェント作業は明示的にxhighを設定し、出力トークン予算も大きめに確保するのが推奨。",
+        "Managed Agents「Dreaming」でセッション間学習 — 過去セッションを非同期レビューして記憶をキュレーションし、実行を重ねるほどエージェントが賢くなる。"
+      ]
+    },
+    {
       "date": "2026-06-13",
       "highlights": [
         "新モデル導入前に「知識レイヤ監査」を回す — CLAUDE.md・スキルは旧モデル向けに書かれている。Fable 5に矛盾や陳腐化したルールを洗い出させる監査プロンプトが有効",
@@ -12434,5 +12665,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-14T08:00:03.967933"
+  "generated_at": "2026-06-15T08:00:03.651153"
 }
