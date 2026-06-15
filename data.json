@@ -27,6 +27,19 @@
       "appearances": 21
     },
     {
+      "id": 1000,
+      "title": "Fable 5 / Opus 4.8 / Sonnet 4.6 が1Mトークン対応",
+      "point": "2026年6月時点で Fable 5・Opus 4.8・Sonnet 4.6 のいずれも100万トークンのコンテキストウィンドウに対応。大規模コードベースや長文資料を分割せず一括で扱えるが、消費トークンも増えるため必要な範囲に絞り込む設計は引き続き重要。",
+      "source_title": "Claude Code June 2026 Update",
+      "source_url": "https://jangwook.net/en/blog/en/claude-code-june-2026-new-features-changelog-developer-guide/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-16",
+      "last_date": "2026-06-16",
+      "appearances": 18
+    },
+    {
       "id": 659,
       "title": "Subagent対立検証（Opponent Processor）：Engineer役・Auditor役を意図的に分けて意思決定の質を向上",
       "point": "アーキテクチャ意思決定の場面でSubagentを「支持側」と「反論側」に役割分けして議論させるパターン。非相関なコンテキストウィンドウによって単一エージェントでは見逃しがちなリスクを発見できる。Anthropic社内で実際の大規模コード改修に使われていると報告されている。",
@@ -1300,6 +1313,34 @@
       "appearances": 6
     },
     {
+      "id": 996,
+      "title": "ultracode設定でdynamic workflowを自動判断",
+      "point": "effortメニューから有効化できるClaude Code専用設定`ultracode`は、effortレベルをxhighに設定しつつ、Claudeがワークフロー化すべき場面を自動判断する。複数ステップの定型処理を「分析→分類→洞察生成」と一気通貫で回したいときに有効。",
+      "source_title": "Anthropic Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-06-16",
+      "last_date": "2026-06-16",
+      "appearances": 5
+    },
+    {
+      "id": 997,
+      "title": "システムプロンプトは全docを貼らずツールで参照",
+      "point": "ドキュメントを丸ごとシステムプロンプトに詰め込むのではなく、モデルに「調べるツール」を渡し、必要なときだけ知識をロードさせる設計が推奨される。コンテキスト肥大を防ぎ、関連情報だけをツール呼び出しで都度取得できる。",
+      "source_title": "The Complete Guide to Writing Agent System Prompts - Indie Hackers",
+      "source_url": "https://www.indiehackers.com/post/the-complete-guide-to-writing-agent-system-prompts-lessons-from-reverse-engineering-claude-code-6e18d54294",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-16",
+      "last_date": "2026-06-16",
+      "appearances": 5
+    },
+    {
       "id": 988,
       "title": "/usage の内訳でプラグイン内のトークン消費を特定する",
       "point": "新しい`/usage`内訳は、プラグイン全体ではなくプラグイン内のどのコンポーネントが実際にトークンを消費しているかまで表示する。プラグイン・スキル・フック・バックグラウンドジョブごとの消費を可視化でき、コスト最適化の当たりを付けやすくなった。",
@@ -1742,6 +1783,19 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 993,
+      "title": "ネストサブエージェント最大5階層（2.1.172）",
+      "point": "サブエージェントが自分のサブエージェントを生成可能になり、最大5階層までネストできる。複雑なタスクを階層的に分解し、各層に責務を分散させる設計が可能。深くしすぎるとコンテキスト管理が難しくなるため、層ごとの役割を明確にするのがコツ。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-16",
+      "last_date": "2026-06-16",
+      "appearances": 4
     },
     {
       "id": 985,
@@ -2559,6 +2613,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 999,
+      "title": "画像・動画生成プロンプトの5ルール",
+      "point": "悪い出力を減らす5原則として「空間的明示」「エンティティ（要素）数の制限」「否定形の回避」「実物・既存作品の参照」「数量の明示」が挙げられる。効果的な構図は Subject → Lighting/Look → Camera → Technical の順で記述すると安定する。",
+      "source_title": "5 AI Prompts to Build Agent Skills - Excellent Prompts",
+      "source_url": "https://excellentprompts.substack.com/p/learn-build-claude-agent-skills",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-16",
+      "last_date": "2026-06-16",
+      "appearances": 3
     },
     {
       "id": 952,
@@ -4062,6 +4129,46 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 994,
+      "title": "Bedrockが ~/.aws からリージョン自動取得（2.1.172）",
+      "point": "`AWS_REGION`未設定時にAmazon Bedrockが`~/.aws`設定ファイルからリージョンを読むようになり、AWS SDKの優先順位に整合。`/status`でリージョンの取得元が表示されるため、意図しないリージョン接続のデバッグがしやすい。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-06-16",
+      "last_date": "2026-06-16",
+      "appearances": 2
+    },
+    {
+      "id": 995,
+      "title": "Fable 5の[1m]サフィックス自動正規化（2.1.173）",
+      "point": "Fable 5は1Mコンテキストがデフォルトのため、モデル名末尾の`[1m]`サフィックスが自動で除去されるよう修正。Windowsでサンドボックス有効時に出ていた「sandbox dependencies missing」の誤警告も解消された。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-16",
+      "last_date": "2026-06-16",
+      "appearances": 2
+    },
+    {
+      "id": 998,
+      "title": "Skill・サブエージェント・フックの使い分け",
+      "point": "ドメインロジックや補助ファイルが絡む反復処理は「スキル」、独立・並列の作業は「サブエージェント」、ルールをコードで強制したい場合は「フック」を使う、という切り分けが実践的。役割を混同させないことで保守性が上がる。",
+      "source_title": "Claude Code Guide 2026 - MarkTechPost",
+      "source_url": "https://www.marktechpost.com/2026/06/14/claude-code-guide-2026-25-features-with-examples-demo/",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-06-16",
+      "last_date": "2026-06-16",
+      "appearances": 2
     },
     {
       "id": 976,
@@ -6097,6 +6204,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 992,
+      "title": "post-sessionフック・セーフモード・/cd（2.1.169）",
+      "point": "セッション終了後・ワークスペース削除前に走る`post-session`ライフサイクルフックを追加。未コミット作業のスナップショットやログ書き出しに使える。さらに`--safe-mode`（環境変数`CLAUDE_CODE_SAFE_MODE`）でCLAUDE.md・プラグイン・スキル・フック・MCPを全無効化して起動でき、不具合の切り分けが容易に。`/cd`でセッションの作業ディレクトリを移動できる。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "CLAUDE.md",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-16",
+      "last_date": "2026-06-16",
+      "appearances": 1
     },
     {
       "id": 984,
@@ -12040,6 +12161,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-16",
+      "highlights": [
+        "post-sessionフック & セーフモード（2.1.169） — セッション終了後に作業を退避でき、`--safe-mode`で全カスタマイズ無効化のトラブル切り分けが可能に",
+        "ネストサブエージェント最大5階層（2.1.172） — サブエージェントが自らサブエージェントを生成でき、大型タスクの階層的分割がしやすくなった"
+      ]
+    },
+    {
       "date": "2026-06-15",
       "highlights": [
         "Opus 4.8は「文脈付き肯定指示」が効く — 禁止形の羅列より「何をしてほしいか＋文脈」を書く方が指示遵守が安定する",
@@ -12665,5 +12793,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-15T08:00:03.651153"
+  "generated_at": "2026-06-16T08:00:03.729983"
 }
