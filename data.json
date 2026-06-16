@@ -370,6 +370,35 @@
       "appearances": 11
     },
     {
+      "id": 1004,
+      "title": "Managed Agents「Dreaming」：セッション間でエージェントを自己改善させる",
+      "point": "Dreamingは過去のエージェントセッションとメモリストアを定期的にレビューし、パターンを抽出してメモリを整理する「スケジュール実行プロセス」。タスク中の記憶保持（memory）とは別レイヤーで、セッション間に処理を行い再発ミスを減らす。現状Research Preview、Opus 4.7とSonnet 4.6に対応し、申請フォーム経由でアクセス。",
+      "source_title": "Anthropic introduces \"dreaming\" for Claude Managed Agents",
+      "source_url": "https://www.techzine.eu/news/devops/141125/anthropic-introduces-dreaming-for-claude-managed-agents/",
+      "tags": [
+        "自動化",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-17",
+      "last_date": "2026-06-17",
+      "appearances": 10
+    },
+    {
+      "id": 1011,
+      "title": "XMLスタイルタグでコンテキスト・制約・出力形式を構造化する",
+      "point": "Fable 5・Opus 4.8世代でもXMLスタイルのタグで「コンテキスト／制約／出力形式」を明示的に分離する書き方が有効。プロンプトを説明・指示・ツールを持つ合成可能な「スキル」として組み立てると再利用性が上がる。",
+      "source_title": "Claude AI Tips and Tricks: 25 Ways to Get Better Results",
+      "source_url": "https://nexasphere.io/blog/claude-ai-tips-tricks-2026",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-17",
+      "last_date": "2026-06-17",
+      "appearances": 10
+    },
+    {
       "id": 933,
       "title": "「お守り注意書き」を捨てる：細かな指示より定性的フィードバックが効く",
       "point": "「必ず確認してね」「ミスしないで」といったお守り的注意書きはFable 5には不要。報告前に自分の作業を自分でレビューする設計のため、代わりに「構成は良い。例え話が硬いので友達に話すようなゆるい例えに」のような感想ベースの定性フィードバックが最も効く。Anthropicからの公式ガイドメールでも「細かな指示よりも定性的なフィードバックの方が効果的」と明言されている。",
@@ -408,6 +437,35 @@
       "first_date": "2026-06-08",
       "last_date": "2026-06-08",
       "appearances": 10
+    },
+    {
+      "id": 1005,
+      "title": "/workflows → ultracode への改名と一括設定",
+      "point": "Claude Codeで動的マルチエージェント・ワークフローを起動するトリガーが `ultracode` に改名された。effortをxhighに設定しつつDynamic Workflowsの自動活用を一括で有効化できる。複数の専門サブエージェントが共有ファイルシステム上で並列に動き、フロー全体をConsoleで追跡可能。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-06-17",
+      "last_date": "2026-06-17",
+      "appearances": 9
+    },
+    {
+      "id": 1009,
+      "title": "モデルルーティング：複雑度で振り分けてコスト削減",
+      "point": "Fable 5はOpus 4.8の約2倍コストのため、全タスクを既定でFable 5に送らない。簡単な分類や定型要約はOpus 4.8など低コストモデルにルーティングし、複雑な推論のみ上位モデルへ。高速executor＋高知性advisorをペアリングするAdvisor戦略も長時間エージェントのコスト構造を最適化する。",
+      "source_title": "Claude Fable 5 for Developers: API and Prompt Tips",
+      "source_url": "https://www.globaltechcouncil.org/Claude/claude-fable-5-for-developers-prompt-engineering-api-best-practices/",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-17",
+      "last_date": "2026-06-17",
+      "appearances": 9
     },
     {
       "id": 975,
@@ -548,6 +606,21 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 1006,
+      "title": "6/15 課金変更：プログラム利用が別クレジット枠に移行",
+      "point": "6月15日からClaude Codeのプログラム的・エージェント的利用（Agent SDK、headless `claude -p`、GitHub Actions、サードパーティエージェント）が共通のサブスク計算枠から切り離され、フルAPIレートの専用クレジットで課金される。Claude.aiチャットと対話型Claude Codeターミナルは従来プランのまま影響なし。",
+      "source_title": "Claude Code Pricing June 2026",
+      "source_url": "https://blog.getbind.co/claude-code-pricing-changes-june-15-what-youll-actually-pay-2026/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-06-17",
+      "last_date": "2026-06-17",
+      "appearances": 8
     },
     {
       "id": 986,
@@ -1313,6 +1386,22 @@
       "appearances": 6
     },
     {
+      "id": 1010,
+      "title": "ネストサブエージェント（最大5階層）で複雑タスクを分割",
+      "point": "Claude Codeはネストサブエージェント（最大5階層）に対応し、リードエージェントが専門サブエージェントへ委任する多層構成を組める。新しいプラグイン検索、より賢いモデル・リージョン処理、Chrome/VSCode/ターミナル連携の改善も併せて入っている。",
+      "source_title": "Claude Code Guide 2026: 25 Features with Examples",
+      "source_url": "https://www.marktechpost.com/2026/06/14/claude-code-guide-2026-25-features-with-examples-demo/",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-17",
+      "last_date": "2026-06-17",
+      "appearances": 5
+    },
+    {
       "id": 996,
       "title": "ultracode設定でdynamic workflowを自動判断",
       "point": "effortメニューから有効化できるClaude Code専用設定`ultracode`は、effortレベルをxhighに設定しつつ、Claudeがワークフロー化すべき場面を自動判断する。複数ステップの定型処理を「分析→分類→洞察生成」と一気通貫で回したいときに有効。",
@@ -1783,6 +1872,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1007,
+      "title": "Fable 5は「ゴール・完成条件・任せる範囲」だけ渡す委任プロンプト",
+      "point": "Fable 5は要求の「意図」を理解すると性能が上がる。手順を細かく指示するより、達成したい結果・完成の判定条件・自律してよい範囲を渡す委任型プロンプトが有効。タスクの「形状」で使い分け、大型タスクは段違い・小タスクは旧モデルと僅差という実測傾向。",
+      "source_title": "How to Actually Prompt Claude Fable 5",
+      "source_url": "https://alphasignalai.substack.com/p/how-to-actually-prompt-claude-fable",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-17",
+      "last_date": "2026-06-17",
+      "appearances": 4
     },
     {
       "id": 993,
@@ -2613,6 +2716,17 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1012,
+      "title": "背景・対象を1行添える意図テンプレート",
+      "point": "「I'm working on [大きなタスク] for [誰のため]」のように、依頼の背景と対象読者を1行添えるだけでFable 5の出力が安定する。コーディングなら「read my codebase structure」で先にプロジェクト構造を把握させてから具体機能を頼むと精度が上がる。",
+      "source_title": "How to Master Claude AI in 5 Minutes: 2026 Cheat Sheet",
+      "source_url": "https://medium.com/data-and-beyond/how-to-master-claude-ai-in-5-minutes-2026-updated-cheat-sheet-a72a98edce8c",
+      "tags": [],
+      "first_date": "2026-06-17",
+      "last_date": "2026-06-17",
+      "appearances": 3
     },
     {
       "id": 999,
@@ -4129,6 +4243,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1008,
+      "title": "ファイルベース外部メモリでロングタスク性能を底上げ",
+      "point": "全トランスクリプトを持ち越すのではなく、計画・決定・調査結果をモデルが読み書きする外部ストアに永続化する。終わった作業は要約してコンテキスト肥大を防ぎ、各ステップで必要な断片だけ取り出す。ファイルベースのメモリはFable 5の性能をOpus 4.8の3倍引き上げたという報告。",
+      "source_title": "Best Practices for Prompting Claude Fable 5",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5",
+      "tags": [
+        "自動化",
+        "モデル"
+      ],
+      "first_date": "2026-06-17",
+      "last_date": "2026-06-17",
+      "appearances": 2
     },
     {
       "id": 994,
@@ -12161,6 +12289,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-17",
+      "highlights": [
+        "Managed Agentsの「Dreaming」 — セッション終了後にエージェントが過去ログを自動レビューし、繰り返しの失敗・共有ワークフロー・チームの好みをメモリに蒸留して次回以降に賢くなる仕組み（Research Preview）。",
+        "/workflows が ultracode に改名 — Claude Codeの動的マルチエージェント・ワークフロー起動トリガーが `ultracode` に統一。effort xhigh＋Dynamic Workflows自動活用を一括有効化する流れ。"
+      ]
+    },
+    {
       "date": "2026-06-16",
       "highlights": [
         "post-sessionフック & セーフモード（2.1.169） — セッション終了後に作業を退避でき、`--safe-mode`で全カスタマイズ無効化のトラブル切り分けが可能に",
@@ -12793,5 +12928,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-16T08:00:03.729983"
+  "generated_at": "2026-06-17T08:00:03.610064"
 }
