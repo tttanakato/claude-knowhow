@@ -2718,6 +2718,32 @@
       "appearances": 4
     },
     {
+      "id": 1020,
+      "title": "コンテキストエンジニアリング：前提ファイルを整える",
+      "point": "プロンプトを磨くより、Claudeがセッション開始時に読む「前提ファイル」（自分は誰か・どう働くか・良い出力とは何か）を整備する方が活用効率が高い。毎回説明し直す手間が消え、Claudeもゼロからの開始を避けられる。",
+      "source_title": "Context Engineering Guide 2026",
+      "source_url": "https://www.the-ai-corner.com/p/context-engineering-guide-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-18",
+      "last_date": "2026-06-18",
+      "appearances": 3
+    },
+    {
+      "id": 1021,
+      "title": "CLAUDE.mdを「プロジェクトの常設ブリーフ」として書く",
+      "point": "最も効果が高い一手は良いCLAUDE.mdを書くこと。Claudeがセッション開始時に自動で読むこのファイルに、実際に重要なコマンド、テスト・lint・typecheck・buildの回し方など「新人シニアが1週間かけて学ぶ知識」を凝縮しておく。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-06-18",
+      "last_date": "2026-06-18",
+      "appearances": 3
+    },
+    {
       "id": 1012,
       "title": "背景・対象を1行添える意図テンプレート",
       "point": "「I'm working on [大きなタスク] for [誰のため]」のように、依頼の背景と対象読者を1行添えるだけでFable 5の出力が安定する。コーディングなら「read my codebase structure」で先にプロジェクト構造を把握させてから具体機能を頼むと精度が上がる。",
@@ -4243,6 +4269,83 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1016,
+      "title": "6月15日のAgent SDK課金分離が「保留」に",
+      "point": "Anthropicは6月15日、Agent SDK・`claude -p`・サードパーティアプリ利用をサブスク枠から分離し別枠の月次クレジットに移す予定だった変更を保留と発表。現状は変更なしで、Pro/Max/Team/Enterprise各枠から従来どおり利用でき、請求方針も据え置き。対話型のClaude Code TUI・Cowork・claude.aiは元々対象外。「ユーザーの開発実態に合う形へ作り直す」とし、将来の変更時は事前告知するとしている。",
+      "source_title": "Claude Credit Overhaul 2026: Anthropic Pauses the June 15 Change",
+      "source_url": "https://www.digitalapplied.com/blog/anthropic-claude-credit-overhaul-june-15-2026",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-06-18",
+      "last_date": "2026-06-18",
+      "appearances": 2
+    },
+    {
+      "id": 1018,
+      "title": "ALL-CAPS・「NEVER EVER」命令は逆効果",
+      "point": "2026年のClaudeでは「YOU MUST」「NEVER EVER」やALL-CAPSの強調が過剰反応を引き起こし、かえって出力品質を下げる。強調は簡潔な記述で十分で、命令の語気を強める必要はない。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [],
+      "first_date": "2026-06-18",
+      "last_date": "2026-06-18",
+      "appearances": 2
+    },
+    {
+      "id": 1022,
+      "title": "Few-Shot例示は「フォーマット整合」に特化させる",
+      "point": "Claudeは例から素早く学ぶため、特定の形式・スタイルで出力させたいときは「良い例」を見せるのが最短。2026年の例示は推論を上げる用途より、出力フォーマットを揃える用途で効く。例の末尾に `### New Input:` を置いて本番タスクへ繋ぐと精度が上がる。",
+      "source_title": "Claude AI Tips and Tricks: 25 Ways to Get Better Results (2026)",
+      "source_url": "https://explainx.ai/blog/top-10-tips-working-with-claude-efficiently-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-18",
+      "last_date": "2026-06-18",
+      "appearances": 2
+    },
+    {
+      "id": 1023,
+      "title": "実装前に計画を立て切る：「まだ実装するな」",
+      "point": "曖昧な意思決定はプランニングで解消できる。複数の判断を一つのレビュー済み仕様に集約すれば各判断がほぼ100%の精度に近づく。「don't implement yet（まだ実装するな）」を付けないとClaudeは即コードを書き始め、見直しを飛ばす。既存の良いコードを計画依頼に添えると参照が効いて出力が良くなる。",
+      "source_title": "Claude Code Best Practices 2026",
+      "source_url": "https://smartscope.blog/en/generative-ai/claude/claude-code-best-practices-advanced-2026/",
+      "tags": [],
+      "first_date": "2026-06-18",
+      "last_date": "2026-06-18",
+      "appearances": 2
+    },
+    {
+      "id": 1024,
+      "title": "Skills：繰り返し作業を保存して自動適用させる",
+      "point": "Skillは一度教えたタスク手順を保存し、文脈が合致するとClaudeが自動で発動する再利用ワークフロー。コードレビューやコンテンツ・テンプレートのような反復タスクを毎回説明し直さず、一貫した品質で処理できる。",
+      "source_title": "Claude Code Tips and Best Practices",
+      "source_url": "https://www.builder.io/blog/claude-code-tips-best-practices",
+      "tags": [],
+      "first_date": "2026-06-18",
+      "last_date": "2026-06-18",
+      "appearances": 2
+    },
+    {
+      "id": 1025,
+      "title": "Cowork：成果委任型で書き、「整理型」から始める",
+      "point": "Coworkは成果物をフォルダ単位で任せるエージェント。プロンプトは立場・作業・材料・出力形式・条件の5要素で書くと精度が上がる。生成・作成型から入る人が多いが、結果の正しさを人間が判断しやすい「整理型」から始める方が事故りにくく信頼を積み上げやすい。",
+      "source_title": "Claude Cowork 使い方｜プロンプト例7選と業種別レシピ",
+      "source_url": "https://claudelab.jp/articles/576",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-06-18",
+      "last_date": "2026-06-18",
+      "appearances": 2
     },
     {
       "id": 1008,
@@ -6332,6 +6435,32 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1017,
+      "title": "モデル使い分け：作業の9割はSonnet 4.6、Opusは温存",
+      "point": "日常作業の約9割はSonnet 4.6で十分な品質を約4割安いコストで得られるため、Opusは設計・複雑なリファクタ・ミスの代償が大きいタスクに温存するのがコスト最適化の基本。軽量モデルを計画段階に充てる使い分けも推奨される。",
+      "source_title": "10 Claude AI Tips: Work Efficiently (2026)",
+      "source_url": "https://explainx.ai/blog/top-10-tips-working-with-claude-efficiently-2026",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-18",
+      "last_date": "2026-06-18",
+      "appearances": 1
+    },
+    {
+      "id": 1019,
+      "title": "プロンプトは150〜300語が最適、長すぎると推論劣化",
+      "point": "長大なプロンプトは性能を落とし、推論は約3,000トークンを超えるあたりから劣化し始める。実用上の最適域は150〜300語。複雑な指示はUX設計のように関連指示をグループ化し、セクション見出し・例示・余白で構造化すると従いやすくなる。",
+      "source_title": "Claude Prompt Engineering: Advanced Techniques That Work",
+      "source_url": "https://beginnersinai.org/claude-prompt-engineering/",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-18",
+      "last_date": "2026-06-18",
+      "appearances": 1
     },
     {
       "id": 992,
@@ -12289,6 +12418,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-18",
+      "highlights": [
+        "6月15日のAgent SDK課金分離は「保留」に — Agent SDK・`claude -p`をサブスク枠から切り離す予定だった変更が直前で撤回。対話・Cowork・claude.aiは従来どおりで、請求方針は変わらず。",
+        "2026年はALL-CAPS命令が逆効果 — 「YOU MUST」「NEVER EVER」は過剰反応を招き品質低下。プロンプトは150〜300語が最適とされる。"
+      ]
+    },
+    {
       "date": "2026-06-17",
       "highlights": [
         "Managed Agentsの「Dreaming」 — セッション終了後にエージェントが過去ログを自動レビューし、繰り返しの失敗・共有ワークフロー・チームの好みをメモリに蒸留して次回以降に賢くなる仕組み（Research Preview）。",
@@ -12928,5 +13064,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-17T08:00:03.610064"
+  "generated_at": "2026-06-18T08:00:03.310618"
 }
