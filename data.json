@@ -119,6 +119,19 @@
       "appearances": 16
     },
     {
+      "id": 1036,
+      "title": "XMLタグで指示・文脈・例を構造化する",
+      "point": "`<目的>…</目的><トーン>…</トーン><形式>…</形式>` のようにXML風タグで情報を整理すると、Claudeが各要素を正しく認識しやすくなり出力精度が上がる。指示・文脈・出力形式・参考例を明示的に分離するのが基本。MarkdownよりもXMLタグの方が分離精度が高い。",
+      "source_title": "Claudeを使いこなすプロンプトのコツ9選",
+      "source_url": "https://note.com/jake_k547/n/na764827922ea",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-19",
+      "last_date": "2026-06-19",
+      "appearances": 15
+    },
+    {
       "id": 925,
       "title": "コンテキストエンジニアリング：プロンプトより前提整備が効く",
       "point": "2026年はプロンプトの言い回しより、システムプロンプト・ファイル・メモリ・例示・役割設定・制約といった「タスクを取り巻く構造」の整備が成果を左右する。モデル性能の向上で構造の重要度が相対的に増した。",
@@ -370,6 +383,23 @@
       "appearances": 11
     },
     {
+      "id": 1029,
+      "title": "Claude Code 料金体系が「対話」と「自動化」の2枠に分離（6/15〜）",
+      "point": "6/15以降、claude.ai/ターミナルCC/Coworkの対話利用は従来通りサブスク枠（おさいふ1）。一方 Agent SDK・`claude -p`・GitHub Actions(OAuth) は月次クレジット枠（おさいふ2、Pro $20 / Max5x $100 / Max20x $200）に分離。枯渇後はoverflow toggle（既定OFF=停止）で挙動を選べる。",
+      "source_title": "2026/06/15以降に料金体系が変更されたClaudeをどう使うか考えてみた",
+      "source_url": "https://dev.classmethod.jp/articles/claude-2026-pricing-reform-bucket-system/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化",
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-06-19",
+      "last_date": "2026-06-19",
+      "appearances": 10
+    },
+    {
       "id": 1004,
       "title": "Managed Agents「Dreaming」：セッション間でエージェントを自己改善させる",
       "point": "Dreamingは過去のエージェントセッションとメモリストアを定期的にレビューし、パターンを抽出してメモリを整理する「スケジュール実行プロセス」。タスク中の記憶保持（memory）とは別レイヤーで、セッション間に処理を行い再発ミスを減らす。現状Research Preview、Opus 4.7とSonnet 4.6に対応し、申請フォーム経由でアクセス。",
@@ -437,6 +467,20 @@
       "first_date": "2026-06-08",
       "last_date": "2026-06-08",
       "appearances": 10
+    },
+    {
+      "id": 1030,
+      "title": "Claude Code v2.1.179〜v2.1.181 の主要アップデート（6/16〜17）",
+      "point": "新機能 `/config key=value` のほか、ネットワークドライブ/クラウド同期フォルダでWrite/Editが0バイト・切り詰めファイルを生成する不具合や、アイドルセッションの履歴喪失といったデータ保全に関わる修正を含む。該当する使い方の人は早めの更新を推奨。",
+      "source_title": "Claude Code v2.1.179〜v2.1.181 の主要アップデート",
+      "source_url": "https://dev.classmethod.jp/articles/20260618-cc-updates-v2-1-181/",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-06-19",
+      "last_date": "2026-06-19",
+      "appearances": 9
     },
     {
       "id": 1005,
@@ -606,6 +650,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 1034,
+      "title": "Agent Team（多エージェント）はトークン約7倍 — Sonnet・小チーム・即クリーンアップ",
+      "point": "各teammateが独立コンテキストを持つため、Agent Team利用時はトークン消費が約7倍に膨らみ得る。コスト面の定石は「teammateにはSonnetを使う」「チームは小さく保つ」「作業後すぐにclean upする」の3点。",
+      "source_title": "2026/06/15以降に料金体系が変更されたClaudeをどう使うか考えてみた",
+      "source_url": "https://dev.classmethod.jp/articles/claude-2026-pricing-reform-bucket-system/",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-19",
+      "last_date": "2026-06-19",
+      "appearances": 8
     },
     {
       "id": 1006,
@@ -2718,6 +2776,20 @@
       "appearances": 4
     },
     {
+      "id": 1035,
+      "title": "プロンプトキャッシュ最適化：静的コンテキストを先頭に配置する",
+      "point": "システムアーキテクチャやAPIドキュメントなど変化しない静的コンテキストをプロンプト先頭に置くと、Prompt Cachingが最も効きやすくなり、レイテンシとトークンコストを大幅に削減できる。リクエストごとに変わる情報は後段に置くのがコツ。",
+      "source_title": "Claude Code Guide 2026: 25 Features with Examples",
+      "source_url": "https://www.marktechpost.com/2026/06/14/claude-code-guide-2026-25-features-with-examples-demo/",
+      "tags": [
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-06-19",
+      "last_date": "2026-06-19",
+      "appearances": 3
+    },
+    {
       "id": 1020,
       "title": "コンテキストエンジニアリング：前提ファイルを整える",
       "point": "プロンプトを磨くより、Claudeがセッション開始時に読む「前提ファイル」（自分は誰か・どう働くか・良い出力とは何か）を整備する方が活用効率が高い。毎回説明し直す手間が消え、Claudeもゼロからの開始を避けられる。",
@@ -4269,6 +4341,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1037,
+      "title": "Cowork の5時間枠2倍キャンペーン（6/5〜7/5）を活用する",
+      "point": "6/5〜7/5の期間、AnthropicがCowork専用の5時間利用枠を2倍にするキャンペーンを実施中。CC ターミナル側の5時間/週次枠が倍になるわけではない点に注意。ローカルファイルやOffice/Drive連携の定期作業（議事録・定例準備）をCowork scheduleに寄せると枠を有効活用できる。",
+      "source_title": "2026/06/15以降に料金体系が変更されたClaudeをどう使うか考えてみた",
+      "source_url": "https://dev.classmethod.jp/articles/claude-2026-pricing-reform-bucket-system/",
+      "tags": [
+        "API",
+        "製品機能"
+      ],
+      "first_date": "2026-06-19",
+      "last_date": "2026-06-19",
+      "appearances": 2
     },
     {
       "id": 1016,
@@ -6435,6 +6521,48 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1031,
+      "title": "`/config key=value` 構文でプロンプトから設定変更",
+      "point": "v2.1.181で追加。会話の途中から任意設定を切り替えられる。例 `/config thinking=false`。インタラクティブ・非インタラクティブ(`-p`)・Remote Controlのいずれでも動作する。あわせて `sandbox.allowAppleEvents`、PC在席時にモバイル通知を抑制する `CLAUDE_CLIENT_PRESENCE_FILE` も追加された。",
+      "source_title": "Claude Code v2.1.179〜v2.1.181 の主要アップデート",
+      "source_url": "https://dev.classmethod.jp/articles/20260618-cc-updates-v2-1-181/",
+      "tags": [
+        "プロンプト",
+        "製品機能"
+      ],
+      "first_date": "2026-06-19",
+      "last_date": "2026-06-19",
+      "appearances": 1
+    },
+    {
+      "id": 1032,
+      "title": "Remote Routine（/schedule）はサブスク枠で動く＝クレジット非消費",
+      "point": "`/schedule` や Desktop の Remote で作るRoutineはAnthropicのクラウドで実行されるが、消費先はおさいふ1（サブスク枠）でAgent SDK月次クレジットを使わない。GitHubリポジトリ上で完結する夜間バッチは、おさいふ2より先にRemote Routineを検討すべき。実行回数はPro 5回/Max 15回/Team・Ent 25回（1日）。",
+      "source_title": "2026/06/15以降に料金体系が変更されたClaudeをどう使うか考えてみた",
+      "source_url": "https://dev.classmethod.jp/articles/claude-2026-pricing-reform-bucket-system/",
+      "tags": [
+        "API",
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-06-19",
+      "last_date": "2026-06-19",
+      "appearances": 1
+    },
+    {
+      "id": 1033,
+      "title": "高頻度CIはAPIキー直指定でクレジットを温存する",
+      "point": "`ANTHROPIC_API_KEY=sk-ant-xxx claude -p ...` のようにAPIキーを環境変数で渡すと、月次クレジット枠ではなくAPI従量課金になる。毎日何十回も回すCIはこちらが本命。GitHub Actionsも `anthropic_api_key` を使えば従量課金、`claude_code_oauth_token` だと6/15以降クレジット消費になる点に注意。",
+      "source_title": "2026/06/15以降に料金体系が変更されたClaudeをどう使うか考えてみた",
+      "source_url": "https://dev.classmethod.jp/articles/claude-2026-pricing-reform-bucket-system/",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-06-19",
+      "last_date": "2026-06-19",
+      "appearances": 1
     },
     {
       "id": 1017,
@@ -12418,6 +12546,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-19",
+      "highlights": [
+        "Claude Code 料金「2つのおさいふ」分離（6/15〜） — 対話利用はサブスク枠のまま、Agent SDK / `claude -p` / GitHub Actions(OAuth) だけが月次クレジット枠に分離。夜間バッチはまず Remote Routine（サブスク枠）を検討するのが得策。",
+        "`/config key=value` 構文が追加（v2.1.181） — プロンプトから任意の設定を直接変更可能に。例: `/config thinking=false`。インタラクティブ・`-p`・Remote Control いずれでも利用できる。"
+      ]
+    },
+    {
       "date": "2026-06-18",
       "highlights": [
         "6月15日のAgent SDK課金分離は「保留」に — Agent SDK・`claude -p`をサブスク枠から切り離す予定だった変更が直前で撤回。対話・Cowork・claude.aiは従来どおりで、請求方針は変わらず。",
@@ -13064,5 +13199,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-18T08:00:03.310618"
+  "generated_at": "2026-06-19T08:00:03.602971"
 }
