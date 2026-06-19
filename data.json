@@ -27,6 +27,19 @@
       "appearances": 21
     },
     {
+      "id": 1046,
+      "title": "Sonnet 4.6を主役にしOpusは要所だけ（モデル使い分けでコスト最適化）",
+      "point": "日常作業の約9割はSonnet 4.6で十分な品質が得られ、コストを抑えられる。アーキテクチャ設計・複雑なリファクタリング・誤りの代償が大きいタスクにだけOpusを使うと、品質を落とさずトークン消費を最適化できる。",
+      "source_title": "10 Claude AI Tips（explainx.ai）",
+      "source_url": "https://explainx.ai/blog/top-10-tips-working-with-claude-efficiently-2026",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-20",
+      "last_date": "2026-06-20",
+      "appearances": 18
+    },
+    {
       "id": 1000,
       "title": "Fable 5 / Opus 4.8 / Sonnet 4.6 が1Mトークン対応",
       "point": "2026年6月時点で Fable 5・Opus 4.8・Sonnet 4.6 のいずれも100万トークンのコンテキストウィンドウに対応。大規模コードベースや長文資料を分割せず一括で扱えるが、消費トークンも増えるため必要な範囲に絞り込む設計は引き続き重要。",
@@ -301,6 +314,19 @@
       "appearances": 13
     },
     {
+      "id": 1048,
+      "title": "例示（few-shot）で出力フォーマットを学習させる",
+      "point": "Claudeは例から素早く学習する。特定の形式やスタイルで出力させたいときは、指示を細かく書くより「良い例」を1〜2個見せるほうが速く正確に意図が伝わる。",
+      "source_title": "9 Claude tips and tricks（Popular Science）",
+      "source_url": "https://www.popsci.com/diy/claude-ai-tips-tricks/",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-20",
+      "last_date": "2026-06-20",
+      "appearances": 12
+    },
+    {
       "id": 515,
       "title": "Claude Opus 4.7：より高解像度の画像認識でビジョンタスクの精度向上",
       "point": "Opus 4.7は旧モデルより高解像度で画像を認識できるようになった。詳細な図面・スキャン文書・複雑なUI画像の解析精度が向上。$5/$25 per MTokのOpus 4.6と同一価格で利用できる最上位モデルとして、ビジョンを要するエージェント開発に適している。",
@@ -381,6 +407,32 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 1043,
+      "title": "Claude Designが日常業務でブランド整合",
+      "point": "Claude Designがプロジェクト横断でデザインシステムを維持するよう更新。Claude Codeとの連携強化、キャンバス上での直接編集、レイアウト制御の強化、連携ツールの追加でデザイン→コードの受け渡しが滑らかに。デスクトップアプリのサイドバーに新設、claude.ai/designでも利用可（6/17発表）。",
+      "source_title": "Claude Design now stays on brand for daily work（Releasebot）",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-06-20",
+      "last_date": "2026-06-20",
+      "appearances": 10
+    },
+    {
+      "id": 1045,
+      "title": "旧モデル（Sonnet 4 / Opus 4）廃止に伴うID変数化",
+      "point": "6月15日付で `claude-sonnet-4-20250514` と `claude-opus-4-20250514` が廃止され、これらへのリクエストはエラーを返すようになった。推奨移行先はSonnet 4.6とOpus 4.8。コード内でモデルIDを変数化しておくと、今後の廃止・移行コストを最小化できる。",
+      "source_title": "Claude Developer Platform release notes（6/15）",
+      "source_url": "https://docs.claude.com/en/release-notes/overview.md",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-20",
+      "last_date": "2026-06-20",
+      "appearances": 10
     },
     {
       "id": 1029,
@@ -864,6 +916,19 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 1047,
+      "title": "最小プロンプトで始めClaudeに逆質問させる",
+      "point": "大きく曖昧なタスクは、いきなり詳細指示を書くより、まず最小限のプロンプトを与えて「Claudeにインタビューさせる」のが有効。実装方針・エッジケース・トレードオフなど、自分では気づかない論点をClaude側から質問してくれる。",
+      "source_title": "Claude best practices 2026（the-ai-corner）",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-20",
+      "last_date": "2026-06-20",
+      "appearances": 7
     },
     {
       "id": 931,
@@ -1442,6 +1507,22 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1042,
+      "title": "MCPコネクタのエンタープライズ管理認可（Okta対応）",
+      "point": "管理者がIdP（まずOkta）経由で組織全体のMCPコネクタを一括プロビジョニングできる新機能。利用者は所属グループ/ロールに応じて初回ログイン時に自動でアクセス権を継承し、個別認可が不要になる（ゼロタッチ）。chat・Claude Code・Cowork間で認可が一貫。Asana・Atlassian・Canva・Figma・Linear等が対応開始。Team/Enterpriseでベータ提供（6/18発表）。",
+      "source_title": "Centrally manage authorization for MCP connectors",
+      "source_url": "https://claude.com/blog/enterprise-managed-auth",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-06-20",
+      "last_date": "2026-06-20",
+      "appearances": 5
     },
     {
       "id": 1010,
@@ -2774,6 +2855,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1041,
+      "title": "Claude CodeでArtifactsを使う",
+      "point": "Claude Codeがセッションの作業内容を「Artifact」として取り込み、PRウォークスルー・システム解説・ダッシュボード・リリースチェックリスト等のライブなWebページに変換できるようになった。セッションの進行に合わせてページが自動更新される。社内限定共有とバージョン履歴はTeam/Enterprise向けにベータ提供（6/17発表）。",
+      "source_title": "Claude Code now supports artifacts（Releasebot）",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-06-20",
+      "last_date": "2026-06-20",
+      "appearances": 3
     },
     {
       "id": 1035,
@@ -4341,6 +4436,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1049,
+      "title": "大きなタスクごとに新規チャットでメモリ過負荷を防ぐ",
+      "point": "古い会話を1つのチャットに積み続けるとコンテキストが過負荷になり精度が落ちる。大きなタスクごとに新しい会話を開始することで、Claudeの注意を当該タスクに集中させられる。",
+      "source_title": "10 Claude AI Tips（explainx.ai）",
+      "source_url": "https://explainx.ai/blog/top-10-tips-working-with-claude-efficiently-2026",
+      "tags": [],
+      "first_date": "2026-06-20",
+      "last_date": "2026-06-20",
+      "appearances": 2
     },
     {
       "id": 1037,
@@ -6521,6 +6627,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1044,
+      "title": "Workload Identity FederationでClaude Platformへ安全アクセス",
+      "point": "Claude Developer Platformで、長期APIキーを使わずWorkload Identity Federation経由でアクセスする方式が利用可能に。クラウド環境の既存ID基盤に紐づけて認証することで、鍵管理の負担と漏えいリスクを低減できる（6/18公開）。",
+      "source_title": "Anthropic Release Notes - June 2026（Releasebot）",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-06-20",
+      "last_date": "2026-06-20",
+      "appearances": 1
     },
     {
       "id": 1031,
@@ -12546,6 +12665,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-20",
+      "highlights": [
+        "Claude CodeがArtifacts対応 — セッションの作業を、更新され続けるライブなWebページ（PR解説・ダッシュボード・チェックリスト等）として共有可能に。",
+        "MCPコネクタのエンタープライズ管理認可（Okta対応） — 管理者が一度設定すれば、利用者は初回ログイン時にゼロタッチでコネクタを利用可能に。"
+      ]
+    },
+    {
       "date": "2026-06-19",
       "highlights": [
         "Claude Code 料金「2つのおさいふ」分離（6/15〜） — 対話利用はサブスク枠のまま、Agent SDK / `claude -p` / GitHub Actions(OAuth) だけが月次クレジット枠に分離。夜間バッチはまず Remote Routine（サブスク枠）を検討するのが得策。",
@@ -13199,5 +13325,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-19T08:00:03.602971"
+  "generated_at": "2026-06-20T08:00:03.621412"
 }
