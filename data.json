@@ -132,6 +132,20 @@
       "appearances": 16
     },
     {
+      "id": 1057,
+      "title": "effortレベルをタスク別に使い分ける",
+      "point": "Opus 4.8は推論の深さを変える5段階のeffortレベルを持つ。コーディング・エージェント作業は `xhigh` が推奨で、軽い定型処理は低effortで十分。タスクの重さに応じてダイヤルを合わせるとコストと品質のバランスが取れる。",
+      "source_title": "Claude Opus 4.8 Prompting Playbook (Substack)",
+      "source_url": "https://linas.substack.com/p/claude-opus-4-8-prompting-playbook",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-21",
+      "last_date": "2026-06-21",
+      "appearances": 15
+    },
+    {
       "id": 1036,
       "title": "XMLタグで指示・文脈・例を構造化する",
       "point": "`<目的>…</目的><トーン>…</トーン><形式>…</形式>` のようにXML風タグで情報を整理すると、Claudeが各要素を正しく認識しやすくなり出力精度が上がる。指示・文脈・出力形式・参考例を明示的に分離するのが基本。MarkdownよりもXMLタグの方が分離精度が高い。",
@@ -173,6 +187,19 @@
       "first_date": "2026-05-21",
       "last_date": "2026-05-21",
       "appearances": 15
+    },
+    {
+      "id": 974,
+      "title": "Opus 4.8は否定制約より「文脈付き肯定指示」が効く",
+      "point": "「長すぎないで」より「プレーンな文章で。箇条書きは最大5項目。最後に1文要約」のように、してほしいことを具体的・肯定的に書く方が反応が良い。リテラルな指示遵守が強まった4.8では特に効果が大きい。",
+      "source_title": "Prompting Claude Opus 4.8 (公式)",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-4-8",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-14",
+      "last_date": "2026-06-21",
+      "appearances": 14
     },
     {
       "id": 958,
@@ -407,6 +434,21 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 1058,
+      "title": "Dynamic Workflows：Claude自身がオーケストレーションを書き並列実行する",
+      "point": "4.8最大の新パラダイムは、Claudeが自分でオーケストレーションスクリプトを書き、並列サブエージェントを起動してテスト時計算を自在にスケールさせる点。複雑タスクは手で手順を刻むより、ゴールと完成条件を渡して委任する方が伸びる。",
+      "source_title": "Claude Code アップデートまとめ (AI総合研究所)",
+      "source_url": "https://www.ai-souken.com/article/claude-code-updates-2026",
+      "tags": [
+        "自動化",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-06-21",
+      "last_date": "2026-06-21",
+      "appearances": 10
     },
     {
       "id": 1043,
@@ -941,19 +983,6 @@
         "API"
       ],
       "first_date": "2026-06-11",
-      "last_date": "2026-06-14",
-      "appearances": 7
-    },
-    {
-      "id": 974,
-      "title": "Opus 4.8は否定制約より「文脈付き肯定指示」が効く",
-      "point": "「長くするな」より「プレーンな散文で、列挙は最大5項目まで」のように、やってほしいことを文脈付きで肯定形で指示するとOpus 4.8の追従性が上がる。ALL-CAPSや「NEVER EVER」の強調は逆効果で、簡潔な記述で十分。",
-      "source_title": "How to Prompt Claude Opus 4.8 Differently",
-      "source_url": "https://www.mindstudio.ai/blog/how-to-prompt-claude-opus-4-8",
-      "tags": [
-        "モデル"
-      ],
-      "first_date": "2026-06-14",
       "last_date": "2026-06-14",
       "appearances": 7
     },
@@ -2857,6 +2886,20 @@
       "appearances": 4
     },
     {
+      "id": 1053,
+      "title": "Claude Code 2.1.183：auto modeが破壊的コマンドを自動ブロック",
+      "point": "自分で指示しない限り、`git reset --hard`/`git checkout -- .`/`git clean -fd`/`git stash drop` がブロックされる。エージェント以外のコミットへの `git commit --amend`、対象スタック未指定の `terraform/pulumi/cdk destroy` も遮断。auto mode利用時の事故防止が一段強化された。",
+      "source_title": "Claude Code Updates - June 2026 (Releasebot)",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-06-21",
+      "last_date": "2026-06-21",
+      "appearances": 3
+    },
+    {
       "id": 1041,
       "title": "Claude CodeでArtifactsを使う",
       "point": "Claude Codeがセッションの作業内容を「Artifact」として取り込み、PRウォークスルー・システム解説・ダッシュボード・リリースチェックリスト等のライブなWebページに変換できるようになった。セッションの進行に合わせてページが自動更新される。社内限定共有とバージョン履歴はTeam/Enterprise向けにベータ提供（6/17発表）。",
@@ -4436,6 +4479,35 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1054,
+      "title": "Claude Code 2.1.181：`/config key=value` でプロンプトから設定変更",
+      "point": "`/config thinking=false` のようにプロンプト内から任意の設定を変更でき、インタラクティブ・`-p`・Remote Controlのいずれでも動作する。`/config --help` で利用可能なキー一覧を確認できる。設定画面を開かず素早く切り替えたい場面で有効。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "製品機能"
+      ],
+      "first_date": "2026-06-21",
+      "last_date": "2026-06-21",
+      "appearances": 2
+    },
+    {
+      "id": 1060,
+      "title": "モデルエイリアスは最新を指す、固定したいならフルネームを使う",
+      "point": "`/model opus` などのエイリアスは常に最新リリースを指すため、バージョンを固定したい場合は `claude-opus-4-8` のようにフルネームをピン留めする。セッション途中の切替は `/model opus` や Option+P（Mac）/ Alt+P で可能で、ピッカーの選択は次回以降の既定になる。",
+      "source_title": "Claude Code Cheat Sheet 2026",
+      "source_url": "https://computingforgeeks.com/claude-code-cheat-sheet/",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-06-21",
+      "last_date": "2026-06-21",
+      "appearances": 2
     },
     {
       "id": 1049,
@@ -6627,6 +6699,45 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1055,
+      "title": "`CLAUDE_CLIENT_PRESENCE_FILE` でマシン在席中はモバイル通知を抑制",
+      "point": "環境変数 `CLAUDE_CLIENT_PRESENCE_FILE` にマーカーファイルを指定すると、自分がPC前にいる間はスマホへのプッシュ通知を止められる。長時間タスクの完了通知を「離席時だけ」受け取りたいワークフローに便利。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-06-21",
+      "last_date": "2026-06-21",
+      "appearances": 1
+    },
+    {
+      "id": 1056,
+      "title": "Opus 4.8は指示をリテラルに解釈し、低effortでは勝手に一般化しない",
+      "point": "4.8は特に低effort時、指示を明示的かつ字義通りに解釈する。ある項目への指示を別の項目へ暗黙に拡張しないため、複数対象に同じ扱いを求めるなら「すべての項目に対して」と明記する必要がある。",
+      "source_title": "How to Prompt Claude Opus 4.8 (MindStudio)",
+      "source_url": "https://www.mindstudio.ai/blog/how-to-prompt-claude-opus-4-8",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-21",
+      "last_date": "2026-06-21",
+      "appearances": 1
+    },
+    {
+      "id": 1059,
+      "title": "Developer Platform：新ツールバージョンで90秒セル制限とresponse_inclusionを追加",
+      "point": "`code_execution_20260521` がツール説明に「1セルあたり90秒」の実行上限を明示し、長時間セルの計画が立てやすくなった。`web_search_20260318`/`web_fetch_20260318` には消費済み結果ブロックを応答から除く `response_inclusion` が追加（いずれもbetaヘッダ不要）。",
+      "source_title": "Claude Developer Platform Updates (Releasebot)",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-developer-platform",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-06-21",
+      "last_date": "2026-06-21",
+      "appearances": 1
     },
     {
       "id": 1044,
@@ -12665,6 +12776,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-21",
+      "highlights": [
+        "auto modeの破壊的コマンド自動ブロック（2.1.183） — 危険なgit操作やterraform destroyを意図しない限り遮断",
+        "Opus 4.8は「文脈付き肯定指示」が効く — 「〜するな」の羅列より「何をどうしてほしいか」を具体的に書く"
+      ]
+    },
+    {
       "date": "2026-06-20",
       "highlights": [
         "Claude CodeがArtifacts対応 — セッションの作業を、更新され続けるライブなWebページ（PR解説・ダッシュボード・チェックリスト等）として共有可能に。",
@@ -13325,5 +13443,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-20T08:00:03.621412"
+  "generated_at": "2026-06-21T08:00:03.707305"
 }
