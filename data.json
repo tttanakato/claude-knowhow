@@ -1,6 +1,21 @@
 {
   "tips": [
     {
+      "id": 1071,
+      "title": "サブエージェント判断基準：5ファイル超なら分離する",
+      "point": "サブエージェントは独自のシステムプロンプト・文脈窓・ツール・権限を持つ隔離インスタンスで、最終出力のみを親に返すため文脈肥大を防ぐ。目安として、1つのタスクが約5ファイル超に触れるなら分離する価値がある。",
+      "source_title": "Claude Code Advanced Best Practices 2026 (SmartScope)",
+      "source_url": "https://smartscope.blog/en/generative-ai/claude/claude-code-best-practices-advanced-2026/",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-06-22",
+      "last_date": "2026-06-22",
+      "appearances": 30
+    },
+    {
       "id": 876,
       "title": "Managed Agentsメモリ：イミュータブルバージョン管理と監査証跡の保持",
       "point": "Claude Managed Agentsのメモリは変更のたびにイミュータブルなバージョンが生成され、監査証跡として機能する。「数字を下げても最大値が保持される」仕様に注意しつつ、TTLとmax_entriesを設定してトークン消費の肥大化を防ぐことが長期安定運用のカギ。Dreamingと組み合わせると自己改善サイクルが完成する。",
@@ -67,6 +82,22 @@
       "appearances": 18
     },
     {
+      "id": 1072,
+      "title": "コンテキストエンジニアリング ＞ プロンプト微調整",
+      "point": "2026年はモデル品質が向上し、プロンプトの言い回しよりタスク周辺の構造（システムプロンプト・ファイル・メモリ・例・役割設定・制約）が成果を左右する。専用サブエージェントがクリーンな文脈窓で焦点タスクを担う設計が文脈制約の回避に有効。",
+      "source_title": "Effective context engineering for AI agents (Anthropic)",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-22",
+      "last_date": "2026-06-22",
+      "appearances": 17
+    },
+    {
       "id": 946,
       "title": "リクエストだけでなく「理由」を伝える",
       "point": "Fable 5は依頼の背後にある意図を理解しているとき、タスクを関連情報に結びつけてより良い成果を出す。公式推奨フォーマットは「私は［誰のための］［大きなタスク］に取り組んでいる。彼らには［出力が可能にすること］が必要。それを踏まえて：［依頼］」。複数ワークストリームを扱う長時間実行エージェントでは特に効果が大きい。",
@@ -130,6 +161,20 @@
       "first_date": "2026-04-09",
       "last_date": "2026-04-09",
       "appearances": 16
+    },
+    {
+      "id": 1064,
+      "title": "Claude Fable 5 一般提供：Mythos級・1Mトークン・自動フォールバック",
+      "point": "Anthropicが最上位モデルClaude Fable 5をGA。Opus級を上回るMythos級の能力ティアを新設し、常時アダプティブ思考、1Mトークン文脈窓、128K出力トークンに対応。安全分類でフラグが付いた要求は自動的にOpus 4.8へフォールバックする。",
+      "source_title": "Claude Updates by Anthropic - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-06-22",
+      "last_date": "2026-06-22",
+      "appearances": 15
     },
     {
       "id": 1057,
@@ -377,6 +422,19 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 12
+    },
+    {
+      "id": 1068,
+      "title": "Dreaming機能：過去セッションを振り返りメモリを自動整理",
+      "point": "「Dreaming」は過去のエージェントセッションをレビューしてパターンを抽出、メモリをキュレーションする。これによりエージェントが実行を重ねるごとに賢くなり、セッション間で性能が向上する。",
+      "source_title": "Claude Code Guide 2026: 25 Features",
+      "source_url": "https://www.marktechpost.com/2026/06/14/claude-code-guide-2026-25-features-with-examples-demo/",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-22",
+      "last_date": "2026-06-22",
+      "appearances": 11
     },
     {
       "id": 982,
@@ -1136,6 +1194,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1067,
+      "title": "`/loop`：テストとリファクタを自動サイクルで実行",
+      "point": "`/loop`は、ステップごとの手動確認なしにユニットテスト実行とコード改善を自動で繰り返す。確率的なモデル出力から確定的な成果を引き出すワークフローとして有効。",
+      "source_title": "Claude Code Guide 2026: 25 Features",
+      "source_url": "https://www.marktechpost.com/2026/06/14/claude-code-guide-2026-25-features-with-examples-demo/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-22",
+      "last_date": "2026-06-22",
+      "appearances": 6
     },
     {
       "id": 983,
@@ -2886,6 +2957,62 @@
       "appearances": 4
     },
     {
+      "id": 1066,
+      "title": "Claude Code `/cd`：セッション途中で作業ディレクトリを変更",
+      "point": "`/cd`コマンドで、プロンプトキャッシュを再構築せずに現在のセッションを新しい作業ディレクトリへ移動できる。設定不具合の切り分けに使う`--safe-mode`（CLAUDE.md・スキル・プラグイン・フック・MCPを全無効化して起動）も追加された。",
+      "source_title": "Claude Code Guide 2026: 25 Features",
+      "source_url": "https://www.marktechpost.com/2026/06/14/claude-code-guide-2026-25-features-with-examples-demo/",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-22",
+      "last_date": "2026-06-22",
+      "appearances": 3
+    },
+    {
+      "id": 1069,
+      "title": "MCP tunnels（Research Preview）：プライベート網のMCPサーバーに接続",
+      "point": "プライベートネットワーク内のMCPサーバーへ接続するMCP tunnelsがリサーチプレビューとして提供開始。あわせてManaged Agents向けのセルフホスト型サンドボックスや、稼働中セッションのMCPサーバー/ツール設定の更新にも対応した。",
+      "source_title": "Claude Developer Platform Updates - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-developer-platform",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-22",
+      "last_date": "2026-06-22",
+      "appearances": 3
+    },
+    {
+      "id": 1070,
+      "title": "スキルは8〜12個が適正：簡潔さがトークン税を抑える",
+      "point": "スキルは一度ロードされるとターンを超えて文脈に残るため、1行ごとが継続的なトークンコストになる。「なぜ・どうやって」を語らず「何をするか」を簡潔に記述する。常に効く規則はCLAUDE.md（常時文脈）、特定ワークフローはスキル（オンデマンド文脈）に分ける。",
+      "source_title": "Claude Skills and Subagents (Towards Data Science)",
+      "source_url": "https://towardsdatascience.com/claude-skills-and-subagents-escaping-the-prompt-engineering-hamster-wheel/",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-06-22",
+      "last_date": "2026-06-22",
+      "appearances": 3
+    },
+    {
+      "id": 1073,
+      "title": "モデル選択：作業の9割はSonnet 4.6、Opusは要所のみ",
+      "point": "日常作業の約90%はSonnet 4.6で十分。ほぼ同等の品質を約40%安いコストで得られる。アーキテクチャ設計・複雑なリファクタなど、誤りのコストがトークン上乗せを上回る場面にOpusを温存する。",
+      "source_title": "10 Claude AI Tips to Work Efficiently (explainx.ai)",
+      "source_url": "https://explainx.ai/blog/top-10-tips-working-with-claude-efficiently-2026",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-22",
+      "last_date": "2026-06-22",
+      "appearances": 3
+    },
+    {
       "id": 1053,
       "title": "Claude Code 2.1.183：auto modeが破壊的コマンドを自動ブロック",
       "point": "自分で指示しない限り、`git reset --hard`/`git checkout -- .`/`git clean -fd`/`git stash drop` がブロックされる。エージェント以外のコミットへの `git commit --amend`、対象スタック未指定の `terraform/pulumi/cdk destroy` も遮断。auto mode利用時の事故防止が一段強化された。",
@@ -4479,6 +4606,22 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1065,
+      "title": "エンタープライズ管理型MCPコネクタ（Okta連携）でゼロタッチ接続",
+      "point": "管理者がコネクタを一度プロビジョニングすれば、ユーザーは初回ログイン時に自動でアクセスを得られる。Claudeチャット・Claude Code・Coworkを横断する中央集権的な認可を、Team/Enterpriseプラン向けにベータ提供。",
+      "source_title": "Claude Developer Platform Updates - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-developer-platform",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-06-22",
+      "last_date": "2026-06-22",
+      "appearances": 2
     },
     {
       "id": 1054,
@@ -12776,6 +12919,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-22",
+      "highlights": [
+        "Claude Fable 5 が一般提供開始 — Mythos級の最上位モデル、1Mトークン文脈・常時アダプティブ思考。フラグ付き要求は自動でOpus 4.8にフォールバック",
+        "エンタープライズ管理型MCPコネクタ（Okta対応） — 管理者が一度設定すれば、ユーザーは初回ログインでゼロタッチ接続できるベータが開始"
+      ]
+    },
+    {
       "date": "2026-06-21",
       "highlights": [
         "auto modeの破壊的コマンド自動ブロック（2.1.183） — 危険なgit操作やterraform destroyを意図しない限り遮断",
@@ -13443,5 +13593,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-21T08:00:03.707305"
+  "generated_at": "2026-06-22T08:00:03.739802"
 }
