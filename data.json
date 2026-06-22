@@ -1196,6 +1196,22 @@
       "appearances": 7
     },
     {
+      "id": 1081,
+      "title": "MCPコネクタのエンタープライズ管理認可（Okta対応）でゼロタッチ接続",
+      "point": "管理者がIdP（まずOkta）経由でMCPコネクタを組織全体に一括プロビジョニングし、ユーザーは初回ログイン時に自動でアクセスを得られる。Claudeチャット・Claude Code・Coworkで認可を一元化。MCP認可仕様のオープン拡張に基づき、自社製コネクタにも適用可能。Team/Enterpriseでベータ提供。",
+      "source_title": "Centrally manage authorization for MCP connectors",
+      "source_url": "https://claude.com/blog/enterprise-managed-auth",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-06-23",
+      "last_date": "2026-06-23",
+      "appearances": 6
+    },
+    {
       "id": 1067,
       "title": "`/loop`：テストとリファクタを自動サイクルで実行",
       "point": "`/loop`は、ステップごとの手動確認なしにユニットテスト実行とコード改善を自動で繰り返す。確率的なモデル出力から確定的な成果を引き出すワークフローとして有効。",
@@ -2113,6 +2129,35 @@
       "appearances": 5
     },
     {
+      "id": 1041,
+      "title": "Claude CodeでArtifactsを使う",
+      "point": "セッションの作業を、その場で更新されるライブな共有Webページ（Artifact）に変換。PRウォークスルー、インシデントページ、ダッシュボード、リリースチェックリストなどを、コードベース・コネクター・会話の全コンテキストから生成。公開は組織内のみ、バージョン履歴対応でTeam/Enterpriseのベータ提供。",
+      "source_title": "Claude Code now supports artifacts",
+      "source_url": "https://claude.com/blog/artifacts-in-claude-code",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-20",
+      "last_date": "2026-06-23",
+      "appearances": 4
+    },
+    {
+      "id": 1053,
+      "title": "Claude Code 2.1.183：auto modeが破壊的コマンドを自動ブロック",
+      "point": "auto mode実行時、明示的に指示していない限り `git reset --hard`／`git checkout -- .`／`git clean -fd`／`git stash drop` をブロック。エージェント自身が作っていないコミットへの `git commit --amend`、対象スタックを指定しない `terraform/pulumi/cdk destroy` も拒否する。自律実行時の事故防止が強化された。",
+      "source_title": "Anthropic Release Notes (Releasebot)",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-06-21",
+      "last_date": "2026-06-23",
+      "appearances": 4
+    },
+    {
       "id": 1007,
       "title": "Fable 5は「ゴール・完成条件・任せる範囲」だけ渡す委任プロンプト",
       "point": "Fable 5は要求の「意図」を理解すると性能が上がる。手順を細かく指示するより、達成したい結果・完成の判定条件・自律してよい範囲を渡す委任型プロンプトが有効。タスクの「形状」で使い分け、大型タスクは段違い・小タスクは旧モデルと僅差という実測傾向。",
@@ -2957,6 +3002,21 @@
       "appearances": 4
     },
     {
+      "id": 1054,
+      "title": "Claude Code 2.1.181：`/config key=value` でプロンプトから設定変更",
+      "point": "プロンプト内から任意の設定を直接変更できる `/config key=value` 構文を追加（例: `/config thinking=false`）。対話モード・`-p`・Remote Controlで動作。`/config --help` で利用可能なキー一覧を確認できる。設定UIを開かずに素早く挙動を切り替えられる。",
+      "source_title": "Anthropic Release Notes (Releasebot)",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "製品機能"
+      ],
+      "first_date": "2026-06-21",
+      "last_date": "2026-06-23",
+      "appearances": 3
+    },
+    {
       "id": 1066,
       "title": "Claude Code `/cd`：セッション途中で作業ディレクトリを変更",
       "point": "`/cd`コマンドで、プロンプトキャッシュを再構築せずに現在のセッションを新しい作業ディレクトリへ移動できる。設定不具合の切り分けに使う`--safe-mode`（CLAUDE.md・スキル・プラグイン・フック・MCPを全無効化して起動）も追加された。",
@@ -3010,34 +3070,6 @@
       ],
       "first_date": "2026-06-22",
       "last_date": "2026-06-22",
-      "appearances": 3
-    },
-    {
-      "id": 1053,
-      "title": "Claude Code 2.1.183：auto modeが破壊的コマンドを自動ブロック",
-      "point": "自分で指示しない限り、`git reset --hard`/`git checkout -- .`/`git clean -fd`/`git stash drop` がブロックされる。エージェント以外のコミットへの `git commit --amend`、対象スタック未指定の `terraform/pulumi/cdk destroy` も遮断。auto mode利用時の事故防止が一段強化された。",
-      "source_title": "Claude Code Updates - June 2026 (Releasebot)",
-      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
-      "tags": [
-        "Claude Code",
-        "エージェント"
-      ],
-      "first_date": "2026-06-21",
-      "last_date": "2026-06-21",
-      "appearances": 3
-    },
-    {
-      "id": 1041,
-      "title": "Claude CodeでArtifactsを使う",
-      "point": "Claude Codeがセッションの作業内容を「Artifact」として取り込み、PRウォークスルー・システム解説・ダッシュボード・リリースチェックリスト等のライブなWebページに変換できるようになった。セッションの進行に合わせてページが自動更新される。社内限定共有とバージョン履歴はTeam/Enterprise向けにベータ提供（6/17発表）。",
-      "source_title": "Claude Code now supports artifacts（Releasebot）",
-      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
-      "tags": [
-        "Claude Code",
-        "新機能"
-      ],
-      "first_date": "2026-06-20",
-      "last_date": "2026-06-20",
       "appearances": 3
     },
     {
@@ -4621,21 +4653,6 @@
       ],
       "first_date": "2026-06-22",
       "last_date": "2026-06-22",
-      "appearances": 2
-    },
-    {
-      "id": 1054,
-      "title": "Claude Code 2.1.181：`/config key=value` でプロンプトから設定変更",
-      "point": "`/config thinking=false` のようにプロンプト内から任意の設定を変更でき、インタラクティブ・`-p`・Remote Controlのいずれでも動作する。`/config --help` で利用可能なキー一覧を確認できる。設定画面を開かず素早く切り替えたい場面で有効。",
-      "source_title": "Claude Code changelog",
-      "source_url": "https://code.claude.com/docs/en/changelog",
-      "tags": [
-        "Claude Code",
-        "プロンプト",
-        "製品機能"
-      ],
-      "first_date": "2026-06-21",
-      "last_date": "2026-06-21",
       "appearances": 2
     },
     {
@@ -6842,6 +6859,77 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1077,
+      "title": "Claude Code 2.1.181：在席中はモバイル通知を抑制する `CLAUDE_CLIENT_PRESENCE_FILE`",
+      "point": "マーカーファイルを指す環境変数 `CLAUDE_CLIENT_PRESENCE_FILE` を設定すると、PCの前にいる間はモバイルへのプッシュ通知を抑制できる。あわせて長い段落のストリーミングが行単位で表示され、思考中のAPI接続断も自動リトライするようになった。",
+      "source_title": "Anthropic Release Notes (Releasebot)",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "Claude Code",
+        "API",
+        "製品機能"
+      ],
+      "first_date": "2026-06-23",
+      "last_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": 1078,
+      "title": "Claude Code 2.1.178：ネストスキル共存と `Tool(param:value)` 権限ルール",
+      "point": "作業中ディレクトリの `.claude/skills` 配下スキルが読み込まれ、名前衝突時は `<dir>:<name>` 形式で両立。権限ルールに `Tool(param:value)`（`*` ワイルドカード対応）が追加され、例えば `Agent(model:opus)` でOpusサブエージェントをブロックできる。エージェントチームは暗黙化し、Agentツールの `name` 引数で直接teammateを起動できる。",
+      "source_title": "Anthropic Release Notes (Releasebot)",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-23",
+      "last_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": 1079,
+      "title": "Claude Code 2.1.185：ストリーム停止表示を改善（20秒沈黙後に再試行）",
+      "point": "ストリームが止まった際の表示が「No response from API · Retrying in…」から「Waiting for API response · will retry in…」に変更。再試行のトリガーも従来の10秒沈黙から20秒に緩和され、不要なリトライ表示が減った。",
+      "source_title": "Anthropic Release Notes (Releasebot)",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-06-23",
+      "last_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": 1080,
+      "title": "Claude Code 2.1.179：接続断でも部分応答を保持",
+      "point": "ストリーム途中で接続が切れても、生のエラーを出さず部分応答を保持するよう改善。スピナーが「running tool」で固まる問題も解消。WSL2のマウスホイールスクロールやサブエージェント表示の不具合も修正された。",
+      "source_title": "Anthropic Release Notes (Releasebot)",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-06-23",
+      "last_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": 1082,
+      "title": "Sonnet 4.6はコスパで選ぶ：SWE-bench 79.6%でOpus 4.6比40%安",
+      "point": "Sonnet 4.6はSWE-bench Verifiedで79.6%（Opus 4.6に1.2ポイント差）。ほぼ同等のコード品質を約40%安く・高速に得られるため、コーディングタスクの既定モデルとして有力。最高難度の推論のみOpusに切り替える使い分けが効率的。",
+      "source_title": "Claude best practices 2026 (The AI Corner)",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-23",
+      "last_date": "2026-06-23",
+      "appearances": 1
     },
     {
       "id": 1055,
@@ -12919,6 +13007,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-23",
+      "highlights": [
+        "Claude Code 2.1.178〜2.1.185 リリース波 — auto modeの安全強化、`/config key=value`、ネストスキル共存など実務直結の改善が集中",
+        "Claude CodeのArtifacts — セッションの作業をライブで更新される共有Webページ化（Team/Enterpriseベータ）"
+      ]
+    },
+    {
       "date": "2026-06-22",
       "highlights": [
         "Claude Fable 5 が一般提供開始 — Mythos級の最上位モデル、1Mトークン文脈・常時アダプティブ思考。フラグ付き要求は自動でOpus 4.8にフォールバック",
@@ -13593,5 +13688,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-22T08:00:03.739802"
+  "generated_at": "2026-06-23T08:00:03.792575"
 }
