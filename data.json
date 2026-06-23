@@ -42,6 +42,21 @@
       "appearances": 21
     },
     {
+      "id": 1088,
+      "title": "コンテキストエンジニアリングがプロンプト技巧を超える",
+      "point": "2026年はモデルがボトルネックになることは稀で、ほぼ常にコンテキストが律速。言葉の巧拙より、システムプロンプト・ファイル・メモリ・例示など「何を読ませるか」の設計が出力品質を決める。",
+      "source_title": "Claude best practices 2026 power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-24",
+      "last_date": "2026-06-24",
+      "appearances": 19
+    },
+    {
       "id": 1046,
       "title": "Sonnet 4.6を主役にしOpusは要所だけ（モデル使い分けでコスト最適化）",
       "point": "日常作業の約9割はSonnet 4.6で十分な品質が得られ、コストを抑えられる。アーキテクチャ設計・複雑なリファクタリング・誤りの代償が大きいタスクにだけOpusを使うと、品質を落とさずトークン消費を最適化できる。",
@@ -317,6 +332,17 @@
       "appearances": 14
     },
     {
+      "id": 1089,
+      "title": "逆質問させる「Socraticプロンプティング」",
+      "point": "いきなり成果物を指示せず「このタスクを上手くやるには何を知る必要があるか質問して」と促す。`I want to [TASK] so that [基準]. Ask me questions before you execute.` の型で、隠れた前提が表面化し品質が跳ね上がる。",
+      "source_title": "Claude best practices 2026 power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [],
+      "first_date": "2026-06-24",
+      "last_date": "2026-06-24",
+      "appearances": 13
+    },
+    {
       "id": 981,
       "title": "Opus 4.8プロンプティング：否定制約より「文脈付き肯定指示」",
       "point": "Opus 4.8は「〜するな」の羅列より「何をどうしてほしいか」を文脈付きで書く方が反応が良い。例：「長すぎないで」ではなく「プレーンな文章で。箇条書きは最大5項目。最後に1文要約」と具体化する。リテラルな指示遵守が強まった4.8では特に効果的。",
@@ -386,6 +412,19 @@
       "appearances": 13
     },
     {
+      "id": 1090,
+      "title": "XMLタグで複雑なプロンプトを構造化する",
+      "point": "`<context>` `<task>` `<constraints>` `<examples>` などのXMLタグで指示を区切ると、Claudeが各セクションを明確に処理し出力の一貫性が大きく向上する。",
+      "source_title": "How to Use Claude Like a Pro: 35 Tips",
+      "source_url": "https://sureprompts.com/blog/how-to-use-claude",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-24",
+      "last_date": "2026-06-24",
+      "appearances": 12
+    },
+    {
       "id": 1048,
       "title": "例示（few-shot）で出力フォーマットを学習させる",
       "point": "Claudeは例から素早く学習する。特定の形式やスタイルで出力させたいときは、指示を細かく書くより「良い例」を1〜2個見せるほうが速く正確に意図が伝わる。",
@@ -422,6 +461,17 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 12
+    },
+    {
+      "id": 1091,
+      "title": "ボイスプロファイル＋アンチAIライティングで「自分の文体」を再現",
+      "point": "自分の信念や文のリズムを記したvoice-profileと、使わせない語（utilize, synergy, leverage, delve 等）や構造を列挙したanti-AIファイルをセットで用意。Claudeに自分を「鋭い記者役」でインタビューさせると精度が上がる。",
+      "source_title": "Claude best practices 2026 power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [],
+      "first_date": "2026-06-24",
+      "last_date": "2026-06-24",
+      "appearances": 11
     },
     {
       "id": 1068,
@@ -492,6 +542,17 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 1092,
+      "title": "役割と「理由」をセットで与える",
+      "point": "役割だけでなく、なぜそれが必要か（誰が読むか・何を優先するか）まで伝えると出力が一変する。例：「シニア財務アナリストとして、非技術系の創業者がバーンレートを理解できるよう、精度より明快さを優先して」。",
+      "source_title": "Claude best practices 2026 power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [],
+      "first_date": "2026-06-24",
+      "last_date": "2026-06-24",
+      "appearances": 10
     },
     {
       "id": 1058,
@@ -1625,6 +1686,17 @@
       "appearances": 6
     },
     {
+      "id": 1094,
+      "title": "アウトカムベースの指示（手順でなく成果を伝える）",
+      "point": "「列Bをコピーして…」と手順を並べるより「この表を分析し、カテゴリ別支出のWordレポートを要約と上位5項目の表付きで作って」と成果を伝える方が良い。Claudeが計画を立て、人は承認・修正に集中できる。",
+      "source_title": "Claude best practices 2026 power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [],
+      "first_date": "2026-06-24",
+      "last_date": "2026-06-24",
+      "appearances": 5
+    },
+    {
       "id": 1042,
       "title": "MCPコネクタのエンタープライズ管理認可（Okta対応）",
       "point": "管理者がIdP（まずOkta）経由で組織全体のMCPコネクタを一括プロビジョニングできる新機能。利用者は所属グループ/ロールに応じて初回ログイン時に自動でアクセス権を継承し、個別認可が不要になる（ゼロタッチ）。chat・Claude Code・Cowork間で認可が一貫。Asana・Atlassian・Canva・Figma・Linear等が対応開始。Team/Enterpriseでベータ提供（6/18発表）。",
@@ -2127,6 +2199,21 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1093,
+      "title": "Coworkでファイルを並列処理して待ち時間短縮",
+      "point": "「10ファイルそれぞれを処理し、各1ページの要約を作って」のように並列性が明確な指示にすると、Coworkのサブエージェントが並行処理し、約30分の作業が約4分に短縮できる。",
+      "source_title": "Claude best practices 2026 power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "エージェント",
+        "生産性",
+        "製品機能"
+      ],
+      "first_date": "2026-06-24",
+      "last_date": "2026-06-24",
+      "appearances": 4
     },
     {
       "id": 1041,
@@ -3000,6 +3087,17 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1095,
+      "title": "ハンドオフ文書を書いてから新セッションへ",
+      "point": "コンテキスト使用率が高いセッションは出力が劣化する。新しい話題や品質低下を感じたら、「やったこと・有効だったこと・次の一歩・決定事項を、前提ゼロのClaudeが引き継げるよう要約して」と依頼し、保存して次セッション冒頭で読み込むと、クリーンな文脈と継続性を両立できる。",
+      "source_title": "Claude best practices 2026 power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [],
+      "first_date": "2026-06-24",
+      "last_date": "2026-06-24",
+      "appearances": 3
     },
     {
       "id": 1054,
@@ -6859,6 +6957,31 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1086,
+      "title": "`claude mcp login/logout` でCLIからMCP認証",
+      "point": "Claude Code 2.1.186（6/22）で追加。`/mcp` の対話メニューを開かずに、コマンドラインから直接MCPサーバーへログイン/ログアウト可能。`--no-browser` でstdinリダイレクトに対応し、SSH越しでも認証を完了できる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-24",
+      "last_date": "2026-06-24",
+      "appearances": 1
+    },
+    {
+      "id": 1087,
+      "title": "`!` bashコマンドの出力にClaudeが自動応答",
+      "point": "同2.1.186より、`!` で実行したbashコマンドの出力に対しClaudeが自動で応答するようになった。従来どおり文脈取り込みだけにしたい場合は settings.json で `\"respondToBashCommands\": false` を設定する。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-06-24",
+      "last_date": "2026-06-24",
+      "appearances": 1
     },
     {
       "id": 1077,
@@ -13007,6 +13130,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-24",
+      "highlights": [
+        "Claude Code 2.1.186：`claude mcp login/logout` — 対話メニューを開かずCLIから直接MCPサーバーに認証でき、SSH越しの完了もサポート（新登場）",
+        "永続コンテキスト・システムの構築 — about-me / voice-profile などのファイルを毎回自動読込させ「ゼロから説明し直す税」を撤廃する上級者の定番"
+      ]
+    },
+    {
       "date": "2026-06-23",
       "highlights": [
         "Claude Code 2.1.178〜2.1.185 リリース波 — auto modeの安全強化、`/config key=value`、ネストスキル共存など実務直結の改善が集中",
@@ -13688,5 +13818,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-23T08:00:03.792575"
+  "generated_at": "2026-06-24T08:00:03.684340"
 }
