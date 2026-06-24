@@ -2201,6 +2201,33 @@
       "appearances": 5
     },
     {
+      "id": 1105,
+      "title": "コンテキストエンジニアリング2026：最適は150〜300語、成功基準を明示",
+      "point": "2026年はプロンプトの言い回しより「コンテキストの構造化」が効く。プロンプトは長くするのではなく明確な仕様にするのがコツで、実用的な最適値は150〜300語。「良い要約を書く」ではなく「非技術系の役員が取締役会に転送できる3文の要約」のように成功基準を具体化する。重要情報は文脈の先頭か末尾に置く（中間に埋もれると精度が30%以上低下）。",
+      "source_title": "Claude Prompt Engineering in 2026: The Context Engineering Guide",
+      "source_url": "https://www.aiforanything.io/blog/claude-prompt-engineering-context-engineering-guide-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-25",
+      "last_date": "2026-06-25",
+      "appearances": 4
+    },
+    {
+      "id": 1107,
+      "title": "Claude Design /design-sync：Claude Codeと双方向同期",
+      "point": "6月のアップデートでビジュアルデザインと実装コードのループが閉じた。インポート可能なデザインシステム、キャンバスの直接編集、/design-syncに対応。Claude CodeとClaude Designが双方向に同期し、/design-syncでデザインシステムをリポジトリに取り込んだり、構築したものをClaude Designに戻したりできる。",
+      "source_title": "Claude Design June 2026: Design Systems & /design-sync",
+      "source_url": "https://www.explainx.ai/blog/claude-design-june-2026-update-design-sync-2026",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-06-25",
+      "last_date": "2026-06-25",
+      "appearances": 4
+    },
+    {
       "id": 1093,
       "title": "Coworkでファイルを並列処理して待ち時間短縮",
       "point": "「10ファイルそれぞれを処理し、各1ページの要約を作って」のように並列性が明確な指示にすると、Coworkのサブエージェントが並行処理し、約30分の作業が約4分に短縮できる。",
@@ -3087,6 +3114,47 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1102,
+      "title": "ネストサブエージェント：サブエージェントが自分のサブエージェントを生成（最大5階層）",
+      "point": "サブエージェントがさらに自分のサブエージェントを起動できるようになった（バックグラウンドの連鎖は最大5階層まで）。プロンプト下のサブエージェントパネルがツリー全体を表示し、各行が配下の子孫数とmainへの経路を示す。",
+      "source_title": "Claude Code Changelog: All Release Notes (2026)",
+      "source_url": "https://claudefa.st/blog/guide/changelog",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-06-25",
+      "last_date": "2026-06-25",
+      "appearances": 3
+    },
+    {
+      "id": 1103,
+      "title": "auto modeの破壊的コマンドブロックを拡充",
+      "point": "auto modeで、ユーザーがローカル変更の破棄を依頼していない場合にgit reset --hard・git checkout -- .・git clean -fd・git stash dropをブロック。git commit --amendはそのセッションでエージェントが作成していないコミットに対してブロック。terraform/pulumi/cdk destroyは対象スタックを明示しない限りブロックされる。",
+      "source_title": "Claude Code Updates - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-25",
+      "last_date": "2026-06-25",
+      "appearances": 3
+    },
+    {
+      "id": 1106,
+      "title": "Claude Cowork が一般提供（GA）",
+      "point": "Claude CoworkがmacOSとWindowsのClaude Desktopアプリで一般提供開始。非開発者がファイル管理やタスク自動化をデスクトップ上で行える。",
+      "source_title": "Anthropic Release Notes - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "自動化",
+        "製品機能"
+      ],
+      "first_date": "2026-06-25",
+      "last_date": "2026-06-25",
+      "appearances": 3
     },
     {
       "id": 1095,
@@ -4736,6 +4804,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1100,
+      "title": "Claude Opus 4.7 が一般提供（GA）：ビジョン強化",
+      "point": "Opus 4.7が正式にGA化。ソフトウェアエンジニアリングと複雑で長時間にわたるコーディングタスクで改善が見られ、画像をより高い解像度で認識できるようになりビジョンタスクの精度が向上した。",
+      "source_title": "Anthropic Release Notes - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-25",
+      "last_date": "2026-06-25",
+      "appearances": 2
     },
     {
       "id": 1065,
@@ -6957,6 +7038,66 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1099,
+      "title": "Claude Code 2.1.187：sandbox.credentialsで秘匿情報を保護",
+      "point": "6月23日リリース。sandbox.credentials設定により、サンドボックス実行のコマンドが認証情報ファイルやシークレット環境変数を読み取れないように制御できる。あわせて組織で設定したモデル制限がモデルピッカー・--model・/model・ANTHROPIC_MODELに反映され、制限モデル選択時に警告を表示。",
+      "source_title": "Claude Code Updates - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-06-25",
+      "last_date": "2026-06-25",
+      "appearances": 1
+    },
+    {
+      "id": 1101,
+      "title": "/cd コマンド：プロンプトキャッシュを壊さず作業ディレクトリを変更",
+      "point": "新しい/cdコマンドで、プロンプトキャッシュを再構築せずに現在のセッションを別の作業ディレクトリへ移動できる。移動先のCLAUDE.mdはシステムプロンプトを置き換えるのではなくメッセージとして追記される。セッションは移動先のプロジェクトストレージに移るため--resume/--continueもそこで見つかる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-06-25",
+      "last_date": "2026-06-25",
+      "appearances": 1
+    },
+    {
+      "id": 1104,
+      "title": "権限ルールのTool(param:value)構文：Opusサブエージェントをブロック",
+      "point": "権限ルールにTool(param:value)構文が追加され、ツールの入力パラメータにマッチさせられる（*ワイルドカード対応）。例えばAgent(model:opus)と書くとOpusを使うサブエージェントの起動をブロックできる。コスト管理やモデル統制に有効。",
+      "source_title": "claude-code/CHANGELOG.md",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-25",
+      "last_date": "2026-06-25",
+      "appearances": 1
+    },
+    {
+      "id": 1108,
+      "title": "Claude Code・Opus APIのレート制限を引き上げ",
+      "point": "Claude Codeのレート制限が2倍に、Claude Opusの API制限も引き上げられた。開発者・スタートアップ・企業がより安定して大規模に構築できるようになった。両変更はすでに有効。",
+      "source_title": "Claude Code new features update - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-06-25",
+      "last_date": "2026-06-25",
+      "appearances": 1
     },
     {
       "id": 1086,
@@ -13130,6 +13271,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-25",
+      "highlights": [
+        "Claude Opus 4.7 が一般提供（GA） — ソフトウェア開発・長時間コーディングが向上、画像をより高解像度で認識",
+        "Claude Code 2.1.187（6/23） — sandbox.credentials設定で認証情報の読み取りをブロック、組織によるモデル制限に対応"
+      ]
+    },
+    {
       "date": "2026-06-24",
       "highlights": [
         "Claude Code 2.1.186：`claude mcp login/logout` — 対話メニューを開かずCLIから直接MCPサーバーに認証でき、SSH越しの完了もサポート（新登場）",
@@ -13818,5 +13966,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-24T08:00:03.684340"
+  "generated_at": "2026-06-25T08:00:03.284447"
 }
