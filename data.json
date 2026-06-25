@@ -16,6 +16,19 @@
       "appearances": 30
     },
     {
+      "id": 1115,
+      "title": "適応的思考（Adaptive Thinking）とeffortパラメータ",
+      "point": "Claude 4.6系ではbudget_tokensによる手動思考制御に代わり、thinking: {type: \"adaptive\"} を使用。思考深度はeffortパラメータで調整する。残りコンテキスト窓を自己把握するcontext awarenessも搭載。",
+      "source_title": "Prompting best practices - Claude API Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-26",
+      "last_date": "2026-06-26",
+      "appearances": 23
+    },
+    {
       "id": 876,
       "title": "Managed Agentsメモリ：イミュータブルバージョン管理と監査証跡の保持",
       "point": "Claude Managed Agentsのメモリは変更のたびにイミュータブルなバージョンが生成され、監査証跡として機能する。「数字を下げても最大値が保持される」仕様に注意しつつ、TTLとmax_entriesを設定してトークン消費の肥大化を防ぐことが長期安定運用のカギ。Dreamingと組み合わせると自己改善サイクルが完成する。",
@@ -40,6 +53,21 @@
       "first_date": "2026-05-21",
       "last_date": "2026-05-21",
       "appearances": 21
+    },
+    {
+      "id": 1072,
+      "title": "コンテキストエンジニアリング ＞ プロンプト微調整",
+      "point": "2026年はプロンプトを巧妙に言い換えるより、タスク前後に与える情報構造（システムプロンプト・ファイル・メモリ・例示・役割・制約）の整備が効率の鍵。モデル品質が向上し、文言よりタスク周辺の構造が成果を左右する。",
+      "source_title": "Claude best practices 2026",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-22",
+      "last_date": "2026-06-26",
+      "appearances": 20
     },
     {
       "id": 1088,
@@ -95,22 +123,6 @@
       "first_date": "2026-05-17",
       "last_date": "2026-05-17",
       "appearances": 18
-    },
-    {
-      "id": 1072,
-      "title": "コンテキストエンジニアリング ＞ プロンプト微調整",
-      "point": "2026年はモデル品質が向上し、プロンプトの言い回しよりタスク周辺の構造（システムプロンプト・ファイル・メモリ・例・役割設定・制約）が成果を左右する。専用サブエージェントがクリーンな文脈窓で焦点タスクを担う設計が文脈制約の回避に有効。",
-      "source_title": "Effective context engineering for AI agents (Anthropic)",
-      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
-      "tags": [
-        "Claude Code",
-        "プロンプト",
-        "エージェント",
-        "モデル"
-      ],
-      "first_date": "2026-06-22",
-      "last_date": "2026-06-22",
-      "appearances": 17
     },
     {
       "id": 946,
@@ -1686,6 +1698,33 @@
       "appearances": 6
     },
     {
+      "id": 1118,
+      "title": "サブエージェントのファンアウト：役割分担で並列処理",
+      "point": "大きなタスクは専門役割を持つサブエージェントに分散させる。コアロジック担当・ユニットテスト担当・ドキュメント担当などに分けて並列実行すると、AIファースト開発の生産性が大きく向上する。",
+      "source_title": "Claude AI 2026 Guide - Superdev Academy",
+      "source_url": "https://www.superdevacademy.com/en/blogs/claude-ai-2026-guide-coding-tips-tricks",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-06-26",
+      "last_date": "2026-06-26",
+      "appearances": 5
+    },
+    {
+      "id": 1119,
+      "title": "Claude Design：Claude Code同期と直接キャンバス編集を強化",
+      "point": "Claude Designの更新でプロジェクト横断のデザインシステム整合を維持。Claude Codeとの双方向同期を強化し、キャンバスの直接編集・レイアウト制御・ツール接続を追加してデザイン→コードの受け渡しを円滑化。",
+      "source_title": "Claude Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-06-26",
+      "last_date": "2026-06-26",
+      "appearances": 5
+    },
+    {
       "id": 1094,
       "title": "アウトカムベースの指示（手順でなく成果を伝える）",
       "point": "「列Bをコピーして…」と手順を並べるより「この表を分析し、カテゴリ別支出のWordレポートを要約と上位5項目の表付きで作って」と成果を伝える方が良い。Claudeが計画を立て、人は承認・修正に集中できる。",
@@ -2199,6 +2238,21 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1114,
+      "title": "エンタープライズ管理MCPコネクタ（Okta）：初回ログインでゼロタッチ接続",
+      "point": "管理者がMCPコネクタを一度プロビジョニングすれば、ユーザーは初回ログイン時に自動でアクセス可能に。Oktaから対応開始。Claudeチャット・Claude Code・Coworkを横断して認可を一元管理。Team/Enterpriseプラン向け。",
+      "source_title": "Anthropic Release Notes - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-06-26",
+      "last_date": "2026-06-26",
+      "appearances": 4
     },
     {
       "id": 1105,
@@ -4806,6 +4860,34 @@
       "appearances": 3
     },
     {
+      "id": 1113,
+      "title": "Claude Code 2.1.187：サンドボックス認証情報ブロックと組織モデル制限",
+      "point": "sandbox.credentials設定でサンドボックス実行コマンドが認証情報ファイルや秘密環境変数を読み取れないようブロック。さらに組織が設定したモデル制限をモデルピッカーに反映。resume・構造化出力・リモートMCPの信頼性も改善。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-26",
+      "last_date": "2026-06-26",
+      "appearances": 2
+    },
+    {
+      "id": 1117,
+      "title": "Sonnet 4.6を主力に、Opusは要所のみ",
+      "point": "作業の約9割はSonnet 4.6で十分。ほぼ同等の品質を約40%安いコストで得られる。アーキテクチャ設計・複雑なリファクタリングなど、誤りのコストがトークン割増を上回る場面のみOpusを使う。",
+      "source_title": "10 Claude AI Tips (2026) - explainx.ai",
+      "source_url": "https://explainx.ai/blog/top-10-tips-working-with-claude-efficiently-2026",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-26",
+      "last_date": "2026-06-26",
+      "appearances": 2
+    },
+    {
       "id": 1100,
       "title": "Claude Opus 4.7 が一般提供（GA）：ビジョン強化",
       "point": "Opus 4.7が正式にGA化。ソフトウェアエンジニアリングと複雑で長時間にわたるコーディングタスクで改善が見られ、画像をより高い解像度で認識できるようになりビジョンタスクの精度が向上した。",
@@ -7038,6 +7120,47 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1112,
+      "title": "Claude Tag：Slackチャンネルで@Claudeにタスクを委任する",
+      "point": "Slack上でClaudeをタグ付けし、チャンネル内でタスク委任・ツール/データ/コードベース接続ができるチーム向けβ機能。コンテキスト記憶・能動的アップデート・非同期タスク処理に対応し、Opus 4.8で動作。Enterprise/Teamプラン向け。",
+      "source_title": "Introducing Claude Tag",
+      "source_url": "https://www.anthropic.com/news/introducing-claude-tag",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-06-26",
+      "last_date": "2026-06-26",
+      "appearances": 1
+    },
+    {
+      "id": 1116,
+      "title": "重要情報はプロンプトの冒頭・末尾10%に配置する",
+      "point": "Claudeの注意機構は先頭10%と末尾10%を重視するため、最重要の指示やコンテキストをこの位置に前置き（フロントロード）すると遵守率が上がる。長文プロンプトで特に効果的。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-26",
+      "last_date": "2026-06-26",
+      "appearances": 1
+    },
+    {
+      "id": 1120,
+      "title": "Claude Code 暗黙チーム：Agentツールのname指定でチームメイトを直接生成",
+      "point": "実験フラグ有効時、各セッションに暗黙のチームが1つ存在し、TeamCreate/TeamDeleteを使わずAgentツールのnameパラメータで直接チームメイトを起動できる。Tool(param:value)構文で権限ルールも入力値単位で指定可能に。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-06-26",
+      "last_date": "2026-06-26",
+      "appearances": 1
     },
     {
       "id": 1099,
@@ -13271,6 +13394,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-26",
+      "highlights": [
+        "Claude Tag（Slackチーム連携） — Slackチャンネルに@Claudeをタグ付けしてタスク委任・ツール連携できるチーム向けβ機能が登場",
+        "Claude Code 2.1.187 — サンドボックスの認証情報読み取りブロックと組織モデル制限を追加、セキュリティが強化"
+      ]
+    },
+    {
       "date": "2026-06-25",
       "highlights": [
         "Claude Opus 4.7 が一般提供（GA） — ソフトウェア開発・長時間コーディングが向上、画像をより高解像度で認識",
@@ -13966,5 +14096,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-25T08:00:03.284447"
+  "generated_at": "2026-06-26T08:00:03.595725"
 }
