@@ -29,6 +29,21 @@
       "appearances": 23
     },
     {
+      "id": 1129,
+      "title": "コンテキストエンジニアリングが文言より重要",
+      "point": "2026年はモデル品質が向上し、プロンプトの巧拙よりタスク周辺の「構造」が成果を左右する。システムプロンプト・ファイル・メモリ・例示・役割設定・制約を整理し、限られた注意予算に高シグナルな最小トークン集合を入れることが鍵。",
+      "source_title": "Effective context engineering for AI agents",
+      "source_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-27",
+      "last_date": "2026-06-27",
+      "appearances": 21
+    },
+    {
       "id": 876,
       "title": "Managed Agentsメモリ：イミュータブルバージョン管理と監査証跡の保持",
       "point": "Claude Managed Agentsのメモリは変更のたびにイミュータブルなバージョンが生成され、監査証跡として機能する。「数字を下げても最大値が保持される」仕様に注意しつつ、TTLとmax_entriesを設定してトークン消費の肥大化を防ぐことが長期安定運用のカギ。Dreamingと組み合わせると自己改善サイクルが完成する。",
@@ -53,6 +68,19 @@
       "first_date": "2026-05-21",
       "last_date": "2026-05-21",
       "appearances": 21
+    },
+    {
+      "id": 1132,
+      "title": "モデルの使い分け（Sonnet主力・Opusは設計）",
+      "point": "作業の9割はSonnet 4.6で十分。ほぼ同等の品質を約40%安いコストで得られる。Opusはアーキテクチャ設計・複雑なリファクタ・誤りのコストがトークン代を上回るタスクに温存する。`/model`で軽量モデルに切り替えれば利用枠を伸ばせる。",
+      "source_title": "10 Claude AI Tips: Work Efficiently (2026)",
+      "source_url": "https://explainx.ai/blog/top-10-tips-working-with-claude-efficiently-2026",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-27",
+      "last_date": "2026-06-27",
+      "appearances": 20
     },
     {
       "id": 1072,
@@ -342,6 +370,20 @@
       "first_date": "2026-05-22",
       "last_date": "2026-05-22",
       "appearances": 14
+    },
+    {
+      "id": 1133,
+      "title": "XMLタグでプロンプトを構造化",
+      "point": "指示・文脈・例示・変数入力が混在するときは、各要素を`<instructions>`・`<context>`・`<input>`のようにタグで囲むとClaudeが曖昧さなく解析できる。2万トークン超の長文書は、クエリや指示の上（プロンプト前方）に置くと全モデルで性能が向上する。",
+      "source_title": "Prompting best practices",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-06-27",
+      "last_date": "2026-06-27",
+      "appearances": 13
     },
     {
       "id": 1089,
@@ -694,6 +736,20 @@
       "appearances": 10
     },
     {
+      "id": 1131,
+      "title": "フックで決定論的に毎回検証",
+      "point": "例外なく毎回実行したい処理はフックで行う。フックはワークフローの特定地点でスクリプトを自動実行し、助言的なCLAUDE.md指示と違い決定論的に動く。最も効果的なのは検証—Claudeに自分の出力を確認させる手段を与えること。1つだけ採用するならこれ。",
+      "source_title": "Best practices for Claude Code",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "tags": [
+        "CLAUDE.md",
+        "自動化"
+      ],
+      "first_date": "2026-06-27",
+      "last_date": "2026-06-27",
+      "appearances": 9
+    },
+    {
       "id": 1030,
       "title": "Claude Code v2.1.179〜v2.1.181 の主要アップデート（6/16〜17）",
       "point": "新機能 `/config key=value` のほか、ネットワークドライブ/クラウド同期フォルダでWrite/Editが0バイト・切り詰めファイルを生成する不具合や、アイドルセッションの履歴喪失といったデータ保全に関わる修正を含む。該当する使い方の人は早めの更新を推奨。",
@@ -875,6 +931,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 1126,
+      "title": "Claude Code Artifactsでライブ共有ページ化",
+      "point": "Claude Codeセッションの成果を、ライブで対話可能・共有可能なHTMLページに変換する「Artifacts」が登場。実行中コードや複数データソースを差し込み、共有URL上でダッシュボードとして閲覧できる。エンタープライズ向けの協働ワークスペースを意識した更新。",
+      "source_title": "Claude Code Artifacts brings live, shared dashboards",
+      "source_url": "https://venturebeat.com/data/anthropics-claude-code-artifacts-update-brings-live-shared-dashboards-and-interactive-workspaces-to-enterprises",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-06-27",
+      "last_date": "2026-06-27",
+      "appearances": 8
     },
     {
       "id": 1034,
@@ -2240,6 +2309,19 @@
       "appearances": 5
     },
     {
+      "id": 1130,
+      "title": "プランモードで実装前に意図をレビュー",
+      "point": "Claude Codeはまずプランモードでファイル読み込みと質問に応じ、変更を加えずに計画を提示。実装前に意図をレビューすることで、20個の曖昧な判断を1つのレビュー済み仕様に集約できる。大きな機能では全工程を任せず、最初の分岐で誤りを捕まえるのが速い。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-06-27",
+      "last_date": "2026-06-27",
+      "appearances": 4
+    },
+    {
       "id": 1114,
       "title": "エンタープライズ管理MCPコネクタ（Okta）：初回ログインでゼロタッチ接続",
       "point": "管理者がMCPコネクタを一度プロビジョニングすれば、ユーザーは初回ログイン時に自動でアクセス可能に。Oktaから対応開始。Claudeチャット・Claude Code・Coworkを横断して認可を一元管理。Team/Enterpriseプラン向け。",
@@ -3168,6 +3250,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1125,
+      "title": "Claude Code 2.1.191の`/rewind`と高速化",
+      "point": "最新リリース2.1.191で`/clear`実行前の地点から会話を再開できる`/rewind`を追加。ストリーミング応答中のCPU使用を約37%削減し、長時間セッションのメモリ肥大も改善。停止したバックグラウンドエージェントが復活する不具合も修正。",
+      "source_title": "Claude Code Updates - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-06-27",
+      "last_date": "2026-06-27",
+      "appearances": 3
     },
     {
       "id": 1102,
@@ -4858,6 +4955,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1124,
+      "title": "Claude TagでSlackに@Claudeを常駐",
+      "point": "Anthropicが「Claude Tag」をベータ公開。SlackチャンネルにClaudeをチームメンバーとして加え、ツール・データ・コードベースへのアクセスを管理者が制御したうえで、誰でも@Claudeにタスクを委任できる。チャンネルの文脈を記憶し、非同期・自律的に作業する。Enterprise/Team顧客向け、Opus 4.8で動作。",
+      "source_title": "Introducing Claude Tag",
+      "source_url": "https://www.anthropic.com/news/introducing-claude-tag",
+      "tags": [
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-06-27",
+      "last_date": "2026-06-27",
+      "appearances": 2
     },
     {
       "id": 1113,
@@ -7120,6 +7232,33 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1127,
+      "title": "CLIからMCPサーバーに認証（claude mcp login）",
+      "point": "2.1.186で`claude mcp login <name>` / `claude mcp logout <name>`を追加。対話メニュー`/mcp`を開かずにCLIからMCPサーバー認証が可能になり、`--no-browser`でSSH越しの認証完了にも対応。",
+      "source_title": "Claude Code Updates - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-27",
+      "last_date": "2026-06-27",
+      "appearances": 1
+    },
+    {
+      "id": 1128,
+      "title": "ループエンジニアリングへの移行",
+      "point": "手動プロンプトから「自律エージェントワークフローの設計」へ重心が移行。エージェントループでは各ツール呼び出しの文脈が毎回再送されるため、20反復目には1呼び出しの入力が5万トークンを超えうる。ループ設計時はコンテキスト累積コストを前提に組む。",
+      "source_title": "Claude Code Loop Engineering",
+      "source_url": "https://www.techtimes.com/articles/318828/20260622/claude-code-loop-engineering-stop-prompting-start-designing-autonomous-agent-workflows.htm",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-06-27",
+      "last_date": "2026-06-27",
+      "appearances": 1
     },
     {
       "id": 1112,
@@ -13394,6 +13533,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-27",
+      "highlights": [
+        "Claude Tag（Slack連携） — @ClaudeをSlackチャンネルのチームメンバーとして常駐させ、タスク委任・非同期作業ができるベータが登場",
+        "Claude Code 2.1.191 — `/rewind`で`/clear`前まで会話を巻き戻し、ストリーミングのCPU使用を約37%削減"
+      ]
+    },
+    {
       "date": "2026-06-26",
       "highlights": [
         "Claude Tag（Slackチーム連携） — Slackチャンネルに@Claudeをタグ付けしてタスク委任・ツール連携できるチーム向けβ機能が登場",
@@ -14096,5 +14242,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-26T08:00:03.595725"
+  "generated_at": "2026-06-27T08:00:03.638482"
 }
