@@ -29,6 +29,19 @@
       "appearances": 23
     },
     {
+      "id": 1144,
+      "title": "モデルの使い分け：Sonnet 4.6を主力、Opusは設計・複雑refactor限定",
+      "point": "作業の約90%はSonnet 4.6で十分。Opus比でほぼ同等品質を約40%安いコストで提供する。アーキテクチャ設計や複雑なリファクタリング、誤りのコストがトークン割増を上回るタスクのみOpusを温存するのがコスパ最適。",
+      "source_title": "explainx.ai: 10 Claude AI Tips 2026",
+      "source_url": "https://explainx.ai/blog/top-10-tips-working-with-claude-efficiently-2026",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-28",
+      "last_date": "2026-06-28",
+      "appearances": 21
+    },
+    {
       "id": 1129,
       "title": "コンテキストエンジニアリングが文言より重要",
       "point": "2026年はモデル品質が向上し、プロンプトの巧拙よりタスク周辺の「構造」が成果を左右する。システムプロンプト・ファイル・メモリ・例示・役割設定・制約を整理し、限られた注意予算に高シグナルな最小トークン集合を入れることが鍵。",
@@ -515,6 +528,19 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 12
+    },
+    {
+      "id": 1137,
+      "title": "Mythos 5の限定再公開：米政府が100超の機関へ提供許可",
+      "point": "6月12日に一旦停止されたMythosクラス最強モデルMythos 5について、米商務省が「適切な安全策あり」と判断し、サイバー防御者やインフラ事業者など100超の信頼機関への限定提供を許可。Project Glasswing経由で順次アクセスを復旧中。一般提供のFable 5とは別枠の招待制。",
+      "source_title": "9to5Mac: Mythos 5 cleared for 100+ institutions",
+      "source_url": "https://9to5mac.com/2026/06/26/anthropic-cleared-to-release-claude-mythos-5-to-over-100-us-institutions/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-28",
+      "last_date": "2026-06-28",
+      "appearances": 11
     },
     {
       "id": 1091,
@@ -2309,6 +2335,35 @@
       "appearances": 5
     },
     {
+      "id": 1140,
+      "title": "Claude Code 2.1.191：`/rewind`が`/clear`前の会話も復元",
+      "point": "`/rewind`（Esc二度押し）でチェックポイントまで会話とファイル変更を巻き戻せる機能が強化。`/clear`実行前の会話まで遡って再開可能に。誤った文脈をモデルが引きずる問題を、その経路ごと破棄してやり直せる。",
+      "source_title": "explainx.ai: Claude Code 2.1.191 Changelog",
+      "source_url": "https://www.explainx.ai/blog/claude-code-2-1-191-rewind-mcp-background-agents-2026",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-06-28",
+      "last_date": "2026-06-28",
+      "appearances": 4
+    },
+    {
+      "id": 1142,
+      "title": "Claude Code Artifacts：セッション成果をライブ共有ページ化",
+      "point": "Claude Codeのセッション作業を、リアルタイム更新される共有Webページ（PRウォークスルー、インシデントページ、ダッシュボード、リリースチェックリスト等）に変換。コードベース・コネクター・会話の全文脈から自動生成され、同一URLでバージョン履歴を保持。Team/Enterpriseのベータ。",
+      "source_title": "Claude blog: Artifacts in Claude Code",
+      "source_url": "https://claude.com/blog/artifacts-in-claude-code",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-28",
+      "last_date": "2026-06-28",
+      "appearances": 4
+    },
+    {
       "id": 1130,
       "title": "プランモードで実装前に意図をレビュー",
       "point": "Claude Codeはまずプランモードでファイル読み込みと質問に応じ、変更を加えずに計画を提示。実装前に意図をレビューすることで、20個の曖昧な判断を1つのレビュー済み仕様に集約できる。大きな機能では全工程を任せず、最初の分岐で誤りを捕まえるのが速い。",
@@ -3252,6 +3307,47 @@
       "appearances": 4
     },
     {
+      "id": 1035,
+      "title": "プロンプトキャッシュ最適化：静的コンテキストを先頭に配置する",
+      "point": "システムアーキテクチャやAPIドキュメントなど変化しない静的コンテキストをプロンプト先頭に置くことでプロンプトキャッシュが最大効率でヒットし、レイテンシとトークンコストを大幅削減。動的な内容は末尾に。100万トークン窓を活かす基本設計。",
+      "source_title": "Superdev Academy: Claude AI 2026 Guide",
+      "source_url": "https://www.superdevacademy.com/en/blogs/claude-ai-2026-guide-coding-tips-tricks",
+      "tags": [
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-06-19",
+      "last_date": "2026-06-28",
+      "appearances": 3
+    },
+    {
+      "id": 1138,
+      "title": "Claude Tag：Slackに@Claudeを常駐させてタスク委任",
+      "point": "Team/Enterprise向けに、Slackチャンネルへ@Claudeを常駐させるベータ。@Claudeをタグ付けして依頼するとタスクを段階分解し、付与ツールで処理してスレッドに結果を返す。チャンネル単位で1体が全員と共有され、文脈を蓄積。旧Claude in Slackアプリは8月3日に廃止予定。",
+      "source_title": "Anthropic: Introducing Claude Tag",
+      "source_url": "https://www.anthropic.com/news/introducing-claude-tag",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-06-28",
+      "last_date": "2026-06-28",
+      "appearances": 3
+    },
+    {
+      "id": 1141,
+      "title": "`claude mcp login` / `logout`：CLIからMCP認証",
+      "point": "対話的な`/mcp`メニューを開かずに、シェルから`claude mcp login`で設定済みMCPサーバーを認証可能に。保存した認証情報は`claude mcp logout`で削除できる。スクリプトやCI環境での認証フローを簡素化。",
+      "source_title": "Claude Code Docs: What's new",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-28",
+      "last_date": "2026-06-28",
+      "appearances": 3
+    },
+    {
       "id": 1125,
       "title": "Claude Code 2.1.191の`/rewind`と高速化",
       "point": "最新リリース2.1.191で`/clear`実行前の地点から会話を再開できる`/rewind`を追加。ストリーミング応答中のCPU使用を約37%削減し、長時間セッションのメモリ肥大も改善。停止したバックグラウンドエージェントが復活する不具合も修正。",
@@ -3387,20 +3483,6 @@
       ],
       "first_date": "2026-06-22",
       "last_date": "2026-06-22",
-      "appearances": 3
-    },
-    {
-      "id": 1035,
-      "title": "プロンプトキャッシュ最適化：静的コンテキストを先頭に配置する",
-      "point": "システムアーキテクチャやAPIドキュメントなど変化しない静的コンテキストをプロンプト先頭に置くと、Prompt Cachingが最も効きやすくなり、レイテンシとトークンコストを大幅に削減できる。リクエストごとに変わる情報は後段に置くのがコツ。",
-      "source_title": "Claude Code Guide 2026: 25 Features with Examples",
-      "source_url": "https://www.marktechpost.com/2026/06/14/claude-code-guide-2026-25-features-with-examples-demo/",
-      "tags": [
-        "API",
-        "プロンプト"
-      ],
-      "first_date": "2026-06-19",
-      "last_date": "2026-06-19",
       "appearances": 3
     },
     {
@@ -4955,6 +5037,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1143,
+      "title": "Claude Code 週次更新：シェルモードが出力を自動解説・パス補完を追加",
+      "point": "6月第4週の更新で、シェルモードがコマンド出力に応答（`npm test`の結果を再プロンプト不要で解説）。bashモードにライブのファイルパス自動補完を追加。バックグラウンドのサブエージェントが自動拒否せずメインセッションに権限プロンプトを表示するように改善。",
+      "source_title": "Releasebot: Claude Code Updates June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-06-28",
+      "last_date": "2026-06-28",
+      "appearances": 2
     },
     {
       "id": 1124,
@@ -7232,6 +7329,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1139,
+      "title": "Trusted Devices：リモートClaude Code制御前のデバイス検証",
+      "point": "Team/Enterpriseの管理者が、メンバーのローカルClaude Codeセッションをリモートで閲覧・操作する前にデバイス検証を必須化できる新設定。Remote Controlのセキュリティ強化策で、未検証端末からの遠隔操作を防ぐ。6月25日のリリースノートで追加。",
+      "source_title": "Anthropic Release Notes",
+      "source_url": "https://support.anthropic.com/en/articles/12138966-release-notes",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-06-28",
+      "last_date": "2026-06-28",
+      "appearances": 1
     },
     {
       "id": 1127,
@@ -13533,6 +13645,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-28",
+      "highlights": [
+        "Mythos 5 限定再公開 — 米政府がサイバー防御目的で100超の機関へのMythos 5提供を許可、Project Glasswing経由で再開",
+        "Claude Tag（Slack常駐） — @ClaudeをSlackチャンネルに常駐させ、タスクを委任して非同期で進めるベータが拡大"
+      ]
+    },
+    {
       "date": "2026-06-27",
       "highlights": [
         "Claude Tag（Slack連携） — @ClaudeをSlackチャンネルのチームメンバーとして常駐させ、タスク委任・非同期作業ができるベータが登場",
@@ -14242,5 +14361,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-27T08:00:03.638482"
+  "generated_at": "2026-06-28T08:00:03.850374"
 }
