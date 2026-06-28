@@ -530,6 +530,17 @@
       "appearances": 12
     },
     {
+      "id": 1157,
+      "title": "オートモードの破壊的コマンドブロックを活用する",
+      "point": "Auto modeで`git reset --hard`・`git clean -fd`・`terraform destroy`などの破壊的コマンドは、ユーザーが明示要求していない限り自動ブロックされる。意図しない作業破棄やインフラ削除を防ぐ安全機構として、自走運用時に効く。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [],
+      "first_date": "2026-06-29",
+      "last_date": "2026-06-29",
+      "appearances": 11
+    },
+    {
       "id": 1137,
       "title": "Mythos 5の限定再公開：米政府が100超の機関へ提供許可",
       "point": "6月12日に一旦停止されたMythosクラス最強モデルMythos 5について、米商務省が「適切な安全策あり」と判断し、サイバー防御者やインフラ事業者など100超の信頼機関への限定提供を許可。Project Glasswing経由で順次アクセスを復旧中。一般提供のFable 5とは別枠の招待制。",
@@ -762,6 +773,20 @@
       "appearances": 10
     },
     {
+      "id": 1154,
+      "title": "プロンプト末尾に自己チェックブロックを付けて出力を検証させる",
+      "point": "重要なプロンプトでは末尾に「出力フォーマットを守ったか・不確実性を認めたか・手順は実行可能か」を自己確認させる小ブロックを追加すると、Claudeが自分の出力を見直して誤りを拾う。エージェントの構造化出力・プロンプトチェーンで特に有効。",
+      "source_title": "Claude Prompt Engineering Best Practices 2026 - Prompt Builder",
+      "source_url": "https://promptbuilder.cc/blog/claude-prompt-engineering-best-practices-2026",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-06-29",
+      "last_date": "2026-06-29",
+      "appearances": 9
+    },
+    {
       "id": 1131,
       "title": "フックで決定論的に毎回検証",
       "point": "例外なく毎回実行したい処理はフックで行う。フックはワークフローの特定地点でスクリプトを自動実行し、助言的なCLAUDE.md指示と違い決定論的に動く。最も効果的なのは検証—Claudeに自分の出力を確認させる手段を与えること。1つだけ採用するならこれ。",
@@ -957,6 +982,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 1153,
+      "title": "不確実性の明示を許可してハルシネーションを減らす",
+      "point": "「わからない場合は推測せず不確実だと述べてよい」と明示的に許可する一文を入れるだけで、根拠のない断定が減り信頼性が上がる。2026年のプロンプト設計の基本原則として公式ドキュメントでも推奨。",
+      "source_title": "Prompting best practices - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-29",
+      "last_date": "2026-06-29",
+      "appearances": 8
     },
     {
       "id": 1126,
@@ -1186,6 +1224,20 @@
       "appearances": 8
     },
     {
+      "id": 1151,
+      "title": "ネストサブエージェントを最大5階層まで展開して大規模タスクを分解する",
+      "point": "親エージェントが子を生成し、子がさらに孫を生成する階層委譲が可能（CLIは最大5階層、設計例は3階層）。`agents.yaml`で各エージェントに役割・モデル・制約を割り当て、移行作業などを「調整役→モジュール担当→関数担当」と分担できる。",
+      "source_title": "Claude Code June 2026: 10 New Features - SitePoint",
+      "source_url": "https://www.sitepoint.com/claude-code-june-2026-10-new-features-devs-need-to-know/",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-06-29",
+      "last_date": "2026-06-29",
+      "appearances": 7
+    },
+    {
       "id": 1047,
       "title": "最小プロンプトで始めClaudeに逆質問させる",
       "point": "大きく曖昧なタスクは、いきなり詳細指示を書くより、まず最小限のプロンプトを与えて「Claudeにインタビューさせる」のが有効。実装方針・エッジケース・トレードオフなど、自分では気づかない論点をClaude側から質問してくれる。",
@@ -1362,6 +1414,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1152,
+      "title": "fallbackModelでレート制限・障害時に代替モデルへ自動切替する",
+      "point": "`settings.json`の`fallbackModel`に代替モデルを順序付きで列挙すると、主モデルがレート制限や障害時に自動で次候補へフォールバック。モデルごとに`maxTokens`・`costCeiling`を設定可能。主モデルの再掲は無効なので避ける。",
+      "source_title": "Claude Code June 2026: 10 New Features - SitePoint",
+      "source_url": "https://www.sitepoint.com/claude-code-june-2026-10-new-features-devs-need-to-know/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-29",
+      "last_date": "2026-06-29",
+      "appearances": 6
     },
     {
       "id": 1081,
@@ -1791,6 +1856,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1150,
+      "title": "`/rewind`で`/clear`実行前まで会話を復元する",
+      "point": "誤って`/clear`した直後でも`/rewind`でクリア前の会話状態に巻き戻せるようになった。長時間セッションでの誤操作リカバリに有効。あわせてMCPの信頼性・OAuthリトライ改善、ストリーミング中のCPU使用量を約37%削減。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-29",
+      "last_date": "2026-06-29",
+      "appearances": 5
     },
     {
       "id": 1118,
@@ -2333,6 +2411,19 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1155,
+      "title": "`claude mcp login`/`logout`でCLIからMCPサーバーを認証する",
+      "point": "対話的な`/mcp`メニューを開かずに、シェルから`claude mcp login <name>`で設定済みMCPサーバーを認証し、`claude mcp logout <name>`で資格情報を削除できる。`--no-browser`でSSH越しの認証にも対応。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-29",
+      "last_date": "2026-06-29",
+      "appearances": 4
     },
     {
       "id": 1140,
@@ -3305,6 +3396,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1149,
+      "title": "`!`バッシュモードの出力にClaudeが自動応答する",
+      "point": "シェルモードで`! npm test`などを実行すると、追加プロンプトなしでClaudeが出力を解説・対応するようになった。従来の「コンテキスト追加のみ」に戻すには設定で`\"respondToBashCommands\": false`を指定する。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-06-29",
+      "last_date": "2026-06-29",
+      "appearances": 3
     },
     {
       "id": 1035,
@@ -7329,6 +7433,33 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1148,
+      "title": "Claude Code 2.1.195：フルスクリーンのマウス制御とCJK音声入力を改善",
+      "point": "フルスクリーン時のマウスクリック/ドラッグ制御を`CLAUDE_CODE_DISABLE_MOUSE_CLICKS`で無効化可能に。日本語・中国語・タイ語など空白なし言語で音声入力の自動送信が発火しない不具合を修正。バックグラウンドエージェントの信頼性も向上。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-06-29",
+      "last_date": "2026-06-29",
+      "appearances": 1
+    },
+    {
+      "id": 1156,
+      "title": "サブエージェントにスコープ付き権限（最小権限）を与える",
+      "point": "子エージェントを特定ディレクトリ・ツール・書込可否に制限できる。`allow_paths`で`${PROJECT_ROOT}`基準のパスに限定し、`deny_tools`で`shell_execute`等を明示ブロック、`can_write: false`で読み取り専用に。誤った設定ファイル改変や破壊的操作を防ぐ。",
+      "source_title": "Claude Code June 2026: 10 New Features - SitePoint",
+      "source_url": "https://www.sitepoint.com/claude-code-june-2026-10-new-features-devs-need-to-know/",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-06-29",
+      "last_date": "2026-06-29",
+      "appearances": 1
     },
     {
       "id": 1139,
@@ -13645,6 +13776,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-29",
+      "highlights": [
+        "Claude Codeのマルチエージェント化 — ネストサブエージェント（最大5階層）・fallbackModel・スコープ付き権限が出揃い、大規模タスクを役割分担で自律処理できる構成が一般提供に。",
+        "最新リリース 2.1.195/2.1.193系 — `!`バッシュ出力への自動応答、`/rewind`での`/clear`前復元、日本語音声入力の自動送信修正など実用改善が続く。"
+      ]
+    },
+    {
       "date": "2026-06-28",
       "highlights": [
         "Mythos 5 限定再公開 — 米政府がサイバー防御目的で100超の機関へのMythos 5提供を許可、Project Glasswing経由で再開",
@@ -14361,5 +14499,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-28T08:00:03.850374"
+  "generated_at": "2026-06-29T08:00:03.689427"
 }
