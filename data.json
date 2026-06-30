@@ -1,6 +1,45 @@
 {
   "tips": [
     {
+      "id": 1165,
+      "title": "Managed Agents をスケジュール実行＋Vaultで認証する",
+      "point": "マネージドエージェントをcronスケジュールで自動実行でき、夜間データ同期・週次コンプライアンススキャン・日次ダイジェストなどを自前のスケジューラなしで運用可能。Vaultに環境変数を保存し、CLIへキー本体を渡さず安全に認証できる。",
+      "source_title": "New in Claude Managed Agents",
+      "source_url": "https://claude.com/blog/whats-new-in-claude-managed-agents",
+      "tags": [
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-06-30",
+      "last_date": "2026-06-30",
+      "appearances": 36
+    },
+    {
+      "id": 1168,
+      "title": "タスクを段階分解しサブエージェントに割り当てる",
+      "point": "1プロンプトで全部やろうとせず、Discovery（「Xを作る。何を聞くべき？」）とPlanningに分ける。曖昧なタスクは最小プロンプトで先にClaudeへ逆インタビューさせる。さらにコアロジック・単体テスト・ドキュメントを専門サブエージェントに分担させる。",
+      "source_title": "Claude AI 2026 Guide: 10 Hidden Features",
+      "source_url": "https://www.superdevacademy.com/en/blogs/claude-ai-2026-guide-coding-tips-tricks",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-06-30",
+      "last_date": "2026-06-30",
+      "appearances": 36
+    },
+    {
+      "id": 1169,
+      "title": "メモリーとProjectsを組み合わせて\"育つAI\"にする",
+      "point": "Chat Memoryが全ユーザーに開放され、会話中に好み・文脈・事実を自動で記録する。Projects（前提情報の固定）とメモリー（会話から学んだことの蓄積）を併用すると、使い込むほど賢くなる。",
+      "source_title": "Claudeのおすすめ個人設定7選（公式ドキュメントから厳選）",
+      "source_url": "https://www.theaiventure.com/claude-personal-settings-recommended/",
+      "tags": [],
+      "first_date": "2026-06-30",
+      "last_date": "2026-06-30",
+      "appearances": 30
+    },
+    {
       "id": 1071,
       "title": "サブエージェント判断基準：5ファイル超なら分離する",
       "point": "サブエージェントは独自のシステムプロンプト・文脈窓・ツール・権限を持つ隔離インスタンスで、最終出力のみを親に返すため文脈肥大を防ぐ。目安として、1つのタスクが約5ファイル超に触れるなら分離する価値がある。",
@@ -385,6 +424,19 @@
       "appearances": 14
     },
     {
+      "id": 1170,
+      "title": "モデルを使い分ける（日常はSonnet・複雑だけOpus）",
+      "point": "日常的な用途はSonnetで十分で速い。Opusは本当に複雑なタスクに限定すると、レート上限の消費を抑えつつ品質を確保できる。スタイル機能で回答の長さ・口調・体裁も会話ごとに切り替える。",
+      "source_title": "Claudeのおすすめ個人設定7選",
+      "source_url": "https://www.theaiventure.com/claude-personal-settings-recommended/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-06-30",
+      "last_date": "2026-06-30",
+      "appearances": 13
+    },
+    {
       "id": 1133,
       "title": "XMLタグでプロンプトを構造化",
       "point": "指示・文脈・例示・変数入力が混在するときは、各要素を`<instructions>`・`<context>`・`<input>`のようにタグで囲むとClaudeが曖昧さなく解析できる。2万トークン超の長文書は、クエリや指示の上（プロンプト前方）に置くと全モデルで性能が向上する。",
@@ -633,6 +685,20 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 1162,
+      "title": "Claude Code のアーティファクトで作業を共有Webページ化",
+      "point": "セッションのコードベース・コネクタ・会話の文脈から、PRウォークスルーや障害タイムライン、ダッシュボードなどをライブWebページとして自動生成。更新は同一URLに反映され、バージョン履歴付き。「何が分かったか説明して」が不要になる。",
+      "source_title": "Claude Code now supports artifacts",
+      "source_url": "https://claude.com/blog/artifacts-in-claude-code",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-06-30",
+      "last_date": "2026-06-30",
+      "appearances": 10
     },
     {
       "id": 1092,
@@ -1416,6 +1482,17 @@
       "appearances": 7
     },
     {
+      "id": 1163,
+      "title": "/rewind で会話とコード状態を巻き戻す",
+      "point": "/rewind コマンドで会話履歴とコードを過去のチェックポイントまで戻せる。/clear する前の状態に復帰でき、安全に試行錯誤できる。失敗した変更の取り消しに有効。",
+      "source_title": "Claude Code: Workflows and Best Practices 2026",
+      "source_url": "https://smart-webtech.com/blog/claude-code-workflows-and-best-practices/",
+      "tags": [],
+      "first_date": "2026-06-30",
+      "last_date": "2026-06-30",
+      "appearances": 6
+    },
+    {
       "id": 1152,
       "title": "fallbackModelでレート制限・障害時に代替モデルへ自動切替する",
       "point": "`settings.json`の`fallbackModel`に代替モデルを順序付きで列挙すると、主モデルがレート制限や障害時に自動で次候補へフォールバック。モデルごとに`maxTokens`・`costCeiling`を設定可能。主モデルの再掲は無効なので避ける。",
@@ -1856,6 +1933,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1166,
+      "title": "プラン優先ワークフローで精度を上げる",
+      "point": "いきなり実装させず、まずplan modeで計画だけ作らせる。エディタで計画を開いて誤りに注釈を入れ、「全注釈に対応、まだ実装しないで」と返してから実装に進む。アーキテクチャ的な作業ほど効果が大きい。",
+      "source_title": "Effective Claude Code Workflows in 2026",
+      "source_url": "https://medium.com/data-science-collective/effective-claude-code-workflows-in-2026-what-changed-and-what-works-now-c93ebc6f8f50",
+      "tags": [],
+      "first_date": "2026-06-30",
+      "last_date": "2026-06-30",
+      "appearances": 5
     },
     {
       "id": 1150,
@@ -2411,6 +2499,19 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1161,
+      "title": "Claude Tag でSlackから業務を委任する",
+      "point": "Team/EnterpriseプランでSlackの会話内に@Claudeをタグ付けし、調査や下書き作成などのタスクを委任できる。依頼者は別作業を進めながら、Claudeがチームメンバーのように仕事を進める。6/23にベータ提供開始。",
+      "source_title": "Introducing Claude Tag",
+      "source_url": "https://www.anthropic.com/news/introducing-claude-tag",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-06-30",
+      "last_date": "2026-06-30",
+      "appearances": 4
     },
     {
       "id": 1155,
@@ -5143,6 +5244,20 @@
       "appearances": 3
     },
     {
+      "id": 1164,
+      "title": "Trusted Devices でリモートClaude Codeセッションを保護",
+      "point": "Team/EnterpriseのRemote Control管理者が、リモートでローカルのClaude Codeセッションを閲覧・操作する前に端末検証を必須化できる。6/25追加のセキュリティ機能。",
+      "source_title": "Anthropic Release Notes - June 25, 2026",
+      "source_url": "https://support.anthropic.com/en/articles/12138966-release-notes",
+      "tags": [
+        "Claude Code",
+        "製品機能"
+      ],
+      "first_date": "2026-06-30",
+      "last_date": "2026-06-30",
+      "appearances": 2
+    },
+    {
       "id": 1143,
       "title": "Claude Code 週次更新：シェルモードが出力を自動解説・パス補完を追加",
       "point": "6月第4週の更新で、シェルモードがコマンド出力に応答（`npm test`の結果を再プロンプト不要で解説）。bashモードにライブのファイルパス自動補完を追加。バックグラウンドのサブエージェントが自動拒否せずメインセッションに権限プロンプトを表示するように改善。",
@@ -7433,6 +7548,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1167,
+      "title": "永続コンテキストシステムを先に作る",
+      "point": "プロンプト前に、アイデンティティファイル・声/トーンのプロファイル・AIっぽい文章を避けるルールファイルを用意し、Global Instructionsから自動ロードする。毎回の前提説明が不要になり、出力が一貫する。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "CLAUDE.md",
+        "プロンプト"
+      ],
+      "first_date": "2026-06-30",
+      "last_date": "2026-06-30",
+      "appearances": 1
     },
     {
       "id": 1148,
@@ -13776,6 +13905,13 @@
   ],
   "daily": [
     {
+      "date": "2026-06-30",
+      "highlights": [
+        "Claude Tag（Slackで@Claudeに業務委任） — SlackチャンネルでClaudeをタグ付けし、タスクを丸ごと任せて自分は別作業に集中できる（Team/Enterprise）",
+        "Claude Code のアーティファクト — セッションの作業をライブで更新される共有Webページ（PR解説・障害ページ・ダッシュボード）に変換できる"
+      ]
+    },
+    {
       "date": "2026-06-29",
       "highlights": [
         "Claude Codeのマルチエージェント化 — ネストサブエージェント（最大5階層）・fallbackModel・スコープ付き権限が出揃い、大規模タスクを役割分担で自律処理できる構成が一般提供に。",
@@ -14499,5 +14635,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-29T08:00:03.689427"
+  "generated_at": "2026-06-30T11:27:55.211681"
 }
