@@ -68,6 +68,36 @@
       "appearances": 30
     },
     {
+      "id": 1188,
+      "title": "Dynamic Workflowsで最大1000サブエージェントを並列fan-out",
+      "point": "リードエージェントが計画を立て、数十〜数百のサブエージェントを1セッションで並列展開できる。さらにClaudeがJavaScriptのオーケストレーションスクリプトを書くと、バックグラウンドランタイムが最大1000のサブエージェントにfan-outし、中間状態をコンテキスト窓の外（スクリプト変数）に保持する。通常タスクの実用的な同時実行数は3〜5が最適。",
+      "source_title": "Claude Code Subagents and Orchestration Guide（hidekazu-konishi）",
+      "source_url": "https://hidekazu-konishi.com/entry/claude_code_subagents_and_orchestration_guide.html",
+      "tags": [
+        "自動化",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-07-02",
+      "last_date": "2026-07-02",
+      "appearances": 24
+    },
+    {
+      "id": 1189,
+      "title": "コンテキストエンジニアリング＞プロンプト微調整",
+      "point": "2026年はプロンプトの言い回しより、Claudeがタスク前・タスク中に受け取るすべて（システムプロンプト・ファイル・メモリ・例示・役割設定・制約）を整える「コンテキストエンジニアリング」が本質的なレバレッジ。モデルがボトルネックになることはまれで、ほぼ常にコンテキストが律速となる。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-07-02",
+      "last_date": "2026-07-02",
+      "appearances": 23
+    },
+    {
       "id": 1115,
       "title": "適応的思考（Adaptive Thinking）とeffortパラメータ",
       "point": "Claude 4.6系ではbudget_tokensによる手動思考制御に代わり、thinking: {type: \"adaptive\"} を使用。思考深度はeffortパラメータで調整する。残りコンテキスト窓を自己把握するcontext awarenessも搭載。",
@@ -216,6 +246,21 @@
       "first_date": "2026-05-17",
       "last_date": "2026-05-17",
       "appearances": 18
+    },
+    {
+      "id": 1190,
+      "title": "CLAUDE.mdは200行以内で簡潔に保つ",
+      "point": "CLAUDE.mdはClaude Codeが各セッション開始時に自動読込するプレーンなmarkdownで、永続的なプロジェクト記憶になる。ただし1行ごとにコンテキスト予算を消費するため、Anthropicは簡潔さを推奨。目安は約200行以内で、画面1〜2枚を超えるなら毎セッション余分なコストを払っていることになる。",
+      "source_title": "CLAUDE.md Best Practices: The Complete 2026 Guide",
+      "source_url": "https://maketocreate.com/claude-md-best-practices-the-complete-2026-guide/",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-07-02",
+      "last_date": "2026-07-02",
+      "appearances": 17
     },
     {
       "id": 946,
@@ -1098,6 +1143,21 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 1187,
+      "title": "Fable 5・Mythos 5 の輸出規制が解除、7/1グローバル再開",
+      "point": "6月12日にジェイルブレイク脆弱性を理由に米商務省が外国籍ユーザーへの提供停止を命じていたが、7月1日に解除。Anthropicは新たな安全分類器を追加し、報告された回避手法を99%以上ブロックできるよう強化した上で、Fable 5をClaude Platform・Claude.ai・Claude Code・Coworkで再提供。",
+      "source_title": "U.S. Lifts Restrictions On Anthropic's Mythos 5 And Fable 5（Forbes）",
+      "source_url": "https://www.forbes.com/sites/siladityaray/2026/07/01/trump-administration-lifts-export-controls-on-anthropics-mythos-5-and-fable-5-ai-models/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "製品機能"
+      ],
+      "first_date": "2026-07-02",
+      "last_date": "2026-07-02",
+      "appearances": 8
     },
     {
       "id": 1153,
@@ -2014,6 +2074,19 @@
       "appearances": 6
     },
     {
+      "id": 1192,
+      "title": "プランモードで編集前にガードレールを敷く",
+      "point": "エージェントをいきなり編集に入らせると、それらしく見えて本質を外す変更になりがち。プランモードを挟むことで、実装前に方針を提示・確認するガードレールとして機能し、手戻りを防ぐ。",
+      "source_title": "Best practices for Claude Code（公式ドキュメント）",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-07-02",
+      "last_date": "2026-07-02",
+      "appearances": 5
+    },
+    {
       "id": 1166,
       "title": "プラン優先ワークフローで精度を上げる",
       "point": "いきなり実装させず、まずplan modeで計画だけ作らせる。エディタで計画を開いて誤りに注釈を入れ、「全注釈に対応、まだ実装しないで」と返してから実装に進む。アーキテクチャ的な作業ほど効果が大きい。",
@@ -2578,6 +2651,17 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1193,
+      "title": "金曜の週次クロージングセッションで振り返る",
+      "point": "毎週金曜の午後に、今週やろうとしたこと・実際に起きたこと・完了/未完了・翌週へ持ち越す事項をClaudeに伝えて締めのセッションを回す。散在した進捗を構造化し、次週の起点を明確化できる。",
+      "source_title": "5 Claude Workflows That Save Me Hours Every Single Week（Medium）",
+      "source_url": "https://medium.com/@mubashirburfat4/5-claude-workflows-that-save-me-hours-every-single-week-90def7e1cf4e",
+      "tags": [],
+      "first_date": "2026-07-02",
+      "last_date": "2026-07-02",
+      "appearances": 4
     },
     {
       "id": 1161,
@@ -5336,6 +5420,19 @@
       "appearances": 3
     },
     {
+      "id": 1194,
+      "title": "朝の散らかった思考を優先順位付き1日計画に変換する",
+      "point": "バラバラの思いつきをClaudeに投げ、「時間ブロック付きの優先順位付き1日計画にして」と指示すると、30秒ほどで実行可能なスケジュールに整理される。1日の立ち上がりを高速化する定番ワークフロー。",
+      "source_title": "How to Use Claude AI to Improve Productivity and Workflow",
+      "source_url": "https://www.befreed.ai/podcast/use-claude-for-productivity-like-a-pro",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-07-02",
+      "last_date": "2026-07-02",
+      "appearances": 2
+    },
+    {
       "id": 1164,
       "title": "Trusted Devices でリモートClaude Codeセッションを保護",
       "point": "Team/EnterpriseのRemote Control管理者が、リモートでローカルのClaude Codeセッションを閲覧・操作する前に端末検証を必須化できる。6/25追加のセキュリティ機能。",
@@ -7640,6 +7737,33 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1186,
+      "title": "Claude Sonnet 5 リリース：Opus 4.8に迫る性能を低価格・デフォルトで",
+      "point": "6月30日にSonnet 5が登場。過去最も「エージェント的」なSonnetで、計画立案・ブラウザ/ターミナル操作・自律実行を数か月前は上位モデルが必要だった水準でこなす。Free/Proのデフォルトモデルとなり、8月31日まで導入価格として入力$2・出力$10/百万トークン（以降$3/$15）。Claude Codeでもデフォルト化し1Mトークンのコンテキスト窓を持つ。",
+      "source_title": "Introducing Claude Sonnet 5（Anthropic）",
+      "source_url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-07-02",
+      "last_date": "2026-07-02",
+      "appearances": 1
+    },
+    {
+      "id": 1191,
+      "title": "/loopで完了までテスト＆リファクタリングを自動反復",
+      "point": "CLIの`/loop`機能を使うと、単体テストの実行とコードのリファクタリングを完了まで自動サイクルで回せる。ステップごとの手動確認が不要になるため、大規模リファクタリングや複雑なシステム移行に有効。",
+      "source_title": "Claude Code Advanced Best Practices 2026（SmartScope）",
+      "source_url": "https://smartscope.blog/en/generative-ai/claude/claude-code-best-practices-advanced-2026/",
+      "tags": [],
+      "first_date": "2026-07-02",
+      "last_date": "2026-07-02",
+      "appearances": 1
     },
     {
       "id": 1174,
@@ -14023,6 +14147,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-02",
+      "highlights": [
+        "Claude Sonnet 5 リリース — Opus 4.8に迫る性能を低価格で提供、全プランのデフォルトモデルに",
+        "Fable 5・Mythos 5 の輸出規制解除 — 約3週間の制限を経て7月1日からグローバルで再開"
+      ]
+    },
+    {
       "date": "2026-07-01",
       "highlights": [
         "Claude Code 週次利用上限50%増（〜7/13） — 競合対抗策として期間限定で週次制限が拡大、ヘビーユーザーは今が使い込み時",
@@ -14760,5 +14891,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-01T14:05:56.188461"
+  "generated_at": "2026-07-02T08:00:04.068910"
 }
