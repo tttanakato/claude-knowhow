@@ -29,6 +29,19 @@
       "appearances": 36
     },
     {
+      "id": 1182,
+      "title": "コンテキストエンジニアリング3ファイル戦略",
+      "point": "2026年はプロンプト微調整よりタスク周辺の構造づくりが効く。自分と作業内容を伝えるidentityファイル、思考・文体を示すvoice profile、避けたい語・構造・トーンを並べたanti-AI-writingファイルを用意すると出力品質が安定する。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-07-01",
+      "last_date": "2026-07-01",
+      "appearances": 31
+    },
+    {
       "id": 1169,
       "title": "メモリーとProjectsを組み合わせて\"育つAI\"にする",
       "point": "Chat Memoryが全ユーザーに開放され、会話中に好み・文脈・事実を自動で記録する。Projects（前提情報の固定）とメモリー（会話から学んだことの蓄積）を併用すると、使い込むほど賢くなる。",
@@ -227,6 +240,19 @@
       "first_date": "2026-06-01",
       "last_date": "2026-06-01",
       "appearances": 17
+    },
+    {
+      "id": 1181,
+      "title": "インタビュー先行プロンプトで盲点を洗い出す",
+      "point": "大きい・曖昧なタスクは最小限のプロンプトで始め、「先に質問して」と依頼する。Claudeが実装詳細・エッジケース・トレードオフなど見落としがちな点を尋ねてくるため、要件の精度が上がる。",
+      "source_title": "9 Claude tips and tricks to get more out of the AI chatbot",
+      "source_url": "https://www.popsci.com/diy/claude-ai-tips-tricks/",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-07-01",
+      "last_date": "2026-07-01",
+      "appearances": 16
     },
     {
       "id": 874,
@@ -531,6 +557,19 @@
       "appearances": 13
     },
     {
+      "id": 1176,
+      "title": "Claude Code「Dynamic Workflows」＋ultracode設定",
+      "point": "リサーチプレビューのDynamic Workflowsは「Create a workflow」と指示するか、新設定ultracode（effortをxhighにし自動でワークフロー化）で起動。トークン消費が大きいためauto mode併用が推奨。複雑な長尺タスク向け。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-01",
+      "last_date": "2026-07-01",
+      "appearances": 12
+    },
+    {
       "id": 1090,
       "title": "XMLタグで複雑なプロンプトを構造化する",
       "point": "`<context>` `<task>` `<constraints>` `<examples>` などのXMLタグで指示を区切ると、Claudeが各セクションを明確に処理し出力の一貫性が大きく向上する。",
@@ -685,6 +724,17 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 1180,
+      "title": "/plan で実行前に段取りを確認する",
+      "point": "プランモード（/plan）でファイル整理・文書作成・コード修正のいずれも先に段取りを提示させられる。「思っていたのと違う」結果を減らせる定番テクニック。実行前の合意形成に有効。",
+      "source_title": "Claude Code を初めて使う人向けの実践ガイド",
+      "source_url": "https://zenn.dev/hokuto_tech/articles/86d1edb33da61a",
+      "tags": [],
+      "first_date": "2026-07-01",
+      "last_date": "2026-07-01",
+      "appearances": 10
     },
     {
       "id": 1162,
@@ -1290,6 +1340,21 @@
       "appearances": 8
     },
     {
+      "id": 1179,
+      "title": "Claude が Microsoft Foundry で一般提供",
+      "point": "Azure上のMicrosoft FoundryでClaudeが一般提供開始。Messages API経由でOpus 4.8とHaiku 4.5が利用でき、コーディング・エージェント・複雑推論に対応。Azure基盤の企業はクラウド統合がしやすくなる。",
+      "source_title": "Claude Updates by Anthropic - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-07-01",
+      "last_date": "2026-07-01",
+      "appearances": 7
+    },
+    {
       "id": 1151,
       "title": "ネストサブエージェントを最大5階層まで展開して大規模タスクを分解する",
       "point": "親エージェントが子を生成し、子がさらに孫を生成する階層委譲が可能（CLIは最大5階層、設計例は3階層）。`agents.yaml`で各エージェントに役割・モデル・制約を割り当て、移行作業などを「調整役→モジュール担当→関数担当」と分担できる。",
@@ -1480,6 +1545,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1178,
+      "title": "Opus 4.7 Fast Modeは7/24廃止、Opus 4.8へ移行",
+      "point": "claude-opus-4-7のspeed:\"fast\"は2026/7/24に削除予定。以降はエラーになるため、Opus 4.8のfast modeへ移行が必要。Opus 4.8はコーディング・エージェント・知識作業で4.7を上回るとされる。",
+      "source_title": "Anthropic Release Notes - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-07-01",
+      "last_date": "2026-07-01",
+      "appearances": 6
     },
     {
       "id": 1163,
@@ -3497,6 +3576,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1177,
+      "title": "Trusted Devicesでリモート操作を保護",
+      "point": "Team/EnterpriseでRemoteからローカルのClaude Codeセッションを閲覧・操作する前に、メンバーにデバイス検証を必須化できる「Trusted Devices」が追加。リモート開発のセキュリティ統制を強化したい組織向け。",
+      "source_title": "Claude Updates by Anthropic - June 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-01",
+      "last_date": "2026-07-01",
+      "appearances": 3
     },
     {
       "id": 1149,
@@ -7548,6 +7640,32 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1174,
+      "title": "Claude Code 週次利用上限を50%増（〜7/13の期間限定）",
+      "point": "AnthropicがClaude Codeの週次利用上限を約50%引き上げ（〜2026/7/13）。競合コーディングツールへの対抗策とされ、サブスク内でエージェント作業を多く回すユーザーには好機。期間限定のため恒久措置ではない点に注意。",
+      "source_title": "Claude Code Increases Weekly Limits by 50% Through July 13, 2026",
+      "source_url": "https://pasqualepillitteri.it/en/news/2494/claude-code-weekly-limits-50-percent-anti-codex-anthropic-2026",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-07-01",
+      "last_date": "2026-07-01",
+      "appearances": 1
+    },
+    {
+      "id": 1175,
+      "title": "プライバシーポリシー改定で年齢・本人確認（7/8発効）",
+      "point": "7/8発効の新条項で、一部ユーザーに年齢または身元の証明（政府発行身分証のスキャンや顔認証）を求める可能性。業務利用では、対象範囲・データ取り扱いを組織のコンプライアンス観点で事前確認しておくと安心。",
+      "source_title": "Anthropic doubles down on safety with Claude ID checks",
+      "source_url": "https://www.thestreet.com/technology/anthropic-doubles-down-on-safety-claude-id-checks",
+      "tags": [],
+      "first_date": "2026-07-01",
+      "last_date": "2026-07-01",
+      "appearances": 1
     },
     {
       "id": 1167,
@@ -13905,6 +14023,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-01",
+      "highlights": [
+        "Claude Code 週次利用上限50%増（〜7/13） — 競合対抗策として期間限定で週次制限が拡大、ヘビーユーザーは今が使い込み時",
+        "プライバシーポリシー改定（7/8発効） — 一部ユーザーに年齢・本人確認（身分証・顔認証）を求める条項が追加、対象や運用を要確認"
+      ]
+    },
+    {
       "date": "2026-06-30",
       "highlights": [
         "Claude Tag（Slackで@Claudeに業務委任） — SlackチャンネルでClaudeをタグ付けし、タスクを丸ごと任せて自分は別作業に集中できる（Team/Enterprise）",
@@ -14635,5 +14760,5 @@
       ]
     }
   ],
-  "generated_at": "2026-06-30T11:27:55.211681"
+  "generated_at": "2026-07-01T14:05:56.188461"
 }
