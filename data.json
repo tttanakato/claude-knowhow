@@ -934,6 +934,19 @@
       "appearances": 10
     },
     {
+      "id": 1203,
+      "title": "Fable 5提供再開の背景：ジェイルブレイク深刻度の共通評価枠組みを策定",
+      "point": "輸出規制で停止していたFable 5・Mythos 5は、新しい安全分類器の導入（問題手法を99%以上ブロック）により6/30に規制解除、7/1から提供再開。あわせてAnthropicはAmazon・Microsoft・Google等と「能力の向上度」「対象の広さ」「兵器化のしやすさ」「発見のしやすさ」の4軸でジェイルブレイクの深刻度を客観評価する業界共通フレームワークの策定を開始した。",
+      "source_title": "プログラミング雑記 2026年7月2日",
+      "source_url": "https://qiita.com/ishisaka/items/8ea7f67cbf4a29c10ad2",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-03",
+      "last_date": "2026-07-03",
+      "appearances": 9
+    },
+    {
       "id": 1154,
       "title": "プロンプト末尾に自己チェックブロックを付けて出力を検証させる",
       "point": "重要なプロンプトでは末尾に「出力フォーマットを守ったか・不確実性を認めたか・手順は実行可能か」を自己確認させる小ブロックを追加すると、Claudeが自分の出力を見直して誤りを拾う。エージェントの構造化出力・プロンプトチェーンで特に有効。",
@@ -1605,6 +1618,21 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1206,
+      "title": "Advisor戦略＋Prompt CachingのSonnet 5対応版：最上位モデルを全タスクに使わない",
+      "point": "高性能モデルを「アドバイザー」、安価なモデルを「エグゼキューター」として組み合わせるAdvisor戦略のSonnet 5対応版が解説されている。計画・レビューなど判断が重い工程だけ上位モデルに任せ、実行は安価なモデルで回すことでエージェントのコスト構造を最適化。頻出する静的コンテキストはPrompt Cachingで再処理コストを抑える。Sonnet 5のトークン消費増（本日Tips 4参照）を踏まえたコスト試算とセットで検討したい。",
+      "source_title": "最上位を全タスクに使ってはいけない — Advisor戦略とPrompt Cachingで実践設計",
+      "source_url": "https://note.com/zephel01/n/n2512af88fe99",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-07-03",
+      "last_date": "2026-07-03",
+      "appearances": 6
     },
     {
       "id": 1178,
@@ -2653,6 +2681,21 @@
       "appearances": 5
     },
     {
+      "id": 1202,
+      "title": "Sonnet 5のサイバーセキュリティセーフガード：refusalはHTTP 200で返る",
+      "point": "Sonnet 5はリアルタイムのサイバーセキュリティセーフガードを備えた初のSonnetティアモデル。高リスクなサイバーセキュリティトピックを含むリクエストは拒否される場合があるが、拒否はエラーではなくstop_reason: \"refusal\"を含むHTTP 200の成功レスポンスとして返る。API連携やエージェントパイプラインではrefusalのハンドリングを実装しておかないと、拒否応答を正常出力として下流に流してしまうリスクがある。",
+      "source_title": "Claude Sonnet 5の新機能（公式ドキュメント）",
+      "source_url": "https://platform.claude.com/docs/ja/about-claude/models/whats-new-sonnet-5",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-07-03",
+      "last_date": "2026-07-03",
+      "appearances": 4
+    },
+    {
       "id": 1193,
       "title": "金曜の週次クロージングセッションで振り返る",
       "point": "毎週金曜の午後に、今週やろうとしたこと・実際に起きたこと・完了/未完了・翌週へ持ち越す事項をClaudeに伝えて締めのセッションを回す。散在した進捗を構造化し、次週の起点を明確化できる。",
@@ -3660,6 +3703,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1201,
+      "title": "Sonnet 5移行ガイド：新トークナイザーで約30%トークン増",
+      "point": "Sonnet 5は新トークナイザー採用で、同じテキストでもSonnet 4.6比で約30%多くトークンを生成する。トークン単価は据え置きだが実質コストが変わるため、max_tokensの見直しと再カウントが必要。また手動拡張思考（budget_tokens）とサンプリングパラメータ（temperature/top_p/top_k）のデフォルト外指定は400エラーを返すため、移行時は適応的思考（effortパラメータ）に切り替え、これらのパラメータを削除する。",
+      "source_title": "Claude Sonnet 5の新機能（公式ドキュメント）",
+      "source_url": "https://platform.claude.com/docs/ja/about-claude/models/whats-new-sonnet-5",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-03",
+      "last_date": "2026-07-03",
+      "appearances": 3
     },
     {
       "id": 1177,
@@ -7737,6 +7793,77 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1198,
+      "title": "claude agentsが自動でコミット・push・ドラフトPR作成（v2.1.198）",
+      "point": "Claude Code v2.1.198でbackground agentsの挙動が変更され、worktreeでの作業完了後に人間の確認を待たず、自動でコミット・push・ドラフトPR作成まで完了するようになった。従来は「終わったのに気づかず放置」が発生しやすかったが、マージまでの往復が短縮される。1リリースで32項目の変更を含む大型アップデートのため、乗り換え前にチェンジログの確認を推奨。",
+      "source_title": "claude agentsが自動PRを作るようになったので中身を検証した",
+      "source_url": "https://qiita.com/kai_kou/items/f4d7198f1a5db10a0663",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-07-03",
+      "last_date": "2026-07-03",
+      "appearances": 1
+    },
+    {
+      "id": 1199,
+      "title": "Notificationフックの新イベントで完了・入力待ちを通知連携",
+      "point": "v2.1.198でエージェントが入力待ち（agent_needs_input）・完了（agent_completed）になった際にNotificationフックが発火するように。検証記事によると、種別はhook_event_nameではなく本文（message）側で判定する必要があり、Slack通知等に繋ぐ場合はmessageをパースする実装が仕様変更にも追従しやすい。執筆時点で公式Hooksリファレンスのmatcher一覧には未反映のため、手元での動作確認を推奨。",
+      "source_title": "claude agentsが自動PRを作るようになったので中身を検証した",
+      "source_url": "https://qiita.com/kai_kou/items/f4d7198f1a5db10a0663",
+      "tags": [
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-07-03",
+      "last_date": "2026-07-03",
+      "appearances": 1
+    },
+    {
+      "id": 1200,
+      "title": "Explore agentがメインセッションのモデルを継承：コスト影響に注意",
+      "point": "組み込みのExplore agentがhaiku固定ではなく、メインセッションのモデルを継承（上限はopus）するよう変更された。調査系サブエージェントの精度がメインのモデル選択に依存するようになった一方、メインを高性能モデルにしている場合は調査タスクのコストが増える可能性があるため、影響範囲の確認を推奨。あわせてagent teamsでAPIエラーで停止したメンバーが「failed」とリードに報告されるようになり、途中で死んだエージェントが可視化しやすくなった。",
+      "source_title": "claude agentsが自動PRを作るようになったので中身を検証した",
+      "source_url": "https://qiita.com/kai_kou/items/f4d7198f1a5db10a0663",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-07-03",
+      "last_date": "2026-07-03",
+      "appearances": 1
+    },
+    {
+      "id": 1204,
+      "title": "Claude Science パブリックベータ：科学研究向けデスクトップアプリ",
+      "point": "AIで科学研究を支援するデスクトップアプリ「Claude Science」のパブリックベータがmacOS・Linux向けに公開。文献調査、データ解析、図表・原稿作成を1つの環境で行えるよう、PubMedなど60以上の科学データベースや計算環境と統合されている。既存の専門ツールを置き換えるのではなく連携させる作業環境という位置付けで、利用にはClaude Pro以上のプランが必要。",
+      "source_title": "プログラミング雑記 2026年7月2日",
+      "source_url": "https://qiita.com/ishisaka/items/8ea7f67cbf4a29c10ad2",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-07-03",
+      "last_date": "2026-07-03",
+      "appearances": 1
+    },
+    {
+      "id": 1205,
+      "title": "Claude Desktop Linux版ベータが公開（Ubuntu 22.04+/Debian 12+）",
+      "point": "Claude DesktopのLinux版ベータが6/30に公開された。Ubuntu 22.04以降・Debian 12以降に対応し、有料プランのユーザーはChat・Cowork・Codeの各機能をデスクトップから利用できる。インストールはaptリポジトリ経由が推奨（.debパッケージも選択可）。ただし自動更新機能はなく、Computer UseとDictationはベータ版では未対応な点に注意。",
+      "source_title": "プログラミング雑記 2026年7月2日",
+      "source_url": "https://qiita.com/ishisaka/items/8ea7f67cbf4a29c10ad2",
+      "tags": [
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-07-03",
+      "last_date": "2026-07-03",
+      "appearances": 1
     },
     {
       "id": 1186,
@@ -14147,6 +14274,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-03",
+      "highlights": [
+        "claude agentsが自動でドラフトPRまで作成（v2.1.198） — background agentsが完了時に確認を待たずコミット・push・PR作成まで実行するように",
+        "Sonnet 5移行の注意点 — 新トークナイザーで同じテキストでも約30%トークン増、budget_tokens・サンプリングパラメータは400エラー"
+      ]
+    },
+    {
       "date": "2026-07-02",
       "highlights": [
         "Claude Sonnet 5 リリース — Opus 4.8に迫る性能を低価格で提供、全プランのデフォルトモデルに",
@@ -14891,5 +15025,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-02T08:00:04.068910"
+  "generated_at": "2026-07-03T08:00:03.985278"
 }
