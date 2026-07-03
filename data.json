@@ -2102,6 +2102,19 @@
       "appearances": 6
     },
     {
+      "id": 1218,
+      "title": "Opus 4.6 の Fast mode 削除：`speed:\"fast\"` は標準速度・標準課金で実行",
+      "point": "6/29付でOpus 4.6のfast modeが削除された。`claude-opus-4-6`に`speed:\"fast\"`を指定してもエラーにはならず、標準速度・標準料金で実行され、`usage.speed`で実際の速度を確認できる。fast modeを使い続けたい場合はOpus 4.8への移行が必要。既存パイプラインで気づかず速度が落ちていないか`usage.speed`の監視を推奨。",
+      "source_title": "Claude Developer Platform Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-developer-platform",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-04",
+      "last_date": "2026-07-04",
+      "appearances": 5
+    },
+    {
       "id": 1192,
       "title": "プランモードで編集前にガードレールを敷く",
       "point": "エージェントをいきなり編集に入らせると、それらしく見えて本質を外す変更になりがち。プランモードを挟むことで、実装前に方針を提示・確認するガードレールとして機能し、手戻りを防ぐ。",
@@ -2679,6 +2692,19 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1215,
+      "title": "Sonnet 5 プロンプティング＆移行の実務ポイント",
+      "point": "公式ガイドによると、Sonnet 5では適応的思考がデフォルトON、手動extended thinkingと`temperature`等の非デフォルト指定は400エラーになるため移行時に削除が必要。新トークナイザーで同じテキストが約30%多くトークン化されるので、導入価格（8/31まで$2/$10）でも実質コストを再見積もりすること。単純タスクに高effortを指定すると思考トークンを浪費する点にも注意。",
+      "source_title": "Claude Sonnet 5のプロンプティング - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/prompting-claude-sonnet-5",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-04",
+      "last_date": "2026-07-04",
+      "appearances": 4
     },
     {
       "id": 1202,
@@ -3703,6 +3729,36 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1213,
+      "title": "Claude in Chrome が一般提供（GA）：ブラウザからセッションに直接アクセス",
+      "point": "2.1.198でClaude in ChromeがGAとなり、追加インストールなしにブラウザからClaude Codeのセッションやエージェントへ直接アクセス可能に。同版ではバックグラウンドエージェントがworktreeでの作業完了後に自動でコミット・push・ドラフトPR作成まで行うなど、エージェントワークフローの自動化が一段進んだ。",
+      "source_title": "Claude Code v2.1.198 Release Notes | Claude Updates",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.198",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-07-04",
+      "last_date": "2026-07-04",
+      "appearances": 3
+    },
+    {
+      "id": 1216,
+      "title": "Managed Agents：イベントデルタ・セッション単位オーバーライド・Webhook拡充",
+      "point": "6/30のPlatform更新でManaged Agentsが強化。`event_deltas[]`でエージェントメッセージ生成中のテキストをストリーム受信、セッション一覧の後方ページネーション、`agent_with_overrides`で1セッションだけモデルやツール構成を差し替え可能に。Webhookはエージェント・デプロイ・実行のライフサイクル全体をカバーし、ポーリング不要で失敗検知できる。",
+      "source_title": "Claude Developer Platform Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-developer-platform",
+      "tags": [
+        "自動化",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-07-04",
+      "last_date": "2026-07-04",
+      "appearances": 3
     },
     {
       "id": 1201,
@@ -5474,6 +5530,65 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1210,
+      "title": "Claude Code 2.1.199：スタックスキル呼び出しで先頭5スキルを同時ロード",
+      "point": "7/2リリースの2.1.199で、`/skill-a /skill-b ○○して` のようにスラッシュスキルを並べて呼び出すと、従来は先頭1つしか読み込まれなかったのが先頭5スキルまで同時ロードされるように。複数ドメインのスキル（例：コードレビュー＋ドキュメント生成）を1プロンプトで組み合わせる運用が現実的になった。",
+      "source_title": "AI Coding Roundup — July 3, 2026",
+      "source_url": "https://oday-bakkour.com/blog/ai-coding-roundup-july-3-2026",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "新機能"
+      ],
+      "first_date": "2026-07-04",
+      "last_date": "2026-07-04",
+      "appearances": 2
+    },
+    {
+      "id": 1211,
+      "title": "Claude Code 2.1.199：途中エラーでも部分出力を保持",
+      "point": "ストリーミング応答が途中でAPIエラーに当たっても、部分出力を「incomplete-response」通知付きで保持し破棄しなくなった。レート制限で切られたサブエージェントも黙って失敗せず部分結果を返す。長時間タスクの成果が丸ごと消える事故が減るため、大規模リファクタや調査タスクを安心して任せやすい。",
+      "source_title": "AI Coding Roundup — July 3, 2026",
+      "source_url": "https://oday-bakkour.com/blog/ai-coding-roundup-july-3-2026",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-07-04",
+      "last_date": "2026-07-04",
+      "appearances": 2
+    },
+    {
+      "id": 1212,
+      "title": "Claude Code 2.1.199：429自動リトライとSSLエラー即時失敗",
+      "point": "サブスクリプション利用時の一時的な429エラーはバックオフ付きで自動リトライされるようになり、逆にSSL証明書エラーは無駄なリトライをせず対処ガイダンス付きで即時失敗するように変更。Linuxのバックグラウンドエージェントデーモンが異常終了後に全エージェントを殺す問題や、macOSのSSH経由コールドスタート失敗も修正された。",
+      "source_title": "AI Coding Roundup — July 3, 2026",
+      "source_url": "https://oday-bakkour.com/blog/ai-coding-roundup-july-3-2026",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-07-04",
+      "last_date": "2026-07-04",
+      "appearances": 2
+    },
+    {
+      "id": 1217,
+      "title": "Claude Code 2.1.196：組織デフォルトモデルとMCPセキュリティ修正",
+      "point": "管理者が組織コンソールでデフォルトモデルを設定でき、`/model`に「Org default」として表示される。セッションに識別しやすいデフォルト名が付き、チャット内のファイル添付はCmd/Ctrl+クリックでエクスプローラー表示可能に。セキュリティ面では`claude mcp list`がリポジトリ内で自己承認された`.mcp.json`サーバーを起動しなくなり、未信頼ワークスペースは承認保留と表示される。",
+      "source_title": "Claude Code Updates - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-04",
+      "last_date": "2026-07-04",
+      "appearances": 2
     },
     {
       "id": 1194,
@@ -7793,6 +7908,17 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1214,
+      "title": "`/dataviz` スキル：チャート・ダッシュボード設計のガイダンスを内蔵",
+      "point": "2.1.198で追加された `/dataviz` スキルは、チャートやダッシュボードの設計ガイダンスに加え、実行可能なカラーパレット検証ツールを含む。可視化物の配色・チャート種別選定をClaudeに相談しながら作れるため、レポートやメトリクスダッシュボード作成の品質が安定する。",
+      "source_title": "Claude Code v2.1.197 to v2.1.198 Major Updates | DevelopersIO",
+      "source_url": "https://dev.classmethod.jp/en/articles/20260702-cc-updates-v2-1-198/",
+      "tags": [],
+      "first_date": "2026-07-04",
+      "last_date": "2026-07-04",
+      "appearances": 1
     },
     {
       "id": 1198,
@@ -14274,6 +14400,14 @@
   ],
   "daily": [
     {
+      "date": "2026-07-04",
+      "highlights": [
+        "Claude Code 2.1.199 は「消える作業」をなくす信頼性リリース — ストリーム途中エラーでも部分出力を保持、レート制限で切られたサブエージェントも部分結果を返す",
+        "Claude in Chrome が一般提供（GA） — インストール不要でブラウザからセッション・エージェントに直接アクセス、`/dataviz` スキルも同時追加",
+        "Sonnet 5 移行の実務ポイント — サンプリングパラメータ指定は400エラー、新トークナイザーで約30%トークン増を織り込む"
+      ]
+    },
+    {
       "date": "2026-07-03",
       "highlights": [
         "claude agentsが自動でドラフトPRまで作成（v2.1.198） — background agentsが完了時に確認を待たずコミット・push・PR作成まで実行するように",
@@ -15025,5 +15159,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-03T08:00:03.985278"
+  "generated_at": "2026-07-04T08:00:03.875878"
 }
