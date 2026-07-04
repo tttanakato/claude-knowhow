@@ -2102,6 +2102,19 @@
       "appearances": 6
     },
     {
+      "id": 1229,
+      "title": "Sonnet 5移行の実務ポイント：adaptive thinkingデフォルト有効と非対応パラメータに注意",
+      "point": "`thinking`未指定でも適応的思考が有効になり、手動の`budget_tokens`指定は400エラー（`effort`パラメータを使用）。`temperature`/`top_p`/`top_k`のカスタム値も400エラーになる。新トークナイザーで同じ入力でも約30%トークン増のため予算管理は再計測を推奨。導入価格（入力$2/出力$10 per 1Mトークン）は2026年8月31日まで。",
+      "source_title": "Claude Sonnet 5 のプロンプティング - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/prompting-claude-sonnet-5",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-05",
+      "last_date": "2026-07-05",
+      "appearances": 5
+    },
+    {
       "id": 1218,
       "title": "Opus 4.6 の Fast mode 削除：`speed:\"fast\"` は標準速度・標準課金で実行",
       "point": "6/29付でOpus 4.6のfast modeが削除された。`claude-opus-4-6`に`speed:\"fast\"`を指定してもエラーにはならず、標準速度・標準料金で実行され、`usage.speed`で実際の速度を確認できる。fast modeを使い続けたい場合はOpus 4.8への移行が必要。既存パイプラインで気づかず速度が落ちていないか`usage.speed`の監視を推奨。",
@@ -2692,6 +2705,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1227,
+      "title": "tmux 3.4以降での描画ちらつきを同期ターミナル出力で修正",
+      "point": "v2.1.200で、同期化されたターミナル出力（synchronized output）を有効にすることでtmux 3.4以降での描画のちらつきが修正された。従来は`CLAUDE_CODE_NO_FLICKER=1`などの回避策が必要だったレンダリング問題が、tmux環境では標準で解消される。tmuxでClaude Codeを常駐運用しているユーザーはアップデート推奨。",
+      "source_title": "Claude Code v2.1.200〜v2.1.201 の主要アップデート | DevelopersIO",
+      "source_url": "https://dev.classmethod.jp/articles/20260704-cc-updates-v2-1-201/",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-07-05",
+      "last_date": "2026-07-05",
+      "appearances": 4
     },
     {
       "id": 1215,
@@ -7908,6 +7935,94 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1222,
+      "title": "Claude Code v2.1.200：AskUserQuestionダイアログが既定で自動継続しなくなる",
+      "point": "新設定`askUserQuestionTimeout`の既定値は`\"never\"`（回答するまで待機）。自動継続したい場合は`/config`の「Question auto-continue timeout」で`\"60s\"`/`\"5m\"`/`\"10m\"`を明示的にオプトインする。注意点として、タイムアウト時に選ばれるのは「推奨（Recommended）」オプションではなく、その時点で自分が選択済みのオプション（未選択なら無選択のまま）で続行される。無人運用で自動継続に依存していた場合は要見直し。",
+      "source_title": "Claude Code v2.1.200〜v2.1.201 の主要アップデート | DevelopersIO",
+      "source_url": "https://dev.classmethod.jp/articles/20260704-cc-updates-v2-1-201/",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-05",
+      "last_date": "2026-07-05",
+      "appearances": 1
+    },
+    {
+      "id": 1223,
+      "title": "Claude Code v2.1.200：パーミッションモード「default」の表示名が「Manual」に変更",
+      "point": "CLI・`--help`・VS Code・JetBrains全体で「default」パーミッションモードの表示名が「Manual」に変わった。`--permission-mode manual`と`\"defaultMode\": \"manual\"`が新たに受け付けられ、従来の`default`指定もそのまま動作する（後方互換あり）。手順書やスクリプトで表示名を参照している場合は確認しておくと安心。",
+      "source_title": "Claude Code v2.1.200〜v2.1.201 の主要アップデート | DevelopersIO",
+      "source_url": "https://dev.classmethod.jp/articles/20260704-cc-updates-v2-1-201/",
+      "tags": [
+        "Claude Code",
+        "自動化"
+      ],
+      "first_date": "2026-07-05",
+      "last_date": "2026-07-05",
+      "appearances": 1
+    },
+    {
+      "id": 1224,
+      "title": "Claude Code v2.1.200：バックグラウンドセッション/エージェントの安定性を集中修正",
+      "point": "スリープ/復帰後や停止セッション再開時にターン途中で無言停止する不具合、クラッシュで残ったstaleな`daemon.lock`によりエージェントが二度と起動しなくなる問題、Escでキャンセル済みターンの再実行、レート制限で打ち切られたサブエージェントが空の結果を返す問題などを修正。バックグラウンド自動運用の実務で影響が大きい修正が中心のリリース。",
+      "source_title": "claude-code CHANGELOG.md",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-07-05",
+      "last_date": "2026-07-05",
+      "appearances": 1
+    },
+    {
+      "id": 1225,
+      "title": "Claude Code v2.1.201：Sonnet 5セッションでハーネスリマインダーが会話途中のsystemロールを不使用に",
+      "point": "Claude Sonnet 5のセッションで、ハーネス（Claude Code本体）からのリマインダーに会話途中のsystemロールを使用しないよう変更された。v2.1.200の16時間後に公開された小規模リリースで、Sonnet 5の挙動最適化が目的とみられる。Sonnet 5でプロンプト挙動が微妙に変わったと感じた場合はこの変更を確認するとよい。",
+      "source_title": "Claude Code v2.1.200〜v2.1.201 の主要アップデート | DevelopersIO",
+      "source_url": "https://dev.classmethod.jp/articles/20260704-cc-updates-v2-1-201/",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-07-05",
+      "last_date": "2026-07-05",
+      "appearances": 1
+    },
+    {
+      "id": 1226,
+      "title": "Claude Code v2.1.200：スクリーンリーダー対応を強化",
+      "point": "装飾用グリフを非表示にし、トランスクリプトの記号を短いラベルとして読み上げ、ネストしたテーブルを`Header: value.`形式の行として読み上げるようになった。`/mcp`のサーバー一覧もスクリーンリーダー・拡大鏡向けのフォーカス追跡に対応。アクセシビリティ要件のあるチームでもClaude Codeを導入しやすくなる改善。",
+      "source_title": "claude-code CHANGELOG.md",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-05",
+      "last_date": "2026-07-05",
+      "appearances": 1
+    },
+    {
+      "id": 1228,
+      "title": "Claude Enterprise：モデルエンタイトルメント・支出しきい値アラート・管理者分析を追加",
+      "point": "管理者がチャット・Cowork・Claude Codeの新規会話の既定モデルを設定し、ロール別・組織全体でモデルの利用可否を制御できるようになった。組織の支出上限の75%/90%で管理者に、75%/95%でユーザーにアラートが届き、上限到達前に対処できる。管理コンソールにはClaude Codeの「価値」タブ（コスト/コミット等の推定）と「利用状況」タブも追加。",
+      "source_title": "Giving admins more visibility and control over Claude spend",
+      "source_url": "https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend",
+      "tags": [
+        "Claude Code",
+        "モデル",
+        "製品機能"
+      ],
+      "first_date": "2026-07-05",
+      "last_date": "2026-07-05",
+      "appearances": 1
     },
     {
       "id": 1214,
@@ -14400,6 +14515,14 @@
   ],
   "daily": [
     {
+      "date": "2026-07-05",
+      "highlights": [
+        "AskUserQuestionダイアログが既定で自動継続しなくなる（v2.1.200） — 無人・自動運用でダイアログの自動継続に依存していた場合は設定見直しが必要",
+        "パーミッションモード「default」の表示名が「Manual」に変更 — CLI・VS Code・JetBrains全体で変更、後方互換あり",
+        "バックグラウンドセッション/エージェントの安定性を集中修正 — sleep/wake後の無言停止やdaemon.lock問題など無人運用の既知トラブルが多数解消"
+      ]
+    },
+    {
       "date": "2026-07-04",
       "highlights": [
         "Claude Code 2.1.199 は「消える作業」をなくす信頼性リリース — ストリーム途中エラーでも部分出力を保持、レート制限で切られたサブエージェントも部分結果を返す",
@@ -15159,5 +15282,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-04T08:00:03.875878"
+  "generated_at": "2026-07-05T08:00:04.080039"
 }
