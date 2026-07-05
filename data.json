@@ -666,6 +666,22 @@
       "appearances": 12
     },
     {
+      "id": 1234,
+      "title": "トークンを消費するのは会話よりコンテキスト：起動時の固定オーバーヘッドを削る",
+      "point": "セッション開始時点で、まだ一文字も打っていなくてもシステムプロンプト・CLAUDE.md・ルールファイル・スキルの名前と説明・MCPツールスキーマが読み込まれ、以後すべてのターンに乗り続ける。会話履歴の削減と同じくらい、この固定分のダイエットが重要。`/context`で内訳、`/memory`で読み込み中ファイル、`/mcp`で接続サーバーを確認し、使わないMCPサーバーは無効化する。長い手順はスキルに切り出せば使うまで本文が読み込まれない。",
+      "source_title": "Claude Code のコンテキスト管理とトークン消費を抑える運用術 - Qiita",
+      "source_url": "https://qiita.com/Yasushi-Mo/items/0071f71ba102d2125c13",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-06",
+      "last_date": "2026-07-06",
+      "appearances": 11
+    },
+    {
       "id": 1157,
       "title": "オートモードの破壊的コマンドブロックを活用する",
       "point": "Auto modeで`git reset --hard`・`git clean -fd`・`terraform destroy`などの破壊的コマンドは、ユーザーが明示要求していない限り自動ブロックされる。意図しない作業破棄やインフラ削除を防ぐ安全機構として、自走運用時に効く。",
@@ -769,6 +785,33 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 1236,
+      "title": "/compactは「キャッシュが温かい5分以内」かつ早めに実行する",
+      "point": "Claude Codeのプロンプトキャッシュは約5分でexpireする。セッションを動かしている最中に`/compact`すれば要約処理にもキャッシュ割引が効くが、5分以上放置した後ではフル料金で全コンテキストを再処理するため、その場合は`/clear`で新規開始の方が安い。またコンテキスト警告が出てからでは要約の質も落ちるので、セッションが「健康なうち」に`/compact Focus on ...`で残す内容を指定して圧縮するのがよい。",
+      "source_title": "Claude Code のコンテキスト管理とトークン消費を抑える運用術 - Qiita",
+      "source_url": "https://qiita.com/Yasushi-Mo/items/0071f71ba102d2125c13",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-07-06",
+      "last_date": "2026-07-06",
+      "appearances": 10
+    },
+    {
+      "id": 1237,
+      "title": "opusplanエイリアス：プランモードはOpus・実装は自動でSonnetに切替",
+      "point": "`/model opusplan`を指定すると、プランモード中はOpusで深く推論し、実装フェーズでは自動的にSonnetへ切り替わる。計画は数百トークンで済む一方、方向性を誤った数百行の差分を捨てて作り直すとコストを二重に払うため、Opusの価値が最も出るのは計画フェーズ。モデル切替後も会話は失われず、SonnetはOpusが書いた計画をそのまま引き継げる。",
+      "source_title": "Claude Code のコンテキスト管理とトークン消費を抑える運用術 - Qiita",
+      "source_url": "https://qiita.com/Yasushi-Mo/items/0071f71ba102d2125c13",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-06",
+      "last_date": "2026-07-06",
+      "appearances": 10
     },
     {
       "id": 1180,
@@ -2705,6 +2748,19 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1238,
+      "title": "修正ループは2回で見切って/clear→クリーンプロンプトで再開",
+      "point": "Claudeの誤出力を直そうと指示を重ねる「修正ループ」に入ると、失敗の履歴でコンテキストが汚染され品質がさらに落ちる。同じ問題を2回修正しても直らなければ`/clear`し、学んだ前提を織り込んだクリーンなプロンプトで再スタートする方が安く確実。判断の目安は「次のプロンプトを新品のターミナルに打っても意味が通じるなら送る前に/clear」。",
+      "source_title": "Claude Code のコンテキスト管理とトークン消費を抑える運用術 - Qiita",
+      "source_url": "https://qiita.com/Yasushi-Mo/items/0071f71ba102d2125c13",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-07-06",
+      "last_date": "2026-07-06",
+      "appearances": 4
     },
     {
       "id": 1227,
@@ -5559,6 +5615,33 @@
       "appearances": 3
     },
     {
+      "id": 1239,
+      "title": "HackerOneプログラム開始：Fable 5のサイバー系ジェイルブレイクを公式報告できる",
+      "point": "AnthropicがFable 5のサイバーセキュリティ・セーフガード詳細を公開し、セキュリティ研究者が発見したサイバー系ジェイルブレイクを報告できるHackerOneプログラムを開始した。分類器は「禁止用途／高リスクデュアルユース／低リスクデュアルユース／良性用途」の4カテゴリで判定し、Fable 5では安全マージンを従来モデルより広く設定。良性リクエストが誤ブロックされ得る点は運用時に留意。ジェイルブレイク深刻度の共通評価枠組みのドラフトも公開され、フィードバックを受付中。",
+      "source_title": "More details on Fable 5's cyber safeguards and our jailbreak framework - Anthropic",
+      "source_url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-07-06",
+      "last_date": "2026-07-06",
+      "appearances": 2
+    },
+    {
+      "id": 1240,
+      "title": "LinterやCLIツールへの事前委任でClaudeに渡すコンテキストを絞る",
+      "point": "エラー原因をイチから探させたり生ログを丸ごと読ませるのは最もトークンを浪費するパターン。手元で`eslint --format compact | head -20`や`grep -A 5 \"FAIL\" test.log`、`rg --files-with-matches`で対象を絞ってから渡す。外部サービスは`gh` CLIなどを使わせると効率的で、未認証API直叩きによるレートリミット問題も回避できる。静的解析で機械的に検出できる部分をツール側へ寄せるほどコンテキストは小さくなる。",
+      "source_title": "Claude Code のコンテキスト管理とトークン消費を抑える運用術 - Qiita",
+      "source_url": "https://qiita.com/Yasushi-Mo/items/0071f71ba102d2125c13",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-06",
+      "last_date": "2026-07-06",
+      "appearances": 2
+    },
+    {
       "id": 1210,
       "title": "Claude Code 2.1.199：スタックスキル呼び出しで先頭5スキルを同時ロード",
       "point": "7/2リリースの2.1.199で、`/skill-a /skill-b ○○して` のようにスラッシュスキルを並べて呼び出すと、従来は先頭1つしか読み込まれなかったのが先頭5スキルまで同時ロードされるように。複数ドメインのスキル（例：コードレビュー＋ドキュメント生成）を1プロンプトで組み合わせる運用が現実的になった。",
@@ -7935,6 +8018,36 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1233,
+      "title": "Fable 5にClaude Codeの運用ルールを3プロンプトで棚卸しさせる",
+      "point": "Fable 5を「実装させる」のではなく、CLAUDE.md・ガードレール・カスタムコマンド・Skill構成の設計レビューに使う手法。①現状を渡して診断のみさせる（完成品はまだ作らせない）→②「診断結果をもとに再設計案を作成して」→③「新構成の回帰テスト項目を作成して」の3段階。いきなり最終構成を作らせず先に問題点を洗い出させると指摘の精度と再現性が上がる。強いモデルほど「設定側をAIにレビューさせる」使い方が効く。",
+      "source_title": "Fable 5が復活したので、Claude Codeの運用ルールを3つのプロンプトで棚卸しした - Qiita",
+      "source_url": "https://qiita.com/4q_sano/items/bb1c9ac0da9ed5f4a36e",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-07-06",
+      "last_date": "2026-07-06",
+      "appearances": 1
+    },
+    {
+      "id": 1235,
+      "title": "`.claude/rules` に `paths:` フロントマターを付けてルールをディレクトリにスコープする",
+      "point": "`.claude/rules/` のルールファイルは `paths:` frontmatterがないと起動時に全部読み込まれ、肥大化したCLAUDE.mdと同じく常時コンテキストを圧迫する。`paths: - \"src/api/**/*.ts\"` のようにパターン指定すると、一致するファイルをClaudeが初めて触るまで読み込まれない。フロントエンド作業中はAPI層のルールがコンテキストを消費しない、という遅延ロードが実現できる。",
+      "source_title": "Claude Code のコンテキスト管理とトークン消費を抑える運用術 - Qiita",
+      "source_url": "https://qiita.com/Yasushi-Mo/items/0071f71ba102d2125c13",
+      "tags": [
+        "CLAUDE.md",
+        "API"
+      ],
+      "first_date": "2026-07-06",
+      "last_date": "2026-07-06",
+      "appearances": 1
     },
     {
       "id": 1222,
@@ -14515,6 +14628,14 @@
   ],
   "daily": [
     {
+      "date": "2026-07-06",
+      "highlights": [
+        "Fable 5にClaude Code運用ルールを「棚卸し」させる — 実装ではなくCLAUDE.md・ガードレール・コマンド構成のレビューをFable 5に任せる3プロンプト手法",
+        "`.claude/rules` の `paths:` でルールを遅延ロード — 該当ディレクトリを触るまでルールを読み込ませず起動時コンテキストを軽量化",
+        "HackerOneでFable 5のサイバー系ジェイルブレイク報告プログラム開始 — セキュリティ研究者向けの公式報告窓口が開設"
+      ]
+    },
+    {
       "date": "2026-07-05",
       "highlights": [
         "AskUserQuestionダイアログが既定で自動継続しなくなる（v2.1.200） — 無人・自動運用でダイアログの自動継続に依存していた場合は設定見直しが必要",
@@ -15282,5 +15403,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-05T08:00:04.080039"
+  "generated_at": "2026-07-06T08:00:04.045649"
 }
