@@ -287,6 +287,19 @@
       "appearances": 17
     },
     {
+      "id": 1247,
+      "title": "モデルルーティングポリシーを1ページ文書化する：Fable 5は計画と難問専用",
+      "point": "7/8以降のコスト比はFable 5を1.0×として、Opus 4.8が0.5×、Sonnet 5（8月末まで導入価格）が0.2×、Haiku 4.5が0.1×。設計判断・多システム計画・難解なデバッグだけをFable 5に、バルクの実装・テスト生成・リファクタはSonnet 5に、汎用推論はOpus 4.8に、分類・抽出の大量処理はHaiku 4.5に振り分ける。どの作業をどのモデルに送るかを事前に1ページの規約として書いておくことが、料金変更を「計画済みの費目」に変える。6月の提供停止が示した通り、単一プレミアムモデル依存はコストと可用性の両リスク。",
+      "source_title": "Claude Fable 5 Pricing: The July 7 Usage-Credits Switch - Digital Applied",
+      "source_url": "https://www.digitalapplied.com/blog/claude-fable-5-usage-credits-july-7-pricing-guide-2026",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-07",
+      "last_date": "2026-07-07",
+      "appearances": 16
+    },
+    {
       "id": 1181,
       "title": "インタビュー先行プロンプトで盲点を洗い出す",
       "point": "大きい・曖昧なタスクは最小限のプロンプトで始め、「先に質問して」と依頼する。Claudeが実装詳細・エッジケース・トレードオフなど見落としがちな点を尋ねてくるため、要件の精度が上がる。",
@@ -1454,6 +1467,19 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 1248,
+      "title": "安全分類器の誤フラグ時はOpus 4.8が代答：バルクコーディングをFable 5に投げないもう一つの理由",
+      "point": "7/1再デプロイ時に再訓練されたFable 5の安全分類器は、報告済みジェイルブレイク手法を99%超ブロックする代わりに、日常的なコーディング・デバッグ作業で良性リクエストを誤フラグしやすくなった。フラグされたリクエストへの回答はOpus 4.8に置き換わる（更新後のフォールバック率は未公表）。ルーチンコーディングはどのみちリダイレクトされやすいので、プレミアム料金を払ってFable 5に流す意味が薄い。バルク作業はSonnet 5へ。",
+      "source_title": "Why Claude Just Got More Cautious About Your Code - Digital Applied",
+      "source_url": "https://www.digitalapplied.com/blog/claude-fable-5-safety-classifier-coding-tradeoffs-2026",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-07",
+      "last_date": "2026-07-07",
+      "appearances": 7
     },
     {
       "id": 1179,
@@ -2750,6 +2776,19 @@
       "appearances": 5
     },
     {
+      "id": 1246,
+      "title": "大型ジョブは締切前に前倒し投入：1Mコンテキストで「後で使う成果物」を作らせる",
+      "point": "残り込み枠の最も効率的な使い道は、大規模マイグレーション計画・アーキテクチャレビュー・セキュリティ監査など「一度作れば安いモデルが後で実行できる耐久性のある計画文書」を作らせること。Fable 5は1Mトークンコンテキストが標準なので、リポジトリ丸ごとや大量のログ・文書をチャンク分割なしで読ませる分析も込み枠のうちに済ませる価値が高い。7/8以降は同じ処理がフル従量課金になる。",
+      "source_title": "Fable 5 Before July 7: The Six-Day Window Playbook - Digital Applied",
+      "source_url": "https://www.digitalapplied.com/blog/claude-fable-5-before-july-7-six-day-window-playbook",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-07",
+      "last_date": "2026-07-07",
+      "appearances": 4
+    },
+    {
       "id": 1238,
       "title": "修正ループは2回で見切って/clear→クリーンプロンプトで再開",
       "point": "Claudeの誤出力を直そうと指示を重ねる「修正ループ」に入ると、失敗の履歴でコンテキストが汚染され品質がさらに落ちる。同じ問題を2回修正しても直らなければ`/clear`し、学んだ前提を織り込んだクリーンなプロンプトで再スタートする方が安く確実。判断の目安は「次のプロンプトを新品のターミナルに打っても意味が通じるなら送る前に/clear」。",
@@ -3812,6 +3851,22 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1251,
+      "title": "「使用量クレジット」は2つの別物：6/15のAgent SDKクレジット改編と本日の切替を混同しない",
+      "point": "6/15にAnthropicが予告したAgent SDK・ヘッドレス・CI/CD利用向けのクレジット改編は施行前に一時停止された別の仕組みで、本日のFable 5切替はチャット・Cowork・Claude Codeなど対話的プロダクト内でのFable 5アクセスに関するもの。前者が静かに再開したわけではない。予算計画では2つの変更を別々に扱い、停止中の改編を根拠に7月の支出を見積もらないこと。",
+      "source_title": "Claude Fable 5 Pricing: The July 7 Usage-Credits Switch - Digital Applied",
+      "source_url": "https://www.digitalapplied.com/blog/claude-fable-5-usage-credits-july-7-pricing-guide-2026",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-07-07",
+      "last_date": "2026-07-07",
+      "appearances": 3
     },
     {
       "id": 1213,
@@ -5613,6 +5668,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1244,
+      "title": "Fable 5のプラン込み利用は本日7/7で終了：明日から使用量クレジット課金",
+      "point": "Pro/Max/Team/一部Enterpriseで「週次上限の50%まで」認められていたFable 5の込み利用が本日で終わり、7/8からは使用量クレジット経由の従量課金（入力$10・出力$50 per MTok、Opus 4.8のちょうど2倍でAnthropic最高額）になる。50%枠のトークン・ドル換算は未公表のため、正確な残量は自分の使用量ダッシュボードでしか確認できない。7月にFable 5を使う予定があるなら、クレジット有効化と月次上限の設定を今日中に済ませておくのが安全。",
+      "source_title": "Claude Fable 5 Pricing: The July 7 Usage-Credits Switch - Digital Applied",
+      "source_url": "https://www.digitalapplied.com/blog/claude-fable-5-usage-credits-july-7-pricing-guide-2026",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-07-07",
+      "last_date": "2026-07-07",
+      "appearances": 2
     },
     {
       "id": 1239,
@@ -8018,6 +8087,43 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1245,
+      "title": "Standard Enterprise席は猶予ゼロ：使用量クレジット無効だとFable 5自体が動かない",
+      "point": "Anthropicの再デプロイ告知の脚注にある重要な区別：Enterprise Premium席はPro/Max/Teamと同じく7/7まで込み枠があるが、Standard席は初日から込み枠ゼロで、組織で使用量クレジットが有効になっていなければFable 5はそもそも実行できない。管理者は自組織の席種別とクレジット設定を確認してからメンバーにFable 5利用を案内すること。「select Enterprise plans」という表現の中身は席単位で異なる。",
+      "source_title": "Claude Fable 5 Pricing: The July 7 Usage-Credits Switch - Digital Applied",
+      "source_url": "https://www.digitalapplied.com/blog/claude-fable-5-usage-credits-july-7-pricing-guide-2026",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-07",
+      "last_date": "2026-07-07",
+      "appearances": 1
+    },
+    {
+      "id": 1249,
+      "title": "Fable 5の「働き方の規律」をスキルとして書き出させ、Opus 4.8に移植する",
+      "point": "込み枠の最終日にコードを書かせるのではなく、Fable 5自身に「編集前に計画を書く」「自分の成果を反証してから提出する」「ドキュメントより実システムを信じる」「頼まれた範囲だけ直す」などの作法をポータブルなSKILL.mdとして書き下ろさせる手法。成果物の6スキル（plan-gate、adversarial-verify、live-state-truth、scope-fence、ruthless-editor、memory-hygiene）は無料公開されており、`~/.claude/skills/<name>/SKILL.md` に置くだけでOpus 4.8など期限後の常用モデルでも規律が持ち越せる。",
+      "source_title": "Claude Fable 5 Skills: Keep the Rigor on Opus 4.8 - Iwo Szapar",
+      "source_url": "https://www.iwoszapar.com/p/claude-fable-5-skills",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-07",
+      "last_date": "2026-07-07",
+      "appearances": 1
+    },
+    {
+      "id": 1250,
+      "title": "スキルは盲検A/Bテストで実証してから常用する：「プラセボスキル」を排除",
+      "point": "スキルの中には効果がプラセボのものがあるという研究を踏まえ、罠を仕込んだタスク（自己矛盾する仕様、コードと食い違うREADME等）をスキルあり/なしで2回実行し、どちらがスキル使用か知らない採点者がルーブリックで盲検判定する検証プロトコルが紹介されている。上記6スキルはこの方式で12勝0敗2分（初版で負けた2スキルは書き直して held-out タスクで再検証）。スキルはコンテキストに載るため1タスクあたり約7%のトークン増という実測コストも公開されており、自作スキルの効果測定の手本になる。",
+      "source_title": "Claude Fable 5 Skills: Keep the Rigor on Opus 4.8 - Iwo Szapar",
+      "source_url": "https://www.iwoszapar.com/p/claude-fable-5-skills",
+      "tags": [],
+      "first_date": "2026-07-07",
+      "last_date": "2026-07-07",
+      "appearances": 1
     },
     {
       "id": 1233,
@@ -14628,6 +14734,14 @@
   ],
   "daily": [
     {
+      "date": "2026-07-07",
+      "highlights": [
+        "Fable 5のプラン込み利用は本日7/7で終了 — 明日以降は使用量クレジット（$10/$50 per MTok）での従量課金に切り替わる",
+        "Fable 5の「規律」をスキル化してOpus 4.8へ移植 — 盲検A/Bテストで12勝0敗2分の6スキルが無料公開、期限後も作法は持ち越せる",
+        "モデルルーティングポリシーの文書化 — Fable 5は計画・難問専用にし、バルク作業はSonnet 5へ逃がす1ページの規約が請求書の驚きを防ぐ"
+      ]
+    },
+    {
       "date": "2026-07-06",
       "highlights": [
         "Fable 5にClaude Code運用ルールを「棚卸し」させる — 実装ではなくCLAUDE.md・ガードレール・コマンド構成のレビューをFable 5に任せる3プロンプト手法",
@@ -15403,5 +15517,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-06T08:00:04.045649"
+  "generated_at": "2026-07-07T08:00:04.087616"
 }
