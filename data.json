@@ -248,6 +248,19 @@
       "appearances": 18
     },
     {
+      "id": 1258,
+      "title": "デフォルトモデルはOpus 4.8にし、Fable 5はエスカレーション専用にする",
+      "point": "作業の9割をプラン込みのOpus 4.8（またはSonnet 5）で処理し、最難関の問題だけをクレジット課金のFable 5にエスカレーションする構成が、切替後の最もコスト効率の良い運用。Fable 5をハードコードしたパイプラインは、クレジット切れ時にOpus 4.8へ自動フォールバックするよう設計しておく（6月の提供停止と同じ教訓）。軽い選択的利用なら月数ドル、常用なら月$135超と、使い方で二桁の開きが出る。",
+      "source_title": "Claude Fable 5 Usage Credits: What Changes After July 7, 2026 - Codersera",
+      "source_url": "https://codersera.com/blog/claude-fable-5-usage-credits-july-2026/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-08",
+      "last_date": "2026-07-08",
+      "appearances": 17
+    },
+    {
       "id": 1190,
       "title": "CLAUDE.mdは200行以内で簡潔に保つ",
       "point": "CLAUDE.mdはClaude Codeが各セッション開始時に自動読込するプレーンなmarkdownで、永続的なプロジェクト記憶になる。ただし1行ごとにコンテキスト予算を消費するため、Anthropicは簡潔さを推奨。目安は約200行以内で、画面1〜2枚を超えるなら毎セッション余分なコストを払っていることになる。",
@@ -1689,6 +1702,19 @@
       "appearances": 7
     },
     {
+      "id": 1260,
+      "title": "/reviewは高速単一パスに回帰：多段レビューは/code-review <level>を使い分ける",
+      "point": "2.1.202で`/review <pr>`が再び高速な単一パスレビューに変更された（一時期は/code-review mediumと同じ多段エンジンだった）。マージ前のクイックチェックは/review、effortレベルを指定した多エージェントの徹底レビューは`/code-review <level> <pr#>`と、目的で使い分けるのが公式の想定。レビュー時間とトークン消費のバランスを自分で選べるようになったと捉えるとよい。",
+      "source_title": "Claude Code changelog（2.1.202）",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-07-08",
+      "last_date": "2026-07-08",
+      "appearances": 6
+    },
+    {
       "id": 1206,
       "title": "Advisor戦略＋Prompt CachingのSonnet 5対応版：最上位モデルを全タスクに使わない",
       "point": "高性能モデルを「アドバイザー」、安価なモデルを「エグゼキューター」として組み合わせるAdvisor戦略のSonnet 5対応版が解説されている。計画・レビューなど判断が重い工程だけ上位モデルに任せ、実行は安価なモデルで回すことでエージェントのコスト構造を最適化。頻出する静的コンテキストはPrompt Cachingで再処理コストを抑える。Sonnet 5のトークン消費増（本日Tips 4参照）を踏まえたコスト試算とセットで検討したい。",
@@ -2169,6 +2195,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1259,
+      "title": "Claude Code 2.1.202：Dynamic workflow sizeを/configで設定",
+      "point": "/configに「Dynamic workflow size」設定が追加され、動的ワークフローが生成するエージェント数の目安をsmall/medium/largeで指示できるようになった。強制上限ではなく助言的ガイドラインだが、小規模タスクでエージェントが過剰に増えるのを抑えたい場合に有効。あわせてworkflow.run_id・workflow.nameのOpenTelemetry属性が追加され、ワークフロー実行単位でテレメトリを再構成できるようになった。",
+      "source_title": "Claude Code changelog（2.1.202）",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-07-08",
+      "last_date": "2026-07-08",
+      "appearances": 5
     },
     {
       "id": 1229,
@@ -3851,6 +3891,34 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1255,
+      "title": "Fable 5使用量クレジット切替が本日発効：未有効ならリクエストが実行されない",
+      "point": "7/7 23:59:59（太平洋時間、日本時間7/8 15:59）でPro/Max/Team/一部EnterpriseのFable 5込み利用が終了し、本日から使用量クレジット（入力$10・出力$50 per MTok）のみでの提供になった。クレジットを有効化していないプランではFable 5のリクエスト自体が動かないが、Opus 4.8・Sonnet 5・Haiku 4.5は従来どおりプラン枠内で利用でき、5時間セッションリセットにも影響はない。有効化はWeb版claude.aiのSettings→Usageから（モバイルアプリでは不可）。",
+      "source_title": "Fable 5's second act on Claude ends today - Android Authority",
+      "source_url": "https://www.androidauthority.com/anthropic-claude-fable-5-credits-usage-july-3684840/",
+      "tags": [
+        "モデル",
+        "製品機能"
+      ],
+      "first_date": "2026-07-08",
+      "last_date": "2026-07-08",
+      "appearances": 3
+    },
+    {
+      "id": 1262,
+      "title": "SWE-bench Pro実測でモデルを選ぶ：Sonnet 5は63.2%、Opus 4.8は69.2%",
+      "point": "Claude CodeでのSWE-bench Proスコアは、Sonnet 5で63.2%、Opus 4.8で69.2%と報告されている。差は約6ポイントで、価格差（Opus 4.8は$5/$25）を考慮すると「まずSonnet 5、失敗したタスクだけOpus 4.8で再試行」という2段構えが数字上も合理的。難易度の高いバグ修正や大規模リファクタのみOpusを既定にするなど、ベンチ実測をルーティング規約の根拠として使える。",
+      "source_title": "AI News Today July 7 2026 - Build Fast with AI",
+      "source_url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-07-08",
+      "last_date": "2026-07-08",
+      "appearances": 3
     },
     {
       "id": 1251,
@@ -5668,6 +5736,34 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1257,
+      "title": "クレジット有効化とセットで支出上限を設定：暴走エージェントの燃焼を防ぐ",
+      "point": "使用量クレジットはclaude.aiとClaude Codeの合算で同一プールから消費されるため、長時間の自律エージェントセッションが静かに残高を燃やすリスクがある。有効化と同時にSettings→Usageで支出上限を設定し、自律エージェントをFable 5に向ける前に必ず上限を確認すること。目安として集中的なエージェント作業1時間で$5〜20のクレジット消費が起こり得る。UIは上限接近時に警告し、クレジット課金への切替前に確認を求める。",
+      "source_title": "Claude Fable 5 Usage Credits: What Changes After July 7, 2026 - Codersera",
+      "source_url": "https://codersera.com/blog/claude-fable-5-usage-credits-july-2026/",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-07-08",
+      "last_date": "2026-07-08",
+      "appearances": 2
+    },
+    {
+      "id": 1261,
+      "title": "Sonnet 5の導入価格$2/$10は8/31まで：Fable 5メータリング下の実務の受け皿に",
+      "point": "Fable 5がクレジット課金化された一方、Sonnet 5は8月31日まで入力$2・出力$10 per MTokの導入価格で提供され、サブスクプラン内では追加課金なしで使える。Fable 5比でコストは約1/5であり、バルクの実装・テスト生成・定型リサーチの受け皿として最有力。導入価格終了後は$3/$15の標準価格に戻るため、API利用者は8月末までにコスト前提を再計算しておく。",
+      "source_title": "AI News Today July 7 2026 - Build Fast with AI",
+      "source_url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-07-08",
+      "last_date": "2026-07-08",
+      "appearances": 2
     },
     {
       "id": 1244,
@@ -8087,6 +8183,34 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1256,
+      "title": "サブスク込みFable 5は「キャパシティが許せば」復帰予定：期日未定を前提に計画する",
+      "point": "Claude CodeエンジニアのThariq Shihipar氏がXで、込み利用終了は恒久ではなく「キャパシティが許せば（when capacity allows）」標準プランへ復帰させる方針だと確認した。ただし時期の保証はなく、当初「2週間」と告知された込み期間が実際は1週間に短縮された経緯もあるため、早期復帰は期待しない方が安全。復帰待ちの間はFable 5前提のワークフローを組まず、クレジット課金かOpus 4.8代替で運用する。",
+      "source_title": "Will Claude Fable 5 Return to Subscription Plans? - explainx.ai",
+      "source_url": "https://www.explainx.ai/blog/will-claude-fable-5-return-to-subscription-plans-2026",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-07-08",
+      "last_date": "2026-07-08",
+      "appearances": 1
+    },
+    {
+      "id": 1263,
+      "title": "スキル再呼び出しの重複ロードが修正：長時間セッションのコンテキスト浪費が解消",
+      "point": "2.1.202で、既にロード済みのスキルを再度呼び出すと指示文の複製がコンテキストに追記されてしまう問題が修正された。従来は同じスキルを繰り返し使う長時間セッションでコンテキストとトークンが静かに浪費されていたため、スキル多用ワークフローではアップデートの実益が大きい。あわせて、ワークフロースクリプト内のUnicodeクォートが破壊される問題や、`claude auth login`のサインインURLがSSH越しにクリックできない問題も修正されている。",
+      "source_title": "Claude Code changelog（2.1.202）",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化",
+        "新機能"
+      ],
+      "first_date": "2026-07-08",
+      "last_date": "2026-07-08",
+      "appearances": 1
     },
     {
       "id": 1245,
@@ -14734,6 +14858,14 @@
   ],
   "daily": [
     {
+      "date": "2026-07-08",
+      "highlights": [
+        "Fable 5の使用量クレジット切替が本日発効 — 7/8 0時（PT）以降、クレジット未有効のプランではFable 5リクエスト自体が実行不可に",
+        "サブスク込みFable 5は「キャパシティが許せば」復帰予定 — Claude CodeエンジニアがXで確認、ただし期日は未定",
+        "Claude Code 2.1.202 — /reviewが高速単一パスに回帰、Dynamic workflow sizeの設定が/configに追加"
+      ]
+    },
+    {
       "date": "2026-07-07",
       "highlights": [
         "Fable 5のプラン込み利用は本日7/7で終了 — 明日以降は使用量クレジット（$10/$50 per MTok）での従量課金に切り替わる",
@@ -15517,5 +15649,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-07T08:00:04.087616"
+  "generated_at": "2026-07-08T08:00:05.037206"
 }
