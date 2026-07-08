@@ -2197,6 +2197,19 @@
       "appearances": 6
     },
     {
+      "id": 1269,
+      "title": "延長された5日間の使い方：Fable 5でしかできない大型タスクを前倒し投入する",
+      "point": "残りの込み枠は、1Mトークンコンテキストが必要な大規模ドキュメント分析・コードベース全体の解析・長時間自律セッションなど「Fable 5でしかできない」作業に集中投下するのが合理的。多くのUIでFable 5はデフォルトではなく手動選択が必要なので、モデル選択の確認から始める。Opus 4.8やSonnet 5のコンテキストに収まるタスクは7/13以降に回す。なお安全分類器がサイバーセキュリティ隣接の要求をOpus 4.8へ自動再ルートした場合、課金もOpus 4.8レートになる。",
+      "source_title": "Claude Fable 5 Free Window Extended to July 12 - Tech Times",
+      "source_url": "https://www.techtimes.com/articles/319875/20260707/claude-fable-5-free-window-extended-july-12-what-subscribers-should-do-now.htm",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-09",
+      "last_date": "2026-07-09",
+      "appearances": 5
+    },
+    {
       "id": 1259,
       "title": "Claude Code 2.1.202：Dynamic workflow sizeを/configで設定",
       "point": "/configに「Dynamic workflow size」設定が追加され、動的ワークフローが生成するエージェント数の目安をsmall/medium/largeで指示できるようになった。強制上限ではなく助言的ガイドラインだが、小規模タスクでエージェントが過剰に増えるのを抑えたい場合に有効。あわせてworkflow.run_id・workflow.nameのOpenTelemetry属性が追加され、ワークフロー実行単位でテレメトリを再構成できるようになった。",
@@ -2814,6 +2827,17 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1267,
+      "title": "Fable 5のプラン込み利用が7/12まで延長：ユーザーの反発を受け締切数時間前に方針転換",
+      "point": "7/8 0時（PT）に予定されていたFable 5の使用量クレジット課金への完全移行が、7/12 23:59:59（PT）まで5日間延長された。発表は公式ブログではなくX公式アカウント経由で、締切のわずか数時間前。Pro/Max/Team/プレミアムEnterprise席に自動適用され、週次使用量の50%上限とクレジット価格（入力$10・出力$50 per MTok）は変更なし。Standard Enterprise席にはもともと込み枠がないため延長も適用されない点に注意。",
+      "source_title": "Claude Fable 5 promotion extended after backlash over early cutoff - Android Authority",
+      "source_url": "https://www.androidauthority.com/claude-fable-5-free-extension-3685103/",
+      "tags": [],
+      "first_date": "2026-07-09",
+      "last_date": "2026-07-09",
+      "appearances": 4
     },
     {
       "id": 1246,
@@ -3891,6 +3915,37 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1268,
+      "title": "7/13以降クレジット未有効だと猶予なしで即停止：上限設定とキャッシュ活用をセットで",
+      "point": "延長窓の終了後、クレジット未有効のままだとFable 5アクセスは猶予期間も自動フォールバックもなく即停止する。有効化はSettings→Usageから（1日の償還上限$2,000、自動リロードあり）。自律コーディングループで$100を9分で使い切った報告があり、エージェント用途は特に支出上限の設定が必須。プロンプトキャッシュで入力コストが90%減（$10→$1）、Batch APIで50%引きになるため、大きなシステムプロンプトの再利用や非急ぎジョブはこれらで抑える。",
+      "source_title": "Claude Fable 5 Free Window Extended to July 12: What Subscribers Should Do Now - Tech Times",
+      "source_url": "https://www.techtimes.com/articles/319875/20260707/claude-fable-5-free-window-extended-july-12-what-subscribers-should-do-now.htm",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-07-09",
+      "last_date": "2026-07-09",
+      "appearances": 3
+    },
+    {
+      "id": 1270,
+      "title": "Claude Cowork がWeb・モバイルに拡大：セッションが端末を離れても継続する",
+      "point": "CoworkがデスクトップだけでなくWebとモバイル（iOS/Android）で利用可能になった。ベータはMaxプランから数週間かけて順次展開。セッションはリモート実行（ベータ）でClaudeアカウントに保存され、ノートPCを閉じても作業が続き、スケジュールタスクはデバイスがオフラインでも実行される。判断が必要な場面ではスマホに質問が届き、外出先から承認・軌道修正できる。ローンチ記念でCowork使用量2倍が8/5まで延長中。Web版はclaude.aiのホーム画面、モバイルはサイドバーからCoworkを開始する。",
+      "source_title": "Claude Cowork on web and mobile - Anthropic",
+      "source_url": "https://claude.com/blog/cowork-web-mobile",
+      "tags": [
+        "自動化",
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-07-09",
+      "last_date": "2026-07-09",
+      "appearances": 3
     },
     {
       "id": 1255,
@@ -5736,6 +5791,35 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1273,
+      "title": "Claude Code 2.1.203/204：バックグラウンドセッションの安定性を大規模修正",
+      "point": "バックグラウンドエージェント関連の修正が集中投入された。daemonのトークン失効でセッションが永久に応答不能になる問題の自動回復、WindowsでのPATH引き継ぎ不良、ANTHROPIC_BASE_URLが脱落しAPIキーが既定エンドポイントへ送られ401になる問題、worktree分離サブエージェントが親チェックアウトでコマンドを実行する問題などを修正。2.1.204ではheadlessセッションのSessionStartフック中にリモートワーカーがアイドル回収される問題も解消。バックグラウンド運用者は更新推奨。",
+      "source_title": "Claude Code changelog（2.1.203/2.1.204）",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-07-09",
+      "last_date": "2026-07-09",
+      "appearances": 2
+    },
+    {
+      "id": 1275,
+      "title": "本人確認・年齢確認が7/8に発効：対象はコンシューマ向けプランのみ・段階的導入",
+      "point": "7/8付プライバシーポリシー改定が発効し、Claude Free/Pro/Maxのコンシューマアカウントは政府発行ID・自撮り・顔形状テンプレートによる本人確認を求められる場合がある。処理は本人確認がPersona、年齢のみの確認は合否だけを返すYotiが担当し、Anthropicは確認データをモデル学習に使わないと明言。EnterpriseプランとDeveloper Platformは対象外。全員一斉ではなく段階的な適用で、選定基準は非公開。業務アカウントへの影響有無を確認しておくとよい。",
+      "source_title": "Identity verification on Claude - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14328960-identity-verification-on-claude",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-07-09",
+      "last_date": "2026-07-09",
+      "appearances": 2
     },
     {
       "id": 1257,
@@ -8183,6 +8267,62 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1271,
+      "title": "Cowork利用の90%超は非開発業務：「仕事のまわりの仕事」を委任単位にする",
+      "point": "AnthropicがCoworkの利用実態を分析したところ、90%超がソフトウェア開発以外で、最大カテゴリは業務オペレーションとコンテンツ作成（合計で約半分）だった。四半期支出の照合と差異メモ作成、契約書フォルダから更新トラッカー生成、通話記録とパイプラインデータからの客先デッキ作成など、誰の職務記述書にもないが全員の週の大部分を占める「work around the work」が委任先として最適。既にあるフォルダ・スレッド・作りかけの資料を指定し、「完了状態」を記述して渡すのが公式推奨の始め方。",
+      "source_title": "Claude Cowork on web and mobile - Anthropic",
+      "source_url": "https://claude.com/blog/cowork-web-mobile",
+      "tags": [
+        "API",
+        "製品機能"
+      ],
+      "first_date": "2026-07-09",
+      "last_date": "2026-07-09",
+      "appearances": 1
+    },
+    {
+      "id": 1272,
+      "title": "Claude Code 2.1.203：ログイン期限警告とManualモードの⏸バッジで運用の見落としを防ぐ",
+      "point": "ログインの有効期限が近づくと事前警告が表示され、バックグラウンドセッションが認証切れで中断される前に再認証できるようになった。無人運用（スケジュールタスクや長時間エージェント）を組んでいる場合は、この警告を見たら即座に再ログインする運用にする。またManualパーミッションモード中はフッターにグレーの⏸バッジが常時表示され、「自動承認のつもりが手動モードで止まっていた」という取り違えを防げる。",
+      "source_title": "Claude Code changelog（2.1.203）",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-07-09",
+      "last_date": "2026-07-09",
+      "appearances": 1
+    },
+    {
+      "id": 1274,
+      "title": "MCPサーバーに追加作業ディレクトリが`roots/list`で通知されるようになった",
+      "point": "2.1.203で、セッションの追加作業ディレクトリ（--add-dirなどで加えたもの）がMCPの`roots/list`に含まれ、セットが変わると`notifications/roots/list_changed`が送られるようになった。ファイルシステムを扱う自作MCPサーバーは、rootsを購読すればユーザーが途中で追加したディレクトリにも正しく追従できる。マルチリポジトリ構成でMCPツールが「見えないディレクトリ」を触れない問題への公式な解決経路として覚えておきたい。",
+      "source_title": "Claude Code changelog（2.1.203）",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-09",
+      "last_date": "2026-07-09",
+      "appearances": 1
+    },
+    {
+      "id": 1276,
+      "title": "UST×Anthropic戦略提携：従業員2万人にClaude研修、プラットフォーム組み込みも",
+      "point": "デジタルトランスフォーメーション企業のUSTが7/8、Anthropicとの戦略提携を発表。自社プラットフォーム・エンジニアリング・オペレーションにClaudeを組み込み、全世界の従業員2万人にClaude活用研修を実施する。大企業がAI導入を「ツール配布」ではなく「全社研修＋自社製品への組み込み」として設計する事例で、社内展開の計画を立てる際の参照モデルになる。",
+      "source_title": "UST Partners with Anthropic - Morningstar/PR Newswire",
+      "source_url": "https://www.morningstar.com/news/pr-newswire/20260708io00270/ust-partners-with-anthropic-to-bring-claude-into-usts-platforms-engineering-and-operations-and-train-20000-ust-employees-globally",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-07-09",
+      "last_date": "2026-07-09",
+      "appearances": 1
     },
     {
       "id": 1256,
@@ -14858,6 +14998,14 @@
   ],
   "daily": [
     {
+      "date": "2026-07-09",
+      "highlights": [
+        "Fable 5のプラン込み利用が7/12まで5日間延長 — 締切数時間前にAnthropicがX上で発表、条件（50%週次上限・$10/$50課金）は変更なし",
+        "Claude Cowork がWeb・モバイルに拡大 — セッションとファイルがアカウント同期、8/5まで使用量2倍キャンペーン",
+        "Claude Code 2.1.203/204 — ログイン期限警告・Manualモードバッジ追加、バックグラウンドセッションの大規模安定化"
+      ]
+    },
+    {
       "date": "2026-07-08",
       "highlights": [
         "Fable 5の使用量クレジット切替が本日発効 — 7/8 0時（PT）以降、クレジット未有効のプランではFable 5リクエスト自体が実行不可に",
@@ -15649,5 +15797,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-08T08:00:05.037206"
+  "generated_at": "2026-07-09T08:00:04.214565"
 }
