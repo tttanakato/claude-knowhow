@@ -1227,6 +1227,20 @@
       "appearances": 9
     },
     {
+      "id": 1286,
+      "title": "claude agentsのセッション一覧が読みやすく：状態ワード＋自動見出し＋PRリンク",
+      "point": "2.1.205でagent view（`claude agents`）の行表示が、生のツールコール文字列から「色付きの状態ワード＋分類器が書いた見出し」に変わり、ブロック中のセッションはピーク表示で「何を聞かれているか」まで確認できるようになった。既存PRへの編集・マージ・コメント・pushもセッション行にPRリンクとして表示される。並列エージェント運用時の「どのセッションが何で止まっているか」の把握が大幅に楽になるため、複数セッション派はagent viewを定期巡回する運用に切り替える価値がある。",
+      "source_title": "Claude Code changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-07-10",
+      "last_date": "2026-07-10",
+      "appearances": 8
+    },
+    {
       "id": 1187,
       "title": "Fable 5・Mythos 5 の輸出規制が解除、7/1グローバル再開",
       "point": "6月12日にジェイルブレイク脆弱性を理由に米商務省が外国籍ユーザーへの提供停止を命じていたが、7月1日に解除。Anthropicは新たな安全分類器を追加し、報告された回避手法を99%以上ブロックできるよう強化した上で、Fable 5をClaude Platform・Claude.ai・Claude Code・Coworkで再提供。",
@@ -1700,6 +1714,21 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1284,
+      "title": "Claude Code 2.1.205：auto modeの安全動作を強化 — 不明変数へのrm -rfは確認必須に",
+      "point": "auto mode（自動承認モード）の安全側の挙動が3点強化された。(1) 文脈から解決できない変数に対する`rm -rf`は実行前に必ず確認を求める、(2) セッショントランスクリプトファイルの改ざんをブロックするルールを追加、(3) バックグラウンドタスク通知に「人間の入力は発生していない」ことを明記し、トランスクリプト内に偽造された承認をClaudeが本物と誤認して実行する攻撃を防ぐ。プロンプトインジェクション対策が実運用レベルで積み上がっており、auto mode常用者は更新推奨。",
+      "source_title": "Claude Code changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-07-10",
+      "last_date": "2026-07-10",
+      "appearances": 6
     },
     {
       "id": 1260,
@@ -2195,6 +2224,33 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1282,
+      "title": "Fable 5のプラン込み利用は7/12（PT）まで：残り2日で大型タスクを片付ける",
+      "point": "延長されたFable 5のサブスク込み利用は7/12 23:59:59（PT）で終了し、7/13からは使用量クレジット（入力$10・出力$50 per MTok）のみになる。クレジット未有効の場合は猶予なしで即停止。残り2日は1Mトークンコンテキストが必要な大規模ドキュメント分析やコードベース全体の解析など「Fable 5でしかできない」作業に集中投下し、再利用可能なプロンプト・ワークフローのテンプレート化を済ませておくのが公式・メディア共通の推奨。継続利用するなら支出上限の設定を忘れずに。",
+      "source_title": "Claude Fable 5 Free Window Extended to July 12 - Tech Times",
+      "source_url": "https://www.techtimes.com/articles/319875/20260707/claude-fable-5-free-window-extended-july-12-what-subscribers-should-do-now.htm",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-07-10",
+      "last_date": "2026-07-10",
+      "appearances": 5
+    },
+    {
+      "id": 1287,
+      "title": "Microsoft 365コネクタにwriteツール：メール送信・予定管理・OneDrive/SharePoint編集まで",
+      "point": "Microsoft 365コネクタが検索専用から書き込み対応に拡張された。writeツールを有効化すると、Claudeがメールの下書き・送信・整理、カレンダーイベントの管理、メールボックス設定の更新、OneDrive/SharePoint上のファイル作成・更新まで実行できる（Teamsは読み取り専用のまま）。利用にはMicrosoft Entra管理者による更新後パーミッションセットへの同意と、組織側での有効化が必要なので、使いたい場合はIT管理者への依頼から始める。Cowork案件でOutlook/OneDriveを含む業務フローを丸ごと委任できるようになる。",
+      "source_title": "Release notes - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-07-10",
+      "last_date": "2026-07-10",
+      "appearances": 5
     },
     {
       "id": 1269,
@@ -3915,6 +3971,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1285,
+      "title": "Claude Code 2.1.205：Windowsのworktree削除バグ等、信頼性修正が多数",
+      "point": "Windowsでworktree内にNTFSジャンクションやディレクトリシンボリックリンクがあると、worktree削除時に外部のファイルまで消えるという危険なバグが修正された。ほかに、`--max-turns`到達時に作業中に送ったメッセージが失われる問題、`--json-schema`が無効なスキーマで黙って非構造化出力になる問題、起動ディレクトリが削除・ロックされた際のWindowsクラッシュなども修正。あわせて自動更新のダウンロードがメモリバッファからディスクストリーミングに変わり、ピークメモリが約400MB削減された。Windows＋worktree運用者は特に即更新を。",
+      "source_title": "Claude Code changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-10",
+      "last_date": "2026-07-10",
+      "appearances": 3
     },
     {
       "id": 1268,
@@ -5791,6 +5860,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1283,
+      "title": "Claude Code 2.1.205：/doctorが総合セットアップ診断に進化（/checkupでも起動）",
+      "point": "/doctorコマンドが、問題の診断だけでなく修復まで行う総合セットアップチェックに拡張された。エイリアスとして/checkupも使える。従来起動時に表示されていた「claude command missing or broken」系の警告は2.1.203以降/doctorと/statusに集約されており、環境の不調（PATH問題、インストール破損、認証まわり）を疑ったらまず/doctorを実行する運用が公式ルートになった。CLI環境の定期健診としてアップデート後に一度走らせておくと安心。",
+      "source_title": "Claude Code changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-07-10",
+      "last_date": "2026-07-10",
+      "appearances": 2
     },
     {
       "id": 1273,
@@ -8267,6 +8350,48 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1280,
+      "title": "Settings > Reflect：月次リキャップでClaudeとの作業パターンを振り返る",
+      "point": "7/9のリリースノートで「A new way to reflect with Claude」が発表された。Settings > Reflect に月次リキャップが追加され、時間を使ったトピック、最も活発だった曜日とピーク時間帯、Claudeとの働き方に関する観察を確認できる。Free/Pro/Maxプランのベータで、Web版とClaude Desktopが対象。メモリ機能がオンであることが前提なので、使いたい場合はまずメモリ設定を確認する。自分がどのタスクをAIに委任しているかの棚卸しに使える。",
+      "source_title": "Release notes - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-07-10",
+      "last_date": "2026-07-10",
+      "appearances": 1
+    },
+    {
+      "id": 1281,
+      "title": "Settings > Time and focus：休憩リマインダーとクワイエットアワーを設定する",
+      "point": "リキャップと同時に Settings > Time and focus が追加され、任意の休憩リマインダーとクワイエットアワー（通知を抑える時間帯）を設定できるようになった。長時間セッションが常態化しがちなエージェント時代に、利用時間の自己管理をアプリ側でサポートする位置付け。集中作業の時間帯にClaude関連の通知を止めたい場合や、作業の区切りを強制したい場合に有効化するとよい。",
+      "source_title": "Release notes - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-07-10",
+      "last_date": "2026-07-10",
+      "appearances": 1
+    },
+    {
+      "id": 1288,
+      "title": "Alibabaが本日7/10からClaude Codeを社内禁止：中国系企業との連携案件は利用可否の確認を",
+      "point": "Alibabaは、Claude Codeに中国拠点・中国AIラボ関連ユーザーを検出する隠しコードが含まれるとの研究者の指摘を受け、7/10から全業務でのClaude Code利用を禁止し「セキュリティ脆弱性のある高リスクソフトウェア」リストに追加した。従業員には自社製Qoderへの移行が指示され、報道によればSonnet/Opus/Fableを含むAnthropic製品全体のアンインストール指示も出ているという。背景には6月のAnthropicによるQwen系アカウントの大規模蒸留疑惑告発がある。中国系パートナーとの共同開発ではツールチェーン選定に影響し得るため、該当案件では利用ポリシーの確認を。",
+      "source_title": "Alibaba bans Anthropic's Claude Code - Tom's Hardware",
+      "source_url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/alibaba-bans-anthropics-claude-code-after-an-alleged-hidden-china-detection-backdoor-is-uncovered-employees-told-to-switch-to-qoder-as-the-rift-between-the-firms-widens",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-07-10",
+      "last_date": "2026-07-10",
+      "appearances": 1
     },
     {
       "id": 1271,
@@ -14998,6 +15123,14 @@
   ],
   "daily": [
     {
+      "date": "2026-07-10",
+      "highlights": [
+        "Settings > Reflect で月次リキャップ — 7/9公式リリース。よく扱ったトピック・活動ピーク・作業スタイルの観察をClaudeが月次で振り返る新機能（ベータ）",
+        "Claude Code 2.1.205 — /doctorが総合セットアップ診断に進化、auto modeの安全動作も大幅強化",
+        "Fable 5のプラン込み利用は7/12（PT）まで — 残り2日、クレジット未有効なら7/13以降は即停止"
+      ]
+    },
+    {
       "date": "2026-07-09",
       "highlights": [
         "Fable 5のプラン込み利用が7/12まで5日間延長 — 締切数時間前にAnthropicがX上で発表、条件（50%週次上限・$10/$50課金）は変更なし",
@@ -15797,5 +15930,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-09T08:00:04.214565"
+  "generated_at": "2026-07-10T08:00:03.958152"
 }
