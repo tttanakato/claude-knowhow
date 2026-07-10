@@ -2226,6 +2226,35 @@
       "appearances": 6
     },
     {
+      "id": 1295,
+      "title": "Claude for Government ベータがFedRAMP High環境で拡大",
+      "point": "Claude CodeとCoworkが政府機関向けにFedRAMP High認証環境でパブリックベータ提供開始。管理者は部門別の支出制御、監査担当は改ざん検知ログを利用できる。",
+      "source_title": "Bringing Claude Code and Claude Cowork to government",
+      "source_url": "https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-07-11",
+      "last_date": "2026-07-11",
+      "appearances": 5
+    },
+    {
+      "id": 1296,
+      "title": "Claude Cowork がWeb・モバイルへ拡大",
+      "point": "デスクトップで開始したタスクの状態確認や成果物受け取りをスマホ・Webから実行可能に。セッションはクラウド実行でPCがオフラインでも完了する。Max向けにベータ展開中。",
+      "source_title": "Claude Cowork on web and mobile",
+      "source_url": "https://claude.com/blog/cowork-web-mobile",
+      "tags": [
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-07-11",
+      "last_date": "2026-07-11",
+      "appearances": 5
+    },
+    {
       "id": 1282,
       "title": "Fable 5のプラン込み利用は7/12（PT）まで：残り2日で大型タスクを片付ける",
       "point": "延長されたFable 5のサブスク込み利用は7/12 23:59:59（PT）で終了し、7/13からは使用量クレジット（入力$10・出力$50 per MTok）のみになる。クレジット未有効の場合は猶予なしで即停止。残り2日は1Mトークンコンテキストが必要な大規模ドキュメント分析やコードベース全体の解析など「Fable 5でしかできない」作業に集中投下し、再利用可能なプロンプト・ワークフローのテンプレート化を済ませておくのが公式・メディア共通の推奨。継続利用するなら支出上限の設定を忘れずに。",
@@ -2883,6 +2912,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1294,
+      "title": "VS Code 1.128：Claudeとのマルチチャットエージェントセッション",
+      "point": "1セッション内に複数の関連チャットを持たせ、アプローチの比較や分岐、並行進行が可能に。各チャットは履歴・タイトル・モデル選択を個別に保持し再起動後も復元される。",
+      "source_title": "Claude AI Gets Yet Another Boost in VS Code 1.128",
+      "source_url": "https://visualstudiomagazine.com/articles/2026/07/08/claude-ai-gets-yet-another-boost-in-vs-code-1-128.aspx",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-07-11",
+      "last_date": "2026-07-11",
+      "appearances": 4
     },
     {
       "id": 1267,
@@ -3971,6 +4014,17 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1298,
+      "title": "Claude Fable 5のプラン込み利用、7/12まで延長",
+      "point": "当初7/7締切だったFable 5のサブスクリプション込み利用枠が7/12（PT）まで延長。以降は使用量クレジット課金に移行するため、大型タスクは前倒しでの投入が推奨される。",
+      "source_title": "Claude Fable 5 Extends By Five More Days",
+      "source_url": "https://www.forbes.com/sites/sandycarter/2026/07/07/claude-fable-5-extends-by-five-more-days-10-moves-to-make-now/",
+      "tags": [],
+      "first_date": "2026-07-11",
+      "last_date": "2026-07-11",
+      "appearances": 3
     },
     {
       "id": 1285,
@@ -5860,6 +5914,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1297,
+      "title": "Settings > Reflect：Claude利用の月次振り返り機能",
+      "point": "よく使うトピック、最も活発な曜日・時間帯、利用パターンの傾向を可視化。休憩リマインダーやクワイエットアワーの設定も可能。Free/Pro/Maxのベータで提供。",
+      "source_title": "A new way to reflect on how you use Claude",
+      "source_url": "https://www.anthropic.com/news/reflect-with-claude",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-07-11",
+      "last_date": "2026-07-11",
+      "appearances": 2
     },
     {
       "id": 1283,
@@ -8350,6 +8417,62 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1292,
+      "title": "Claude Code v2.1.206：日常操作を効率化する複数の新機能",
+      "point": "`/cd`に`/add-dir`同様のパス補完が追加。`/doctor`はコードベースから導出可能な内容を削るCLAUDE.md削減案を提示。`/commit-push-pr`はpushDefaultリモートへの自動許可に対応。`/login`がAnthropic運用のパブリックゲートウェイに対応した。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-07-11",
+      "last_date": "2026-07-11",
+      "appearances": 1
+    },
+    {
+      "id": 1293,
+      "title": "アルバータ州政府がRed Team/Blue Team多エージェント構成でコード監査",
+      "point": "約50体のエージェントが並列稼働し、4.66億行のコードを20時間でスキャン。攻撃役（Red）が脆弱性を探り、防御役（Blue）が国際基準で評価し修正計画を作成。修正は人間のエンジニアが最終承認する運用。",
+      "source_title": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities",
+      "source_url": "https://www.anthropic.com/news/alberta-government-claude-cybersecurity",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-07-11",
+      "last_date": "2026-07-11",
+      "appearances": 1
+    },
+    {
+      "id": 1299,
+      "title": "元FRB議長ベン・バーナンキ氏がAnthropic監督機関に就任",
+      "point": "Long-Term Benefit Trust（独立監督機関）にバーナンキ氏が参加。AIの経済への影響分析など、Anthropicの長期的なガバナンス・経済研究に助言する立場。",
+      "source_title": "Ben Bernanke appointed to Anthropic's Long-Term Benefit Trust",
+      "source_url": "https://www.anthropic.com/news/ben-bernanke",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-11",
+      "last_date": "2026-07-11",
+      "appearances": 1
+    },
+    {
+      "id": 1300,
+      "title": "Claude Skillsが利用状況とコストを自己レポート",
+      "point": "各Skillが自身の利用回数とコストを報告する仕組みが追加され、プラグイン採用状況やArtifact作成状況を追跡する新エンドポイントも登場。組織単位でのSkill活用度の可視化が進んだ。",
+      "source_title": "Latest Claude Updates (2026)",
+      "source_url": "https://appscribed.com/claude-updates-list/",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-11",
+      "last_date": "2026-07-11",
+      "appearances": 1
     },
     {
       "id": 1280,
@@ -15123,6 +15246,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-11",
+      "highlights": [
+        "Claude Code v2.1.206 — `/cd`のパス補完、CLAUDE.md削減提案、push remote自動許可など運用効率化が多数追加。",
+        "アルバータ州政府のClaude活用事例 — Red Team/Blue Teamの多エージェント構成で4.66億行のコードを20時間でセキュリティ監査。"
+      ]
+    },
+    {
       "date": "2026-07-10",
       "highlights": [
         "Settings > Reflect で月次リキャップ — 7/9公式リリース。よく扱ったトピック・活動ピーク・作業スタイルの観察をClaudeが月次で振り返る新機能（ベータ）",
@@ -15930,5 +16060,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-10T08:00:03.958152"
+  "generated_at": "2026-07-11T08:00:04.014773"
 }
