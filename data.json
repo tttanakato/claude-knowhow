@@ -2226,6 +2226,17 @@
       "appearances": 6
     },
     {
+      "id": 1304,
+      "title": "Fable 5込み枠、本日7/12 23:59（PT）が最終期限",
+      "point": "7/7に延長されたFable 5のサブスク込み利用（週次利用上限の50%まで追加課金なし）が本日で終了する。7/13以降はクレジット未有効だと猶予なく即停止するため、継続利用するならSettings→Usageで支出上限とオートリロードを事前設定しておく必要がある。1Mトークンコンテキストが必要な大規模解析など「Fable 5でしかできない」タスクがあれば、本日中に片付けておきたい。",
+      "source_title": "Claude Fable 5 Free Window Extended to July 12 - Tech Times",
+      "source_url": "https://www.techtimes.com/articles/319875/20260707/claude-fable-5-free-window-extended-july-12-what-subscribers-should-do-now.htm",
+      "tags": [],
+      "first_date": "2026-07-12",
+      "last_date": "2026-07-12",
+      "appearances": 5
+    },
+    {
       "id": 1295,
       "title": "Claude for Government ベータがFedRAMP High環境で拡大",
       "point": "Claude CodeとCoworkが政府機関向けにFedRAMP High認証環境でパブリックベータ提供開始。管理者は部門別の支出制御、監査担当は改ざん検知ログを利用できる。",
@@ -4014,6 +4025,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1309,
+      "title": "セキュリティガイダンスプラグイン、社内導入で後工程の脆弱性検出を4割減",
+      "point": "5/26公開のClaude Codeセキュリティガイダンスプラグインについて、Anthropic社内での大規模展開後の検証結果が報告された。ファイル編集ごと・ターン終了ごと・コミット/プッシュごとの3段階でセキュリティレビューを自動実施する仕組みで、導入後はPRでのセキュリティ関連指摘コメントが30〜40%増加し、後工程（コードレビュー通過後）で発覚する脆弱性が4割減少したという。`/plugin install security-guidance`で全Claude Codeユーザーが導入可能。",
+      "source_title": "後工程で発覚する脆弱性を4割減 「Claude Code」の新プラグインの仕組み、導入方法 - ＠IT",
+      "source_url": "https://atmarkit.itmedia.co.jp/ait/articles/2607/07/news030.html",
+      "tags": [
+        "Claude Code",
+        "API",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-12",
+      "last_date": "2026-07-12",
+      "appearances": 3
     },
     {
       "id": 1298,
@@ -5914,6 +5940,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1308,
+      "title": "Claude認定資格が1種類から4種類に拡大",
+      "point": "Anthropic Partner Academyの認定資格が、これまでの「Claude Certified Architect – Foundations」1本から、Associate・Architect Foundations・Developer Foundations・Architect Professionalの4資格体系に拡大された。Associateは非エンジニア向け（出力評価・業務組み込み中心、CPNパートナー階層への加算対象外）、Developerはアプリ実装力、Architect FoundationsはエージェントとClaude Code構成管理、Architect Professionalはエンタープライズのガバナンス・ステークホルダー調整まで問う。Associate/Developer/Architect Professionalの学習コースは7/13追加予定で、現状は試験ガイドPDFが唯一の学習材料。",
+      "source_title": "Claude認定資格が4種類に拡大 - サーバーワークスエンジニアブログ",
+      "source_url": "https://blog.serverworks.co.jp/anthropic-claude-certification-overview-2026-07-09",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-07-12",
+      "last_date": "2026-07-12",
+      "appearances": 2
     },
     {
       "id": 1297,
@@ -8417,6 +8458,55 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1305,
+      "title": "Claude Code v2.1.207：Bedrock/Vertex/Foundryでauto mode既定化、Opus 4.8がデフォルトに",
+      "point": "7/10リリースのv2.1.207で、Bedrock・Vertex AI・Foundry経由の利用でauto modeが環境変数opt-in不要になった。同時にBedrock/Vertex/AWS上のClaude Platformでは既定モデルがOpus 4.8に変更されたため、旧モデル据え置きたい場合はmodel設定を明示する必要がある。加えてplugin hooks/monitors/MCP設定内の`${user_config.*}`記法がシェルインジェクション対策で拒否されるようになった破壊的変更もあり、pluginを配布・利用している場合は移行が必要。デスクトップ版にはin-appブラウザも追加された。",
+      "source_title": "Main Updates in Claude Code v2.1.207 - DevelopersIO",
+      "source_url": "https://dev.classmethod.jp/en/articles/20260711-cc-updates-v2-1-207/",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "モデル",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-12",
+      "last_date": "2026-07-12",
+      "appearances": 1
+    },
+    {
+      "id": 1306,
+      "title": "Claude API skill：Messages API/Managed Agentsの最新リファレンスをオープンソース公開",
+      "point": "`claude-api`という新しいAgent Skillが公開され、Messages APIとClaude Managed Agents（ベータ）向けの最新リファレンスをClaude自身に持たせられるようになった。Python/TypeScript/C#/Go/Java/PHP/Ruby/cURLの8言語に対応し、段階的開示でプロジェクトの言語・用途に応じた文書だけを読み込む設計。Claude Codeには標準搭載済みで、`/claude-api migrate this project to claude-opus-4-8`のようにモデル移行作業（パラメータ変更・エフォート調整・プロンプト差分の洗い出しまで）を代行させることもできる。",
+      "source_title": "Claude API skill - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/claude-api-skill",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-07-12",
+      "last_date": "2026-07-12",
+      "appearances": 1
+    },
+    {
+      "id": 1307,
+      "title": "Claude Codeだけで技術記事の投稿パイプラインを1時間で整備した事例",
+      "point": "「SNS発信を始めたいが環境構築が面倒で放置していた」という個人開発者が、Claude Codeとの対話だけで約1時間でZennのGitHub連携リポジトリ、発信戦略ドキュメント（STRATEGY.md）、投稿テンプレート一式を整備した実践記録。ポイントはCLAUDE.mdに要点だけを書き詳細は別ファイル参照にすること、Zennは`articles/`をリポジトリ直下に置く必要があることなど、ハマりどころも具体的にまとめられている。個人の技術発信基盤づくりをAIに丸投げする一事例として参考になる。",
+      "source_title": "Claude Code だけで Zenn 投稿パイプラインを整備した話 - Zenn",
+      "source_url": "https://zenn.dev/box2box/articles/claude-code-zenn-pipeline",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code"
+      ],
+      "first_date": "2026-07-12",
+      "last_date": "2026-07-12",
+      "appearances": 1
     },
     {
       "id": 1292,
@@ -15246,6 +15336,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-12",
+      "highlights": [
+        "Fable 5込み枠、本日7/12 23:59（PT）で終了 — 延長されていたサブスク込み利用の最終日。以降は使用量クレジット課金（入力$10・出力$50 per MTok）のみになる。",
+        "Claude Code v2.1.207 — Bedrock/Vertex/Foundryでauto modeがオプトイン不要に。AWS/Vertex経由の既定モデルもOpus 4.8へ変更。plugin設定のシェルインジェクション対策も入った破壊的変更あり。"
+      ]
+    },
+    {
       "date": "2026-07-11",
       "highlights": [
         "Claude Code v2.1.206 — `/cd`のパス補完、CLAUDE.md削減提案、push remote自動許可など運用効率化が多数追加。",
@@ -16060,5 +16157,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-11T08:00:04.014773"
+  "generated_at": "2026-07-12T08:00:04.417321"
 }
