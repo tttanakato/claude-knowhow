@@ -4027,6 +4027,49 @@
       "appearances": 4
     },
     {
+      "id": 1313,
+      "title": "Claude Code週次利用上限+50%の特別措置、本日7/13で終了",
+      "point": "5/13にAnthropicが対Codex施策として導入した「週次利用上限を追加課金なしで50%引き上げ」の措置が、本日7/13 24:00（PT）で期限を迎える。対象はPro・Max・Team・シート制Enterprise（Freeは対象外）。延長発表がなければ明日から通常の週次上限に戻るため、大規模タスクを予定している場合は本日中に消化しておきたい。",
+      "source_title": "Claude Code Increases Weekly Limits by 50% Through July 13, 2026 - pasqualepillitteri.it",
+      "source_url": "https://pasqualepillitteri.it/en/news/2494/claude-code-weekly-limits-50-percent-anti-codex-anthropic-2026",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-07-13",
+      "last_date": "2026-07-13",
+      "appearances": 3
+    },
+    {
+      "id": 1314,
+      "title": "Claude認定資格、Associate/Developer/Architect Professionalの学習コースが本日追加予定",
+      "point": "Anthropic Partner Academyの認定資格は「Claude Certified Architect – Foundations」1本から、Associate（非エンジニア向け・出力評価中心）、Developer Foundations（実装力）、Architect Foundations（エージェント/Claude Code構成管理）、Architect Professional（エンタープライズ統制）の4資格体系に拡大済み。Associate・Developer・Architect Professionalの学習コースが本日7/13に追加される予定で、これまでは試験ガイドPDFのみが学習材料だった。",
+      "source_title": "Claude認定資格が4種類に拡大 - サーバーワークスエンジニアブログ",
+      "source_url": "https://blog.serverworks.co.jp/anthropic-claude-certification-overview-2026-07-09",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-07-13",
+      "last_date": "2026-07-13",
+      "appearances": 3
+    },
+    {
+      "id": 1318,
+      "title": "Reflect機能：Settings > Time and focusで休憩リマインダー・静音時間を設定可能",
+      "point": "7/9に追加された月次振り返り機能「Settings > Reflect」（よく使うトピックや活動が活発な曜日・時間帯を可視化、要memory ON、Free/Pro/Maxのweb・Desktopでベータ提供）と併せて、「Settings > Time and focus」で休憩リマインダーと静音時間（quiet hours）を任意設定できるようになった。長時間の対話セッションが続く場合の休憩管理に使える。",
+      "source_title": "Release notes - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-07-13",
+      "last_date": "2026-07-13",
+      "appearances": 3
+    },
+    {
       "id": 1309,
       "title": "セキュリティガイダンスプラグイン、社内導入で後工程の脆弱性検出を4割減",
       "point": "5/26公開のClaude Codeセキュリティガイダンスプラグインについて、Anthropic社内での大規模展開後の検証結果が報告された。ファイル編集ごと・ターン終了ごと・コミット/プッシュごとの3段階でセキュリティレビューを自動実施する仕組みで、導入後はPRでのセキュリティ関連指摘コメントが30〜40%増加し、後工程（コードレビュー通過後）で発覚する脆弱性が4割減少したという。`/plugin install security-guidance`で全Claude Codeユーザーが導入可能。",
@@ -5940,6 +5983,63 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1315,
+      "title": "Sonnet 5向け公式プロンプティングガイド公開：effort設定とデザイン提案テクニック",
+      "point": "Claude Platform Docsに「Prompting Claude Sonnet 5」が公開。要点は、(1) effortはデフォルトhighで、難しいコーディング/エージェントタスクはxhighを推奨、low/medium帯では指示範囲外への汎化をしないため思考が浅くなるリスクがある、(2) adaptive thinkingがデフォルトON（Sonnet 4.6は無効相当）でtemperature/top_p指定は400エラーになる、(3) フロントエンド生成では「ビルド前に4つの方向性を提案させてユーザーに選ばせる」プロンプトが多様性確保に有効、という3点。",
+      "source_title": "Prompting Claude Sonnet 5 - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-07-13",
+      "last_date": "2026-07-13",
+      "appearances": 2
+    },
+    {
+      "id": 1316,
+      "title": "Claude Code v2.1.206：/doctorがCLAUDE.mdの肥大化を検知しトリムを提案",
+      "point": "7/9リリースのv2.1.206で、/doctorに新チェック項目が追加され、コードベースから自明に導出できる内容を含んだままの、チェックイン済みCLAUDE.mdを検知してトリム（簡素化）を提案するようになった。CLAUDE.mdが肥大化してコンテキストを圧迫しがちな現場では、定期的に/doctorを回すだけで整理のきっかけになる。",
+      "source_title": "Claude Code changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-07-13",
+      "last_date": "2026-07-13",
+      "appearances": 2
+    },
+    {
+      "id": 1317,
+      "title": "Claude Code v2.1.206：/commit-push-prがpushDefaultリモートにも自動対応",
+      "point": "同じくv2.1.206で、/commit-push-prコマンドが`origin`だけでなく、リポジトリで設定された`remote.pushDefault`（または唯一のリモート）へのgit pushも自動許可するようになった。フォーク運用やmirrorリモートを使うチームでは、これまで手動確認が必要だったpush操作の摩擦が減る。",
+      "source_title": "Claude Code changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-13",
+      "last_date": "2026-07-13",
+      "appearances": 2
+    },
+    {
+      "id": 1320,
+      "title": "Enterprise向けモデルエンタイトルメント（ベータ）でユーザーごとのモデル・エフォート制御が可能",
+      "point": "Enterprise管理者が、組織内ユーザーごとに利用可能なモデルとエフォートレベル設定を制御できる機能。ガバナンス要件が厳しい業界（自動車業界のSPICE準拠プロジェクトなど）で、特定モデルやmax effortの利用を承認済みメンバーに限定するといった運用が可能になる。",
+      "source_title": "Release notes - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-07-13",
+      "last_date": "2026-07-13",
+      "appearances": 2
     },
     {
       "id": 1308,
@@ -8458,6 +8558,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1319,
+      "title": "Claude Codeのスピナー動詞（作業中表示）をカスタマイズ可能",
+      "point": "Anthropic公式「Claude Code power user tips」によると、Claude Codeが処理中に表示する動詞（スピナー表示）はClaudeに頼んでカスタム/追加が可能。settings.jsonに保存すればチーム全員で共有できる。地味だが「今何のセッションが動いているか」を見分けやすくする細かい工夫として紹介されている。",
+      "source_title": "Claude Code power user tips - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-07-13",
+      "last_date": "2026-07-13",
+      "appearances": 1
     },
     {
       "id": 1305,
@@ -15336,6 +15450,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-13",
+      "highlights": [
+        "Claude Code週次利用上限+50%の特別措置、本日7/13 24:00（PT）で終了 — 5/13から続いていた期間限定の週次利用上限引き上げが本日で打ち切り。Pro/Max/Team/Enterpriseで恩恵を受けていた場合、明日以降は通常上限に戻る。",
+        "Claude Sonnet 5向け公式プロンプティングガイドが公開 — effortパラメータの使い分けやデザイン提案テクニックなど、Sonnet 4.6からの移行時に効く実践パターンがまとまった。"
+      ]
+    },
+    {
       "date": "2026-07-12",
       "highlights": [
         "Fable 5込み枠、本日7/12 23:59（PT）で終了 — 延長されていたサブスク込み利用の最終日。以降は使用量クレジット課金（入力$10・出力$50 per MTok）のみになる。",
@@ -16157,5 +16278,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-12T08:00:04.417321"
+  "generated_at": "2026-07-13T08:00:04.126757"
 }
