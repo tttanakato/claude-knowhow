@@ -1496,6 +1496,21 @@
       "appearances": 8
     },
     {
+      "id": 1328,
+      "title": "Claude Sonnet 5がClaude Codeの既定モデルに、トークナイザー変更に注意",
+      "point": "Claude CodeはSonnet 5を既定モデルとし、ネイティブ1Mトークンコンテキストと$2/$10（入力/出力、100万トークンあたり）のプロモ価格を8/31まで提供中（以降$3/$15）。ただし新トークナイザーの影響で同じ文章でもSonnet 4.6比で消費トークンが増える傾向が指摘されており、体感コストがプロモ価格の印象より高くなる可能性がある。※増加率については複数の非公式分析による推計で、Anthropic公式の確定値ではない点に留意。",
+      "source_title": "Introducing Claude Sonnet 5",
+      "source_url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-07-14",
+      "last_date": "2026-07-14",
+      "appearances": 7
+    },
+    {
       "id": 1248,
       "title": "安全分類器の誤フラグ時はOpus 4.8が代答：バルクコーディングをFable 5に投げないもう一つの理由",
       "point": "7/1再デプロイ時に再訓練されたFable 5の安全分類器は、報告済みジェイルブレイク手法を99%超ブロックする代わりに、日常的なコーディング・デバッグ作業で良性リクエストを誤フラグしやすくなった。フラグされたリクエストへの回答はOpus 4.8に置き換わる（更新後のフォールバック率は未公表）。ルーチンコーディングはどのみちリダイレクトされやすいので、プレミアム料金を払ってFable 5に流す意味が薄い。バルク作業はSonnet 5へ。",
@@ -2226,6 +2241,20 @@
       "appearances": 6
     },
     {
+      "id": 1329,
+      "title": "「Claude Code Tips集、本質は2つだけ」という視点整理が話題に",
+      "point": "5万スターを集めるClaude Code Tips集について、Anthropic関係者（Boris Cherny氏ら）の設計思想は突き詰めると2つの原則に集約できるとする整理記事。個別のコマンドや設定よりも、根底にある考え方を理解する方が応用が利くという指摘。",
+      "source_title": "5万スターのClaude Code Tips集、本質は2つだけ",
+      "source_url": "https://zenn.dev/acntechjp/articles/5409d8e2ad0767",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-07-14",
+      "last_date": "2026-07-14",
+      "appearances": 5
+    },
+    {
       "id": 1304,
       "title": "Fable 5込み枠、本日7/12 23:59（PT）が最終期限",
       "point": "7/7に延長されたFable 5のサブスク込み利用（週次利用上限の50%まで追加課金なし）が本日で終了する。7/13以降はクレジット未有効だと猶予なく即停止するため、継続利用するならSettings→Usageで支出上限とオートリロードを事前設定しておく必要がある。1Mトークンコンテキストが必要な大規模解析など「Fable 5でしかできない」タスクがあれば、本日中に片付けておきたい。",
@@ -2923,6 +2952,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1324,
+      "title": "Claude Code週次利用上限+50%措置、7/19まで再延長",
+      "point": "Pro/Max/Team/seatベースEnterprise向けの週次利用上限+50%特別措置は7/13（PT）終了予定だったが、Anthropicは失効させず7/19まで再延長した。背景にはOpenAI Codexが同等タスクを少ないトークンで処理できる点への対抗意識があるとされる。終了後は課金・プラン変更なしで通常上限に戻る想定。",
+      "source_title": "Claude Code users keep 50% higher limits until July 19",
+      "source_url": "https://www.helpnetsecurity.com/2026/07/13/claude-code-weekly-limits-promotion-extended/",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-07-14",
+      "last_date": "2026-07-14",
+      "appearances": 4
     },
     {
       "id": 1294,
@@ -4025,6 +4068,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1326,
+      "title": "Claude Enterpriseに管理者向け分析ダッシュボード＋支出アラートを統合公開",
+      "point": "Enterprise管理コンソールに、グループ・ユーザー別の利用状況とコストを並べて表示する分析ダッシュボード、org全体の支出が75%/90%に達すると管理者に通知するしきい値アラート、部署やロールごとに既定モデルを制御できるモデルエンタイトルメントが統合された。Analytics APIはDatadog Cloud Cost Management等とも連携可能。",
+      "source_title": "New analytics and cost controls are available for Claude Enterprise",
+      "source_url": "https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-07-14",
+      "last_date": "2026-07-14",
+      "appearances": 3
     },
     {
       "id": 1313,
@@ -5983,6 +6040,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1327,
+      "title": "Claude Science（研究者向けAIワークベンチ）、助成金応募締切は7/15",
+      "point": "6/30ベータ公開のClaude Scienceは、60以上の科学データベースやゲノム・タンパク質構造解析などの専門スキルを統合した研究支援ワークベンチ。最大50プロジェクトに$30,000相当のクレジットを付与するプログラムの応募締切が7/15に迫っている。採択プロジェクトは9〜12月に実施予定。",
+      "source_title": "Claude Science, an AI workbench for scientists",
+      "source_url": "https://www.anthropic.com/news/claude-science-ai-workbench",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-07-14",
+      "last_date": "2026-07-14",
+      "appearances": 2
     },
     {
       "id": 1315,
@@ -8558,6 +8628,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1325,
+      "title": "Claude Code Desktopに内蔵ブラウザが追加（新機能）",
+      "point": "Claude Code Desktopアプリに内蔵ブラウザが搭載され、ドキュメントやデザイン、任意のサイトをClaude自身が閲覧・クリック・操作できるようになった。個人の閲覧履歴やログイン情報とは分離されたクリーンなブラウザプロファイルで動作するため、ローカル開発サーバーのプレビューと同じ感覚で外部情報を参照できる。",
+      "source_title": "Anthropic highlights Claude Code's in-app browser on the desktop",
+      "source_url": "https://9to5mac.com/2026/07/10/anthropic-highlights-claude-codes-in-app-browser-on-the-desktop/",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-07-14",
+      "last_date": "2026-07-14",
+      "appearances": 1
     },
     {
       "id": 1319,
@@ -15450,6 +15535,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-14",
+      "highlights": [
+        "Claude Code週次利用上限+50%措置、7/13終了予定から急遽7/19まで再延長 — OpenAI Codexとの競争を背景に、Anthropicが期限直前に方針転換。",
+        "Claude Science 研究助成金の応募締切は明日7/15 — 最大$30,000のクレジット付与、応募を検討中なら本日中に対応を。"
+      ]
+    },
+    {
       "date": "2026-07-13",
       "highlights": [
         "Claude Code週次利用上限+50%の特別措置、本日7/13 24:00（PT）で終了 — 5/13から続いていた期間限定の週次利用上限引き上げが本日で打ち切り。Pro/Max/Team/Enterpriseで恩恵を受けていた場合、明日以降は通常上限に戻る。",
@@ -16278,5 +16370,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-13T08:00:04.126757"
+  "generated_at": "2026-07-14T08:00:04.125107"
 }
