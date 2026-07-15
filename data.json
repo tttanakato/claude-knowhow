@@ -1227,6 +1227,19 @@
       "appearances": 9
     },
     {
+      "id": 1335,
+      "title": "破壊的コマンドの確認プロンプトが`$(…)`・バッククォート使用時も発動",
+      "point": "`rm -rf ~`等の破壊的コマンドが`$(...)`・バッククォート・`<(...)`を含む場合も、`--dangerously-skip-permissions`やauto modeで通常モードと同様に確認プロンプトが表示されるよう強化された。",
+      "source_title": "Claude Code changelog v2.1.208 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-07-15",
+      "last_date": "2026-07-15",
+      "appearances": 8
+    },
+    {
       "id": 1286,
       "title": "claude agentsのセッション一覧が読みやすく：状態ワード＋自動見出し＋PRリンク",
       "point": "2.1.205でagent view（`claude agents`）の行表示が、生のツールコール文字列から「色付きの状態ワード＋分類器が書いた見出し」に変わり、ブロック中のセッションはピーク表示で「何を聞かれているか」まで確認できるようになった。既存PRへの編集・マージ・コメント・pushもセッション行にPRリンクとして表示される。並列エージェント運用時の「どのセッションが何で止まっているか」の把握が大幅に楽になるため、複数セッション派はagent viewを定期巡回する運用に切り替える価値がある。",
@@ -4070,6 +4083,17 @@
       "appearances": 4
     },
     {
+      "id": 1338,
+      "title": "コンテキストウィンドウの誤表示バグを修正：自動更新後に200kへリセットされる問題",
+      "point": "CLI自動更新直後にコンテキストウィンドウ表示が一時的に200kへリセットされ「使用率100%」の誤警告が出る不具合を修正。長文コンテキストセッションの再開時の混乱を解消した。",
+      "source_title": "Claude Code changelog v2.1.208 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-15",
+      "last_date": "2026-07-15",
+      "appearances": 3
+    },
+    {
       "id": 1326,
       "title": "Claude Enterpriseに管理者向け分析ダッシュボード＋支出アラートを統合公開",
       "point": "Enterprise管理コンソールに、グループ・ユーザー別の利用状況とコストを並べて表示する分析ダッシュボード、org全体の支出が75%/90%に達すると管理者に通知するしきい値アラート、部署やロールごとに既定モデルを制御できるモデルエンタイトルメントが統合された。Analytics APIはDatadog Cloud Cost Management等とも連携可能。",
@@ -6040,6 +6064,54 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1333,
+      "title": "スクリーンリーダーモードが追加：opt-inのプレーンテキスト出力",
+      "point": "Claude Codeにスクリーンリーダー利用者向けのopt-inモードが追加。`claude --ax-screen-reader`実行、環境変数`CLAUDE_CODE_AX_SCREEN_READER=1`、または設定ファイルに`\"axScreenReader\": true`を追加して有効化できる。",
+      "source_title": "Claude Code changelog v2.1.208 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-15",
+      "last_date": "2026-07-15",
+      "appearances": 2
+    },
+    {
+      "id": 1334,
+      "title": "vimInsertModeRemaps設定でインサートモードの2キー操作をマッピング",
+      "point": "vimモード利用者向けに、`jj`のような2キーシーケンスをEscapeキーへ割り当てる`vimInsertModeRemaps`設定が追加された。ターミナル内での入力効率が向上する。",
+      "source_title": "Claude Code changelog v2.1.208 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-15",
+      "last_date": "2026-07-15",
+      "appearances": 2
+    },
+    {
+      "id": 1337,
+      "title": "セッショントランスクリプトサイズを最大79倍削減",
+      "point": "編集中心のセッションで、上書きされたファイル履歴バックアップを整理することでトランスクリプトサイズを最大79倍削減し、チェックポイントのディスク使用量も抑制した。",
+      "source_title": "Claude Code changelog v2.1.208 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-07-15",
+      "last_date": "2026-07-15",
+      "appearances": 2
+    },
+    {
+      "id": 1341,
+      "title": "フルスクリーンメニューでマウスクリック操作に対応",
+      "point": "複数選択メニューや「その他」入力欄を含むフルスクリーン表示で、マウスクリックによる操作が可能になった。従来のキーボード操作のみから改善。",
+      "source_title": "Claude Code changelog v2.1.208 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-15",
+      "last_date": "2026-07-15",
+      "appearances": 2
     },
     {
       "id": 1327,
@@ -8628,6 +8700,47 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1336,
+      "title": "ツール呼び出し処理が最大7倍高速化（MCPツール多用時）",
+      "point": "print/SDKセッションで多数のMCPツールを使う場合、ツールプールの構築をキャッシュすることでツール呼び出しごとのCPUオーバーヘッドを削減し、最大7倍の高速化を実現。",
+      "source_title": "Claude Code changelog v2.1.208 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-15",
+      "last_date": "2026-07-15",
+      "appearances": 1
+    },
+    {
+      "id": 1339,
+      "title": "CLAUDE_CODE_MAX_OUTPUT_TOKENS等で科学的記法が誤処理される不具合を修正",
+      "point": "`1e6`のような科学的記法の値を環境変数に設定すると仮数部のみ（`1`）が読み込まれてしまう不具合を修正。出力トークン上限を環境変数で指定する際は最新版へのアップデートを推奨。",
+      "source_title": "Claude Code changelog v2.1.208 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-07-15",
+      "last_date": "2026-07-15",
+      "appearances": 1
+    },
+    {
+      "id": 1340,
+      "title": "CLAUDE_CODE_PROCESS_WRAPPERで企業ランチャー経由の自己起動に対応",
+      "point": "agentビューとバックグラウンドサービスが、指定したラッパー実行ファイルを経由してClaude Codeの自己起動を行えるようになり、企業の起動要件（社内ランチャー経由の強制）に対応可能になった。",
+      "source_title": "Claude Code changelog v2.1.208 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-07-15",
+      "last_date": "2026-07-15",
+      "appearances": 1
     },
     {
       "id": 1325,
@@ -15535,6 +15648,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-15",
+      "highlights": [
+        "破壊的コマンドの確認プロンプト強化 — `--dangerously-skip-permissions`やauto modeでも、`$(…)`・バッククォート・`<(...)`を含む`rm -rf`等の破壊的コマンドで確認が必須に。",
+        "パフォーマンス大幅改善 — MCPツール多用時のツール呼び出しが最大7倍高速化、編集中心セッションのトランスクリプトサイズは最大79倍削減。"
+      ]
+    },
+    {
       "date": "2026-07-14",
       "highlights": [
         "Claude Code週次利用上限+50%措置、7/13終了予定から急遽7/19まで再延長 — OpenAI Codexとの競争を背景に、Anthropicが期限直前に方針転換。",
@@ -16370,5 +16490,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-14T08:00:04.125107"
+  "generated_at": "2026-07-15T13:32:44.929773"
 }
