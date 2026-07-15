@@ -1227,6 +1227,20 @@
       "appearances": 9
     },
     {
+      "id": 1348,
+      "title": "ultracodeキーワードが人間以外の入力で誤発火する問題を修正",
+      "point": "Webhookペイロードや転送されたPRコメントなど、ユーザーが直接入力していないテキストに含まれる`ultracode`キーワードでopt-inが誤って発動する問題を修正。間接的プロンプトインジェクション対策の一環。",
+      "source_title": "Claude Code changelog v2.1.210 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-07-16",
+      "last_date": "2026-07-16",
+      "appearances": 8
+    },
+    {
       "id": 1335,
       "title": "破壊的コマンドの確認プロンプトが`$(…)`・バッククォート使用時も発動",
       "point": "`rm -rf ~`等の破壊的コマンドが`$(...)`・バッククォート・`<(...)`を含む場合も、`--dangerously-skip-permissions`やauto modeで通常モードと同様に確認プロンプトが表示されるよう強化された。",
@@ -4083,6 +4097,43 @@
       "appearances": 4
     },
     {
+      "id": 1345,
+      "title": "ツール呼び出しにライブ経過時間カウンターを追加",
+      "point": "折りたたまれたツール概要行に経過時間がリアルタイム表示されるようになり、長時間実行中のツール呼び出しが「固まっている」ように見えなくなった。",
+      "source_title": "Claude Code changelog v2.1.210 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-16",
+      "last_date": "2026-07-16",
+      "appearances": 3
+    },
+    {
+      "id": 1347,
+      "title": "isolation:worktreeサブエージェントがメインリポジトリを誤変更するバグを修正",
+      "point": "`isolation: 'worktree'`で起動したサブエージェントが、自身の独立ワークツリーではなくメインのリポジトリチェックアウトに対してgit変更コマンドを実行できてしまう不具合を修正。複数エージェントを並列運用する開発フローの安全性が向上。",
+      "source_title": "Claude Code changelog v2.1.210 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-07-16",
+      "last_date": "2026-07-16",
+      "appearances": 3
+    },
+    {
+      "id": 1354,
+      "title": "スクリーンリーダーモードで権限モード変更を音声アナウンス",
+      "point": "Shift+Tabでパーミッションモードを切り替えた際、スクリーンリーダーモードがモード変更を音声で読み上げるようになった。アクセシビリティ対応のさらなる強化。",
+      "source_title": "Claude Code changelog v2.1.210 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-16",
+      "last_date": "2026-07-16",
+      "appearances": 3
+    },
+    {
       "id": 1338,
       "title": "コンテキストウィンドウの誤表示バグを修正：自動更新後に200kへリセットされる問題",
       "point": "CLI自動更新直後にコンテキストウィンドウ表示が一時的に200kへリセットされ「使用率100%」の誤警告が出る不具合を修正。長文コンテキストセッションの再開時の混乱を解消した。",
@@ -6064,6 +6115,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1352,
+      "title": "/dataviz スキルの配色検証にOKLab色差アルゴリズムを導入",
+      "point": "`/dataviz`スキルのチャート配色検証が、知覚的な色差を評価するOKLabアルゴリズムに改良され、色覚多様性の判定閾値も再調整された。ダッシュボードやレポートの配色チェック精度が向上。",
+      "source_title": "Claude Code changelog v2.1.210 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-16",
+      "last_date": "2026-07-16",
+      "appearances": 2
     },
     {
       "id": 1333,
@@ -8700,6 +8762,68 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1346,
+      "title": "Write/NotebookEdit/Glob権限ルールに起動時警告を追加",
+      "point": "`Write(path)`・`NotebookEdit(path)`・`Glob(path)`形式の権限ルールを設定していると起動時に警告が出るようになった。代わりに`Edit(path)`または`Read(path)`の利用が推奨される。権限設定の意図しない抜け穴を防ぐ改善。",
+      "source_title": "Claude Code changelog v2.1.210 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-16",
+      "last_date": "2026-07-16",
+      "appearances": 1
+    },
+    {
+      "id": 1349,
+      "title": "claude attachの「job not found」エラーを修正",
+      "point": "セッション切り替え中に`claude attach`が「job not found」や「agent is still starting」で失敗することがあった問題を修正。attach処理がデーモンの安定を待つようになり、遅いattach中のターミナルリサイズも完了後に反映されるようになった。",
+      "source_title": "Claude Code changelog v2.1.210 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-07-16",
+      "last_date": "2026-07-16",
+      "appearances": 1
+    },
+    {
+      "id": 1350,
+      "title": "フックコールバックのタイムアウトが「ユーザー拒否」と誤認識される問題を修正",
+      "point": "hookコールバックがタイムアウトした際、モデルには「ユーザーが拒否した」と誤って伝わり、無人運用中のセッションが停止・待機してしまう不具合を修正。CI等の無人実行での信頼性向上に寄与する。",
+      "source_title": "Claude Code changelog v2.1.210 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化",
+        "モデル"
+      ],
+      "first_date": "2026-07-16",
+      "last_date": "2026-07-16",
+      "appearances": 1
+    },
+    {
+      "id": 1351,
+      "title": "auto modeの権限クラシファイアがSonnet 5に固定される改善",
+      "point": "auto mode利用時、外部セッションの権限判定クラシファイアが既定でSonnet 5を使うようになり、セッション最初のリクエストで検証されてそのセッション中は固定される。判定の一貫性が向上。",
+      "source_title": "Claude Code changelog v2.1.210 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-07-16",
+      "last_date": "2026-07-16",
+      "appearances": 1
+    },
+    {
+      "id": 1353,
+      "title": "MEMORY.mdの書き込みが上限超過時に明示的エラーを返すよう改善",
+      "point": "メモリ機能の書き込みでMEMORY.mdインデックスが読み取り上限を超える場合、これまでの「サイレントな切り詰め」ではなく明示的なエラーが返るようになった。意図しない情報欠落に気づきやすくなる。",
+      "source_title": "Claude Code changelog v2.1.210 (July 14, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-16",
+      "last_date": "2026-07-16",
+      "appearances": 1
     },
     {
       "id": 1336,
@@ -15648,6 +15772,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-16",
+      "highlights": [
+        "ultracodeキーワードの誤発火バグを修正（過去7回類似報告） — Webhookペイロードや転送されたPRコメントなど、人間が入力していないテキストでも`ultracode`キーワードのopt-inが誤発動していた問題を修正。プロンプトインジェクション対策として重要。",
+        "isolation:worktreeサブエージェントの安全性バグを修正 — 独立ワークツリーで動くはずのサブエージェントが、誤ってメインのリポジトリチェックアウトに対してgit変更コマンドを実行できてしまう不具合を修正。並列エージェント運用時のリポジトリ破損リスクを低減。"
+      ]
+    },
+    {
       "date": "2026-07-15",
       "highlights": [
         "破壊的コマンドの確認プロンプト強化 — `--dangerously-skip-permissions`やauto modeでも、`$(…)`・バッククォート・`<(...)`を含む`rm -rf`等の破壊的コマンドで確認が必須に。",
@@ -16490,5 +16621,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-15T13:32:44.929773"
+  "generated_at": "2026-07-16T08:00:05.773777"
 }
