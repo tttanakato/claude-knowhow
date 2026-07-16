@@ -8764,6 +8764,115 @@
       "appearances": 2
     },
     {
+      "id": 1358,
+      "title": "--forward-subagent-textフラグでサブエージェントのテキスト・思考をstream-json出力に含める",
+      "point": "新設の`--forward-subagent-text`フラグと`CLAUDE_CODE_FORWARD_SUBAGENT_TEXT`環境変数により、サブエージェントの応答テキストや思考過程をstream-json出力に含められるようになった。CI連携やログ収集時の可視性が向上する。",
+      "source_title": "Claude Code changelog v2.1.211 (July 15, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-07-17",
+      "last_date": "2026-07-17",
+      "appearances": 1
+    },
+    {
+      "id": 1359,
+      "title": "auto modeがPreToolUseフックの「ask」判定を上書きしなくなるよう修正",
+      "point": "非サンドボックスのBash実行で、PreToolUseフックが`ask`（確認要求）を返してもauto modeがそれを上書きしていた不具合を修正。フックの`ask`判定が常に確認プロンプトの下限として機能するようになった。",
+      "source_title": "Claude Code changelog v2.1.211 (July 15, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-07-17",
+      "last_date": "2026-07-17",
+      "appearances": 1
+    },
+    {
+      "id": 1360,
+      "title": "権限プレビューの表示で紛らわしい制御文字を無害化するセキュリティ修正",
+      "point": "チャットチャンネルに中継される権限確認プレビューで、双方向オーバーライド文字・ゼロ幅文字・紛らわしい引用符が無害化されていなかった問題を修正。ツール入力の見た目を細工して承認メッセージを誤認させる攻撃を防ぐ。",
+      "source_title": "Claude Code changelog v2.1.211 (July 15, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-17",
+      "last_date": "2026-07-17",
+      "appearances": 1
+    },
+    {
+      "id": 1361,
+      "title": "バックグラウンドエージェントの結果報告が「捏造」ではなく実態に即すよう改善",
+      "point": "実行中のバックグラウンドエージェントについて、これまで結果を捏造して返すことがあった問題を修正。Claudeは実行中エージェントの状態を正しく報告し、実際の完了を待つようになった。",
+      "source_title": "Claude Code changelog v2.1.211 (July 15, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-07-17",
+      "last_date": "2026-07-17",
+      "appearances": 1
+    },
+    {
+      "id": 1362,
+      "title": "/clear後にセッションのコストカウンターが正しく$0にリセットされるよう修正",
+      "point": "`/clear`を実行してもステータスラインのコスト表示がリセットされていなかった不具合を修正。長時間セッションでのコスト管理・見積もりがしやすくなる。",
+      "source_title": "Claude Code changelog v2.1.211 (July 15, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-17",
+      "last_date": "2026-07-17",
+      "appearances": 1
+    },
+    {
+      "id": 1363,
+      "title": "Bedrock/Vertex/Mantle/Foundryでのプロンプトキャッシュ課金バグを修正",
+      "point": "末尾のシステムコンテキストブロックが毎リクエスト「新規入力トークン」として課金されていたキャッシュ回帰バグを修正。サードパーティ経由利用時のコスト最適化に直結する。",
+      "source_title": "Claude Code changelog v2.1.211 (July 15, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-07-17",
+      "last_date": "2026-07-17",
+      "appearances": 1
+    },
+    {
+      "id": 1364,
+      "title": "「常に許可」権限ルールの保存先がリポジトリルートに変更",
+      "point": "権限の「always allow」設定の保存先がリポジトリルートになり、gitワークツリー内で得た承認が他のセッションやワークツリーでも引き継がれるようになった。並列開発フローでの再確認の手間が減る。",
+      "source_title": "Claude Code changelog v2.1.211 (July 15, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "生産性"
+      ],
+      "first_date": "2026-07-17",
+      "last_date": "2026-07-17",
+      "appearances": 1
+    },
+    {
+      "id": 1365,
+      "title": "整数系環境変数が科学的記数法・桁区切り表記に対応",
+      "point": "タイムアウトやトークン予算、リトライ回数などの整数環境変数が`1e6`や`64_000`のような科学的記数法・桁区切り表記を受け付けるようになり、設定ファイルの可読性が向上した。",
+      "source_title": "Claude Code changelog v2.1.211 (July 15, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-17",
+      "last_date": "2026-07-17",
+      "appearances": 1
+    },
+    {
+      "id": 1366,
+      "title": "ファイルアップロード検証：DOS予約拡張子や末尾ドットのファイル名を許可、複数ハードリンクは拒否",
+      "point": "`.prn`などのDOSデバイス拡張子や末尾にドットが付くファイル名のアップロードが誤って拒否されていた問題を修正する一方、複数のハードリンクを持つファイルはセキュリティ上の理由から拒否するようになった。",
+      "source_title": "Claude Code changelog v2.1.211 (July 15, 2026)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-07-17",
+      "last_date": "2026-07-17",
+      "appearances": 1
+    },
+    {
       "id": 1346,
       "title": "Write/NotebookEdit/Glob権限ルールに起動時警告を追加",
       "point": "`Write(path)`・`NotebookEdit(path)`・`Glob(path)`形式の権限ルールを設定していると起動時に警告が出るようになった。代わりに`Edit(path)`または`Read(path)`の利用が推奨される。権限設定の意図しない抜け穴を防ぐ改善。",
@@ -15772,6 +15881,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-17",
+      "highlights": [
+        "バックグラウンドエージェントが「実行中」を捏造せず正しく報告するよう改善 — 未完了のサブエージェントについて偽の完了結果を返していた不具合が解消され、無人運用時の信頼性が向上した。",
+        "auto modeがPreToolUseフックの`ask`判定を上書きしなくなった — 非サンドボックスBash実行で人間による確認をスキップしていた挙動を修正し、安全側に倒れるよう改善された。"
+      ]
+    },
+    {
       "date": "2026-07-16",
       "highlights": [
         "ultracodeキーワードの誤発火バグを修正（過去7回類似報告） — Webhookペイロードや転送されたPRコメントなど、人間が入力していないテキストでも`ultracode`キーワードのopt-inが誤発動していた問題を修正。プロンプトインジェクション対策として重要。",
@@ -16621,5 +16737,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-16T08:00:05.773777"
+  "generated_at": "2026-07-17T08:00:03.772240"
 }
