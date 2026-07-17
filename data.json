@@ -2981,6 +2981,19 @@
       "appearances": 5
     },
     {
+      "id": 1376,
+      "title": "Claude週次利用上限+50%措置、7/19（PT）まで再延長",
+      "point": "Claude Codeの週次利用上限引き上げ（+50%）とClaude Fable 5のサブスク込み利用は2026年7月19日23:59（PT）が期限。締切前に大型タスクを前倒しで投入する好機。",
+      "source_title": "Claude Fable 5 Extends To July 19. 7 Days, 7 Power Moves - Forbes",
+      "source_url": "https://www.forbes.com/sites/sandycarter/2026/07/13/claude-fable-5-extends-to-july-19-7-days-7-power-moves/",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-18",
+      "last_date": "2026-07-18",
+      "appearances": 4
+    },
+    {
       "id": 1324,
       "title": "Claude Code週次利用上限+50%措置、7/19まで再延長",
       "point": "Pro/Max/Team/seatベースEnterprise向けの週次利用上限+50%特別措置は7/13（PT）終了予定だったが、Anthropicは失効させず7/19まで再延長した。背景にはOpenAI Codexが同等タスクを少ないトークンで処理できる点への対抗意識があるとされる。終了後は課金・プラン変更なしで通常上限に戻る想定。",
@@ -4095,6 +4108,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1377,
+      "title": "Claude Code：`/ultrareview`のPR参照パースが改善",
+      "point": "`/ultrareview`が`#123`・`PR 123`・貼り付けたPR URLといった多様な参照形式を正しく受け付けるようになり、記法ミス時のエラーヒントも実際に打ったコマンド名を表示するよう改善された。コードレビュー自動化フローで参照ミスによる失敗が減る。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "自動化"
+      ],
+      "first_date": "2026-07-18",
+      "last_date": "2026-07-18",
+      "appearances": 3
     },
     {
       "id": 1345,
@@ -6115,6 +6142,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1370,
+      "title": "Claude Code 2.1.212：/forkがバックグラウンドセッション分岐に進化",
+      "point": "`/fork`は会話をバックグラウンドセッション（`claude agents`に独立した行として表示）へコピーするようになり、元の作業を止めずに派生調査ができる。従来`/fork`が起動していたセッション内サブエージェントは`/subtask`に改称された。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-07-18",
+      "last_date": "2026-07-18",
+      "appearances": 2
     },
     {
       "id": 1352,
@@ -8762,6 +8803,75 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1371,
+      "title": "Claude Code 2.1.212：`claude auto-mode reset`コマンドを追加",
+      "point": "auto modeの設定を既定値に戻すコマンドが追加された。実行時は確認プロンプトが出るが、`--yes`でスキップ可能。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-07-18",
+      "last_date": "2026-07-18",
+      "appearances": 1
+    },
+    {
+      "id": 1372,
+      "title": "Claude Code 2.1.212：WebSearch呼び出しにセッション上限",
+      "point": "WebSearchツールの呼び出し数にセッション単位の上限（既定200件）が追加され、暴走検索ループを防止。`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`で調整可能。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-18",
+      "last_date": "2026-07-18",
+      "appearances": 1
+    },
+    {
+      "id": 1373,
+      "title": "Claude Code 2.1.212：サブエージェント生成数にセッション上限",
+      "point": "サブエージェントの生成数にもセッション単位の上限（既定200件）が追加された。`CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`で変更可能で、`/clear`で予算がリセットされる。暴走委任ループの防止が目的。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-07-18",
+      "last_date": "2026-07-18",
+      "appearances": 1
+    },
+    {
+      "id": 1374,
+      "title": "Claude Code 2.1.212：MCPツール呼び出しの自動バックグラウンド化",
+      "point": "2分を超えて実行が続くMCPツール呼び出しは自動的にバックグラウンドへ移行し、セッションの操作性を維持する。しきい値は`CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS`で調整・無効化できる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-18",
+      "last_date": "2026-07-18",
+      "appearances": 1
+    },
+    {
+      "id": 1375,
+      "title": "Claude Code 2.1.212：`/resume`のピッカーが削除済みセッションにも対応",
+      "point": "agent view内で`/resume`と入力すると過去セッションのピッカーが開き、リストから削除済みのセッションも選択してバックグラウンドセッションとして復元できるようになった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-07-18",
+      "last_date": "2026-07-18",
+      "appearances": 1
     },
     {
       "id": 1358,
@@ -15881,6 +15991,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-18",
+      "highlights": [
+        "WebSearch/サブエージェントの暴走防止リミット — Claude Code 2.1.212でセッション単位の呼び出し上限（既定200件）が追加され、無限ループによる浪費を防止。",
+        "MCP呼び出しの自動バックグラウンド化 — 2分を超えるMCPツール呼び出しは自動的にバックグラウンドへ退避し、セッションの応答性を維持。"
+      ]
+    },
+    {
       "date": "2026-07-17",
       "highlights": [
         "バックグラウンドエージェントが「実行中」を捏造せず正しく報告するよう改善 — 未完了のサブエージェントについて偽の完了結果を返していた不具合が解消され、無人運用時の信頼性が向上した。",
@@ -16737,5 +16854,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-17T08:00:03.772240"
+  "generated_at": "2026-07-18T08:00:03.708310"
 }
