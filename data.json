@@ -2981,6 +2981,19 @@
       "appearances": 5
     },
     {
+      "id": 1387,
+      "title": "Claude週次利用上限+50%措置、本日7/19（PT）23:59が最終期限",
+      "point": "Claude Codeの週次利用上限引き上げ（+50%）と、Claude Fable 5のサブスクリプション込み利用は本日2026年7月19日23:59（PT）で終了する。締切後は通常の上限・使用量クレジット課金に戻るため、大型タスクは今日中に前倒しで投入するのが得策。",
+      "source_title": "Claude Fable 5 Extends To July 19. 7 Days, 7 Power Moves - Forbes",
+      "source_url": "https://www.forbes.com/sites/sandycarter/2026/07/13/claude-fable-5-extends-to-july-19-7-days-7-power-moves/",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-19",
+      "last_date": "2026-07-19",
+      "appearances": 4
+    },
+    {
       "id": 1376,
       "title": "Claude週次利用上限+50%措置、7/19（PT）まで再延長",
       "point": "Claude Codeの週次利用上限引き上げ（+50%）とClaude Fable 5のサブスク込み利用は2026年7月19日23:59（PT）が期限。締切前に大型タスクを前倒しで投入する好機。",
@@ -6144,6 +6157,35 @@
       "appearances": 3
     },
     {
+      "id": 1381,
+      "title": "Claude Enterprise/APIでHIPAA設定がセルフサービス化",
+      "point": "Claude EnterpriseとClaude Platform（API）の両方で、対象の管理者がBAA（事業提携契約）の確認・実装ガイドのダウンロード・HIPAA設定の有効化を1つのフローでまとめて行えるようになった。従来は営業窓口を介した個別対応が必要だった。",
+      "source_title": "Release notes - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-19",
+      "last_date": "2026-07-19",
+      "appearances": 2
+    },
+    {
+      "id": 1388,
+      "title": "Developer Platform：会話中途のsystemメッセージがベータヘッダー不要に",
+      "point": "Claude Fable 5・Claude Mythos 5・Claude Opus 4.8において、Claude API・Amazon Bedrock・Google Cloud経由での会話中途システムメッセージ機能がベータヘッダーなしで利用可能と訂正された。プロンプトキャッシュを壊さずに途中で指示を差し込める。",
+      "source_title": "Release notes - Claude Developer Platform",
+      "source_url": "https://docs.claude.com/en/release-notes/overview.md",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-07-19",
+      "last_date": "2026-07-19",
+      "appearances": 2
+    },
+    {
       "id": 1370,
       "title": "Claude Code 2.1.212：/forkがバックグラウンドセッション分岐に進化",
       "point": "`/fork`は会話をバックグラウンドセッション（`claude agents`に独立した行として表示）へコピーするようになり、元の作業を止めずに派生調査ができる。従来`/fork`が起動していたセッション内サブエージェントは`/subtask`に改称された。",
@@ -8803,6 +8845,75 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1382,
+      "title": "Claude for Teachers 発表：米国K-12教員に無償で上位機能を提供",
+      "point": "米国の認定K-12教員向けに、Claudeの上位機能・教育向けスキル集・全50州の学習指導要領に対応したカリキュラム連携を無償提供する新プログラムが発表された。教育コネクタとAIリテラシー研修も追加される。",
+      "source_title": "Introducing Claude for Teachers - Anthropic",
+      "source_url": "https://www.anthropic.com/news/claude-for-teachers",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-19",
+      "last_date": "2026-07-19",
+      "appearances": 1
+    },
+    {
+      "id": 1383,
+      "title": "Admin API ベータ：Enterprise組織のメンバー管理をAPI経由で実行可能に",
+      "point": "Claude Enterprise組織向けにAdmin APIがベータ公開され、メンバー一覧取得・メールでの検索・ロール変更・削除・招待の送付や取り消し、グループ管理、カスタムロールの読み取りがAPI経由で可能になった。グループ・カスタムロール操作にはベータヘッダーが必要。",
+      "source_title": "Release notes - Claude Developer Platform",
+      "source_url": "https://docs.claude.com/en/release-notes/overview.md",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-07-19",
+      "last_date": "2026-07-19",
+      "appearances": 1
+    },
+    {
+      "id": 1384,
+      "title": "Claude Code 2.1.211：スリープ復帰後に複数セッションが同時ログアウトする不具合を修正",
+      "point": "1つの認証情報ストアを共有する複数のClaude Codeセッションが、PCのスリープ復帰時に一斉にログアウトしてしまう不具合が修正された。並列でセッションを立ち上げて作業する運用での中断リスクが減る。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "生産性"
+      ],
+      "first_date": "2026-07-19",
+      "last_date": "2026-07-19",
+      "appearances": 1
+    },
+    {
+      "id": 1385,
+      "title": "Claude Code：Grepのcontent modeで末尾ページの「一致なし」誤表示を修正",
+      "point": "Grepをcontent modeで使い、結果をページングして末尾付近まで進めると「一致なし」と誤って表示される不具合が修正された。大量ヒットするコードベース検索での見落としリスクが下がる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-19",
+      "last_date": "2026-07-19",
+      "appearances": 1
+    },
+    {
+      "id": 1386,
+      "title": "Claude Code：「Claude Browser」というMCPサーバー名が予約済みに",
+      "point": "Claude Desktopの内蔵ブラウザ機能のペイン名変更を控え、「Claude Browser」（および「Claude Preview」）というMCPサーバー名が予約され、ユーザー設定のMCPサーバーはこれらの名前を使えなくなった。近日中のUI変更を示唆する布石。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-07-19",
+      "last_date": "2026-07-19",
+      "appearances": 1
     },
     {
       "id": 1371,
@@ -15991,6 +16102,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-19",
+      "highlights": [
+        "Claude Enterprise/APIでHIPAA設定がセルフサービス化 — BAAの確認・実装ガイド入手・有効化までを管理者が1つのフローで完結でき、医療系導入のハードルが下がった。",
+        "Claude週次利用上限+50%措置、本日7/19（PT）23:59が最終期限 — Claude CodeとFable 5込み利用の特別枠は本日で終了。大型タスクは締切前に前倒しで投入したい。"
+      ]
+    },
+    {
       "date": "2026-07-18",
       "highlights": [
         "WebSearch/サブエージェントの暴走防止リミット — Claude Code 2.1.212でセッション単位の呼び出し上限（既定200件）が追加され、無限ループによる浪費を防止。",
@@ -16854,5 +16972,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-18T08:00:03.708310"
+  "generated_at": "2026-07-19T08:00:04.347498"
 }
