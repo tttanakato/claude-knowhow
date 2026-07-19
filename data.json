@@ -2981,6 +2981,21 @@
       "appearances": 5
     },
     {
+      "id": 1398,
+      "title": "Claude Sonnet 5は\"medium\"effortで使い始めるとよくある失敗、high/xhighから試すべき",
+      "point": "6月30日リリースのClaude Sonnet 5（Sonnet 4.6と同価格でOpus 4.8に迫るエージェント性能）を試す際、デフォルトに近い\"medium\" effortのまま評価してしまうのがよくある誤り。SWE-bench Proで+5.1pt、Terminal-Bench 2.1で+13.4ptというSonnet 4.6からの伸びを実感するには、まず\"high\"または\"xhigh\"のeffort設定から試すのが実践者の共通認識。難しい判断を丸投げしたい場面ではOpus 4.8、資料整理やUI下書きなどコスト重視のタスクはSonnet 5、という使い分けが目安。",
+      "source_title": "Sonnet 5が来た——Opus 4.8とどう使い分けるか、応答速度とサブエージェント運用の話 - Tech Blog",
+      "source_url": "https://cloud-and-code.com/posts/claude_sonnet_5_vs_opus_4_8/",
+      "tags": [
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-07-20",
+      "last_date": "2026-07-20",
+      "appearances": 4
+    },
+    {
       "id": 1387,
       "title": "Claude週次利用上限+50%措置、本日7/19（PT）23:59が最終期限",
       "point": "Claude Codeの週次利用上限引き上げ（+50%）と、Claude Fable 5のサブスクリプション込み利用は本日2026年7月19日23:59（PT）で終了する。締切後は通常の上限・使用量クレジット課金に戻るため、大型タスクは今日中に前倒しで投入するのが得策。",
@@ -4121,6 +4136,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1397,
+      "title": "Claude Codeのネスト型サブエージェント設計：最大5階層でコンテキストを分離",
+      "point": "Claude Code v2.1.172（2026年6月10日）以降、サブエージェントは最大5階層までネスト可能になっている。サブエージェントに調査タスクを委任すると、大量ファイルの読み込み・検索結果はサブエージェント内のコンテキストに留まり、メイン会話にはサマリーだけが返るため、Planner／Coder／Reviewer／Testerなど役割別に3〜7エージェントへ分割するパターンでは、メインに残るトークン量がおおむね1/4〜1/5に圧縮できる。大規模タスクほど階層設計とトークン配分の勘所が効いてくる。",
+      "source_title": "Claude Codeのネスト型サブエージェント入門 — 最大5階層の設計とトークン設計の勘所 - Qiita",
+      "source_url": "https://qiita.com/kai_kou/items/618da2497af1c1bf0f91",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-07-20",
+      "last_date": "2026-07-20",
+      "appearances": 3
     },
     {
       "id": 1377,
@@ -8845,6 +8874,80 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1392,
+      "title": "Claude Fable 5が7月20日よりMax/Team Premiumの標準機能に恒久統合",
+      "point": "Anthropicは7月17日（米国時間）、最上位モデル「Claude Fable 5」を7月20日から「Max」「Team Premium」プランの標準機能にすると発表。両プランでは利用上限の50%までFable 5を追加課金なしで使える。一方「Pro」「Team Standard」は契約枠とは別課金の使用クレジット（従量課金）での利用となり、対象ユーザーには100ドル分のクレジットが1回付与される。無料の試験提供は7月19日で終了し、段階的な有料化フェーズへ移行した形。",
+      "source_title": "「Claude Fable 5」が来週から標準機能に　Max・Team Premiumが対象 - ITmedia NEWS",
+      "source_url": "https://www.itmedia.co.jp/news/articles/2607/18/news019.html",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-07-20",
+      "last_date": "2026-07-20",
+      "appearances": 1
+    },
+    {
+      "id": 1393,
+      "title": "Bun社、Zig 53万行を11日でRustへ全面書き換え：64並列Claude Codeとharness engineering",
+      "point": "JavaScriptランタイム「Bun」の開発者Jarred Sumner氏が、約53万行のZigコードをClaude Codeを使って11日間でRustへ全面移植。約50〜64並列のワークフローを常時走らせ、ピーク時は毎分約1,300行のコード生成、最終的に100万行超のRustコードを生成し全プラットフォームでテスト100%通過を達成。API費用は標準料金換算で約16.5万ドル。個々のプロンプトエンジニアリングより「並列実行の仕組み（ハーネス）」設計が成果を左右するという学びが得られた事例。",
+      "source_title": "BunはZig 53万行をどう11日でRustに書き換えたのか。64並列Claude Codeの事例から学べたこと、まだ真似できないこと - Zenn",
+      "source_url": "https://zenn.dev/assign/articles/bun-rust-rewrite-harness-engineering",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "生産性"
+      ],
+      "first_date": "2026-07-20",
+      "last_date": "2026-07-20",
+      "appearances": 1
+    },
+    {
+      "id": 1394,
+      "title": "Claudeの「価値観」はモデル・言語によって傾向が異なるとAnthropicが報告",
+      "point": "Anthropicは7月13日、Claude Sonnet 4.6・Opus 4.6・Opus 4.7の出力傾向を約31万件の会話サンプルで分析した研究を公開。「尊重×慎重」「温かさ×厳格さ」「深さ×簡潔さ」「素直×実行」の4軸で傾向が変化し、英語やロシア語ではユーザーにエビデンスを求めがち、ヒンディー語やアラビア語では温かみのある応答が多い一方、日本語は言語間の偏りが比較的小さいという結果。プロンプト設計時に言語・モデル差を意識するヒントになる。",
+      "source_title": "AnthropicがClaudeの性格調査結果を公開 - GIGAZINE",
+      "source_url": "https://gigazine.net/news/20260714-anthropic-claude-value/",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-07-20",
+      "last_date": "2026-07-20",
+      "appearances": 1
+    },
+    {
+      "id": 1395,
+      "title": "Claude Codeは指示前だけで約3.3万トークン消費、実運用構成で約7.5万トークンに",
+      "point": "検証によると、Claude Codeはユーザーが何も入力しない時点でシステムプロンプトと27個のツール説明だけで約3.28万トークンを送信しており（ツール説明だけで約2.4万トークン）、200,000トークンのコンテキストウィンドウの約6分の1を初期消費する計算。さらに指示ファイルやMCPサーバー、プラグインを組み込んだ「実運用構成」では7.5万〜8.5万トークンに達する。オープンソース版OpenCode（約6,900トークン）と比べて初期負荷が大きく、不要なツール・MCP・指示ファイルを絞り込むコスト最適化の重要性を示すデータ。",
+      "source_title": "Claude Codeは指示前の初期データだけで約3万3000トークンを使用 - GIGAZINE",
+      "source_url": "https://gigazine.net/news/20260713-claude-code-consuming-token/",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-20",
+      "last_date": "2026-07-20",
+      "appearances": 1
+    },
+    {
+      "id": 1396,
+      "title": "Claude Coworkの実態調査：ソフトウェア開発利用はわずか8.7%、業務処理・運営が最多",
+      "point": "Anthropicが2026年5月11〜31日の約120万件のClaude Coworkセッションを分析したところ、利用内訳は「業務処理・運営」が33.4%で最多、次いで「コンテンツ作成・コピーライティング」16.4%、「ソフトウェア開発」はわずか8.7%にとどまった。スライド作成や提案書のドラフトなど「白紙状態からの叩き台作り」の起点としてCoworkが使われており、開発以外の部門（マーケティング・広報・PMなど）がまたがって使う実態が明らかに。",
+      "source_title": "「Claude Cowork」の用途はソフトウェア開発が8.7％で大半は事務作業 - GIGAZINE",
+      "source_url": "https://gigazine.net/news/20260708-claude-cowork-using/",
+      "tags": [
+        "API",
+        "製品機能"
+      ],
+      "first_date": "2026-07-20",
+      "last_date": "2026-07-20",
+      "appearances": 1
     },
     {
       "id": 1382,
@@ -16102,6 +16205,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-20",
+      "highlights": [
+        "Claude Fable 5が本日7/20よりMax/Team Premiumの標準機能に恒久統合 — 追加課金なしで利用上限の50%まで使え、Pro/Team Standardは従量課金の「使用クレジット」制に移行（$100分を1回付与）。",
+        "Bun社がZig 53万行を11日でRustへ全面書き換え — 64並列のClaude Codeワークフローで実現した大規模エージェント活用の実例（Zig作者からは批判も）。"
+      ]
+    },
+    {
       "date": "2026-07-19",
       "highlights": [
         "Claude Enterprise/APIでHIPAA設定がセルフサービス化 — BAAの確認・実装ガイド入手・有効化までを管理者が1つのフローで完結でき、医療系導入のハードルが下がった。",
@@ -16972,5 +17082,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-19T08:00:04.347498"
+  "generated_at": "2026-07-20T08:00:03.345166"
 }
