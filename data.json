@@ -1758,6 +1758,21 @@
       "appearances": 7
     },
     {
+      "id": 1402,
+      "title": "「/usage」でプラン利用状況の内訳を確認",
+      "point": "Claude Codeに新コマンド「/usage」が追加され、スキル・サブエージェント・プラグイン・MCPサーバーごとにプラン上限を消費している要因を可視化できるようになった。使用量が想定より早く上限に達する原因の特定に役立つ。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-21",
+      "last_date": "2026-07-21",
+      "appearances": 6
+    },
+    {
       "id": 1284,
       "title": "Claude Code 2.1.205：auto modeの安全動作を強化 — 不明変数へのrm -rfは確認必須に",
       "point": "auto mode（自動承認モード）の安全側の挙動が3点強化された。(1) 文脈から解決できない変数に対する`rm -rf`は実行前に必ず確認を求める、(2) セッショントランスクリプトファイルの改ざんをブロックするルールを追加、(3) バックグラウンドタスク通知に「人間の入力は発生していない」ことを明記し、トランスクリプト内に偽造された承認をClaudeが本物と誤認して実行する攻撃を防ぐ。プロンプトインジェクション対策が実運用レベルで積み上がっており、auto mode常用者は更新推奨。",
@@ -2981,6 +2996,17 @@
       "appearances": 5
     },
     {
+      "id": 1404,
+      "title": "「/code-review」コマンドで正確性バグを自動検出",
+      "point": "新コマンド「/code-review」により、コードの正確性に関わるバグをレポート形式で検出できるようになった。「/verify」とあわせて、明示的に呼び出した時のみ実行される仕様に変更されている。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [],
+      "first_date": "2026-07-21",
+      "last_date": "2026-07-21",
+      "appearances": 4
+    },
+    {
       "id": 1398,
       "title": "Claude Sonnet 5は\"medium\"effortで使い始めるとよくある失敗、high/xhighから試すべき",
       "point": "6月30日リリースのClaude Sonnet 5（Sonnet 4.6と同価格でOpus 4.8に迫るエージェント性能）を試す際、デフォルトに近い\"medium\" effortのまま評価してしまうのがよくある誤り。SWE-bench Proで+5.1pt、Terminal-Bench 2.1で+13.4ptというSonnet 4.6からの伸びを実感するには、まず\"high\"または\"xhigh\"のeffort設定から試すのが実践者の共通認識。難しい判断を丸投げしたい場面ではOpus 4.8、資料整理やUI下書きなどコスト重視のタスクはSonnet 5、という使い分けが目安。",
@@ -4136,6 +4162,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1405,
+      "title": "「/fork」がバックグラウンドセッション複製に、旧サブエージェント起動は「/subtask」へ分離",
+      "point": "「/fork」は現在の会話をバックグラウンドセッションとして複製し、独立した行として作業を継続できるように変更。従来「/fork」が担っていたセッション内サブエージェントの起動は、新コマンド「/subtask」に分離された。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-07-21",
+      "last_date": "2026-07-21",
+      "appearances": 3
     },
     {
       "id": 1397,
@@ -8874,6 +8913,89 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1403,
+      "title": "Auto ModeがProプランに拡大、Sonnet 4.6対応",
+      "point": "これまでOpusのみだったAuto Modeが、Proアカウントでも利用可能になりSonnet 4.6にも対応。逐一の権限確認プロンプトの代わりに、バックグラウンドでの安全チェックに置き換えられ、作業の中断が減る。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-07-21",
+      "last_date": "2026-07-21",
+      "appearances": 1
+    },
+    {
+      "id": 1406,
+      "title": "ログイン期限切れ警告とVS Codeリモートコントロール設定を追加",
+      "point": "Claude Codeにログインの有効期限が近づくと警告を表示する機能と、VS Code向けの新しいリモートコントロール設定が追加された。エージェントのステータス表示やマニュアルモードバッジも見やすく改善されている。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-07-21",
+      "last_date": "2026-07-21",
+      "appearances": 1
+    },
+    {
+      "id": 1407,
+      "title": "長時間タスク向けにEndConversationツールと進捗ハートビートを追加",
+      "point": "安定性・安全性の広範なアップデートの一環として、権限チェックの強化やBash/PowerShellのより安全な処理に加え、長時間実行タスク向けのEndConversationツールと進捗ハートビートが追加された。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-07-21",
+      "last_date": "2026-07-21",
+      "appearances": 1
+    },
+    {
+      "id": 1408,
+      "title": "Messages APIレスポンスにthinking_tokensの内訳が追加",
+      "point": "Messages APIのレスポンスに`usage.output_tokens_details.thinking_tokens`が追加され、課金対象の出力トークンのうち拡張思考に使われた分の内訳を確認できるようになった。ストリーミング時はmessage_delta最終イベントでのみ表示される。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://docs.anthropic.com/en/release-notes/api",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-21",
+      "last_date": "2026-07-21",
+      "appearances": 1
+    },
+    {
+      "id": 1409,
+      "title": "組織メンバー管理向けAdmin API（ベータ）が公開",
+      "point": "Claude Enterprise組織向けにAdmin APIがベータ公開され、メンバーの一覧・メールでの検索・ロール変更・削除・招待の送信/取り消し・グループ管理・カスタムロール参照が可能に。グループ/カスタムロール操作にはベータヘッダーが必要。",
+      "source_title": "Admin API - Claude Platform Docs",
+      "source_url": "https://docs.anthropic.com/en/api/administration-api",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-07-21",
+      "last_date": "2026-07-21",
+      "appearances": 1
+    },
+    {
+      "id": 1410,
+      "title": "Claude for Teachers ローンチ、米国K-12教育者に無償提供",
+      "point": "Anthropicが認証済みの米国K-12教育者向けに、Claudeの主要機能・授業用スキル・全50州の学習基準に対応したカリキュラム連携を無償提供する「Claude for Teachers」を発表。学習データはモデル学習に使用されず、FERPA準拠のデータ処理契約で保護される。",
+      "source_title": "Introducing Claude for Teachers",
+      "source_url": "https://www.anthropic.com/news/claude-for-teachers",
+      "tags": [
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-07-21",
+      "last_date": "2026-07-21",
+      "appearances": 1
     },
     {
       "id": 1392,
@@ -16205,6 +16327,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-21",
+      "highlights": [
+        "Claude for Teachers が正式ローンチ — 米国のK-12教育者を対象に、Claudeの主要機能・授業用スキル・全50州の学習基準に連動したカリキュラム連携を無償提供。",
+        "Auto ModeがProプランでも利用可能に — 権限確認のプロンプトをバックグラウンドの安全チェックに置き換え、Sonnet 4.6にも対応。"
+      ]
+    },
+    {
       "date": "2026-07-20",
       "highlights": [
         "Claude Fable 5が本日7/20よりMax/Team Premiumの標準機能に恒久統合 — 追加課金なしで利用上限の50%まで使え、Pro/Team Standardは従量課金の「使用クレジット」制に移行（$100分を1回付与）。",
@@ -17082,5 +17211,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-20T08:00:03.345166"
+  "generated_at": "2026-07-21T08:00:03.243018"
 }
