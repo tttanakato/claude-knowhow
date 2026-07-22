@@ -1523,6 +1523,17 @@
       "appearances": 8
     },
     {
+      "id": 1421,
+      "title": "`/context` がコンテキストウィンドウ超過時に明示警告",
+      "point": "v2.1.216で、会話がコンテキストウィンドウを超えた際に`/context`が明示的な警告を表示し、`/compact`失敗時もエラーとして表示されるよう改善。上限超過に気付きやすくなった。",
+      "source_title": "Claude Code CHANGELOG (2.1.216)",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md",
+      "tags": [],
+      "first_date": "2026-07-22",
+      "last_date": "2026-07-22",
+      "appearances": 7
+    },
+    {
       "id": 1328,
       "title": "Claude Sonnet 5がClaude Codeの既定モデルに、トークナイザー変更に注意",
       "point": "Claude CodeはSonnet 5を既定モデルとし、ネイティブ1Mトークンコンテキストと$2/$10（入力/出力、100万トークンあたり）のプロモ価格を8/31まで提供中（以降$3/$15）。ただし新トークナイザーの影響で同じ文章でもSonnet 4.6比で消費トークンが増える傾向が指摘されており、体感コストがプロモ価格の印象より高くなる可能性がある。※増加率については複数の非公式分析による推計で、Anthropic公式の確定値ではない点に留意。",
@@ -1756,6 +1767,17 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1419,
+      "title": "`/verify`・`/code-review` が手動起動のみに変更",
+      "point": "v2.1.215で、Claudeが`/verify`や`/code-review`スキルを自動実行しなくなり、明示的にコマンドを呼び出した時のみ動作するように変更。意図しないレビュー実行を防ぎたい人向け。",
+      "source_title": "Claude Code CHANGELOG (2.1.215)",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md",
+      "tags": [],
+      "first_date": "2026-07-22",
+      "last_date": "2026-07-22",
+      "appearances": 6
     },
     {
       "id": 1402,
@@ -2281,6 +2303,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1416,
+      "title": "`sandbox.filesystem.disabled` 設定を追加",
+      "point": "v2.1.216でファイルシステム分離だけを無効化しつつネットワーク送信制御は維持できる新設定を追加。サンドボックス機能を細かく調整したい場合に有用。",
+      "source_title": "Claude Code CHANGELOG (2.1.216)",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md",
+      "tags": [],
+      "first_date": "2026-07-22",
+      "last_date": "2026-07-22",
+      "appearances": 5
     },
     {
       "id": 1329,
@@ -2994,6 +3027,17 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1420,
+      "title": "`/fork` の確認メッセージを1行に簡略化",
+      "point": "v2.1.216で、`/fork`実行時の確認表示が新セッション名・`claude attach` ID・チェックアウト共有時の注記を含む1行にまとめられ、視認性が向上。",
+      "source_title": "Claude Code CHANGELOG (2.1.216)",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md",
+      "tags": [],
+      "first_date": "2026-07-22",
+      "last_date": "2026-07-22",
+      "appearances": 4
     },
     {
       "id": 1404,
@@ -8913,6 +8957,68 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1414,
+      "title": "Claude Developer Platform：旧Workbenchと実験的プロンプトAPIが8/17に終了",
+      "point": "platform.claude.com/workbenchの旧Workbenchと`generate_prompt`等の実験的プロンプトAPIが2026年8月17日でアクセス終了。保存済みプロンプト・変数・evalは新Workbenchで非対応のため、組織設定のバナーから事前エクスポートが必要。",
+      "source_title": "Claude Developer Platform release notes",
+      "source_url": "https://docs.claude.com/en/release-notes/overview",
+      "tags": [
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-07-22",
+      "last_date": "2026-07-22",
+      "appearances": 1
+    },
+    {
+      "id": 1415,
+      "title": "Claude Codeに EndConversation ツールを追加",
+      "point": "v2.1.214で、悪質なユーザーやジェイルブレイク試行に対しClaudeが自らセッションを終了できるEndConversationツールを追加。claude.aiでは2025年から提供済みの仕組みをClaude Codeにも拡張。",
+      "source_title": "Claude Code CHANGELOG (2.1.214)",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-22",
+      "last_date": "2026-07-22",
+      "appearances": 1
+    },
+    {
+      "id": 1417,
+      "title": "長時間セッションの二次関数的な遅延を修正",
+      "point": "v2.1.216で、ターン数が増えるほどメッセージ正規化コストが二次関数的に増大し数秒単位の停止やresume遅延を招いていた不具合を修正。長時間の開発セッションが快適に。",
+      "source_title": "Claude Code CHANGELOG (2.1.216)",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md",
+      "tags": [],
+      "first_date": "2026-07-22",
+      "last_date": "2026-07-22",
+      "appearances": 1
+    },
+    {
+      "id": 1418,
+      "title": "`/rewind` がシンボリックリンク経由の復元・削除を防止",
+      "point": "v2.1.216で、`/rewind`が追跡パス上のシンボリックリンクやハードリンクを経由したファイルの復元・削除を行わなくなり、スキップしたパス数を報告するように改善。意図しないファイル操作を防ぐセキュリティ強化。",
+      "source_title": "Claude Code CHANGELOG (2.1.216)",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md",
+      "tags": [],
+      "first_date": "2026-07-22",
+      "last_date": "2026-07-22",
+      "appearances": 1
+    },
+    {
+      "id": 1422,
+      "title": "Anthropic、希少疾患研究向けAI for Science助成金の募集を開始",
+      "point": "2026年7月20日、AnthropicがAI for Science枠で希少疾患研究向けの助成金プログラムへの応募受付を開始。Claude Scienceなどの研究支援ツールと合わせて研究者の活用が期待される。",
+      "source_title": "Apply for Anthropic's AI for Science rare disease research grants",
+      "source_url": "https://www.anthropic.com/news/rare-disease-research-grants",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-22",
+      "last_date": "2026-07-22",
+      "appearances": 1
     },
     {
       "id": 1403,
@@ -16327,6 +16433,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-22",
+      "highlights": [
+        "Claude Developer PlatformのWorkbench退役 — 旧Workbench・実験的プロンプトAPIが8/17でアクセス終了、保存データの早期エクスポートが必要",
+        "Claude Code に EndConversation ツール追加 — 悪質なユーザーやジェイルブレイク試行に対しClaudeが自らセッションを終了できるように"
+      ]
+    },
+    {
       "date": "2026-07-21",
       "highlights": [
         "Claude for Teachers が正式ローンチ — 米国のK-12教育者を対象に、Claudeの主要機能・授業用スキル・全50州の学習基準に連動したカリキュラム連携を無償提供。",
@@ -17211,5 +17324,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-21T08:00:03.243018"
+  "generated_at": "2026-07-22T13:11:14.687448"
 }
