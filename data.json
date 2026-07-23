@@ -1003,6 +1003,20 @@
       "appearances": 10
     },
     {
+      "id": 1429,
+      "title": "Claude Code 2.1.217：サブエージェントがデフォルトでネストしたサブエージェントを生成しなくなった",
+      "point": "これまで最大5階層まで許容されていたサブエージェントの入れ子生成が、デフォルトでは無効化された。深いネストを使いたい場合は`CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH`で明示的に許可する必要がある。",
+      "source_title": "Release v2.1.217 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-07-23",
+      "last_date": "2026-07-23",
+      "appearances": 9
+    },
+    {
       "id": 1203,
       "title": "Fable 5提供再開の背景：ジェイルブレイク深刻度の共通評価枠組みを策定",
       "point": "輸出規制で停止していたFable 5・Mythos 5は、新しい安全分類器の導入（問題手法を99%以上ブロック）により6/30に規制解除、7/1から提供再開。あわせてAnthropicはAmazon・Microsoft・Google等と「能力の向上度」「対象の広さ」「兵器化のしやすさ」「発見のしやすさ」の4軸でジェイルブレイクの深刻度を客観評価する業界共通フレームワークの策定を開始した。",
@@ -3027,6 +3041,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1431,
+      "title": "Claude Code 2.1.217：トランスクリプト書き込み失敗時に警告表示",
+      "point": "ディスク容量不足などでトランスクリプトの書き込みに失敗した場合や、環境変数の継承でセッション保存がオフになっている場合に、黙って記録が失われるのではなく明示的な警告が出るよう改善。",
+      "source_title": "Release v2.1.217 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
+      "tags": [
+        "Claude Code",
+        "自動化"
+      ],
+      "first_date": "2026-07-23",
+      "last_date": "2026-07-23",
+      "appearances": 4
     },
     {
       "id": 1420,
@@ -6269,6 +6297,20 @@
       "appearances": 3
     },
     {
+      "id": 1430,
+      "title": "Claude Code 2.1.217：`--max-budget-usd`がバックグラウンドサブエージェントの停止にも対応",
+      "point": "予算上限`--max-budget-usd`に達した際、新規サブエージェントの生成を拒否するだけでなく、実行中のバックグラウンドエージェントも停止するよう修正。CI/CD等でのコスト超過事故を防ぎやすくなった。",
+      "source_title": "Release v2.1.217 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-07-23",
+      "last_date": "2026-07-23",
+      "appearances": 2
+    },
+    {
       "id": 1381,
       "title": "Claude Enterprise/APIでHIPAA設定がセルフサービス化",
       "point": "Claude EnterpriseとClaude Platform（API）の両方で、対象の管理者がBAA（事業提携契約）の確認・実装ガイドのダウンロード・HIPAA設定の有効化を1つのフローでまとめて行えるようになった。従来は営業窓口を介した個別対応が必要だった。",
@@ -8957,6 +8999,91 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1426,
+      "title": "Claude Cowork「スキルを記録」：画面録画からSkillを自動生成",
+      "point": "Claude Desktop（Pro/Max/Team）の＋メニューから、画面操作・キー入力・音声コメントを録画するだけでClaudeがSkillを自動生成。プロンプト設計や手順書作成なしに、繰り返し業務を再利用可能な形で覚えさせられる。",
+      "source_title": "Anthropic Adds Screen-recorded Teaching Feature To Claude AI",
+      "source_url": "https://dataconomy.com/2026/07/22/anthropic-teach-claude-screen-recording-feature/",
+      "tags": [
+        "プロンプト",
+        "製品機能"
+      ],
+      "first_date": "2026-07-23",
+      "last_date": "2026-07-23",
+      "appearances": 1
+    },
+    {
+      "id": 1427,
+      "title": "Claude Code 2.1.217：絵文字ショートコードのオートコンプリートを追加",
+      "point": "プロンプト入力欄で`:heart:`と打つと❤️に変換、`:hea`のように途中まで打つと候補が出るように。`emojiCompletionEnabled`設定でオフにも可能。",
+      "source_title": "Release v2.1.217 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-07-23",
+      "last_date": "2026-07-23",
+      "appearances": 1
+    },
+    {
+      "id": 1428,
+      "title": "Claude Code 2.1.217：サブエージェント同時実行数にデフォルト上限（20）を追加",
+      "point": "同時に走るサブエージェント数の上限がデフォルト20件に設定された。`CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS`環境変数で調整可能。大量並列委任による暴走を防ぐ安全策。",
+      "source_title": "Release v2.1.217 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-07-23",
+      "last_date": "2026-07-23",
+      "appearances": 1
+    },
+    {
+      "id": 1432,
+      "title": "Claude Code 2.1.217：MCPツール出力の切り詰め処理におけるメモリリークを修正",
+      "point": "切り詰められたMCPツールの出力について、実は完全な（未切り詰めの）結果がセッション中ずっとメモリに残り続けていた不具合を修正。長時間セッションでのメモリ肥大化対策の一つ。",
+      "source_title": "Release v2.1.217 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-23",
+      "last_date": "2026-07-23",
+      "appearances": 1
+    },
+    {
+      "id": 1433,
+      "title": "Claude Code 2.1.217：Windows自動更新失敗時にclaude.exeが消える不具合を修正",
+      "point": "Windowsで自動更新に失敗するとclaude.exe本体が消えてしまうことがあった問題を修正。更新失敗時は退避しておいた実行ファイルを自動的に復元するようになった。",
+      "source_title": "Release v2.1.217 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-23",
+      "last_date": "2026-07-23",
+      "appearances": 1
+    },
+    {
+      "id": 1434,
+      "title": "Claude Developer Platform：`agent-memory-2026-07-22`ベータヘッダーでメモリ一覧の順序を安定化",
+      "point": "メモリストアの一覧取得APIに新ベータヘッダーを追加。結果がサーバー側で安定した順序で返るようになり（`order_by`等は無視）、`depth`は0/1/省略のみ許可、`path_prefix`は末尾`/`必須でパスセグメント単位の一致に変更。各言語SDKも新ヘッダーを既定送信するよう更新済み。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-07-23",
+      "last_date": "2026-07-23",
+      "appearances": 1
     },
     {
       "id": 1414,
@@ -16433,6 +16560,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-23",
+      "highlights": [
+        "Claude Cowork「スキルを記録」機能が登場 — 画面録画と音声解説をClaudeが見て、自動でSkillに変換する新機能",
+        "Claude Code v2.1.217公開 — サブエージェント同時実行数の上限追加や絵文字ショートコード補完など20件の変更"
+      ]
+    },
+    {
       "date": "2026-07-22",
       "highlights": [
         "Claude Developer PlatformのWorkbench退役 — 旧Workbench・実験的プロンプトAPIが8/17でアクセス終了、保存データの早期エクスポートが必要",
@@ -17324,5 +17458,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-22T13:11:14.687448"
+  "generated_at": "2026-07-23T14:45:46.202632"
 }
