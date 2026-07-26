@@ -1811,6 +1811,22 @@
       "appearances": 7
     },
     {
+      "id": 1465,
+      "title": "フォールバックの`\"default\"`モードで拒否時の自動退避が可能に",
+      "point": "`fallbacks`パラメータに`\"default\"`を指定すると、安全分類器に拒否されたリクエストをAnthropic推奨のフォールバックモデルへ自動的に再ルーティングできる。ベータ機能で`server-side-fallback-2026-07-01`ヘッダーが必要。落ちやすいプロンプトを本番運用する際の可用性向上に有効。",
+      "source_title": "Claude Platform release notes - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-07-27",
+      "last_date": "2026-07-27",
+      "appearances": 6
+    },
+    {
       "id": 1419,
       "title": "`/verify`・`/code-review` が手動起動のみに変更",
       "point": "v2.1.215で、Claudeが`/verify`や`/code-review`スキルを自動実行しなくなり、明示的にコマンドを呼び出した時のみ動作するように変更。意図しないレビュー実行を防ぎたい人向け。",
@@ -9085,6 +9101,103 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1464,
+      "title": "Anthropic Economic Index コネクタで経済データにそのまま質問できる",
+      "point": "claude.aiの接続メニューから「Anthropic Economic Index」を有効化すると、インストール不要でどのモデルとの会話でも利用可能に。「自分の業界でのAI活用状況は？」のように聞くと、根拠データ付きで回答してくれる。職種別・地域別のAI利用実態を調べる際に便利。",
+      "source_title": "The Anthropic Economic Index connector - Anthropic",
+      "source_url": "https://www.anthropic.com/news/anthropic-economic-index-connector",
+      "tags": [
+        "API",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-27",
+      "last_date": "2026-07-27",
+      "appearances": 1
+    },
+    {
+      "id": 1466,
+      "title": "会話途中でツールを追加・削除できる「Mid-conversation tool changes」がベータ提供",
+      "point": "Fable 5・Mythos 5・Opus 4.8・Opus 5で、会話のターン間にClaudeが使えるツール構成を変更してもプロンプトキャッシュを維持できるようになった。長時間セッション中にタスクに応じてツールを絞る／増やす運用がしやすくなる。`mid-conversation-tool-changes-2026-07-01`ベータヘッダーが必要。",
+      "source_title": "Claude Platform release notes - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "プロンプト",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-07-27",
+      "last_date": "2026-07-27",
+      "appearances": 1
+    },
+    {
+      "id": 1467,
+      "title": "会話途中のシステムメッセージ挿入が正式対応に",
+      "point": "Fable 5・Mythos 5・Opus 4.8で「Mid-conversation system messages」がベータヘッダー不要で利用可能になったと訂正発表。エージェントの実行途中でルールや状況をシステムメッセージとして差し込みたい場合に使える。",
+      "source_title": "Claude Platform release notes - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-07-27",
+      "last_date": "2026-07-27",
+      "appearances": 1
+    },
+    {
+      "id": 1468,
+      "title": "APIキーに有効期限を設定できるように",
+      "point": "Claude ConsoleでAPIキー・Admin APIキー発行時にプリセットまたはカスタム日数、あるいは無期限を選べるようになった。7日以上有効なキーは失効前にメール通知が届く。長期間放置された鍵の棚卸しに使える地味だが便利な機能。",
+      "source_title": "Claude Platform release notes - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-27",
+      "last_date": "2026-07-27",
+      "appearances": 1
+    },
+    {
+      "id": 1469,
+      "title": "Claude Managed Agentsのセッションを`initial_events`で即時起動",
+      "point": "セッション作成`POST /v1/sessions`時に最大50件の`user.message`・`user.define_outcome`イベントを`initial_events`として渡せるようになり、別途イベント送信をしなくても同じ呼び出しでエージェントループが開始する。初期化処理の呼び出し回数を減らせる。",
+      "source_title": "Claude Platform release notes - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-07-27",
+      "last_date": "2026-07-27",
+      "appearances": 1
+    },
+    {
+      "id": 1470,
+      "title": "Claude Codeの`/config`でOutput Styleを「Explanatory」「Learning」に切り替える",
+      "point": "`/config`から出力スタイルを変更でき、「Explanatory」はClaudeが実装の背景にあるフレームワークや設計判断を説明しながら進め、「Learning」はコーチのように手を動かす箇所を促しながら進行する。コードを書きながら学びたい場面や、レビュー前に設計意図を残したい場面で有効。",
+      "source_title": "Claude Code power user tips - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-27",
+      "last_date": "2026-07-27",
+      "appearances": 1
+    },
+    {
+      "id": 1471,
+      "title": "Managed Agentsのエージェント更新で`version`フィールドが省略可能に",
+      "point": "エージェント更新時に`version`を指定すれば楽観的並行性制御（不一致は409エラー）が効き、省略すれば無条件に更新される。複数人・複数プロセスから同じエージェント定義を更新する運用で、意図しない上書きを防ぎたい場合はversion指定が安全。",
+      "source_title": "Claude Platform release notes - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-07-27",
+      "last_date": "2026-07-27",
+      "appearances": 1
     },
     {
       "id": 1452,
@@ -16805,6 +16918,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-27",
+      "highlights": [
+        "Anthropic Economic Index コネクタが公開 — claude.aiの接続メニューから有効化するだけで、「どの職種でAI利用が多いか」等をClaudeに直接質問できるようになった。なお直近24時間ではAnthropic公式の大型リリースは無く（最新はOpus 5関連の7/24付更新で既報済み）、本日号は未紹介の公式アップデートとコミュニティ発の実用Tipsを中心に構成。",
+        "APIのフォールバック挙動に`\"default\"`モードが追加 — 拒否分類ごとの推奨フォールバックモデルへ自動退避できるようになり、以前「生APIには自動フォールバックなし」と紹介した内容が一部アップデートされた。"
+      ]
+    },
+    {
       "date": "2026-07-26",
       "highlights": [
         "Claude Security Plugin ベータ公開（7/23） — Claude Code上で動くマルチエージェント構成の脆弱性スキャナー。ターミナル内でコーディング中にセキュリティ問題を検出・修正提案する。",
@@ -17717,5 +17837,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-26T08:00:04.771304"
+  "generated_at": "2026-07-27T08:00:04.487790"
 }
