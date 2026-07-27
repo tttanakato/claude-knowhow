@@ -4267,6 +4267,20 @@
       "appearances": 4
     },
     {
+      "id": 1480,
+      "title": "`/batch`で大規模マイグレーションを並列ワークツリーに自動分散する",
+      "point": "`/batch`コマンドはマイグレーション内容についてヒアリングした後、必要な数だけワークツリー分離のサブエージェントに作業を分散する。各エージェントが個別にテストしPRを作成するため、大規模な一括変更を人手を挟まず並列処理できる。",
+      "source_title": "Claude Code power user tips - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-07-28",
+      "last_date": "2026-07-28",
+      "appearances": 3
+    },
+    {
       "id": 1447,
       "title": "Claude Code Artifacts に公開共有リンク・エディタロールを追加",
       "point": "Week30更新でArtifactsに公開共有リンクと、Team/Enterprise向けの共同編集用エディタロールが追加。Claude Tagセッションから作成したArtifactsの共有にも対応し、チームでのダッシュボード運用がしやすくなった。",
@@ -6356,6 +6370,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1482,
+      "title": "スピナー動詞（作業中表示）のカスタマイズで愛着を持たせる",
+      "point": "Claudeに依頼するとスピナー表示中の動詞リストを独自のものに追加・置換できる。`settings.json`に保存してチームで共有すれば、チーム独自の雰囲気を演出できる地味だが人気の小技として紹介されている。",
+      "source_title": "Claude Code power user tips - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [],
+      "first_date": "2026-07-28",
+      "last_date": "2026-07-28",
+      "appearances": 2
     },
     {
       "id": 1456,
@@ -9101,6 +9126,89 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1475,
+      "title": "Cognizant がAnthropicの「Global Premier Partner」に",
+      "point": "7/27発表。バイオ製薬企業向け契約審査エージェントで審査時間を最大40%短縮、保険会社向けリスク判断ツールで引受担当者の作業を週8時間削減した事例などを公表。3万人以上のClaude認定者を抱えると説明している。",
+      "source_title": "Cognizant to embed Claude in industry platforms - ROI-NJ",
+      "source_url": "https://www.roi-nj.com/2026/07/27/tech/cognizant-to-embed-claude-in-industry-platforms-with-expanded-anthropic-partnership/",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-07-28",
+      "last_date": "2026-07-28",
+      "appearances": 1
+    },
+    {
+      "id": 1476,
+      "title": "Claude Opus 5で7/26・7/27に相次いで短時間の性能低下",
+      "point": "ステータスページによると、7/26と7/27に約1時間ずつ、Opus 5の応答エラー率が上昇する障害が発生。claude.ai・API・Claude Code・Coworkに影響したが、いずれも1時間強で復旧した。重要作業の前にstatus.claude.comを確認する習慣が有効。",
+      "source_title": "Claude Opus 5 errors disrupt services - AnalyticsInsight",
+      "source_url": "https://www.analyticsinsight.net/news/claude-outage-opus-5-errors-disrupt-web-api-code-services",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル",
+        "製品機能"
+      ],
+      "first_date": "2026-07-28",
+      "last_date": "2026-07-28",
+      "appearances": 1
+    },
+    {
+      "id": 1477,
+      "title": "Chrome拡張機能でフロントエンド実装を「見て」確認させる",
+      "point": "公式Power User Tipsによれば、Claude Codeチームはフロント開発時に必ずChrome拡張機能を使い、ブラウザで実際の見た目を確認させながら反復させている。ブラウザを使わせない依頼は、見えないまま作らせるようなものだと説明している。",
+      "source_title": "Claude Code power user tips - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-28",
+      "last_date": "2026-07-28",
+      "appearances": 1
+    },
+    {
+      "id": 1478,
+      "title": "`--bare`フラグでSDK・非対話実行の起動を高速化",
+      "point": "`claude -p`やSDK利用時、既定ではローカルのCLAUDE.md・設定・MCPを毎回探索するため起動が遅くなる。非対話的な用途では`--system-prompt`等で明示指定した上で`--bare`を付けると起動が大幅に速くなる。将来的にはこちらが既定になる予定。",
+      "source_title": "Claude Code power user tips - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "CLAUDE.md",
+        "API",
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-28",
+      "last_date": "2026-07-28",
+      "appearances": 1
+    },
+    {
+      "id": 1479,
+      "title": "`/permissions`のワイルドカード構文で安全なコマンドを事前承認",
+      "point": "`/permissions`では\"Bash(bun run *)\"や\"Edit(/docs/**)\"のようなワイルドカード指定が可能。チームの`.claude/settings.json`に追加しておけば、権限確認の頻度を減らしつつ監査可能な許可リストを維持できる。",
+      "source_title": "Claude Code power user tips - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [],
+      "first_date": "2026-07-28",
+      "last_date": "2026-07-28",
+      "appearances": 1
+    },
+    {
+      "id": 1481,
+      "title": "スペースド・リピティション式スキルで理解度を確認しながら学ぶ",
+      "point": "自分の理解をClaudeに説明し、Claudeが不足点を突く質問を返す、という往復を繰り返すスキルを組むと、コードベースの学習ツールとしてClaude Codeを使える。「教えて」ではなく「説明してツッコミを受ける」形が効果的とされる。",
+      "source_title": "Claude Code power user tips - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-28",
+      "last_date": "2026-07-28",
+      "appearances": 1
     },
     {
       "id": 1464,
@@ -16918,6 +17026,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-28",
+      "highlights": [
+        "Claude Opus 5で7/26・7/27に相次いで短時間の性能低下 — 直近24時間に大型の公式アップデートは無く、本日はCognizantとの新パートナーシップ発表と、Claude Code公式ガイド「Power User Tips」から本紙未紹介の実践Tipsを中心に構成。",
+        "Cognizant、AnthropicのGlobal Premier Partnerに — Claude導入で契約審査時間を最大40%削減した事例などを公表。"
+      ]
+    },
+    {
       "date": "2026-07-27",
       "highlights": [
         "Anthropic Economic Index コネクタが公開 — claude.aiの接続メニューから有効化するだけで、「どの職種でAI利用が多いか」等をClaudeに直接質問できるようになった。なお直近24時間ではAnthropic公式の大型リリースは無く（最新はOpus 5関連の7/24付更新で既報済み）、本日号は未紹介の公式アップデートとコミュニティ発の実用Tipsを中心に構成。",
@@ -17837,5 +17952,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-27T08:00:04.487790"
+  "generated_at": "2026-07-28T08:00:04.544325"
 }
