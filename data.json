@@ -9128,6 +9128,119 @@
       "appearances": 2
     },
     {
+      "id": 1486,
+      "title": "Hadrius がClaude Compliance APIと統合、社員とClaudeの会話を証跡管理",
+      "point": "金融サービス向けコンプライアンス基盤Hadriusが7/28、Claude Enterprise向けのCompliance APIと統合したと発表。社員がClaudeと交わした会話をメールやチャットと同じ扱いでアーカイブでき、SEC記録保持規則への対応に使える。ChatGPT向けアーカイブに続く対応。",
+      "source_title": "Hadrius Adds Claude to Its Communications Archive - PR Newswire",
+      "source_url": "https://www.prnewswire.com/news-releases/hadrius-adds-claude-to-its-communications-archive-bringing-enterprise-ai-under-compliance-oversight-302835563.html",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-29",
+      "last_date": "2026-07-29",
+      "appearances": 1
+    },
+    {
+      "id": 1487,
+      "title": "ICON plcとAnthropicが臨床試験向けに複数年協業を発表",
+      "point": "臨床開発大手ICONが7/28、AnthropicとOrbisプラットフォームへのAI統合で複数年協業を発表。開発チームにはClaude Code、ナレッジチームにはClaude、科学・臨床チームにはClaude Scienceを役割別に展開する方針で、試験サイト選定や試験計画の最適化に活用する。",
+      "source_title": "ICON announces multi-year collaboration with Anthropic - Business Wire",
+      "source_url": "https://www.businesswire.com/news/home/20260728449012/en/ICON-announces-multi-year-collaboration-with-Anthropic-to-bring-frontier-AI-to-clinical-trials",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-07-29",
+      "last_date": "2026-07-29",
+      "appearances": 1
+    },
+    {
+      "id": 1488,
+      "title": "AppleのOS更新でAnthropic研究者・Claudeが脆弱性発見の功績クレジット",
+      "point": "7/27公開のiOS/macOS等セキュリティ更新でWebKit・WebDAV関連の脆弱性報告者としてAnthropicの研究者とClaudeがクレジットされた。AppleはClaude Mythos Previewへのアクセスを4月から持っており、AI支援の脆弱性調査が実運用フェーズに入っていることを示す事例。",
+      "source_title": "Claude, Codex credited in Apple security releases - 9to5Mac",
+      "source_url": "https://9to5mac.com/2026/07/27/claude-codex-and-other-ai-tools-credited-in-todays-apple-security-releases/",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-29",
+      "last_date": "2026-07-29",
+      "appearances": 1
+    },
+    {
+      "id": 1489,
+      "title": "Cowork「Record a skill」で画面録画からスキルを自動生成",
+      "point": "Claude Desktopアプリの「+」メニューから「Record a skill」を選ぶと、画面操作と音声での説明を録画するだけでClaudeが手順を分析し再実行可能なスキルに変換してくれる。プロンプト設計不要で、クリック順序だけでなく判断理由まで音声から学習する。Pro/Max/Team対応。",
+      "source_title": "Claude Cowork Record a Skill - explainx.ai",
+      "source_url": "https://www.explainx.ai/blog/claude-cowork-record-a-skill-screen-recording-july-2026",
+      "tags": [
+        "プロンプト",
+        "製品機能"
+      ],
+      "first_date": "2026-07-29",
+      "last_date": "2026-07-29",
+      "appearances": 1
+    },
+    {
+      "id": 1490,
+      "title": "Claude Codeのエフォート設定は「xhigh」と「ソフトな制御」を使い分ける",
+      "point": "`/effort`で選べるlow/medium/high/xhigh/max/autoのうち、xhighは長時間の複雑なコーディング・エージェントタスク向けにmaxほどコストをかけずに深い推論をさせたい場合に適する。厳密な上限が欲しい場面ではエフォートを固定するより、タスクバジェットやプロンプト内で「簡潔に」と指示する方が、Claudeが自ら終了判断をしてくれるため実用的とされている。",
+      "source_title": "Claude Code effort level and model selection - Claude by Anthropic",
+      "source_url": "https://claude.com/blog/claude-model-and-effort-level-in-claude-code",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-07-29",
+      "last_date": "2026-07-29",
+      "appearances": 1
+    },
+    {
+      "id": 1491,
+      "title": "MCPサーバーは4〜8個に絞り、`--scope`とMCP Tool Searchで軽量化する",
+      "point": "MCPサーバーは接続数を増やすほどコンテキストを消費するため、実際に使うものだけ4〜8個程度に絞るのが定石とされる。常時使うサーバーは`--scope user`、プロジェクト固有のものは`--scope local`で分離し、MCP Tool Searchの遅延ロードを使えばツール一覧のコンテキスト消費を大幅に削減できる。",
+      "source_title": "Top 10 Essential MCP Servers for Claude Code - Apidog",
+      "source_url": "https://apidog.com/blog/top-10-mcp-servers-for-claude-code/",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-29",
+      "last_date": "2026-07-29",
+      "appearances": 1
+    },
+    {
+      "id": 1492,
+      "title": "Coworkのスケジュールタスクは手動テスト後に登録し、スリープ時は次回起動時に実行される",
+      "point": "`/schedule`でスケジュールタスクを作る前に、まず同じプロンプトを手動で一度実行して意図通りの出力になるか確認するのが推奨されている。PCがスリープしてスケジュール時刻を逃した場合でも、次にClaude Desktopを開いたタイミングで自動的に実行される仕組みになっている。",
+      "source_title": "Claude Cowork scheduled tasks - Claude Cowork Guide",
+      "source_url": "https://coworkhow.com/features/scheduled-tasks",
+      "tags": [
+        "プロンプト",
+        "自動化",
+        "製品機能"
+      ],
+      "first_date": "2026-07-29",
+      "last_date": "2026-07-29",
+      "appearances": 1
+    },
+    {
+      "id": 1493,
+      "title": "プロンプトキャッシュを崩す「3つの原因」を避けてコストを抑える",
+      "point": "プロンプトキャッシュを壊す代表的な原因は、セッション中のCLAUDE.md編集、ファイル読み込み順序の不統一、モデルの切り替えの3つとされる。最小キャッシュ単位はSonnet/Opusで1024トークン、Haikuで2048トークンのため、システムプロンプトがこれを下回るとキャッシュ制御指定自体が無視され全額課金される点にも注意。",
+      "source_title": "Prompt caching - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-07-29",
+      "last_date": "2026-07-29",
+      "appearances": 1
+    },
+    {
       "id": 1475,
       "title": "Cognizant がAnthropicの「Global Premier Partner」に",
       "point": "7/27発表。バイオ製薬企業向け契約審査エージェントで審査時間を最大40%短縮、保険会社向けリスク判断ツールで引受担当者の作業を週8時間削減した事例などを公表。3万人以上のClaude認定者を抱えると説明している。",
@@ -17026,6 +17139,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-29",
+      "highlights": [
+        "Hadrius が Claude Compliance API と統合 — Claude Enterprise利用企業が、社員とClaudeとの会話をメール・チャットと同じように証跡管理できるようになった。金融機関向けコンプライアンス基盤としての活用例。",
+        "ICON plcとAnthropicが臨床試験領域で複数年提携 — Orbisプラットフォームに Claude Code・Claude・Claude Science を役割別に展開する計画。直近24時間でAnthropic公式の大型プロダクトリリースは無く、本日号は関連企業のニュースと実践Tipsを中心に構成。"
+      ]
+    },
+    {
       "date": "2026-07-28",
       "highlights": [
         "Claude Opus 5で7/26・7/27に相次いで短時間の性能低下 — 直近24時間に大型の公式アップデートは無く、本日はCognizantとの新パートナーシップ発表と、Claude Code公式ガイド「Power User Tips」から本紙未紹介の実践Tipsを中心に構成。",
@@ -17952,5 +18072,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-28T08:00:04.544325"
+  "generated_at": "2026-07-29T08:00:04.589571"
 }
