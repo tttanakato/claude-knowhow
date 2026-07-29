@@ -4267,6 +4267,19 @@
       "appearances": 4
     },
     {
+      "id": 1502,
+      "title": "Agent Skillsのdescriptionは「ルーティングルール」として書く",
+      "point": "Skillが正しいタイミングで発火しない最大の原因は、descriptionが要約になっていること。ユーザーが実際に使う起動フレーズ・想定入力・出力内容を明記し、判断基準として機能する文にすることが推奨されている。加えて30日間使われていないSkillは月次で棚卸しして削除するとよい。",
+      "source_title": "Best Claude Code Skills in 2026 (Tested + How to Build)",
+      "source_url": "https://www.taskade.com/blog/claude-code-skills",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-07-30",
+      "last_date": "2026-07-30",
+      "appearances": 3
+    },
+    {
       "id": 1480,
       "title": "`/batch`で大規模マイグレーションを並列ワークツリーに自動分散する",
       "point": "`/batch`コマンドはマイグレーション内容についてヒアリングした後、必要な数だけワークツリー分離のサブエージェントに作業を分散する。各エージェントが個別にテストしPRを作成するため、大規模な一括変更を人手を挟まず並列処理できる。",
@@ -6370,6 +6383,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1503,
+      "title": "Claude Code v2.1.218：Windowsパスのバックスラッシュ区切りがCJK文字に化ける不具合を修正",
+      "point": "7/22公開のv2.1.218で、Windows環境において`\\u`から始まるバックスラッシュ区切りのパスが日本語・中国語・韓国語（CJK）の文字に誤変換されてしまう不具合が修正された。日本語パスを扱う開発者は影響を受けていた可能性があり、最新版への更新が推奨される。",
+      "source_title": "Claude Code changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-07-30",
+      "last_date": "2026-07-30",
+      "appearances": 2
     },
     {
       "id": 1482,
@@ -9126,6 +9152,72 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1497,
+      "title": "MCP 2026-07-28 ステートレス仕様への移行",
+      "point": "initializeハンドシェイクとMcp-Session-Idヘッダーを廃止し、全リクエストが_metaとHTTPヘッダーで自己完結する方式に刷新。OAuth 2.0/OIDCがEntraやOktaなど本番IdPと直結でき、MCP Apps・Tasks・Enterprise Managed Authの3拡張も同時公開。ロードバランサ配下でのサーバーレス運用が可能になった。",
+      "source_title": "MCP 2026-07-28 spec: stateless core, coming to Claude",
+      "source_url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-30",
+      "last_date": "2026-07-30",
+      "appearances": 1
+    },
+    {
+      "id": 1498,
+      "title": "Claude（Mythos Preview）がHAWK-256鍵復元とAES高速化を達成",
+      "point": "Anthropicは、耐量子署名候補HAWK-256に対する鍵復元攻撃と、7ラウンドAES-128攻撃を200～800倍高速化する成果をClaudeが導出したと発表。いずれも実運用システムには影響せず、本番ソフトウェアの変更は不要としている。",
+      "source_title": "Claude AI Just Cracked a Post-Quantum Test Scheme and Found a Faster 7-Round AES Attack",
+      "source_url": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-30",
+      "last_date": "2026-07-30",
+      "appearances": 1
+    },
+    {
+      "id": 1499,
+      "title": "Azure DevOps MCPサーバー、隠しPRコメントでレビューエージェントが乗っ取られる",
+      "point": "PR説明欄のHTMLコメント（画面上は非表示）がAPI経由でそのままAIエージェントに渡り、レビュー担当者の権限で他プロジェクトのパイプライン実行や機密Wiki読み取りを引き起こす確認済み手口。Claude CodeとCopilot CLIの双方で再現。最小権限トークンとレビュー前の手動確認が対策として推奨されている。",
+      "source_title": "Microsoft Azure DevOps MCP Flaw Lets Hidden PR Comments Hijack AI Review Agents",
+      "source_url": "https://thehackernews.com/2026/07/microsoft-azure-devops-mcp-flaw-lets.html",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-30",
+      "last_date": "2026-07-30",
+      "appearances": 1
+    },
+    {
+      "id": 1500,
+      "title": "Claudeの共有チャットがGoogle検索結果に露出",
+      "point": "noindexタグの欠如により、Claudeの共有リンクが`site:claude.ai/share`で検索可能な状態になっていたと報告。法務相談やソースコードを含む会話が第三者に閲覧された可能性があり、不要な共有は削除し、公開チャンネルへの共有URL投稿は避けるよう注意喚起されている。",
+      "source_title": "Claude AI Shared Chats Reportedly Exposed in Google Search Results",
+      "source_url": "https://cybersecuritynews.com/claude-ai-shared-chats/",
+      "tags": [],
+      "first_date": "2026-07-30",
+      "last_date": "2026-07-30",
+      "appearances": 1
+    },
+    {
+      "id": 1501,
+      "title": "Claude for Chrome、偽装クリックでGmail/Docs/Calendar操作が無断実行される恐れ",
+      "point": "claude.ai上でスクリプトを実行できる別の拡張機能があれば、`event.isTrusted`チェック欠如を突いて偽のクリックを発生させ、許可なくGmail・Googleドキュメント・カレンダー操作タスクを起動できる。「確認なしで実行」モードでは承認ダイアログなしに実行される。回避策はそのモードをオフにし、claude.aiへのアクセス権を持つ拡張機能を見直すこと。",
+      "source_title": "Researchers Say Claude for Chrome Flaw Lets Rogue Extensions Trigger Gmail Reads",
+      "source_url": "https://thehackernews.com/2026/07/claude-for-chrome-flaw-lets-other.html",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-07-30",
+      "last_date": "2026-07-30",
+      "appearances": 1
     },
     {
       "id": 1486,
@@ -17139,6 +17231,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-30",
+      "highlights": [
+        "MCP 2026-07-28 ステートレス仕様がClaudeに導入 — セッションIDなしの自己完結型リクエストに刷新され、エンタープライズIdP連携（Entra/Okta）とサーバーレス展開が容易に。",
+        "Azure DevOps MCPサーバーに隠しPRコメント脆弱性 — HTMLコメントに仕込まれた指示でAIレビューエージェントが乗っ取られる実例が判明。Claude Codeでも再現確認済み。"
+      ]
+    },
+    {
       "date": "2026-07-29",
       "highlights": [
         "Hadrius が Claude Compliance API と統合 — Claude Enterprise利用企業が、社員とClaudeとの会話をメール・チャットと同じように証跡管理できるようになった。金融機関向けコンプライアンス基盤としての活用例。",
@@ -18072,5 +18171,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-29T08:00:04.589571"
+  "generated_at": "2026-07-30T08:00:04.566311"
 }
