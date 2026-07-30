@@ -6385,6 +6385,19 @@
       "appearances": 3
     },
     {
+      "id": 1512,
+      "title": "Cognizant×Anthropic提携拡大の詳細判明：3万人超が研修完了",
+      "point": "7/27発表のCognizantとAnthropicの提携拡大について詳細が判明。CognizantはAnthropicのClaude Partner Networkで最上位の「Global Premier Partner」に認定され、社内で3万人超の従業員がClaude研修を修了。製造・ライフサイエンス・保険分野の顧客先で本番導入が進み、契約審査時間を最大40%短縮（抽出精度88%超）、引受業務の調査時間を数時間から約1分に短縮した事例が報告されている。",
+      "source_title": "Cognizant and Anthropic expand partnership to embed Claude in industry platforms",
+      "source_url": "https://news.cognizant.com/2026-07-27-Cognizant-and-Anthropic-expand-partnership-to-embed-Claude-in-Cognizants-industry-platforms,-helping-clients-close-the-gap-between-AI-promise-and-business-outcomes",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-07-31",
+      "last_date": "2026-07-31",
+      "appearances": 2
+    },
+    {
       "id": 1503,
       "title": "Claude Code v2.1.218：Windowsパスのバックスラッシュ区切りがCJK文字に化ける不具合を修正",
       "point": "7/22公開のv2.1.218で、Windows環境において`\\u`から始まるバックスラッシュ区切りのパスが日本語・中国語・韓国語（CJK）の文字に誤変換されてしまう不具合が修正された。日本語パスを扱う開発者は影響を受けていた可能性があり、最新版への更新が推奨される。",
@@ -9152,6 +9165,83 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1507,
+      "title": "Ruflo MCP Bridgeの認証なし脆弱性「RufRoot」(CVE-2026-59726)",
+      "point": "オープンソースのAIエージェントオーケストレーション基盤Rufloで、MCPツール実行を仲介するExpress.jsサーバー「MCP Bridge」が233個の内部ツールを認証なしでHTTP公開していた欠陥。`ruflo__terminal_execute`など任意コマンド実行が可能な上、AIの永続メモリを改ざんして以後のユーザー応答に影響を与えることもできた。CVSS満点10.0、v3.16.3未満の全バージョンが対象。MCP経由でエージェント基盤を構築・運用している場合は認証設定を再点検したい。",
+      "source_title": "Ruflo MCP Flaw Lets Unauthenticated Attackers Run Commands and Poison AI Memory",
+      "source_url": "https://thehackernews.com/2026/07/ruflo-mcp-flaw-lets-unauthenticated.html",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-31",
+      "last_date": "2026-07-31",
+      "appearances": 1
+    },
+    {
+      "id": 1508,
+      "title": "Claude CodeとCodexの設定ファイル同期ツール「agents-sync」",
+      "point": "CLAUDE.md/AGENTS.md・SKILLS等、形式が同じ設定ファイルはSymlinkで共有し、MCPやhooksなど形式が異なる設定は中立形に変換してfingerprintで新旧判定・差分同期するOSSツール。二重管理による更新漏れを構造的に防ぐ設計で、モデル固有のPrompting Guideの書き分けにも対応。CLI・スキル・fswatch/launchdの常駐スクリプトとして提供され、MITライセンスで公開。",
+      "source_title": "Claude CodeとCodexの設定ファイル同期ツール - Zenn",
+      "source_url": "https://zenn.dev/explaza/articles/20f7f41cff8428",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト",
+        "自動化",
+        "エージェント",
+        "モデル",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-31",
+      "last_date": "2026-07-31",
+      "appearances": 1
+    },
+    {
+      "id": 1509,
+      "title": "Claude Code RoutinesでPRオープン時に自動コードレビューを実行",
+      "point": "GitHub AppをRoutinesに連携し、PRがopenされたタイミングでレビュー用スキルを自動実行する構成例。Authorフィルターで自分のPRのみを対象にでき、サブスクリプション利用枠のみを消費するためGitHub ActionsやDevin Reviewより低コストで試せる。実装と分離した状態でレビューでき指摘がPRに残るため透明性が高い一方、pushの再レビューには非対応で承認確認なしに動作するため権限・Connector設定には注意が必要。",
+      "source_title": "Claude Code RoutinesによるPRの自動コードレビュー - Zenn",
+      "source_url": "https://zenn.dev/rehabforjapan/articles/claude-code-routines-pr-review-202607",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-07-31",
+      "last_date": "2026-07-31",
+      "appearances": 1
+    },
+    {
+      "id": 1510,
+      "title": "AI大手研究者ら1,224名が「Pacing the Frontier」共同声明を発表",
+      "point": "OpenAI・Anthropic・Google DeepMind・Meta AIの研究責任者を含む1,224名の従業員が連名で、AI開発の自動化が人間の理解・制御を上回るリスクを警告する声明を発表。米政府に対し、開発ペースを意図的に調整できる国際的な技術・統治の枠組み整備を要請した。競争圧力下では1社だけの減速が困難であるため国際協調が必要との立場。発表から数時間以内にOpenAI・Anthropic双方が企業として賛同を表明。",
+      "source_title": "Pacing the Frontier（声明本文）",
+      "source_url": "https://www.pacingthefrontier.com/",
+      "tags": [
+        "API",
+        "自動化"
+      ],
+      "first_date": "2026-07-31",
+      "last_date": "2026-07-31",
+      "appearances": 1
+    },
+    {
+      "id": 1511,
+      "title": "『できるClaude & Claude Cowork』新刊、発売前に全文無料公開",
+      "point": "インプレスがClaude入門書『できるClaude & Claude Cowork』（清水理史＆できるシリーズ編集部、208ページ）を8月6日に発売。発売記念として7月27日〜30日の4日間、Webブックビューアーで全文を登録不要・無料公開していた。基本操作からSkills・コネクタ・アーティファクトの独自機能、PC操作を代行するエージェント活用まで解説する内容で、公開期間は終了済みだが書籍として8/6発売予定。",
+      "source_title": "インプレスがClaude入門書を8月6日に発売、7月30日まで全文無料公開",
+      "source_url": "https://ai.watch.impress.co.jp/docs/news/2128796.html",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-07-31",
+      "last_date": "2026-07-31",
+      "appearances": 1
     },
     {
       "id": 1497,
@@ -17231,6 +17321,13 @@
   ],
   "daily": [
     {
+      "date": "2026-07-31",
+      "highlights": [
+        "Ruflo MCP Bridgeに認証なしRCE「RufRoot」(CVSS 10.0) — AIエージェント基盤の233ツールが無認証で外部公開され、シェル実行やAIの\"記憶\"改ざんまで可能だったと判明。MCP連携基盤を自作・自社運用している場合は要点検。",
+        "Claude CodeとCodexの設定同期ツール「agents-sync」公開 — CLAUDE.md/AGENTS.md/SKILLSの二重管理を構造的に解消するOSSツールが登場。複数コーディングエージェントを併用しているチームに有用。"
+      ]
+    },
+    {
       "date": "2026-07-30",
       "highlights": [
         "MCP 2026-07-28 ステートレス仕様がClaudeに導入 — セッションIDなしの自己完結型リクエストに刷新され、エンタープライズIdP連携（Entra/Okta）とサーバーレス展開が容易に。",
@@ -18171,5 +18268,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-30T08:00:04.566311"
+  "generated_at": "2026-07-31T08:00:03.990404"
 }
