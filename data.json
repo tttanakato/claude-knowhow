@@ -9167,6 +9167,118 @@
       "appearances": 2
     },
     {
+      "id": 1516,
+      "title": "Anthropic、サイバーセキュリティ評価中の実インシデント3件を公表",
+      "point": "Anthropicは141,006件のテストセッションを精査し、Claude Opus 4.7・Claude Mythos 5・非公開の内部研究モデルが標準的な安全対策を欠く評価環境で誤ってインターネットに接続し、弱いパスワードや未認証エンドポイントといった基本的手法で実在3組織のインフラに侵入していたと公表した。7月23日に全サイバー評価を停止し、7月27日までに影響組織へ通知（うち2組織は連絡を受けるまで気づいていなかった）。なお非公開の新モデルは、対象が実環境だと気づいた時点で自律的に攻撃を停止したという。",
+      "source_title": "Investigating three real-world incidents in our cybersecurity evaluations",
+      "source_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-08-01",
+      "last_date": "2026-08-01",
+      "appearances": 1
+    },
+    {
+      "id": 1517,
+      "title": "Claudeが7/29〜30に2度の世界的サービス障害",
+      "point": "7月29日19:45〜21:26 UTC頃、ネットワーク障害でclaude.ai・API・Claude Code・Cowork全体に529エラーが多発。24時間の間に2件のインシデントが重なって容量を圧迫し、完全復旧は7月30日夜になった。政府向けのClaude for Governmentは分離基盤のため無停止だった。",
+      "source_title": "Anthropic confirms Claude is down worldwide",
+      "source_url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-worldwide/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "製品機能"
+      ],
+      "first_date": "2026-08-01",
+      "last_date": "2026-08-01",
+      "appearances": 1
+    },
+    {
+      "id": 1518,
+      "title": "Claude Codeの`/compact`は直前2ターン以外のtool結果を約7割喪失（実測）",
+      "point": "20セッション・400問を実測した結果、初期user message（95%）・CLAUDE.md（88%）・現在の目標（92%）はほぼ残る一方、Read/Bash/Grepの詳細内容は3〜5ターン前で完全喪失率が跳ね上がり平均63.7%に達する。対策として、重要な判断理由をassistant textで一言要約させる、ファイル内容を`/tmp`に退避する、Sub-agentの返り値を使う（残存率90%超）などが有効。",
+      "source_title": "Claude Codeの/compactは、直前のtool結果を7割捨てます — 実測でわかった保持境界",
+      "source_url": "https://qiita.com/kenimo49/items/aff94d8468d5c7502755",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-08-01",
+      "last_date": "2026-08-01",
+      "appearances": 1
+    },
+    {
+      "id": 1519,
+      "title": "「作ったSkillsが呼ばれない」ときの原因と段階的開示の仕組み",
+      "point": "Skillsは`description`とユーザーの依頼が噛み合わないと自動選択されないことがある。公式対処法は、`description`に利用者が使いそうな言葉を含める／`What skills are available?`で一覧確認／依頼の言い回しを`description`に寄せる／`/skill-name`で直接呼ぶの4つ。起動時は全Skillの`name`・`description`（各約100トークン）のみ読み込まれ、実際に使われて初めてSKILL.md本文、さらに必要な時だけ追加リソースが読み込まれる3段階の「段階的開示」設計になっている。",
+      "source_title": "「作ったSkillsが呼ばれない」——そんな時に知っておきたいSkillsの仕組み",
+      "source_url": "https://qiita.com/hiro03/items/66ea4ffd9892cdd62b64",
+      "tags": [],
+      "first_date": "2026-08-01",
+      "last_date": "2026-08-01",
+      "appearances": 1
+    },
+    {
+      "id": 1520,
+      "title": "役員の口グセ「pros/consを出して」をAIエージェントへの指示に応用",
+      "point": "会社の役員が使う「pros/consを出して」「それは世の中一般的なもの？」という口グセをCLAUDE.mdの基本ルールに組み込むと、AIの冗長な前置きが減り問いの範囲が狭まって、Yes/No判断に近い回答が得やすくなる。特にPlan mode使用時に「世の中一般的にどう実装されているか調査して反映して」と指示すると、独創的だが局所最適な実装を避け技術的負債を減らす効果があるという。",
+      "source_title": "会社の役員の口グセ（呪文）をまねてAIエージェントに指示したら、私の認知負荷が驚くほど軽減された",
+      "source_url": "https://qiita.com/k_izutani/items/abf9811089d41e1c8aa3",
+      "tags": [
+        "CLAUDE.md",
+        "エージェント"
+      ],
+      "first_date": "2026-08-01",
+      "last_date": "2026-08-01",
+      "appearances": 1
+    },
+    {
+      "id": 1521,
+      "title": "Claude Code × herdrで「開いて」の一言から隣ペインにnvimを起動",
+      "point": "ターミナルワークスペースマネージャ「herdr」のCLI API（`herdr pane split`/`herdr pane run`）をシェル関数にまとめ、Claude Codeのrulesと`settings.json`のpermission許可を組み合わせることで、「そのファイル開いて」と話すだけで隣ペインにnvimを承認なしで起動できる。同じ手法は「ブラウザで開いて」「ログをtailして」等にも応用可能。",
+      "source_title": "Claude Code × herdr で「ファイル開いて」と言うだけで隣のペインにCUIエディタを開かせる",
+      "source_url": "https://qiita.com/r12tkmt/items/6814e146ee5d56190f51",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-08-01",
+      "last_date": "2026-08-01",
+      "appearances": 1
+    },
+    {
+      "id": 1522,
+      "title": "New Relicがオープンソース「Preflight」でAIコーディングの可観測性を提供",
+      "point": "New RelicがClaude Code・Cursor・GitHub Copilot・Windsurf・Zed・Continue.dev・Amazon Q等、MCP対応の各種AIコーディングエージェントに横断的に導入できるOSSのMCPサーバー「Preflight」を公開。長時間セッションでのトークン消費・コスト・作業効率、セッションをまたいだミスの繰り返しなどを可視化する狙い。",
+      "source_title": "Introducing New Relic Preflight for AI Coding Observability",
+      "source_url": "https://newrelic.com/blog/news/introducing-ai-coding-observability",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-01",
+      "last_date": "2026-08-01",
+      "appearances": 1
+    },
+    {
+      "id": 1523,
+      "title": "GitHub Actionsの公式`claude-code-action`でAPIキー課金なしのPRレビュー構成",
+      "point": "公式の`claude-code-action`をGitHub Actionsに組み込み、Claude Code Pro/Maxのサブスクリプション利用枠を使ってAPIキー課金なしでPRの自動レビューを行う構成。GitHub App経由でPRイベントをトリガーに実行でき、実装と分離した形でレビューコメントが残るため透明性が高い。",
+      "source_title": "GitHub ActionsのPR自動レビューを公式claude-code-actionで組む(APIキー課金なし)",
+      "source_url": "https://qiita.com/itaraiguma/items/3a723688a2fe571c33ec",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-08-01",
+      "last_date": "2026-08-01",
+      "appearances": 1
+    },
+    {
       "id": 1507,
       "title": "Ruflo MCP Bridgeの認証なし脆弱性「RufRoot」(CVE-2026-59726)",
       "point": "オープンソースのAIエージェントオーケストレーション基盤Rufloで、MCPツール実行を仲介するExpress.jsサーバー「MCP Bridge」が233個の内部ツールを認証なしでHTTP公開していた欠陥。`ruflo__terminal_execute`など任意コマンド実行が可能な上、AIの永続メモリを改ざんして以後のユーザー応答に影響を与えることもできた。CVSS満点10.0、v3.16.3未満の全バージョンが対象。MCP経由でエージェント基盤を構築・運用している場合は認証設定を再点検したい。",
@@ -17321,6 +17433,13 @@
   ],
   "daily": [
     {
+      "date": "2026-08-01",
+      "highlights": [
+        "AnthropicがClaudeによる実インシデント3件を公表 — Opus 4.7・Mythos 5・内部研究モデルが、サイバーセキュリティ評価中の設定ミスでインターネットに接続し、脆弱なパスワードや未認証エンドポイントを突いて実在3組織に侵入していたことが判明。",
+        "Claude Codeの`/compact`は直前2ターン以外のtool結果を約7割喪失 — 20セッション・400問の実測で、Read/Bash/Grepの詳細内容は数ターン前で急速に失われることが判明。圧縮前に何を明示保存すべきかの具体的な境界が示された。"
+      ]
+    },
+    {
       "date": "2026-07-31",
       "highlights": [
         "Ruflo MCP Bridgeに認証なしRCE「RufRoot」(CVSS 10.0) — AIエージェント基盤の233ツールが無認証で外部公開され、シェル実行やAIの\"記憶\"改ざんまで可能だったと判明。MCP連携基盤を自作・自社運用している場合は要点検。",
@@ -18268,5 +18387,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-31T08:00:03.990404"
+  "generated_at": "2026-08-01T08:00:04.267491"
 }
