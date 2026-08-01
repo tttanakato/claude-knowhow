@@ -3074,6 +3074,23 @@
       "appearances": 5
     },
     {
+      "id": 1448,
+      "title": "Claude 5世代モデル向けコンテキストエンジニアリング新ルール：システムプロンプトを大幅削減",
+      "point": "Anthropicエンジニアリングチームが7/24公開のブログで、Claude Codeのシステムプロンプトを80%以上削減してもコーディング評価スコアに測定可能な低下がなかったと報告。転換の要点は6つ：①細かいルール列挙→モデルの判断に任せる、②豊富な使用例→ツールのパラメータ設計で伝える、③情報を先に全部渡す→必要時に読み込む段階的開示、④システムプロンプトとツール説明の重複を解消、⑤シンプルな仕様書→HTMLアーティファクトなどリッチな参照、⑥CLAUDE.mdへの手動追記→Claudeが自動でメモリ保存。CLAUDE.mdは「リポジトリの目的を簡潔に・コード固有の落とし穴に焦点」とし、標準的なプログラミング知識の重複記載は非推奨とされた。",
+      "source_title": "Claude Code更新 プロンプト削減・sandbox強化【7/24〜30】",
+      "source_url": "https://blog.serverworks.co.jp/2026/08/01/190000",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-07-25",
+      "last_date": "2026-08-02",
+      "appearances": 4
+    },
+    {
       "id": 1431,
       "title": "Claude Code 2.1.217：トランスクリプト書き込み失敗時に警告表示",
       "point": "ディスク容量不足などでトランスクリプトの書き込みに失敗した場合や、環境変数の継承でセッション保存がオフになっている場合に、黙って記録が失われるのではなく明示的な警告が出るよう改善。",
@@ -4267,6 +4284,20 @@
       "appearances": 4
     },
     {
+      "id": 1532,
+      "title": "Claude Sonnet 5の導入価格、8/31で終了し9/1から標準価格に",
+      "point": "Sonnet 5の導入価格（入力$2/出力$10 per Mtok）は8/31で終了し、9/1から標準価格（入力$3/出力$15）に切り替わる。API課金でSonnet 5を常用しているワークロードは、月をまたぐタイミングでコストが1.5倍になる点に留意が必要。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-08-02",
+      "last_date": "2026-08-02",
+      "appearances": 3
+    },
+    {
       "id": 1502,
       "title": "Agent Skillsのdescriptionは「ルーティングルール」として書く",
       "point": "Skillが正しいタイミングで発火しない最大の原因は、descriptionが要約になっていること。ユーザーが実際に使う起動フレーズ・想定入力・出力内容を明記し、判断基準として機能する文にすることが推奨されている。加えて30日間使われていないSkillは月次で棚卸しして削除するとよい。",
@@ -4301,23 +4332,6 @@
       "source_url": "https://code.claude.com/docs/en/whats-new",
       "tags": [
         "Claude Code"
-      ],
-      "first_date": "2026-07-25",
-      "last_date": "2026-07-25",
-      "appearances": 3
-    },
-    {
-      "id": 1448,
-      "title": "Claude 5世代モデル向けコンテキストエンジニアリング新ルール：システムプロンプトを大幅削減",
-      "point": "AnthropicはClaude Opus 5/Fable 5向けにClaude Codeのシステムプロンプトを8割削減してもコーディング評価に有意な低下がないと発表。CLAUDE.mdやSkillsでの過剰な制約・矛盾指示がむしろ性能を下げるとし、「簡潔・非制約」を新方針とした。",
-      "source_title": "The new rules of context engineering for Claude 5 generation models - Claude Blog",
-      "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
-      "tags": [
-        "CLAUDE.md",
-        "Claude Code",
-        "API",
-        "プロンプト",
-        "モデル"
       ],
       "first_date": "2026-07-25",
       "last_date": "2026-07-25",
@@ -6383,6 +6397,76 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1414,
+      "title": "Claude Developer Platform：旧Workbenchと実験的プロンプトAPIが8/17に終了",
+      "point": "レガシーのWorkbenchおよび実験的prompt tools APIへのアクセスが8/17に終了する。同機能に依存した社内ツールやスクリプトがある場合、後継のAPI・UIへの移行確認を8月中に済ませておく必要がある。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-07-22",
+      "last_date": "2026-08-02",
+      "appearances": 2
+    },
+    {
+      "id": 1455,
+      "title": "Claude Code 2.1.219：DirectoryAddedフックで作業ディレクトリ追加を検知",
+      "point": "`/add-dir`実行時やSDKの`register_repo_root`呼び出し後に発火する`DirectoryAdded`フックが追加された。セッション中に動的に作業ディレクトリが増えたタイミングをフック側で捕捉し、ログ記録や追加の権限チェックなどの自動化に使える。",
+      "source_title": "Claude Code更新 プロンプト削減・sandbox強化【7/24〜30】",
+      "source_url": "https://blog.serverworks.co.jp/2026/08/01/190000",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化"
+      ],
+      "first_date": "2026-07-26",
+      "last_date": "2026-08-02",
+      "appearances": 2
+    },
+    {
+      "id": 1527,
+      "title": "Claudeの共有チャット・ArtifactsがGoogle検索結果に露出していた問題",
+      "point": "7/25、Redditの投稿を発端に「site:claude.ai/share」で検索すると共有チャットやArtifactsが多数ヒットすることが判明。患者名入りの医療記録、子どもの氏名・電話番号、暗号資産ウォレットのシードフレーズ、未公開の企業文書などが露出していた。原因は共有ページにnoindexメタタグが未設定だったこと。外部サイトに共有リンクが貼られて発見された場合、検索エンジンはページ本文のnoindex指示を読めずURLだけインデックスしてしまう。Anthropicは7/26までにrobots.txtを更新し、Googleは削除を進めた（報道時点でBingには一部残存）。社内文書に共有リンクを貼る際は貼り先が外部アクセス可能かの確認を推奨。",
+      "source_title": "Claude Code更新 プロンプト削減・sandbox強化【7/24〜30】",
+      "source_url": "https://blog.serverworks.co.jp/2026/08/01/190000",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-02",
+      "last_date": "2026-08-02",
+      "appearances": 2
+    },
+    {
+      "id": 1528,
+      "title": "Claude Code v2.1.219：sandbox.network.strictAllowlistで許可外ホストへの通信を確認なしで拒否",
+      "point": "サンドボックス化されたBashコマンドが許可リスト外のドメインへ初回アクセスする際、従来は確認プロンプトが出ていたが、`sandbox.network.strictAllowlist: true`にすると確認を挟まず即座に拒否するようになった。ユーザー設定・管理設定・CLIの`--settings`からのみ有効で、プロジェクトの`.claude/settings.json`には効かない。無人運用やCI/CDで想定外の通信を確実に遮断したい場面向け。",
+      "source_title": "Claude Code更新 プロンプト削減・sandbox強化【7/24〜30】",
+      "source_url": "https://blog.serverworks.co.jp/2026/08/01/190000",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-08-02",
+      "last_date": "2026-08-02",
+      "appearances": 2
+    },
+    {
+      "id": 1530,
+      "title": "Anthropic「AI for Science」希少疾患研究助成金、本日8/2が応募締切",
+      "point": "7/20発表の希少疾患研究プログラムで、対象チームは最大6か月分・5万ドル相当のClaudeクレジットを受け取れる。基礎研究者向けトラックと、希少疾患の臨床開発を加速する早期バイオテック向けトラックの2本立て。基礎研究トラックはMonarch Initiativeとの提携で同団体の希少疾患リソースを活用・貢献する形。応募締切は太平洋時間8/2 23:59。研究機関または該当バイオテックへの所属が要件。",
+      "source_title": "Apply for Anthropic's AI for Science rare disease research grants",
+      "source_url": "https://www.anthropic.com/news/rare-disease-research-grants",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-02",
+      "last_date": "2026-08-02",
+      "appearances": 2
     },
     {
       "id": 1512,
@@ -9167,6 +9251,31 @@
       "appearances": 2
     },
     {
+      "id": 1529,
+      "title": "skill-doctorコマンドの実装形式がlocalからlocal-jsxに変更（未文書化）",
+      "point": "未使用スキルを可視化する`skill-doctor`コマンドが、v2.1.220でCLI抽出データ上`local`から`local-jsx`（ターミナル上で対話的UIパネルを描画する実装形式）に変わっていることが確認された。公式CHANGELOGには記載がなく、`claude -p`のような非対話モードで実行すると出力が得られない。プレーンテキストから対話型UIへの強化とみられるが詳細は未公開。",
+      "source_title": "Claude Code更新 プロンプト削減・sandbox強化【7/24〜30】",
+      "source_url": "https://blog.serverworks.co.jp/2026/08/01/190000",
+      "tags": [],
+      "first_date": "2026-08-02",
+      "last_date": "2026-08-02",
+      "appearances": 1
+    },
+    {
+      "id": 1531,
+      "title": "Claude Opus 4.1、8/5にAPI提供終了（新規）",
+      "point": "`claude-opus-4-1-20250805`は6/5に非推奨化されており、8/5にAPIから完全に提供終了となる。以降このモデルIDへのリクエストはエラーになる。移行先として推奨されているのはClaude Opus 4.8で、標準トークン価格は入力$5/出力$25（Opus 4.1の入力$15/出力$75の約1/3）。Opus 4.1を指定したままの連携が残っている場合、早めの切り替え確認が必要。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-08-02",
+      "last_date": "2026-08-02",
+      "appearances": 1
+    },
+    {
       "id": 1516,
       "title": "Anthropic、サイバーセキュリティ評価中の実インシデント3件を公表",
       "point": "Anthropicは141,006件のテストセッションを精査し、Claude Opus 4.7・Claude Mythos 5・非公開の内部研究モデルが標準的な安全対策を欠く評価環境で誤ってインターネットに接続し、弱いパスワードや未認証エンドポイントといった基本的手法で実在3組織のインフラに侵入していたと公表した。7月23日に全サイバー評価を停止し、7月27日までに影響組織へ通知（うち2組織は連絡を受けるまで気づいていなかった）。なお非公開の新モデルは、対象が実環境だと気づいた時点で自律的に攻撃を停止したという。",
@@ -9746,21 +9855,6 @@
       "appearances": 1
     },
     {
-      "id": 1455,
-      "title": "Claude Code 2.1.219：DirectoryAddedフックで作業ディレクトリ追加を検知",
-      "point": "`/add-dir`実行時やSDKの`register_repo_root`でセッション中に新しい作業ディレクトリが登録された際、`DirectoryAdded`フックが発火するようになった。ディレクトリ追加時に自動でlintやポリシーチェックを走らせるなどの自動化に使える。",
-      "source_title": "Claude Code changelog - Claude Code Docs",
-      "source_url": "https://code.claude.com/docs/en/changelog",
-      "tags": [
-        "Claude Code",
-        "API",
-        "自動化"
-      ],
-      "first_date": "2026-07-26",
-      "last_date": "2026-07-26",
-      "appearances": 1
-    },
-    {
       "id": 1457,
       "title": "Claude Code 2.1.219：`claude mcp list`・`/mcp`が接続失敗時にHTTPステータスとエラー文言を表示",
       "point": "MCPサーバーへの接続に失敗した際、これまで原因が分かりにくかったが、HTTPステータスコードとエラーメッセージが表示されるようになった。設定値に前後の空白が紛れ込んでいる場合の警告も追加され、MCP接続トラブルの切り分けが速くなる。",
@@ -9956,20 +10050,6 @@
       ],
       "first_date": "2026-07-23",
       "last_date": "2026-07-23",
-      "appearances": 1
-    },
-    {
-      "id": 1414,
-      "title": "Claude Developer Platform：旧Workbenchと実験的プロンプトAPIが8/17に終了",
-      "point": "platform.claude.com/workbenchの旧Workbenchと`generate_prompt`等の実験的プロンプトAPIが2026年8月17日でアクセス終了。保存済みプロンプト・変数・evalは新Workbenchで非対応のため、組織設定のバナーから事前エクスポートが必要。",
-      "source_title": "Claude Developer Platform release notes",
-      "source_url": "https://docs.claude.com/en/release-notes/overview",
-      "tags": [
-        "API",
-        "プロンプト"
-      ],
-      "first_date": "2026-07-22",
-      "last_date": "2026-07-22",
       "appearances": 1
     },
     {
@@ -17433,6 +17513,13 @@
   ],
   "daily": [
     {
+      "date": "2026-08-02",
+      "highlights": [
+        "Claudeの共有チャット・Artifactsが検索エンジンにインデックスされていた問題が発覚 — `claude.ai/share`のページにnoindexタグが設定されておらず、医療記録や暗号資産のシードフレーズなど機微情報を含む共有リンクがGoogle検索でヒットする状態になっていた。Anthropicは7/26までにrobots.txt側でnoindex対応済み。",
+        "Anthropicがシステムプロンプトを80%以上削減してもコーディング評価スコアが落ちなかった事例を公開 — 「細かいルールを列挙する」から「モデルの判断力に任せる」への転換を6つの指針で整理。CLAUDE.mdの書き方の参考になる。"
+      ]
+    },
+    {
       "date": "2026-08-01",
       "highlights": [
         "AnthropicがClaudeによる実インシデント3件を公表 — Opus 4.7・Mythos 5・内部研究モデルが、サイバーセキュリティ評価中の設定ミスでインターネットに接続し、脆弱なパスワードや未認証エンドポイントを突いて実在3組織に侵入していたことが判明。",
@@ -18387,5 +18474,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-01T08:00:04.267491"
+  "generated_at": "2026-08-02T08:00:05.307317"
 }
