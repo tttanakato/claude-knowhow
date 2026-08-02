@@ -1811,6 +1811,20 @@
       "appearances": 7
     },
     {
+      "id": 1541,
+      "title": "MCPを本番で守るにはAPIゲートウェイだけでは不十分",
+      "point": "InfoQの記事「Securing MCP in Production: Defense-in-Depth Beyond the Gateway」を紹介する内容で、「ゲートウェイを置けば安心」という考え方を明確に否定。MCPサーバーを本番投入する際は、ゲートウェイでの認可に加えてツール個別の権限スコープ設定やログ監査など、多層的な防御設計が必要と指摘している。",
+      "source_title": "MCPを本番で守るには、ゲートウェイだけでは足りない",
+      "source_url": "https://papoo.work/doc/8bb320c2ce0ee342",
+      "tags": [
+        "API",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-03",
+      "last_date": "2026-08-03",
+      "appearances": 6
+    },
+    {
       "id": 1465,
       "title": "フォールバックの`\"default\"`モードで拒否時の自動退避が可能に",
       "point": "`fallbacks`パラメータに`\"default\"`を指定すると、安全分類器に拒否されたリクエストをAnthropic推奨のフォールバックモデルへ自動的に再ルーティングできる。ベータ機能で`server-side-fallback-2026-07-01`ヘッダーが必要。落ちやすいプロンプトを本番運用する際の可用性向上に有効。",
@@ -3072,6 +3086,21 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1537,
+      "title": "Claude Opus 5：プロンプトインジェクション耐性がベンチマークで有意に向上",
+      "point": "セキュリティ研究者Bruce Schneierが紹介したIPI（間接プロンプトインジェクション）benchmarkの結果、15回試行時の攻撃成功率がOpus 4.8の5.5%からOpus 5では2.0%に低下。単発試行でも0.5%から0.2%へ改善しており、Sonnet 5より良好な数値だったという。エージェントに外部データを読ませる用途でのリスク低減材料として参考になる。",
+      "source_title": "Claude Opus 5はプロンプト注入にかなり強くなった、という話",
+      "source_url": "https://papoo.work/doc/fbadd6d3299e3201",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-08-03",
+      "last_date": "2026-08-03",
+      "appearances": 4
     },
     {
       "id": 1448,
@@ -6399,6 +6428,20 @@
       "appearances": 3
     },
     {
+      "id": 1540,
+      "title": "MCPが「状態を持たない」設計に刷新：2026-07-28仕様の要点",
+      "point": "Model Context Protocolの2026-07-28仕様で、AIエージェントが外部ツール・ファイル・サービスにアクセスする際の通信規格がステートレス方向に刷新された。あわせてOAuth・OIDCによる認可強化、Apps/Tasks向けのバージョン管理された拡張仕様なども導入され、企業での本格運用を意識した仕様変更と説明されている。",
+      "source_title": "MCPが「状態を持たない」設計に変わった話——2026-07-28仕様で何が本当に変わったのか",
+      "source_url": "https://papoo.work/doc/30e2ead5d81dc315",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-03",
+      "last_date": "2026-08-03",
+      "appearances": 2
+    },
+    {
       "id": 1414,
       "title": "Claude Developer Platform：旧Workbenchと実験的プロンプトAPIが8/17に終了",
       "point": "レガシーのWorkbenchおよび実験的prompt tools APIへのアクセスが8/17に終了する。同機能に依存した社内ツールやスクリプトがある場合、後継のAPI・UIへの移行確認を8月中に済ませておく必要がある。",
@@ -9249,6 +9292,74 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1536,
+      "title": "GoogleがAnthropicに最大400億ドル投資へ（新規）",
+      "point": "Bloombergの報道によると、GoogleがAnthropicに対しまず100億ドルを現金で投資し、条件を満たせば追加で300億ドルを投じる可能性がある計画を検討している。AI覇権争いにおける「同盟とライバル」関係が一段と複雑になっているとの指摘があり、クラウド計算資源の提供元と競合の距離感が業界内で話題になっている。",
+      "source_title": "GoogleがAnthropicに最大400億ドル投資へ、AI覇権争いの\"同盟とライバル\"がさらにややこしくなる",
+      "source_url": "https://papoo.work/doc/8eecdd9c4a0291cf",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-03",
+      "last_date": "2026-08-03",
+      "appearances": 1
+    },
+    {
+      "id": 1538,
+      "title": "Anthropicの暗号解析結果：AIは「発明」より「しつこさ」で強みを発揮（新規）",
+      "point": "Anthropicが公開した2件の暗号解析結果を暗号研究者Matthew Greenが分析。AIがゼロから独創的な数学を生み出すというより、既存の手法を粘り強く組み合わせて研究者が見落とした穴を突く点に強みがあるとの見方を紹介している。コード監査やセキュリティレビューにClaudeを使う際、「新しい発見」より「既知の弱点の徹底的な洗い出し」を期待する方が実態に合う可能性がある。",
+      "source_title": "Anthropicの暗号解析結果、AIは「発明」よりしつこさで強いのかもしれない",
+      "source_url": "https://papoo.work/doc/1a6a6bd9509e8fb1",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-03",
+      "last_date": "2026-08-03",
+      "appearances": 1
+    },
+    {
+      "id": 1539,
+      "title": "API設計の落とし穴：「人間には通るがAIエージェントには通らない」型のズレ（新規）",
+      "point": "API仕様書で「出力はnumber型だが実際はstring型で返る」といった型のズレがあると、人間の開発者は経験的に気づいて回避できるが、AIエージェントはドキュメント通りに実装してそのまま処理が落ちてしまう。テストも人間向けに書かれていてString()で暗黙変換されるため、バグが見逃されやすい。対処としては出力側を変えるより、入力側の受け入れ範囲を広げる方が安全とされる。MCPツール定義やAPI連携をClaudeに書かせる際に注意したい観点。",
+      "source_title": "API設計でいちばん怖いのは「人間には通るけど、AIには通らないこと」だった",
+      "source_url": "https://papoo.work/doc/1f877ba736052894",
+      "tags": [
+        "API",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-03",
+      "last_date": "2026-08-03",
+      "appearances": 1
+    },
+    {
+      "id": 1542,
+      "title": "Anthropic、オープンウェイトモデルへの見解を表明（新規）",
+      "point": "Anthropic CEOのDario Amodeiが、中国発を含むオープンウェイトモデルの利用規制を巡る議論に対し「Anthropicはオープンウェイトモデル自体の禁止を主張したことはない」と明言。懸念の本質はチップ流出・蒸留（distillation）による能力キャッチアップと位置づけ、対策として先端チップの禁輸強化、産業規模の蒸留取り締まり、オープン・クローズド問わず全ての高性能モデルへの安全性テスト義務化の3点を提案している。",
+      "source_title": "Our position on open-weights models",
+      "source_url": "https://www.anthropic.com/news/position-open-weights-models",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-08-03",
+      "last_date": "2026-08-03",
+      "appearances": 1
+    },
+    {
+      "id": 1543,
+      "title": "Anthropic、Public First Actionへ追加2000万ドルを寄付（新規）",
+      "point": "AnthropicがAI政策に関する公共理解の促進などを掲げる団体Public First Actionへ、追加で2000万ドルを寄付すると発表。AI企業による政策・世論形成への関与が拡大している動きの一つで、業界の政策的影響力を巡る議論の材料として押さえておきたい。",
+      "source_title": "Anthropic is donating another $20 million to Public First Action",
+      "source_url": "https://www.anthropic.com/news/donation-public-first-action",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-03",
+      "last_date": "2026-08-03",
+      "appearances": 1
     },
     {
       "id": 1529,
@@ -17513,6 +17624,13 @@
   ],
   "daily": [
     {
+      "date": "2026-08-03",
+      "highlights": [
+        "GoogleがAnthropicに最大400億ドル投資へ — まず100億ドルを現金投資、条件達成でさらに300億ドルを追加投資する計画とBloombergが報道。AI覇権争いの構図が一段と複雑に。",
+        "Claude Opus 5、プロンプトインジェクション耐性が大幅向上 — IPI benchmarkで15回試行時の攻撃成功率がOpus 4.8の5.5%からOpus 5では2.0%に低下。単発試行でも0.5%→0.2%。"
+      ]
+    },
+    {
       "date": "2026-08-02",
       "highlights": [
         "Claudeの共有チャット・Artifactsが検索エンジンにインデックスされていた問題が発覚 — `claude.ai/share`のページにnoindexタグが設定されておらず、医療記録や暗号資産のシードフレーズなど機微情報を含む共有リンクがGoogle検索でヒットする状態になっていた。Anthropicは7/26までにrobots.txt側でnoindex対応済み。",
@@ -18474,5 +18592,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-02T08:00:05.307317"
+  "generated_at": "2026-08-03T08:00:04.635065"
 }
