@@ -813,6 +813,20 @@
       "appearances": 11
     },
     {
+      "id": 1551,
+      "title": "Few-shot例示でフォーマット・スタイルを固定する",
+      "point": "Claude 4.x系は例示の細部まで模倣するため、望ましい挙動と一致した例のみを与え、避けたいパターンを混入させないことが重要。",
+      "source_title": "Prompt engineering best practices for 2026",
+      "source_url": "https://claude.com/blog/best-practices-for-prompt-engineering",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-08-04",
+      "last_date": "2026-08-04",
+      "appearances": 10
+    },
+    {
       "id": 1453,
       "title": "Claude Code 2.1.219：ネストサブエージェントの既定深度が3階層に拡大",
       "point": "7/23版で「サブエージェントは既定でネストしたサブエージェントを生成しない」に変更された直後、7/24版で方針転換。既定の最大ネスト深度が1から3に拡大された。無効化したい場合は環境変数`CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=1`を設定する。",
@@ -1015,6 +1029,17 @@
       "first_date": "2026-06-08",
       "last_date": "2026-06-08",
       "appearances": 10
+    },
+    {
+      "id": 1556,
+      "title": "Advisor toolに`max_tokens`パラメータが追加",
+      "point": "advisorツールの出力トークン数を`tools[].max_tokens`で上限設定できるようになり、フルレングスの応答が不要なワークロードでレイテンシとコストを削減できる。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [],
+      "first_date": "2026-08-04",
+      "last_date": "2026-08-04",
+      "appearances": 9
     },
     {
       "id": 166,
@@ -1565,6 +1590,17 @@
       "appearances": 8
     },
     {
+      "id": 1549,
+      "title": "`permissions.deny`で危険コマンドを一括ブロック",
+      "point": "`~/.claude/settings.json`の`permissions.deny`で特定コマンドを禁止、`permissions.ask`で確認必須にできる。`--dangerously-skip-permissions`使用時も優先される。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [],
+      "first_date": "2026-08-04",
+      "last_date": "2026-08-04",
+      "appearances": 7
+    },
+    {
       "id": 1421,
       "title": "`/context` がコンテキストウィンドウ超過時に明示警告",
       "point": "v2.1.216で、会話がコンテキストウィンドウを超えた際に`/context`が明示的な警告を表示し、`/compact`失敗時もエラーとして表示されるよう改善。上限超過に気付きやすくなった。",
@@ -1809,6 +1845,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1554,
+      "title": "`/goal`コマンドで完了条件まで自動継続",
+      "point": "完了条件を`/goal`で指定すると、Claude Codeが複数ターンにわたり自律的に作業を継続する。長時間タスクの手離れが良くなる。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-04",
+      "last_date": "2026-08-04",
+      "appearances": 6
     },
     {
       "id": 1541,
@@ -3088,6 +3137,30 @@
       "appearances": 5
     },
     {
+      "id": 1548,
+      "title": "`!`コマンドでbashを直接実行",
+      "point": "行頭に`!`を付けて入力すると、Claudeの解釈を挟まずシェルコマンドをその場で実行できる。ターミナルを行き来する手間が減る。",
+      "source_title": "24 Claude Code Tips",
+      "source_url": "https://dev.to/oikon/24-claude-code-tips-claudecodeadventcalendar-52b5",
+      "tags": [],
+      "first_date": "2026-08-04",
+      "last_date": "2026-08-04",
+      "appearances": 4
+    },
+    {
+      "id": 1552,
+      "title": "Chain-of-Thoughtで複雑タスクの中間エラーを検出",
+      "point": "中間ステップを言語化させると、最終出力に流れ込む前にエラーを捕捉しやすくなる。複雑なタスクほど効果が出る。",
+      "source_title": "Prompt engineering best practices for 2026",
+      "source_url": "https://claude.com/blog/best-practices-for-prompt-engineering",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-08-04",
+      "last_date": "2026-08-04",
+      "appearances": 4
+    },
+    {
       "id": 1537,
       "title": "Claude Opus 5：プロンプトインジェクション耐性がベンチマークで有意に向上",
       "point": "セキュリティ研究者Bruce Schneierが紹介したIPI（間接プロンプトインジェクション）benchmarkの結果、15回試行時の攻撃成功率がOpus 4.8の5.5%からOpus 5では2.0%に低下。単発試行でも0.5%から0.2%へ改善しており、Sonnet 5より良好な数値だったという。エージェントに外部データを読ませる用途でのリスク低減材料として参考になる。",
@@ -4311,6 +4384,30 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1547,
+      "title": "`/export`コマンドで会話全体をファイル保存",
+      "point": "Claude Codeの`/export`で対話ログをファイルまたはクリップボードに書き出せる。共有やデバッグの振り返りに便利。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-04",
+      "last_date": "2026-08-04",
+      "appearances": 3
+    },
+    {
+      "id": 1555,
+      "title": "`/config`のOutput Styleを「Explanatory」「Learning」で使い分け",
+      "point": "「Explanatory」は作業しながらフレームワークやパターンを解説（新規コードベース向き）、「Learning」は変更の意図をコーチング形式で伝える。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [],
+      "first_date": "2026-08-04",
+      "last_date": "2026-08-04",
+      "appearances": 3
     },
     {
       "id": 1532,
@@ -6426,6 +6523,30 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1550,
+      "title": "コンテキストは先頭と末尾に重要情報を置く",
+      "point": "Claudeは文脈の先頭・末尾の情報を重視し、中間の内容は軽視されやすい「Lost in the Middle」現象がある。重要な指示は前後に配置する。",
+      "source_title": "Prompt engineering best practices for 2026",
+      "source_url": "https://claude.com/blog/best-practices-for-prompt-engineering",
+      "tags": [],
+      "first_date": "2026-08-04",
+      "last_date": "2026-08-04",
+      "appearances": 2
+    },
+    {
+      "id": 1553,
+      "title": "対話型`/effort`スライダーで思考の深さを調整",
+      "point": "Claude Codeの`/effort`スライダーでタスクごとに推論の深さを直感的に切り替えられる。軽いタスクと重いタスクでコストと精度を使い分けられる。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-04",
+      "last_date": "2026-08-04",
+      "appearances": 2
     },
     {
       "id": 1540,
@@ -17624,6 +17745,13 @@
   ],
   "daily": [
     {
+      "date": "2026-08-04",
+      "highlights": [
+        "Claude Codeの自律性コントロール — `/goal`で完了条件を設定した自律継続と、`/effort`スライダーによる思考深度の調整を組み合わせると長時間タスクの制御性が上がる。",
+        "プロンプト構成の基本「Lost in the Middle」対策 — 重要な指示や情報はコンテキストの先頭・末尾に置くと精度が安定する。"
+      ]
+    },
+    {
       "date": "2026-08-03",
       "highlights": [
         "GoogleがAnthropicに最大400億ドル投資へ — まず100億ドルを現金投資、条件達成でさらに300億ドルを追加投資する計画とBloombergが報道。AI覇権争いの構図が一段と複雑に。",
@@ -18592,5 +18720,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-03T08:00:04.635065"
+  "generated_at": "2026-08-04T15:23:10.831148"
 }
