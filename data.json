@@ -3137,6 +3137,17 @@
       "appearances": 5
     },
     {
+      "id": 1562,
+      "title": "WindowsでのバックグラウンドデーモンがPowerShell 7を優先するよう修正",
+      "point": "グループポリシーでPowerShell 5.1がブロックされる環境で `/background` や `claude --bg` が `uv_spawn` エラーで失敗する不具合を修正。デーモンがPowerShell 7を優先的に使用するようになった。",
+      "source_title": "Claude Code Docs - What's new",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [],
+      "first_date": "2026-08-05",
+      "last_date": "2026-08-05",
+      "appearances": 4
+    },
+    {
       "id": 1548,
       "title": "`!`コマンドでbashを直接実行",
       "point": "行頭に`!`を付けて入力すると、Claudeの解釈を挟まずシェルコマンドをその場で実行できる。ターミナルを行き来する手間が減る。",
@@ -6525,6 +6536,48 @@
       "appearances": 3
     },
     {
+      "id": 1560,
+      "title": "Claude Codeに「Focus view」を追加、ツール実行ログを折りたたみ表示",
+      "point": "チャットメニューのトグルでツール呼び出しの詳細を隠し、ターンごとの要約と実行中インジケーターのみ表示できる。Ctrl+Alt+Fまたはコマンドパレットから切替可能。ログが多い長時間セッションの視認性が向上する。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-05",
+      "last_date": "2026-08-05",
+      "appearances": 2
+    },
+    {
+      "id": 1561,
+      "title": "Claude Opus 4.1、本日8/5にAPI提供終了",
+      "point": "2026年6月5日の非推奨予告から60日、`claude-opus-4-1-20250805` へのリクエストは本日以降エラーになる。Anthropicは同価格帯のOpus 4.8への移行を推奨。モデルID直指定コードは要確認。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-08-05",
+      "last_date": "2026-08-05",
+      "appearances": 2
+    },
+    {
+      "id": 1568,
+      "title": "Skills・Hooks・Subagentsの使い分け指針",
+      "point": "Skillsは「このリポジトリでの定型作業」など再利用可能な専門知識、Hooksはライフサイクルイベントで発火する決定論的処理、Subagentsは独立コンテキストで並列・隔離実行するタスク向けと整理されている。",
+      "source_title": "Claude Code: Hooks, Subagents & Skills Complete Guide (totalum.app)",
+      "source_url": "https://www.totalum.app/blog/claude-code-skills-totalum",
+      "tags": [
+        "自動化",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-08-05",
+      "last_date": "2026-08-05",
+      "appearances": 2
+    },
+    {
       "id": 1550,
       "title": "コンテキストは先頭と末尾に重要情報を置く",
       "point": "Claudeは文脈の先頭・末尾の情報を重視し、中間の内容は軽視されやすい「Lost in the Middle」現象がある。重要な指示は前後に配置する。",
@@ -9413,6 +9466,68 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1563,
+      "title": "PowerShellツールの`>`/`>>`書き込みがUTF-16LEになる不具合を修正",
+      "point": "Windows PowerShell 5.1環境でリダイレクト出力がUTF-16LEで書き込まれ、他ツールがUTF-8として読めない問題を修正。ファイル連携時の文字化けトラブルが解消される。",
+      "source_title": "Claude Code Docs - What's new",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [],
+      "first_date": "2026-08-05",
+      "last_date": "2026-08-05",
+      "appearances": 1
+    },
+    {
+      "id": 1564,
+      "title": "バックグラウンドデーモンが後継の制御ソケットを削除するバグを修正",
+      "point": "入れ替わったバックグラウンドデーモンがシャットダウン時に後継デーモンの制御ソケットを削除してしまい、次のクライアントが正常な後継デーモンを誤って終了させる不具合を修正。",
+      "source_title": "Claude Code Changelog (gradually.ai)",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [],
+      "first_date": "2026-08-05",
+      "last_date": "2026-08-05",
+      "appearances": 1
+    },
+    {
+      "id": 1565,
+      "title": "Auto Mode拒否通知が絵文字途中切断で文字化けする不具合を修正",
+      "point": "長い拒否理由が絵文字の途中で切り詰められると表示が壊れる問題を修正。Auto Modeを多用する自動化フローでの通知可読性が改善された。",
+      "source_title": "Claude Code Changelog (claudefa.st)",
+      "source_url": "https://claudefa.st/blog/guide/changelog",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-08-05",
+      "last_date": "2026-08-05",
+      "appearances": 1
+    },
+    {
+      "id": 1566,
+      "title": "拡張キー対応端末でCtrl+Jが改行を挿入しないバグを修正",
+      "point": "エージェントビューのディスパッチ入力欄で、拡張キーレポーティングに対応した端末においてCtrl+Jで改行が入らない不具合を修正。複数行プロンプト入力の操作性が回復。",
+      "source_title": "Claude Code Updates (releasebot.io)",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-08-05",
+      "last_date": "2026-08-05",
+      "appearances": 1
+    },
+    {
+      "id": 1567,
+      "title": "サブエージェントチームは「補完的スキル」構成の方が高効率",
+      "point": "2026年の分析によると、役割が重複するサブエージェント群より、能力が補完し合うサブエージェント編成の方がタスク効率が高い。チーム設計時は役割の重複を避けるのがポイント。",
+      "source_title": "Claude Skills and Subagents (Towards Data Science)",
+      "source_url": "https://towardsdatascience.com/claude-skills-and-subagents-escaping-the-prompt-engineering-hamster-wheel/",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-05",
+      "last_date": "2026-08-05",
+      "appearances": 1
     },
     {
       "id": 1536,
@@ -17745,6 +17860,13 @@
   ],
   "daily": [
     {
+      "date": "2026-08-05",
+      "highlights": [
+        "Claude Code に「Focus view」が追加 — ツール実行ログを折りたたみ、ターン単位の要約表示に切り替え可能に（Ctrl+Alt+F）。",
+        "Claude Opus 4.1が本日API提供終了 — `claude-opus-4-1-20250805` は今日で退役、Opus 4.8への移行が必須に。"
+      ]
+    },
+    {
       "date": "2026-08-04",
       "highlights": [
         "Claude Codeの自律性コントロール — `/goal`で完了条件を設定した自律継続と、`/effort`スライダーによる思考深度の調整を組み合わせると長時間タスクの制御性が上がる。",
@@ -18720,5 +18842,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-04T15:23:10.831148"
+  "generated_at": "2026-08-05T08:00:05.319792"
 }
