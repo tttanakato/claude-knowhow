@@ -6536,6 +6536,47 @@
       "appearances": 3
     },
     {
+      "id": 1572,
+      "title": "Worktree分離をファイル編集・Bashにも拡張しメインリポジトリを保護",
+      "point": "worktree分離セッションとそのサブエージェントが、あらゆるセッション種別でメインのチェックアウトに対して破壊的なgit操作を実行できてしまう問題を修正。分離の適用範囲がファイル編集・Bash双方に及ぶようになった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-08-06",
+      "last_date": "2026-08-06",
+      "appearances": 2
+    },
+    {
+      "id": 1573,
+      "title": "SendMessage送信前に権限クラシファイアでチェック",
+      "point": "他のエージェントセッションへ`SendMessage`で送る内容を、送信前に権限クラシファイアが評価するよう変更。autoモードの安全性が向上した。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-06",
+      "last_date": "2026-08-06",
+      "appearances": 2
+    },
+    {
+      "id": 1580,
+      "title": "`/ultraplan`機能を廃止",
+      "point": "プランニングをOpus 4.6クラウドセッションに委託する`/ultraplan`機能がClaude Code 2.1.222で廃止された。利用している運用は代替フローへの移行が必要。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-08-06",
+      "last_date": "2026-08-06",
+      "appearances": 2
+    },
+    {
       "id": 1560,
       "title": "Claude Codeに「Focus view」を追加、ツール実行ログを折りたたみ表示",
       "point": "チャットメニューのトグルでツール呼び出しの詳細を隠し、ターンごとの要約と実行中インジケーターのみ表示できる。Ctrl+Alt+Fまたはコマンドパレットから切替可能。ログが多い長時間セッションの視認性が向上する。",
@@ -9466,6 +9507,82 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1574,
+      "title": "`/usage`のMCPサーバー使用量帰属を修正",
+      "point": "MCPサーバーへの使用量帰属が過大計上されていた問題を修正。以後はそのサーバーのツール結果を実際に消費したリクエストのみが計上される。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-06",
+      "last_date": "2026-08-06",
+      "appearances": 1
+    },
+    {
+      "id": 1575,
+      "title": "ブランチpush後に作成したPRとセッションの紐付け不具合を修正",
+      "point": "GitHub REST API経由の作成分も含め、ブランチをpushした後に作成されたプルリクエストがセッションにリンクされない不具合を修正した。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-06",
+      "last_date": "2026-08-06",
+      "appearances": 1
+    },
+    {
+      "id": 1576,
+      "title": "サンドボックス認証情報を`mode: \"mask\"`で保護",
+      "point": "Linux/WSLでサンドボックス化したコマンドは実ファイルの代わりにセンチネル（見せかけ）コピーを読み、egress時のみサンドボックスプロキシが実値に置換する。macOSではファイルマスキングは`deny`にフォールバックする。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-06",
+      "last_date": "2026-08-06",
+      "appearances": 1
+    },
+    {
+      "id": 1577,
+      "title": "claude-apiスキルに`prompt-audit`サブコマンドを追加",
+      "point": "旧モデル向けに書かれたプロンプトやツール説明のパターンを監査する`prompt-audit`サブコマンドが追加された。モデル移行時のプロンプト棚卸しに使える。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-08-06",
+      "last_date": "2026-08-06",
+      "appearances": 1
+    },
+    {
+      "id": 1578,
+      "title": "zshの条件式でBashツールの権限チェックをすり抜けるバグを修正",
+      "point": "zshの`[[ ]]`正規表現条件式内で隠しコマンドを実行でき、権限チェックをバイパスできてしまう問題を修正。該当コマンドは今後権限確認を求められる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-06",
+      "last_date": "2026-08-06",
+      "appearances": 1
+    },
+    {
+      "id": 1579,
+      "title": "Windows PowerShellの引用符パスで権限チェックが誤動作するバグを修正",
+      "point": "引用符を含むパスをPowerShellで扱う際に権限チェックが正しく機能していなかった問題を修正。該当パスは今後承認プロンプトが表示される。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-08-06",
+      "last_date": "2026-08-06",
+      "appearances": 1
     },
     {
       "id": 1563,
@@ -17860,6 +17977,13 @@
   ],
   "daily": [
     {
+      "date": "2026-08-06",
+      "highlights": [
+        "Worktree分離の適用範囲拡大 — サブエージェントを含む全セッション種別で、ファイル編集・Bash実行の両方についてメインリポジトリへの破壊的git操作をブロックするように強化された。",
+        "サンドボックス認証情報の`mode: \"mask\"`保護 — Linux/WSL環境でサンドボックス化したコマンドがマスクされた資格情報のみを参照し、実値はプロキシ経由でのみ流通するようになった。"
+      ]
+    },
+    {
       "date": "2026-08-05",
       "highlights": [
         "Claude Code に「Focus view」が追加 — ツール実行ログを折りたたみ、ターン単位の要約表示に切り替え可能に（Ctrl+Alt+F）。",
@@ -18842,5 +18966,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-05T08:00:05.319792"
+  "generated_at": "2026-08-06T08:00:04.682338"
 }
