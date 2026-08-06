@@ -1294,6 +1294,20 @@
       "appearances": 9
     },
     {
+      "id": 1585,
+      "title": "Claude週次利用上限+50%措置、8/19まで再々延長",
+      "point": "Pro/Max/Team向けのClaude Code週次利用上限+50%特別措置が、当初の期限を超えて2026年8月19日まで延長された。大規模リファクタリングや並列セッションを予定しているなら期限内に使い切りたい。",
+      "source_title": "Anthropic Claude News | August 2026",
+      "source_url": "https://blog.mean.ceo/anthropic-claude-news-august-2026/",
+      "tags": [
+        "Claude Code",
+        "生産性"
+      ],
+      "first_date": "2026-08-07",
+      "last_date": "2026-08-07",
+      "appearances": 8
+    },
+    {
       "id": 1348,
       "title": "ultracodeキーワードが人間以外の入力で誤発火する問題を修正",
       "point": "Webhookペイロードや転送されたPRコメントなど、ユーザーが直接入力していないテキストに含まれる`ultracode`キーワードでopt-inが誤って発動する問題を修正。間接的プロンプトインジェクション対策の一環。",
@@ -2411,6 +2425,23 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1584,
+      "title": "Claude Code 8/6アップデート：オーナーのワイルドカード権限設定とサブエージェントモデル制限の警告表示",
+      "point": "8/6リリースでmanaged settingsに「オーナーのワイルドカードエントリ」が追加され、ワークフローエージェントが要求したサブエージェントモデルが組織側で制限されている場合に警告が表示されるようになった。Bashの権限バイパスや権限プロンプト周りの脆弱性も修正済み。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-08-07",
+      "last_date": "2026-08-07",
+      "appearances": 5
     },
     {
       "id": 1416,
@@ -4395,6 +4426,34 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1586,
+      "title": "MCP 2026-07-28ステートレス仕様がClaudeに本格展開、月間SDKダウンロード4億件超",
+      "point": "MCPの最新仕様がリクエスト/レスポンス型のステートレスコアに移行し、サーバーレス・エッジ環境へのデプロイが容易になった。MCP Apps/Tasksが正式な拡張枠組みとして分離され、月間SDKダウンロード数は前年比4倍の4億件を突破。",
+      "source_title": "MCP 2026-07-28 spec: stateless core, coming to Claude",
+      "source_url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude",
+      "tags": [
+        "API",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-07",
+      "last_date": "2026-08-07",
+      "appearances": 3
+    },
+    {
+      "id": 1589,
+      "title": "Cowork Skills分割戦略：万能スキル1つより専門特化した小さいスキルを複数作る",
+      "point": "70以上のSkillsを検証した実践者によると、全機能を詰め込む「モノリシックスキル」より用途別に分割した専門スキルの方が品質と再利用性が高い。各スキルファイルには「タスク定義・具体例3〜5件・好みのスタイル」を明記するのが推奨される。",
+      "source_title": "Claude Cowork Guide for Power Users: 50+ Tested Tips",
+      "source_url": "https://karozieminski.substack.com/p/claude-cowork-guide-plugins-memory-sub-agents-tips",
+      "tags": [
+        "CLAUDE.md",
+        "製品機能"
+      ],
+      "first_date": "2026-08-07",
+      "last_date": "2026-08-07",
+      "appearances": 3
     },
     {
       "id": 1547,
@@ -6534,6 +6593,36 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1587,
+      "title": "Claude Code並列サブエージェント活用：「3つ使う」のように具体的な数を指定すると精度が上がる",
+      "point": "Claudeは既定では並列実行に慎重なため、「並列化して」ではなく「モジュールごとに3つのサブエージェントを使って」のように数と役割を明示すると、作業範囲の重複を防ぎカバレッジが向上する。各エージェントには「詳細を全部返す」でなく「要約を返す」よう指示するとコンテキスト消費も抑えられる。",
+      "source_title": "How to Use Claude Code Subagents to Parallelize Development",
+      "source_url": "https://zachwills.net/how-to-use-claude-code-subagents-to-parallelize-development/",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-08-07",
+      "last_date": "2026-08-07",
+      "appearances": 2
+    },
+    {
+      "id": 1590,
+      "title": "Anthropic「Claudeにおけるコスト可視化と管理ガイド」を8/4公開",
+      "point": "IT管理者向けに、支出上限の設定、モデルアクセス/ルーティング制御、使用状況分析ダッシュボード（Analytics API含む）、プロンプトキャッシュやバッチ処理によるコスト最適化手法をまとめたガイド。effort制御によるコスト対品質の調整にも言及。",
+      "source_title": "A guide to cost visibility and control in Claude",
+      "source_url": "https://claude.com/blog/a-guide-to-cost-visibility-and-control-in-claude",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-08-07",
+      "last_date": "2026-08-07",
+      "appearances": 2
     },
     {
       "id": 1572,
@@ -9507,6 +9596,32 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1588,
+      "title": "Claude Opus 5の公式プロンプティング指針：「足す」より「引く」で使いこなす（新規）",
+      "point": "Opus 5への公式ガイドは、指示を小出しにするより目標と制約を最初にまとめて渡し、あとは冗長な指示を削ぎ落とす「引き算」のアプローチを推奨。コーディングタスクでは完全な仕様を先に渡し、細かい介入を減らす方が性能を発揮しやすい。",
+      "source_title": "Claude Opus 5のプロンプティング - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/prompting-claude-opus-5",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-08-07",
+      "last_date": "2026-08-07",
+      "appearances": 1
+    },
+    {
+      "id": 1591,
+      "title": "セキュリティ注意喚起：割引Claude再販サービス「Poison Claude」は運営者に入力内容が筒抜け（新規）",
+      "point": "正規料金より5〜15%安いClaudeアクセスを謳う非公式な再販サービスが確認されており、利用者が入力したプロンプトを運営者側が閲覧できる状態になっている。公式チャネル以外の格安Claudeアクセスには注意したい。",
+      "source_title": "Poison Claude Sells Discounted Claude Access While Its Operator Sees Every Customer Prompt",
+      "source_url": "https://thehackernews.com/2026/08/poison-claude-sells-discounted-claude.html",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-08-07",
+      "last_date": "2026-08-07",
+      "appearances": 1
     },
     {
       "id": 1574,
@@ -17977,6 +18092,13 @@
   ],
   "daily": [
     {
+      "date": "2026-08-07",
+      "highlights": [
+        "Claude週次利用上限+50%措置が8/19まで再々延長 — ヘビーユーザーは大型タスクを消化する好機、期限切れに注意",
+        "MCP 2026-07-28ステートレス仕様が本格展開、月間SDKダウンロード4億件超 — サーバーレス/エッジ配備が容易になりMCPサーバー開発のハードルが下がった"
+      ]
+    },
+    {
       "date": "2026-08-06",
       "highlights": [
         "Worktree分離の適用範囲拡大 — サブエージェントを含む全セッション種別で、ファイル編集・Bash実行の両方についてメインリポジトリへの破壊的git操作をブロックするように強化された。",
@@ -18966,5 +19088,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-06T08:00:04.682338"
+  "generated_at": "2026-08-07T08:00:04.800510"
 }
