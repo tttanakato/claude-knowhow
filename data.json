@@ -3168,6 +3168,30 @@
       "appearances": 5
     },
     {
+      "id": 1602,
+      "title": "`!`コマンドでbashを直接実行、Ctrl+Bでバックグラウンド化",
+      "point": "先頭に`!`を付けて入力するとClaudeを介さずシェルコマンドを直接実行できる。Ctrl+Bでバックグラウンド実行も可能。Claude Code 2.1.186以降は`!`実行後の出力に対してClaudeが自動で応答する仕様になっており、`respondToBashCommands`設定で無効化できる。",
+      "source_title": "Bash Mode in Claude Code: Run Shell Commands Without Leaving It",
+      "source_url": "https://wmedia.es/en/tips/claude-code-bash-mode-run-shell-commands",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-10",
+      "last_date": "2026-08-10",
+      "appearances": 4
+    },
+    {
+      "id": 1605,
+      "title": "1会話1タスク原則でコンテキスト汚染を防ぐ",
+      "point": "複数の案件やトピックを1つの会話に混ぜるとcontext rot（コンテキスト量が増えるほど想起精度が落ちる現象）が起きやすい。トークン上限に余裕があっても、新しいトピックは新しい会話で始めるのが基本。",
+      "source_title": "Claude AI Tips and Tricks: 25 Ways to Get Better Results (2026)",
+      "source_url": "https://nexasphere.io/blog/claude-ai-tips-tricks-2026",
+      "tags": [],
+      "first_date": "2026-08-10",
+      "last_date": "2026-08-10",
+      "appearances": 4
+    },
+    {
       "id": 1562,
       "title": "WindowsでのバックグラウンドデーモンがPowerShell 7を優先するよう修正",
       "point": "グループポリシーでPowerShell 5.1がブロックされる環境で `/background` や `claude --bg` が `uv_spawn` エラーで失敗する不具合を修正。デーモンがPowerShell 7を優先的に使用するようになった。",
@@ -4428,6 +4452,17 @@
       "appearances": 4
     },
     {
+      "id": 1547,
+      "title": "`/export`コマンドで会話全体をファイル保存",
+      "point": "`/export`で現在のセッション全体をプレーンテキストとしてクリップボードまたはファイルに書き出せる。`/export ファイル名`で対話なしに直接保存も可能。ANSIエスケープコードは自動で除去され、どのエディタでも読める形式になる。",
+      "source_title": "Claude Code /export: Save AI Conversations Before They're Gone",
+      "source_url": "https://blog.vincentqiao.com/en/posts/claude-code-export/",
+      "tags": [],
+      "first_date": "2026-08-04",
+      "last_date": "2026-08-10",
+      "appearances": 3
+    },
+    {
       "id": 1586,
       "title": "MCP 2026-07-28ステートレス仕様がClaudeに本格展開、月間SDKダウンロード4億件超",
       "point": "MCPの最新仕様がリクエスト/レスポンス型のステートレスコアに移行し、サーバーレス・エッジ環境へのデプロイが容易になった。MCP Apps/Tasksが正式な拡張枠組みとして分離され、月間SDKダウンロード数は前年比4倍の4億件を突破。",
@@ -4453,19 +4488,6 @@
       ],
       "first_date": "2026-08-07",
       "last_date": "2026-08-07",
-      "appearances": 3
-    },
-    {
-      "id": 1547,
-      "title": "`/export`コマンドで会話全体をファイル保存",
-      "point": "Claude Codeの`/export`で対話ログをファイルまたはクリップボードに書き出せる。共有やデバッグの振り返りに便利。",
-      "source_title": "Claude Code power user tips",
-      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
-      "tags": [
-        "Claude Code"
-      ],
-      "first_date": "2026-08-04",
-      "last_date": "2026-08-04",
       "appearances": 3
     },
     {
@@ -6593,6 +6615,59 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 97,
+      "title": "「役割＋背景＋タスク＋形式」の4要素でプロンプトを構成する",
+      "point": "Claude Codeへの指示は「どんな専門家として振る舞ってほしいか（役割）」「前提となる状況（背景）」「具体的にやってほしいこと（タスク）」「出力の形式」の4要素で組み立てると精度が上がる。曖昧な一文投げより手戻りが減る。",
+      "source_title": "Claude Codeのプロンプト設計術｜AIへの指示精度を上げる7つのテクニック",
+      "source_url": "https://start-link.jp/hubspot-ai/ai/claude-code-practice/claude-code-prompt-engineering",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-03-08",
+      "last_date": "2026-08-10",
+      "appearances": 2
+    },
+    {
+      "id": 1603,
+      "title": "Claude Opus 5公式プロンプティング指針：検証指示は「引く」方が効果的",
+      "point": "Anthropic公式ガイドによれば、Opus 5は自己検証の精度が高く、「再確認して」「サブエージェントで検証して」といった指示を追加すると過剰検証でトークンを浪費し品質もむしろ下がる。旧モデル向けに書いた防御的な指示を削除する方が効果的とされる。",
+      "source_title": "Prompting Claude Opus 5 (Anthropic公式)",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-08-10",
+      "last_date": "2026-08-10",
+      "appearances": 2
+    },
+    {
+      "id": 1604,
+      "title": "サブエージェントを使うべきでないケース",
+      "point": "頻繁なやり取りや反復修正が必要な作業、フェーズ間でメインの文脈を多く共有する作業（方針決定や対話を伴う計画詰めなど）、素早い小さな変更にはサブエージェントを使うべきでない。サブエージェントはコンテキストがリセットされるため、メインで蓄積した背景を渡し直すコストが発生する。",
+      "source_title": "Claude Codeに\"チーム作業\"をさせる｜サブエージェントで大規模タスクを分割処理する",
+      "source_url": "https://blog.serverworks.co.jp/claude-code-subagents-guide",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-10",
+      "last_date": "2026-08-10",
+      "appearances": 2
+    },
+    {
+      "id": 1606,
+      "title": "`~/.claude/settings.json`の`permissions.deny`で危険コマンドを一括ブロック",
+      "point": "`permissions.deny`に登録したコマンドは例外なく実行を禁止でき、`permissions.ask`は実行前に確認を挟める。これらの設定は`--dangerously-skip-permissions`使用時でも優先される安全弁として機能する。",
+      "source_title": "DEV Community: 24 Claude Code Tips",
+      "source_url": "https://dev.to/oikon/24-claude-code-tips-claudecodeadventcalendar-52b5",
+      "tags": [],
+      "first_date": "2026-08-10",
+      "last_date": "2026-08-10",
+      "appearances": 2
     },
     {
       "id": 1587,
@@ -9490,19 +9565,6 @@
       "appearances": 2
     },
     {
-      "id": 97,
-      "title": "「役割＋背景＋タスク＋形式」の4要素でプロンプトを構成する",
-      "point": "Claudeを「天才的だが社内事情を知らない新入社員」と考え、①役割（何者として行動するか）、②背景（なぜこのタスクが重要か）、③タスク（何をするか）、④形式（どう出力するか）の4要素を明確に伝えると出力品質が安定する。",
-      "source_title": "As power users migrate to Claude.ai | Erkan's Field Diary",
-      "source_url": "https://erkansaka.net/2026/03/01/claude-ai-prompting-productivity-guide/",
-      "tags": [
-        "プロンプト"
-      ],
-      "first_date": "2026-03-08",
-      "last_date": "2026-03-08",
-      "appearances": 2
-    },
-    {
       "id": 98,
       "title": "Claude Code 2.1.71新機能：`/loop`コマンドで定期タスクを自動実行",
       "point": "2026年3月7日リリースのClaude Code 2.1.71で`/loop`コマンドが追加された。セッション内でプロンプトやスラッシュコマンドを一定間隔で自動実行できる。繰り返し作業の自動化に活用できる。",
@@ -9596,6 +9658,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1601,
+      "title": "CLAUDE.mdの階層的読み込みとサブディレクトリの遅延読み込み",
+      "point": "CLAUDE.mdは上書きではなく全階層が連結され、ルート側が先・作業ディレクトリ側が後の順でコンテキストに入る。サブディレクトリのCLAUDE.mdは起動時ではなく、Claudeがそのディレクトリ内のファイルを読むタイミングで統合されるため、モノレポでも無駄なくルールを管理できる。読み込み状況は`/context`のMemory filesで確認可能。",
+      "source_title": "Claude Codeの CLAUDE.md は階層的に読み込まれる",
+      "source_url": "https://zenn.dev/purpom/articles/claude-md-hierarchy",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-08-10",
+      "last_date": "2026-08-10",
+      "appearances": 1
     },
     {
       "id": 1588,
@@ -18092,6 +18167,13 @@
   ],
   "daily": [
     {
+      "date": "2026-08-10",
+      "highlights": [
+        "CLAUDE.mdは階層的に連結される — ルート→作業ディレクトリの順で全部つながる。サブディレクトリのCLAUDE.mdは遅延読み込みでコンテキストを圧迫しない。",
+        "Claude Opus 5は「足す」より「引く」プロンプト設計 — 「再確認して」等の検証指示はOpus 5では逆効果になりやすく、公式ガイドが削除を推奨している。"
+      ]
+    },
+    {
       "date": "2026-08-07",
       "highlights": [
         "Claude週次利用上限+50%措置が8/19まで再々延長 — ヘビーユーザーは大型タスクを消化する好機、期限切れに注意",
@@ -19088,5 +19170,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-09T08:00:04.852403"
+  "generated_at": "2026-08-10T08:00:04.915642"
 }
