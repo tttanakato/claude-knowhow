@@ -4452,6 +4452,19 @@
       "appearances": 4
     },
     {
+      "id": 1615,
+      "title": "archiveプラグインソースにSHA-256ピン留めを追加",
+      "point": "HTTPS経由のzipアーカイブからgit/npmなしでプラグインをインストールできる `archive` プラグインソースに、SHA-256のピン留めオプションが追加され、配布物の改ざん検知が可能になった。",
+      "source_title": "Changelog - Claude Code Docs (v2.1.224, 2026/08/07)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-11",
+      "last_date": "2026-08-11",
+      "appearances": 3
+    },
+    {
       "id": 1547,
       "title": "`/export`コマンドで会話全体をファイル保存",
       "point": "`/export`で現在のセッション全体をプレーンテキストとしてクリップボードまたはファイルに書き出せる。`/export ファイル名`で対話なしに直接保存も可能。ANSIエスケープコードは自動で除去され、どのエディタでも読める形式になる。",
@@ -6615,6 +6628,28 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1614,
+      "title": "サンドボックス認証情報マスキングにJWT対応・AWS SigV4再署名を追加",
+      "point": "サンドボックスの認証情報ファイル保護に、構造化された値を抽出する `extract` オプション、JWTクレームをマスクする `decode: \"jwt\"`、AWS SigV4リクエストを再署名する `awsPairs`/`sigv4` が追加された。",
+      "source_title": "Changelog - Claude Code Docs (v2.1.224, 2026/08/07)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-11",
+      "last_date": "2026-08-11",
+      "appearances": 2
+    },
+    {
+      "id": 1616,
+      "title": "クラウドセッションに `/teleport` のヒント表示が追加",
+      "point": "クラウド上のセッションで `claude --teleport <session id>` を使ってローカルに作業を引き継ぐ方法を案内する `/teleport` ヒントが表示されるようになった。",
+      "source_title": "Changelog - Claude Code Docs (v2.1.223, 2026/08/06)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-11",
+      "last_date": "2026-08-11",
+      "appearances": 2
     },
     {
       "id": 97,
@@ -9658,6 +9693,73 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1610,
+      "title": "`claude agents` にワークスペース信頼プロンプトを追加",
+      "point": "未信頼のディレクトリで `claude agents` を実行した際、通常の `claude` コマンドと同様にワークスペースを信頼するか確認するプロンプトが表示されるようになった。誤って未確認のリポジトリでエージェントを走らせるリスクを抑えられる。",
+      "source_title": "Changelog - Claude Code Docs (v2.1.225, 2026/08/08)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-08-11",
+      "last_date": "2026-08-11",
+      "appearances": 1
+    },
+    {
+      "id": 1611,
+      "title": "Remote Controlセッションへ名前を指定してメッセージを開始できるように",
+      "point": "`SendMessage` で他マシンのRemote Controlセッションに対し、相手からの返信を待たずに自分から名前指定（`ListAgents` で `name [ref]` 表示）で会話を開始できるようになった。複数端末でのセッション管理が柔軟に。",
+      "source_title": "Changelog - Claude Code Docs (v2.1.225, 2026/08/08)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-08-11",
+      "last_date": "2026-08-11",
+      "appearances": 1
+    },
+    {
+      "id": 1612,
+      "title": "クロスセッションSendMessageでマシンをまたいだセッション間通信が可能に",
+      "point": "Claude Codeのセッション同士が、同一ユーザーが保有する複数マシン上であっても `SendMessage`／`ListAgents` で直接メッセージをやり取りできるようになった（macOS・Linux対応）。並行作業の連携に有用。",
+      "source_title": "Changelog - Claude Code Docs (v2.1.224, 2026/08/07)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-08-11",
+      "last_date": "2026-08-11",
+      "appearances": 1
+    },
+    {
+      "id": 1613,
+      "title": "`crossSessionInbound`／`dialogExpiry` 設定でセッション間メッセージの承認制御が可能に",
+      "point": "権限バイパス状態で動作中のセッションへ届くクロスセッションメッセージを、承認待ちとして保留できる新設定が追加。誤った自動実行を防ぎつつ、他セッションへのメッセージは自動配信される。",
+      "source_title": "Changelog - Claude Code Docs (v2.1.224, 2026/08/07)",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-11",
+      "last_date": "2026-08-11",
+      "appearances": 1
+    },
+    {
+      "id": 1617,
+      "title": "スキル・プラグインのセキュリティスキャン機能（Enterprise, beta）",
+      "point": "Enterpriseプランで、サードパーティ製スキルやプラグインのアップロード・編集時に悪意あるコンテンツを自動検査するセキュリティスキャンを有効化できるようになった。",
+      "source_title": "Release notes | Claude Help Center (2026/08/06)",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-11",
+      "last_date": "2026-08-11",
+      "appearances": 1
     },
     {
       "id": 1601,
@@ -18167,6 +18269,13 @@
   ],
   "daily": [
     {
+      "date": "2026-08-11",
+      "highlights": [
+        "セッション間メッセージング（クロスセッションSendMessage） — Claude Codeのセッション同士が複数マシンをまたいで直接メッセージを送り合えるようになった。",
+        "スキル・プラグインのセキュリティスキャン（Enterprise, beta） — サードパーティ製スキルやプラグインのアップロード・編集時に悪意あるコードを自動検査できる機能が追加。"
+      ]
+    },
+    {
       "date": "2026-08-10",
       "highlights": [
         "CLAUDE.mdは階層的に連結される — ルート→作業ディレクトリの順で全部つながる。サブディレクトリのCLAUDE.mdは遅延読み込みでコンテキストを圧迫しない。",
@@ -19170,5 +19279,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-10T08:00:04.915642"
+  "generated_at": "2026-08-11T08:00:05.222288"
 }
