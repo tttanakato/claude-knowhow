@@ -4452,6 +4452,30 @@
       "appearances": 4
     },
     {
+      "id": 1625,
+      "title": "MCP OAuthのmacOSキーチェーンタイムアウトによる認証エラーを修正",
+      "point": "macOSでキーチェーン読み取りがタイムアウトすると未認証のように401エラーが連発する不具合を修正。MCPサーバー連携の安定性が向上。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-12",
+      "last_date": "2026-08-12",
+      "appearances": 3
+    },
+    {
+      "id": 1627,
+      "title": "`/tui`で巻き戻し前の会話が復活してしまう不具合を修正",
+      "point": "会話を最初のメッセージより前に巻き戻した状態で`/tui`を実行すると、巻き戻し前の会話が復活してしまう不具合を修正。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-12",
+      "last_date": "2026-08-12",
+      "appearances": 3
+    },
+    {
       "id": 1615,
       "title": "archiveプラグインソースにSHA-256ピン留めを追加",
       "point": "HTTPS経由のzipアーカイブからgit/npmなしでプラグインをインストールできる `archive` プラグインソースに、SHA-256のピン留めオプションが追加され、配布物の改ざん検知が可能になった。",
@@ -6628,6 +6652,28 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1624,
+      "title": "ゲートウェイ使用量上限の警告メッセージを改善",
+      "point": "LLMゲートウェイ経由利用時、使用量上限に達した際の警告に上限額・リセット時刻・運営者からのメッセージが明示されるようになった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-12",
+      "last_date": "2026-08-12",
+      "appearances": 2
+    },
+    {
+      "id": 1626,
+      "title": "Skills活用術：媒体ごとに専用スキルを作り文体・構成を自動切替",
+      "point": "noteとZennなど媒体ごとにトーンや構成が異なる場合、それぞれ専用のSkillを用意しておくと簡潔な指示だけで媒体に合った文体が自動適用される。",
+      "source_title": "執筆者のための Claude Code 入門【第6章: Skillsの基礎】",
+      "source_url": "https://note.com/lucas_san/n/nea0963b5c4b8",
+      "tags": [],
+      "first_date": "2026-08-12",
+      "last_date": "2026-08-12",
+      "appearances": 2
     },
     {
       "id": 1614,
@@ -9693,6 +9739,57 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1621,
+      "title": "Claude Code 2.1.227公開：スラッシュコマンドメニューの視認性を改善",
+      "point": "選択中の行のみ青くハイライトし、一致した文字を太字表示に変更。絵文字やアクセント付き文字を含むコマンド名も正しく表示されるようになった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-12",
+      "last_date": "2026-08-12",
+      "appearances": 1
+    },
+    {
+      "id": 1622,
+      "title": "Anthropic、Claude生成テキストに不可視の透かしを導入",
+      "point": "8/2以降のモデルはテキストに機械可読な透かしを埋め込む。コピペ後も残り、画像には署名付きメタデータを付与。EU AI Act透明性規則への対応が背景。",
+      "source_title": "Anthropic plans to add an invisible mark to AI text",
+      "source_url": "https://fortune.com/2026/08/11/anthropic-claude-watermark-ai-text-police-ai-slop/",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-08-12",
+      "last_date": "2026-08-12",
+      "appearances": 1
+    },
+    {
+      "id": 1623,
+      "title": "Claude CodeのAuto Modeが8/14からデフォルト化",
+      "point": "Pro・Max・Teamプランで、破壊的・不可逆・環境外への操作でない限りClaudeが確認なしで作業を進めるAuto Modeが標準設定になる。有効化前に許可範囲の確認を推奨。",
+      "source_title": "Anthropic is turning Claude Code's auto mode on by default",
+      "source_url": "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-12",
+      "last_date": "2026-08-12",
+      "appearances": 1
+    },
+    {
+      "id": 1628,
+      "title": "Claude Projectsは古いファイルバージョンを削除してコンテキストを整理する",
+      "point": "Claude webの「Projects」機能では、古いバージョンのファイルを残さず削除・置換することでコンテキストの質が上がり、出力精度が向上する。",
+      "source_title": "Claude Code team tips (Hacker News)",
+      "source_url": "https://news.ycombinator.com/item?id=46256606",
+      "tags": [],
+      "first_date": "2026-08-12",
+      "last_date": "2026-08-12",
+      "appearances": 1
     },
     {
       "id": 1610,
@@ -18269,6 +18366,13 @@
   ],
   "daily": [
     {
+      "date": "2026-08-12",
+      "highlights": [
+        "Claudeの生成テキストに不可視の透かし（電子透かし）を導入 — EU AI Act対応、コピペしても署名が残る仕組み",
+        "Claude CodeのAuto Modeが8/14からPro/Max/Teamでデフォルト化 — 挙動変更に事前の確認が必要"
+      ]
+    },
+    {
       "date": "2026-08-11",
       "highlights": [
         "セッション間メッセージング（クロスセッションSendMessage） — Claude Codeのセッション同士が複数マシンをまたいで直接メッセージを送り合えるようになった。",
@@ -19279,5 +19383,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-11T08:00:05.222288"
+  "generated_at": "2026-08-12T08:00:04.820713"
 }
