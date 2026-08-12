@@ -1604,6 +1604,20 @@
       "appearances": 8
     },
     {
+      "id": 1636,
+      "title": "Claude Code v2.1.224（8/7）：self-hosted-runnerで自前インフラを実行環境に",
+      "point": "`claude self-hosted-runner`により、Team/Enterpriseプランは自分のマシンやコンテナをClaude Codeのweb・モバイル・デスクトップセッションの実行場所として使えるようになった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "製品機能"
+      ],
+      "first_date": "2026-08-13",
+      "last_date": "2026-08-13",
+      "appearances": 7
+    },
+    {
       "id": 1549,
       "title": "`permissions.deny`で危険コマンドを一括ブロック",
       "point": "`~/.claude/settings.json`の`permissions.deny`で特定コマンドを禁止、`permissions.ask`で確認必須にできる。`--dangerously-skip-permissions`使用時も優先される。",
@@ -1859,6 +1873,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1639,
+      "title": "MCP 2026-07-28仕様が拡張：ステートレスコア化でサーバレス/エッジ配備が可能に",
+      "point": "MCPが双方向ステートフル型からリクエスト/レスポンス型のステートレスコアへ移行し、OAuth/OIDC認証も強化。月間SDKダウンロードは4億件を突破し、業界標準としての地位を固めつつある。",
+      "source_title": "Anthropic Release Notes - August 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "API",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-13",
+      "last_date": "2026-08-13",
+      "appearances": 6
     },
     {
       "id": 1554,
@@ -3168,6 +3196,34 @@
       "appearances": 5
     },
     {
+      "id": 1637,
+      "title": "Claude Code v2.1.224：archiveプラグインソースでzipからインストール可能に",
+      "point": "gitやnpmを使わず、HTTPS経由のzipアーカイブから直接プラグインをインストールできる新ソース種別が追加された。SHA-256によるピン留めもオプションで指定可能。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-13",
+      "last_date": "2026-08-13",
+      "appearances": 4
+    },
+    {
+      "id": 1638,
+      "title": "Claude Code v2.1.224：サブエージェントの200体スポーン上限を撤廃",
+      "point": "長時間稼働するセッションでも、新しいサブエージェントの起動が上限到達で拒否されなくなった。同時実行数や再帰の深さの制限は引き続き有効。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-08-13",
+      "last_date": "2026-08-13",
+      "appearances": 4
+    },
+    {
       "id": 1602,
       "title": "`!`コマンドでbashを直接実行、Ctrl+Bでバックグラウンド化",
       "point": "先頭に`!`を付けて入力するとClaudeを介さずシェルコマンドを直接実行できる。Ctrl+Bでバックグラウンド実行も可能。Claude Code 2.1.186以降は`!`実行後の出力に対してClaudeが自動で応答する仕様になっており、`respondToBashCommands`設定で無効化できる。",
@@ -4450,6 +4506,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1635,
+      "title": "Claude Code v2.1.228：クロスセッションメッセージの表示を改善",
+      "point": "セッション間メッセージの送信者と本文が折りたたまれた1行ではなくインライン表示になり、他マシンのRemote Controlセッション宛てのメッセージには送信元のセッション名が表示されるようになった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "製品機能"
+      ],
+      "first_date": "2026-08-13",
+      "last_date": "2026-08-13",
+      "appearances": 3
     },
     {
       "id": 1625,
@@ -9739,6 +9809,59 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1632,
+      "title": "Claude Code v2.1.228（8/11）：Writeツールが新モデルで未読ファイルの上書きに対応",
+      "point": "新しいモデルはこのセッション中に読んでいないファイルでも、Editツールと同じ規則でWriteツールによる上書きが可能になった。旧モデルは引き続き事前の読み込みが必須。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-08-13",
+      "last_date": "2026-08-13",
+      "appearances": 1
+    },
+    {
+      "id": 1633,
+      "title": "Claude Code v2.1.228：claude.ai同期Skillsのセキュリティを強化",
+      "point": "claude.aiから同期されたSkillsはローカルのコマンドやMCPプロンプトを乗っ取れなくなり、説明文はサニタイズ・ラベル付けされ、手元の環境では本文中の「!」コマンド実行や「@」ファイル展開が行われなくなった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-13",
+      "last_date": "2026-08-13",
+      "appearances": 1
+    },
+    {
+      "id": 1634,
+      "title": "Claude Code v2.1.228：コンパクション進捗表示を改善",
+      "point": "これまでプログレスバーのみだったコンパクション中の表示に、再試行までのカウントダウンと停滞時のヒントが追加され、待機中の状況が把握しやすくなった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-13",
+      "last_date": "2026-08-13",
+      "appearances": 1
+    },
+    {
+      "id": 1640,
+      "title": "Auto Modeのデフォルト化（8/14〜）に伴い分類器トークンの追加課金を撤廃",
+      "point": "Pro/Max/Teamプランでは、Auto Modeの安全性チェックに使われる分類器のトークン消費について追加課金が行われなくなった。8/14のデフォルト化を前に、実質無料でリスクチェックを受けられる形に。",
+      "source_title": "Anthropic is turning Claude Code's auto mode on by default",
+      "source_url": "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/",
+      "tags": [],
+      "first_date": "2026-08-13",
+      "last_date": "2026-08-13",
+      "appearances": 1
     },
     {
       "id": 1621,
@@ -18366,6 +18489,13 @@
   ],
   "daily": [
     {
+      "date": "2026-08-13",
+      "highlights": [
+        "Writeツールの上書きルールが緩和 — 新世代モデルはこのセッションで未読のファイルもEditツール同様に上書き可能に",
+        "claude.ai同期Skillsのセキュリティを強化 — ローカルコマンドの乗っ取り防止、説明文のサニタイズ、!・@実行の禁止"
+      ]
+    },
+    {
       "date": "2026-08-12",
       "highlights": [
         "Claudeの生成テキストに不可視の透かし（電子透かし）を導入 — EU AI Act対応、コピペしても署名が残る仕組み",
@@ -19383,5 +19513,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-12T08:00:04.820713"
+  "generated_at": "2026-08-13T08:00:05.242779"
 }
