@@ -165,6 +165,20 @@
       "appearances": 21
     },
     {
+      "id": 1644,
+      "title": "Claude Code Auto Modeがデフォルトに",
+      "point": "2026年8月14日より、Pro/Max/Teamプランの新規セッションはauto modeで開始される。Anthropicの分類器が「平均的ユーザーが手動で承認するのと同等以上に安全」と判断したための変更。個人でデフォルトを設定済みの場合は一度だけ切替確認が出るが、組織側で固定設定している場合は変更なし。",
+      "source_title": "Claude Code Makes Auto Mode the Default on August 14",
+      "source_url": "https://www.digitalapplied.com/blog/claude-code-auto-mode-default-permission-model-shift",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-08-14",
+      "last_date": "2026-08-14",
+      "appearances": 20
+    },
+    {
       "id": 1132,
       "title": "モデルの使い分け（Sonnet主力・Opusは設計）",
       "point": "作業の9割はSonnet 4.6で十分。ほぼ同等の品質を約40%安いコストで得られる。Opusはアーキテクチャ設計・複雑なリファクタ・誤りのコストがトークン代を上回るタスクに温存する。`/model`で軽量モデルに切り替えれば利用枠を伸ばせる。",
@@ -1875,6 +1889,32 @@
       "appearances": 7
     },
     {
+      "id": 1645,
+      "title": "MCP OAuthサインイン不具合を修正",
+      "point": "v2.1.231（8/13）で、Slackなど事前登録済みOAuthクライアントを使うMCPサーバーにおいて、リダイレクトURI不一致でサインインが失敗する問題を修正した。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-14",
+      "last_date": "2026-08-14",
+      "appearances": 6
+    },
+    {
+      "id": 1646,
+      "title": "claude remote-control --continueでセッション再開",
+      "point": "v2.1.229（8/12）で追加。コマンド一つで直近のRemote Controlセッションを再開できるようになった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-08-14",
+      "last_date": "2026-08-14",
+      "appearances": 6
+    },
+    {
       "id": 1639,
       "title": "MCP 2026-07-28仕様が拡張：ステートレスコア化でサーバレス/エッジ配備が可能に",
       "point": "MCPが双方向ステートフル型からリクエスト/レスポンス型のステートレスコアへ移行し、OAuth/OIDC認証も強化。月間SDKダウンロードは4億件を突破し、業界標準としての地位を固めつつある。",
@@ -2453,6 +2493,34 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1651,
+      "title": "スラッシュコマンドメニューの視認性を向上",
+      "point": "v2.1.227（8/10）で改善。選択中の行のみ青色でマークし、一致文字は色変更ではなく太字で表示。絵文字やアクセント付き名称の表示も維持されるようになった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-14",
+      "last_date": "2026-08-14",
+      "appearances": 5
+    },
+    {
+      "id": 1652,
+      "title": "Compliance APIがCowork/Claude Codeに拡張",
+      "point": "Compliance APIがデスクトップ・Web・モバイルのCowork、CLI/デスクトップのClaude Codeに対応（Enterprise向けベータ）。既存のCompliance Access Keyで追加統合不要、プロンプト・応答・ツール実行を1つのセッション記録として取得できる。",
+      "source_title": "Compliance API coverage extends to Claude Cowork and Claude Code",
+      "source_url": "https://claude.com/blog/compliance-api-cowork-and-claude-code",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-08-14",
+      "last_date": "2026-08-14",
+      "appearances": 5
     },
     {
       "id": 1584,
@@ -4506,6 +4574,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1649,
+      "title": "Write toolが未読ファイルの上書きに対応",
+      "point": "v2.1.228（8/11）で変更。新しいモデルはセッション内で未読のファイルでも上書き保存できるようになり、Edit toolと同じルールに統一された（旧モデルは引き続き事前読み込みが必要）。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-08-14",
+      "last_date": "2026-08-14",
+      "appearances": 3
     },
     {
       "id": 1635,
@@ -6722,6 +6803,33 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1647,
+      "title": "プラグインマーケットプレイスにcommandソースを追加",
+      "point": "v2.1.229（8/12）で追加。IDEなどローカルコマンドがプラグインディレクトリを出力し、セッションごとに再解決され、再起動なしで適用される仕組みが加わった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-14",
+      "last_date": "2026-08-14",
+      "appearances": 2
+    },
+    {
+      "id": 1650,
+      "title": "claude.ai同期スキルのセキュリティを強化",
+      "point": "v2.1.228（8/11）で対応。claude.aiから同期されたスキルがローカルコマンドやMCPプロンプトを乗っ取れないよう制限し、説明文をサニタイズ、実行環境では「!」コマンドや「@」ファイル展開を実行不可にした。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-14",
+      "last_date": "2026-08-14",
+      "appearances": 2
     },
     {
       "id": 1624,
@@ -9809,6 +9917,28 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1648,
+      "title": "VSCode拡張にセッショングループ機能",
+      "point": "v2.1.229（8/12）で追加。サイドバーで右クリックしてセッションのグループ作成・名前変更・削除が可能になり、Cmd/CtrlクリックやShiftクリックで複数セッションをまとめて移動できる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-14",
+      "last_date": "2026-08-14",
+      "appearances": 1
+    },
+    {
+      "id": 1653,
+      "title": "Claude Fable 5の生物学セーフガードを改善",
+      "point": "誤検知を減らすため分類器の判定基準を書き換え、生物学関連の質問での機能制限（フォールバック）を実測で約85%削減。検査結果の解釈や症状理解など日常的な健康・教育目的の質問に対応しやすくなった一方、ウイルス学・毒性学・分子設計などデュアルユース領域は引き続き制限される。",
+      "source_title": "Improving Fable 5's Biology Safeguards",
+      "source_url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+      "tags": [],
+      "first_date": "2026-08-14",
+      "last_date": "2026-08-14",
+      "appearances": 1
     },
     {
       "id": 1632,
@@ -18489,6 +18619,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-14",
+      "highlights": [
+        "Claude Code Auto Modeが新規セッションのデフォルトに — 本日8/14よりPro/Max/Teamプランで権限確認なしの自動実行が標準動作に",
+        "Compliance APIがCowork/Claude Codeにも対応 — Enterprise向けに統合セッション記録の取得が可能に",
+        "Claude Fable 5の生物学セーフガードを改善 — 誤検知（フォールバック）を実測で約85%削減"
+      ]
+    },
+    {
       "date": "2026-08-13",
       "highlights": [
         "Writeツールの上書きルールが緩和 — 新世代モデルはこのセッションで未読のファイルもEditツール同様に上書き可能に",
@@ -19513,5 +19651,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-13T08:00:05.242779"
+  "generated_at": "2026-08-14T08:00:04.820309"
 }
