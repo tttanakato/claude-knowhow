@@ -1889,6 +1889,20 @@
       "appearances": 7
     },
     {
+      "id": 1657,
+      "title": "Claude in ChromeサイドパネルがCoworkセッションに統合",
+      "point": "サイドパネルがClaude Coworkセッションそのものになり、会話が履歴に保存され、スキルとコネクタがブラウザ内でも動くようになった。タブで始めた作業をデスクトップ・Web・モバイルで引き継げる。Max・Teamプランで提供開始、Proは数週間かけて順次展開。Enterpriseは既定オフで管理者が許可ドメインを限定できる。",
+      "source_title": "The Claude in Chrome side panel is now Claude Cowork",
+      "source_url": "https://claude.com/blog/cowork-chrome-side-panel",
+      "tags": [
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-08-15",
+      "last_date": "2026-08-15",
+      "appearances": 6
+    },
+    {
       "id": 1645,
       "title": "MCP OAuthサインイン不具合を修正",
       "point": "v2.1.231（8/13）で、Slackなど事前登録済みOAuthクライアントを使うMCPサーバーにおいて、リダイレクトURI不一致でサインインが失敗する問題を修正した。",
@@ -2493,6 +2507,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1659,
+      "title": "Claude Tagのプロアクティブ返信が約30%精度向上",
+      "point": "これまでは新着メッセージを1件ずつ見る軽量分類器がYes/Noを判定していたため、単体では依頼に見えない会話を取りこぼしていた。分類器を廃止し、チャンネル横断の文脈・メモリ・常設指示から判断する方式に変更。いつ発言すべきか／すべきでないかの判定が約30%改善した。TeamおよびEnterpriseで本日提供。",
+      "source_title": "Claude Tag now reads even more of the room",
+      "source_url": "https://claude.com/blog/claude-tag-now-reads-even-more-of-the-room",
+      "tags": [],
+      "first_date": "2026-08-15",
+      "last_date": "2026-08-15",
+      "appearances": 5
     },
     {
       "id": 1651,
@@ -4574,6 +4599,46 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1658,
+      "title": "Chrome側の「自動承認」に実行前チェックが追加",
+      "point": "「自動承認」を使うと逐一の許可を求めずに作業が進むが、フォーム送信・メッセージ送信・ファイルダウンロードなど影響の大きい操作の直前に、別系統のチェックが「元の依頼内容と合致するか」を検証して不一致を遮断する。購入や個人情報共有など不可逆な操作は引き続き確認が入る。プロンプトインジェクションのリスクは軽減されるが解消はしないため、信頼できるサイトから始めるのが推奨。",
+      "source_title": "The Claude in Chrome side panel is now Claude Cowork",
+      "source_url": "https://claude.com/blog/cowork-chrome-side-panel",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-08-15",
+      "last_date": "2026-08-15",
+      "appearances": 3
+    },
+    {
+      "id": 1663,
+      "title": "Auto Modeデフォルト化後はautoModeブロックに信頼先を登録する",
+      "point": "8/14からPro・Max・Teamの新規セッションはauto modeで始まる。分類器が組織の事情を知らないと社内リポジトリやバケット、内部ドメインへの通常操作まで拒否されるため、autoMode設定ブロックに信頼するリポジトリ・ストレージ・ドメインを明示する。同じ宛先で拒否が繰り返される場合は`autoMode.environment`に追加するのが定石。",
+      "source_title": "Configure auto mode - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/auto-mode-config",
+      "tags": [],
+      "first_date": "2026-08-15",
+      "last_date": "2026-08-15",
+      "appearances": 3
+    },
+    {
+      "id": 1666,
+      "title": "Coworkプラグインは全部入れず自分の業務に直結するものから",
+      "point": "8/13時点でプラグインマーケットプレイスには94個（うちAnthropic製16個）が並ぶが、全部入れるのは前提ではない。プラグインはスキル・スラッシュコマンド・コネクタ・サブエージェントを職種単位で束ねたパッケージなので、最も本質的なものから入れる。またスキルは文脈に応じて起動するため、常に文脈を強制するプロジェクトより取り回しがよい。",
+      "source_title": "All 16 Claude Cowork Plugins Reviewed (with Tier List)",
+      "source_url": "https://www.gradually.ai/en/claude-cowork-plugins/",
+      "tags": [
+        "API",
+        "エージェント",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-08-15",
+      "last_date": "2026-08-15",
+      "appearances": 3
     },
     {
       "id": 1649,
@@ -6803,6 +6868,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1662,
+      "title": "Claude Tagが保持する追加コンテキストは使用量に加算されない",
+      "point": "今回の更新は追加費用なしで提供される。より多くの文脈を保持することでClaude Tag側の消費は増えるが、その追加コンテキスト分はどのプランでも使用量・支出上限にカウントされない。また初回応答が速くなり、起動中の無言の待ち時間が解消された。",
+      "source_title": "Claude Tag now reads even more of the room",
+      "source_url": "https://claude.com/blog/claude-tag-now-reads-even-more-of-the-room",
+      "tags": [],
+      "first_date": "2026-08-15",
+      "last_date": "2026-08-15",
+      "appearances": 2
     },
     {
       "id": 1647,
@@ -9917,6 +9993,52 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1660,
+      "title": "Claude Tagは4つの選択肢から行動を選ぶ",
+      "point": "新方式のClaude Tagは「インラインで即答する」「スレッドを立てて本格的に着手する」「進行中の作業へ合流させる」「何も言わない」の4択で振る舞いを決める。例えば片方のエンジニアが仮説、もう片方が証拠を投稿した場合、@メンションなしでもスレッドを開いて調査を開始し両者を巻き込む、といった動作になる。実行範囲は設定済みの権限・ツール・スコープ内に限定される。",
+      "source_title": "Claude Tag now reads even more of the room",
+      "source_url": "https://claude.com/blog/claude-tag-now-reads-even-more-of-the-room",
+      "tags": [],
+      "first_date": "2026-08-15",
+      "last_date": "2026-08-15",
+      "appearances": 1
+    },
+    {
+      "id": 1661,
+      "title": "Claude Tagの介入方針は自然言語で調整でき、無反応が続くと自動休眠する",
+      "point": "「ここではタグ付けされない限り発言しない」「デプロイパイプラインの話題には自由に入ってよい」のように平文で指示できる。加えて、貢献できる内容がないと判断し続けたチャンネルではClaudeが自動的に休眠し、@メンションで即座に復帰する。チャンネル単位で「自動応答」をオフにすることも可能。",
+      "source_title": "Claude Tag now reads even more of the room",
+      "source_url": "https://claude.com/blog/claude-tag-now-reads-even-more-of-the-room",
+      "tags": [],
+      "first_date": "2026-08-15",
+      "last_date": "2026-08-15",
+      "appearances": 1
+    },
+    {
+      "id": 1664,
+      "title": "保護パスはモードを問わず自動承認されない",
+      "point": "`.git`・`.claude`・`.vscode`・`.idea`・`.husky`ディレクトリへの書き込みは、どの権限モードでも自動承認の対象外。リポジトリの状態やClaude自身の設定が事故で壊れない設計になっている。Auto Modeは「妥当そうなら何でも通す」ものではなく、依頼のスコープ外への外部通信なども既定で遮断される。",
+      "source_title": "Configure auto mode - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/auto-mode-config",
+      "tags": [],
+      "first_date": "2026-08-15",
+      "last_date": "2026-08-15",
+      "appearances": 1
+    },
+    {
+      "id": 1665,
+      "title": "設定変更後は`claude auto-mode config`で実効ルールを検証する",
+      "point": "`claude auto-mode`系サブコマンドで設定の確認・検証・リセットができる。設定を保存したら`claude auto-mode config`を実行し、`$defaults`が展開された状態の実効ルールが意図どおりか確認してから運用に入る。CLIで有効化する場合は`claude --enable-auto-mode`、Desktop・VS Code拡張では設定でオンにしてからセッションのモードピッカーで選択する。",
+      "source_title": "Configure auto mode - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/auto-mode-config",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-08-15",
+      "last_date": "2026-08-15",
+      "appearances": 1
     },
     {
       "id": 1648,
@@ -18619,6 +18741,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-15",
+      "highlights": [
+        "Claude in ChromeのサイドパネルがCoworkセッションに — ブラウザで始めた作業をデスクトップ・Web・モバイルで継続できるようになった",
+        "Claude Tagのプロアクティブ判断が約30%改善 — 1メッセージ単位の分類器を廃し、チャンネル全体の文脈で発言要否を判断",
+        "Auto Modeデフォルト化後の実務設定 — autoModeブロックへの信頼先登録と保護パスの理解が運用の要"
+      ]
+    },
+    {
       "date": "2026-08-14",
       "highlights": [
         "Claude Code Auto Modeが新規セッションのデフォルトに — 本日8/14よりPro/Max/Teamプランで権限確認なしの自動実行が標準動作に",
@@ -19651,5 +19781,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-14T08:00:04.820309"
+  "generated_at": "2026-08-15T12:30:30.884157"
 }
