@@ -29,6 +29,21 @@
       "appearances": 36
     },
     {
+      "id": 1680,
+      "title": "`/effort`をタスク別に使い分ける：既定high、複雑作業はxhigh",
+      "point": "`/effort` の選択肢は low / medium / high / xhigh / max / auto。既定は Team・Enterprise・API直接接続で high、それ以外のプランで medium。Claude Code チームは全作業を high で運用し、複雑なコーディングとエージェント作業では max のトークンコストを払わずに推論を深められる xhigh へ切り替える。max は難しいデバッグやアーキテクチャ判断限定で、セッション単位で有効化する運用が推奨されている。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-08-17",
+      "last_date": "2026-08-17",
+      "appearances": 32
+    },
+    {
       "id": 1182,
       "title": "コンテキストエンジニアリング3ファイル戦略",
       "point": "2026年はプロンプト微調整よりタスク周辺の構造づくりが効く。自分と作業内容を伝えるidentityファイル、思考・文体を示すvoice profile、避けたい語・構造・トーンを並べたanti-AI-writingファイルを用意すると出力品質が安定する。",
@@ -825,6 +840,20 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 1679,
+      "title": "検証（Verification）を与えることがClaude Code最大の品質改善策",
+      "point": "Anthropic公式のパワーユーザーガイドは「1つだけ実践するなら検証」と明言している。Claude が自力でフィードバックループを閉じられれば、出力が正しくなるまで反復する。フロントエンドなら Chrome 拡張、Webサーバーならデスクトップアプリの内蔵ブラウザ、コード品質なら変更後に `/simplify` を追記する、といった具合にドメイン固有の検証手段への投資が効く。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-08-17",
+      "last_date": "2026-08-17",
+      "appearances": 10
     },
     {
       "id": 1551,
@@ -3289,6 +3318,34 @@
       "appearances": 5
     },
     {
+      "id": 1480,
+      "title": "`/batch`で大規模マイグレーションを並列ワークツリーに自動分散する",
+      "point": "`/batch` は移行内容についてこちらにヒアリングした上で、必要な数だけワークツリーエージェントへ作業を扇状に展開する。各エージェントは隔離環境で自分の変更をテストし、独立してPRを作成する。エージェント定義の frontmatter に `isolation: worktree` を書けば同様の隔離を任意のサブエージェントに適用できる。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-07-28",
+      "last_date": "2026-08-17",
+      "appearances": 4
+    },
+    {
+      "id": 1678,
+      "title": "`@`でセッション名をメンションしてセッション間で直接やり取りする",
+      "point": "プロンプト中に `@` を打つと稼働中の別 Claude セッションを名前で指名でき、`SendMessage` でそのセッションへ直接連絡が飛ぶ。同一マシン上のセッション名は自動で一意化される。あわせて `/config` に「Dialog expiry」「Messages from your other sessions」行が追加され、受信を承認制／保留／拒否で制御できる。",
+      "source_title": "Claude Code changelog 2.1.232",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-08-17",
+      "last_date": "2026-08-17",
+      "appearances": 4
+    },
+    {
       "id": 1637,
       "title": "Claude Code v2.1.224：archiveプラグインソースでzipからインストール可能に",
       "point": "gitやnpmを使わず、HTTPS経由のzipアーカイブから直接プラグインをインストールできる新ソース種別が追加された。SHA-256によるピン留めもオプションで指定可能。",
@@ -4601,6 +4658,20 @@
       "appearances": 4
     },
     {
+      "id": 1673,
+      "title": "旧Workbenchと実験的プロンプトAPIが8/17に提供終了",
+      "point": "Claude Console のレガシー Workbench（platform.claude.com/workbench）が本日 8/17 でアクセス終了。あわせて実験的プロンプトツールAPI（`/v1/experimental/generate_prompt`、`improve_prompt`、`templatize_prompt`）も同時に廃止される。これらをCI等に組み込んでいる場合は代替実装への切り替えが必要。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-08-17",
+      "last_date": "2026-08-17",
+      "appearances": 3
+    },
+    {
       "id": 1658,
       "title": "Chrome側の「自動承認」に実行前チェックが追加",
       "point": "「自動承認」を使うと逐一の許可を求めずに作業が進むが、フォーム送信・メッセージ送信・ファイルダウンロードなど影響の大きい操作の直前に、別系統のチェックが「元の依頼内容と合致するか」を検証して不一致を遮断する。購入や個人情報共有など不可逆な操作は引き続き確認が入る。プロンプトインジェクションのリスクは軽減されるが解消はしないため、信頼できるサイトから始めるのが推奨。",
@@ -4779,20 +4850,6 @@
       ],
       "first_date": "2026-07-30",
       "last_date": "2026-07-30",
-      "appearances": 3
-    },
-    {
-      "id": 1480,
-      "title": "`/batch`で大規模マイグレーションを並列ワークツリーに自動分散する",
-      "point": "`/batch`コマンドはマイグレーション内容についてヒアリングした後、必要な数だけワークツリー分離のサブエージェントに作業を分散する。各エージェントが個別にテストしPRを作成するため、大規模な一括変更を人手を挟まず並列処理できる。",
-      "source_title": "Claude Code power user tips - Claude Help Center",
-      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
-      "tags": [
-        "エージェント",
-        "生産性"
-      ],
-      "first_date": "2026-07-28",
-      "last_date": "2026-07-28",
       "appearances": 3
     },
     {
@@ -6868,6 +6925,23 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1681,
+      "title": "`--bare`フラグでSDK・非対話実行の起動を約10倍高速化する",
+      "point": "`claude -p` や TypeScript/Python SDK は既定でローカルの CLAUDE.md・設定・MCP を探索するため起動が遅い。非対話用途では `--system-prompt`、`--mcp-config`、`--settings` で明示指定した上で `--bare` を付けると起動が約10倍速くなる。将来バージョンでは `--bare` が既定に変わる予定と公式に記載されている。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "CLAUDE.md",
+        "API",
+        "プロンプト",
+        "MCP/プラグイン",
+        "生産性"
+      ],
+      "first_date": "2026-08-17",
+      "last_date": "2026-08-17",
+      "appearances": 2
     },
     {
       "id": 1662,
@@ -9993,6 +10067,60 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1674,
+      "title": "`CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` でWebFetchのキャッシュ寿命を制御する",
+      "point": "Claude Code 2.1.233 で追加された環境変数。WebFetch のセッション内URLキャッシュのTTL（既定15分）をミリ秒で指定できる。頻繁に更新される社内ドキュメントや仕様書を参照させる調査タスクでは短く、同一ページを何度も読み返す長時間タスクでは長く設定すると無駄なフェッチを削減できる。",
+      "source_title": "Claude Code changelog 2.1.233",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-17",
+      "last_date": "2026-08-17",
+      "appearances": 1
+    },
+    {
+      "id": 1675,
+      "title": "`CLAUDE_CODE_TOOL_MEMORY_LIMIT` でBashコマンドの暴走を止める",
+      "point": "同じく 2.1.233 で追加。Linux 上の Bash ツール実行に memory cgroup による上限をオプトインで設定でき、暴走したビルドがセッション全体を巻き込んで停止させる事態を防げる。CI ランナーや共有ビルドマシンで Claude Code を回す構成で有効。",
+      "source_title": "Claude Code changelog 2.1.233",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-17",
+      "last_date": "2026-08-17",
+      "appearances": 1
+    },
+    {
+      "id": 1676,
+      "title": "新しいモデルではTodo/Taskツールが既定で無効化された",
+      "point": "Opus 4.8、Sonnet 5、Fable 5、Mythos 5 以降のモデルでは TaskCreate/Get/Update/List と TodoWrite が既定で提供されなくなった。モデル側の計画能力向上により明示的なタスク管理ツールが不要という判断とみられる。従来のタスクリスト表示に依存したワークフローがある場合は `CLAUDE_CODE_ENABLE_TODO_TOOLS=1` で復帰させる。",
+      "source_title": "Claude Code changelog 2.1.233",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-08-17",
+      "last_date": "2026-08-17",
+      "appearances": 1
+    },
+    {
+      "id": 1677,
+      "title": "`--worktree` と `claude agents` がGitLabマージリクエストに対応",
+      "point": "2.1.233 で GitLab の MR URL を `--worktree` フラグに直接渡せるようになり、`claude agents` 画面では MR が `!N` 形式で表示される。GitHub 以外を使う組織でも、レビュー対象のブランチを隔離ワークツリーに展開して並列作業する運用が可能になった。marketplace の GitLab リポジトリ対応も同時期に追加されている。",
+      "source_title": "Claude Code changelog 2.1.233",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-08-17",
+      "last_date": "2026-08-17",
+      "appearances": 1
     },
     {
       "id": 1660,
@@ -18741,6 +18869,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-17",
+      "highlights": [
+        "旧Workbenchと実験的プロンプトAPIが本日終了 — Console のレガシー Workbench と `/v1/experimental/*_prompt` 系3APIが 8/17 で提供終了。移行未了なら本日中に対応が必要。",
+        "Claude Code 2.1.233 の運用系ノブが3つ追加 — WebFetchキャッシュTTL、Bashのメモリ上限、GitLab MR対応。長時間セッションの安定運用に効く。",
+        "注記 — 本日（8/17）付で新規公開された一次情報は Workbench 終了のみ。他は 8/13〜8/14 の Claude Code チェンジログおよび公式パワーユーザーガイドからの直近情報。"
+      ]
+    },
+    {
       "date": "2026-08-15",
       "highlights": [
         "Claude in ChromeのサイドパネルがCoworkセッションに — ブラウザで始めた作業をデスクトップ・Web・モバイルで継続できるようになった",
@@ -19781,5 +19917,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-16T08:00:04.603948"
+  "generated_at": "2026-08-17T08:00:04.472447"
 }
