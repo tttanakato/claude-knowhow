@@ -29,6 +29,21 @@
       "appearances": 36
     },
     {
+      "id": 1693,
+      "title": "effortの既定値を理解して使う：Opus 4.8はhigh、Sonnetはmedium推奨",
+      "point": "Opus 4.8のeffort既定値はClaude API・Claude Code含む全サーフェスでhigh。SonnetについてAnthropicが推奨するのはmediumで、低effortなら超高速・低コスト、highなら深い推論と使い分けられる。実務的には「重要度にeffortを合わせる」「トークン使用量を監視して下げられないか試す」の2点が要点で、想定より低いeffortで十分なタスクは多い。コーディングでも常にOpusに上げず、Sonnet 4.6のmax effortという選択肢が現実的な代替になる。",
+      "source_title": "What's new in Claude Opus 4.8 - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-08-18",
+      "last_date": "2026-08-18",
+      "appearances": 33
+    },
+    {
       "id": 1680,
       "title": "`/effort`をタスク別に使い分ける：既定high、複雑作業はxhigh",
       "point": "`/effort` の選択肢は low / medium / high / xhigh / max / auto。既定は Team・Enterprise・API直接接続で high、それ以外のプランで medium。Claude Code チームは全作業を high で運用し、複雑なコーディングとエージェント作業では max のトークンコストを払わずに推論を深められる xhigh へ切り替える。max は難しいデバッグやアーキテクチャ判断限定で、セッション単位で有効化する運用が推奨されている。",
@@ -1337,6 +1352,20 @@
       "appearances": 9
     },
     {
+      "id": 1694,
+      "title": "自己ホスト環境ベータ：runnerはFixed/On-demandの2モード、ZDR組織は対象外",
+      "point": "Claude Code の自己ホスト環境はTeam・Enterpriseプラン向けにパブリックベータ提供中。既定では無効で、OwnerまたはadminがCloud environments管理画面で「Allow self-hosted environments」を有効化する必要があり、Claude Code on the webの有効化が前提。ZDR適用組織は利用不可。実行方式はrunner（キューされたセッションを取得しセッションごとに別プロセスを起動する常駐プロセス）で、台数固定のFixedモードと需要に応じて起動・停止するOn-demandモードがある。リポジトリのチェックアウト・ビルド成果物・シークレットは自組織のインフラ内に留まる一方、セットアップと運用保守の担当エンジニアを見込んでおく必要がある。",
+      "source_title": "Self-hosted environments - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/self-hosted-environments",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-08-18",
+      "last_date": "2026-08-18",
+      "appearances": 8
+    },
+    {
       "id": 1585,
       "title": "Claude週次利用上限+50%措置、8/19まで再々延長",
       "point": "Pro/Max/Team向けのClaude Code週次利用上限+50%特別措置が、当初の期限を超えて2026年8月19日まで延長された。大規模リファクタリングや並列セッションを予定しているなら期限内に使い切りたい。",
@@ -1645,6 +1674,20 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 1692,
+      "title": "`/code-review`が全effortレベルでバックグラウンドエージェント実行に",
+      "point": "これまでhigh・xhigh・maxのeffortでは`/code-review`が前面実行だったが、v2.1.232で他のレベルと同様バックグラウンドエージェントとして走るようになった。レビューを回しながら別作業を継続できる。あわせて`/feedback`と`/bug`はClaudeの応答中に呼んでも即座に開くようになり、`/plugin install plugin@marketplace`は事前にマーケットプレイスを更新するため、公開直後のプラグインも手動更新なしで入る。",
+      "source_title": "Claude Code v2.1.232 Release Notes",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.232",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-18",
+      "last_date": "2026-08-18",
+      "appearances": 7
     },
     {
       "id": 1636,
@@ -3318,6 +3361,30 @@
       "appearances": 5
     },
     {
+      "id": 1685,
+      "title": "Skillのdescriptionは「トピック」でなく「発火する状況」を書く",
+      "point": "Claudeは起動時に全スキルのnameとdescriptionだけを読み込み、ユーザーの依頼文とdescriptionを突き合わせて使うかどうかを判断する。したがってdescriptionは一般的なトピック名ではなく、発火してほしい具体的な状況・条件・キーワードを列挙して書く。スキルが呼ばれない原因の第1位は曖昧なdescriptionであり、具体的に書くだけで発火の再現性が大きく上がる。1スキル1ワークフローに絞ることも合わせて推奨されている。",
+      "source_title": "Skill authoring best practices - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+      "tags": [],
+      "first_date": "2026-08-18",
+      "last_date": "2026-08-18",
+      "appearances": 4
+    },
+    {
+      "id": 1686,
+      "title": "Progressive Disclosure：SKILL.mdは軽量に保ち詳細は別ファイルへ",
+      "point": "SKILL.md本体は判断に必要な最小限だけを書き、長い手順書やリファレンスは別ファイルに切り出して必要時のみ読ませる「段階的開示」が推奨される。またルールを羅列するより「なぜそうするのか」を説明したほうがClaudeは未知のケースに一般化できる。例示（examples）は出力品質を制御する最も効果的な手段とされ、実際のユーザーが打ちそうな砕けた表現や誤字を含むプロンプトでテストすべきとされている。",
+      "source_title": "Skill authoring best practices - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-08-18",
+      "last_date": "2026-08-18",
+      "appearances": 4
+    },
+    {
       "id": 1480,
       "title": "`/batch`で大規模マイグレーションを並列ワークツリーに自動分散する",
       "point": "`/batch` は移行内容についてこちらにヒアリングした上で、必要な数だけワークツリーエージェントへ作業を扇状に展開する。各エージェントは隔離環境で自分の変更をテストし、独立してPRを作成する。エージェント定義の frontmatter に `isolation: worktree` を書けば同様の隔離を任意のサブエージェントに適用できる。",
@@ -4656,6 +4723,32 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1688,
+      "title": "CLAUDE.md・Skills・Hooks・Subagentsの使い分け指針",
+      "point": "公式ブログの整理では、手順をメインスレッド内で展開させ各ステップを見ながら操縦したいならSkill、深い調査やログ解析・依存監査のように中間結果が本題を汚す作業ならSubagentを使う。Hooksはファイル編集・ツール呼び出し・セッション開始などのイベントで発火し、Claudeの挙動を決定論的に制御する。実務的には「必ず守らせたいルール＝Hooks/権限」「文脈知識＝Skills」「委譲の境界＝Subagents」「常時有効な短い方針＝CLAUDE.md」と切り分けるとよい。",
+      "source_title": "Steering Claude Code: when to use CLAUDE.md, skills, hooks, and subagents",
+      "source_url": "https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more",
+      "tags": [
+        "CLAUDE.md",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-08-18",
+      "last_date": "2026-08-18",
+      "appearances": 3
+    },
+    {
+      "id": 1690,
+      "title": "権限まわりのハードニング：PowerShellバイパス修正とネストGitの個別信頼",
+      "point": "v2.1.232でWindowsの権限バイパスが2件修正された。PowerShellで変数を書き込むパラメータが`$PSDefaultParameterValues`を暗黙に上書きし後続コマンドのファイルアクセスを迂回させる問題と、Git BashがCygwin形式のシンボリックリンクを追跡してパス検証をすり抜ける問題。あわせて、ネストしたGitリポジトリが親ディレクトリの信頼を継承しなくなり、リポジトリごとに信頼確認が必要になった。Bashの入力リダイレクト（`< file`）も全プラットフォームで権限チェック対象に。",
+      "source_title": "Claude Code v2.1.232 Release Notes",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.232",
+      "tags": [],
+      "first_date": "2026-08-18",
+      "last_date": "2026-08-18",
+      "appearances": 3
     },
     {
       "id": 1673,
@@ -6925,6 +7018,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1691,
+      "title": "GitLab対応が全面拡充：マーケットプレイス・トークン秘匿・MR URL",
+      "point": "プラグインマーケットプレイスが`gitlab.com`のリポジトリURL（ネストしたサブグループ含む）をGitHubと同様にクローンできるようになった。`glrt-` `gloas-` `glpat-`などGitLabトークン各種の秘匿（redaction）も追加され、`glab` CLIの設定ストアが`gh`と同等のサンドボックス・認証情報パス保護を受ける。v2.1.233では`--worktree`と`claude agents`ビューがGitLabのマージリクエストURLに対応（MRは`!N`表記で表示）。",
+      "source_title": "Claude Code v2.1.232 Release Notes",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.232",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-18",
+      "last_date": "2026-08-18",
+      "appearances": 2
     },
     {
       "id": 1681,
@@ -10067,6 +10175,33 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1687,
+      "title": "Skill開発は「作るClaude」と「試すClaude」を分ける2インスタンス方式",
+      "point": "公式が挙げる最も効果的なSkill開発プロセスは、Claudeインスタンスを2つ使う方法。片方（Claude A）と対話しながらスキルの設計と指示文を練り、もう片方（Claude B）に実際にそのスキルを使わせてテストする。Claudeはエージェント向け指示文の書き方と、エージェントが必要とする情報の両方を理解しているため、設計役とテスト役を分けると改善サイクルが速く回る。",
+      "source_title": "Skill authoring best practices - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-18",
+      "last_date": "2026-08-18",
+      "appearances": 1
+    },
+    {
+      "id": 1689,
+      "title": "サブエージェントのfork既定ON：会話とプロンプトキャッシュを丸ごと継承する",
+      "point": "v2.1.232でサブエージェントのforkがデフォルト有効になった。`subagent_type: \"fork\"`のサブエージェントは親の会話全体とプロンプトキャッシュを引き継ぐため、背景説明を書き直す必要がない。またインタラクティブセッションでのチームメイト以外のエージェント起動は既定でバックグラウンド実行になる。完了したサブエージェントはパネルから即座に隠れ、`/tasks`のヒントが表示される。",
+      "source_title": "Claude Code v2.1.232 Release Notes",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.232",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-08-18",
+      "last_date": "2026-08-18",
+      "appearances": 1
     },
     {
       "id": 1674,
@@ -18869,6 +19004,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-18",
+      "highlights": [
+        "Skillのdescriptionは「発火条件」を書く — 公式のSkill執筆ベストプラクティスが更新。トピック名ではなく「どんな状況で呼ばれるか」を具体語で書くのが最重要",
+        "サブエージェントのfork既定ON — v2.1.232で`subagent_type: \"fork\"`が会話とプロンプトキャッシュを丸ごと継承、引き継ぎ説明が不要に",
+        "effortは既定値から考える — Opus 4.8はhigh、Sonnetはmedium推奨。上げる前に「本当に必要か」を確認する"
+      ]
+    },
+    {
       "date": "2026-08-17",
       "highlights": [
         "旧Workbenchと実験的プロンプトAPIが本日終了 — Console のレガシー Workbench と `/v1/experimental/*_prompt` 系3APIが 8/17 で提供終了。移行未了なら本日中に対応が必要。",
@@ -19917,5 +20060,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-17T08:00:04.472447"
+  "generated_at": "2026-08-18T08:00:04.834297"
 }
