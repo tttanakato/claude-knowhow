@@ -857,6 +857,20 @@
       "appearances": 11
     },
     {
+      "id": 1705,
+      "title": "Claude Designは Cowork の利用上限を消費しない",
+      "point": "プレゼン資料・Webサイト・グラフィックの作成をClaude Designで行うと、Cowork側の使用量を消費せずに済むため、上限を本来のエージェント作業に温存できるという運用テクニックが紹介されている。ビジュアル指針（カラーパレット・フォント・ロゴ・デザイントークン）を中央フォルダに置き、Claude Designから参照させるとブランドの一貫性も保てる。",
+      "source_title": "Hidden Tricks to Level Up Your Claude Cowork Setup - Geeky Gadgets",
+      "source_url": "https://www.geeky-gadgets.com/hidden-claude-cowork-tricks/",
+      "tags": [
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-08-19",
+      "last_date": "2026-08-19",
+      "appearances": 10
+    },
+    {
       "id": 1679,
       "title": "検証（Verification）を与えることがClaude Code最大の品質改善策",
       "point": "Anthropic公式のパワーユーザーガイドは「1つだけ実践するなら検証」と明言している。Claude が自力でフィードバックループを閉じられれば、出力が正しくなるまで反復する。フロントエンドなら Chrome 拡張、Webサーバーならデスクトップアプリの内蔵ブラウザ、コード品質なら変更後に `/simplify` を追記する、といった具合にドメイン固有の検証手段への投資が効く。",
@@ -1674,6 +1688,17 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 1701,
+      "title": "`/goal`が30分以上待ちのバックグラウンドタスクを自動で確認しに行く",
+      "point": "`/goal`で完了条件を設定した自律作業において、バックグラウンドタスク待ちで30分以上ゴールが進まない場合、Claudeが自らタスクの状況を確認しに行くようになった。無限待機の解消が目的で、`CLAUDE_CODE_GOAL_CHECKIN_MINUTES=0`でオプトアウトできる。またゴールが回復不能なエラー（認証失効・クレジット枯渇・コンテキスト溢れ）で落ちた場合は、通知とともに自動解除されるようになった。",
+      "source_title": "Claude Code changelog v2.1.234",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-19",
+      "last_date": "2026-08-19",
+      "appearances": 7
     },
     {
       "id": 1692,
@@ -2581,6 +2606,19 @@
       "appearances": 6
     },
     {
+      "id": 1702,
+      "title": "GitLabのMRステータスをフッター・ステータスラインに常時表示",
+      "point": "GitLabリモートを持つリポジトリで`glab` CLIが認証済みなら、フッターとステータスラインに`MR !N`バッジが表示され、draft・pending・green（通過）の状態が一目で分かる。GitHub中心だったClaude CodeのVCS連携がGitLabにも広がり続けており、直前のv2.1.233ではMR URLの`--worktree`対応、v2.1.232ではGitLabトークンの秘匿とマーケットプレイス対応が入っている。",
+      "source_title": "Claude Code changelog v2.1.234",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-19",
+      "last_date": "2026-08-19",
+      "appearances": 5
+    },
+    {
       "id": 1659,
       "title": "Claude Tagのプロアクティブ返信が約30%精度向上",
       "point": "これまでは新着メッセージを1件ずつ見る軽量分類器がYes/Noを判定していたため、単体では依頼に見えない会話を取りこぼしていた。分類器を廃止し、チャンネル横断の文脈・メモリ・常設指示から判断する方式に変更。いつ発言すべきか／すべきでないかの判定が約30%改善した。TeamおよびEnterpriseで本日提供。",
@@ -3359,6 +3397,31 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1704,
+      "title": "スキルは「巨大な1つ」でなく専門特化した小さい複数に分割する",
+      "point": "すべてを1つのスキルに詰め込むと発火精度も出力品質も落ちるため、用途ごとに小さく分けるのがよいとされる。またスキル構築は簡単なタスクの手順記録から始め、慣れるにつれて複雑な処理へ広げる「段階的開示（progressive disclosure）」的な進め方が推奨されている。請求書の突合や競合分析のような定型業務は、スキル化しておくと繰り返しコストがほぼゼロになる。",
+      "source_title": "Automate Invoice Reconciliation with the Claude Desktop App - Geeky Gadgets",
+      "source_url": "https://www.geeky-gadgets.com/claude-business-workflow-guide/",
+      "tags": [],
+      "first_date": "2026-08-19",
+      "last_date": "2026-08-19",
+      "appearances": 4
+    },
+    {
+      "id": 1706,
+      "title": "モバイル通知を有効にして長時間タスクを「放置しつつ把握」する",
+      "point": "スケジュールタスクや長時間の自動処理を回す際は、モバイル通知をオンにしておくと、進捗確認のために張り付く必要がなくなる。通知は「完了時」「Claudeが判断を求めた時」に届くため、他の作業に集中したまま必要なタイミングだけ介入できる。チームで使う場合はGitHubや共有クラウドにコンテキストファイルとスキルを置き、同じ前提を共有するのが効率的とされる。",
+      "source_title": "Automate Invoice Reconciliation with the Claude Desktop App - Geeky Gadgets",
+      "source_url": "https://www.geeky-gadgets.com/claude-business-workflow-guide/",
+      "tags": [
+        "自動化",
+        "製品機能"
+      ],
+      "first_date": "2026-08-19",
+      "last_date": "2026-08-19",
+      "appearances": 4
     },
     {
       "id": 1685,
@@ -4723,6 +4786,30 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1699,
+      "title": "`claude-api`スキルのコンテキストコストが200k超から約25kに削減",
+      "point": "組み込みの`claude-api`スキルは読み込むだけで20万トークン超を消費していたが、v2.1.234で参照ドキュメントを必要時のみ読み込む方式に変更され、約2.5万トークンまで削減された。API連携作業でコンテキスト窓を圧迫していた人は恩恵が大きい。自作スキルでも「本体は軽く、詳細は別ファイルへ」という段階的開示の設計が有効であることを裏付ける例。",
+      "source_title": "Claude Code changelog v2.1.234",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-19",
+      "last_date": "2026-08-19",
+      "appearances": 3
+    },
+    {
+      "id": 1700,
+      "title": "`/permissions`と`/add-dir`を作業中に開けるようになった",
+      "point": "これまでClaudeが作業中は開けなかった`/permissions`が、ターンの途中でも開けるようになり、変更したルールはそのターンの残りから即座に適用される。`/add-dir`も作業中に実行可能になり、`/autocompact`・`/theme`・`/help`・`/config`・`/advisor`のダイアログもフルスクリーンTUIでターン中に開ける。権限で止まるたびに中断する必要がなくなる。",
+      "source_title": "Claude Code changelog v2.1.234",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-19",
+      "last_date": "2026-08-19",
+      "appearances": 3
     },
     {
       "id": 1688,
@@ -7018,6 +7105,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1703,
+      "title": "「Agentic OS」：中央フォルダにモジュール型コンテキストファイルを置く",
+      "point": "業務用途では、ブランドボイスプロファイル・ビジュアルアイデンティティ指針・理想顧客像（ICP）などを1つの中央フォルダ（記事中の呼称は「Agentic OS」）に再利用可能な.mdファイルとして置き、タスクごとに必要なファイルだけを参照させる運用が推奨されている。毎回説明し直す手間が消え、出力のブレも減る。Google DriveやNotionなどクラウド側に置けば端末を問わず同じ前提で作業できる。",
+      "source_title": "Automate Invoice Reconciliation with the Claude Desktop App - Geeky Gadgets",
+      "source_url": "https://www.geeky-gadgets.com/claude-business-workflow-guide/",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-19",
+      "last_date": "2026-08-19",
+      "appearances": 2
     },
     {
       "id": 1691,
@@ -10175,6 +10275,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1698,
+      "title": "使用上限リセット時にセッションを自動継続させる",
+      "point": "Claude Code v2.1.234で、claude.aiの使用上限に到達したセッションが、上限リセット時に自動的に作業を再開するようになった。長時間タスクを投げたまま離席しても、上限で止まったきり放置されることがなくなる。挙動を変えたい場合は`/config`の「Continue automatically at usage limit」でオフにできる。自動化・スケジュール実行との相性がよい変更。",
+      "source_title": "Claude Code changelog v2.1.234",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "自動化"
+      ],
+      "first_date": "2026-08-19",
+      "last_date": "2026-08-19",
+      "appearances": 1
     },
     {
       "id": 1687,
@@ -19004,6 +19118,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-19",
+      "highlights": [
+        "使用上限リセット待ちの手動再開が不要に — v2.1.234でclaude.aiの上限がリセットされるとセッションが自動継続。`/config`でオフにもできる",
+        "`claude-api`スキルのコンテキスト消費が約1/8に — 200k超→約25k。参照ドキュメントをオンデマンド読み込みに変更",
+        "「Agentic OS」型の中央フォルダ運用 — ブランドボイス・ビジュアル指針・ICPをモジュール型.mdで置き、タスクごとに参照させる"
+      ]
+    },
+    {
       "date": "2026-08-18",
       "highlights": [
         "Skillのdescriptionは「発火条件」を書く — 公式のSkill執筆ベストプラクティスが更新。トピック名ではなく「どんな状況で呼ばれるか」を具体語で書くのが最重要",
@@ -20060,5 +20182,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-18T08:00:04.834297"
+  "generated_at": "2026-08-19T08:00:04.861081"
 }
