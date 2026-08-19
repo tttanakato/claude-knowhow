@@ -1986,6 +1986,30 @@
       "appearances": 7
     },
     {
+      "id": 1712,
+      "title": "バックグラウンドのクラウドセッションが軽量化",
+      "point": "`/ultrareview`や`/autofix-pr`といったクラウドセッションをバックグラウンドで走らせている間、そのイベントストリームが更新のたびに再走査・再描画されていたのをやめ、メモリとCPUの使用量が改善された。長時間のレビューや自動修正をバックグラウンドに投げたまま手元で別作業を続ける運用では体感差が出る。並列セッションを3〜5本走らせるスタイルとの相性がよい改善。",
+      "source_title": "Claude Code changelog v2.1.235",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "生産性"
+      ],
+      "first_date": "2026-08-20",
+      "last_date": "2026-08-20",
+      "appearances": 6
+    },
+    {
+      "id": 1719,
+      "title": "作業を止めずに聞く`/btw`",
+      "point": "Claudeが作業中でも`/btw`で割り込み質問ができる。ツール呼び出しなしの単発応答だが、会話の全コンテキストを踏まえて答えるため「今のリトライ処理は何をしている？」といった確認に向く。作業を中断せず、かつメインの文脈を汚さずに済むのが利点。公式ガイドでは`/color`によるセッション色分けや`/statusline`のカスタマイズとあわせ、複数セッション並行時の見失い防止策として位置づけられている。",
+      "source_title": "Claude Code power user tips - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [],
+      "first_date": "2026-08-20",
+      "last_date": "2026-08-20",
+      "appearances": 6
+    },
+    {
       "id": 1657,
       "title": "Claude in ChromeサイドパネルがCoworkセッションに統合",
       "point": "サイドパネルがClaude Coworkセッションそのものになり、会話が履歴に保存され、スキルとコネクタがブラウザ内でも動くようになった。タブで始めた作業をデスクトップ・Web・モバイルで引き継げる。Max・Teamプランで提供開始、Proは数週間かけて順次展開。Enterpriseは既定オフで管理者が許可ドメインを限定できる。",
@@ -2604,6 +2628,34 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1717,
+      "title": "`SendMessage`が大きすぎるメッセージを送信前に拒否する",
+      "point": "セッション間メッセージングの`SendMessage`が、クロスセッション配送の上限を超えるサイズのメッセージを、送信時点で明示的に拒否するようになった。従来は黙って破棄され、送り手側は「届いたつもり」で待ち続けてしまうことがあった。セッション間で調査結果を受け渡す運用では、大きな成果物は本文に貼らずファイル経由で渡す設計にしておくのが無難。",
+      "source_title": "Claude Code changelog v2.1.235",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-20",
+      "last_date": "2026-08-20",
+      "appearances": 5
+    },
+    {
+      "id": 1718,
+      "title": "変更後に`/simplify`を付けて並列レビューを走らせる",
+      "point": "Anthropicのパワーユーザー向け公式ガイドでは、コード変更を指示するプロンプトの末尾に`/simplify`を添える運用が紹介されている。変更されたコードに対して並列エージェントが起動し、再利用性・品質・効率・CLAUDE.md準拠を一度にレビューする。「変更してから`/simplify`を実行して」と一文添えるだけでよい。同ガイドは最重要のTipsとして「検証（Verification）をClaudeに与えること」を挙げており、`/simplify`はその実装例のひとつ。",
+      "source_title": "Claude Code power user tips - Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "CLAUDE.md",
+        "API",
+        "プロンプト",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-08-20",
+      "last_date": "2026-08-20",
+      "appearances": 5
     },
     {
       "id": 1702,
@@ -4786,6 +4838,43 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1711,
+      "title": "権限ダイアログの表示内容と許可範囲が一致するよう修正",
+      "point": "権限ダイアログの説明文と「今後確認しない（don't ask again）」の選択肢が、実際に付与される権限の範囲と常に一致するようv2.1.235で改められた。さらに、対象の内容を完全に表示しきれない場合は「今後確認しない」自体が提示されなくなった。「見えていないものをまとめて許可してしまう」事故を構造的に防ぐ変更で、Auto Mode既定化以降の権限設計を見直す際の前提として押さえておきたい。あわせて、権限プロンプトのコメント欄でShift+Tabを押すと編集が承認されセッション全体の編集権限まで付与されてしまう不具合も修正された。",
+      "source_title": "Claude Code changelog v2.1.235",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-08-20",
+      "last_date": "2026-08-20",
+      "appearances": 3
+    },
+    {
+      "id": 1713,
+      "title": "`ctrl+t`のタスクリスト展開状態がセッション再開後も保たれる",
+      "point": "`ctrl+t`で展開したタスクリストが、未完了タスクを残したままセッションを再開・再起動すると必ず折りたたまれた状態で始まってしまう挙動が修正された。長期タスクをレジュームで引き継ぐ運用では、毎回展開し直す手間がなくなる。細かいが、複数セッションを並行管理していると効いてくる種類の改善。",
+      "source_title": "Claude Code changelog v2.1.235",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-20",
+      "last_date": "2026-08-20",
+      "appearances": 3
+    },
+    {
+      "id": 1715,
+      "title": "Vimモードの状態がトランスクリプト切替でリセットされなくなった",
+      "point": "Vimモード利用時、`ctrl+o`で詳細トランスクリプトを開閉したりパネルを閉じたりすると、NORMALモードとカーソル位置が失われていたのが、v2.1.235で保持されるようになった。あわせてダイアログで矢印キーとEnterを素早く連打した際に、移動先ではなく直前のハイライト項目が選択されてしまう問題も修正されている。キーボード主体で高速に操作する人ほど恩恵が大きい。",
+      "source_title": "Claude Code changelog v2.1.235",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-08-20",
+      "last_date": "2026-08-20",
+      "appearances": 3
     },
     {
       "id": 1699,
@@ -7105,6 +7194,28 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1714,
+      "title": "コンテキスト上限エラーが「auto-compactがオフである」ことを教えてくれる",
+      "point": "コンテキスト上限に達した際のエラーメッセージが、自動圧縮（auto-compact）が無効になっている場合はその旨を明示し、`/config`から再有効化できることを案内するようになった。以前は「なぜ圧縮されずに落ちたのか」が分かりにくかった。長時間セッションで唐突に止まる場合、まずauto-compactの状態を疑うのが定石。",
+      "source_title": "Claude Code changelog v2.1.235",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-20",
+      "last_date": "2026-08-20",
+      "appearances": 2
+    },
+    {
+      "id": 1716,
+      "title": "組み込み`grep`が病的パターンでメモリを食い潰さなくなった",
+      "point": "macOS/Linuxのネイティブビルドに同梱される`grep`が改善され、破滅的バックトラックを起こすような正規表現は即座に失敗するようになった（従来はメモリを使い切るまで走り続けることがあった）。また`-m N`と`-A`/`-C`を併用した際に前後の文脈行が正しく出力されるようになった。大規模リポジトリの探索をClaudeに任せる際の安定性が上がる。",
+      "source_title": "Claude Code changelog v2.1.235",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-20",
+      "last_date": "2026-08-20",
+      "appearances": 2
     },
     {
       "id": 1703,
@@ -10275,6 +10386,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1710,
+      "title": "`spellcheck`設定でプロンプト入力の誤字を検出する",
+      "point": "Claude Code v2.1.235で、プロンプト入力欄の誤字に下線を引くオプション設定`spellcheck`が追加された。判定にはローカルにインストール済みの`aspell`・`hunspell`・`ispell`のいずれかを使うため、外部にテキストを送らずに済む。既定はオフなので、使う場合は設定で明示的に有効化する。長文の指示やCLAUDE.mdの記述をプロンプト内で書き起こす場面でのタイプミス起因の誤解釈を減らせる。",
+      "source_title": "Claude Code changelog v2.1.235",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-08-20",
+      "last_date": "2026-08-20",
+      "appearances": 1
     },
     {
       "id": 1698,
@@ -19118,6 +19244,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-20",
+      "highlights": [
+        "プロンプト入力にスペルチェックが載った — v2.1.235の新設定`spellcheck`。ローカルのaspell/hunspell/ispellを使い、入力中に誤字へ下線を引く",
+        "権限ダイアログの「表示」と「実際に許可される範囲」が一致するよう修正 — 内容を全部見せられない時は「今後確認しない」自体を出さない安全側の挙動に",
+        "バックグラウンドのクラウドセッションが軽くなった — `/ultrareview`や`/autofix-pr`のイベントストリームを毎回再走査・再描画しなくなり、メモリとCPUを大幅節約"
+      ]
+    },
+    {
       "date": "2026-08-19",
       "highlights": [
         "使用上限リセット待ちの手動再開が不要に — v2.1.234でclaude.aiの上限がリセットされるとセッションが自動継続。`/config`でオフにもできる",
@@ -20182,5 +20316,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-19T08:00:04.861081"
+  "generated_at": "2026-08-20T08:00:04.832986"
 }
