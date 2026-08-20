@@ -237,6 +237,19 @@
       "appearances": 20
     },
     {
+      "id": 1732,
+      "title": "auto modeのMonitor許可ルールが一時無効化されBashと同等審査に",
+      "point": "auto mode有効中は `Monitor` の allow ルールが脇に置かれ、MonitorコマンドもBashコマンドと同じ手順でレビューされるようになった。あわせてBedrock／Vertex AI／Foundry環境やテレメトリ無効時でも、Claude APIと同じ重大度スコア付き分類器が使われるよう統一された。",
+      "source_title": "Claude Code changelog 2.1.236",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-21",
+      "last_date": "2026-08-21",
+      "appearances": 19
+    },
+    {
       "id": 1088,
       "title": "コンテキストエンジニアリングがプロンプト技巧を超える",
       "point": "2026年はモデルがボトルネックになることは稀で、ほぼ常にコンテキストが律速。言葉の巧拙より、システムプロンプト・ファイル・メモリ・例示など「何を読ませるか」の設計が出力品質を決める。",
@@ -250,6 +263,20 @@
       "first_date": "2026-06-24",
       "last_date": "2026-06-24",
       "appearances": 19
+    },
+    {
+      "id": 1726,
+      "title": "LLMゲートウェイ／カスタムbaseURL利用時のプロンプトキャッシュ不具合が修正",
+      "point": "2.1.237で、LLMゲートウェイや独自baseURL経由のセッションでプロンプトキャッシュが正しく効かず古いプロンプトを掴む問題が修正された。社内プロキシ経由でClaude Codeを使う組織はバージョンを上げるだけでトークンコストと初回応答時間が改善する可能性がある。",
+      "source_title": "Claude Code Release v2.1.237",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-08-21",
+      "last_date": "2026-08-21",
+      "appearances": 18
     },
     {
       "id": 1046,
@@ -480,6 +507,19 @@
       "first_date": "2026-05-21",
       "last_date": "2026-05-21",
       "appearances": 15
+    },
+    {
+      "id": 1729,
+      "title": "macOSサンドボックスでワイルドカード読み取り拒否が許可領域より優先に",
+      "point": "`**/.env` のようなワイルドカードのread-denyルールが、読み取り許可領域の内側でも優先されるよう変更。マッチしたディレクトリ配下も対象になり、拒否対象ファイルをリネームして回避することもできなくなった。認証情報をリポジトリ内に置く構成でのエージェント実行リスクが下がる。",
+      "source_title": "Claude Code changelog 2.1.236",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-21",
+      "last_date": "2026-08-21",
+      "appearances": 14
     },
     {
       "id": 974,
@@ -857,6 +897,19 @@
       "appearances": 11
     },
     {
+      "id": 1731,
+      "title": "`/permissions`を作業中に開いて権限をその場で調整できる",
+      "point": "これまで待つ必要があった `/permissions` が、Claudeが作業している最中でも開けるようになった。変更したルールは現在のターンの残りから適用される。許可プロンプトで止まったときに、中断せずルールを追加して続行できる。",
+      "source_title": "Claude Code changelog 2.1.236",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-08-21",
+      "last_date": "2026-08-21",
+      "appearances": 10
+    },
+    {
       "id": 1705,
       "title": "Claude Designは Cowork の利用上限を消費しない",
       "point": "プレゼン資料・Webサイト・グラフィックの作成をClaude Designで行うと、Cowork側の使用量を消費せずに済むため、上限を本来のエージェント作業に温存できるという運用テクニックが紹介されている。ビジュアル指針（カラーパレット・フォント・ロゴ・デザイントークン）を中央フォルダに置き、Claude Designから参照させるとブランドの一貫性も保てる。",
@@ -1101,6 +1154,20 @@
       "first_date": "2026-06-08",
       "last_date": "2026-06-08",
       "appearances": 10
+    },
+    {
+      "id": 1727,
+      "title": "`ANTHROPIC_DEFAULT_MODEL`で新規セッションの初期モデルを固定する",
+      "point": "2.1.236で追加された環境変数。新規セッションが開始するモデルを指定するが、`ANTHROPIC_MODEL` と違って `/model` での選択が上書きでき、その選択は再起動後も維持される。「普段はSonnet、必要時だけ手動でOpus」という運用をチーム標準として配りやすくなった。",
+      "source_title": "Claude Code changelog 2.1.236",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-08-21",
+      "last_date": "2026-08-21",
+      "appearances": 9
     },
     {
       "id": 1556,
@@ -1984,6 +2051,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1730,
+      "title": "組み込みclaude-apiスキルのコンテキスト消費が20万→2.5万トークンに",
+      "point": "参照ドキュメントをオンデマンド読み込みに変えることで、claude-apiスキル読み込み時のコンテキストコストが約1/8に削減された。自作スキルでも「本体は薄く、詳細資料は必要になってから読ませる」段階的開示の設計が有効という実例。",
+      "source_title": "Claude Code changelog 2.1.236",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-21",
+      "last_date": "2026-08-21",
+      "appearances": 6
     },
     {
       "id": 1712,
@@ -3451,6 +3531,19 @@
       "appearances": 5
     },
     {
+      "id": 1728,
+      "title": "`notify_when_idle`で別セッションの完了を1回だけ通知させる",
+      "point": "クロスセッション `SendMessage` に `notify_when_idle` が追加。同一マシン上の別のClaude Codeセッションに対し「次にアイドルになったら1度だけ知らせて」と依頼できる。オプトイン・ワンショットでポーリング不要（macOS/Linux対応）。長時間ビルドを別セッションに投げる並行作業と相性が良い。",
+      "source_title": "Claude Code changelog 2.1.236",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-21",
+      "last_date": "2026-08-21",
+      "appearances": 4
+    },
+    {
       "id": 1704,
       "title": "スキルは「巨大な1つ」でなく専門特化した小さい複数に分割する",
       "point": "すべてを1つのスキルに詰め込むと発火精度も出力品質も落ちるため、用途ごとに小さく分けるのがよいとされる。またスキル構築は簡単なタスクの手順記録から始め、慣れるにつれて複雑な処理へ広げる「段階的開示（progressive disclosure）」的な進め方が推奨されている。請求書の突合や競合分析のような定型業務は、スキル化しておくと繰り返しコストがほぼゼロになる。",
@@ -4838,6 +4931,34 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1723,
+      "title": "Claude Code 2.1.237：組み込み「Concise」出力スタイルで前置きを削る",
+      "point": "8/20リリースの2.1.237に、結果から先に書き出し前置き・実況ナレーションを省く組み込み出力スタイル「Concise」が追加された。作業の丁寧さは変えずに応答だけを短くする設計で、`/config` の Output style から選択できる。詳細が欲しいときは追加で聞けばフル説明が返る。",
+      "source_title": "Claude Code changelog 2.1.237",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-08-21",
+      "last_date": "2026-08-21",
+      "appearances": 3
+    },
+    {
+      "id": 1725,
+      "title": "出力スタイル変更は`/clear`か新規セッションまで反映されない",
+      "point": "出力スタイルはシステムプロンプトの一部で、Claude Codeがセッション開始時に一度だけ読み込む。設定を変えた直後の会話には効かないので、`/clear` を実行するか新しいセッションを立ち上げて反映させる。「設定したのに変わらない」の大半はこれが原因。",
+      "source_title": "Claude Code adds a new \"Concise\" output style",
+      "source_url": "https://cthcommunity.com/en/news/claude-code-concise-output-style/",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-08-21",
+      "last_date": "2026-08-21",
+      "appearances": 3
     },
     {
       "id": 1711,
@@ -7194,6 +7315,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1724,
+      "title": "Conciseを全プロジェクトで効かせるにはグローバルsettings.jsonに書く",
+      "point": "`/config` が書き込むのは当該プロジェクトのローカル設定のため、あるリポジトリでConciseにしても別リポジトリでは元に戻る。全体に適用するには `~/.claude/settings.json`（Windowsは `%USERPROFILE%\\.claude\\settings.json`）に `\"outputStyle\": \"Concise\"` を記述する。",
+      "source_title": "Claude Code Concise Output Style: How to Enable It",
+      "source_url": "https://explainx.ai/blog/claude-code-concise-output-style-config-august-2026",
+      "tags": [],
+      "first_date": "2026-08-21",
+      "last_date": "2026-08-21",
+      "appearances": 2
     },
     {
       "id": 1714,
@@ -19244,6 +19376,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-21",
+      "highlights": [
+        "Concise出力スタイルが標準搭載 — Claude Code 2.1.237で、前置きや実況を省いて結果から書き出す組み込みスタイルが追加。",
+        "Conciseは「グローバル設定」でないと持ち越せない — `/config`はプロジェクト単位。全リポジトリに効かせるには`~/.claude/settings.json`に書く。",
+        "LLMゲートウェイ経由のプロンプトキャッシュ不具合を修正 — 独自baseURL運用チームのコストと応答遅延に直結する修正。"
+      ]
+    },
+    {
       "date": "2026-08-20",
       "highlights": [
         "プロンプト入力にスペルチェックが載った — v2.1.235の新設定`spellcheck`。ローカルのaspell/hunspell/ispellを使い、入力中に誤字へ下線を引く",
@@ -20316,5 +20456,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-20T08:00:04.832986"
+  "generated_at": "2026-08-21T08:00:04.905636"
 }
