@@ -1433,6 +1433,17 @@
       "appearances": 9
     },
     {
+      "id": 1740,
+      "title": "`--defer-shutdown-max-min`でセルフホストランナーを安全に停止する",
+      "point": "`claude self-hosted-runner --defer-shutdown-max-min <分>` を追加。SIGTERM を受けても接続中のセッションは処理を続け、指定分を過ぎた残りだけを退避して終了する。CI基盤やk8s上でランナーをローリング更新するときに、走行中の作業を切り落とさずに済む。あわせて `--proxy-authorization-command` / `--proxy-authorization-file` も追加され、接続ごとに `Proxy-Authorization` ヘッダーの再発行が必要な社内プロキシに対応した。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-22",
+      "last_date": "2026-08-22",
+      "appearances": 8
+    },
+    {
       "id": 1694,
       "title": "自己ホスト環境ベータ：runnerはFixed/On-demandの2モード、ZDR組織は対象外",
       "point": "Claude Code の自己ホスト環境はTeam・Enterpriseプラン向けにパブリックベータ提供中。既定では無効で、OwnerまたはadminがCloud environments管理画面で「Allow self-hosted environments」を有効化する必要があり、Claude Code on the webの有効化が前提。ZDR適用組織は利用不可。実行方式はrunner（キューされたセッションを取得しセッションごとに別プロセスを起動する常駐プロセス）で、台数固定のFixedモードと需要に応じて起動・停止するOn-demandモードがある。リポジトリのチェックアウト・ビルド成果物・シークレットは自組織のインフラ内に留まる一方、セットアップと運用保守の担当エンジニアを見込んでおく必要がある。",
@@ -2710,6 +2721,19 @@
       "appearances": 6
     },
     {
+      "id": 1739,
+      "title": "カスタム出力スタイルがセッション途中で既定ボイスに戻る不具合を修正",
+      "point": "カスタム／プロジェクト／プラグインの出力スタイルを指定していても、会話が進むと既定の口調に戻ってしまう現象があった。2.1.238 で修正済み。「Concise」など出力スタイルを常用している場合は、更新すると指定が最後まで効く。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-22",
+      "last_date": "2026-08-22",
+      "appearances": 5
+    },
+    {
       "id": 1717,
       "title": "`SendMessage`が大きすぎるメッセージを送信前に拒否する",
       "point": "セッション間メッセージングの`SendMessage`が、クロスセッション配送の上限を超えるサイズのメッセージを、送信時点で明示的に拒否するようになった。従来は黙って破棄され、送り手側は「届いたつもり」で待ち続けてしまうことがあった。セッション間で調査結果を受け渡す運用では、大きな成果物は本文に貼らずファイル経由で渡す設計にしておくのが無難。",
@@ -3529,6 +3553,68 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1737,
+      "title": "プラグインマーケットプレイスの`headersHelper`で短命トークン認証を通す",
+      "point": "URLマーケットプレイスやカタログエントリに `headersHelper` を書くと、カタログ取得や同一オリジンのアーカイブ取得時にコマンドを実行してHTTPヘッダー（短命トークンなど）を生成できる。社内プライベートマーケットプレイスを認証付きで配布したいケースに使える。エントリ側の `headersHelper` はインストール／更新時のみ実行され、コマンド内容を表示したうえで `[y/N]` の確認が入る。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-22",
+      "last_date": "2026-08-22",
+      "appearances": 4
+    },
+    {
+      "id": 1738,
+      "title": "長時間セッションのメモリ肥大化が修正された",
+      "point": "これまで対話セッションを長く続けるとメモリが青天井に増えていたが、2.1.238 でサブエージェントのツール結果が「直近の表示ウィンドウ」を抜けた時点で解放されるようになった。サブエージェントを多用する長時間の作業でも動作が重くならない。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-22",
+      "last_date": "2026-08-22",
+      "appearances": 4
+    },
+    {
+      "id": 1742,
+      "title": "フルスクリーンのCtrl+L / Cmd+Kが「再描画のみ」に統一",
+      "point": "フルスクリーンモードでの Ctrl+L と Cmd+K は常に画面の再描画だけを行うようになり、二度押しで `/clear` が走るショートカットは廃止された。1行しかない nvim ターミナルで意図せず `/clear` が連発される問題も解消。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-22",
+      "last_date": "2026-08-22",
+      "appearances": 4
+    },
+    {
+      "id": 1743,
+      "title": "MCPの`headersHelper`にフォルダ信頼ダイアログが必須化",
+      "point": "プロジェクトの `.mcp.json` に書いた MCP `headersHelper` や、プロジェクト／`--add-dir` のエージェントファイル内インラインMCPサーバーは、そのフォルダの信頼ダイアログを承認済みでないと実行されなくなった（`claude -p` 下でも同様）。さらにプロジェクト・プラグイン・エージェントファイル由来のヘルパーは、認証系の環境変数を引き継がずに実行される。リポジトリを clone しただけで任意コマンドが走るリスクを潰す変更。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-22",
+      "last_date": "2026-08-22",
+      "appearances": 4
+    },
+    {
+      "id": 1744,
+      "title": "自動更新チェックを起動10秒後にずらして体感速度を改善",
+      "point": "これまで起動と同時に走っていた自動更新チェックが、起動から約10秒後の実行に変更された。CPUの取り合いがなくなり、`claude` 起動直後の入力レスポンスが改善する。あわせて macOS では素の `claude` の起動自体も高速化されている。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-22",
+      "last_date": "2026-08-22",
+      "appearances": 4
     },
     {
       "id": 1728,
@@ -4931,6 +5017,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1741,
+      "title": "`claude mcp list`が無効サーバーへ接続しなくなった",
+      "point": "`claude mcp list` と `claude mcp get` は、無効化済みのMCPサーバーに対してヘルスチェック接続を行わず `⊘ Disabled` と表示するだけになった。停止中のサーバーが多い環境でコマンドの待ち時間が短縮される。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-22",
+      "last_date": "2026-08-22",
+      "appearances": 3
     },
     {
       "id": 1723,
@@ -10518,6 +10617,34 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1736,
+      "title": "`keybindingFlavor`でCtrl+Wの挙動をBash流に切り替える",
+      "point": "Claude Code 2.1.238 で `keybindingFlavor` 設定が追加。`\"readline\"` にすると、プロンプト内の Ctrl+W が Bash と同じく「直前の空白まで削除」になる。既定値は `\"classic\"` で従来どおりの挙動。ターミナル作業に慣れた人ほど指の記憶と一致するので、誤削除のストレスが減る。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-08-22",
+      "last_date": "2026-08-22",
+      "appearances": 1
+    },
+    {
+      "id": 1745,
+      "title": "Claude Academy：無料の学習ハブが公開された",
+      "point": "2026年8月20日、Anthropic が Claude Academy を公開。同社が社内研修で使っている内容をベースに、コース・チュートリアル・バッジ・パーソナライズされた推奨を提供する。「4D AI Fluency Framework」やエージェントに何を知らせるかの管理手法などが扱われる。全コース無料・クレジットカード不要。",
+      "source_title": "Claude Academy",
+      "source_url": "https://www.anthropic.com/learn",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-08-22",
+      "last_date": "2026-08-22",
+      "appearances": 1
     },
     {
       "id": 1710,
@@ -19376,6 +19503,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-22",
+      "highlights": [
+        "キーバインド設定 `keybindingFlavor` — Ctrl+W をBash（readline）流の「直前の空白まで削除」に変更できる新設定",
+        "長時間セッションのメモリ肥大化を修正 — サブエージェントのツール結果を表示ウィンドウ外で解放するように",
+        "Claude Academy が公開 — Anthropic社内の育成プログラムをベースにした無料学習ハブ"
+      ]
+    },
+    {
       "date": "2026-08-21",
       "highlights": [
         "Concise出力スタイルが標準搭載 — Claude Code 2.1.237で、前置きや実況を省いて結果から書き出す組み込みスタイルが追加。",
@@ -20456,5 +20591,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-21T08:00:04.905636"
+  "generated_at": "2026-08-22T08:00:05.297063"
 }
