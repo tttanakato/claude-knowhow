@@ -2064,6 +2064,17 @@
       "appearances": 7
     },
     {
+      "id": 1750,
+      "title": "`/goal`の長時間タスク確認がバックオフするようになった",
+      "point": "バックグラウンドで走る長時間作業へのチェックインが、従来の「30分ごと固定」から30分→1時間→2時間ごとへと段階的に間隔を広げる方式に変更。数時間かかるビルドやテストで通知が過剰にならず、トークン消費も抑えられる。`claude --resume`のピッカーから復帰した場合もアクティブなゴールが復元される。",
+      "source_title": "Claude Code changelog 2.1.239",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-23",
+      "last_date": "2026-08-23",
+      "appearances": 6
+    },
+    {
       "id": 1730,
       "title": "組み込みclaude-apiスキルのコンテキスト消費が20万→2.5万トークンに",
       "point": "参照ドキュメントをオンデマンド読み込みに変えることで、claude-apiスキル読み込み時のコンテキストコストが約1/8に削減された。自作スキルでも「本体は薄く、詳細資料は必要になってから読ませる」段階的開示の設計が有効という実例。",
@@ -2719,6 +2730,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1752,
+      "title": "`/resume`が似た名前の別ディレクトリのセッションを拾う不具合を修正",
+      "point": "`claude -c`／`/resume`が、パスの差が`_`・`-`・`.`だけの別ディレクトリのセッションを誤って再開する問題が解消。加えて、削除済みworktreeのセッションは「そのディレクトリにcdしろ」と言わず、カレントディレクトリで再開するようになった。命名が似たリポジトリを複数持つ環境で効く。",
+      "source_title": "Claude Code changelog 2.1.239",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-23",
+      "last_date": "2026-08-23",
+      "appearances": 5
     },
     {
       "id": 1739,
@@ -5017,6 +5041,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1749,
+      "title": "Windowsでクロスセッションメッセージングが利用可能に",
+      "point": "これまでmacOS/Linux限定だったセッション間通信がWindowsでも解禁。`SendMessage`で他マシン・他セッションのClaude Codeに指示を渡し、`ListAgents`で到達可能なセッションを探索できる。Windows環境で複数セッションを並列運用している場合、手動でのコピペ連携が不要になる。",
+      "source_title": "Claude Code changelog 2.1.239",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-08-23",
+      "last_date": "2026-08-23",
+      "appearances": 3
     },
     {
       "id": 1741,
@@ -7414,6 +7453,68 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1751,
+      "title": "`ListAgents`が「自分の名前」とライブのチームメイトを返すようになった",
+      "point": "これまで`ListAgents`はサブエージェントと他セッションしか列挙せず、到達可能なチームメイトが「いないように見える」問題があった。自セッション名（他が宛先に使う名前）も返すため、マルチエージェント構成で「誰に何を送るか」をClaude自身が判断しやすくなる。自分宛の`SendMessage`もエラーではなくその旨を返す。",
+      "source_title": "Claude Code changelog 2.1.239",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-23",
+      "last_date": "2026-08-23",
+      "appearances": 2
+    },
+    {
+      "id": 1753,
+      "title": "Bedrockのプロキシ環境でAPI課金が二重化していた不具合を修正",
+      "point": "レスポンスのContent-Typeヘッダを削除するプロキシ配下でBedrockのストリーミングが失敗し、毎ターンが非ストリーミングで再実行されて課金が静かに倍増していた。社内プロキシ経由でBedrockを使っている場合は、必ず2.1.239以降へ更新してコスト影響を確認したい。",
+      "source_title": "Claude Code changelog 2.1.239",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-23",
+      "last_date": "2026-08-23",
+      "appearances": 2
+    },
+    {
+      "id": 1754,
+      "title": "使用上限メッセージがセッション／週次のリセット時刻も表示",
+      "point": "月次の支出上限を使い切った際のメッセージに、セッション上限・週次上限がいつリセットされるかが併記されるようになった。「いつ作業を再開できるか」を確認するために別画面を開く必要がなくなる。",
+      "source_title": "Claude Code changelog 2.1.239",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-23",
+      "last_date": "2026-08-23",
+      "appearances": 2
+    },
+    {
+      "id": 1755,
+      "title": "WebFetchの期限切れコンテンツがセッション中ずっと残る不具合を修正",
+      "point": "WebFetchで取得したページが本来15分で破棄されるはずが、セッション終了までメモリに保持されていた。長時間の調査セッションでのメモリ肥大化要因のひとつが解消され、古いページ内容を掴み続けるリスクも減る。",
+      "source_title": "Claude Code changelog 2.1.239",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-23",
+      "last_date": "2026-08-23",
+      "appearances": 2
+    },
+    {
+      "id": 1758,
+      "title": "Fable 5の生物学セーフガードを再調整、フォールバックが約85%減",
+      "point": "Anthropicが安全性分類器の「憲法」を書き直し、良性ユースケースの例外を明示したうえで再学習。検査値の解釈や症状の理解、教育目的の生物学など日常的な質問でOpus 5へ退避する挙動が大幅に減った。ただしウイルス学・毒性学・分子設計などデュアルユース領域は引き続きOpus 5へフォールバックする。",
+      "source_title": "Improving Fable 5's biology safeguards",
+      "source_url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-08-23",
+      "last_date": "2026-08-23",
+      "appearances": 2
     },
     {
       "id": 1724,
@@ -10617,6 +10718,32 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1756,
+      "title": "BOM付きの`.md`はエージェント・スキル・コマンドが無視されていた",
+      "point": "UTF-8 BOMで始まる`.md`ファイルは、エージェント／スキル／スラッシュコマンドとして黙って読み飛ばされていた。Windowsのエディタや一部のツールはBOMを付けるため、「作ったはずのスキルが呼ばれない」現象の原因になり得る。2.1.239で修正済みだが、既存ファイルのエンコーディング確認は有効。",
+      "source_title": "Claude Code changelog 2.1.239",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-23",
+      "last_date": "2026-08-23",
+      "appearances": 1
+    },
+    {
+      "id": 1757,
+      "title": "Claude in Chromeで`/clear`がタブグループを閉じるようになった",
+      "point": "`/clear`実行時にそのセッションのChromeタブグループが閉じられ、空になったグループは`/resume`時やClaude Code終了時にも掃除される。ブラウザ操作を伴う作業でタブが際限なく溜まる問題への対処。",
+      "source_title": "Claude Code changelog 2.1.239",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-23",
+      "last_date": "2026-08-23",
+      "appearances": 1
     },
     {
       "id": 1736,
@@ -19503,6 +19630,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-23",
+      "highlights": [
+        "Windowsでクロスセッションメッセージング解禁 — macOS/Linux同様、複数マシンのClaude Codeセッション同士が`SendMessage`で連携できるようになった",
+        "Bedrockのプロキシ環境で二重課金していた不具合を修正 — Content-Typeを削るプロキシ配下でストリーミングが失敗し、全ターンが非ストリーミングで再実行されていた",
+        "Fable 5の生物学セーフガードを再調整 — 誤検知によるフォールバックを約85%削減、日常的な健康・教育系の質問に答えやすくなった"
+      ]
+    },
+    {
       "date": "2026-08-22",
       "highlights": [
         "キーバインド設定 `keybindingFlavor` — Ctrl+W をBash（readline）流の「直前の空白まで削除」に変更できる新設定",
@@ -20591,5 +20726,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-22T08:00:05.297063"
+  "generated_at": "2026-08-23T08:00:05.225278"
 }
