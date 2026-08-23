@@ -509,6 +509,19 @@
       "appearances": 15
     },
     {
+      "id": 1769,
+      "title": "コンパクション後にスキルの元引数が再実行されないよう改善",
+      "point": "コンパクション（文脈圧縮）の直後に表示されるリマインダーが改善され、スキルに渡した元の引数が「新しい依頼」として再実行されてしまう挙動が抑えられた。長時間セッションでスキルを使う場合、圧縮をまたいだ意図しない再実行が減る。長丁場のエージェント運用における地味だが効く安定化。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-24",
+      "last_date": "2026-08-24",
+      "appearances": 14
+    },
+    {
       "id": 1729,
       "title": "macOSサンドボックスでワイルドカード読み取り拒否が許可領域より優先に",
       "point": "`**/.env` のようなワイルドカードのread-denyルールが、読み取り許可領域の内側でも優先されるよう変更。マッチしたディレクトリ配下も対象になり、拒否対象ファイルをリネームして回避することもできなくなった。認証情報をリポジトリ内に置く構成でのエージェント実行リスクが下がる。",
@@ -3579,6 +3592,20 @@
       "appearances": 5
     },
     {
+      "id": 1762,
+      "title": "`/claude-api upgrade`でPython SDKを0.xから1.xへ移行する",
+      "point": "Claude Code 2.1.239で`/claude-api upgrade`が追加され、`anthropic` 0.x依存のPythonプロジェクトを1.xへ移行できる。あわせて組み込みskillのPythonリファレンスも1.x向けに更新され、タイムアウト指定が`httpx.Timeout`ではなく`anthropic.Timeout`になった点が明記された。古いSDKのまま放置しているリポジトリは、まずこのコマンドで差分を出させると移行漏れを潰しやすい。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-08-24",
+      "last_date": "2026-08-24",
+      "appearances": 4
+    },
+    {
       "id": 1737,
       "title": "プラグインマーケットプレイスの`headersHelper`で短命トークン認証を通す",
       "point": "URLマーケットプレイスやカタログエントリに `headersHelper` を書くと、カタログ取得や同一オリジンのアーカイブ取得時にコマンドを実行してHTTPヘッダー（短命トークンなど）を生成できる。社内プライベートマーケットプレイスを認証付きで配布したいケースに使える。エントリ側の `headersHelper` はインストール／更新時のみ実行され、コマンド内容を表示したうえで `[y/N]` の確認が入る。",
@@ -5041,6 +5068,54 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1763,
+      "title": "`/cost`にデータレジデンシー用の1.1倍プレミアムが反映される",
+      "point": "`/cost`・ステータスライン・`--max-budget-usd`のコスト見積もりが、データレジデンシー設定のワークスペースで課される「US限定推論」の1.1倍プレミアムを含むようになった。従来は実請求額より低く見えていたため、予算上限を設定して運用しているチームは見積もり基準が変わる点に注意が必要。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-24",
+      "last_date": "2026-08-24",
+      "appearances": 3
+    },
+    {
+      "id": 1764,
+      "title": "claude.ai同期プラグインが`name@synced`として個別に制御できる",
+      "point": "クラウドセッションでclaude.aiから同期されたプラグインが`name@synced`という表記になり、`claude plugin enable/disable <name>@synced`で有効・無効を切り替えられるようになった。同名でローカルインストール済みのプラグインを上書きしなくなったため、同期版とローカル版を併存させても衝突しない。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-24",
+      "last_date": "2026-08-24",
+      "appearances": 3
+    },
+    {
+      "id": 1765,
+      "title": "PreToolUseフックで遅延したツール実行が元トレースに戻る",
+      "point": "OpenTelemetryのトレースが分断される不具合が修正された。`PreToolUse`フックによって実行が保留されたツール呼び出しは、これまで新しいトレースを開始してしまっていたが、元のターンのトレースに復帰するようになった。フックを多用してツール実行を制御している環境では、観測データの連続性が改善する。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-24",
+      "last_date": "2026-08-24",
+      "appearances": 3
+    },
+    {
+      "id": 1771,
+      "title": "`/compact`は残量に余裕があるうちに「残したい内容」を明示して実行する",
+      "point": "コンテキストが95%まで埋まってから圧縮するのではなく、60%前後の段階で能動的に`/compact`を実行するのが定石とされる。さらに`/compact`の後ろに残したい情報（変更したファイルパス、採用した設計判断とその理由など）を書き添えると、要約の取りこぼしを抑えられる。次に何をするかをモデルが予測できないときに圧縮が失敗しやすいため、方針を添えるのが要点。",
+      "source_title": "How to Use the /compact Command in Claude Code",
+      "source_url": "https://www.mindstudio.ai/blog/claude-code-compact-command-context-management",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-08-24",
+      "last_date": "2026-08-24",
+      "appearances": 3
     },
     {
       "id": 1749,
@@ -10718,6 +10793,59 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1766,
+      "title": "JetBrains IDEターミナルでEdit/Writeが約5秒止まる不具合を修正",
+      "point": "Claude Codeプラグインを接続した状態のJetBrains系IDEのターミナルで、EditツールとWriteツールの呼び出しが毎回およそ5秒停止していた問題が解消された。IDE内でClaude Codeを常用していて「編集だけ妙に遅い」と感じていた場合は、2.1.239以降への更新で改善する可能性が高い。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-24",
+      "last_date": "2026-08-24",
+      "appearances": 1
+    },
+    {
+      "id": 1767,
+      "title": "マスク入力の内容がCtrl+Yやプロンプト履歴へ漏れる問題を修正",
+      "point": "ログインコード入力欄のような伏字（パスワード形式）フィールドに入れたテキストが、他の場所でCtrl+Yを押すと貼り付けられたり、ダブルEscでクリアしたときにプロンプト履歴へ保存されたりしていた。セキュリティ上の実害があるため、認証情報をターミナルで扱う運用では優先的に更新したい修正。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-08-24",
+      "last_date": "2026-08-24",
+      "appearances": 1
+    },
+    {
+      "id": 1768,
+      "title": "Alpine/musl環境でも画像貼り付け・クリップボード・音声キャプチャが動く",
+      "point": "Alpine Linuxなどmuslベースの環境向けビルドで、ネイティブの画像貼り付け・クリップボード・音声キャプチャのアドオンが読み込まれるようになった。従来はglibc向けバイナリがランタイムに拒否されて機能しなかった。軽量コンテナでClaude Codeを動かす構成でも、スクリーンショット貼り付けが使えるようになる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-24",
+      "last_date": "2026-08-24",
+      "appearances": 1
+    },
+    {
+      "id": 1770,
+      "title": "Managed Agentsのweb_search/web_fetchにドメイン許可リストを設定する",
+      "point": "Claude Managed Agentsで、エージェントのweb_searchとweb_fetchが到達できるサイトを制限できるようになった。`agent_toolset_20260401`のconfigs配列にある該当ツールのエントリへ`allowed_domains`または`blocked_domains`を設定する。web_fetchは`max_content_tokens`、web_searchは`user_location`も受け付ける。社内規程で参照先を絞る必要がある用途に有効。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-24",
+      "last_date": "2026-08-24",
+      "appearances": 1
     },
     {
       "id": 1756,
@@ -19630,6 +19758,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-24",
+      "highlights": [
+        "`/claude-api upgrade` でPython SDKを1.xへ自動移行 — 旧`anthropic` 0.x依存のプロジェクトをコマンド一発で移行できる",
+        "マスク入力の漏洩を修正 — ログインコードなどの伏字入力がCtrl+Yやプロンプト履歴から復元できてしまう問題が塞がれた",
+        "Managed Agentsにドメイン許可リスト — エージェントのweb_search/web_fetchが到達できるサイトを制限可能に"
+      ]
+    },
+    {
       "date": "2026-08-23",
       "highlights": [
         "Windowsでクロスセッションメッセージング解禁 — macOS/Linux同様、複数マシンのClaude Codeセッション同士が`SendMessage`で連携できるようになった",
@@ -20726,5 +20862,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-23T08:00:05.225278"
+  "generated_at": "2026-08-24T08:00:05.036149"
 }
