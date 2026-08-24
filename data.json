@@ -113,6 +113,19 @@
       "appearances": 24
     },
     {
+      "id": 1778,
+      "title": "間違いを毎回CLAUDE.mdへ追記する「Compounding Engineering」",
+      "point": "公式が挙げる中核の運用は、Claudeが誤った動作をするたびにその内容をCLAUDE.mdへ書き足すこと。修正指示の末尾に「同じ間違いをしないようCLAUDE.mdを更新しろ」と付けると、Claude自身がルールを書き起こす。さらに`/install-github-app`でGitHub Actionを入れておけば、PRコメントで`@claude add to CLAUDE.md to ...`とタグ付けしてレビュー指摘をそのままルール化できる。修正のたびに以後の全セッションが賢くなる構図。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-08-25",
+      "last_date": "2026-08-25",
+      "appearances": 23
+    },
+    {
       "id": 1189,
       "title": "コンテキストエンジニアリング＞プロンプト微調整",
       "point": "2026年はプロンプトの言い回しより、Claudeがタスク前・タスク中に受け取るすべて（システムプロンプト・ファイル・メモリ・例示・役割設定・制約）を整える「コンテキストエンジニアリング」が本質的なレバレッジ。モデルがボトルネックになることはまれで、ほぼ常にコンテキストが律速となる。",
@@ -1781,6 +1794,34 @@
       "appearances": 8
     },
     {
+      "id": 1777,
+      "title": "`/sandbox` でファイルとネットワークを隔離する",
+      "point": "`/sandbox`はClaude Code のオープンソース・サンドボックスランタイムを有効化するコマンドで、ローカルマシン上でファイル隔離とネットワーク隔離の両方を提供する。モードは「BashToolをサンドボックス化＋自動許可」「BashToolをサンドボックス化＋通常の権限確認」「サンドボックスなし」の3種。権限プロンプトを減らしながら安全性を上げられるため、`--dangerously-skip-permissions`の代替として先に検討したい。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-08-25",
+      "last_date": "2026-08-25",
+      "appearances": 7
+    },
+    {
+      "id": 1784,
+      "title": "computer useツールがGA、browser useツールが新登場",
+      "point": "8月19日、Claude APIのcomputer useツールが`computer_toolset_20260801`としてベータを脱した。ベータヘッダー不要、1ターンで複数アクションをまとめるバッチ実行、`zoom`の既定有効化、`configs`によるメンバー単位設定が入る。あわせてbrowser useツール（`browser_toolset_20260801`）が登場し、デスクトップ全体ではなくブラウザのビューポート内で動作、アクセシビリティツリーや要素・フォーム・タブを直接読み取る。既存の`computer_20251124`統合はリクエスト形状が変わるため移行ガイドの確認が必要。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-08-25",
+      "last_date": "2026-08-25",
+      "appearances": 7
+    },
+    {
       "id": 1701,
       "title": "`/goal`が30分以上待ちのバックグラウンドタスクを自動で確認しに行く",
       "point": "`/goal`で完了条件を設定した自律作業において、バックグラウンドタスク待ちで30分以上ゴールが進まない場合、Claudeが自らタスクの状況を確認しに行くようになった。無限待機の解消が目的で、`CLAUDE_CODE_GOAL_CHECKIN_MINUTES=0`でオプトアウトできる。またゴールが回復不能なエラー（認証失効・クレジット枯渇・コンテキスト溢れ）で落ちた場合は、通知とともに自動解除されるようになった。",
@@ -2745,6 +2786,33 @@
       "appearances": 6
     },
     {
+      "id": 1779,
+      "title": "`/memory` で設定するAuto-memoryの保存先を把握する",
+      "point": "`/memory`で設定するAuto-memoryは、セッションをまたいで設定・修正内容・パターンを自動保存する仕組み。保存先は`~/.claude/projects/<project>/memory/`で、gitリポジトリのルート1つにつき1ディレクトリが作られる。手で管理するユーザー階層の`~/.claude/CLAUDE.md`やプロジェクト階層の`./CLAUDE.md`とは別物である点が重要で、「CLAUDE.mdに書いたはずの内容が反映されない」ときの切り分けに使える。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-08-25",
+      "last_date": "2026-08-25",
+      "appearances": 5
+    },
+    {
+      "id": 1783,
+      "title": "Python SDK v1.0：HTTP層がhttpxからhttpx2へ移行",
+      "point": "8月20日にPython SDK v1.0がリリースされ、HTTP層が`httpx`からAPI互換フォークの`httpx2`へ移行した。カスタム`http_client`・`Timeout`・transportは`httpx2`から組む必要があり、`httpx`をパッチするトレーシングやモックのライブラリに依存している場合は起動時に`httpx2.alias_httpx()`を呼ぶ。Python 3.10以上が必須で、Text Completions API、Messagesの`temperature`/`top_p`/`top_k`、tool runnerの`compaction_control`が削除された。非同期クライアントでは`.with_raw_response`の結果に`await response.parse()`が必要。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-08-25",
+      "last_date": "2026-08-25",
+      "appearances": 5
+    },
+    {
       "id": 1752,
       "title": "`/resume`が似た名前の別ディレクトリのセッションを拾う不具合を修正",
       "point": "`claude -c`／`/resume`が、パスの差が`_`・`-`・`.`だけの別ディレクトリのセッションを誤って再開する問題が解消。加えて、削除済みworktreeのセッションは「そのディレクトリにcdしろ」と言わず、カレントディレクトリで再開するようになった。命名が似たリポジトリを複数持つ環境で効く。",
@@ -3590,6 +3658,34 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1780,
+      "title": "タスクごとのnotesディレクトリを維持させ、CLAUDE.mdから参照する",
+      "point": "Claude Codeチームのエンジニアの一人は、タスクとプロジェクトごとにnotesディレクトリをClaudeに維持させ、PRを出すたびに更新させたうえで、CLAUDE.mdからそのディレクトリを指し示している。CLAUDE.md本体を肥大化させずに、経緯や決定事項を外部ファイルへ逃がす構成。長期プロジェクトでコンテキストが増え続ける場合の受け皿になる。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code"
+      ],
+      "first_date": "2026-08-25",
+      "last_date": "2026-08-25",
+      "appearances": 4
+    },
+    {
+      "id": 1782,
+      "title": "ConsoleのWorkbenchが「Playground」として刷新された",
+      "point": "8月18日付でClaude ConsoleのWorkbenchがPlaygroundへ刷新された。Messages APIの全パラメータに対応し、code executionやweb searchなどAPI機能のテンプレートを同梱、各実行についてSDKリクエスト全文とAPIレスポンスを表示する。旧Workbenchは8月17日でアクセス終了済みで、保存済みプロンプト・変数・evalは引き継がれないため、まだエクスポートしていない場合は取り出せない点に注意。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-08-25",
+      "last_date": "2026-08-25",
+      "appearances": 4
     },
     {
       "id": 1762,
@@ -5068,6 +5164,24 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1781,
+      "title": "`--bare` フラグでSDK・非対話実行の起動を約10倍速くする",
+      "point": "`claude -p`やTypeScript/Python SDKは既定でローカルのCLAUDE.md・設定・MCPを探索するため起動が遅い。非対話用途では`--system-prompt`・`--mcp-config`・`--settings`で明示指定したうえで`--bare`を付けると、起動がおよそ10倍速くなる。公式は「SDK設計時の見落としで、将来は`--bare`が既定になる」と明記しており、いま書くスクリプトは付けておくのが無難。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "CLAUDE.md",
+        "API",
+        "プロンプト",
+        "自動化",
+        "MCP/プラグイン",
+        "生産性"
+      ],
+      "first_date": "2026-08-25",
+      "last_date": "2026-08-25",
+      "appearances": 3
     },
     {
       "id": 1763,
@@ -10793,6 +10907,31 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1775,
+      "title": "押し返しプロンプト3種で最初の解を鵜呑みにしない",
+      "point": "Anthropic公式のパワーユーザー向け記事が、Claudeの初回出力をそのまま受け入れないためのプロンプトを3つ挙げている。「この変更について私を問い詰めろ、私が合格するまでPRを作るな」で理解度を検証させる、「これが動く証拠を示せ」でmainとの挙動差分を取らせる、「今わかっていることを全部踏まえて、これを捨ててエレガントな実装をやり直せ」で凡庸な初回案を作り直させる。作業依頼の後に定型で足すだけで品質が変わる。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "API",
+        "プロンプト"
+      ],
+      "first_date": "2026-08-25",
+      "last_date": "2026-08-25",
+      "appearances": 1
+    },
+    {
+      "id": 1776,
+      "title": "`/branch` で現在のセッションを分岐させる",
+      "point": "セッション内で`/branch`を実行すると、そこまでの文脈を引き継いだまま別ブランチの会話を開始できる。CLIからは`claude --resume <session-id> --fork-session`でも同じことができる。「この方針で行くか、別案も見たい」という場面で、`/clear`して文脈を捨て直す必要がなくなる。設計検討で複数案を並べたいときに効く。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [],
+      "first_date": "2026-08-25",
+      "last_date": "2026-08-25",
+      "appearances": 1
     },
     {
       "id": 1766,
@@ -19758,6 +19897,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-25",
+      "highlights": [
+        "押し返しプロンプト3種 — 最初の解に納得せず「証明しろ」「作り直せ」と迫るのが公式推奨の使い方",
+        "`/branch` でセッションを分岐 — 現在の文脈を保ったまま別案を試せる、あまり知られていないコマンド",
+        "`/sandbox` でファイル・ネットワーク隔離 — 権限プロンプトを減らしつつ安全性を上げる公式サンドボックス"
+      ]
+    },
+    {
       "date": "2026-08-24",
       "highlights": [
         "`/claude-api upgrade` でPython SDKを1.xへ自動移行 — 旧`anthropic` 0.x依存のプロジェクトをコマンド一発で移行できる",
@@ -20862,5 +21009,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-24T08:00:05.036149"
+  "generated_at": "2026-08-25T08:00:04.148492"
 }
