@@ -98,6 +98,49 @@
       "appearances": 30
     },
     {
+      "id": 1797,
+      "title": "モデルの使い分けとタスク分割",
+      "point": "複雑なアーキテクチャ判断とコードレビューにOpus、日常の実装には速度と品質のバランスが最も良いSonnet、簡易修正・整形・反復作業にはHaikuを割り当てる。あわせて、機能全体を1プロンプトで作らせるのではなく検証可能な小さいステップに分割する。実行可能なチェックを最初のプロンプトに含めておくと、Claudeが編集・実行・失敗読解・再試行を人手を待たずに回せる。",
+      "source_title": "Claude Code Productivity Tips I'd Actually Use in 2026",
+      "source_url": "https://pub.towardsai.net/claude-code-productivity-tips-id-actually-use-in-2026-f4a965bd090c",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-08-26",
+      "last_date": "2026-08-26",
+      "appearances": 29
+    },
+    {
+      "id": 1788,
+      "title": "Claude 5世代のコンテキストエンジニアリング新ルール",
+      "point": "Anthropicは Opus 5 / Fable 5 向けにClaude Codeのシステムプロンプトを80%以上削除したが、コーディング評価で計測可能な性能低下はなかったと説明。モデル性能の向上により「指示を足す」より「ノイズを削る」ことが効く局面に移行している。プロンプトを磨くより、タスクを取り巻く構造（前提ファイル・スキル・検証手段）の設計が主要なレバーになる。",
+      "source_title": "The new rules of context engineering for Claude 5 generation models",
+      "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-08-26",
+      "last_date": "2026-08-26",
+      "appearances": 26
+    },
+    {
+      "id": 1789,
+      "title": "CLAUDE.mdは長すぎると半分無視される",
+      "point": "CLAUDE.mdが肥大化すると重要ルールがノイズに埋もれ、Claudeが従わなくなる。対処は容赦ない剪定 — 指示がなくても正しく動作する項目は削除するかフックに変換する。文体も重要で、段落よりも短い断定形の箇条書きが有効。「適切なテストを実行」より「npm run test:unit を実行」のように具体的に書く。",
+      "source_title": "Best practices for Claude Code",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-08-26",
+      "last_date": "2026-08-26",
+      "appearances": 25
+    },
+    {
       "id": 1188,
       "title": "Dynamic Workflowsで最大1000サブエージェントを並列fan-out",
       "point": "リードエージェントが計画を立て、数十〜数百のサブエージェントを1セッションで並列展開できる。さらにClaudeがJavaScriptのオーケストレーションスクリプトを書くと、バックグラウンドランタイムが最大1000のサブエージェントにfan-outし、中間状態をコンテキスト窓の外（スクリプト変数）に保持する。通常タスクの実用的な同時実行数は3〜5が最適。",
@@ -111,6 +154,21 @@
       "first_date": "2026-07-02",
       "last_date": "2026-07-02",
       "appearances": 24
+    },
+    {
+      "id": 1793,
+      "title": "Auto modeがProプランに拡大しSonnet 4.6が審査",
+      "point": "Auto modeがProアカウントでも動作し、OpusだけでなくSonnet 4.6にも対応。承認プロンプトの代わりにバックグラウンドの安全性チェックが走る。出力層ではSonnet 4.6上で動作するトランスクリプト・クラシファイアが各アクションを実行前に判定基準へ照らし、人間の承認者の代替として機能する。2026年8月14日以降、Pro / Max / Team の新規セッションの既定モード。",
+      "source_title": "How we built Claude Code auto mode: a safer way to skip permissions",
+      "source_url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+      "tags": [
+        "プロンプト",
+        "自動化",
+        "モデル"
+      ],
+      "first_date": "2026-08-26",
+      "last_date": "2026-08-26",
+      "appearances": 23
     },
     {
       "id": 1778,
@@ -520,6 +578,17 @@
       "first_date": "2026-05-21",
       "last_date": "2026-05-21",
       "appearances": 15
+    },
+    {
+      "id": 1795,
+      "title": "/code-review コマンドで正確性バグを検出する",
+      "point": "新しい `/code-review` コマンドが追加され、変更に対して正確性の観点からバグを報告する。マージ前のセルフチェックとして走らせることで、レビュアーに渡る前に明確な欠陥を潰せる。既存の `/security-review` と組み合わせると、正確性とセキュリティの両面をコマンド一発で確認できる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-26",
+      "last_date": "2026-08-26",
+      "appearances": 14
     },
     {
       "id": 1769,
@@ -1794,6 +1863,21 @@
       "appearances": 8
     },
     {
+      "id": 1794,
+      "title": "/usage でプラン上限の消費元を分解する",
+      "point": "`/usage` がプラン上限を消費している要因をスキル・サブエージェント・プラグイン・MCPサーバー別に分解表示するようになった。Loopsの内訳も追加。どのMCPサーバーやスキルがトークンを食っているかを特定して整理する起点として使える。あわせて `modelPicker` 設定で `/model` のピッカーに出すモデルを絞り込める。",
+      "source_title": "Claude Code Updates by Anthropic - August 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "エージェント",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-26",
+      "last_date": "2026-08-26",
+      "appearances": 7
+    },
+    {
       "id": 1777,
       "title": "`/sandbox` でファイルとネットワークを隔離する",
       "point": "`/sandbox`はClaude Code のオープンソース・サンドボックスランタイムを有効化するコマンドで、ローカルマシン上でファイル隔離とネットワーク隔離の両方を提供する。モードは「BashToolをサンドボックス化＋自動許可」「BashToolをサンドボックス化＋通常の権限確認」「サンドボックスなし」の3種。権限プロンプトを減らしながら安全性を上げられるため、`--dangerously-skip-permissions`の代替として先に検討したい。",
@@ -2116,6 +2200,35 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1792,
+      "title": "browser useツールは座標でなくページ構造で操作する",
+      "point": "新しいbrowser useツールはスクリーンショットに加えてページの構造を読み取り、画面上の座標ではなく特定のフィールドやボタンを指定して操作する。更新版のcomputer useツールは1モデル呼び出しあたり1アクションではなく1ターンで複数アクションを実行でき、往復回数と所要時間が削減される。APIを持たない業務アプリの自動化に有効。",
+      "source_title": "Claude Platform GA: Computer Use, Browser Use, Skills API, and Files API",
+      "source_url": "https://aicatchup.com/news/claude-platform-computer-browser-skills-files-ga",
+      "tags": [
+        "API",
+        "自動化",
+        "モデル"
+      ],
+      "first_date": "2026-08-26",
+      "last_date": "2026-08-26",
+      "appearances": 6
+    },
+    {
+      "id": 1796,
+      "title": "/voice の音声入力で文脈の削りすぎを防ぐ",
+      "point": "Claude Codeにネイティブの音声ディクテーションが搭載され、`/voice` でホールドモードかタップモードを選んでプロンプト欄に話しかけられる。タイピングは無意識に情報を圧縮させるため、問題の全体像がClaudeに届く前に有用な詳細が落ちやすい。音声入力はその圧縮を避ける最も手軽な方法として紹介されている。",
+      "source_title": "What's New in Claude Code — August 2026",
+      "source_url": "https://origami.sa/en/blog/claude-code-august-2026/",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-08-26",
+      "last_date": "2026-08-26",
+      "appearances": 6
     },
     {
       "id": 1750,
@@ -3658,6 +3771,19 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1790,
+      "title": "Progressive Disclosureでスキルに切り出す",
+      "point": "CLAUDE.mdやSKILL.mdを全知識の集積場所にするのはアンチパターン。検証手順など固有の指示が複数ある場合は「検証スキル」として切り出し、CLAUDE.mdから参照する形にする。必要なときに必要な情報だけロードされるツリー構造にすることで、常時消費されるコンテキストを抑えられる。",
+      "source_title": "CLAUDE.md & Context Management Best Practices",
+      "source_url": "https://preporato.com/blog/claude-md-context-management-best-practices-2026",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-08-26",
+      "last_date": "2026-08-26",
+      "appearances": 4
     },
     {
       "id": 1780,
@@ -10907,6 +11033,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1791,
+      "title": "Skills API・Files APIが一般提供開始",
+      "point": "Claude Platform上でSkills APIとFiles APIがGA。Skills APIは自前スキルのアップロードとバージョン管理を簡潔なAPIで提供し、スキルはタスクが要求したときだけロードされる指示・スクリプト・テンプレートのフォルダとして扱われる。Files APIは自動有効期限、5倍のレート上限、組織あたり1TBのストレージを備える。両APIはMicrosoft Foundry経由でも利用可能。",
+      "source_title": "Build production agents with computer use, the Skills API, and the Files API",
+      "source_url": "https://claude.com/blog/computer-use-skills-api-files-api",
+      "tags": [
+        "API",
+        "自動化"
+      ],
+      "first_date": "2026-08-26",
+      "last_date": "2026-08-26",
+      "appearances": 1
     },
     {
       "id": 1775,
@@ -19897,6 +20037,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-26",
+      "highlights": [
+        "Claude 5世代のコンテキストエンジニアリング新ルール — システムプロンプトを80%以上削減しても性能低下なし。詰め込みより剪定が効く時代へ",
+        "Skills API・Files API・computer use / browser use がGA — バージョン管理されたスキルと再利用可能ファイルで本番エージェントを構築できる",
+        "Auto modeがProプランへ拡大 — Sonnet 4.6のクラシファイアが実行前に各アクションを審査し、承認プロンプトを置き換える"
+      ]
+    },
+    {
       "date": "2026-08-25",
       "highlights": [
         "押し返しプロンプト3種 — 最初の解に納得せず「証明しろ」「作り直せ」と迫るのが公式推奨の使い方",
@@ -21009,5 +21157,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-25T08:00:04.148492"
+  "generated_at": "2026-08-26T08:00:05.424025"
 }
