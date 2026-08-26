@@ -1528,6 +1528,17 @@
       "appearances": 9
     },
     {
+      "id": 1805,
+      "title": "`/usage` の Loops 内訳で暴走した定期タスクを特定する",
+      "point": "`/usage` に Loops の内訳が追加され、ループごとの実行回数・合計トークン・1回あたりトークン・最終実行時刻が見えるようになった。`/loop` で定期タスクを回していると、想定より頻繁に起動していたり1回あたりの消費が膨らんでいたりしても気づきにくいため、まずここを見て「よく喋るループ」を洗い出すのが早い。あわせて `/loop` は、やることが無い連続ウェイクアップを1行にまとめて表示するようになった。",
+      "source_title": "Claude Code changelog 2.1.243",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-27",
+      "appearances": 8
+    },
+    {
       "id": 1740,
       "title": "`--defer-shutdown-max-min`でセルフホストランナーを安全に停止する",
       "point": "`claude self-hosted-runner --defer-shutdown-max-min <分>` を追加。SIGTERM を受けても接続中のセッションは処理を続け、指定分を過ぎた残りだけを退避して終了する。CI基盤やk8s上でランナーをローリング更新するときに、走行中の作業を切り落とさずに済む。あわせて `--proxy-authorization-command` / `--proxy-authorization-file` も追加され、接続ごとに `Proxy-Authorization` ヘッダーの再発行が必要な社内プロキシに対応した。",
@@ -2200,6 +2211,35 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1801,
+      "title": "`/permissions` の Auto mode タブで自動承認ルールを可視化する",
+      "point": "Claude Code 2.1.246 で `/permissions` に Auto mode タブが追加された。Auto モードのクラシファイアルールを一覧表示し、その場で編集できる。従来はどのツール呼び出しがなぜ自動承認されたのかが不透明だったが、ルールをUIで確認できるようになったため、権限設計のレビューがしやすくなった。あわせて、大規模セッションで Auto モードのツール呼び出しが「一時的に利用不可」として拒否される問題も、安全チェックの締切をプロンプトサイズに応じて伸ばす形で修正されている。",
+      "source_title": "Claude Code changelog 2.1.246",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-27",
+      "appearances": 6
+    },
+    {
+      "id": 1808,
+      "title": "サブエージェントの fork 既定ONで会話とキャッシュを継承させる",
+      "point": "`subagent_type: \"fork\"` のサブエージェントが既定で有効になり、親の会話全体とプロンプトキャッシュをそのまま引き継ぐ。ゼロから文脈を渡し直す必要がないため、長い調査の途中で分岐させる用途に向く。また対話セッションでのエージェント起動は既定でバックグラウンド実行になった。`/tasks` とエージェント詳細ダイアログには、各サブエージェントが実際に動いたモデルと effort レベルが表示されるようになっている。",
+      "source_title": "Claude Code changelog 2.1.243",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-27",
+      "appearances": 6
     },
     {
       "id": 1792,
@@ -2897,6 +2937,47 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1802,
+      "title": "Bash allow ルールのワイルドカード位置に注意する",
+      "point": "`Bash(git * main)` のようにサブコマンドの前にワイルドカードを置いた許可ルールは、サブコマンドより前に挿入されたオプションにもマッチしてしまう。2.1.246 では起動時にこのパターンを警告するようになった。意図せず広い権限を与えていないか、既存の settings.json を見直すきっかけにしたい。ワイルドカードは「サブコマンドを固定してから引数側に置く」のが安全。",
+      "source_title": "Claude Code changelog 2.1.246",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-27",
+      "appearances": 5
+    },
+    {
+      "id": 1807,
+      "title": "メモリをチャットとCoworkで共通化し、Topicsで棚卸しする",
+      "point": "8月25日のリリースで、メモリがクラウド上のチャットとCoworkをまたいで機能するようになった。Claude が覚えている内容は Settings > Memory の Topics に一覧表示され、1件ずつ編集・削除できる。健康や信条といったセンシティブな話題は「Include sensitive topics in memory」をオンにしない限りメモリに入らない。既定値は Free/Pro/Max がオン、Team/Enterprise はオフ。定期的に Topics を見て古い前提を消しておくと、的外れな文脈の混入を防げる。",
+      "source_title": "Anthropic Release notes（2026年8月25日）",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-27",
+      "appearances": 5
+    },
+    {
+      "id": 1809,
+      "title": "`/cd` で移動先プロジェクトの設定を即座に効かせる",
+      "point": "2.1.246 で `/cd` が改善され、移動先ディレクトリのプロジェクト設定・hooks・`.mcp.json` サーバー（通常の承認プロンプト経由）・skills・agents が、移動直後から有効になるようになった。従来は `--resume` するまで反映されず、別プロジェクトへ移った直後に想定と違うルールで動く事故が起きやすかった。モノレポや複数リポジトリを行き来する運用では効き目が大きい。",
+      "source_title": "Claude Code changelog 2.1.246",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "自動化",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-27",
+      "appearances": 5
     },
     {
       "id": 1779,
@@ -3771,6 +3852,34 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1804,
+      "title": "`promptCacheTtl` でメイン会話だけ1時間キャッシュを維持する",
+      "point": "2.1.243 で `promptCacheTtl` と `subagentPromptCacheTtl` が追加され、APIキー利用者やクラウドプロバイダ利用者がメイン会話のプロンプトキャッシュを1時間に保ちつつ、サブエージェント側は5分のままにする、といった使い分けができるようになった。長時間の対話セッションではメイン側のキャッシュヒット率が効くが、短命なサブエージェントに1時間キャッシュを持たせてもコストに見合わないため、この分離は実利が大きい。",
+      "source_title": "Claude Code changelog 2.1.243",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-27",
+      "appearances": 4
+    },
+    {
+      "id": 1806,
+      "title": "起動時間とメモリ消費の大幅改善を取り込む",
+      "point": "2.1.243 で、サンドボックスとMCPの立ち上げが最初の描画をブロックしなくなり、起動が体感で速くなった。ネイティブインストールと自動更新のダウンロードは zstd 圧縮になり、Linux x64 で約340MB→約75MB。さらにコードのオンデマンド読み込みでセッションあたり約40〜70MB のメモリ削減、長時間セッションのピークメモリも改善している。旧バージョンを使い続けている場合は更新するだけで効果が出る。",
+      "source_title": "Claude Code changelog 2.1.243",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-27",
+      "appearances": 4
     },
     {
       "id": 1790,
@@ -5290,6 +5399,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1810,
+      "title": "maxTurns で止まったサブエージェントは SendMessage で続きを頼む",
+      "point": "2.1.246 から、`maxTurns` の上限に達して停止したサブエージェントは、出力を「部分的」と明示したうえで返し、`SendMessage` で継続できるヒントを添えるようになった。以前は完了したかのように見えてしまい、途中で切れた結果をそのまま採用してしまうリスクがあった。長い調査タスクを投げる際は、返ってきた結果に部分マークが付いていないか確認する習慣をつけたい。",
+      "source_title": "Claude Code changelog 2.1.246",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-27",
+      "appearances": 3
     },
     {
       "id": 1781,
@@ -11033,6 +11155,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1803,
+      "title": "`modelPicker` 設定で `/model` の選択肢を自組織向けに整える",
+      "point": "2.1.243 で追加された `modelPicker` 設定により、`/model` ピッカーに表示するモデルを順序付き・ラベル付きのリストで指定できる。Vertex や Bedrock 形式の ID でも指定でき、組み込みのモデル一覧に追加する形でも、置き換える形でも設定可能。チームで使うモデルを絞りたい場合や、命名を分かりやすくしたい場合に有効。あわせて `modelPricing` 管理設定で契約単価を `/cost` やステータスラインに反映できるようになった。",
+      "source_title": "Claude Code changelog 2.1.243",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-27",
+      "appearances": 1
     },
     {
       "id": 1791,
@@ -20037,6 +20172,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-27",
+      "highlights": [
+        "`/permissions` に Auto mode タブが追加 — 自動承認クラシファイアのルールをUIから直接確認・編集できるようになった",
+        "メモリがチャットとCoworkで共通化 — Topics画面で保存内容を1件ずつ編集・削除でき、センシティブ話題は既定でオフ",
+        "サブエージェントの fork 既定ON — 会話履歴とプロンプトキャッシュを丸ごと継承し、起動コストを削減"
+      ]
+    },
+    {
       "date": "2026-08-26",
       "highlights": [
         "Claude 5世代のコンテキストエンジニアリング新ルール — システムプロンプトを80%以上削減しても性能低下なし。詰め込みより剪定が効く時代へ",
@@ -21157,5 +21300,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-26T08:00:05.424025"
+  "generated_at": "2026-08-27T08:00:04.003965"
 }
