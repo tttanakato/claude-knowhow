@@ -44,6 +44,20 @@
       "appearances": 33
     },
     {
+      "id": 1182,
+      "title": "コンテキストエンジニアリング3ファイル戦略",
+      "point": "2026年はプロンプトの言い回しを磨くより、Claudeが毎回読む前提ファイルを整える方が効く。最小構成は「自分が誰で何をしているか」を書いた identity ファイル、思考と文体を記述した voice profile、AIっぽい語彙・構文・トーンを禁止する anti-AI-writing ファイルの3点。Cowork の Global Instructions に登録して自動ロードさせるのが定石。",
+      "source_title": "Claude best practices 2026: the complete power user guide",
+      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
+      "tags": [
+        "プロンプト",
+        "製品機能"
+      ],
+      "first_date": "2026-07-01",
+      "last_date": "2026-08-28",
+      "appearances": 32
+    },
+    {
       "id": 1680,
       "title": "`/effort`をタスク別に使い分ける：既定high、複雑作業はxhigh",
       "point": "`/effort` の選択肢は low / medium / high / xhigh / max / auto。既定は Team・Enterprise・API直接接続で high、それ以外のプランで medium。Claude Code チームは全作業を high で運用し、複雑なコーディングとエージェント作業では max のトークンコストを払わずに推論を深められる xhigh へ切り替える。max は難しいデバッグやアーキテクチャ判断限定で、セッション単位で有効化する運用が推奨されている。",
@@ -57,19 +71,6 @@
       "first_date": "2026-08-17",
       "last_date": "2026-08-17",
       "appearances": 32
-    },
-    {
-      "id": 1182,
-      "title": "コンテキストエンジニアリング3ファイル戦略",
-      "point": "2026年はプロンプト微調整よりタスク周辺の構造づくりが効く。自分と作業内容を伝えるidentityファイル、思考・文体を示すvoice profile、避けたい語・構造・トーンを並べたanti-AI-writingファイルを用意すると出力品質が安定する。",
-      "source_title": "Claude best practices 2026: the complete power user guide",
-      "source_url": "https://www.the-ai-corner.com/p/claude-best-practices-power-user-guide-2026",
-      "tags": [
-        "プロンプト"
-      ],
-      "first_date": "2026-07-01",
-      "last_date": "2026-07-01",
-      "appearances": 31
     },
     {
       "id": 1169,
@@ -1874,6 +1875,32 @@
       "appearances": 8
     },
     {
+      "id": 1814,
+      "title": "Claude in Chrome が一般提供（GA）：自律ブラウザ操作を安全に使う",
+      "point": "全有料プランで利用可能に。従来は1操作ごとに承認が必要だったが、安全性分類器が「元の依頼と一致するか」を実行前に検証し、一致しない操作をブロックする方式へ。MCP連携のない社内ダッシュボードやレガシー業務システムに既存ログインのままClaudeを使わせられる。手動承認に戻したい場合は設定で無効化可能。ファイル操作や他アプリ連携は引き続きデスクトップアプリが必要。",
+      "source_title": "Claude in Chrome is now generally available",
+      "source_url": "https://claude.com/blog/claude-in-chrome-generally-available",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-28",
+      "last_date": "2026-08-28",
+      "appearances": 7
+    },
+    {
+      "id": 1818,
+      "title": "`/permissions` の Auto mode タブで自動承認ルールを可視化・編集する",
+      "point": "Claude Code 2.1.246 で `/permissions` に Auto mode タブが追加され、auto mode 分類器のルールをその場で確認・編集できるようになった。「なぜこの操作が自動承認されたのか」を後から追うのではなく、事前にルールを点検する運用に切り替えられる。",
+      "source_title": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-28",
+      "last_date": "2026-08-28",
+      "appearances": 7
+    },
+    {
       "id": 1794,
       "title": "/usage でプラン上限の消費元を分解する",
       "point": "`/usage` がプラン上限を消費している要因をスキル・サブエージェント・プラグイン・MCPサーバー別に分解表示するようになった。Loopsの内訳も追加。どのMCPサーバーやスキルがトークンを食っているかを特定して整理する起点として使える。あわせて `modelPicker` 設定で `/model` のピッカーに出すモデルを絞り込める。",
@@ -2211,6 +2238,50 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1802,
+      "title": "Bash allow ルールのワイルドカード位置に注意する",
+      "point": "`Bash(git * main)` のようにサブコマンドの前にワイルドカードを置くと、サブコマンドの前に挿入されたオプションにもマッチしてしまう。2.1.246 から起動時に警告が出るようになった。許可ルールは「サブコマンドを固定し、その後ろにワイルドカード」の順で書くのが安全。",
+      "source_title": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-28",
+      "appearances": 6
+    },
+    {
+      "id": 1809,
+      "title": "`/cd` で移動先プロジェクトの設定を即座に効かせる",
+      "point": "従来は `/cd` で作業ディレクトリを変えても、移動先のプロジェクト設定・フック・`.mcp.json` サーバー・スキル・エージェントは `--resume` するまで反映されなかった。2.1.246 で移動直後に有効化されるよう改善（MCPサーバーは通常の承認プロンプト経由）。モノレポや複数プロジェクト横断作業でセッションを切らずに済む。",
+      "source_title": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-28",
+      "appearances": 6
+    },
+    {
+      "id": 1816,
+      "title": "Compliance API が Cowork / Claude Code セッションでGA",
+      "point": "セッショントランスクリプト取得エンドポイントがベータを卒業。加えてローカルセッションエンドポイントが Claude Science（`claude_science`）と Microsoft 365 版 Claude（Excel/PowerPoint/Word/Outlook、`office_agents` 系）の記録も返すようになった（Enterpriseでベータ）。既存の Compliance Access Key と `read:compliance_user_data` スコープで利用できる。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化",
+        "エージェント",
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-08-28",
+      "last_date": "2026-08-28",
+      "appearances": 6
     },
     {
       "id": 1801,
@@ -2939,17 +3010,6 @@
       "appearances": 6
     },
     {
-      "id": 1802,
-      "title": "Bash allow ルールのワイルドカード位置に注意する",
-      "point": "`Bash(git * main)` のようにサブコマンドの前にワイルドカードを置いた許可ルールは、サブコマンドより前に挿入されたオプションにもマッチしてしまう。2.1.246 では起動時にこのパターンを警告するようになった。意図せず広い権限を与えていないか、既存の settings.json を見直すきっかけにしたい。ワイルドカードは「サブコマンドを固定してから引数側に置く」のが安全。",
-      "source_title": "Claude Code changelog 2.1.246",
-      "source_url": "https://code.claude.com/docs/en/changelog",
-      "tags": [],
-      "first_date": "2026-08-27",
-      "last_date": "2026-08-27",
-      "appearances": 5
-    },
-    {
       "id": 1807,
       "title": "メモリをチャットとCoworkで共通化し、Topicsで棚卸しする",
       "point": "8月25日のリリースで、メモリがクラウド上のチャットとCoworkをまたいで機能するようになった。Claude が覚えている内容は Settings > Memory の Topics に一覧表示され、1件ずつ編集・削除できる。健康や信条といったセンシティブな話題は「Include sensitive topics in memory」をオンにしない限りメモリに入らない。既定値は Free/Pro/Max がオン、Team/Enterprise はオフ。定期的に Topics を見て古い前提を消しておくと、的外れな文脈の混入を防げる。",
@@ -2958,22 +3018,6 @@
       "tags": [
         "新機能",
         "製品機能"
-      ],
-      "first_date": "2026-08-27",
-      "last_date": "2026-08-27",
-      "appearances": 5
-    },
-    {
-      "id": 1809,
-      "title": "`/cd` で移動先プロジェクトの設定を即座に効かせる",
-      "point": "2.1.246 で `/cd` が改善され、移動先ディレクトリのプロジェクト設定・hooks・`.mcp.json` サーバー（通常の承認プロンプト経由）・skills・agents が、移動直後から有効になるようになった。従来は `--resume` するまで反映されず、別プロジェクトへ移った直後に想定と違うルールで動く事故が起きやすかった。モノレポや複数リポジトリを行き来する運用では効き目が大きい。",
-      "source_title": "Claude Code changelog 2.1.246",
-      "source_url": "https://code.claude.com/docs/en/changelog",
-      "tags": [
-        "プロンプト",
-        "自動化",
-        "エージェント",
-        "MCP/プラグイン"
       ],
       "first_date": "2026-08-27",
       "last_date": "2026-08-27",
@@ -3852,6 +3896,34 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1810,
+      "title": "maxTurns で止まったサブエージェントは SendMessage で続きを頼む",
+      "point": "`maxTurns` 上限に達したサブエージェントが「完了」に見えてしまう問題が修正され、出力が「部分的」と明示され `SendMessage` での継続を促すヒントが返るようになった。長時間の調査タスクを投げる際、結果が途中で切れていないか判断しやすくなる。",
+      "source_title": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-27",
+      "last_date": "2026-08-28",
+      "appearances": 4
+    },
+    {
+      "id": 1815,
+      "title": "プロンプトインジェクション耐性の実測値を把握して運用判断する",
+      "point": "Anthropicの最新評価では、追加防御なしの状態で攻撃成功率は Opus 4.5 が17.6%、Opus 5 が3.8%。プローブ＋安全分類器を併用すると Sonnet 5 / Opus 5 では成功例ゼロ。ブラウザ自律操作を業務導入する際は「プローブと分類器を有効にした構成」が前提条件だと理解しておく。",
+      "source_title": "Claude in Chrome is now generally available",
+      "source_url": "https://claude.com/blog/claude-in-chrome-generally-available",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-08-28",
+      "last_date": "2026-08-28",
+      "appearances": 4
     },
     {
       "id": 1804,
@@ -5399,19 +5471,6 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
-    },
-    {
-      "id": 1810,
-      "title": "maxTurns で止まったサブエージェントは SendMessage で続きを頼む",
-      "point": "2.1.246 から、`maxTurns` の上限に達して停止したサブエージェントは、出力を「部分的」と明示したうえで返し、`SendMessage` で継続できるヒントを添えるようになった。以前は完了したかのように見えてしまい、途中で切れた結果をそのまま採用してしまうリスクがあった。長い調査タスクを投げる際は、返ってきた結果に部分マークが付いていないか確認する習慣をつけたい。",
-      "source_title": "Claude Code changelog 2.1.246",
-      "source_url": "https://code.claude.com/docs/en/changelog",
-      "tags": [
-        "エージェント"
-      ],
-      "first_date": "2026-08-27",
-      "last_date": "2026-08-27",
-      "appearances": 3
     },
     {
       "id": 1781,
@@ -11155,6 +11214,47 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1817,
+      "title": "Admin API が ant CLI と 8言語SDK から使えるようになった",
+      "point": "`client.beta.organization` 配下で Python・TypeScript・C#・Go・Java・PHP・Ruby から組織情報、メンバー、招待、ワークスペース、APIキー、レート制限、サービスアカウント、Workload Identity Federation、顧客管理鍵を操作できる。使用量・コストレポートと Enterprise のユーザー管理系は引き続き curl のみ。認証は `ANTHROPIC_API_KEY`（Admin APIキー）か `ANTHROPIC_AUTH_TOKEN`（`org:admin` OAuthトークン）。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-08-28",
+      "last_date": "2026-08-28",
+      "appearances": 1
+    },
+    {
+      "id": 1819,
+      "title": "非対話セッションはストリーム中断を自動継続するようになった",
+      "point": "`-p`、SDK、クラウドセッションで、サーバーエラー・接続断・ストール によって応答が途中で切れた場合、エラー終了せず自動的に続きを生成するよう改善。CI やスケジュール実行のジョブが一時的なネットワーク不調で失敗するケースが減る。",
+      "source_title": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "API",
+        "自動化"
+      ],
+      "first_date": "2026-08-28",
+      "last_date": "2026-08-28",
+      "appearances": 1
+    },
+    {
+      "id": 1820,
+      "title": "サードパーティゲートウェイ利用時の認証情報漏れが修正された",
+      "point": "`ANTHROPIC_BASE_URL` でサードパーティゲートウェイを設定していると、Anthropic 宛のテレメトリ/メトリクス送信にゲートウェイ用APIキーが載っていた不具合を修正。認証情報は自身のホスト宛にのみ送られるようになった。プロキシ経由運用をしている環境は 2.1.246 以降への更新を推奨。",
+      "source_title": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-28",
+      "last_date": "2026-08-28",
+      "appearances": 1
     },
     {
       "id": 1803,
@@ -20172,6 +20272,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-28",
+      "highlights": [
+        "Claude in Chrome が一般提供（GA） — 全有料プランで解禁。実行前チェック付きで自律的なブラウザ操作が可能に",
+        "Claude Code 2.1.246 — `/permissions` に Auto mode タブ追加、Bash allow ルールの危険なワイルドカードを起動時に警告",
+        "Compliance API が Cowork / Claude Code セッションでGA — 監査・DLP連携がベータを卒業"
+      ]
+    },
+    {
       "date": "2026-08-27",
       "highlights": [
         "`/permissions` に Auto mode タブが追加 — 自動承認クラシファイアのルールをUIから直接確認・編集できるようになった",
@@ -21300,5 +21408,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-27T08:00:04.003965"
+  "generated_at": "2026-08-28T08:00:04.156042"
 }
