@@ -581,6 +581,19 @@
       "appearances": 15
     },
     {
+      "id": 1827,
+      "title": "セッション間メッセージングが Bedrock / Vertex / Foundry でも使える",
+      "point": "`SendMessage` / `ListAgents` による同一マシン上のセッション間メッセージングが、Bedrock・Vertex・Foundry 経由およびテレメトリ無効環境でも利用可能に。受信側のピアメッセージは既定で `Message from @<送信者>: <1行目>` に折りたたまれ、Ctrl+O で全文展開する。サブエージェントから他セッションへ送った場合、返信は親セッションの会話に届く点に注意。",
+      "source_title": "Claude Code changelog 2.1.248",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-08-29",
+      "last_date": "2026-08-29",
+      "appearances": 14
+    },
+    {
       "id": 1795,
       "title": "/code-review コマンドで正確性バグを検出する",
       "point": "新しい `/code-review` コマンドが追加され、変更に対して正確性の観点からバグを報告する。マージ前のセルフチェックとして走らせることで、レビュアーに渡る前に明確な欠陥を潰せる。既存の `/security-review` と組み合わせると、正確性とセキュリティの両面をコマンド一発で確認できる。",
@@ -701,6 +714,19 @@
       "appearances": 14
     },
     {
+      "id": 1825,
+      "title": "長時間セッションのプロンプトキャッシュミスが修正された",
+      "point": "長時間セッションで約1時間に1回、プロンプトキャッシュのミスと拡張思考コンテキストの消失が起きていた。原因はOAuthトークン更新後にツール定義が再レンダリングされること。2.1.248 で修正済み。加えて、使用量オーバーに入ったアカウントで `ScheduleWakeup` のツール定義がセッションと `--resume` の間で変わり、再開初回ターンでキャッシュ全ミスになる問題も直った。長時間の自走タスクを回す運用なら更新推奨。",
+      "source_title": "Claude Code changelog 2.1.248",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-08-29",
+      "last_date": "2026-08-29",
+      "appearances": 13
+    },
+    {
       "id": 1170,
       "title": "モデルを使い分ける（日常はSonnet・複雑だけOpus）",
       "point": "日常的な用途はSonnetで十分で速い。Opusは本当に複雑なタスクに限定すると、レート上限の消費を抑えつつ品質を確保できる。スタイル機能で回答の長さ・口調・体裁も会話ごとに切り替える。",
@@ -806,6 +832,20 @@
       "first_date": "2026-05-27",
       "last_date": "2026-05-27",
       "appearances": 13
+    },
+    {
+      "id": 1832,
+      "title": "Sonnet 5 の自動コンパクト閾値が1Mコンテキスト全体になった",
+      "point": "Sonnet 5 の既定の自動コンパクト窓が1Mコンテキスト全体に変更され、約934Kトークンではなく約967Kトークンで自動コンパクトが走るようになった。1M窓を前提に長文を投入するワークフローで、圧縮タイミングが後ろ倒しになる。なお Sonnet 5 は Claude Code の既定モデルで、8/10に $2/$10 per Mトークンが恒久価格として確定している（$3/$15 への値上げは実施されない）。",
+      "source_title": "Claude Code changelog 2.1.247",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-08-29",
+      "last_date": "2026-08-29",
+      "appearances": 12
     },
     {
       "id": 1176,
@@ -3010,6 +3050,20 @@
       "appearances": 6
     },
     {
+      "id": 1831,
+      "title": "`/claude-api cost-optimize` でAPI費用を1変更ずつ計測して削る",
+      "point": "既存プロジェクトのClaude API支出をプロファイルし、キャッシュ・トークン衛生・バッチ・effort・モデル選択といったコストレバーを、一度に1つずつ計測しながら適用していくスキル。あわせて `/claude-api` スキルはAdmin API（組織メンバー、招待、ワークスペース、APIキー、レート制限レポート、Workload Identity Federation、CMEK）もカバーするよう更新された。",
+      "source_title": "Claude Code changelog 2.1.247",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-08-29",
+      "last_date": "2026-08-29",
+      "appearances": 5
+    },
+    {
       "id": 1807,
       "title": "メモリをチャットとCoworkで共通化し、Topicsで棚卸しする",
       "point": "8月25日のリリースで、メモリがクラウド上のチャットとCoworkをまたいで機能するようになった。Claude が覚えている内容は Settings > Memory の Topics に一覧表示され、1件ずつ編集・削除できる。健康や信条といったセンシティブな話題は「Include sensitive topics in memory」をオンにしない限りメモリに入らない。既定値は Free/Pro/Max がオン、Team/Enterprise はオフ。定期的に Topics を見て古い前提を消しておくと、的外れな文脈の混入を防げる。",
@@ -3896,6 +3950,28 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1829,
+      "title": "`SendFeedback` ツールで不具合レポートを下書きさせる",
+      "point": "2.1.247 で追加。セッション中に問題が起きたとき、Claude自身がフィードバックレポートを下書きし、ユーザーが `/feedback` で内容を確認して送信できる。「何が起きたか」を後から手で書き起こす手間が省ける。不要なら `feedbackDrafts` 設定でオフにできる。",
+      "source_title": "Claude Code changelog 2.1.247",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-29",
+      "last_date": "2026-08-29",
+      "appearances": 4
+    },
+    {
+      "id": 1830,
+      "title": "`spinnerTipsOverride` で組織独自のTipsをローテーションさせる",
+      "point": "`spinnerTipsOverride` に `{id, text, cooldownSessions, priority}` 形式のエントリ、`tipsFile`、`label` を指定できるようになった。組み込みTipsと並べて自社のコーディング規約やレビュールールを待機画面に流せる。チーム内でのルール周知を、ドキュメントを読ませる以外の経路で行える。",
+      "source_title": "Claude Code changelog 2.1.247",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-29",
+      "last_date": "2026-08-29",
+      "appearances": 4
     },
     {
       "id": 1810,
@@ -7951,6 +8027,34 @@
       "appearances": 3
     },
     {
+      "id": 1833,
+      "title": "Cowork の内蔵ブラウザでWeb作業を丸ごと任せる",
+      "point": "CoworkのタスクがWebサイトを伴う場合、サイドパネルにブラウザが開き、Claudeがサイトを開く・読む・クリック・入力・フォーム記入を行う様子をその場で見られる。拡張機能のインストール不要で、自分のタブやログイン情報には触れない。設定は デスクトップアプリ → 設定 → Cowork → Preferred browser で「Built-in browser」か「Chrome（Claude in Chrome）」を選ぶ。既存ログインが必要な作業は Claude in Chrome、そうでない作業は内蔵ブラウザ、という使い分けになる。macOS / Windows / Linux（ベータ）の Pro・Max・Team に順次展開中。",
+      "source_title": "Claude Cowork gets a built-in browser",
+      "source_url": "https://claude.com/blog/cowork-built-in-browser",
+      "tags": [
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-08-29",
+      "last_date": "2026-08-29",
+      "appearances": 2
+    },
+    {
+      "id": 1834,
+      "title": "MCPサーバー接続失敗がモデルに伝わるようになった",
+      "point": "Bedrock・Vertex・Foundry セッション（およびテレメトリ無効環境）で、設定済みMCPサーバーの接続が失敗した場合、その事実がClaudeに伝えられるようになった。従来は「そのツールは存在しない」と結論づけてしまい、接続不良を機能欠如と誤認した回答が返ることがあった。トラブル切り分けの精度が上がる。",
+      "source_title": "Claude Code changelog 2.1.247",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-29",
+      "last_date": "2026-08-29",
+      "appearances": 2
+    },
+    {
       "id": 1751,
       "title": "`ListAgents`が「自分の名前」とライブのチームメイトを返すようになった",
       "point": "これまで`ListAgents`はサブエージェントと他セッションしか列挙せず、到達可能なチームメイトが「いないように見える」問題があった。自セッション名（他が宛先に使う名前）も返すため、マルチエージェント構成で「誰に何を送るか」をClaude自身が判断しやすくなる。自分宛の`SendMessage`もエラーではなくその旨を返す。",
@@ -11214,6 +11318,47 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1824,
+      "title": "`--restricted` で最小権限セッションを起動する",
+      "point": "Claude Code 2.1.248 で `--restricted`（または環境変数 `CLAUDE_CODE_RESTRICTED=1`）が追加。コマンド／コード実行系の組み込みツールと `WebFetch` を除去し（`--tools` で明示指定した場合を除く）、ファイル操作を作業ディレクトリ内に限定、`bypassPermissions` を拒否し、ユーザー／プロジェクト／ローカルの設定ファイルを無視する。信頼できないリポジトリの調査や、外部から受け取ったコードの読解に向く。",
+      "source_title": "Claude Code changelog 2.1.248",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-08-29",
+      "last_date": "2026-08-29",
+      "appearances": 1
+    },
+    {
+      "id": 1826,
+      "title": "エージェント単位でプロンプトキャッシュTTLを指定する",
+      "point": "エージェントのfrontmatterに `experimental.cacheTtl`（`\"5m\"` または `\"1h\"`）を書けるようになった。サブエージェント側のTTL設定がない場合に、そのエージェント固有のキャッシュTTLとして使われる。呼び出し間隔の長い調査系エージェントは `1h`、短いループを回すものは `5m` といった使い分けができる。",
+      "source_title": "Claude Code changelog 2.1.248",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-08-29",
+      "last_date": "2026-08-29",
+      "appearances": 1
+    },
+    {
+      "id": 1828,
+      "title": "Workflowツールのプロンプト消費が5.7k→約1kトークンに削減",
+      "point": "Workflowツールの説明文が約5.7kトークンから約1kトークンへ縮小され、スクリプト記述リファレンスは `workflow-authoring` スキルへ切り出された。常時ロードされるツール定義が軽くなるため、コンテキスト残量に効く。同様に、スキル再呼び出しの重複ロードも既に修正されており、長時間セッションのコンテキスト浪費対策が進んでいる。",
+      "source_title": "Claude Code changelog 2.1.248",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-08-29",
+      "last_date": "2026-08-29",
+      "appearances": 1
     },
     {
       "id": 1817,
@@ -20272,6 +20417,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-29",
+      "highlights": [
+        "Claude Code に制限モード `--restricted` が追加 — コマンド実行系ツールとWebFetchを外し、設定ファイルも無視する最小権限セッションを一発で起動できる",
+        "Claude Code 2.1.248 でプロンプトキャッシュの長時間セッション劣化が修正 — OAuthトークン更新のたびに1時間に1回起きていたキャッシュミスと拡張思考の消失が解消",
+        "Cowork に内蔵ブラウザが登場 — 拡張機能もセットアップも不要で、サイドパネル上でClaudeがWeb作業を代行する"
+      ]
+    },
+    {
       "date": "2026-08-28",
       "highlights": [
         "Claude in Chrome が一般提供（GA） — 全有料プランで解禁。実行前チェック付きで自律的なブラウザ操作が可能に",
@@ -21408,5 +21561,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-28T08:00:04.156042"
+  "generated_at": "2026-08-29T08:00:04.273827"
 }
