@@ -3050,6 +3050,30 @@
       "appearances": 6
     },
     {
+      "id": 1841,
+      "title": "`claude attach` 系サブコマンドでバックグラウンドセッションを操作する",
+      "point": "`claude --help` に `attach` / `logs` / `stop` / `respawn` / `rm` が掲載され、バックグラウンドセッションの操作方法が発見しやすくなった。実行中のバックグラウンドセッションに `--resume` を試みた際のメッセージも、正確な `claude attach <id>` コマンド名を提示するよう変更された。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-08-30",
+      "last_date": "2026-08-30",
+      "appearances": 5
+    },
+    {
+      "id": 1843,
+      "title": "`/effort` の既定値がモデルごとに保存される",
+      "point": "`/effort` で設定した既定の effort レベルがモデル単位で保存されるようになり、モデルを切り替えても各モデルの設定が維持される。あわせて、Opus 5 で thinking を無効にしたまま effort を xhigh/max にすると「effort … is not supported when thinking is disabled」で失敗していた不具合が修正され、その場合は `high` として送信される。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-08-30",
+      "last_date": "2026-08-30",
+      "appearances": 5
+    },
+    {
       "id": 1831,
       "title": "`/claude-api cost-optimize` でAPI費用を1変更ずつ計測して削る",
       "point": "既存プロジェクトのClaude API支出をプロファイルし、キャッシュ・トークン衛生・バッチ・effort・モデル選択といったコストレバーを、一度に1つずつ計測しながら適用していくスキル。あわせて `/claude-api` スキルはAdmin API（組織メンバー、招待、ワークスペース、APIキー、レート制限レポート、Workload Identity Federation、CMEK）もカバーするよう更新された。",
@@ -5549,6 +5573,19 @@
       "appearances": 4
     },
     {
+      "id": 1847,
+      "title": "Cowork の内蔵ブラウザでWeb作業を任せる",
+      "point": "Claude デスクトップアプリの Cowork に内蔵ブラウザが搭載され、Webを使うタスクではサイドパネルにブラウザが開いて Claude がページを読み、クリックし、入力する。自分のタブやログインには触れない独立ブラウザで、初回起動時に既存ブラウザから Cookie をインポートしてログイン状態を引き継ぐ選択肢が出る。設定は Settings > Cowork の Preferred browser から。",
+      "source_title": "Use the built-in browser in Claude Cowork",
+      "source_url": "https://support.claude.com/en/articles/16607400-use-the-built-in-browser-in-claude-cowork",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-08-30",
+      "last_date": "2026-08-30",
+      "appearances": 3
+    },
+    {
       "id": 1781,
       "title": "`--bare` フラグでSDK・非対話実行の起動を約10倍速くする",
       "point": "`claude -p`やTypeScript/Python SDKは既定でローカルのCLAUDE.md・設定・MCPを探索するため起動が遅い。非対話用途では`--system-prompt`・`--mcp-config`・`--settings`で明示指定したうえで`--bare`を付けると、起動がおよそ10倍速くなる。公式は「SDK設計時の見落としで、将来は`--bare`が既定になる」と明記しており、いま書くスクリプトは付けておくのが無難。",
@@ -8025,6 +8062,46 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1840,
+      "title": "`/usage` の Spend limit バーで支出上限の残量を把握する",
+      "point": "Claude apps ゲートウェイ配下で支出上限が設定されている場合、`/usage` に Spend limit バーが表示されるようになった。開発者向けにはステータスラインの `rate_limits.spend_limit` フィールドも追加。上限に張り付いて止まる前に、残量を見ながら effort やモデルを調整できる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-08-30",
+      "last_date": "2026-08-30",
+      "appearances": 2
+    },
+    {
+      "id": 1844,
+      "title": "シンボリックリンク経由の権限すり抜けが修正された",
+      "point": "権限チェック後に作業ディレクトリ内のシンボリックリンクが差し替えられると、Read / Write / Edit が承認範囲外を読み書きできてしまう問題が修正された。あわせて、Grep と Glob がシンボリックリンク先のファイルに `Read(...)` の deny ルールを適用していなかった点、Workflow ツールが読み取り許可の判定前に `scriptPath` を読んでいた点、マーケットプレイス記載のプラグインコマンドがプラグインディレクトリ外を指せた点も修正。deny ルールでガードしている環境は早めのアップデートを推奨。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-30",
+      "last_date": "2026-08-30",
+      "appearances": 2
+    },
+    {
+      "id": 1846,
+      "title": "サンドボックス分離を弱める管理設定は承認が必要になった",
+      "point": "サーバー管理設定のうち、サンドボックスのTLSを終端する、サンドボックス通信を自前プロキシ経由にする、認証情報を注入する、サンドボックス分離を弱める、といった項目は適用前に承認が必要になった。`ANTHROPIC_CUSTOM_HEADERS` が `Authorization` や `Host` など認証・ルーティング系ヘッダーを設定する場合も同様。承認ダイアログは前回承認時からの変更点のみを表示するよう改善されている。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-30",
+      "last_date": "2026-08-30",
+      "appearances": 2
     },
     {
       "id": 1833,
@@ -11318,6 +11395,62 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1838,
+      "title": "PreModelSwitch / PostModelSwitch フックでモデル切り替えを統制する",
+      "point": "Claude Code v2.1.251 で `PreModelSwitch` と `PostModelSwitch` のフックイベントが追加された。モデル切り替えをブロックしたり、確認を求めたり、注釈を付けたりできる。あわせて `SessionStart` の resume フックがセッションの陳腐化度合いと再キャッシュ推定コストを受け取るようになり、再開時に「続けるか作り直すか」を機械的に判断できる材料が増えた。組織でモデル利用ポリシーを強制したい場合の実装ポイントになる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-08-30",
+      "last_date": "2026-08-30",
+      "appearances": 1
+    },
+    {
+      "id": 1839,
+      "title": "`/cost` のプロンプトキャッシュ内訳でキャッシュ効率を実測する",
+      "point": "`/cost` にセッション単位のプロンプトキャッシュ行が追加され、ヒット率・ミス数・再キャッシュされたトークン数・warm/cold の別が確認できるようになった。ステータスライン用スクリプト向けにも `prompt_cache` オブジェクトが提供される。キャッシュ設計（静的コンテキストを先頭に置く等）の効果を推測でなく数値で検証できる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-08-30",
+      "last_date": "2026-08-30",
+      "appearances": 1
+    },
+    {
+      "id": 1842,
+      "title": "Remote Control でサブエージェントのツール実行をライブ監視する",
+      "point": "フォアグラウンドのサブエージェントのツール呼び出しと結果が、Remote Control クライアントへライブでストリーミングされるようになった。既定であるバックグラウンドのサブエージェントは従来どおりステータスのみ表示。長時間タスクを手元を離れて監視する際、どのツールで詰まったかを即座に把握できる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-08-30",
+      "last_date": "2026-08-30",
+      "appearances": 1
+    },
+    {
+      "id": 1845,
+      "title": "`CLAUDE_CODE_SUBAGENT_MODEL` は「上書き」から「既定値」に変わった",
+      "point": "これまで `CLAUDE_CODE_SUBAGENT_MODEL` はすべてのサブエージェントのモデルを強制上書きしていたが、既定値を設定するだけの挙動に変更された。エージェント定義の `model:` フィールドと、spawn 時に明示指定したモデルが優先される。エージェントごとにモデルを使い分けている構成では、意図した割り当てが効くようになる一方、環境変数で統一していた運用は再確認が必要。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-08-30",
+      "last_date": "2026-08-30",
+      "appearances": 1
     },
     {
       "id": 1824,
@@ -20417,6 +20550,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-30",
+      "highlights": [
+        "PreModelSwitch / PostModelSwitch フック — モデル切り替えをブロック・確認・注釈できる新しいフックイベントが追加",
+        "`/cost` のプロンプトキャッシュ内訳 — ヒット率・ミス数・再キャッシュトークン量をセッション単位で実測できる",
+        "シンボリックリンク経由の権限すり抜け修正 — deny ルールでガードしている環境はアップデート推奨"
+      ]
+    },
+    {
       "date": "2026-08-29",
       "highlights": [
         "Claude Code に制限モード `--restricted` が追加 — コマンド実行系ツールとWebFetchを外し、設定ファイルも無視する最小権限セッションを一発で起動できる",
@@ -21561,5 +21702,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-29T08:00:04.273827"
+  "generated_at": "2026-08-30T08:00:04.388674"
 }
