@@ -1033,6 +1033,22 @@
       "appearances": 11
     },
     {
+      "id": 1857,
+      "title": "Remote Controlがサーバー側切断で自動再接続するようになった",
+      "point": "スマホからClaude Codeセッションを操作するRemote Controlに3点の修正が入った。(1) Anthropic側の要因で切断された場合、従来はCLIが終了していたが再接続と再開を試みるようになった。(2) 再接続後もパーミッション要求や新着メッセージの通知がスマホに確実に届く（従来は無音で失われることがあった）。(3) フォアグラウンドのサブエージェントのツール呼び出しをリアルタイムで追える。長時間の外出中委譲が実用に耐えるようになった。",
+      "source_title": "Claude Code Weekly Update: Faster Startup, Token Visibility, Auto Mode Tab",
+      "source_url": "https://explainx.ai/blog/claude-code-weekly-update-faster-startup-token-visibility-august-2026",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-08-31",
+      "last_date": "2026-08-31",
+      "appearances": 10
+    },
+    {
       "id": 1731,
       "title": "`/permissions`を作業中に開いて権限をその場で調整できる",
       "point": "これまで待つ必要があった `/permissions` が、Claudeが作業している最中でも開けるようになった。変更したルールは現在のターンの残りから適用される。許可プロンプトで止まったときに、中断せずルールを追加して続行できる。",
@@ -1290,6 +1306,21 @@
       "first_date": "2026-06-08",
       "last_date": "2026-06-08",
       "appearances": 10
+    },
+    {
+      "id": 1851,
+      "title": "Claude Code 週次利用上限+50%措置、本日8/31で終了",
+      "point": "Pro/Max/Team/シート型Enterpriseに適用されていた週次上限+50%の特別措置が8/31で終了し、標準値に戻る。プラン価格や課金の変更はなく、ファイル等も影響を受けないが、上限到達が従来より約1/3早くなる。ブースト枠を前提に組んだ`/loop`や常駐サブエージェントは、9月以降に収まらなくなる可能性が高い。Anthropicは恒久化を「希望している」と述べているが、プランのドキュメントが標準と明記するまでは8/31を実際の期限として扱うのが安全。",
+      "source_title": "Claude Code Weekly Limits +50% Promo -- Now Through August 31",
+      "source_url": "https://aicatchup.com/news/claude-code-weekly-limits-50-percent-promo",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-08-31",
+      "last_date": "2026-08-31",
+      "appearances": 9
     },
     {
       "id": 1727,
@@ -2280,6 +2311,19 @@
       "appearances": 7
     },
     {
+      "id": 1855,
+      "title": "`/usage`のループ別内訳でトークンを食っているループを特定する",
+      "point": "`/usage`にループ単位の内訳（実行回数とトークン数）が追加された。従来はプラン上限に対する合計しか見えず、どの`/loop`が消費しているか帰属できなかった。数分おきに大きなコンテキストで発火するループは静かに予算を占有するため、「このループは44回実行してXトークン」と可視化できることで、実行間隔を広げる/プロンプトを削る/ループ自体を止める、の判断が数値ベースでできる。上限が標準値に戻る9月以降はとくに効く。",
+      "source_title": "Claude Code Weekly Update: Faster Startup, Token Visibility, Auto Mode Tab",
+      "source_url": "https://explainx.ai/blog/claude-code-weekly-update-faster-startup-token-visibility-august-2026",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-08-31",
+      "last_date": "2026-08-31",
+      "appearances": 6
+    },
+    {
       "id": 1802,
       "title": "Bash allow ルールのワイルドカード位置に注意する",
       "point": "`Bash(git * main)` のようにサブコマンドの前にワイルドカードを置くと、サブコマンドの前に挿入されたオプションにもマッチしてしまう。2.1.246 から起動時に警告が出るようになった。許可ルールは「サブコマンドを固定し、その後ろにワイルドカード」の順で書くのが安全。",
@@ -3048,6 +3092,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1853,
+      "title": "CLI起動がサンドボックス/MCP初期化を待たなくなった",
+      "point": "8/29の更新で、`claude`起動時にOSサンドボックス層とMCPサーバーの初期化がブロッキングでなくなった。両者はバックグラウンドで非同期に立ち上がり、その間もプロンプトを打ち始められる。MCPサーバーを複数設定したプロジェクトほど体感差が大きい。加えてバージョン確認や設定読み出しなど、エージェントランタイムを必要としないサブコマンドは重い初期化パスをスキップするようになった。設定変更は不要で、`claude update`のみで反映される。",
+      "source_title": "Claude Code Weekly Update: Faster Startup, Token Visibility, Auto Mode Tab",
+      "source_url": "https://explainx.ai/blog/claude-code-weekly-update-faster-startup-token-visibility-august-2026",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-31",
+      "last_date": "2026-08-31",
+      "appearances": 5
     },
     {
       "id": 1841,
@@ -3974,6 +4033,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1852,
+      "title": "Claude Sonnet 5の導入価格$2/$10が恒久化",
+      "point": "当初「8/31まで」とされていたSonnet 5の導入価格（入力$2/出力$10 per MTok）は、8/10の公式リリースノートで標準価格に格上げされた。予定されていた9/1からの$3/$15（+50%）への引き上げは実施されない。過去に「8/31で値上げ」を前提にモデル移行やコスト試算をしていた場合、その前提は取り下げてよい。1Mトークンコンテキストと128kトークン出力もそのまま維持される。",
+      "source_title": "Claude Platform release notes（8月10日）",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-08-31",
+      "last_date": "2026-08-31",
+      "appearances": 4
     },
     {
       "id": 1829,
@@ -8064,6 +8137,35 @@
       "appearances": 3
     },
     {
+      "id": 1856,
+      "title": "`/tasks`がサブエージェントごとのモデルとeffortを表示",
+      "point": "`/tasks`の一覧に、各サブエージェントが実際に走ったモデル名とeffortレベルが表示されるようになった。これまでは「親の設定を継承しているはず」と推測するしかなく、`CLAUDE_CODE_SUBAGENT_MODEL`の既定値化などの変更と相まって誤認しやすかった。委譲したタスクが意図したモデル・effortで動いているかを実行後に確認できるため、品質不良の原因切り分け（モデル選択ミスか、プロンプト不足か）が速くなる。",
+      "source_title": "Claude Code Weekly Update: Faster Startup, Token Visibility, Auto Mode Tab",
+      "source_url": "https://explainx.ai/blog/claude-code-weekly-update-faster-startup-token-visibility-august-2026",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-08-31",
+      "last_date": "2026-08-31",
+      "appearances": 2
+    },
+    {
+      "id": 1860,
+      "title": "Files API・Skills APIのベータヘッダーがSDKからも撤廃",
+      "point": "Python SDK 1.2.0 / TypeScript 0.122.0 / Go 1.68.0 / Java 2.59.0 / Ruby 1.67.0 / C# 12.44.0 以降、`client.beta.files`と`client.beta.skills`が`files-api-2025-04-14`および`skills-2025-10-02`のベータヘッダーを送らなくなり、`client.files`・`client.skills`と同じ形状を返す。これに伴い`client.beta.skills.delete()`はSkillを全バージョンごと削除する挙動に変わり、Messages APIのベータ型`BetaSkill`は`BetaContainerSkill`へ改名された。ベータヘッダーを明示送信している既存コードは従来形状のまま動作するため、移行は段階的に行える。",
+      "source_title": "Claude Platform release notes（8月27日）",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-08-31",
+      "last_date": "2026-08-31",
+      "appearances": 2
+    },
+    {
       "id": 1840,
       "title": "`/usage` の Spend limit バーで支出上限の残量を把握する",
       "point": "Claude apps ゲートウェイ配下で支出上限が設定されている場合、`/usage` に Spend limit バーが表示されるようになった。開発者向けにはステータスラインの `rate_limits.spend_limit` フィールドも追加。上限に張り付いて止まる前に、残量を見ながら effort やモデルを調整できる。",
@@ -11395,6 +11497,49 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1854,
+      "title": "Linux x64ビルドが4.5倍小型化（約75MB）、メモリも40〜70MB削減",
+      "point": "Claude CodeのLinux x64ダウンロードサイズが約340MBから約75MBへ4.5倍小さくなった。実行のたびにClaude CodeをインストールするCIパイプラインやコンテナイメージで、コールドビルド短縮とイメージ軽量化に直結する。あわせてネイティブビルドはセッションあたり40〜70MBメモリ使用量が減っており、並列セッションやマルチエージェント構成では削減が積み上がる。`ps -o rss= -p $(pgrep -f claude | head -1)`で更新前後のRSSを実測できる。",
+      "source_title": "Claude Code Weekly Update: Faster Startup, Token Visibility, Auto Mode Tab",
+      "source_url": "https://explainx.ai/blog/claude-code-weekly-update-faster-startup-token-visibility-august-2026",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-08-31",
+      "last_date": "2026-08-31",
+      "appearances": 1
+    },
+    {
+      "id": 1858,
+      "title": "Model Hardware Standard（MHS）：Claudeがロボット・実験機器を直接扱う標準を研究プレビュー公開",
+      "point": "Anthropicは8/28、AIアシスタントがロボットや科学・製造機器とより適切に連携するためのソフトウェア標準「Model Hardware Standard（MHS）」を研究プレビューとして発表した。MHSは、その機器がどう動作するかの情報を機械可読な形で保持し、AIが紙のマニュアルや暗黙知に頼らずに扱えるようにする。MCPがソフトウェア/データ側の接続標準だったのに対し、MHSは物理機器側の接続標準という位置付けで、車載・製造系のHIL環境やベンチ試験の自動化に波及する可能性がある。詳細仕様は未確定な点が多く、現時点では動向把握レベルに留めるのが妥当。",
+      "source_title": "Anthropic tests new way for Claude to work with robots and scientific lab tools（The Japan Times, 8/28）",
+      "source_url": "https://www.japantimes.co.jp/business/2026/08/28/tech/anthropic-claude-ai-robots/",
+      "tags": [
+        "API",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-08-31",
+      "last_date": "2026-08-31",
+      "appearances": 1
+    },
+    {
+      "id": 1859,
+      "title": "Claude Consoleにパーソナルキーとサービスアカウントキーが追加",
+      "point": "8/27よりClaude Consoleで「パーソナルキー」と「サービスアカウントキー」を発行できるようになった。これらは発行者本人またはサービスアカウントとして同じ権限で動作し、紐づくアカウントが組織から外れると自動的に無効化される。組織管理者はアカウント単位で利用量を追跡でき、鍵の利用が正当かを検証しやすくなる。特定ワークスペースにスコープすることも、管理エンドポイントや全ワークスペース横断で使うことも可能。従来のワークスペースAPIキーはレガシー扱いとして引き続きサポートされる。",
+      "source_title": "Claude Platform release notes（8月27日）",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-08-31",
+      "last_date": "2026-08-31",
+      "appearances": 1
     },
     {
       "id": 1838,
@@ -20550,6 +20695,14 @@
   ],
   "daily": [
     {
+      "date": "2026-08-31",
+      "highlights": [
+        "週次利用上限+50%が本日で終了 — 8/31（PT）を最後に標準値へ戻る。ループや常駐エージェントの設計を今日中に見直す",
+        "Sonnet 5の「8/31期限」は無効 — 9/1の$3/$15への値上げは中止済み。$2/$10が恒久価格になった",
+        "8/29のClaude Code一括改善 — CLI起動の非ブロッキング化、Linuxビルド4.5倍小型化、`/usage`のループ別内訳"
+      ]
+    },
+    {
       "date": "2026-08-30",
       "highlights": [
         "PreModelSwitch / PostModelSwitch フック — モデル切り替えをブロック・確認・注釈できる新しいフックイベントが追加",
@@ -21702,5 +21855,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-30T08:00:04.388674"
+  "generated_at": "2026-08-31T08:00:04.307536"
 }
