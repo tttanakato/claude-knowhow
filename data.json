@@ -1033,6 +1033,20 @@
       "appearances": 11
     },
     {
+      "id": 1864,
+      "title": "週次上限+50%は9/13まで継続、9/14から恒久+25%に切り替わる",
+      "point": "8/29のAnthropic（ClaudeDevs）発表により、Claude Codeの週次利用上限+50%の特別措置は9/13まで延長され、9/14から「標準週次上限を恒久的に+25%」へ切り替わる。対象はPro/Max/Team/シート型Enterprise。昨日時点で流通していた「8/31で終了」は結果的に誤りで、+50%枠はあと2週間使える。ただし9/14以降は現在より枠が縮むため、9月中旬以降を見据えた設計変更は依然として必要。",
+      "source_title": "Anthropic is cutting Claude Code's current weekly limits by 17%（BleepingComputer, 8/29）",
+      "source_url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-09-01",
+      "last_date": "2026-09-01",
+      "appearances": 10
+    },
+    {
       "id": 1857,
       "title": "Remote Controlがサーバー側切断で自動再接続するようになった",
       "point": "スマホからClaude Codeセッションを操作するRemote Controlに3点の修正が入った。(1) Anthropic側の要因で切断された場合、従来はCLIが終了していたが再接続と再開を試みるようになった。(2) 再接続後もパーミッション要求や新着メッセージの通知がスマホに確実に届く（従来は無音で失われることがあった）。(3) フォアグラウンドのサブエージェントのツール呼び出しをリアルタイムで追える。長時間の外出中委譲が実用に耐えるようになった。",
@@ -1306,6 +1320,21 @@
       "first_date": "2026-06-08",
       "last_date": "2026-06-08",
       "appearances": 10
+    },
+    {
+      "id": 1873,
+      "title": "サブエージェントとAgent Teamsの使い分け：3〜5人が実用的な上限",
+      "point": "サブエージェントは「指示して結果を返させる」短距離の作業向き、Agent Teamsは「メンバー同士が知見を共有し、仮説をぶつけ合う」協調作業向き。PRレビュー、対立仮説を立てたデバッグ、アーキテクチャ調査、実装と検証の分離などがTeams向きの典型。人数は3〜5人が最適で、それを超えるとサマリのマージ工数が並列化の利得を食い潰す。Teamsはトークン消費が大きいため、上限が縮む9月以降は「小チーム・Sonnet主体・終了後すぐ片付け」が現実解になる。",
+      "source_title": "Orchestrate teams of Claude Code sessions（Claude Code Docs）",
+      "source_url": "https://code.claude.com/docs/en/agent-teams",
+      "tags": [
+        "エージェント",
+        "モデル",
+        "生産性"
+      ],
+      "first_date": "2026-09-01",
+      "last_date": "2026-09-01",
+      "appearances": 9
     },
     {
       "id": 1851,
@@ -3092,6 +3121,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1867,
+      "title": "Sonnet 5「9/1から$3/$15」報道は公式と矛盾：一次ソースを優先する",
+      "point": "8/31付の一部メディアが「Sonnet 5のAPI価格が本日$3/$15へ上昇、トークナイザ変更でコードは10〜35%増トークン」と報じた。一方でAnthropicは8/10および8/18の公式情報で導入価格$2/$10を標準価格に格上げし、9/1の値上げは実施しないと明記している。現時点では公式側の記述が新しく、値上げは行われないと読むのが妥当だが、両者が併存しているため、コスト試算に使う前にPlatformの価格ページで最終確認することを推奨する（この点は不確実性が残る）。",
+      "source_title": "AI News August 31 2026（AIToolsRecap）",
+      "source_url": "https://aitoolsrecap.com/Blog/ai-news-august-31-2026",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-01",
+      "last_date": "2026-09-01",
+      "appearances": 5
     },
     {
       "id": 1853,
@@ -8137,6 +8181,60 @@
       "appearances": 3
     },
     {
+      "id": 1869,
+      "title": "`PreModelSwitch`/`PostModelSwitch`フックでモデル切り替えを統制する",
+      "point": "v2.1.251で`PreModelSwitch`と`PostModelSwitch`のフックイベントが追加された。モデル切り替えをブロックする、確認を挟む、注釈を付ける、といった制御ができる。上限が縮む9月以降は「重い作業だけOpus、それ以外はSonnet」といったポリシーを人間の記憶ではなくフックで担保できる。あわせて`SessionStart`のresumeフックがセッションの陳腐化度合いと再キャッシュ推定コストを受け取るようになり、再開時のコスト判断も自動化しやすくなった。",
+      "source_title": "Claude Code changelog v2.1.251",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化",
+        "モデル"
+      ],
+      "first_date": "2026-09-01",
+      "last_date": "2026-09-01",
+      "appearances": 2
+    },
+    {
+      "id": 1870,
+      "title": "`/cost`のプロンプトキャッシュ内訳でキャッシュ効率を実測する",
+      "point": "v2.1.251で`/cost`にセッション単位のプロンプトキャッシュ行が追加された。ヒット率、ミス数、再キャッシュされたトークン数、ウォーム／コールドの別が表示される。ステータスライン用の`prompt_cache`オブジェクトも同時に提供されるため、スクリプトで常時監視もできる。キャッシュミスは上限消費に直結するので、CLAUDE.mdやツール定義の頻繁な書き換えがヒット率を落としていないかを、推測ではなく数値で確認できるようになった。",
+      "source_title": "Claude Code changelog v2.1.251",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "CLAUDE.md",
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-09-01",
+      "last_date": "2026-09-01",
+      "appearances": 2
+    },
+    {
+      "id": 1871,
+      "title": "`CLAUDE_CODE_SUBAGENT_MODEL`が「上書き」から「既定値」に変わった",
+      "point": "同じくv2.1.251で、環境変数`CLAUDE_CODE_SUBAGENT_MODEL`の意味が変更された。従来は全サブエージェントのモデルを強制的に上書きしていたが、今後は「既定値」として働き、エージェント定義ファイルの`model:`指定や、spawn時の明示指定が優先される。これにより「基本はSonnetで走らせつつ、レビュー用エージェントだけOpus」といった構成が環境変数と定義ファイルの併用で素直に書ける。従来の挙動に依存した設定は見直しが必要。",
+      "source_title": "Claude Code changelog v2.1.251",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-01",
+      "last_date": "2026-09-01",
+      "appearances": 2
+    },
+    {
+      "id": 1872,
+      "title": "`--restricted`で最小権限セッションを起動する",
+      "point": "v2.1.248で追加された`--restricted`（または`CLAUDE_CODE_RESTRICTED=1`）は、コマンドやコードを実行する組み込みツールと`WebFetch`を除去し（`--tools`で明示したものは除く）、ファイルツールを作業ディレクトリ内に限定し、`bypassPermissions`を拒否し、ユーザー／プロジェクト／ローカルの設定ファイルを無視する。素性の分からないリポジトリを読ませる場合や、外部から受け取ったコードを解析させる場合の既定起動オプションとして使える。",
+      "source_title": "Claude Code changelog v2.1.248",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-01",
+      "last_date": "2026-09-01",
+      "appearances": 2
+    },
+    {
       "id": 1856,
       "title": "`/tasks`がサブエージェントごとのモデルとeffortを表示",
       "point": "`/tasks`の一覧に、各サブエージェントが実際に走ったモデル名とeffortレベルが表示されるようになった。これまでは「親の設定を継承しているはず」と推測するしかなく、`CLAUDE_CODE_SUBAGENT_MODEL`の既定値化などの変更と相まって誤認しやすかった。委譲したタスクが意図したモデル・effortで動いているかを実行後に確認できるため、品質不良の原因切り分け（モデル選択ミスか、プロンプト不足か）が速くなる。",
@@ -11497,6 +11595,43 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1865,
+      "title": "「+25%」と「-17%」は同時に正しい：比較基準日を必ず添えて読む",
+      "point": "プロモ前のベースラインを100とすると、現在は150、9/14以降は125になる。ベースライン比では+25%（恒久的な改善）、現在比では125÷150＝約-17%（実質減）。どちらの数字も嘘ではなく、比較の起点が違うだけ。利用枠・価格・性能のアナウンスを読むときは「何と比べた数字か」を常に確認し、自分のチームの計画は「今の`/usage`バー」ではなく「9/14以降の値」で引き直すのが安全。指数化して並べる（100 / 150 / 125）と誤読が消える。",
+      "source_title": "Claude Code Limits Drop 17% on Sept 14 — The Math Behind the 25% Raise（explainx.ai, 8/30）",
+      "source_url": "https://www.explainx.ai/blog/anthropic-claude-code-limits-17-percent-cut-september-2026-august-2026",
+      "tags": [],
+      "first_date": "2026-09-01",
+      "last_date": "2026-09-01",
+      "appearances": 1
+    },
+    {
+      "id": 1866,
+      "title": "Anthropicが元投稿を削除・再掲し「17%減」を明記した",
+      "point": "ClaudeDevsは当初「恒久+25%」を前面に出した投稿を行ったが、コミュニティが数時間で「現在比-17%」と算出したため、元投稿を削除し「今日と比べると週次上限は17%の減少になる」と明記した版を再掲した。あわせて「利用状況の可視性と制御を高める変更を準備中」とも述べている。公式アナウンスであっても削除・訂正が起きる前提で、要点をスクリーンショットで残し、後日の再掲版と突き合わせる運用が実務上有効。",
+      "source_title": "Anthropic is cutting Claude Code's current weekly limits by 17%（BleepingComputer, 8/29）",
+      "source_url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-09-01",
+      "last_date": "2026-09-01",
+      "appearances": 1
+    },
+    {
+      "id": 1868,
+      "title": "9/14までのプロモ枠は「長時間自走タスク」に優先的に振る",
+      "point": "+50%枠が残る9/13までの2週間は、枠を使い切る価値の高い作業に意図的に割り当てるのが得策。具体的にはテストスイート生成、マイグレーションスクリプト作成、ドキュメント一括更新、セキュリティレビューなど、長時間の自律実行が前提の作業。逆に1行修正のような小タスクでプロモ枠を消費するのはもったいない。9/14以降は週次スループットを約1/6減として計画し直す前提で、いま前倒しできる重量タスクを洗い出しておく。",
+      "source_title": "Claude Code Limits Drop 17% on Sept 14（explainx.ai, 8/30）",
+      "source_url": "https://www.explainx.ai/blog/anthropic-claude-code-limits-17-percent-cut-september-2026-august-2026",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-09-01",
+      "last_date": "2026-09-01",
+      "appearances": 1
     },
     {
       "id": 1854,
@@ -20695,6 +20830,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-01",
+      "highlights": [
+        "昨日の「8/31で終了」は誤り — 週次上限+50%は9/13まで継続し、9/14から恒久+25%（実質-17%）に切り替わる",
+        "Anthropicが投稿を削除・再掲して「17%減」を明記 — 発表文の比較基準日を疑い、`/usage`で実測する習慣が要る",
+        "Sonnet 5「9/1値上げ」報道が再燃 — 公式は中止を明記済み。二次情報より一次ソースを優先する"
+      ]
+    },
+    {
       "date": "2026-08-31",
       "highlights": [
         "週次利用上限+50%が本日で終了 — 8/31（PT）を最後に標準値へ戻る。ループや常駐エージェントの設計を今日中に見直す",
@@ -21855,5 +21998,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-31T08:00:04.307536"
+  "generated_at": "2026-09-01T08:00:04.797626"
 }
