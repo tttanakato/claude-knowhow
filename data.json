@@ -337,6 +337,23 @@
       "appearances": 19
     },
     {
+      "id": 1881,
+      "title": "システムプロンプトの「アンホブリング」：制約を削る方が性能が上がる",
+      "point": "AnthropicはOpus 5とFable 5向けにClaude Codeのシステムプロンプトの80%超を削除したが、コーディング評価に測定可能な劣化はなかった。かつて最悪ケースを防いでいた制約が、現在では指示同士の衝突とトークンの浪費を生んでいたため。自作のCLAUDE.mdやスキルも、増やすより削る方向で見直す価値がある。",
+      "source_title": "Claude 5 Context Engineering Guide",
+      "source_url": "https://www.explainx.ai/blog/claude-5-context-engineering-thariq-doctor-july-2026",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-02",
+      "last_date": "2026-09-02",
+      "appearances": 18
+    },
+    {
       "id": 1726,
       "title": "LLMゲートウェイ／カスタムbaseURL利用時のプロンプトキャッシュ不具合が修正",
       "point": "2.1.237で、LLMゲートウェイや独自baseURL経由のセッションでプロンプトキャッシュが正しく効かず古いプロンプトを掴む問題が修正された。社内プロキシ経由でClaude Codeを使う組織はバージョンを上げるだけでトークンコストと初回応答時間が改善する可能性がある。",
@@ -832,6 +849,33 @@
       "first_date": "2026-05-27",
       "last_date": "2026-05-27",
       "appearances": 13
+    },
+    {
+      "id": 1878,
+      "title": "effortパラメータをコスト制御の主軸にする",
+      "point": "エージェントループのコスト管理では、モデル選択よりもステップごとのeffort調整の方が効きが大きい。Opus 5ではlow/mediumが従来Opusより明確に強化されており、4.8ではmediumに任せられなかった作業が通ることがある。評価で品質が保てる範囲でlow/mediumを積極的に使い、難度の高いコーディング・エージェント作業のみxhighに上げる運用が推奨される。",
+      "source_title": "Effort - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/effort",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-02",
+      "last_date": "2026-09-02",
+      "appearances": 12
+    },
+    {
+      "id": 1886,
+      "title": "不確実性の表明を明示的に許可してハルシネーションを抑える",
+      "point": "リサーチや分析のプロンプトに「情報が結論を出すのに不十分なら、推測せずそう述べること」を明記する。この一文がないと自信ありげな誤答が返りやすい。複雑な推論には「step-by-stepで考えてから最終回答を出す」を併記すると精度がさらに上がる。",
+      "source_title": "Prompting best practices - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-09-02",
+      "last_date": "2026-09-02",
+      "appearances": 12
     },
     {
       "id": 1832,
@@ -3123,6 +3167,76 @@
       "appearances": 6
     },
     {
+      "id": 1877,
+      "title": "Sonnet 5の値上げ中止：$2/$10 per MTokが正式価格に",
+      "point": "2026年9月1日に予定されていたClaude Sonnet 5のAPI価格引き上げ（$3/$15 per MTok）が実施されないことが確定。導入価格の$2/$10がそのまま標準価格となった。API利用のコスト試算をやり直す価値がある。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-09-02",
+      "last_date": "2026-09-02",
+      "appearances": 5
+    },
+    {
+      "id": 1879,
+      "title": "thinking無効＋effort xhigh/maxは400エラーになる",
+      "point": "thinkingを無効化した状態でeffortをxhighまたはmaxに設定するとリクエスト単位で400エラーが返る。対話セッションではClaude Codeがリクエスト形状を管理するため踏まないが、スクリプト化やSDK構築時に顕在化する。thinkingを有効に保ってeffortを下げるか、effortをhighまでに抑えるかのどちらかを選ぶ。",
+      "source_title": "Prompting Claude Opus 5 - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化"
+      ],
+      "first_date": "2026-09-02",
+      "last_date": "2026-09-02",
+      "appearances": 5
+    },
+    {
+      "id": 1880,
+      "title": "xhigh/max運用時はmax_tokensを大きく取る",
+      "point": "Opus 5をxhighやmax effortで走らせる場合、サブエージェント呼び出しやツール利用をまたいで思考・行動する余地を確保するため、max_tokensを大きく設定する必要がある。64kトークンを起点に調整するのが妥当な既定値とされている。",
+      "source_title": "Prompting Claude Opus 5 - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-02",
+      "last_date": "2026-09-02",
+      "appearances": 5
+    },
+    {
+      "id": 1882,
+      "title": "スキルは分割する：巨大な1枚スキルは性能が落ちる",
+      "point": "すべてを1つのスキルに詰め込むと結果が明確に悪化するという検証結果がある。例えばライティングなら「全体のvoice」「企業文書」「ニュースレター」の3つに分けるなど、用途ごとにチャンク化する。エントリポイントは薄く保ち、詳細は段階的開示（progressive disclosure）に回す。",
+      "source_title": "Claude Cowork Guide for Power Users",
+      "source_url": "https://karozieminski.substack.com/p/claude-cowork-guide-plugins-memory-sub-agents-tips",
+      "tags": [],
+      "first_date": "2026-09-02",
+      "last_date": "2026-09-02",
+      "appearances": 5
+    },
+    {
+      "id": 1884,
+      "title": "Hooks・Skills・Subagents・CLAUDE.mdの使い分け判断基準",
+      "point": "強制したいルールはHooksまたはpermissionsで、文脈知識はSkillsで、委譲の境界はSubagentsで、常時適用のプロジェクト指針はCLAUDE.mdに短く書く。2026年8月時点でフックイベントは31種類あり、セッション単位（SessionStart/End）、ターン単位（UserPromptSubmit/Stop）、ツール呼び出し単位（PreToolUse/PostToolUse）の3つのカデンスに分類される。",
+      "source_title": "Claude Code: Hooks, Subagents & Skills Complete Guide",
+      "source_url": "https://ofox.ai/blog/claude-code-hooks-subagents-skills-complete-guide-2026/",
+      "tags": [
+        "CLAUDE.md",
+        "プロンプト",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-09-02",
+      "last_date": "2026-09-02",
+      "appearances": 5
+    },
+    {
       "id": 1867,
       "title": "Sonnet 5「9/1から$3/$15」報道は公式と矛盾：一次ソースを優先する",
       "point": "8/31付の一部メディアが「Sonnet 5のAPI価格が本日$3/$15へ上昇、トークナイザ変更でコードは10〜35%増トークン」と報じた。一方でAnthropicは8/10および8/18の公式情報で導入価格$2/$10を標準価格に格上げし、9/1の値上げは実施しないと明記している。現時点では公式側の記述が新しく、値上げは行われないと読むのが妥当だが、両者が併存しているため、コスト試算に使う前にPlatformの価格ページで最終確認することを推奨する（この点は不確実性が残る）。",
@@ -4077,6 +4191,17 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1885,
+      "title": "検証ループを与えると結果が2〜3倍改善する",
+      "point": "テスト、スクリーンショット、シミュレータなど自己修正できるフィードバック手段を渡すと、Claudeの出力品質が2〜3倍向上するとされる。ファイルを1つずつ与えるより、リポジトリ全体のコンテキストを渡したうえで検証ループを回させる方が実用上の効果が大きい。",
+      "source_title": "Prompt engineering best practices for 2026",
+      "source_url": "https://claude.com/blog/best-practices-for-prompt-engineering",
+      "tags": [],
+      "first_date": "2026-09-02",
+      "last_date": "2026-09-02",
+      "appearances": 4
     },
     {
       "id": 1852,
@@ -5688,6 +5813,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1883,
+      "title": "サブエージェントにはモデルを明示指定する",
+      "point": "サブエージェント定義にmodel行を書かないと、リードエージェントが走らせているモデルをそのまま継承する。これが2026年で最も多いコスト超過の原因とされる。レビュー用サブエージェントなど軽量な役割にはHaikuやSonnetを明示指定してコストを抑える。",
+      "source_title": "Claude Code subagents: the 2026 production playbook",
+      "source_url": "https://www.totalum.app/blog/claude-code-subagents-totalum",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-02",
+      "last_date": "2026-09-02",
+      "appearances": 3
     },
     {
       "id": 1847,
@@ -8179,6 +8318,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1887,
+      "title": "Claudeforce：Salesforce連携が9月オープンベータへ",
+      "point": "AnthropicとSalesforceが「Claudeforce」として提携を拡大。Salesforceのデータ・ワークフロー・業務ロジック・権限管理をClaudeから安全に扱えるようにする。現在は一部パイロット顧客のみ、2026年9月にオープンベータ開始予定。",
+      "source_title": "Salesforce and Anthropic Announce Claudeforce",
+      "source_url": "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-09-02",
+      "last_date": "2026-09-02",
+      "appearances": 2
     },
     {
       "id": 1869,
@@ -20830,6 +20983,13 @@
   ],
   "daily": [
     {
+      "date": "2026-09-02",
+      "highlights": [
+        "Sonnet 5の値上げ中止 — 9/1予定だった$3/$15への引き上げが撤回され、$2/$10が正式価格に確定",
+        "effortはコスト制御の最重要ノブ — Opus 5ではlow/mediumが従来Opus比で大幅強化、モデル選択より効く場面が多い"
+      ]
+    },
+    {
       "date": "2026-09-01",
       "highlights": [
         "昨日の「8/31で終了」は誤り — 週次上限+50%は9/13まで継続し、9/14から恒久+25%（実質-17%）に切り替わる",
@@ -21998,5 +22158,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-01T08:00:04.797626"
+  "generated_at": "2026-09-02T08:00:04.387653"
 }
