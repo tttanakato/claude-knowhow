@@ -5815,6 +5815,20 @@
       "appearances": 4
     },
     {
+      "id": 1898,
+      "title": "low effortでは検索を呼ばず記憶から答えがち",
+      "point": "最も低いeffortレベルでは検索・取得ツールの呼び出し頻度が下がる。最新情報が要るターンは会話途中でeffortを上げるか、「検証してから答える」旨の指示を足して検索をトリガーさせる。effortの既定はClaude CodeがHigh、Claude Cowork／claude.aiがMedium。",
+      "source_title": "Claude Fable 5.1の新機能 - 動作の違い",
+      "source_url": "https://platform.claude.com/docs/ja/models/fable-5-1/whats-new-fable-5-1",
+      "tags": [
+        "Claude Code",
+        "製品機能"
+      ],
+      "first_date": "2026-09-03",
+      "last_date": "2026-09-03",
+      "appearances": 3
+    },
+    {
       "id": 1883,
       "title": "サブエージェントにはモデルを明示指定する",
       "point": "サブエージェント定義にmodel行を書かないと、リードエージェントが走らせているモデルをそのまま継承する。これが2026年で最も多いコスト超過の原因とされる。レビュー用サブエージェントなど軽量な役割にはHaikuやSonnetを明示指定してコストを抑える。",
@@ -8318,6 +8332,49 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1894,
+      "title": "思考ブロックはモデルに紐づく：履歴は「追記専用」で扱う",
+      "point": "思考ブロックには生成モデルが記録され、保持は一方向。Fable 5.1は旧モデルの思考を読めるが逆は不可。さらにsystemプロンプト・tools配列・過去ターンを書き換えると以降の思考ブロックが無効化され、再送すると400が返る（2026年8月31日以降作成のアカウントに適用）。自前で `messages` を組み立てているなら移行前に検査が必要。",
+      "source_title": "Claude Fable 5.1の新機能 - 以前のターンを編集すると思考ブロックが無効になります",
+      "source_url": "https://platform.claude.com/docs/ja/models/fable-5-1/whats-new-fable-5-1",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-03",
+      "last_date": "2026-09-03",
+      "appearances": 2
+    },
+    {
+      "id": 1895,
+      "title": "ターンスコープのシステムメッセージでターンごとのリマインダーを渡す",
+      "point": "`role: \"system\"` のメッセージに `clear_at: \"next_user_message\"` を付けると、そのターンだけシステムプロンプト権限で効き、次のユーザーメッセージが来ると描画されなくなる。履歴に残るのでプレフィックスは変わらず、キャッシュも思考ブロックも壊れない。従来の「挿入して次リクエストで削除」パターンの置き換えに使う。ベータヘッダーは `mid-conversation-system-clear-at-2026-08-21`。",
+      "source_title": "Claude Fable 5.1の新機能 - ターンスコープのシステムメッセージ",
+      "source_url": "https://platform.claude.com/docs/ja/models/fable-5-1/whats-new-fable-5-1",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "新機能"
+      ],
+      "first_date": "2026-09-03",
+      "last_date": "2026-09-03",
+      "appearances": 2
+    },
+    {
+      "id": 1897,
+      "title": "並列ツール呼び出しが減った：バッチ化指示を1行足す",
+      "point": "Fable 5.1はFable 5がまとめて実行していた場面で、ターンごとに1つのツール呼び出しを出すことがある。カスタムコーディングエージェントやbash+エディタのハーネス、コンピュータ操作などの長いループで顕在化し、トークンとラウンドトリップが増える。回答品質は落ちないので、公式プロンプティングガイドの「独立したツール呼び出しをバッチ化する」1行指示を追加するのが対処。",
+      "source_title": "Claude Fable 5.1の新機能 - Claude Fable 5からの変更点",
+      "source_url": "https://platform.claude.com/docs/ja/models/fable-5-1/whats-new-fable-5-1",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-09-03",
+      "last_date": "2026-09-03",
+      "appearances": 2
     },
     {
       "id": 1887,
@@ -11748,6 +11805,88 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1891,
+      "title": "会話途中でeffortを変更する（ベータ）",
+      "point": "Fable 5.1では会話の途中でeffortレベルを切り替えても、プロンプトキャッシュが無効化されない。難しいステップでhigh、定型ステップでlowに落とす運用ができる。`mid-conversation-output-config-2026-07-01` ベータヘッダーを付け、`output_config` を持つ空のsystemメッセージを挟むと次のユーザーターンから反映される。Opus 5でも利用可。",
+      "source_title": "Claude Fable 5.1の新機能 - 会話途中でeffortを変更する",
+      "source_url": "https://platform.claude.com/docs/ja/models/fable-5-1/whats-new-fable-5-1",
+      "tags": [
+        "プロンプト",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-09-03",
+      "last_date": "2026-09-03",
+      "appearances": 1
+    },
+    {
+      "id": 1892,
+      "title": "キャッシュ読み取りが基本入力の0.025倍：長時間エージェントほど効く",
+      "point": "Fable 5.1のキャッシュ読み取りは $0.25/MTok。他モデルの「基本入力×0.1」に対し「×0.025」で、同じプレフィックスを何度も読み返す長いエージェントセッションではFable 5の4分の1のコストになる。入出力の単価（$10 / $50 per MTok）とキャッシュ書き込み、512トークンの最小キャッシュ長は据え置き。",
+      "source_title": "Claude Fable 5.1の新機能 - 価格",
+      "source_url": "https://platform.claude.com/docs/ja/models/fable-5-1/whats-new-fable-5-1",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-03",
+      "last_date": "2026-09-03",
+      "appearances": 1
+    },
+    {
+      "id": 1893,
+      "title": "強制ツール使用（tool_choice: any / tool）は400エラーになった",
+      "point": "Fable 5.1／Mythos 5.1は強制的なツール使用に非対応。`tool_choice` を `{\"type\":\"any\"}` や `{\"type\":\"tool\"}` にすると `invalid_request_error` が返る。思考が常時オンのため強制呼び出しが思考をスキップし引数品質が落ちるのが理由。スキーマ準拠が必要なら `auto` のまま strict tool use（`strict: true`）か構造化出力へ寄せる。",
+      "source_title": "Claude Fable 5.1の新機能 - 破壊的変更",
+      "source_url": "https://platform.claude.com/docs/ja/models/fable-5-1/whats-new-fable-5-1",
+      "tags": [],
+      "first_date": "2026-09-03",
+      "last_date": "2026-09-03",
+      "appearances": 1
+    },
+    {
+      "id": 1896,
+      "title": "thinking.display に \"updates\" を指定して進捗だけをUIに出す",
+      "point": "既定の `omitted` では思考ブロックが空で返るため、長いエージェントターンがユーザーには無言に見える。`thinking-display-updates-2026-08-18` ヘッダー付きで `display: \"updates\"` にすると、推論は隠したままツール呼び出し間の進捗更新をテキストで受け取れる。空でないテキストを持つ思考ブロックがそのままステータス行になる。",
+      "source_title": "Claude Fable 5.1の新機能 - ツール呼び出し間の進捗更新",
+      "source_url": "https://platform.claude.com/docs/ja/models/fable-5-1/whats-new-fable-5-1",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-09-03",
+      "last_date": "2026-09-03",
+      "appearances": 1
+    },
+    {
+      "id": 1899,
+      "title": "小さな変更でもファイル全体を書き換えがち：対象を絞った編集を指示する",
+      "point": "テキストファイル編集時、Fable 5.1はピンポイント編集より丸ごと書き換えを選びやすい。結果は同じでも出力トークンと時間を余計に消費するため、プロンプトで「該当箇所のみを編集する」と明示する。あわせて、チャットでの太字・見出し・リストの使用が減っているので、旧モデル向けに書いた書式抑制ルールは見直したほうがよい。",
+      "source_title": "Claude Fable 5.1の新機能 - Claude Fable 5からの変更点",
+      "source_url": "https://platform.claude.com/docs/ja/models/fable-5-1/whats-new-fable-5-1",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-03",
+      "last_date": "2026-09-03",
+      "appearances": 1
+    },
+    {
+      "id": 1900,
+      "title": "拒否時はフォールバックを設定し、キャッシュコストは返金される",
+      "point": "拒否されたリクエストはHTTP 200と `stop_reason: \"refusal\"`、発動ポリシー領域を示す `stop_details` を返す。`fallbacks: \"default\"`（ベータ）で推奨モデルへ自動再試行でき、Fable 5.1の許可先はOpus 4.8とOpus 5。出力生成前の拒否は課金されず、モデル切り替えに伴うプロンプトキャッシュのコストはフォールバッククレジットで返金される。",
+      "source_title": "Claude Fable 5.1の新機能 - 拒否、フォールバック、課金",
+      "source_url": "https://platform.claude.com/docs/ja/models/fable-5-1/whats-new-fable-5-1",
+      "tags": [
+        "プロンプト",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-09-03",
+      "last_date": "2026-09-03",
+      "appearances": 1
     },
     {
       "id": 1865,
@@ -20983,6 +21122,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-03",
+      "highlights": [
+        "会話途中でeffortを変更できる（ベータ） — キャッシュを壊さずに難所だけ思考を深められる",
+        "キャッシュ読み取りが基本入力の0.025倍 — 長時間エージェントの実効コストが大きく下がる",
+        "Fable 5.1の3つの破壊的変更 — 強制ツール使用の廃止・思考ブロックのモデル紐付け・履歴編集の無効化"
+      ]
+    },
+    {
       "date": "2026-09-02",
       "highlights": [
         "Sonnet 5の値上げ中止 — 9/1予定だった$3/$15への引き上げが撤回され、$2/$10が正式価格に確定",
@@ -22158,5 +22305,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-02T08:00:04.387653"
+  "generated_at": "2026-09-03T14:46:37.621460"
 }
