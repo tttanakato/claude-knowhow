@@ -113,6 +113,23 @@
       "appearances": 29
     },
     {
+      "id": 1926,
+      "title": "コンテキストエンジニアリング：ルールで縛らずClaudeの判断に委ねる",
+      "point": "Anthropicは Opus 5 / Fable 5 世代向けに Claude Code のシステムプロンプトを8割以上削除し、コーディング評価で有意な劣化がなかったと報告。「コメントを書くな」のような強い禁止より「周囲のコードに合わせよ」という判断ベースの指示が有効。CLAUDE.md も自明なことは書かず、リポジトリ固有の落とし穴に絞り、詳細はスキルへ切り出す（progressive disclosure）。`/doctor` が棚卸しを支援する。",
+      "source_title": "The new rules of context engineering for Claude 5 generation models",
+      "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-05",
+      "appearances": 28
+    },
+    {
       "id": 1788,
       "title": "Claude 5世代のコンテキストエンジニアリング新ルール",
       "point": "Anthropicは Opus 5 / Fable 5 向けにClaude Codeのシステムプロンプトを80%以上削除したが、コーディング評価で計測可能な性能低下はなかったと説明。モデル性能の向上により「指示を足す」より「ノイズを削る」ことが効く局面に移行している。プロンプトを磨くより、タスクを取り巻く構造（前提ファイル・スキル・検証手段）の設計が主要なレバーになる。",
@@ -2397,6 +2414,21 @@
       "appearances": 7
     },
     {
+      "id": 1923,
+      "title": "`promptCacheTtl` と `subagentPromptCacheTtl` を働き方に合わせて使い分ける",
+      "point": "値は `\"5m\"` か `\"1h\"` の2択のみ（それ以外は無視される）。サブスク＋プラン内使用量なら本体会話は自動で1h、サブエージェント／ワークフローは常に5mが既定。APIキーやクラウド経由は全て5m。席を外す運用なら1h、連続作業だけなら5mのままが有利で、「長い方が安全」ではない。",
+      "source_title": "Claude Code's promptCacheTtl Setting Explained",
+      "source_url": "https://www.getclaudeskills.com/blog/claude-code-prompt-cache-ttl-settings",
+      "tags": [
+        "API",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-05",
+      "appearances": 6
+    },
+    {
       "id": 1909,
       "title": "`CLAUDE_CODE_SUBAGENT_MODEL_FORCE` で全サブエージェントのモデルを強制統一",
       "point": "直前の変更で `CLAUDE_CODE_SUBAGENT_MODEL` は「既定値」扱いになり、エージェント定義の `model:` や生成時の明示指定が優先されるようになった。全サブエージェントを問答無用で同一モデルに揃えたい場合は新設の `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` を使う。コスト上限を厳格に管理したいチーム運用向け。",
@@ -3192,6 +3224,33 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1918,
+      "title": "プロンプトキャッシュミスの「原因」が `/cost` に表示されるようになった",
+      "point": "キャッシュミスの推定原因（ツール定義やシステムプロンプトの変更、TTL超過のアイドルなど）が `/cost` とステータスラインの `prompt_cache` フィールドに出るようになった。コストが跳ねたときに、何がプレフィックスを壊しているかを推測せずに済む。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-05",
+      "appearances": 5
+    },
+    {
+      "id": 1921,
+      "title": "1Mコンテキストモデルのauto-compactが実用的になった",
+      "point": "Opus / Fable セッションが1Mトークン上限の直前で自動コンパクトするよう改善され、巨大コンテキストでのリカバリコンパクトが10分でタイムアウトしなくなった。長時間の自走タスクで途中停止していた人は再試行の価値あり。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-05",
+      "appearances": 5
     },
     {
       "id": 1877,
@@ -4218,6 +4277,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1922,
+      "title": "Fable 5.1ではセッション途中の `/effort` 変更がキャッシュを壊さない",
+      "point": "これまで `/effort` の変更はプロンプトキャッシュを無効化していたが、Claude Fable 5.1 では変更してもキャッシュが維持されるようになった。タスクの難易度に応じて effort を上下させる運用のコストペナルティが下がった。ただし他モデルでは従来どおり無効化される点に注意。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-05",
+      "appearances": 4
     },
     {
       "id": 1885,
@@ -8429,6 +8502,32 @@
       "appearances": 3
     },
     {
+      "id": 1917,
+      "title": "`/diff` でフルスクリーン差分パネルを常時表示する",
+      "point": "Claude Code 2.1.260 でフルスクリーンモードに差分パネルが追加された。会話の横に開き、Claudeが編集するたびに未コミットの変更が反映される。`/diff` でトグル可能。レビューしながら進める作業で、いちいち `git diff` を叩く必要がなくなる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-05",
+      "appearances": 2
+    },
+    {
+      "id": 1920,
+      "title": "zshの変数代入に隠したコマンド置換の自動承認を塞いだ",
+      "point": "`REPORTTIME` / `REPORTMEMORY` / `DIRSTACKSIZE` への代入にコマンド置換を潜ませると、Bash権限チェックをすり抜けて自動承認されていた。修正後はこれらも承認プロンプトが出る。権限設計をレビューする際は「代入文の中身」も攻撃面になり得る点を押さえておきたい。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-05",
+      "appearances": 2
+    },
+    {
       "id": 1907,
       "title": "作業ディレクトリ外の初回ファイル読み取りに確認プロンプトが入る",
       "point": "auto modeで作業ディレクトリ外のファイルを初めて読むとき、一度だけ確認プロンプトが出るようになった。`permissions.blockReadsOutsideWorkingDirectories` を設定すれば以後そうした読み取りを完全にブロックできる。機密リポジトリと個人ファイルが同居するマシンでの誤読み取り対策に有効。",
@@ -11913,6 +12012,43 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1919,
+      "title": "括弧を含むパスの権限ルールが無視され「読み取り専用」が書込可能だった不具合を修正",
+      "point": "`Edit`/`Write`/`Read` の権限ルールでパスに丸括弧が含まれると、ルールが無効として捨てられBashサンドボックスからも無視されていた。結果として読み取り専用にしたはずのフォルダが書込可能になっていた。権限ルールに括弧付きパス（例: `Program Files (x86)`）を使っている場合は 2.1.260 以降への更新を推奨。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-05",
+      "appearances": 1
+    },
+    {
+      "id": 1924,
+      "title": "`!` bashモードは strict sandbox でもサンドボックス外で実行される仕様に変更",
+      "point": "`sandbox.allowUnsandboxedCommands: false` を設定していても、`!` プロンプトから自分でタイプしたコマンドは自分のターミナルと同様にサンドボックス外で走るようになった。「厳格サンドボックス＝全コマンドが隔離」ではないので、運用ルールを書く際は区別が必要。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-05",
+      "appearances": 1
+    },
+    {
+      "id": 1925,
+      "title": "サブエージェントのバックグラウンドコマンドの1時間上限が撤廃された",
+      "point": "サブエージェントが起動したバックグラウンドコマンドは、これまで1時間で打ち切られていたが、終了するか停止されるまで走り続けるようになった（メインセッションと同じ挙動）。長時間ビルドや回帰テストをサブエージェントに任せる構成が組みやすくなった。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-05",
+      "appearances": 1
     },
     {
       "id": 1904,
@@ -21259,6 +21395,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-05",
+      "highlights": [
+        "`/diff` フルスクリーン差分パネル — 会話の横に未コミット変更をリアルタイム表示できるようになった",
+        "プロンプトキャッシュミスの原因表示 — `/cost` とステータスラインでキャッシュが効かない理由が特定できる",
+        "括弧付きパスの権限ルール不具合を修正 — read-only指定のフォルダが実際は書込可能だった重大バグ"
+      ]
+    },
+    {
       "date": "2026-09-04",
       "highlights": [
         "コマースエージェント公式ブループリント公開 — Anthropicが買い物・マーチャント両エージェントの参照実装をOSS公開、Claude Codeプラグイン付きで自社バックエンドに足場を作れる",
@@ -22450,5 +22594,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-04T13:58:53.711796"
+  "generated_at": "2026-09-05T08:00:04.694604"
 }
