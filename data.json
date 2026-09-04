@@ -1673,6 +1673,19 @@
       "appearances": 9
     },
     {
+      "id": 1908,
+      "title": "`/effort s` でセッション限定のeffort変更、既定はモデル別に保存",
+      "point": "`/effort` に `s` オプションが追加され、`/model` と同様に「今のセッションだけ」effortを変えられるようになった。あわせて既定のeffortレベルはモデルごとに保存されるため、Opusはxhigh・Haikuはlowといった使い分けがモデル切替後も維持される。",
+      "source_title": "Claude Code 2.1.257 リリースノート",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-04",
+      "last_date": "2026-09-04",
+      "appearances": 8
+    },
+    {
       "id": 1805,
       "title": "`/usage` の Loops 内訳で暴走した定期タスクを特定する",
       "point": "`/usage` に Loops の内訳が追加され、ループごとの実行回数・合計トークン・1回あたりトークン・最終実行時刻が見えるようになった。`/loop` で定期タスクを回していると、想定より頻繁に起動していたり1回あたりの消費が膨らんでいたりしても気づきにくいため、まずここを見て「よく喋るループ」を洗い出すのが早い。あわせて `/loop` は、やることが無い連続ウェイクアップを1行にまとめて表示するようになった。",
@@ -2382,6 +2395,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1909,
+      "title": "`CLAUDE_CODE_SUBAGENT_MODEL_FORCE` で全サブエージェントのモデルを強制統一",
+      "point": "直前の変更で `CLAUDE_CODE_SUBAGENT_MODEL` は「既定値」扱いになり、エージェント定義の `model:` や生成時の明示指定が優先されるようになった。全サブエージェントを問答無用で同一モデルに揃えたい場合は新設の `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` を使う。コスト上限を厳格に管理したいチーム運用向け。",
+      "source_title": "Claude Code 2.1.257 リリースノート",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-04",
+      "last_date": "2026-09-04",
+      "appearances": 6
     },
     {
       "id": 1855,
@@ -5815,6 +5842,74 @@
       "appearances": 4
     },
     {
+      "id": 1905,
+      "title": "`/limit-reset`：5時間セッション上限を週1回だけリセットできる",
+      "point": "Claude Codeに追加された `/limit-reset` は、5時間のローリングセッション上限を週1回だけ解除するコマンド。週次キャップには一切効かないため、バースト的に使うユーザー向けの救済策と理解しておく。実行するとリセット完了と「次に使える日時」が表示される。",
+      "source_title": "/limit-reset in Claude Code: What It Actually Resets (2026)",
+      "source_url": "https://www.explainx.ai/blog/claude-code-limit-reset-command-september-2026",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-09-04",
+      "last_date": "2026-09-04",
+      "appearances": 3
+    },
+    {
+      "id": 1906,
+      "title": "auto mode の Containment Escape ルールで認証情報流出を遮断",
+      "point": "v2.1.257でauto modeに「Containment Escape」判定が追加。クラウドのメタデータ認証情報の取得、egress（外部通信）回避、テナント跨ぎのアクセスは、環境側で「想定内」と明示しない限り自動承認されなくなった。CI/クラウド上でauto modeを常用している場合、これまで通っていた操作が停止する可能性があるので事前確認を推奨。",
+      "source_title": "Claude Code 2.1.257 リリースノート",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [],
+      "first_date": "2026-09-04",
+      "last_date": "2026-09-04",
+      "appearances": 3
+    },
+    {
+      "id": 1911,
+      "title": "サブエージェントがストリーム中断後に自動継続するよう修正",
+      "point": "PCのスリープ・回線切断・サーバーエラーで応答が途中で切れた場合、これまではサブエージェントが不完全な応答のまま終了していた。v2.1.257以降は自動で継続するようになり、長時間の並列タスクが途中で無言のまま失敗する事故が減る。",
+      "source_title": "Claude Code 2.1.257 リリースノート",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-09-04",
+      "last_date": "2026-09-04",
+      "appearances": 3
+    },
+    {
+      "id": 1912,
+      "title": "Claude in Chrome の操作がClaude Codeの権限チェックを通るようになった",
+      "point": "これまでテレメトリ無効セッションではChrome拡張側の独自プロンプトが使われていたが、ブラウザ操作も常にClaude Code本体の権限チェック経路を通るよう統一された。権限ルールをClaude Code側に一元化できるため、組織のポリシー適用漏れが起きにくくなる。",
+      "source_title": "Claude Code 2.1.257 リリースノート",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-09-04",
+      "last_date": "2026-09-04",
+      "appearances": 3
+    },
+    {
+      "id": 1913,
+      "title": "プラグインのシンボリックリンク経由の外部ファイル読み取りを拒否",
+      "point": "プラグインがcommand / agent / skill / hooks などのコンポーネントパスにシンボリックリンクを仕込むことで、自身のディレクトリ外のファイルを読めてしまう問題が修正された。該当パスはエラーで拒否される。サードパーティ製プラグインを導入している環境ではアップデートを優先したい。",
+      "source_title": "Claude Code 2.1.257 リリースノート",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "自動化",
+        "エージェント",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-04",
+      "last_date": "2026-09-04",
+      "appearances": 3
+    },
+    {
       "id": 1898,
       "title": "low effortでは検索を呼ばず記憶から答えがち",
       "point": "最も低いeffortレベルでは検索・取得ツールの呼び出し頻度が下がる。最新情報が要るターンは会話途中でeffortを上げるか、「検証してから答える」旨の指示を足して検索をトリガーさせる。effortの既定はClaude CodeがHigh、Claude Cowork／claude.aiがMedium。",
@@ -8332,6 +8427,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1907,
+      "title": "作業ディレクトリ外の初回ファイル読み取りに確認プロンプトが入る",
+      "point": "auto modeで作業ディレクトリ外のファイルを初めて読むとき、一度だけ確認プロンプトが出るようになった。`permissions.blockReadsOutsideWorkingDirectories` を設定すれば以後そうした読み取りを完全にブロックできる。機密リポジトリと個人ファイルが同居するマシンでの誤読み取り対策に有効。",
+      "source_title": "Claude Code 2.1.257 リリースノート",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-09-04",
+      "last_date": "2026-09-04",
+      "appearances": 2
     },
     {
       "id": 1894,
@@ -11805,6 +11913,35 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1904,
+      "title": "コマースエージェント公式ブループリントをOSSで公開",
+      "point": "Anthropicが9/3に `anthropics/commerce-agents` を公開。検索・比較・カート投入・注文/ポリシー応答を担う「ショッピングエージェント」と、在庫・価格・キャンペーンを扱う「マーチャントエージェント」の2構成で、各フローは `skills/` ディレクトリ配下のスキルとして分割されている。付属のClaude Codeプラグインで自社システム向けの足場作成や既存実装のレビューが可能。Claude API / Bedrock / Foundry / Vertex AI にデプロイできる。",
+      "source_title": "anthropics/commerce-agents",
+      "source_url": "https://github.com/anthropics/commerce-agents",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-04",
+      "last_date": "2026-09-04",
+      "appearances": 1
+    },
+    {
+      "id": 1910,
+      "title": "`timeFormat` / `timeZone` 設定でターン終了時刻の表示形式を変更",
+      "point": "12時間表記・24時間表記・24時間UTC・任意のstrftimeパターンから選べる `timeFormat` と `timeZone` 設定が追加。ターン終了時の時計表示とトランスクリプト表示のタイムスタンプに反映される。海外チームとログを共有する際にUTC統一しておくと突き合わせが楽になる。",
+      "source_title": "Claude Code 2.1.257 リリースノート",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-09-04",
+      "last_date": "2026-09-04",
+      "appearances": 1
     },
     {
       "id": 1891,
@@ -21122,6 +21259,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-04",
+      "highlights": [
+        "コマースエージェント公式ブループリント公開 — Anthropicが買い物・マーチャント両エージェントの参照実装をOSS公開、Claude Codeプラグイン付きで自社バックエンドに足場を作れる",
+        "`/limit-reset` で5時間セッション上限を週1回だけ解除 — 週次キャップには効かない点が要注意",
+        "auto mode に Containment Escape ルール追加 — クラウドのメタデータ認証情報取得や外部通信回避が自動承認されなくなった"
+      ]
+    },
+    {
       "date": "2026-09-03",
       "highlights": [
         "会話途中でeffortを変更できる（ベータ） — キャッシュを壊さずに難所だけ思考を深められる",
@@ -22305,5 +22450,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-03T14:46:37.621460"
+  "generated_at": "2026-09-04T13:58:53.711796"
 }
