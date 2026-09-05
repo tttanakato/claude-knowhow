@@ -1690,6 +1690,35 @@
       "appearances": 9
     },
     {
+      "id": 1936,
+      "title": "危険な `rm` の確認プロンプトが位置パラメータと `sh -c` 内も検知するようになった",
+      "point": "`rm -rf \"$1\"` のような位置パラメータ経由や、二重引用符で囲った `sh -c` スクリプト内に隠れた削除も安全プロンプトの対象になった。自動承認ルールを緩めに設定している環境ほど効く改善。permission ルールの棚卸しと合わせて確認しておきたい。",
+      "source_title": "Claude Code changelog 2.1.261",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-09-06",
+      "last_date": "2026-09-06",
+      "appearances": 8
+    },
+    {
+      "id": 1938,
+      "title": "エージェントチームのプロンプトキャッシュミスが修正された",
+      "point": "in-process のチームメイトが2ターン目にもツール・スキルの初回告知を再送してしまい、リクエスト先頭が変わってプロンプトキャッシュを外す不具合が修正された。Agent Teams を常用している場合、アップデートだけでトークンコストが下がる可能性がある。",
+      "source_title": "Claude Code changelog 2.1.261",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-09-06",
+      "last_date": "2026-09-06",
+      "appearances": 8
+    },
+    {
       "id": 1908,
       "title": "`/effort s` でセッション限定のeffort変更、既定はモデル別に保存",
       "point": "`/effort` に `s` オプションが追加され、`/model` と同様に「今のセッションだけ」effortを変えられるようになった。あわせて既定のeffortレベルはモデルごとに保存されるため、Opusはxhigh・Haikuはlowといった使い分けがモデル切替後も維持される。",
@@ -2412,6 +2441,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1935,
+      "title": "`/context` のトークン計測がAPI不通時にローカル推定へ切り替わる",
+      "point": "トークンカウントAPIが使えないとき、以前は小型モデルへの追加リクエストで補っていたが、ローカル推定を使うよう変更された。オフラインやプロキシ制限下でも `/context` が余計なコストを発生させずに動く。表示は概算値になる点に注意。",
+      "source_title": "Claude Code changelog 2.1.261",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-09-06",
+      "last_date": "2026-09-06",
+      "appearances": 6
     },
     {
       "id": 1923,
@@ -5915,6 +5958,30 @@
       "appearances": 4
     },
     {
+      "id": 1937,
+      "title": "auto modeが「URLに内容を詰め込むリンク」を外部アップロードとして扱うようになった",
+      "point": "公開ダイアグラムレンダラーのURLにコンテンツを埋め込む形式のリンクは、そのサイトへのアップロードとみなされ、明示的に依頼していない限り自動承認されなくなった。図の生成をClaudeに任せる運用では、意図した外部送信であることを都度伝える必要がある。",
+      "source_title": "Claude Code changelog 2.1.261",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-06",
+      "last_date": "2026-09-06",
+      "appearances": 3
+    },
+    {
+      "id": 1939,
+      "title": "攻撃的な語調（CRITICAL! / YOU MUST NEVER）は逆効果",
+      "point": "新しい世代のClaudeでは、強調表現や全大文字の命令はむしろ過剰反応を招き、落ち着いた直接的な指示より結果が悪化する傾向が指摘されている。「NEVER fabricate data」と書いても、文脈上見積もりが必要ならClaudeは論理的必要性を優先する。制約は語気ではなく、XMLタグでの構造化と少数の入出力例で伝える方が安定する。",
+      "source_title": "Prompt engineering best practices for 2026",
+      "source_url": "https://claude.com/blog/best-practices-for-prompt-engineering",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-09-06",
+      "last_date": "2026-09-06",
+      "appearances": 3
+    },
+    {
       "id": 1905,
       "title": "`/limit-reset`：5時間セッション上限を週1回だけリセットできる",
       "point": "Claude Codeに追加された `/limit-reset` は、5時間のローリングセッション上限を週1回だけ解除するコマンド。週次キャップには一切効かないため、バースト的に使うユーザー向けの救済策と理解しておく。実行するとリセット完了と「次に使える日時」が表示される。",
@@ -8500,6 +8567,32 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1930,
+      "title": "`/skill-doctor` で未使用スキルとコンテキストコストを可視化する",
+      "point": "Claude Code 2.1.261 で `/skill-doctor` が追加。読み込まれているスキルのうち実際に使われていないものと、それぞれがコンテキストを何トークン消費しているかを表示する。スキルは待機状態でも frontmatter の name/description 分（目安100トークン程度）を常時消費するため、30個以上入れている環境では棚卸しの効果が出やすい。",
+      "source_title": "Claude Code changelog 2.1.261",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-09-06",
+      "last_date": "2026-09-06",
+      "appearances": 2
+    },
+    {
+      "id": 1934,
+      "title": "`keybindingFlavor` が廃止され単語編集キーがBash準拠に固定された",
+      "point": "プロンプト入力の単語編集キーが Bash と同じ挙動に統一された。Ctrl+W は空白まで削除、Alt+F と Alt+D は単語末尾で停止、句読点が単語区切りとして扱われる。`keybindingFlavor` 設定は効果を持たなくなったため、この設定に依存していた場合は削除してよい。",
+      "source_title": "Claude Code changelog 2.1.261",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-09-06",
+      "last_date": "2026-09-06",
+      "appearances": 2
     },
     {
       "id": 1917,
@@ -12012,6 +12105,44 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1931,
+      "title": "`bashOutputMaxChars` / `taskOutputMaxChars` で出力の切り詰めを制御する",
+      "point": "コマンド出力とバックグラウンドタスク出力が「ファイルに保存」へ切り替わる閾値を設定で引き上げられるようになった（上限128K文字）。ログ全体を見せた方が判断が速いタスクでは引き上げ、コンテキストを節約したい定常作業では既定のままにする、という使い分けが可能。",
+      "source_title": "Claude Code changelog 2.1.261",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-06",
+      "last_date": "2026-09-06",
+      "appearances": 1
+    },
+    {
+      "id": 1932,
+      "title": "`--append-subagent-system-prompt-file` で巨大なサブエージェント指示をファイル渡しする",
+      "point": "サブエージェント用のシステムプロンプトをファイルから読み込むフラグが追加された。コマンドラインに載せきれない長さの指示（コーディング規約、レビュー観点リストなど）をそのまま渡せる。CI やスクリプトから起動する構成で、指示をバージョン管理下に置ける点が実用的。",
+      "source_title": "Claude Code changelog 2.1.261",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-09-06",
+      "last_date": "2026-09-06",
+      "appearances": 1
+    },
+    {
+      "id": 1933,
+      "title": "`/status` と `claude doctor` に「Organization policy」行が追加された",
+      "point": "組織の管理ポリシーが読み込めなかった場合に、その理由（プロキシがエンドポイントを通していない等）が表示されるようになった。「設定したはずのポリシーが効いていない」という企業環境のトラブルを、当てずっぽうではなく表示から切り分けられる。",
+      "source_title": "Claude Code changelog 2.1.261",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-06",
+      "last_date": "2026-09-06",
+      "appearances": 1
     },
     {
       "id": 1919,
@@ -21395,6 +21526,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-06",
+      "highlights": [
+        "`/skill-doctor` でスキルの棚卸し — 読み込まれたのに使われていないスキルとそのコンテキストコストを表示し、剪定判断ができる",
+        "出力上限を最大128Kまで引き上げ — `bashOutputMaxChars` / `taskOutputMaxChars` でコマンド・バックグラウンドタスクの出力がファイル退避される前にインラインで受け取れる量を制御",
+        "単語編集キーがBash準拠に統一 — `keybindingFlavor` が無効化され、Ctrl+W / Alt+F / Alt+D の挙動が固定された"
+      ]
+    },
+    {
       "date": "2026-09-05",
       "highlights": [
         "`/diff` フルスクリーン差分パネル — 会話の横に未コミット変更をリアルタイム表示できるようになった",
@@ -22594,5 +22733,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-05T08:00:04.694604"
+  "generated_at": "2026-09-06T08:00:04.923085"
 }
