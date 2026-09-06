@@ -1094,6 +1094,30 @@
       "appearances": 11
     },
     {
+      "id": 1944,
+      "title": "バックグラウンドセッションが45秒で開けない問題が修正された",
+      "point": "起動ディレクトリが削除されていた、マシンがスリープから復帰した、ホストのプロセス起動が遅い、といった条件でバックグラウンドセッションが45秒後に失敗していた。長時間ノートPCを閉じたまま運用する使い方で効いてくる修正。",
+      "source_title": "Claude Code changelog（2026年9月）",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [],
+      "first_date": "2026-09-07",
+      "last_date": "2026-09-07",
+      "appearances": 10
+    },
+    {
+      "id": 1950,
+      "title": "検証手順はスキルに切り出し CLAUDE.md からは参照だけにする",
+      "point": "「作業をどう検証するか」の固有ルールが複数あるなら、検証スキルとして独立させ、CLAUDE.md からは参照のみ書く。段階的開示（Progressive Disclosure）の典型的な適用先で、常時消費するコンテキストを増やさずに手順を残せる。ツール側の遅延ロード（ToolSearch 経由でのみ定義を取得）と同じ考え方。",
+      "source_title": "The new rules of context engineering for Claude 5 generation models",
+      "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-09-07",
+      "last_date": "2026-09-07",
+      "appearances": 10
+    },
+    {
       "id": 1864,
       "title": "週次上限+50%は9/13まで継続、9/14から恒久+25%に切り替わる",
       "point": "8/29のAnthropic（ClaudeDevs）発表により、Claude Codeの週次利用上限+50%の特別措置は9/13まで延長され、9/14から「標準週次上限を恒久的に+25%」へ切り替わる。対象はPro/Max/Team/シート型Enterprise。昨日時点で流通していた「8/31で終了」は結果的に誤りで、+50%枠はあと2週間使える。ただし9/14以降は現在より枠が縮むため、9月中旬以降を見据えた設計変更は依然として必要。",
@@ -1690,6 +1714,20 @@
       "appearances": 9
     },
     {
+      "id": 1949,
+      "title": "CLAUDE.md は軽量に保ち、トークンは「落とし穴」の記述に使う",
+      "point": "リポジトリの説明は簡潔に済ませ、行数の大半はコードベース固有の gotcha（暗黙の前提、壊れやすい箇所、やってはいけない手順）に割り当てる。一般論やモデルが推測できる内容を書くほど、本当に伝えるべき情報の相対的な重みが下がる。",
+      "source_title": "The new rules of context engineering for Claude 5 generation models",
+      "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "tags": [
+        "CLAUDE.md",
+        "モデル"
+      ],
+      "first_date": "2026-09-07",
+      "last_date": "2026-09-07",
+      "appearances": 8
+    },
+    {
       "id": 1936,
       "title": "危険な `rm` の確認プロンプトが位置パラメータと `sh -c` 内も検知するようになった",
       "point": "`rm -rf \"$1\"` のような位置パラメータ経由や、二重引用符で囲った `sh -c` スクリプト内に隠れた削除も安全プロンプトの対象になった。自動承認ルールを緩めに設定している環境ほど効く改善。permission ルールの棚卸しと合わせて確認しておきたい。",
@@ -2078,6 +2116,19 @@
       "appearances": 8
     },
     {
+      "id": 1946,
+      "title": "フルスクリーンのリサイズ後に本文が空白になる問題とスクロールの挙動が修正された",
+      "point": "ターミナルをリサイズするとフルスクリーン表示のトランスクリプトが空白になる、過去メッセージ位置にいるときにスクロールが暴れる、という2件が修正された。分割ペインでウィンドウ幅を頻繁に変える使い方をしている場合は更新推奨。",
+      "source_title": "Claude Code changelog（2026年9月）",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-09-07",
+      "last_date": "2026-09-07",
+      "appearances": 7
+    },
+    {
       "id": 1814,
       "title": "Claude in Chrome が一般提供（GA）：自律ブラウザ操作を安全に使う",
       "point": "全有料プランで利用可能に。従来は1操作ごとに承認が必要だったが、安全性分類器が「元の依頼と一致するか」を実行前に検証し、一致しない操作をブロックする方式へ。MCP連携のない社内ダッシュボードやレガシー業務システムに既存ログインのままClaudeを使わせられる。手動承認に戻したい場合は設定で無効化可能。ファイル操作や他アプリ連携は引き続きデスクトップアプリが必要。",
@@ -2441,6 +2492,17 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1951,
+      "title": "スキルのコンテキストコストは「待機時100トークン／発火時2000トークン」で見積もる",
+      "point": "スキルの説明文は起動時に約100トークンを常時消費し、本体の指示（約2000トークン）はタスクが合致したときにだけ読み込まれる、という目安が公式ブログで示された。スキルを多数入れている環境では、この単価をもとに `/skill-doctor` の結果と突き合わせて棚卸しすると判断しやすい。",
+      "source_title": "The new rules of context engineering for Claude 5 generation models",
+      "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "tags": [],
+      "first_date": "2026-09-07",
+      "last_date": "2026-09-07",
+      "appearances": 6
     },
     {
       "id": 1935,
@@ -4320,6 +4382,22 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 1948,
+      "title": "Claude 5世代のコンテキストエンジニアリング：システムプロンプトは削る方向に振る",
+      "point": "Anthropic は Opus 5 / Fable 5 向けに Claude Code のシステムプロンプトを80%以上削減し、コーディング評価で有意な低下は観測されなかったと説明している。旧世代モデル向けに書き込んだ細かい手順書は、新世代では逆にノイズになりうる。「Do the simplest thing that works」が基本方針。",
+      "source_title": "The new rules of context engineering for Claude 5 generation models",
+      "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "tags": [
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-07",
+      "last_date": "2026-09-07",
+      "appearances": 4
     },
     {
       "id": 1922,
@@ -12105,6 +12183,59 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1943,
+      "title": "Claude Code 2.1.263：巨大な1行を含む差分の表示遅延が解消された",
+      "point": "minified JS や 1行 JSON のように極端に長い行を含む差分を表示すると、トランスクリプト全体が著しく遅くなる不具合が修正された。該当行は切り詰めてマーカー付きで描画される。ビルド成果物やロックファイルを Claude に読ませる運用で体感差が出る。",
+      "source_title": "Claude Code 2.1.263 リリース",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.263",
+      "tags": [
+        "Claude Code",
+        "自動化"
+      ],
+      "first_date": "2026-09-07",
+      "last_date": "2026-09-07",
+      "appearances": 1
+    },
+    {
+      "id": 1945,
+      "title": "npm再インストール中の `EACCES` でバックグラウンドサービスが落ちなくなった",
+      "point": "別の Claude Code プロセスが npm パッケージを再インストールしている最中にバックグラウンドセッションを開くと「Couldn't start the background service … EACCES」で失敗していた。複数プロジェクトで同時に Claude Code を走らせる環境では遭遇しやすかった不具合。",
+      "source_title": "Claude Code 2.1.263 リリース",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.263",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-09-07",
+      "last_date": "2026-09-07",
+      "appearances": 1
+    },
+    {
+      "id": 1947,
+      "title": "`ant apply` でエージェント・スキル・メモリ・デプロイをコードとして管理する",
+      "point": "`ant` CLI 1.30.0 で追加。各リソースをリポジトリ内のファイルに記述し `ant apply` を実行、表示されたプランを承認すると作成・更新される。生成される `claude-lock.json` をコミットしておけば、手元でも CI でも「新規作成」ではなく同じリソースの更新になる。設定のドリフトを防ぐ運用の基点になる。",
+      "source_title": "Claude Platform release notes（2026/09/03）",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-09-07",
+      "last_date": "2026-09-07",
+      "appearances": 1
+    },
+    {
+      "id": 1952,
+      "title": "サブエージェントを組織単位で細切れにするのは品質面で不利",
+      "point": "複数チーム・複数業務にまたがるシステムを「業務単位で1エージェント」に分割したくなるが、公式ガイダンスは品質上の理由でこの分け方を推奨していない。分割の軸は組織図ではなく、コンテキストが実際に独立しているかどうかで決める。",
+      "source_title": "The new rules of context engineering for Claude 5 generation models",
+      "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-09-07",
+      "last_date": "2026-09-07",
+      "appearances": 1
     },
     {
       "id": 1931,
@@ -21526,6 +21657,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-07",
+      "highlights": [
+        "Claude Code 2.1.263 はレンダリングと起動まわりの安定化 — 巨大な1行を含む差分でトランスクリプトが激重になる問題、フルスクリーンのリサイズ後に本文が消える問題、バックグラウンドセッションが起動しない2種の問題を修正",
+        "`ant apply` でエージェント・スキル・メモリをリポジトリのファイルから宣言的に管理 — `claude-lock.json` をコミットすれば、CI からの再実行でも同じリソースを更新できる",
+        "Claude 5世代向けコンテキストエンジニアリング：削るほど強い — 公式はClaude Codeのシステムプロンプトを80%以上削り、コーディング評価の低下は測定されなかった"
+      ]
+    },
+    {
       "date": "2026-09-06",
       "highlights": [
         "`/skill-doctor` でスキルの棚卸し — 読み込まれたのに使われていないスキルとそのコンテキストコストを表示し、剪定判断ができる",
@@ -22733,5 +22872,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-06T08:00:04.923085"
+  "generated_at": "2026-09-07T08:00:04.846769"
 }
