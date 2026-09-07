@@ -99,6 +99,23 @@
       "appearances": 30
     },
     {
+      "id": 1926,
+      "title": "コンテキストエンジニアリング：ルールで縛らずClaudeの判断に委ねる",
+      "point": "Anthropicは新世代モデル向けにClaude Codeのシステムプロンプトを80%以上削除し、コーディング評価の劣化はなかったと報告。「コメントを書くな」のような強い禁止は、状況によって誤りになる。代わりに「周囲のコードに合わせろ」といった判断基準を与える書き方が推奨される。自分のCLAUDE.mdやスキルでも過剰制約を疑うべき。",
+      "source_title": "The new rules of context engineering for Claude 5 generation models",
+      "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-08",
+      "appearances": 29
+    },
+    {
       "id": 1797,
       "title": "モデルの使い分けとタスク分割",
       "point": "複雑なアーキテクチャ判断とコードレビューにOpus、日常の実装には速度と品質のバランスが最も良いSonnet、簡易修正・整形・反復作業にはHaikuを割り当てる。あわせて、機能全体を1プロンプトで作らせるのではなく検証可能な小さいステップに分割する。実行可能なチェックを最初のプロンプトに含めておくと、Claudeが編集・実行・失敗読解・再試行を人手を待たずに回せる。",
@@ -111,23 +128,6 @@
       "first_date": "2026-08-26",
       "last_date": "2026-08-26",
       "appearances": 29
-    },
-    {
-      "id": 1926,
-      "title": "コンテキストエンジニアリング：ルールで縛らずClaudeの判断に委ねる",
-      "point": "Anthropicは Opus 5 / Fable 5 世代向けに Claude Code のシステムプロンプトを8割以上削除し、コーディング評価で有意な劣化がなかったと報告。「コメントを書くな」のような強い禁止より「周囲のコードに合わせよ」という判断ベースの指示が有効。CLAUDE.md も自明なことは書かず、リポジトリ固有の落とし穴に絞り、詳細はスキルへ切り出す（progressive disclosure）。`/doctor` が棚卸しを支援する。",
-      "source_title": "The new rules of context engineering for Claude 5 generation models",
-      "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
-      "tags": [
-        "CLAUDE.md",
-        "Claude Code",
-        "API",
-        "プロンプト",
-        "モデル"
-      ],
-      "first_date": "2026-09-05",
-      "last_date": "2026-09-05",
-      "appearances": 28
     },
     {
       "id": 1788,
@@ -1092,6 +1092,22 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 1963,
+      "title": "サブエージェント並列は3〜5が実用上限",
+      "point": "同時起動が5を超えると、サマリのマージ工数が並列化で得た時間を上回る。またサブエージェント自身のコンテキストは安くないため、システムプロンプトは短く保ち、手順はスキル側に置くのが定石。10ファイル以上の探索や、独立した3つ以上の作業がサブエージェント適用の目安。",
+      "source_title": "How and when to use subagents in Claude Code",
+      "source_url": "https://claude.com/blog/subagents-in-claude-code",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-09-08",
+      "last_date": "2026-09-08",
+      "appearances": 10
     },
     {
       "id": 1944,
@@ -2492,6 +2508,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1961,
+      "title": "Sonnet 5の値上げ中止で $2/$10 per MTok が正式価格に",
+      "point": "2026年9月1日に予定されていた $3/$15 への引き上げがキャンセルされ、導入価格の $2/$10 がそのまま維持された。コスト試算をやり直していたチームは前提を戻してよい。日常のコーディング主力をSonnet 5に置く構成が引き続き有利。",
+      "source_title": "Anthropic Release Notes - September 2026",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-08",
+      "last_date": "2026-09-08",
+      "appearances": 6
     },
     {
       "id": 1951,
@@ -4384,6 +4413,20 @@
       "appearances": 5
     },
     {
+      "id": 1833,
+      "title": "Cowork の内蔵ブラウザでWeb作業を丸ごと任せる",
+      "point": "デスクトップ版Coworkはサイドパネルにブラウザを開き、ページの読み取り・クリック・入力までClaudeが実行する。コネクタが存在しない社内ポータルやダッシュボードからの数値抽出、フォーム入力を委譲できる。あわせて指示は手順列挙ではなく成果物ベースで書くと精度が上がる。",
+      "source_title": "Claude Cowork Tips 2026",
+      "source_url": "https://www.nocode.mba/articles/claude-cowork-tips",
+      "tags": [
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-08-29",
+      "last_date": "2026-09-08",
+      "appearances": 4
+    },
+    {
       "id": 1948,
       "title": "Claude 5世代のコンテキストエンジニアリング：システムプロンプトは削る方向に振る",
       "point": "Anthropic は Opus 5 / Fable 5 向けに Claude Code のシステムプロンプトを80%以上削減し、コーディング評価で有意な低下は観測されなかったと説明している。旧世代モデル向けに書き込んだ細かい手順書は、新世代では逆にノイズになりうる。「Do the simplest thing that works」が基本方針。",
@@ -6034,6 +6077,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 1956,
+      "title": "`/skill-doctor` で未使用スキルとコンテキストコストを洗い出す",
+      "point": "Claude Code 2.1.261で追加。ロード済みスキルのうち実際には発火していないものと、それぞれが消費するコンテキスト量を表示する。スキルを大量導入した環境で「効いていないのにトークンだけ食う」構成を特定でき、CLAUDE.mdやスキル群のダイエットに直結する。",
+      "source_title": "Claude Code Updates by Anthropic - September 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code"
+      ],
+      "first_date": "2026-09-08",
+      "last_date": "2026-09-08",
+      "appearances": 3
     },
     {
       "id": 1937,
@@ -8647,6 +8704,56 @@
       "appearances": 3
     },
     {
+      "id": 1957,
+      "title": "`bashOutputMaxChars` / `taskOutputMaxChars` でインライン出力を最大128Kに拡張",
+      "point": "コマンド出力やバックグラウンドタスク出力がファイル退避される前に、Claudeが直接受け取れる文字数を設定で引き上げられるようになった。上限は128K文字。長いビルドログやテストレポートを一度に読ませたいCI連携作業で効く。",
+      "source_title": "Claude Code Updates by Anthropic - September 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [],
+      "first_date": "2026-09-08",
+      "last_date": "2026-09-08",
+      "appearances": 2
+    },
+    {
+      "id": 1958,
+      "title": "`/status`・`claude doctor` の「Organization policy」行で組織ポリシー読込失敗を特定",
+      "point": "組織ポリシーが読み込めなかった理由を明示する行が追加された。企業環境で「設定したはずの権限やモデル制限が効かない」ときの一次切り分けに使える。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-08",
+      "last_date": "2026-09-08",
+      "appearances": 2
+    },
+    {
+      "id": 1960,
+      "title": "Fable 5.1 が既定Fableモデルに：1Mコンテキストで長時間セッションを回す",
+      "point": "Fable 5.1が新しい既定Fableモデルとなり、1Mトークンコンテキストに対応。あわせて「Time format」「timeZone」設定、サンドボックス強化（Auto ModeへのContainment Escapeルール追加）が入った。大規模リポジトリの横断解析を1セッションで完結させやすくなる。",
+      "source_title": "Claude Code Updates by Anthropic - September 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-08",
+      "last_date": "2026-09-08",
+      "appearances": 2
+    },
+    {
+      "id": 1962,
+      "title": "段階的開示（progressive disclosure）でCLAUDE.mdとスキルを分割する",
+      "point": "「必要になるかもしれない知識を全部CLAUDE.mdに書く」のは旧来の神話。検証手順は検証スキルへ、レビュー基準はレビュースキルへ切り出し、CLAUDE.mdからは参照だけ張る。長いスキルも複数ファイルに割って必要時に読み込ませる。`/doctor` が適正化を自動で助ける。",
+      "source_title": "The new rules of context engineering for Claude 5 generation models",
+      "source_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-09-08",
+      "last_date": "2026-09-08",
+      "appearances": 2
+    },
+    {
       "id": 1930,
       "title": "`/skill-doctor` で未使用スキルとコンテキストコストを可視化する",
       "point": "Claude Code 2.1.261 で `/skill-doctor` が追加。読み込まれているスキルのうち実際に使われていないものと、それぞれがコンテキストを何トークン消費しているかを表示する。スキルは待機状態でも frontmatter の name/description 分（目安100トークン程度）を常時消費するため、30個以上入れている環境では棚卸しの効果が出やすい。",
@@ -8889,20 +8996,6 @@
       ],
       "first_date": "2026-08-30",
       "last_date": "2026-08-30",
-      "appearances": 2
-    },
-    {
-      "id": 1833,
-      "title": "Cowork の内蔵ブラウザでWeb作業を丸ごと任せる",
-      "point": "CoworkのタスクがWebサイトを伴う場合、サイドパネルにブラウザが開き、Claudeがサイトを開く・読む・クリック・入力・フォーム記入を行う様子をその場で見られる。拡張機能のインストール不要で、自分のタブやログイン情報には触れない。設定は デスクトップアプリ → 設定 → Cowork → Preferred browser で「Built-in browser」か「Chrome（Claude in Chrome）」を選ぶ。既存ログインが必要な作業は Claude in Chrome、そうでない作業は内蔵ブラウザ、という使い分けになる。macOS / Windows / Linux（ベータ）の Pro・Max・Team に順次展開中。",
-      "source_title": "Claude Cowork gets a built-in browser",
-      "source_url": "https://claude.com/blog/cowork-built-in-browser",
-      "tags": [
-        "新機能",
-        "製品機能"
-      ],
-      "first_date": "2026-08-29",
-      "last_date": "2026-08-29",
       "appearances": 2
     },
     {
@@ -12183,6 +12276,24 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1959,
+      "title": "Claude Code 2.1.261/2.1.262：Remote Controlとエージェントチームの信頼性改善",
+      "point": "Remote Controlが無効なモデル名を受理していた問題、オフライン端末へのセッション配信がロストしていた問題を修正。エージェントチーム側でも、長いAPIリトライ待ちでチームメイトのトランスクリプトが欠落する不具合、最終回答がチームリードに届かない不具合が解消された。マルチエージェント運用が実用段階に近づいている。",
+      "source_title": "Claude Code Updates by Anthropic - September 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化",
+        "エージェント",
+        "モデル",
+        "製品機能"
+      ],
+      "first_date": "2026-09-08",
+      "last_date": "2026-09-08",
+      "appearances": 1
     },
     {
       "id": 1943,
@@ -21657,6 +21768,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-08",
+      "highlights": [
+        "`/skill-doctor` でスキルの棚卸し — 読み込まれても使われていないスキルとそのコンテキストコストを一覧化できる",
+        "インライン出力上限を128Kまで拡張 — `bashOutputMaxChars`／`taskOutputMaxChars` でビルドログやテスト結果の切り詰めを回避",
+        "コンテキストエンジニアリングの新常識 — ルールで縛るより判断に委ねる方が新世代モデルでは高精度"
+      ]
+    },
+    {
       "date": "2026-09-07",
       "highlights": [
         "Claude Code 2.1.263 はレンダリングと起動まわりの安定化 — 巨大な1行を含む差分でトランスクリプトが激重になる問題、フルスクリーンのリサイズ後に本文が消える問題、バックグラウンドセッションが起動しない2種の問題を修正",
@@ -22872,5 +22991,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-07T08:00:04.846769"
+  "generated_at": "2026-09-08T08:00:04.916677"
 }
