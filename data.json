@@ -477,6 +477,19 @@
       "appearances": 17
     },
     {
+      "id": 54,
+      "title": "XMLタグで指示・文脈・例を分離する",
+      "point": "指示、背景情報、例、制約、出力形式をXMLタグで区切ると、Claudeが各要素を取り違えにくくなる。Markdown見出しよりも境界が明確で、複数の入力資料を渡す場合に効果が大きい。役割設定と組み合わせ、「役割＋背景＋タスク＋出力形式」を別タグに割り当てる構成が扱いやすい。",
+      "source_title": "Claudeプロンプトの使い方・書き方｜Anthropic公式に学ぶ改善ポイント",
+      "source_url": "https://touchai.jp/blog/anthropic-claude-prompt-best-practices",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-03-03",
+      "last_date": "2026-09-09",
+      "appearances": 16
+    },
+    {
       "id": 1247,
       "title": "モデルルーティングポリシーを1ページ文書化する：Fable 5は計画と難問専用",
       "point": "7/8以降のコスト比はFable 5を1.0×として、Opus 4.8が0.5×、Sonnet 5（8月末まで導入価格）が0.2×、Haiku 4.5が0.1×。設計判断・多システム計画・難解なデバッグだけをFable 5に、バルクの実装・テスト生成・リファクタはSonnet 5に、汎用推論はOpus 4.8に、分類・抽出の大量処理はHaiku 4.5に振り分ける。どの作業をどのモデルに送るかを事前に1ページの規約として書いておくことが、料金変更を「計画済みの費目」に変える。6月の提供停止が示した通り、単一プレミアムモデル依存はコストと可用性の両リスク。",
@@ -3360,6 +3373,20 @@
       "appearances": 6
     },
     {
+      "id": 1971,
+      "title": "サブエージェント同時実行は3〜5が実用上限",
+      "point": "大半のジョブで同時稼働3〜5がスイートスポット。それ以上に増やしても、統合コストとレビュー負荷、権限確認の待ちが増えてスループットが頭打ちになる。並列数を上げる前に、各サブエージェントの責務範囲を狭くして1回の往復で完結させる設計を優先する。",
+      "source_title": "Claude Code subagents: the 2026 production playbook",
+      "source_url": "https://www.totalum.app/blog/claude-code-subagents-totalum",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-09-09",
+      "last_date": "2026-09-09",
+      "appearances": 5
+    },
+    {
       "id": 1918,
       "title": "プロンプトキャッシュミスの「原因」が `/cost` に表示されるようになった",
       "point": "キャッシュミスの推定原因（ツール定義やシステムプロンプトの変更、TTL超過のアイドルなど）が `/cost` とステータスラインの `prompt_cache` フィールドに出るようになった。コストが跳ねたときに、何がプレフィックスを壊しているかを推測せずに済む。",
@@ -6079,6 +6106,31 @@
       "appearances": 4
     },
     {
+      "id": 94,
+      "title": "長文ドキュメントはプロンプトの先頭に配置する",
+      "point": "長いドキュメントや入力は、クエリ・指示・例よりも上、プロンプトの先頭付近に置く。公式のプロンプティングベストプラクティスでは、この配置がすべてのモデルで性能を向上させるとされている。プロンプトキャッシュの観点でも、静的な長文を先頭に固定する形は有利に働く。",
+      "source_title": "プロンプティングのベストプラクティス - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/ja/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-03-08",
+      "last_date": "2026-09-09",
+      "appearances": 3
+    },
+    {
+      "id": 1973,
+      "title": "SKILL.mdが肥大化したらファイル分割して参照する",
+      "point": "SKILL.mdが扱いにくい大きさになったら、内容を別ファイルへ切り出して参照する形に変える。相互に排他的な文脈や、めったに同時利用しない手順は別パスに分けておくとトークン消費が下がる。段階的開示（progressive disclosure）の考え方をスキル設計にも適用する。",
+      "source_title": "Equipping agents for the real world with Agent Skills",
+      "source_url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+      "tags": [],
+      "first_date": "2026-09-09",
+      "last_date": "2026-09-09",
+      "appearances": 3
+    },
+    {
       "id": 1956,
       "title": "`/skill-doctor` で未使用スキルとコンテキストコストを洗い出す",
       "point": "Claude Code 2.1.261で追加。ロード済みスキルのうち実際には発火していないものと、それぞれが消費するコンテキスト量を表示する。スキルを大量導入した環境で「効いていないのにトークンだけ食う」構成を特定でき、CLAUDE.mdやスキル群のダイエットに直結する。",
@@ -8702,6 +8754,36 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 1972,
+      "title": "Agent Skillsは「評価から」作る：弱点を測ってから漸進的に足す",
+      "point": "Anthropic公式のスキル構築指針は、まず代表的タスクでエージェントを動かして失敗箇所を特定し、そのギャップを埋める形でスキルを段階的に足すこと。実運用でのClaudeの使い方を観察し、想定外の経路や特定コンテキストへの過依存が出ていないかを見て反復する。特にスキルの name と description には注意を払う。",
+      "source_title": "Equipping agents for the real world with Agent Skills",
+      "source_url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-09-09",
+      "last_date": "2026-09-09",
+      "appearances": 2
+    },
+    {
+      "id": 1974,
+      "title": "Claude for Commerce Agents ブループリントを設計の下敷きにする",
+      "point": "買い物エージェントと販売者エージェントの実装一式が公開され、Messages API / Agent SDK / Claude Managed Agents のいずれでもデプロイできる。小売・旅行・通信・チケットの参照実装付き。価格はカタログデータの範囲に制約し、操作的なアップセルを避けるガードレール設計が組み込まれており、業務エージェントのガードレール設計例として読む価値がある。Claude Codeプラグインでのカスタマイズにも対応。",
+      "source_title": "Claude for Commerce Agents",
+      "source_url": "https://claude.com/blog/claude-for-commerce-agents",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-09",
+      "last_date": "2026-09-09",
+      "appearances": 2
     },
     {
       "id": 1957,
@@ -12170,19 +12252,6 @@
       "appearances": 2
     },
     {
-      "id": 94,
-      "title": "長文ドキュメントはプロンプトの先頭に配置する",
-      "point": "長文・大量データ（20,000トークン以上）を扱う場合、文書類をプロンプトの上部に、指示・質問を末尾に配置することで応答精度が最大30%向上するテスト結果がある。`<document>`タグで各文書を囲み、`<source>`サブタグでメタデータを整理すると効果的。",
-      "source_title": "Prompting Best Practices - Claude API Docs",
-      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
-      "tags": [
-        "プロンプト"
-      ],
-      "first_date": "2026-03-08",
-      "last_date": "2026-03-08",
-      "appearances": 2
-    },
-    {
       "id": 98,
       "title": "Claude Code 2.1.71新機能：`/loop`コマンドで定期タスクを自動実行",
       "point": "2026年3月7日リリースのClaude Code 2.1.71で`/loop`コマンドが追加された。セッション内でプロンプトやスラッシュコマンドを一定間隔で自動実行できる。繰り返し作業の自動化に活用できる。",
@@ -12276,6 +12345,65 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1967,
+      "title": "フェルマー最終定理の形式証明をClaudeエージェント群が11日で完遂",
+      "point": "Anthropicは、Fable 5.1相当の社内研究モデル上で多数のClaudeエージェントを走らせ、フェルマー最終定理の計算機検証済み証明を11日で得たと発表。Lean 1,300万行、中間定理約30,300件、出力トークン約60億を消費し、研究者からの指示は時折の高レベル指示のみ。数年かかると見られていた作業で、長時間・大規模エージェント運用の実力を示す事例。既存成果の形式化であり新数学の発見ではない点は明示されている。",
+      "source_title": "Formalizing Fermat's Last Theorem",
+      "source_url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-09",
+      "last_date": "2026-09-09",
+      "appearances": 1
+    },
+    {
+      "id": 1968,
+      "title": "Enterprise Frontier Safeguards：監視データを自社クラウドに置いたままゼロデータ保持",
+      "point": "ゼロデータ保持と誤用検知を両立させる仕組みで、監視データをAnthropic側ではなく顧客自身のクラウドに保管する。金融・医療・製造・公共など100社超と共同開発され、Claude Code / Claude Enterprise / Claude Platform / Bedrock / Google Agent Platform / Microsoft Foundry に対応。保管と暗号鍵は顧客管理、自動レビューのみでAnthropicの人手レビューは不要、相関ウィンドウは30日。追加費用なしで2026年秋から段階提供。",
+      "source_title": "Developing Enterprise Frontier Safeguards with Our Customers",
+      "source_url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-09-09",
+      "last_date": "2026-09-09",
+      "appearances": 1
+    },
+    {
+      "id": 1969,
+      "title": "サブエージェントは「コンテキスト隔離」の道具として設計する",
+      "point": "サブエージェントの本質的価値は並列化ではなくコンテキスト隔離にある。検索結果・スタックトレース・テストログ・ブラウザ応答など、後で参照しない大量の中間出力をサブエージェント側の文脈に閉じ込め、本会話には要約だけを返させる。「この副作業が本会話をログで埋めるか？」が委譲判断の基準になる。",
+      "source_title": "Claude Code subagents: the 2026 production playbook",
+      "source_url": "https://www.totalum.app/blog/claude-code-subagents-totalum",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-09-09",
+      "last_date": "2026-09-09",
+      "appearances": 1
+    },
+    {
+      "id": 1970,
+      "title": "サブエージェント境界をまたぐパス指定は必ず絶対パスにする",
+      "point": "サブエージェント定義、worktree参照、エージェント間でのファイルパス受け渡しでは相対パスを使わない。サブエージェントは独立したコンテキストと作業環境で動くため、相対パスは解決先がずれて「ファイルが見つからない」系の失敗を招く。設定ファイルとプロンプトの両方で絶対パスに統一しておくと事故が減る。",
+      "source_title": "Claude Code subagents: the 2026 production playbook",
+      "source_url": "https://www.totalum.app/blog/claude-code-subagents-totalum",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-09-09",
+      "last_date": "2026-09-09",
+      "appearances": 1
     },
     {
       "id": 1959,
@@ -21016,21 +21144,6 @@
       "appearances": 1
     },
     {
-      "id": 54,
-      "title": "XMLタグで指示・文脈・例を分離する",
-      "point": "Anthropic公式のベストプラクティスとして、XMLスタイルのタグ（例: `<instructions>`, `<context>`, `<examples>`）を使って情報を整理すると、Claudeがより正確に意図を把握できる。特に長いシステムプロンプトや複雑な指示に有効。",
-      "source_title": "Prompting best practices - Claude API Docs",
-      "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
-      "tags": [
-        "Claude Code",
-        "API",
-        "プロンプト"
-      ],
-      "first_date": "2026-03-03",
-      "last_date": "2026-03-03",
-      "appearances": 1
-    },
-    {
       "id": 55,
       "title": "Few-Shot例示でスタイルを完全に再現する",
       "point": "AIに特定の文体やフォーマットを再現させるには、まず1例（One-Shot）から始める。それでも不十分なら例を追加（Few-Shot）。最初から大量の例を与えるよりも段階的に調整するほうが効率的。",
@@ -21767,6 +21880,14 @@
     }
   ],
   "daily": [
+    {
+      "date": "2026-09-09",
+      "highlights": [
+        "フェルマー最終定理の完全形式証明 — Claudeエージェント群が11日で完遂。長時間エージェント運用の到達点を示す実例",
+        "Enterprise Frontier Safeguards（EFS） — 監視データを顧客自身のクラウドに保持したままゼロデータ保持を両立する新方式",
+        "サブエージェントは「並列化」より「コンテキスト隔離」 — 3〜5並列を上限に、ログや検索結果を本会話へ流し込まない設計が定石"
+      ]
+    },
     {
       "date": "2026-09-08",
       "highlights": [
@@ -22991,5 +23112,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-08T08:00:04.916677"
+  "generated_at": "2026-09-09T08:00:04.367541"
 }
