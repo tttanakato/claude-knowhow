@@ -130,6 +130,21 @@
       "appearances": 29
     },
     {
+      "id": 1980,
+      "title": "再開したサブエージェントのプロンプトキャッシュ再利用が復旧した",
+      "point": "フォアグラウンドで起動したサブエージェントを再開するとツール一覧とシステムプロンプト接頭辞が変化し、そのエージェントのプロンプトキャッシュが効かなくなる不具合が修正された。エージェントチームや再開サブエージェントで、SubagentStartフックのコンテキストと事前読み込みスキルが2ターン目以降に接頭辞から外れる問題も併せて解消。長時間の分業運用でキャッシュヒット率が戻るため、費用と初動レイテンシが改善する。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-09-10",
+      "last_date": "2026-09-10",
+      "appearances": 27
+    },
+    {
       "id": 1788,
       "title": "Claude 5世代のコンテキストエンジニアリング新ルール",
       "point": "Anthropicは Opus 5 / Fable 5 向けにClaude Codeのシステムプロンプトを80%以上削除したが、コーディング評価で計測可能な性能低下はなかったと説明。モデル性能の向上により「指示を足す」より「ノイズを削る」ことが効く局面に移行している。プロンプトを磨くより、タスクを取り巻く構造（前提ファイル・スキル・検証手段）の設計が主要なレバーになる。",
@@ -324,6 +339,19 @@
       "first_date": "2026-06-22",
       "last_date": "2026-06-26",
       "appearances": 20
+    },
+    {
+      "id": 1987,
+      "title": "2.1.266で `CLAUDE_CODE_USE_GATEWAY` の回帰が修正された",
+      "point": "2.1.265で入り込んだ回帰により、`CLAUDE_CODE_USE_GATEWAY` を素のAPIキー・`apiKeyHelper`・カスタム認証ヘッダと併用すると全リクエストが「Not signed in to the Cloud gateway」で失敗していた。2.1.266で修正され、LLMゲートウェイ／プロキシ経由の動作が復旧。社内ゲートウェイ運用の場合は2.1.265を飛ばして2.1.266以降へ上げるのが安全。",
+      "source_title": "Claude Code Changelog 2.1.266",
+      "source_url": "https://x.com/ClaudeCodeLog/status/2097476972322370027",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-09-10",
+      "last_date": "2026-09-10",
+      "appearances": 19
     },
     {
       "id": 1732,
@@ -759,6 +787,20 @@
       "first_date": "2026-05-22",
       "last_date": "2026-05-22",
       "appearances": 14
+    },
+    {
+      "id": 1985,
+      "title": "`--worktree` の起動が大規模リポジトリで並列チェックアウトにより高速化",
+      "point": "`--worktree` で新しいワークツリーを作る際、チェックアウトが並列実行されるようになった（git 2.32以降）。ファイル数の多いリポジトリで並列セッションを立ち上げる際の待ち時間が短くなる。ワークツリーごとに独立セッションを走らせる定番の並列開発パターンは、起動コストが下がることで小さなタスクにも適用しやすくなる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "生産性"
+      ],
+      "first_date": "2026-09-10",
+      "last_date": "2026-09-10",
+      "appearances": 13
     },
     {
       "id": 1825,
@@ -2521,6 +2563,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 1981,
+      "title": "プロンプト途中で入力したスラッシュコマンドが候補一覧で表示される",
+      "point": "文章の途中に `/` を打った場合でも、単一サジェストではなく候補リストが表示されるようになった。フルスクリーン以外ではTabで一覧を開ける。加えて、プラグイン由来のスキルが「プラグイン名なしの素の名前」で見つかるようになったため、プラグインを増やしても呼び出しが煩雑にならない。定型指示をスラッシュコマンド化する運用のハードルが下がる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-10",
+      "last_date": "2026-09-10",
+      "appearances": 6
     },
     {
       "id": 1961,
@@ -8756,6 +8812,49 @@
       "appearances": 3
     },
     {
+      "id": 1978,
+      "title": "`--plugin-dir` にプラグイン群のフォルダを指定して一括読み込みする",
+      "point": "`--plugin-dir` がプラグイン単体だけでなく「プラグインを並べた親フォルダ」を受け付けるようになった。マニフェストを持つ子フォルダがすべて読み込まれ、実行中に子フォルダを追加・削除しても反映される。社内共通プラグインを1ディレクトリにまとめて配布し、CLI起動オプション1つで全員に同じ構成を配る運用が組みやすくなる。開発中のプラグインを再起動なしで差し替えられる点も大きい。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-10",
+      "last_date": "2026-09-10",
+      "appearances": 2
+    },
+    {
+      "id": 1982,
+      "title": "非対話セッションで `cd` がターンをまたいで維持されるようになった",
+      "point": "`-p` のstream-json入力、Agent SDK、クラウドセッションでは、ユーザーメッセージのたびにシェルの作業ディレクトリがリセットされていた。この挙動が修正され、`cd` が以降のターンでも保持される。スクリプトやCIからClaude Codeを回すとき、毎ターン絶対パスを組み直す必要がなくなり、モノレポのサブディレクトリを対象にした自動化が書きやすくなる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "API",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-09-10",
+      "last_date": "2026-09-10",
+      "appearances": 2
+    },
+    {
+      "id": 1983,
+      "title": "`http` 指定のMCPサーバーが旧HTTP+SSEトランスポートへ自動フォールバックする",
+      "point": "`http` として設定したMCPサーバーが、レガシーなHTTP+SSEトランスポートしか話せない場合に一切接続できない不具合が修正され、MCP仕様どおりSSEへフォールバックするようになった。自作MCPや古めの社内サーバーが「設定は正しいのに繋がらない」状態だった場合、Claude Codeを更新するだけで解消する可能性がある。接続不良の切り分けでまずバージョンを疑う価値がある。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-10",
+      "last_date": "2026-09-10",
+      "appearances": 2
+    },
+    {
       "id": 1972,
       "title": "Agent Skillsは「評価から」作る：弱点を測ってから漸進的に足す",
       "point": "Anthropic公式のスキル構築指針は、まず代表的タスクでエージェントを動かして失敗箇所を特定し、そのギャップを埋める形でスキルを段階的に足すこと。実運用でのClaudeの使い方を観察し、想定外の経路や特定コンテキストへの過依存が出ていないかを見て反復する。特にスキルの name と description には注意を払う。",
@@ -12345,6 +12444,44 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1979,
+      "title": "ツール結果のディスク保存に1GB上限が入り、切り詰めが会話上で明示される",
+      "point": "ディスクへ保存されるツール結果に1GBの上限が設定され、会話内のプレビューに「保存済みファイルが切り詰められた」旨が表示されるようになった。巨大なログやビルド出力を吐くコマンドを走らせたとき、Claudeが見ている内容が全量なのか一部なのかを判別できる。大量出力を扱うタスクでは、上限に当たる前段でgrepやheadを挟んで絞り込む設計が引き続き有効。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-10",
+      "last_date": "2026-09-10",
+      "appearances": 1
+    },
+    {
+      "id": 1984,
+      "title": "Windowsの制限付きサンドボックス内でRead／Write／Editが全拒否される不具合を修正",
+      "point": "AppContainerや制限トークンのサンドボックス内でClaude Codeを動かすと、あらゆるファイル操作が「symlink resolution changed after permission was checked」で拒否されていた。この症状が解消され、Windows上の隔離環境でファイル編集を伴うタスクを回せるようになった。セキュリティ要件でサンドボックス必須の環境にClaude Codeを導入する際の障害が1つ減った形。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-09-10",
+      "last_date": "2026-09-10",
+      "appearances": 1
+    },
+    {
+      "id": 1986,
+      "title": "Artifactの他者作成ページ読み取りを非信頼コンテンツとして扱い、埋め込み指示を警告する",
+      "point": "Artifactツールが他人の書いたアーティファクトを読むとき、要約がそのページを「非信頼コンテンツ」として扱い、埋め込まれた指示をそのまま中継せずフラグを立てるよう変更された。あわせて、コネクタが実際には公開していないツール名でのアーティファクト公開が拒否されるようになった。外部由来テキストを命令ではなくデータとして扱う、エージェント設計の実装例として参照価値がある。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-10",
+      "last_date": "2026-09-10",
+      "appearances": 1
     },
     {
       "id": 1967,
@@ -21881,6 +22018,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-10",
+      "highlights": [
+        "Claude Code 2.1.265／2.1.266 — プラグインフォルダの一括読み込み、ツール結果の1GB上限、Windowsサンドボックス修正など実務直結の更新が集中",
+        "再開サブエージェントのプロンプトキャッシュ再利用が復旧 — 長時間セッション・エージェントチーム運用のコストとレイテンシに直結する修正",
+        "Artifactの他者作成ページを「非信頼コンテンツ」として扱う — 埋め込み指示を中継せず警告する挙動に変更。プロンプトインジェクション対策の実装例として参考になる"
+      ]
+    },
+    {
       "date": "2026-09-09",
       "highlights": [
         "フェルマー最終定理の完全形式証明 — Claudeエージェント群が11日で完遂。長時間エージェント運用の到達点を示す実例",
@@ -23112,5 +23257,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-09T08:00:04.367541"
+  "generated_at": "2026-09-10T08:00:04.803344"
 }
