@@ -1,6 +1,19 @@
 {
   "tips": [
     {
+      "id": 2006,
+      "title": "アイドルセッションのCPU張り付きと起動・再開の遅さがまとめて改善",
+      "point": "長時間アイドル状態のセッションでビジーループがCPUコアを1本占有する問題、セッション要約中の高頻度ターミナルフォーカス通知でCPUが高止まりする問題が修正された。加えて `--continue` / `--resume` はSessionStartフックの完了を待たずに会話を即表示するようになり、初回メッセージでトランスクリプト全体を読み直さなくなった。`.claude/workflows/` にスクリプトを多数置いたプロジェクトでも、一覧表示時に各スクリプトを解析しなくなり起動が速くなっている。常時セッションを開きっぱなしにする使い方では体感差が大きい。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-09-12",
+      "last_date": "2026-09-12",
+      "appearances": 39
+    },
+    {
       "id": 1165,
       "title": "Managed Agents をスケジュール実行＋Vaultで認証する",
       "point": "マネージドエージェントをcronスケジュールで自動実行でき、夜間データ同期・週次コンプライアンススキャン・日次ダイジェストなどを自前のスケジューラなしで運用可能。Vaultに環境変数を保存し、CLIへキー本体を渡さず安全に認証できる。",
@@ -29,6 +42,17 @@
       "appearances": 36
     },
     {
+      "id": 2007,
+      "title": "シンボリックリンク経由でdeny権限ルールが素通りする不具合を修正",
+      "point": "macOSの `/etc` `/tmp` `/var`、Linuxの `/bin` などシンボリックリンクになっているディレクトリに対して、実体パスで指定された場合にdeny/askルールが適用されない不具合があった。Bashコマンドがシンボリックリンク表記で書かれたdenyルールを無視する問題も同時に修正。さらに `env -C` や `eval` など権限チェッカーが解析できないコマンドが同一行にある場合に、ReadやEditのdenyルールが効かないケースも塞がれた。権限ルールで機密ディレクトリを守る設計をしているなら、更新は実質必須。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-12",
+      "last_date": "2026-09-12",
+      "appearances": 34
+    },
+    {
       "id": 1693,
       "title": "effortの既定値を理解して使う：Opus 4.8はhigh、Sonnetはmedium推奨",
       "point": "Opus 4.8のeffort既定値はClaude API・Claude Code含む全サーフェスでhigh。SonnetについてAnthropicが推奨するのはmediumで、低effortなら超高速・低コスト、highなら深い推論と使い分けられる。実務的には「重要度にeffortを合わせる」「トークン使用量を監視して下げられないか試す」の2点が要点で、想定より低いeffortで十分なタスクは多い。コーディングでも常にOpusに上げず、Sonnet 4.6のmax effortという選択肢が現実的な代替になる。",
@@ -42,6 +66,20 @@
       "first_date": "2026-08-18",
       "last_date": "2026-08-18",
       "appearances": 33
+    },
+    {
+      "id": 2004,
+      "title": "9月14日の週次上限切り替えを前提にペース配分を見直す",
+      "point": "Pro・Max・Team・シート課金Enterpriseの週次上限が9月14日から恒久的に+25%される。ただし同日まで適用されていた暫定+50%ブーストが同時に終了するため、現時点の使用可能量との比較では約17%減になる。Anthropic自身も「現状比では17%減」と補足している。週次でまとまった作業を回している場合、9月14日以降は同じ使い方だと週後半に枯渇する可能性がある。effortレベルの使い分けやモデル選択でのコスト調整を、切り替え前に一度見直しておくのが安全。",
+      "source_title": "Anthropic is cutting Claude Code's current weekly limits by 17%",
+      "source_url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-09-12",
+      "last_date": "2026-09-12",
+      "appearances": 32
     },
     {
       "id": 1182,
@@ -97,6 +135,19 @@
       "first_date": "2026-06-22",
       "last_date": "2026-06-22",
       "appearances": 30
+    },
+    {
+      "id": 2008,
+      "title": "プラグイン・MCP設定からシークレットが表示される問題を修正",
+      "point": "プラグインやマーケットプレースのエラー表示に、gitソースURLに含まれるトークンやパスワードが出ていた。また `/mcp` `/plugin` のサーバー詳細、`claude mcp list` / `get`、MCPログインエラーで、MCP設定内の `${VAR}` プレースホルダから解決された実際の値が表示されていた。ログやスクリーンショットを共有する運用があるチームでは、漏洩経路がひとつ塞がれたことになる。過去に共有したログを見直す価値がある。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-12",
+      "last_date": "2026-09-12",
+      "appearances": 29
     },
     {
       "id": 1926,
@@ -949,6 +1000,19 @@
       "first_date": "2026-05-27",
       "last_date": "2026-05-27",
       "appearances": 13
+    },
+    {
+      "id": 2010,
+      "title": "Claude appsゲートウェイの `pricing:` 設定で `/cost` と請求を一致させる",
+      "point": "`gateway.yaml` に `pricing:` を設定すると、サインイン済みのClaude Codeクライアントが管理設定経由で同じレートを受け取るようになり、`/cost` やテレメトリの数値が実際の課金メーターと一致する。社内でコスト按分をしている場合、各開発者の `/cost` 表示をそのまま集計根拠にできる。あわせて `access_control.allow_cidrs` が空の場合の起動時警告と、パブリックアドレスからの初回リクエスト時の一度きりの警告が追加された。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-09-12",
+      "last_date": "2026-09-12",
+      "appearances": 12
     },
     {
       "id": 1997,
@@ -2256,6 +2320,19 @@
       "appearances": 8
     },
     {
+      "id": 2013,
+      "title": "Claude Tag：チャンネルごとにメモリが分離され、読み取りが並列化",
+      "point": "パブリックチャンネルでのメモリの扱いが変更され、各チャンネルが自身のノートのみを保持するようになった。他のパブリックチャンネルで保存したノートは参照されない。ワークスペース単位のノートは引き続き共有される。プロジェクトごとにチャンネルを分けている場合、文脈の混線が起きにくくなる。あわせて、Slack検索・スレッド読み取り・人物検索といった読み取り専用の処理が逐次実行から並列実行に変わり、応答速度が向上した。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "生産性"
+      ],
+      "first_date": "2026-09-12",
+      "last_date": "2026-09-12",
+      "appearances": 7
+    },
+    {
       "id": 1946,
       "title": "フルスクリーンのリサイズ後に本文が空白になる問題とスクロールの挙動が修正された",
       "point": "ターミナルをリサイズするとフルスクリーン表示のトランスクリプトが空白になる、過去メッセージ位置にいるときにスクロールが暴れる、という2件が修正された。分割ペインでウィンドウ幅を頻繁に変える使い方をしている場合は更新推奨。",
@@ -2632,6 +2709,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 2005,
+      "title": "WebFetchが応答を閉じないサーバーで無限に止まる問題が解消",
+      "point": "レスポンスを開いたまま終了しないサーバーに対してWebFetchが無期限にハングしていた。2.1.268で300秒のデッドラインが入り、超過時は失敗として返る。環境変数 `CLAUDE_CODE_WEBFETCH_DEADLINE_MS` で上書きでき、0を指定すると無効化される。社内プロキシ経由やレスポンスの遅い社内システムを叩く自動化では、デッドラインを長めに設定しておく判断もあり得る。あわせて、localhostなどドット無しホスト名を拒否する際のエラーが理由とcurlの代替案を示す内容に改善された。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-09-12",
+      "last_date": "2026-09-12",
+      "appearances": 6
     },
     {
       "id": 1981,
@@ -12553,6 +12643,45 @@
       "appearances": 2
     },
     {
+      "id": 2009,
+      "title": "サードパーティ互換エンドポイントで全ターンがHTTP 400になる問題を修正",
+      "point": "`ANTHROPIC_BASE_URL` で指定するAnthropic互換のサードパーティエンドポイントを使っている場合、2.1.265以降すべてのターンがHTTP 400で失敗していた。原因はArtifactツールの入力スキーマ内の正規表現を、これらのエンドポイントが受け付けなかったこと。2.1.268で修正済み。自社ゲートウェイや社内LLMプロキシ経由でClaude Codeを使っている環境で全滅状態だったなら、クライアント更新で復旧する。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-09-12",
+      "last_date": "2026-09-12",
+      "appearances": 1
+    },
+    {
+      "id": 2011,
+      "title": "`/plugin` の変更が即反映され `/reload-plugins` が不要になった",
+      "point": "`/plugin` メニューでのインストール・有効化・無効化が、メニューを閉じた時点で反映されるようになった。従来必要だった `/reload-plugins` の実行が不要。VS Code拡張側でも「Manage plugins」ダイアログの操作が、再起動なしに開いているセッションへ適用される。あわせて `claude plugin install` / `uninstall` / `update` / `enable` / `disable` に `--json` が追加され、`claude plugin list --json` の各行に `errorDetails` / `noteDetails` が付いた。プラグイン構成をCIやスクリプトで管理する場合に扱いやすくなっている。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-12",
+      "last_date": "2026-09-12",
+      "appearances": 1
+    },
+    {
+      "id": 2012,
+      "title": "auto modeの拒否理由にブロックしたルール名が入るようになった",
+      "point": "auto modeで操作が拒否された際、Claudeが受け取るメッセージに「どのルールがブロックしたか」が明示され、より安全な方法を試すこと、および無関係な作業を先に片付けてから確認を求めることが指示されるようになった。従来は拒否理由が不明瞭でClaudeがその場で停止しがちだった。あわせて、公開ダイアグラムレンダラーのURLにコンテンツを埋め込むリンクは「そのサイトへのアップロード」として扱われ、明示的に依頼しない限り自動承認されなくなっている。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-12",
+      "last_date": "2026-09-12",
+      "appearances": 1
+    },
+    {
       "id": 1992,
       "title": "`--system-prompt-snapshot off` でシステムプロンプトを毎回描き直す",
       "point": "通常、会話に記録済みのシステムプロンプトが再利用されるが、`--system-prompt-snapshot off` を付けるとリクエストのたびにシステムプロンプトが新しく生成される。プロンプト文面を試行錯誤している最中に、同じセッションを使い回しながら変更を即反映させられる。逆に本番運用ではキャッシュ効率が落ちるため、あくまでプロンプト開発時の一時的なフラグとして使う。",
@@ -22153,6 +22282,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-12",
+      "highlights": [
+        "9月14日に週次利用上限が切り替わる — 恒久+25%の適用と同時に暫定+50%ブーストが終了し、現状比では実質減となる",
+        "Claude Code 2.1.268 — WebFetchの無限ハング、アイドル時のCPU張り付きなど「長時間運用で効く」修正が中心",
+        "シンボリックリンク経由でdeny権限ルールが抜ける不具合を修正 — 権限設計を実運用で信頼できるかに直結する修正"
+      ]
+    },
+    {
       "date": "2026-09-11",
       "highlights": [
         "Claude Code 2.1.267 — `maxEffortLevel` による組織横断のeffort上限、`--system-prompt-snapshot off` の追加など設定系の新機能が中心",
@@ -23400,5 +23537,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-11T13:32:55.081516"
+  "generated_at": "2026-09-12T08:00:04.804133"
 }
