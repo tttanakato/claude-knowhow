@@ -130,6 +130,21 @@
       "appearances": 29
     },
     {
+      "id": 1993,
+      "title": "会話途中のツール変更がプロンプトキャッシュを壊さなくなった",
+      "point": "MCPサーバーの再接続、アップグレードによるツール消失、`/model` 切替、claude.aiコネクタのツール変更など、会話の途中でツール一覧が変わるとキャッシュミスと拡張思考の消失を招いていた。2.1.267では対応モデルに対して追加ツールを「遅延定義（deferred definitions）」として渡すようになり、ツール一覧の書き換えを避ける設計に変わった。コミット・PRの帰属テキストも会話ノートとして更新される方式に変更されている。長時間セッションのコストとレイテンシに直結する修正。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-11",
+      "last_date": "2026-09-11",
+      "appearances": 28
+    },
+    {
       "id": 1980,
       "title": "再開したサブエージェントのプロンプトキャッシュ再利用が復旧した",
       "point": "フォアグラウンドで起動したサブエージェントを再開するとツール一覧とシステムプロンプト接頭辞が変化し、そのエージェントのプロンプトキャッシュが効かなくなる不具合が修正された。エージェントチームや再開サブエージェントで、SubagentStartフックのコンテキストと事前読み込みスキルが2ターン目以降に接頭辞から外れる問題も併せて解消。長時間の分業運用でキャッシュヒット率が戻るため、費用と初動レイテンシが改善する。",
@@ -585,6 +600,19 @@
       "appearances": 16
     },
     {
+      "id": 1996,
+      "title": "Artifact公開が通信断で切れた場合に自動リトライされる",
+      "point": "アップロード途中で接続が落ちてアーティファクト公開が中断した際、Claude Codeが「アップロードが完了していない」と判断できるケースでは1回リトライするようになった。従来は結果不明のまま報告されていた。あわせて、ページファイルが不正なUTF-8や置換文字（U+FFFD）を含む場合のエラーが、修正すべき行と列を示す形に改善されている。成果物の共有ページ化を日常運用に組み込む際の失敗率が下がる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-09-11",
+      "last_date": "2026-09-11",
+      "appearances": 15
+    },
+    {
       "id": 1064,
       "title": "Claude Fable 5 一般提供：Mythos級・1Mトークン・自動フォールバック",
       "point": "Anthropicが最上位モデルClaude Fable 5をGA。Opus級を上回るMythos級の能力ティアを新設し、常時アダプティブ思考、1Mトークン文脈窓、128K出力トークンに対応。安全分類でフラグが付いた要求は自動的にOpus 4.8へフォールバックする。",
@@ -921,6 +949,19 @@
       "first_date": "2026-05-27",
       "last_date": "2026-05-27",
       "appearances": 13
+    },
+    {
+      "id": 1997,
+      "title": "Remote Controlのサーバー資格情報期限切れでセッションが全落ちする問題を修正",
+      "point": "`claude remote-control` は開始から約30日でサーバー資格情報が期限切れになり、その時点でプロセスが終了して接続中の全セッションが切断されていた。2.1.267ではホスト側が自動で再登録して稼働を継続する。常時起動の開発マシンをリモートから操作する運用では、原因の掴みにくい月次の切断が解消される。あわせて、Claude Desktop／VS Codeセッションに参加したクライアントが古い権限モードを表示する不具合も修正。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-09-11",
+      "last_date": "2026-09-11",
+      "appearances": 12
     },
     {
       "id": 1878,
@@ -1478,6 +1519,20 @@
       "appearances": 10
     },
     {
+      "id": 2000,
+      "title": "Claude Tag：クレジット枯渇時のエラー表示とカスタムコネクタ導線が改善",
+      "point": "組織の利用クレジットが尽きた状態でSlackの@Claudeにタスクを投げると「The API rejected the request as invalid」という無関係な文言が返っていたが、クレジット不足である旨と追加方法を案内する内容に変更された。加えて、管理設定のプリセット接続フォームに「カスタムコネクタを使う」リンクが追加され、途中から切り替えられるようになった。運用担当が原因究明に費やす時間を減らす類の改善。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-11",
+      "last_date": "2026-09-11",
+      "appearances": 9
+    },
+    {
       "id": 1873,
       "title": "サブエージェントとAgent Teamsの使い分け：3〜5人が実用的な上限",
       "point": "サブエージェントは「指示して結果を返させる」短距離の作業向き、Agent Teamsは「メンバー同士が知見を共有し、仮説をぶつけ合う」協調作業向き。PRレビュー、対立仮説を立てたデバッグ、アーキテクチャ調査、実装と検証の分離などがTeams向きの典型。人数は3〜5人が最適で、それを超えるとサマリのマージ工数が並列化の利得を食い潰す。Teamsはトークン消費が大きいため、上限が縮む9月以降は「小チーム・Sonnet主体・終了後すぐ片付け」が現実解になる。",
@@ -1783,6 +1838,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 1994,
+      "title": "Coworkのクラウドスケジュールタスクが起動失敗する不具合を修正",
+      "point": "管理設定（managed settings）でサンドボックス実行が必須になっている組織では、Coworkのスケジュールタスクがクラウド実行時に起動段階で失敗していた。2.1.267で修正済み。企業環境で定期レポートや日次収集タスクを組んでいる場合、原因不明の失敗が続いていたならクライアント更新で解消する可能性がある。まずバージョンを確認するのが早い。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化",
+        "製品機能"
+      ],
+      "first_date": "2026-09-11",
+      "last_date": "2026-09-11",
+      "appearances": 8
     },
     {
       "id": 1949,
@@ -3427,6 +3496,30 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 1991,
+      "title": "`maxEffortLevel` で全プロバイダのeffort上限を固定する",
+      "point": "2.1.267でトップレベル、または `modelSettings` 配下のモデル別設定として `maxEffortLevel` が追加された。Bedrock・Vertex・Foundryを含むすべてのプロバイダでeffortレベルの上限を打ち止めでき、ユーザー側はそれより低いレベルを選ぶことは引き続き可能。組織としてコスト上限を効かせつつ、個々の判断で軽いタスクを安く回す運用が設定1つで実現できる。従来の「使い分けを周知する」運用より確実。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-11",
+      "last_date": "2026-09-11",
+      "appearances": 5
+    },
+    {
+      "id": 1999,
+      "title": "VS Code拡張：CRLFファイルの差分適用失敗とスペース入りパスの@メンション欠落を修正",
+      "point": "Windows改行（CRLF）のファイルで差分ビューから編集を承認すると「String not found in file」で失敗する問題、@メンションでパスにスペースを含むファイルが候補から落ちる問題が修正された。Windows環境の実務では両方とも頻出パターン。あわせて、チャット内の差分ブロックが常にダークテーマで描画されていた点がVS Codeの配色テーマ追従に変更され、ハイコントラストにも対応した。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-11",
+      "last_date": "2026-09-11",
+      "appearances": 5
     },
     {
       "id": 1971,
@@ -8812,6 +8905,20 @@
       "appearances": 3
     },
     {
+      "id": 1995,
+      "title": "`effort:` frontmatter が既定effort固定モデルでも効くようになった",
+      "point": "カスタムコマンド・スキル・サブエージェントのfrontmatterに書いた `effort:` が、既定effortがピン留めされているモデル（Opus 4.7、Opus 4.8、Fable 5）では無視されていた。この不具合が修正され、定義ファイル側で処理の重さを宣言できるようになった。「調査系サブエージェントは低effort、設計レビューは高effort」といった役割ごとのコスト設計を、呼び出し時の指定に頼らず定義に埋め込める。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-11",
+      "last_date": "2026-09-11",
+      "appearances": 2
+    },
+    {
       "id": 1978,
       "title": "`--plugin-dir` にプラグイン群のフォルダを指定して一括読み込みする",
       "point": "`--plugin-dir` がプラグイン単体だけでなく「プラグインを並べた親フォルダ」を受け付けるようになった。マニフェストを持つ子フォルダがすべて読み込まれ、実行中に子フォルダを追加・削除しても反映される。社内共通プラグインを1ディレクトリにまとめて配布し、CLI起動オプション1つで全員に同じ構成を配る運用が組みやすくなる。開発中のプラグインを再起動なしで差し替えられる点も大きい。",
@@ -12444,6 +12551,34 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 1992,
+      "title": "`--system-prompt-snapshot off` でシステムプロンプトを毎回描き直す",
+      "point": "通常、会話に記録済みのシステムプロンプトが再利用されるが、`--system-prompt-snapshot off` を付けるとリクエストのたびにシステムプロンプトが新しく生成される。プロンプト文面を試行錯誤している最中に、同じセッションを使い回しながら変更を即反映させられる。逆に本番運用ではキャッシュ効率が落ちるため、あくまでプロンプト開発時の一時的なフラグとして使う。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-09-11",
+      "last_date": "2026-09-11",
+      "appearances": 1
+    },
+    {
+      "id": 1998,
+      "title": "5MB超の大規模セッション再開で並列ツール呼び出しが欠落する問題を修正",
+      "point": "トランスクリプトが5MBを超える大きなセッションを再開すると、並列実行したツール呼び出しとそのフック出力が復元後の会話から落ちていた。長時間の調査タスクや大量ファイル走査を伴う作業を翌日に持ち越す運用では、再開後にClaudeが「実施済みの確認作業」を認識できない事故につながっていた。あわせて、`/compact` などのスラッシュコマンド実行後に `-p --resume` すると余計な「Continue from where you left off.」ターンが挿入される問題も解消。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化",
+        "生産性"
+      ],
+      "first_date": "2026-09-11",
+      "last_date": "2026-09-11",
+      "appearances": 1
     },
     {
       "id": 1979,
@@ -22018,6 +22153,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-11",
+      "highlights": [
+        "Claude Code 2.1.267 — `maxEffortLevel` による組織横断のeffort上限、`--system-prompt-snapshot off` の追加など設定系の新機能が中心",
+        "会話途中のツール変更でキャッシュが壊れない — MCPツールの増減・`/model` 切替・セッション再開でのプロンプトキャッシュミスがまとめて解消",
+        "Coworkのクラウドスケジュールタスク起動失敗を修正 — 管理設定でサンドボックス必須の組織で定期タスクが動かない不具合が解消"
+      ]
+    },
+    {
       "date": "2026-09-10",
       "highlights": [
         "Claude Code 2.1.265／2.1.266 — プラグインフォルダの一括読み込み、ツール結果の1GB上限、Windowsサンドボックス修正など実務直結の更新が集中",
@@ -23257,5 +23400,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-10T08:00:04.803344"
+  "generated_at": "2026-09-11T13:32:55.081516"
 }
