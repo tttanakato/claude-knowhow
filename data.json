@@ -42,6 +42,17 @@
       "appearances": 36
     },
     {
+      "id": 2022,
+      "title": "`!` 始まりの権限ルールと `tee` 経由の書き込みの穴が塞がれた",
+      "point": "`!` で始まるdeny/askルールが、それを記述した設定ソースの外まで適用されてしまう不具合が修正された。今後は自身のソース内でのみ有効となり、単独の `!` 否定は無視される。加えて、Bashの `tee` が書き込む先のファイルに `Edit()` のdenyルールと書き込みパスチェックが効いていなかった問題も修正され、`Bash(tee:*)` の許可ルールが作業ディレクトリ外への書き込みを覆わなくなった。権限ルールで機密領域を守る設計をしているなら更新が必要。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-13",
+      "last_date": "2026-09-13",
+      "appearances": 35
+    },
+    {
       "id": 2007,
       "title": "シンボリックリンク経由でdeny権限ルールが素通りする不具合を修正",
       "point": "macOSの `/etc` `/tmp` `/var`、Linuxの `/bin` などシンボリックリンクになっているディレクトリに対して、実体パスで指定された場合にdeny/askルールが適用されない不具合があった。Bashコマンドがシンボリックリンク表記で書かれたdenyルールを無視する問題も同時に修正。さらに `env -C` や `eval` など権限チェッカーが解析できないコマンドが同一行にある場合に、ReadやEditのdenyルールが効かないケースも塞がれた。権限ルールで機密ディレクトリを守る設計をしているなら、更新は実質必須。",
@@ -51,6 +62,19 @@
       "first_date": "2026-09-12",
       "last_date": "2026-09-12",
       "appearances": 34
+    },
+    {
+      "id": 2017,
+      "title": "暫定+50%ブーストは本日まで、明日から恒久+25%へ切り替わる",
+      "point": "Pro・Max・Team・シート課金Enterpriseの週次上限は、9月14日から恒久的に+25%となる。ただし本日9月13日をもって暫定+50%ブーストが終了するため、現在使える量との比較では約17%減になる。週の後半にまとまった作業を寄せている運用では、明日以降に枯渇時期が前倒しになる可能性がある。今週分の残量を確認し、重い作業は本日中に回すか、明日以降はeffort設定とモデル選択でコストを落とす前提で計画し直すのが安全。",
+      "source_title": "Anthropic is cutting Claude Code's current weekly limits by 17%",
+      "source_url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-13",
+      "last_date": "2026-09-13",
+      "appearances": 33
     },
     {
       "id": 1693,
@@ -225,6 +249,20 @@
       "first_date": "2026-08-26",
       "last_date": "2026-08-26",
       "appearances": 26
+    },
+    {
+      "id": 2024,
+      "title": "`CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS` で並列エージェント数を引き上げる",
+      "point": "Workflowツールの1実行あたりの同時エージェント数の上限を、環境変数で1〜256の範囲に設定できるようになった。推論待ちが支配的なfan-out（大量ファイルの分類・要約など、各エージェントの処理が軽く待ち時間が長いケース）で並列度を上げるための設定。ただしトークン消費は並列数にほぼ比例するため、上限に達しやすい週次枠との兼ね合いで決める必要がある。I/O待ちではなく推論待ちの作業に限定するのが前提。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-09-13",
+      "last_date": "2026-09-13",
+      "appearances": 25
     },
     {
       "id": 1789,
@@ -1904,6 +1942,19 @@
       "appearances": 9
     },
     {
+      "id": 2023,
+      "title": "`/goal` がAPIエラーや上限到達で無言停止せず再試行するようになった",
+      "point": "`/goal` の実行中にAPIエラー、ネットワーク切断、トークン上限が発生すると、それ以降静かに停止していた。修正後はバックオフ付きで再試行するか、停止する場合は理由を明示するようになった。利用上限に達した場合はリセットまで待機する挙動も含まれる。完了条件を設定して長時間放置する使い方では、朝見たら何も進んでいないという事故が減る。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-09-13",
+      "last_date": "2026-09-13",
+      "appearances": 8
+    },
+    {
       "id": 1994,
       "title": "Coworkのクラウドスケジュールタスクが起動失敗する不具合を修正",
       "point": "管理設定（managed settings）でサンドボックス実行が必須になっている組織では、Coworkのスケジュールタスクがクラウド実行時に起動段階で失敗していた。2.1.267で修正済み。企業環境で定期レポートや日次収集タスクを組んでいる場合、原因不明の失敗が続いていたならクライアント更新で解消する可能性がある。まずバージョンを確認するのが早い。",
@@ -2320,6 +2371,20 @@
       "appearances": 8
     },
     {
+      "id": 2026,
+      "title": "`ant beta:sessions connect` でManaged Agentsセッションにターミナルから入る",
+      "point": "ant CLIに追加されたコマンドで、実行中のClaude Managed Agentsセッションに自分のターミナルを接続できる。セッションをライブで追いかけ、メッセージを送り、承認待ちのツール呼び出しをその場で許可・拒否できる。`--web` を付けるとClaude Consoleのセッションビューアをローカルで配信して、そちらで開く。上記の `auto` ポリシーと組み合わせると、承認待ちで止まったエージェントを即座に捌く導線になる。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-09-13",
+      "last_date": "2026-09-13",
+      "appearances": 7
+    },
+    {
       "id": 2013,
       "title": "Claude Tag：チャンネルごとにメモリが分離され、読み取りが並列化",
       "point": "パブリックチャンネルでのメモリの扱いが変更され、各チャンネルが自身のノートのみを保持するようになった。他のパブリックチャンネルで保存したノートは参照されない。ワークスペース単位のノートは引き続き共有される。プロジェクトごとにチャンネルを分けている場合、文脈の混線が起きにくくなる。あわせて、Slack検索・スレッド読み取り・人物検索といった読み取り専用の処理が逐次実行から並列実行に変わり、応答速度が向上した。",
@@ -2709,6 +2774,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 2020,
+      "title": "`/output-style [name]` でヘッドレス・Remote Control越しにも出力スタイルを切り替える",
+      "point": "`/output-style` に引数なしで一覧表示、名前指定で切り替えができるようになった。Remote Control経由、クラウドセッション、その他のヘッドレスセッションでも動作する。従来は対話セッションのUIからしか変更できず、スケジュールタスクやCI的な実行では既定スタイル固定だった。定期実行タスクの出力を簡潔にしたい場合、タスク側から明示的に切り替えられる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化",
+        "製品機能"
+      ],
+      "first_date": "2026-09-13",
+      "last_date": "2026-09-13",
+      "appearances": 6
     },
     {
       "id": 2005,
@@ -12643,6 +12722,62 @@
       "appearances": 2
     },
     {
+      "id": 2018,
+      "title": "`claude plugin eval` でプラグインの品質を再現可能なスコアで測る",
+      "point": "2.1.269で追加。プラグインに定義したevalスイートをClaude Codeに対して実行し、スコア付きの結果をJSONとHTMLレポートで出力する。手動で「なんとなく動く」を確認する運用から、変更前後の差をスコアで比較する運用へ移行できる。社内配布するプラグインやスキルを複数人で改修している場合、回帰の検出に使える。詳細は `claude plugin eval --help` で確認する。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-13",
+      "last_date": "2026-09-13",
+      "appearances": 1
+    },
+    {
+      "id": 2019,
+      "title": "Bashツールの結果にコマンドが変更したファイルの差分が付く",
+      "point": "BashツールがファイルEditを処理した際、そのコマンドで変更されたファイルの差分が結果に含まれるようになった（設定は `bashEditDiffEnabled`）。従来はコマンドの標準出力しか見えず、スクリプトやフォーマッタが何を書き換えたかを別途 `git diff` で確認する必要があった。整形コマンドやコード生成スクリプトをClaudeに走らせる運用では、意図しない一括書き換えをその場で検知できる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-09-13",
+      "last_date": "2026-09-13",
+      "appearances": 1
+    },
+    {
+      "id": 2021,
+      "title": "日本語・中国語などのプロンプト候補が落ちる不具合を修正",
+      "point": "単語間にスペースを入れない言語（日本語・中国語・タイ語など）で、プロンプト候補が丸ごと破棄される不具合が修正された。あわせて日本語・中国語・韓国語のフィルタ精度も改善され、複数スクリプト混在の候補や単一語の候補が保持される一方、メタ的・評価的な文言は英語と同様に除外されるようになった。日本語でClaude Codeを使っている場合、候補表示が実際に機能するようになる変更。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-09-13",
+      "last_date": "2026-09-13",
+      "appearances": 1
+    },
+    {
+      "id": 2025,
+      "title": "Managed Agentsの権限ポリシーに `auto` が追加された",
+      "point": "Claude Managed Agentsの権限ポリシーで `auto` を指定すると、サーバー側がエージェント・MCPの各ツール呼び出しを個別に評価し、実行・拒否・承認待ちのいずれかに振り分ける。`agent.tool_use` と `agent.mcp_tool_use` イベントには、評価結果が `evaluated_permission` と並んで `evaluation` フィールドで返る。全許可と全確認の中間を取りたい本番エージェントで、監査ログを残しつつ運用負荷を下げられる。9月10日付のPlatform更新。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-13",
+      "last_date": "2026-09-13",
+      "appearances": 1
+    },
+    {
       "id": 2009,
       "title": "サードパーティ互換エンドポイントで全ターンがHTTP 400になる問題を修正",
       "point": "`ANTHROPIC_BASE_URL` で指定するAnthropic互換のサードパーティエンドポイントを使っている場合、2.1.265以降すべてのターンがHTTP 400で失敗していた。原因はArtifactツールの入力スキーマ内の正規表現を、これらのエンドポイントが受け付けなかったこと。2.1.268で修正済み。自社ゲートウェイや社内LLMプロキシ経由でClaude Codeを使っている環境で全滅状態だったなら、クライアント更新で復旧する。",
@@ -22282,6 +22417,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-13",
+      "highlights": [
+        "本日が暫定+50%ブーストの最終日 — 明日9月14日から恒久+25%へ切り替わり、現状比では約17%減になる",
+        "Claude Code 2.1.269 — `claude plugin eval`、Bashツールの変更差分表示、`/output-style` のヘッドレス対応など運用寄りの新機能",
+        "日本語プロンプトの候補欠落が修正 — 分かち書きしない言語で候補が落ちる不具合とフィルタ精度が同時に改善"
+      ]
+    },
+    {
       "date": "2026-09-12",
       "highlights": [
         "9月14日に週次利用上限が切り替わる — 恒久+25%の適用と同時に暫定+50%ブーストが終了し、現状比では実質減となる",
@@ -23537,5 +23680,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-12T08:00:04.804133"
+  "generated_at": "2026-09-13T08:00:04.852076"
 }
