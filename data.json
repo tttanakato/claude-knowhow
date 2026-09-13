@@ -1,6 +1,32 @@
 {
   "tips": [
     {
+      "id": 2033,
+      "title": "サブエージェントは「調査をメインのコンテキストから追い出す」ために使う",
+      "point": "コードベース調査でClaudeが大量のファイルを読むと、そのすべてがメインセッションのコンテキストを消費する。調査をサブエージェントに投げれば、読んだ内容はサブエージェント側のコンテキストに留まり、メインには結論だけが返る。上級Tipsのほぼすべてが「コンテキストを汚さない」という一点に集約される、という整理がされている。あわせて、サブエージェントには1つの具体的なタスクだけを与えること、全ツールを無条件に許可しないことが推奨されている。全ツール許可は余計なトークン消費とメインコンテキストの汚染を招く。",
+      "source_title": "Advanced Claude Code Tips for 2026: Context Hygiene, Plan Mode, Subagents & Power-User Moves",
+      "source_url": "https://saascity.io/blog/advanced-claude-code-tips-2026",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-09-14",
+      "last_date": "2026-09-14",
+      "appearances": 51
+    },
+    {
+      "id": 2030,
+      "title": "本日から週次上限が恒久+25%、ただし暫定ブースト終了で実質は約17%減",
+      "point": "Pro・Max・Team・シート課金Enterpriseの週次上限が、本日9月14日から恒久的にベースライン+25%となる。同時に夏季の暫定+50%ブーストが終了するため、ブーストを使えていたユーザーの体感は減少になる。計算はベースラインを100とすると、暫定期間は150、本日以降は125で、125÷150＝約0.83、すなわち約17%減。「+25%」と「17%減」はどちらも正しく、基準点が違うだけ。週後半に重い作業を寄せている運用では枯渇時期が前倒しになる可能性があるため、effort設定とモデル選択で消費を落とす前提に組み直しておくとよい。",
+      "source_title": "Claude Code raises weekly limits by 25%, but for today's users it is a 17% cut",
+      "source_url": "https://pasqualepillitteri.it/en/news/13403/claude-code-weekly-limits-25-percent-17-cut",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-14",
+      "last_date": "2026-09-14",
+      "appearances": 39
+    },
+    {
       "id": 2006,
       "title": "アイドルセッションのCPU張り付きと起動・再開の遅さがまとめて改善",
       "point": "長時間アイドル状態のセッションでビジーループがCPUコアを1本占有する問題、セッション要約中の高頻度ターミナルフォーカス通知でCPUが高止まりする問題が修正された。加えて `--continue` / `--resume` はSessionStartフックの完了を待たずに会話を即表示するようになり、初回メッセージでトランスクリプト全体を読み直さなくなった。`.claude/workflows/` にスクリプトを多数置いたプロジェクトでも、一覧表示時に各スクリプトを解析しなくなり起動が速くなっている。常時セッションを開きっぱなしにする使い方では体感差が大きい。",
@@ -53,6 +79,21 @@
       "appearances": 35
     },
     {
+      "id": 2037,
+      "title": "インストールしたプラグインは「Customize」で自社ワークフローに寄せる",
+      "point": "プラグインはスキル・スラッシュコマンド・コネクタ・サブエージェントを職務単位でまとめたパッケージ。素のClaudeは指示すればできるが、プラグインは「その領域のワークフローと使うアプリを最初から知っている専門家」にする位置付け、という整理。インストール後は Customize → Plugins →（プラグイン名）→ Customize から専用のCoworkタスクが開き、Claudeと対話しながら自組織向けに調整できる。導入直後に一度これを通しておくと、汎用設定のまま使うより噛み合いが良くなる。",
+      "source_title": "Use plugins in Claude | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/13837440-use-plugins-in-claude",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-09-14",
+      "last_date": "2026-09-14",
+      "appearances": 34
+    },
+    {
       "id": 2007,
       "title": "シンボリックリンク経由でdeny権限ルールが素通りする不具合を修正",
       "point": "macOSの `/etc` `/tmp` `/var`、Linuxの `/bin` などシンボリックリンクになっているディレクトリに対して、実体パスで指定された場合にdeny/askルールが適用されない不具合があった。Bashコマンドがシンボリックリンク表記で書かれたdenyルールを無視する問題も同時に修正。さらに `env -C` や `eval` など権限チェッカーが解析できないコマンドが同一行にある場合に、ReadやEditのdenyルールが効かないケースも塞がれた。権限ルールで機密ディレクトリを守る設計をしているなら、更新は実質必須。",
@@ -90,6 +131,20 @@
       "first_date": "2026-08-18",
       "last_date": "2026-08-18",
       "appearances": 33
+    },
+    {
+      "id": 2031,
+      "title": "2.1.270で「読み取り専用gitコマンドが権限確認を求める」リグレッションが修正",
+      "point": "9月12日リリースの2.1.270は単一の修正のみ。セッションをしばらく動かし続けた後に、Bashツール内の読み取り専用gitコマンド（`git status`、`git diff` など）が突然権限確認を求めてくる不具合を直した。これは前日の2.1.269で混入したもの。長時間のセッションを回す運用や、自動承認前提のスケジュール実行で「途中から止まる」症状が出ていた場合は、このバージョンへの更新で解消する見込み。`claude --version` で確認できる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化",
+        "新機能"
+      ],
+      "first_date": "2026-09-14",
+      "last_date": "2026-09-14",
+      "appearances": 32
     },
     {
       "id": 2004,
@@ -133,6 +188,20 @@
       "first_date": "2026-08-17",
       "last_date": "2026-08-17",
       "appearances": 32
+    },
+    {
+      "id": 2035,
+      "title": "Opus 5のeffortは既定をmedium、難所だけhighに上げる",
+      "point": "Opus 5は5段階のeffortに対応する。公式の推奨は既定のhighから始めて評価結果に応じて調整、厳しいコーディングやエージェント作業ではxhigh、トークン消費を度外視できる場面でmaxを使う、というもの。一方で実務側の記事では「Opus 5・medium・標準速度」を出発点にし、変数を1つずつ動かす運用が提案されている。難しいデバッグでhighに上げ、それ以外はmediumに据え置く形。上限が実質縮む本日以降、effortはトークン消費の主要な制御点になる。",
+      "source_title": "Effort - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/build-with-claude/effort",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-14",
+      "last_date": "2026-09-14",
+      "appearances": 31
     },
     {
       "id": 1169,
@@ -687,6 +756,20 @@
       "first_date": "2026-04-09",
       "last_date": "2026-04-09",
       "appearances": 16
+    },
+    {
+      "id": 2034,
+      "title": "XMLタグで構造化し、強い語調は避ける",
+      "point": "Claude向けのプロンプト構造化は、Markdownや番号付きリストよりXMLタグ（`<instructions>`、`<context>`、`<example>` など）が最適とされる。また新しめのClaudeモデルでは「CRITICAL!」「YOU MUST」「NEVER EVER」といった攻撃的な強調が過剰に反応し、落ち着いた直接的な指示より結果が悪くなるという指摘がある。あわせて、ルールを説明するより入出力のペアを2〜5例示すほうが効く、不確かなときは不確かと言ってよいと明示的に許可するとハルシネーションが減る、という定番も挙がっている。",
+      "source_title": "Prompt engineering best practices for 2026",
+      "source_url": "https://claude.com/blog/best-practices-for-prompt-engineering",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-14",
+      "last_date": "2026-09-14",
+      "appearances": 15
     },
     {
       "id": 1996,
@@ -1942,6 +2025,21 @@
       "appearances": 9
     },
     {
+      "id": 2038,
+      "title": "Agent SkillsとSkills APIがベータ卒業、betaヘッダ不要に",
+      "point": "Claude APIのAgent SkillsとSkills API（`/v1/skills`）がベータを卒業し、`skills-2025-10-02` betaヘッダが不要になった。`container` パラメータ経由でSkillを読み込むMessages APIリクエストも同様。ヘッダを送り続けるリクエストはそのまま動作するため、移行は急がなくてよいが、新規実装ではヘッダなしで書ける。同時期にFiles APIもベータ卒業しており、`expires_in_seconds` によるファイル有効期限設定と `page`/`next_page` ページネーションが標準の応答形式になっている。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "エージェント",
+        "新機能"
+      ],
+      "first_date": "2026-09-14",
+      "last_date": "2026-09-14",
+      "appearances": 8
+    },
+    {
       "id": 2023,
       "title": "`/goal` がAPIエラーや上限到達で無言停止せず再試行するようになった",
       "point": "`/goal` の実行中にAPIエラー、ネットワーク切断、トークン上限が発生すると、それ以降静かに停止していた。修正後はバックオフ付きで再試行するか、停止する場合は理由を明示するようになった。利用上限に達した場合はリセットまで待機する挙動も含まれる。完了条件を設定して長時間放置する使い方では、朝見たら何も進んでいないという事故が減る。",
@@ -2371,6 +2469,17 @@
       "appearances": 8
     },
     {
+      "id": 2032,
+      "title": "スキルは巨大な1本にせず、役割ごとに分割する",
+      "point": "全部を1つのスキルに詰め込むより、役割ごとに分けたほうが出力品質が上がるという検証報告。例として、文章まわりを1本の巨大スキルにするのではなく、全体のトーンを定義するスキル、社内文書用スキル、ニュースレター用スキルの3本に分ける、という分け方が挙げられている。Claudeはセッション開始時に各スキルのメタデータだけを読み、関連する場合にのみ本体を読み込むため、分割すると無関係なコンテキストの流入も抑えられる。社内配布するスキルを設計する際の基本方針として使える。",
+      "source_title": "Claude Cowork Guide for Power Users: 50+ Tested Tips on Plugins, Skills, Sub-Agents, and Memory",
+      "source_url": "https://karozieminski.substack.com/p/claude-cowork-guide-plugins-memory-sub-agents-tips",
+      "tags": [],
+      "first_date": "2026-09-14",
+      "last_date": "2026-09-14",
+      "appearances": 7
+    },
+    {
       "id": 2026,
       "title": "`ant beta:sessions connect` でManaged Agentsセッションにターミナルから入る",
       "point": "ant CLIに追加されたコマンドで、実行中のClaude Managed Agentsセッションに自分のターミナルを接続できる。セッションをライブで追いかけ、メッセージを送り、承認待ちのツール呼び出しをその場で許可・拒否できる。`--web` を付けるとClaude Consoleのセッションビューアをローカルで配信して、そちらで開く。上記の `auto` ポリシーと組み合わせると、承認待ちで止まったエージェントを即座に捌く導線になる。",
@@ -2774,6 +2883,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 2036,
+      "title": "fast modeは対話ループに限定し、大型ジョブは標準速度に回す",
+      "point": "fast modeはOpusを最大2.5倍速で動かす設定で、Opus 5とOpus 4.8で利用できる。品質は同一だが単価が上がり、標準の$5/$25 per MTokに対しfast modeは$10/$50 per MTok。サブスクリプションではfast modeは使用クレジットから課金され、プランのレート制限には含まれない。対応Opusモデルはfast modeのレート制限プールを共有し、上限に達すると自動的に標準速度へフォールバックする。1Mコンテキストのリファクタのような無人・長時間のジョブは標準速度に回し、fast modeは対話的な追い込みに使うのが費用対効果が良い。",
+      "source_title": "Speed up responses with fast mode - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/fast-mode",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-14",
+      "last_date": "2026-09-14",
+      "appearances": 6
     },
     {
       "id": 2020,
@@ -6422,6 +6544,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2039,
+      "title": "コマースエージェントのブループリントがApache-2.0で公開",
+      "point": "9月2日公開。小売・旅行・通信・エンタメ向けに、Claude上でコマースエージェントを構築するためのパターンとガードレールをまとめたもの。カタログ検索・商品比較・カート構築を行うショッピングエージェントと、在庫・価格・マーケティングを扱うマーチャントエージェントの2種類を含む。ライセンスはApache 2.0。ShopifyとPricelineが既に稼働させており、カートが最大35%大きくなる、購入完了率が60%高いといった数字が示されている。エージェント設計のガードレール事例として、コマース以外の領域でも構成の参考になる。",
+      "source_title": "Anthropic Released Claude Commerce Agents: An Apache-2.0 Blueprint",
+      "source_url": "https://www.marktechpost.com/2026/09/03/anthropic-released-claude-commerce-agents-an-apache-2-0-blueprint-for-shopping-and-merchant-agents-across-retail-travel-telecom-and-entertainment/",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-09-14",
+      "last_date": "2026-09-14",
+      "appearances": 3
     },
     {
       "id": 94,
@@ -22417,6 +22552,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-14",
+      "highlights": [
+        "本日から週次上限が恒久+25%へ切り替わり — ベースライン比では増、暫定+50%ブースト中の現状比では約17%減",
+        "Claude Code 2.1.270 — 2.1.269で混入した「読み取り専用gitコマンドが権限確認を求める」リグレッションを修正",
+        "スキルは1つに詰め込まず分割する — 巨大な単一スキルより、役割ごとに分けたほうが結果が良いという検証報告"
+      ]
+    },
+    {
       "date": "2026-09-13",
       "highlights": [
         "本日が暫定+50%ブーストの最終日 — 明日9月14日から恒久+25%へ切り替わり、現状比では約17%減になる",
@@ -23680,5 +23823,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-13T08:00:04.852076"
+  "generated_at": "2026-09-14T08:00:04.986600"
 }
