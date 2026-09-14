@@ -626,6 +626,19 @@
       "appearances": 18
     },
     {
+      "id": 2045,
+      "title": "共有アーティファクトは「閲覧者自身の権限」で動く前提で設計する",
+      "point": "共有したアーティファクトは、作成者ではなく開いた人のコネクタとデータソースに接続する。閲覧者が元データへのアクセス権を持たない部分は、データの代わりにエラーが表示される。つまり「自分の画面で見えているもの」がそのまま相手に見えるわけではない。またアーティファクト内に保持する情報は、全員で共有する項目（タスクトラッカーの共通項目など）と各ユーザー個別の項目（個人ToDoなど）を作成者側で分けられるため、機密情報を入れる前に共有ストレージを使っていないか確認する必要がある。逆方向の注意として、他人から共有されたアーティファクトは「差出人不明のファイル」と同じ扱いにすること、出所が不確かなら開かないことが公式に明記されている。他人のコードとコンテンツを自分の会話に持ち込む行為になるため。",
+      "source_title": "Use artifacts in Claude Cowork | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14729249-use-artifacts-in-claude-cowork",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-15",
+      "last_date": "2026-09-15",
+      "appearances": 17
+    },
+    {
       "id": 1258,
       "title": "デフォルトモデルはOpus 4.8にし、Fable 5はエスカレーション専用にする",
       "point": "作業の9割をプラン込みのOpus 4.8（またはSonnet 5）で処理し、最難関の問題だけをクレジット課金のFable 5にエスカレーションする構成が、切替後の最もコスト効率の良い運用。Fable 5をハードコードしたパイプラインは、クレジット切れ時にOpus 4.8へ自動フォールバックするよう設計しておく（6月の提供停止と同じ教訓）。軽い選択的利用なら月数ドル、常用なら月$135超と、使い方で二桁の開きが出る。",
@@ -676,6 +689,19 @@
       "first_date": "2026-06-01",
       "last_date": "2026-06-01",
       "appearances": 17
+    },
+    {
+      "id": 2044,
+      "title": "Coworkのアーティファクトが新方式に移行：保存・共有・バージョン管理に対応",
+      "point": "2026年8月19日以降にCoworkで作成したアーティファクトは新方式になり、アカウントに保存され、組織内の相手と共有でき、Web上でも開ける。更新のたびに新バージョンが保存され、バージョン履歴から比較・復元ができる。共有時は最新版か特定バージョンかを選べ、特定バージョンのリンクは常にその版を表示する。Pro・Max・Team・EnterpriseでGA。ただしCMEK・ゼロデータ保持・HIPAA構成を使う組織は従来のlive artifactsのままになる。既存のlive artifactsは動き続けるがその場での編集はできず、「Share」から新方式として再公開すると以降は編集できる。既に共有済みなら再公開ダイアログに既存リンクが出るので、共有バージョンを「Latest」にすればリンクを配り直さずに新版へ差し替わる。",
+      "source_title": "Use artifacts in Claude Cowork | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14729249-use-artifacts-in-claude-cowork",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-09-15",
+      "last_date": "2026-09-15",
+      "appearances": 16
     },
     {
       "id": 54,
@@ -1123,6 +1149,19 @@
       "appearances": 13
     },
     {
+      "id": 2052,
+      "title": "検証手段を与えることがClaude Code最大の品質改善策",
+      "point": "公式のパワーユーザー向けガイドが「このガイドで最も効果が大きいのは検証。1つだけ採用するならこれにすること」と明言している。Claudeが自分でフィードバックループを閉じられれば、出力が正しくなるまで自分で反復する。検証の形は領域ごとに違い、bashコマンド、テストスイート、シミュレータ、ブラウザテストなどになるが、原則は同じで「領域固有の検証手段に投資する」こと。フロントエンドならChrome拡張を入れる（ブラウザを使わせずにWebサイトを作らせても良い出来にはならない、という比喩で説明されている）。組み込み・車載系なら、シミュレータやHILのログを読ませる経路を用意するのが対応物になる。",
+      "source_title": "Claude Code power user tips | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-09-15",
+      "last_date": "2026-09-15",
+      "appearances": 12
+    },
+    {
       "id": 2010,
       "title": "Claude appsゲートウェイの `pricing:` 設定で `/cost` と請求を一致させる",
       "point": "`gateway.yaml` に `pricing:` を設定すると、サインイン済みのClaude Codeクライアントが管理設定経由で同じレートを受け取るようになり、`/cost` やテレメトリの数値が実際の課金メーターと一致する。社内でコスト按分をしている場合、各開発者の `/cost` 表示をそのまま集計根拠にできる。あわせて `access_control.allow_cidrs` が空の場合の起動時警告と、パブリックアドレスからの初回リクエスト時の一度きりの警告が追加された。",
@@ -1252,6 +1291,20 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 12
+    },
+    {
+      "id": 2050,
+      "title": "`/permissions` のワイルドカードで許可リストを育てる",
+      "point": "権限を全部スキップするのではなく、`/permissions` で安全なコマンドを事前許可してチームの `.claude/settings.json` にコミットするのが公式の推奨。確認プロンプトを減らしつつ、監査可能な許可リストが残る。ワイルドカード構文が完全にサポートされており、`\"Bash(bun run *)\"` や `\"Edit(/docs/**)\"` のような書き方ができる。Claude Codeの権限機構はプロンプトインジェクション検知・静的解析・サンドボックス・人間の確認を層状に組み合わせたもので、初期状態で安全な少数のコマンドが承認済み。`/permissions` で追加する分はそのベースラインへの加算として扱われる。",
+      "source_title": "Claude Code power user tips | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-09-15",
+      "last_date": "2026-09-15",
+      "appearances": 11
     },
     {
       "id": 1234,
@@ -2885,6 +2938,22 @@
       "appearances": 7
     },
     {
+      "id": 2051,
+      "title": "変更後に `/simplify` を付けて並列レビューを走らせる",
+      "point": "変更を加えた後のプロンプトに `/simplify` を付け足すと、並列エージェントが変更箇所を「再利用性・品質・効率・CLAUDE.md準拠」の観点で一度にレビューする。使い方は `hey claude make this code change then run /simplify` のように、変更指示と同じプロンプトに続けて書くだけ。レビュー観点を毎回プロンプトに書き出す必要がなくなり、CLAUDE.mdに書いた規約に対する違反も同じパスで拾える。人間のレビューに回す前の一次フィルタとして使う位置付け。",
+      "source_title": "Claude Code power user tips | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "CLAUDE.md",
+        "プロンプト",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-09-15",
+      "last_date": "2026-09-15",
+      "appearances": 6
+    },
+    {
       "id": 2036,
       "title": "fast modeは対話ループに限定し、大型ジョブは標準速度に回す",
       "point": "fast modeはOpusを最大2.5倍速で動かす設定で、Opus 5とOpus 4.8で利用できる。品質は同一だが単価が上がり、標準の$5/$25 per MTokに対しfast modeは$10/$50 per MTok。サブスクリプションではfast modeは使用クレジットから課金され、プランのレート制限には含まれない。対応Opusモデルはfast modeのレート制限プールを共有し、上限に達すると自動的に標準速度へフォールバックする。1Mコンテキストのリファクタのような無人・長時間のジョブは標準速度に回し、fast modeは対話的な追い込みに使うのが費用対効果が良い。",
@@ -3787,6 +3856,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 2047,
+      "title": "`/batch` で大規模移行をワークツリーエージェントへ扇状展開する",
+      "point": "`/batch` は移行内容についてこちらに聞き取りを行った上で、必要な数だけワークツリーエージェントに作業を分配する。数十でも数百でも展開でき、各エージェントは隔離環境で作業し、自分の変更を自分でテストし、個別にPRを作る。使い方は `/batch migrate src/ from JavaScript to TypeScript` のように移行内容を渡すだけ。Automotive系の一括対応、たとえば全モジュールへのログ出力規約適用やAPI呼び出しの置換のような「同じ変換を大量のファイルに適用する」作業に向く。並列数に応じてトークン消費も増えるため、週次上限との兼ね合いは要確認。",
+      "source_title": "Claude Code power user tips | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "API",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-09-15",
+      "last_date": "2026-09-15",
+      "appearances": 5
     },
     {
       "id": 1991,
@@ -4878,6 +4962,22 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2048,
+      "title": "サブエージェントのfrontmatterに `isolation: worktree` を書く",
+      "point": "サブエージェント自体を隔離ワークツリーで動かせる。エージェント定義ファイル（`.claude/agents/<name>.md`）のfrontmatterに `isolation: worktree` を追記するだけで、`model: haiku` などと併記できる。あとは「同期IOを全部非同期に移行して。変更をバッチ分割し、ワークツリー分離で10体並列に立ち上げて。各エージェントはエンドツーエンドでテストしてからPRを出して」のように自然文で指示する。メインリポジトリを触らせずに大量の並列変更を試せるため、失敗時の巻き戻しコストが低い。",
+      "source_title": "Claude Code power user tips | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "モデル",
+        "生産性"
+      ],
+      "first_date": "2026-09-15",
+      "last_date": "2026-09-15",
+      "appearances": 4
     },
     {
       "id": 1833,
@@ -12855,6 +12955,49 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2043,
+      "title": "Smart Reports（Enterprise・ベータ）でチームのClaude利用を分析する",
+      "point": "9月10日付でEnterpriseプランにベータ提供が始まった機能。チームがClaudeをどう使っているかを分析し、実際に片付いた仕事、そのコスト、セッションが詰まっている箇所、そして「共有スキルとしてパッケージ化する価値のある反復パターン」までをレポートする。個々人の使い方を見て回らずに、組織としてスキル化・標準化すべき作業を特定できるのが要点。利用状況の数字だけを出す従来のAnalytics APIとは目的が異なり、施策の候補出しに寄っている。Enterpriseプラン限定。",
+      "source_title": "Release notes | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-09-15",
+      "last_date": "2026-09-15",
+      "appearances": 1
+    },
+    {
+      "id": 2046,
+      "title": "アーティファクトのコネクタ承認は「初回1回・ツール単位」で決まる",
+      "point": "アーティファクトが連携アプリを使う前に、Claudeがどのコネクタとツールを使うかを提示して許可を求める。ここで個別のツールをオフにでき、その選択は変更するまでそのアーティファクトに保存される。以降は呼び出しごとに再確認されない。つまり最初の承認画面が実質的な権限設計のポイントになる。なお、操作ごとに承認が必要なコネクタツールはアーティファクトからは利用できない仕様。定期的に開くダッシュボードを作る場合、初回にツールを絞り込んでおくと後から気づきにくい範囲外アクセスを防げる。",
+      "source_title": "Use artifacts in Claude Cowork | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14729249-use-artifacts-in-claude-cowork",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-15",
+      "last_date": "2026-09-15",
+      "appearances": 1
+    },
+    {
+      "id": 2049,
+      "title": "`--agent` でカスタムシステムプロンプトのエージェントを既定にする",
+      "point": "カスタムエージェントは見落とされがちだが強力なプリミティブ、という位置付け。`.claude/agents` にエージェントを定義して `claude --agent=<name>` で起動する。公式例として、`tools: Read` だけを与え「ファイル編集もbash実行もできない読み取り専用エージェント」を定義するパターンが挙がっている。メインの会話で使う既定エージェントは `settings.json` に `\"agent\"` を書くか `claude --agent <name>` で指定する。各エージェントには名前・色・ツールセット・許可／禁止ツール・権限モード・モデルを個別に設定できる。レビューや仕様確認のように「読むだけ」の作業を、権限側で保証した状態で回せる。",
+      "source_title": "Claude Code power user tips | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-15",
+      "last_date": "2026-09-15",
+      "appearances": 1
     },
     {
       "id": 2018,
@@ -22552,6 +22695,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-15",
+      "highlights": [
+        "本日9月15日付の新規公開情報は確認できず — Claude Code changelogは2.1.270（9/12）が最新、Help Centerのリリースノートも9/10が最新のまま",
+        "Smart Reports（Enterprise・ベータ） — チームのClaude利用を分析し、「共有スキルにすべき反復パターン」まで報告させる",
+        "Coworkのアーティファクトが新方式へ — アカウント保存・組織内共有・バージョン管理に対応し、旧live artifactsは新規作成終了"
+      ]
+    },
+    {
       "date": "2026-09-14",
       "highlights": [
         "本日から週次上限が恒久+25%へ切り替わり — ベースライン比では増、暫定+50%ブースト中の現状比では約17%減",
@@ -23823,5 +23974,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-14T08:00:04.986600"
+  "generated_at": "2026-09-15T08:00:04.961748"
 }
