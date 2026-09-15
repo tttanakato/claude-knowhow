@@ -1757,6 +1757,19 @@
       "appearances": 10
     },
     {
+      "id": 2058,
+      "title": "Remoteセッションでも fast mode を使う",
+      "point": "2.1.271でClaude Code Remoteセッション（クラウド／セルフホストランナー）がfast modeに対応した。ホスト側のfast-mode設定、またはセッション内で`/fast`と入力した指定が、組織が許可している範囲で適用される。組織側でfast modeを無効化している場合に`/fast off`が誤エラーを返す不具合も同時に修正された。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-09-16",
+      "last_date": "2026-09-16",
+      "appearances": 9
+    },
+    {
       "id": 2000,
       "title": "Claude Tag：クレジット枯渇時のエラー表示とカスタムコネクタ導線が改善",
       "point": "組織の利用クレジットが尽きた状態でSlackの@Claudeにタスクを投げると「The API rejected the request as invalid」という無関係な文言が返っていたが、クレジット不足である旨と追加方法を案内する内容に変更された。加えて、管理設定のプリセット接続フォームに「カスタムコネクタを使う」リンクが追加され、途中から切り替えられるようになった。運用担当が原因究明に費やす時間を減らす類の改善。",
@@ -2076,6 +2089,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 2060,
+      "title": "Dynamic Workflowsが利用上限で自動一時停止するようになった",
+      "point": "使用量の上限に達したときにワークフローが該当エージェントを切り捨てず、一時停止してリセット後に自動継続する挙動に改善された。あわせてProプランの既定ワークフローサイズがsmallに、mediumの目安が15→10エージェントに引き下げられた。大規模fan-outを常用している場合は既定値の変更を前提に見積もりを見直したい。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-09-16",
+      "last_date": "2026-09-16",
+      "appearances": 8
     },
     {
       "id": 2038,
@@ -4962,6 +4988,17 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2059,
+      "title": "Monitorウォッチは必ず期限付きになった",
+      "point": "Monitorの監視は常にデッドラインを持つ仕様に変更された。上限は30分、単発の`-p`実行では10分。期限が来るとClaudeに再設定を促す通知が飛ぶ。無期限だった`persistent`オプションは置き換えられたため、長時間の監視を前提にしていた運用は再アームを含む設計に直す必要がある。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-16",
+      "last_date": "2026-09-16",
+      "appearances": 4
     },
     {
       "id": 2048,
@@ -9309,6 +9346,44 @@
       "appearances": 3
     },
     {
+      "id": 2057,
+      "title": "auto modeのサンドボックスをコマンド単位のドメイン許可で運用する",
+      "point": "サンドボックス有効時のauto modeで、Bash／PowerShell／Monitorに`allowed_domains`をコマンド単位で指定できるようになった。そのコマンドが必要とするホストだけが審査の上で開放され、他ホストは拒否される。セッション全体に広いネットワーク許可を与える運用より、影響範囲を小さくできる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-16",
+      "last_date": "2026-09-16",
+      "appearances": 2
+    },
+    {
+      "id": 2063,
+      "title": "Smart Reports（Enterpriseベータ）でチームのClaude利用を棚卸しする",
+      "point": "Enterpriseプラン向けのスマートレポートがベータ提供中。チームがどの種類の作業にClaudeを使い、いくらかかり、どこで詰まっているかを分析し、繰り返し発生するパターンを共有スキル化する起点プロンプトまで提示する。ベータ期間中は組織あたり毎月10件まで無料。CMEK・HIPAA構成・Access Transparency利用組織は対象外。",
+      "source_title": "Get started with smart reports | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports",
+      "tags": [
+        "プロンプト",
+        "新機能"
+      ],
+      "first_date": "2026-09-16",
+      "last_date": "2026-09-16",
+      "appearances": 2
+    },
+    {
+      "id": 2064,
+      "title": "Managed Agentsのweb_search/web_fetchをドメイン単位で制限する",
+      "point": "Claude Developer Platformで、Managed Agentsの`web_search`・`web_fetch`ツールに`allowed_domains`／`blocked_domains`を設定して到達先サイトを制限できる。あわせて予算コントロール、アドバイザー対応、地理固定推論、GitHubからのスキル読み込みが追加され、支出・データ所在・再利用可能な能力の管理性が上がった。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-09-16",
+      "last_date": "2026-09-16",
+      "appearances": 2
+    },
+    {
       "id": 1995,
       "title": "`effort:` frontmatter が既定effort固定モデルでも効くようになった",
       "point": "カスタムコマンド・スキル・サブエージェントのfrontmatterに書いた `effort:` が、既定effortがピン留めされているモデル（Opus 4.7、Opus 4.8、Fable 5）では無視されていた。この不具合が修正され、定義ファイル側で処理の重さを宣言できるようになった。「調査系サブエージェントは低effort、設計レビューは高effort」といった役割ごとのコスト設計を、呼び出し時の指定に頼らず定義に埋め込める。",
@@ -12955,6 +13030,59 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2056,
+      "title": "`omitClaudeMd` でサブエージェントをCLAUDE.md非読み込みにする",
+      "point": "2.1.271でエージェントのfrontmatterと`--agents` JSONに`omitClaudeMd`が追加された。カスタム／プラグインのサブエージェントを、ユーザー・プロジェクト・ローカルのCLAUDE.mdを読み込ませずに起動できる。親のCLAUDE.mdが長く汚染要因になるレビュー系・検証系サブエージェントで、コンテキストを純化するのに使える。管理ポリシーファイルは従来どおり読み込まれる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "CLAUDE.md",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-16",
+      "last_date": "2026-09-16",
+      "appearances": 1
+    },
+    {
+      "id": 2061,
+      "title": "Markdownをアーティファクト公開すると文書スタイルで描画される",
+      "point": "アーティファクトとして公開したMarkdownファイルが、タイトルヘッダー・文書用タイポグラフィ・コードのシンタックスハイライト付きの整形ページとして表示されるようになった。設計メモやレビュー結果をそのまま共有ページにできる。1セッションで再公開を監視できるアーティファクト数も5→10に拡大された。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-16",
+      "last_date": "2026-09-16",
+      "appearances": 1
+    },
+    {
+      "id": 2062,
+      "title": "`--accept-command <sha256>` でプラグイン導入を厳密承認する",
+      "point": "`claude plugin install` / `update` に`--accept-command <sha256>`が追加された。直前の`--json`実行が表示したコマンドと完全一致する場合のみ承認するため、`-y`による無条件承認と違い、表示された内容と実行される内容の差し替えを防げる。CI等の自動導入パスで有効。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-16",
+      "last_date": "2026-09-16",
+      "appearances": 1
+    },
+    {
+      "id": 2065,
+      "title": "Google が全エンジニアにClaude Opus 5を開放（9/15）",
+      "point": "Googleが社内IDE「Antigravity」経由で全エンジニアにClaude Opus 5へのアクセスを許可した。従来は社内開発でGeminiの利用を原則とし、Claude CodeやOpenAI Codexをブロックしていた方針からの転換。同社は「Geminiは引き続き社内開発の主要かつ基盤モデル」としており、Claudeはユーザークォータの範囲で特定タスクに使う位置づけ。",
+      "source_title": "Techmeme: Google gives all of its engineers Claude Opus 5 access via Antigravity",
+      "source_url": "https://www.techmeme.com/260915/p5",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-09-16",
+      "last_date": "2026-09-16",
+      "appearances": 1
     },
     {
       "id": 2043,
@@ -22695,6 +22823,13 @@
   ],
   "daily": [
     {
+      "date": "2026-09-16",
+      "highlights": [
+        "Claude Code 2.1.271の権限強化 — auto modeのサンドボックスでコマンド単位のドメイン許可、サブエージェントのCLAUDE.md除外、プラグイン導入のハッシュ承認が追加",
+        "Google がAntigravityで全エンジニアにClaude Opus 5を開放 — 社内は原則Gemini限定だった方針を転換、外部モデル併用が実務水準で認知された事例"
+      ]
+    },
+    {
       "date": "2026-09-15",
       "highlights": [
         "本日9月15日付の新規公開情報は確認できず — Claude Code changelogは2.1.270（9/12）が最新、Help Centerのリリースノートも9/10が最新のまま",
@@ -23974,5 +24109,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-15T08:00:04.961748"
+  "generated_at": "2026-09-16T08:00:05.300820"
 }
