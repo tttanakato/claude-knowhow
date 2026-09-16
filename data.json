@@ -2964,6 +2964,43 @@
       "appearances": 7
     },
     {
+      "id": 2069,
+      "title": "`/branch`・`--fork-session` でセッションをフォークする",
+      "point": "セッションの分岐は`/branch`をセッション内で打つか、CLIで`claude --resume <session-id> --fork-session`を実行する2通り。2.1.273では`claude --remote-control`／`/remote-control`で開始したセッションをClaudeアプリ側からフォークできるようになり、フォークは自分のPC上でバックグラウンドセッションとして走る。同じ文脈から分岐して別案を試す使い方が、ローカル／リモート双方で揃った。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-17",
+      "appearances": 6
+    },
+    {
+      "id": 2070,
+      "title": "MCPサーバーの再接続断念を通知で気づく",
+      "point": "セッション途中でMCPサーバーが切断され、自動再接続が最終的に失敗した場合に通知が出るようになった。通知は`/mcp`を指すので、そこから再認証や再接続を行える。従来は「ツールが突然使えない」状態に気づきにくかったので、長時間の自動実行で取りこぼしを減らせる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-17",
+      "appearances": 6
+    },
+    {
+      "id": 2071,
+      "title": "`CLAUDE_CODE_GATEWAY_HINT_HEADERS=1` でLLMゲートウェイにリクエスト種別を伝える",
+      "point": "2.1.273で`x-claude-code-request-class`、`x-claude-code-agent-type`、`x-claude-code-prev-tool-durations`、`x-claude-code-compaction`、`x-claude-code-context-compacted`の各ヘッダーが追加された。環境変数によるオプトイン方式。社内LLMゲートウェイ側でリクエストの性質（どのエージェント種別か、圧縮中か等）に応じたルーティングやコスト按分をしたい場合の材料になる。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-17",
+      "appearances": 6
+    },
+    {
       "id": 2051,
       "title": "変更後に `/simplify` を付けて並列レビューを走らせる",
       "point": "変更を加えた後のプロンプトに `/simplify` を付け足すと、並列エージェントが変更箇所を「再利用性・品質・効率・CLAUDE.md準拠」の観点で一度にレビューする。使い方は `hey claude make this code change then run /simplify` のように、変更指示と同じプロンプトに続けて書くだけ。レビュー観点を毎回プロンプトに書き出す必要がなくなり、CLAUDE.mdに書いた規約に対する違反も同じパスで拾える。人間のレビューに回す前の一次フィルタとして使う位置付け。",
@@ -3882,6 +3919,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 2077,
+      "title": "長時間セッションの応答性が改善された",
+      "point": "フックの進捗表示とサブエージェントの活動更新が、更新のたびに会話全体を再処理しなくなった。長いセッションでフックやサブエージェントを多用すると体感が重くなっていたが、この経路が解消される。あわせて長時間セッションで背景コマンド（watchタスクやdevサーバー）が圧縮後に二重起動する不具合も修正された。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-17",
+      "appearances": 5
     },
     {
       "id": 2047,
@@ -4988,6 +5038,42 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2073,
+      "title": "Messages APIのオンデマンド圧縮で会話を任意のタイミングで畳む",
+      "point": "9/14の更新で、Messages APIが`compact-2026-09-04`ベータヘッダー付きのトップレベル`compaction`パラメータに対応した。送った履歴を要約した署名付き`compaction`ブロックが返るので、以降のリクエストでは元の履歴の代わりにそれを先頭に置く。圧縮のタイミングを自分で決められ、バックグラウンド実行も可能。要約の後ろに直近ターンを原文のまま残せる点が実運用では効く。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-17",
+      "appearances": 4
+    },
+    {
+      "id": 2074,
+      "title": "アドバイザーツールの二重計上が修正され自動コンパクトが実サイズで発火するように",
+      "point": "コンテキストメーターと自動コンパクトが、アドバイザーツールのターンを実際の約2倍のサイズで数えていた不具合が修正された。結果として自動コンパクトが実際のウィンドウの半分程度で発火していた。アドバイザーを使う構成で「まだ余裕があるのに圧縮される」と感じていた場合、この修正で挙動が変わるためコンパクト前提の運用は見直したい。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-17",
+      "appearances": 4
+    },
+    {
+      "id": 2078,
+      "title": "アーティファクトの部分更新と公開の再送が安全になった",
+      "point": "アーティファクトのデータベース書き込みで、ドキュメント全体を書き直さずに単一フィールドだけ削除できるようになった。また、claude.aiに到達した後で接続が切れた公開処理が、失敗や重複バージョン生成ではなく安全に再送される。ダッシュボード的なアーティファクトを継続更新する運用で、状態の壊れ方が減る。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-17",
+      "appearances": 4
     },
     {
       "id": 2059,
@@ -6681,6 +6767,33 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2072,
+      "title": "Salesforce in Claude（ベータ）で商談情報をClaudeに取り込む",
+      "point": "9/15にベータ公開。既存のSalesforce権限の範囲で、取引先・商談・パイプラインをClaude側から扱える。ミーティング準備、商談の健全性レビュー、パイプラインレビューなど37のスキルが同梱され、当日の会議・期日間近の商談・要返信スレッドをまとめた朝のブリーフをスケジュール実行できる。Salesforceのベータ申込を通った組織の有料プランが対象。",
+      "source_title": "Salesforce in Claude | Claude by Anthropic",
+      "source_url": "https://claude.com/blog/salesforce-in-claude",
+      "tags": [
+        "自動化",
+        "新機能"
+      ],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-17",
+      "appearances": 3
+    },
+    {
+      "id": 2075,
+      "title": "`blockReadsOutsideWorkingDirectories` がメモリディレクトリにも効くようになった",
+      "point": "リポジトリの設定で指定されたメモリディレクトリが、この権限設定の有効時にプロンプトへ読み込まれず、リコール・インデックス化・メモリ抽出のいずれにも使われなくなった。信頼できないリポジトリを開くときに、設定ファイル経由で作業ディレクトリ外を読ませる経路が1つ塞がれた形。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-17",
+      "appearances": 3
     },
     {
       "id": 2039,
@@ -9344,6 +9457,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2076,
+      "title": "Bedrock／Vertex／Foundryのauto modeは当面ローカル分類器が既定",
+      "point": "これらのプラットフォーム上でのauto modeは、既定でローカル分類器を使う挙動に変更された。プラットフォーム側のサーバーサイド分類器を使いたい場合は`CLAUDE_CODE_AUTO_MODE_SERVER=1`を設定する。社内でBedrock／Vertex経由の利用が標準になっている場合、承認判定の挙動が変わる可能性があるため設定を確認しておきたい。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-17",
+      "appearances": 2
     },
     {
       "id": 2057,
@@ -22823,6 +22947,13 @@
   ],
   "daily": [
     {
+      "date": "2026-09-17",
+      "highlights": [
+        "Remote Controlセッションのフォークに対応 — スマホから動かしていたセッションを手元PCのバックグラウンドセッションとして分岐でき、`/branch`／`--fork-session`と組み合わせた並行検証がやりやすくなった",
+        "Salesforce in Claude がベータ公開 — 37の営業スキル付きプラグインで商談・パイプラインをClaude側の権限内に取り込む。GitLab・Siemens等で約7,000名が本番利用"
+      ]
+    },
+    {
       "date": "2026-09-16",
       "highlights": [
         "Claude Code 2.1.271の権限強化 — auto modeのサンドボックスでコマンド単位のドメイン許可、サブエージェントのCLAUDE.md除外、プラグイン導入のハッシュ承認が追加",
@@ -24109,5 +24240,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-16T08:00:05.300820"
+  "generated_at": "2026-09-17T08:00:04.427780"
 }
