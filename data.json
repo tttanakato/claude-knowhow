@@ -1015,6 +1015,17 @@
       "appearances": 14
     },
     {
+      "id": 2085,
+      "title": "出力形式は `/docs` やOutputメニューで明示指定する",
+      "point": "統合後のClaudeは依頼内容から出力形式を推測するが、意図と違う形式になることを避けたい場合はメッセージ冒頭で `/docs` と打つか、メッセージボックスの「Output」からDocsを選ぶ。形式を先に固定しておくと、長い会話の途中から資料化する際の手戻りが減る。SWE側の設計レビュー記録やトレーサビリティ文書のように「最終的に文書として残る」成果物では特に有効。",
+      "source_title": "Get started with Claude Docs（Claude Help Center）",
+      "source_url": "https://support.claude.com/en/articles/16923645-get-started-with-claude-docs",
+      "tags": [],
+      "first_date": "2026-09-18",
+      "last_date": "2026-09-18",
+      "appearances": 13
+    },
+    {
       "id": 1985,
       "title": "`--worktree` の起動が大規模リポジトリで並列チェックアウトにより高速化",
       "point": "`--worktree` で新しいワークツリーを作る際、チェックアウトが並列実行されるようになった（git 2.32以降）。ファイル数の多いリポジトリで並列セッションを立ち上げる際の待ち時間が短くなる。ワークツリーごとに独立セッションを走らせる定番の並列開発パターンは、起動コストが下がることで小さなタスクにも適用しやすくなる。",
@@ -2548,6 +2559,17 @@
       "appearances": 8
     },
     {
+      "id": 2088,
+      "title": "Plan Modeで実装前に意図をレビューする",
+      "point": "セッションはPlan Mode（承認するまで読み取り専用）で始めるのが基本。計画が間違っていれば一文で直せるが、差分が間違っていた場合は5ファイル300行の編集を支払った後にほどく作業が発生する。ワンライナー以上の規模では、実装前に意図をレビューする価値が明確に上回る。",
+      "source_title": "Common workflows（Claude Code Docs）",
+      "source_url": "https://code.claude.com/docs/en/common-workflows",
+      "tags": [],
+      "first_date": "2026-09-18",
+      "last_date": "2026-09-18",
+      "appearances": 7
+    },
+    {
       "id": 2032,
       "title": "スキルは巨大な1本にせず、役割ごとに分割する",
       "point": "全部を1つのスキルに詰め込むより、役割ごとに分けたほうが出力品質が上がるという検証報告。例として、文章まわりを1本の巨大スキルにするのではなく、全体のトーンを定義するスキル、社内文書用スキル、ニュースレター用スキルの3本に分ける、という分け方が挙げられている。Claudeはセッション開始時に各スキルのメタデータだけを読み、関連する場合にのみ本体を読み込むため、分割すると無関係なコンテキストの流入も抑えられる。社内配布するスキルを設計する際の基本方針として使える。",
@@ -2962,6 +2984,17 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 2087,
+      "title": "メモリはTopicsで編集・削除し、センシティブ項目は既定でオフ",
+      "point": "Claudeが覚えている内容は設定＞メモリの「Topics」に短いファイル群として一覧され、個別に読む・直す・消すことができる。健康・人種・信条・政治・ジェンダーなどのセンシティブな話題は既定ではメモリに入らず、必要な場合のみ設定で有効化する。会社名の旧称などを1箇所直すと以降の全会話に反映されるため、定期的な棚卸しの費用対効果が高い。",
+      "source_title": "Claude's memory works everywhere, and you decide what's in it（Claude Blog）",
+      "source_url": "https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it",
+      "tags": [],
+      "first_date": "2026-09-18",
+      "last_date": "2026-09-18",
+      "appearances": 6
     },
     {
       "id": 2069,
@@ -5040,6 +5073,33 @@
       "appearances": 5
     },
     {
+      "id": 2072,
+      "title": "Salesforce in Claude（ベータ）で商談情報をClaudeに取り込む",
+      "point": "Salesforceと共同開発したプラグインで、既存のSalesforce権限のままアカウント・商談・パイプラインをClaudeに取り込む。アカウント調査、通話準備、パイプラインレビュー、CRM更新など営業担当の日常業務向けに37のスキルを同梱。初回利用時はセットアップスキルが利用中のツールとコネクタを判別し、担当領域に合わせたArtifactを生成する。有料プラン全体でベータ提供（Salesforceの承認が必要）。",
+      "source_title": "Salesforce in Claude（Claude Blog）",
+      "source_url": "https://claude.com/blog/salesforce-in-claude",
+      "tags": [
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-18",
+      "appearances": 4
+    },
+    {
+      "id": 2084,
+      "title": "Claude Slides（ベータ）でデッキを生成しPowerPoint/PDFに書き出す",
+      "point": "プレゼンを依頼するとClaudeがデッキを下書きし、ブラウザ上で直接編集できる。Claudeからそのまま発表することも、PowerPointファイルまたはPDFとしてダウンロードすることも可能。従来のClaude Design（ビジュアル資産）やExcel/PowerPointアドインと役割が分かれ、ドラフト→編集→レビュー→発表→書き出しまでをClaude内で完結させる構成になった。",
+      "source_title": "Anthropic folds Cowork into Claude and launches Docs and Slides（TNW）",
+      "source_url": "https://thenextweb.com/news/anthropic-claude-cowork-merge-docs-slides",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-09-18",
+      "last_date": "2026-09-18",
+      "appearances": 4
+    },
+    {
       "id": 2073,
       "title": "Messages APIのオンデマンド圧縮で会話を任意のタイミングで畳む",
       "point": "9/14の更新で、Messages APIが`compact-2026-09-04`ベータヘッダー付きのトップレベル`compaction`パラメータに対応した。送った履歴を要約した署名付き`compaction`ブロックが返るので、以降のリクエストでは元の履歴の代わりにそれを先頭に置く。圧縮のタイミングを自分で決められ、バックグラウンド実行も可能。要約の後ろに直近ターンを原文のまま残せる点が実運用では効く。",
@@ -6769,17 +6829,31 @@
       "appearances": 4
     },
     {
-      "id": 2072,
-      "title": "Salesforce in Claude（ベータ）で商談情報をClaudeに取り込む",
-      "point": "9/15にベータ公開。既存のSalesforce権限の範囲で、取引先・商談・パイプラインをClaude側から扱える。ミーティング準備、商談の健全性レビュー、パイプラインレビューなど37のスキルが同梱され、当日の会議・期日間近の商談・要返信スレッドをまとめた朝のブリーフをスケジュール実行できる。Salesforceのベータ申込を通った組織の有料プランが対象。",
-      "source_title": "Salesforce in Claude | Claude by Anthropic",
-      "source_url": "https://claude.com/blog/salesforce-in-claude",
+      "id": 2063,
+      "title": "Smart Reports（Enterpriseベータ）でチームのClaude利用を棚卸しする",
+      "point": "チームがClaudeをどう使っているかを分析し、実際に片付いた仕事・コスト・セッションが詰まっている箇所・共有スキルとして切り出す価値のある反復パターンを報告する機能。Enterpriseプランでベータ提供。「どの作業をスキル化すべきか」を主観ではなく利用ログから決められるため、社内展開のフェーズ2以降で効く。",
+      "source_title": "Release notes（Claude Help Center）",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
       "tags": [
-        "自動化",
         "新機能"
       ],
-      "first_date": "2026-09-17",
-      "last_date": "2026-09-17",
+      "first_date": "2026-09-16",
+      "last_date": "2026-09-18",
+      "appearances": 3
+    },
+    {
+      "id": 2089,
+      "title": "非GitのVCSでもWorktreeフックで分離モードを使う",
+      "point": "Mercurial・Perforce・SVNなどGit以外のVCSを使うチームでも、設定に `WorktreeCreate` と `WorktreeRemove` のフックを定義すれば既定のgit挙動を置き換えてworktreeモードを利用できる。分離の適用範囲は、そのセッションから生成される全サブエージェントに及ぶ。自動車系でSVN/Perforce運用が残る現場でも並列エージェントの分離が使える点は実務的に大きい。",
+      "source_title": "Run parallel sessions with worktrees（Claude Code Docs）",
+      "source_url": "https://code.claude.com/docs/en/worktrees",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-09-18",
+      "last_date": "2026-09-18",
       "appearances": 3
     },
     {
@@ -9476,20 +9550,6 @@
       "source_title": "Claude Code changelog",
       "source_url": "https://code.claude.com/docs/en/changelog",
       "tags": [],
-      "first_date": "2026-09-16",
-      "last_date": "2026-09-16",
-      "appearances": 2
-    },
-    {
-      "id": 2063,
-      "title": "Smart Reports（Enterpriseベータ）でチームのClaude利用を棚卸しする",
-      "point": "Enterpriseプラン向けのスマートレポートがベータ提供中。チームがどの種類の作業にClaudeを使い、いくらかかり、どこで詰まっているかを分析し、繰り返し発生するパターンを共有スキル化する起点プロンプトまで提示する。ベータ期間中は組織あたり毎月10件まで無料。CMEK・HIPAA構成・Access Transparency利用組織は対象外。",
-      "source_title": "Get started with smart reports | Claude Help Center",
-      "source_url": "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports",
-      "tags": [
-        "プロンプト",
-        "新機能"
-      ],
       "first_date": "2026-09-16",
       "last_date": "2026-09-16",
       "appearances": 2
@@ -13154,6 +13214,48 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2082,
+      "title": "ClaudeチャットとCoworkが1つの「Claude」に統合される",
+      "point": "Anthropicは独立製品だったCoworkをチャット本体に統合した。ユーザーが「この作業はチャット向きかCowork向きか」を判断する必要がなくなり、依頼内容に応じてClaude側が回答・ドキュメント・プレゼン・デザイン・長時間エージェント処理のどれで応じるかを決める。UIは単純化する一方で内部の実行系はより強力になる構成。Pro/Maxプランのweb・デスクトップ・モバイルから数週間かけて展開され、Team・Freeは順次。",
+      "source_title": "Claude Cowork and chat are one Claude（Claude Help Center）",
+      "source_url": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude",
+      "tags": [
+        "API",
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-09-18",
+      "last_date": "2026-09-18",
+      "appearances": 1
+    },
+    {
+      "id": 2083,
+      "title": "Claude Docs（ベータ）で会話からドキュメントを作り共同編集する",
+      "point": "Docsはアカウントに保存されるリッチテキスト文書で、見出し・表のほかノートの章立てのような複数タブを持てる。作成した文書はArtifactsタブに保存され、どの会話からでも再度開ける。既定では非公開だが他メンバーを招待でき、Claudeを含む複数人が同じ文書を同時編集できる。「さっき整理した計画をチームに共有できる製品仕様にして」のように会話の続きとして依頼するのが基本形。",
+      "source_title": "Get started with Claude Docs（Claude Help Center）",
+      "source_url": "https://support.claude.com/en/articles/16923645-get-started-with-claude-docs",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-09-18",
+      "last_date": "2026-09-18",
+      "appearances": 1
+    },
+    {
+      "id": 2086,
+      "title": "Enterprise管理者は30日前通知を前提に移行を計画する",
+      "point": "今回の統合はPro/Maxから先行し、Team・Freeが後続、Enterprise組織については変更前に最低30日の事前通知が行われる。組織でCoworkの運用手順書やプラグイン配布ルールを整備している場合、通知を受け取ってから対応を始めると間に合わないおそれがあるため、いまのうちに「Cowork前提の記述」を洗い出しておくのが安全。",
+      "source_title": "Anthropic is killing off Claude Cowork and folding it into Claude chat（VentureBeat）",
+      "source_url": "https://venturebeat.com/technology/anthropic-is-killing-off-cowork-and-folding-it-into-claude-launching-claude-docs-and-claude-slides",
+      "tags": [
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-09-18",
+      "last_date": "2026-09-18",
+      "appearances": 1
     },
     {
       "id": 2056,
@@ -22947,6 +23049,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-18",
+      "highlights": [
+        "ClaudeチャットとCoworkが1つの「Claude」に統合 — 「どこで作業するか」の判断が不要になり、Claudeが回答／ドキュメント／スライド／長時間エージェント処理を自動で選ぶ",
+        "Claude Docs・Claude Slidesがベータ公開 — 会話からそのまま編集可能なドキュメントとデッキを生成し、PowerPoint/PDFで書き出せる",
+        "Enterprise管理者は30日前通知が前提 — 組織展開している場合は移行計画とドキュメント整備を先に着手すべきタイミング"
+      ]
+    },
+    {
       "date": "2026-09-17",
       "highlights": [
         "Remote Controlセッションのフォークに対応 — スマホから動かしていたセッションを手元PCのバックグラウンドセッションとして分岐でき、`/branch`／`--fork-session`と組み合わせた並行検証がやりやすくなった",
@@ -24240,5 +24350,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-17T08:00:04.427780"
+  "generated_at": "2026-09-18T08:00:04.646436"
 }
