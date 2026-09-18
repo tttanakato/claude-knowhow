@@ -1,6 +1,20 @@
 {
   "tips": [
     {
+      "id": 2101,
+      "title": "サブエージェントは「コンテキスト隔離」の道具として使う",
+      "point": "無関係な詳細（検索結果、ファイル内容、中間推論）で文脈が埋まるとモデルの注意が散り品質が落ちる。30ファイルをメインスレッドに読み込む代わりに「loadUserを呼ぶ箇所を全て探して要約せよ」とサブエージェントに委譲すれば、重い読み込みは別コンテキストで行われ、戻るのは短い要約だけ。汎用の「QA」「バックエンド担当」より機能別に絞った方がツール選択も文脈も締まる。ただしトークン消費は単一スレッドの約7倍になる点に注意。",
+      "source_title": "Claude Code Subagents: A Practical 2026 Guide",
+      "source_url": "https://nimbalyst.com/blog/claude-code-subagents-guide/",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-19",
+      "last_date": "2026-09-19",
+      "appearances": 52
+    },
+    {
       "id": 2033,
       "title": "サブエージェントは「調査をメインのコンテキストから追い出す」ために使う",
       "point": "コードベース調査でClaudeが大量のファイルを読むと、そのすべてがメインセッションのコンテキストを消費する。調査をサブエージェントに投げれば、読んだ内容はサブエージェント側のコンテキストに留まり、メインには結論だけが返る。上級Tipsのほぼすべてが「コンテキストを汚さない」という一点に集約される、という整理がされている。あわせて、サブエージェントには1つの具体的なタスクだけを与えること、全ツールを無条件に許可しないことが推奨されている。全ツール許可は余計なトークン消費とメインコンテキストの汚染を招く。",
@@ -624,6 +638,20 @@
       "first_date": "2026-05-17",
       "last_date": "2026-05-17",
       "appearances": 18
+    },
+    {
+      "id": 2099,
+      "title": "重要情報はプロンプトの先頭と末尾に配置する",
+      "point": "関連情報が文脈の先頭または末尾にあるときに精度が最も高くなり、中盤に埋もれると30%以上の精度低下が起きるとされる。重要な指示は最初と最後に置き、中央には置かない。また、システムプロンプトを空にしないこと（3文でも長いユーザーメッセージより効く）、例示と指示の一貫性を保つこと（「簡潔に」と書きながら500語の例を置くとClaudeは例に従う）も重要。",
+      "source_title": "Prompt engineering best practices for 2026",
+      "source_url": "https://claude.com/blog/best-practices-for-prompt-engineering",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-09-19",
+      "last_date": "2026-09-19",
+      "appearances": 17
     },
     {
       "id": 2045,
@@ -2559,6 +2587,19 @@
       "appearances": 8
     },
     {
+      "id": 2094,
+      "title": "Projectsは1日200スレッド上限、プラン枠の消費が速い",
+      "point": "各スレッドが「フルのセッション」として動くため、単一セッションよりプラン上限を大幅に速く消費する。新規スレッドは1日200本が上限。並列度を上げる前に、どの作業を本当にスレッド化すべきかを絞り込む運用が前提になる。長時間タスクの分割設計とコスト見積もりをセットで考えたい。",
+      "source_title": "Anthropic's new Claude Code feature could drain your plan before lunch",
+      "source_url": "https://thenewstack.io/claude-code-parallel-projects/",
+      "tags": [
+        "生産性"
+      ],
+      "first_date": "2026-09-19",
+      "last_date": "2026-09-19",
+      "appearances": 7
+    },
+    {
       "id": 2088,
       "title": "Plan Modeで実装前に意図をレビューする",
       "point": "セッションはPlan Mode（承認するまで読み取り専用）で始めるのが基本。計画が間違っていれば一文で直せるが、差分が間違っていた場合は5ファイル300行の編集を支払った後にほどく作業が発生する。ワンライナー以上の規模では、実装前に意図をレビューする価値が明確に上回る。",
@@ -2984,6 +3025,22 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 2093,
+      "title": "Claude Code Projects：コーディネーターが並列スレッドを指揮する",
+      "point": "9/17ベータ開始。Projectsは「1本の継続的な会話」で、Claudeがコーディネーターとして作業をスレッドに分解する。各スレッドは独自ブランチ・独自リポジトリコピーを持つ完全なクラウドセッションで、並列実行され、ノートPCを閉じても走り続ける。全スレッドが共有メモリに書き込み・参照するため、複雑なプロンプト設計への依存が減る。対象はクラウドセッション利用中でWeb/デスクトップにProjectsを持たないPro/Maxの一部から。",
+      "source_title": "Let Claude coordinate ongoing work with Projects",
+      "source_url": "https://code.claude.com/docs/en/claude-projects",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "新機能",
+        "生産性"
+      ],
+      "first_date": "2026-09-19",
+      "last_date": "2026-09-19",
+      "appearances": 6
     },
     {
       "id": 2087,
@@ -3952,6 +4009,36 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 2072,
+      "title": "Salesforce in Claude（ベータ）で商談情報をClaudeに取り込む",
+      "point": "9/15リリース。営業担当のアカウント・商談・パイプラインをClaudeに取り込むプラグインで、37個の事前構築済みセールススキルが付属する。商談前の準備、案件レビュー、パイプラインダッシュボードの作成、フォーキャスト送付までをClaude内で完結できる。Salesforceのベータ申込を通過した組織向けに、全有料プランで提供。",
+      "source_title": "Release notes | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-19",
+      "appearances": 5
+    },
+    {
+      "id": 2100,
+      "title": "Skillのdescriptionは「ルーティングルール」として書く",
+      "point": "descriptionはスキルのうち起動時にモデルが唯一見る部分なので、要約ではなく「いつ発火すべきか」に答える文章にする。ユーザーが実際に口にするトリガー語（「週報」「ステータス更新」など）を含め、期待する入力と生成物を明記する。使い分けの原則は、強制したい規則はHooks/権限、文脈知識はSkills、委譲境界はSubagents、常時必要な指針のみCLAUDE.mdに短く書く。",
+      "source_title": "Claude Code Skills in 2026: The Complete Guide",
+      "source_url": "https://www.totalum.app/blog/claude-code-skills-totalum",
+      "tags": [
+        "CLAUDE.md",
+        "自動化",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-19",
+      "last_date": "2026-09-19",
+      "appearances": 5
     },
     {
       "id": 2077,
@@ -5071,20 +5158,6 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
-    },
-    {
-      "id": 2072,
-      "title": "Salesforce in Claude（ベータ）で商談情報をClaudeに取り込む",
-      "point": "Salesforceと共同開発したプラグインで、既存のSalesforce権限のままアカウント・商談・パイプラインをClaudeに取り込む。アカウント調査、通話準備、パイプラインレビュー、CRM更新など営業担当の日常業務向けに37のスキルを同梱。初回利用時はセットアップスキルが利用中のツールとコネクタを判別し、担当領域に合わせたArtifactを生成する。有料プラン全体でベータ提供（Salesforceの承認が必要）。",
-      "source_title": "Salesforce in Claude（Claude Blog）",
-      "source_url": "https://claude.com/blog/salesforce-in-claude",
-      "tags": [
-        "新機能",
-        "MCP/プラグイン"
-      ],
-      "first_date": "2026-09-17",
-      "last_date": "2026-09-18",
-      "appearances": 4
     },
     {
       "id": 2084,
@@ -6827,6 +6900,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2097,
+      "title": "MCPトンネル：社内MCPサーバーに外部公開なしで接続する",
+      "point": "Claude Managed Agentsから、プライベートネットワーク内のMCPサーバーへインターネットに晒さずに接続できる仕組み。軽量ゲートウェイを配置して外向き接続を1本張るだけで、インバウンドのファイアウォール規則も公開エンドポイントも不要、通信はエンドツーエンドで暗号化される。社内DB・非公開API・ナレッジベース・チケットシステムをエージェントのツールにできる。リサーチプレビューでアクセス申請制。",
+      "source_title": "New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels",
+      "source_url": "https://claude.com/blog/claude-managed-agents-updates",
+      "tags": [
+        "API",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-19",
+      "last_date": "2026-09-19",
+      "appearances": 3
     },
     {
       "id": 2063,
@@ -9531,6 +9619,32 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2095,
+      "title": "ClaudeチャットとCoworkが1つのアプリに統合",
+      "point": "9/16発表。チャット・Cowork・アーティファクトが1画面に統合され、Claudeが依頼内容に応じて自動でルーティングする。「短い質問はチャット、長い作業はCowork」という使い分けの判断が不要になる。展開はPro/Maxのweb・デスクトップ・モバイルから数週間かけて進み、Free/Teamが続く。Enterprise管理者には変更の30日前に通知される予定。",
+      "source_title": "Anthropic is killing off Claude Cowork and folding it into Claude",
+      "source_url": "https://venturebeat.com/technology/anthropic-is-killing-off-cowork-and-folding-it-into-claude-launching-claude-docs-and-claude-slides",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-09-19",
+      "last_date": "2026-09-19",
+      "appearances": 2
+    },
+    {
+      "id": 2098,
+      "title": "`claude plugin eval` でプラグインを再現可能なスコアで検証する",
+      "point": "自作プラグインをテストケース群に対して実行し、結果を採点して「プラグインなし」のベースラインと比較できる。`claude plugin eval init` を使えばテストケースと採点者（grader）の草案まで自動生成される。プラグインやスキルの改修が本当に効いたかを、体感ではなく数値で判定できるようになる。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-19",
+      "last_date": "2026-09-19",
+      "appearances": 2
     },
     {
       "id": 2076,
@@ -13214,6 +13328,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2096,
+      "title": "Claude Docs / Slides / Design がベータで利用可能に",
+      "point": "新しいDocsは共同編集できる文書、SlidesはデッキをClaude内で作成・プレゼンでき、PDFまたはPowerPoint形式でダウンロードやリンク共有ができる。4月にAnthropic Labsから出たClaude Designも、専用画面ではなくClaude内のどこからでも使えるようになった。有料プランでベータ提供。",
+      "source_title": "Claude merges Cowork and chat into one experience",
+      "source_url": "https://www.testingcatalog.com/claude-merges-cowork-and-chat-into-one-experience/",
+      "tags": [
+        "API",
+        "新機能"
+      ],
+      "first_date": "2026-09-19",
+      "last_date": "2026-09-19",
+      "appearances": 1
     },
     {
       "id": 2082,
@@ -23049,6 +23177,13 @@
   ],
   "daily": [
     {
+      "date": "2026-09-19",
+      "highlights": [
+        "Claude Code Projects ベータ — コーディネーターが並列スレッドを指揮し、共有メモリで文脈を引き継ぐ新Projects",
+        "チャットとCoworkの統合 — 1つのClaudeに集約され、Docs / Slides / Design がベータ提供開始"
+      ]
+    },
+    {
       "date": "2026-09-18",
       "highlights": [
         "ClaudeチャットとCoworkが1つの「Claude」に統合 — 「どこで作業するか」の判断が不要になり、Claudeが回答／ドキュメント／スライド／長時間エージェント処理を自動で選ぶ",
@@ -24350,5 +24485,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-18T08:00:04.646436"
+  "generated_at": "2026-09-19T08:00:05.099485"
 }
