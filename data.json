@@ -2130,6 +2130,22 @@
       "appearances": 9
     },
     {
+      "id": 2125,
+      "title": "複数ファイル変更・未知のコードでは必ずPlan Modeから入る",
+      "point": "複数ファイルにまたがる変更、馴染みのないコードベース、アーキテクチャ上の判断を含む作業はPlan Modeで着手する。理由は「間違った問題を解くのに時間を使う」事故を防ぐため。推奨される定番構成は、薄いCLAUDE.md＋編集前のPlan Mode＋調査ノイズをサブエージェントへ隔離＋git worktreeでの並列実行＋フックによるガードレール＋検証ループ。",
+      "source_title": "Claude Code Best Practices: 10 Workflow Tips That Senior Engineers Swear By in 2026",
+      "source_url": "https://collabnix.com/claude-code-best-practices-10-workflow-tips-that-senior-engineers-swear-by-in-2026/",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-09-22",
+      "last_date": "2026-09-22",
+      "appearances": 8
+    },
+    {
       "id": 2060,
       "title": "Dynamic Workflowsが利用上限で自動一時停止するようになった",
       "point": "使用量の上限に達したときにワークフローが該当エージェントを切り捨てず、一時停止してリセット後に自動継続する挙動に改善された。あわせてProプランの既定ワークフローサイズがsmallに、mediumの目安が15→10エージェントに引き下げられた。大規模fan-outを常用している場合は既定値の変更を前提に見積もりを見直したい。",
@@ -2587,6 +2603,68 @@
       "appearances": 8
     },
     {
+      "id": 2121,
+      "title": "プロンプトキャッシュを壊す3大要因を潰す",
+      "point": "キャッシュは接頭辞の完全一致で判定されるため、(1) システムプロンプト内の「今日は2026-09-22です」のような日付は翌日以降の全リクエストでキャッシュを殺す→ユーザーメッセージ側か末尾の非キャッシュブロックへ移す、(2) テンプレートがJSONオブジェクトを再シリアライズするとキー順が揺れて失敗する→シリアライザを固定するかオブジェクトでなく文字列を渡す、(3) ツール定義も接頭辞の一部なので並び順を決定的にソートする。なお5分TTLはローリングで、ヒットのたびに延長される。",
+      "source_title": "Prompt caching in Claude Code: why your next turn is slow and expensive",
+      "source_url": "https://wmedia.es/en/tips/claude-code-prompt-caching-slow-expensive-turns",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-09-22",
+      "last_date": "2026-09-22",
+      "appearances": 7
+    },
+    {
+      "id": 2126,
+      "title": "Coworkは「一度手でやってから `/schedule`」で定期化する",
+      "point": "スケジュールタスクの作り方は2通り。ゼロから `/schedule` と打って内容と頻度を説明しClaudeにプロンプトを起案させる方法と、まずCoworkで一度実行して出力が正しいことを確認してから `/schedule` でその手順ごと定期化する方法。後者のほうが失敗が少ない。スケジュールタスクは通常のCoworkタスクと同じコネクタ・スキル・プラグインを使えるため、日次ブリーフィングや週次レポート、定点調査に向く。",
+      "source_title": "Schedule recurring tasks in Claude Cowork",
+      "source_url": "https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork",
+      "tags": [
+        "プロンプト",
+        "自動化",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-09-22",
+      "last_date": "2026-09-22",
+      "appearances": 7
+    },
+    {
+      "id": 2051,
+      "title": "変更後に `/simplify` を付けて並列レビューを走らせる",
+      "point": "コード変更後のプロンプト末尾に `/simplify` を付けると、並列エージェントが変更箇所を「再利用性・品質・効率・CLAUDE.md準拠」の4観点で一括レビューする。人手レビューに回す前のセルフチェックとして有効。あわせて、1日に2回以上繰り返す作業は `.claude/skills/<name>/SKILL.md` としてスキル化し、チームで共有することが推奨されている。",
+      "source_title": "Claude Code power user tips | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "CLAUDE.md",
+        "プロンプト",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-09-15",
+      "last_date": "2026-09-21",
+      "appearances": 7
+    },
+    {
+      "id": 2118,
+      "title": "Claude Code Projects（ベータ）で並列スレッドと共有メモリを束ねる",
+      "point": "1つのプロジェクトが並列スレッド・共有メモリ・プロジェクトライブラリを束ね、複数リポジトリにまたがる長期作業を管理できる新しいベータ体験。Claudeがリクエストのスコープ設定、作業の委譲、並列スレッドの調整、出力レビュー、成果物の組み立てまでを担う。Pro・Maxプランから順次、Web・デスクトップ・モバイルのClaudeアプリで提供される。",
+      "source_title": "Claude Updates by Anthropic - September 2026",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "生産性",
+        "製品機能"
+      ],
+      "first_date": "2026-09-21",
+      "last_date": "2026-09-21",
+      "appearances": 7
+    },
+    {
       "id": 2094,
       "title": "Projectsは1日200スレッド上限、プラン枠の消費が速い",
       "point": "各スレッドが「フルのセッション」として動くため、単一セッションよりプラン上限を大幅に速く消費する。新規スレッドは1日200本が上限。並列度を上げる前に、どの作業を本当にスレッド化すべきかを絞り込む運用が前提になる。長時間タスクの分割設計とコスト見積もりをセットで考えたい。",
@@ -3027,6 +3105,20 @@
       "appearances": 7
     },
     {
+      "id": 2072,
+      "title": "Salesforce in Claude（ベータ）で商談情報をClaudeに取り込む",
+      "point": "9月15日公開。アカウント・商談・パイプラインをClaudeへ取り込むプラグインで、37種の営業向け既成スキルが同梱される。商談前の準備、案件レビュー、パイプラインダッシュボードの作成、予測の送信までClaude上で完結する。Salesforceのベータ申込で承認された組織を対象に、全有料プランでベータ提供。",
+      "source_title": "Release notes | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-17",
+      "last_date": "2026-09-21",
+      "appearances": 6
+    },
+    {
       "id": 2093,
       "title": "Claude Code Projects：コーディネーターが並列スレッドを指揮する",
       "point": "9/17ベータ開始。Projectsは「1本の継続的な会話」で、Claudeがコーディネーターとして作業をスレッドに分解する。各スレッドは独自ブランチ・独自リポジトリコピーを持つ完全なクラウドセッションで、並列実行され、ノートPCを閉じても走り続ける。全スレッドが共有メモリに書き込み・参照するため、複雑なプロンプト設計への依存が減る。対象はクラウドセッション利用中でWeb/デスクトップにProjectsを持たないPro/Maxの一部から。",
@@ -3088,22 +3180,6 @@
       ],
       "first_date": "2026-09-17",
       "last_date": "2026-09-17",
-      "appearances": 6
-    },
-    {
-      "id": 2051,
-      "title": "変更後に `/simplify` を付けて並列レビューを走らせる",
-      "point": "変更を加えた後のプロンプトに `/simplify` を付け足すと、並列エージェントが変更箇所を「再利用性・品質・効率・CLAUDE.md準拠」の観点で一度にレビューする。使い方は `hey claude make this code change then run /simplify` のように、変更指示と同じプロンプトに続けて書くだけ。レビュー観点を毎回プロンプトに書き出す必要がなくなり、CLAUDE.mdに書いた規約に対する違反も同じパスで拾える。人間のレビューに回す前の一次フィルタとして使う位置付け。",
-      "source_title": "Claude Code power user tips | Claude Help Center",
-      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
-      "tags": [
-        "CLAUDE.md",
-        "プロンプト",
-        "エージェント",
-        "生産性"
-      ],
-      "first_date": "2026-09-15",
-      "last_date": "2026-09-15",
       "appearances": 6
     },
     {
@@ -4011,17 +4087,18 @@
       "appearances": 6
     },
     {
-      "id": 2072,
-      "title": "Salesforce in Claude（ベータ）で商談情報をClaudeに取り込む",
-      "point": "9/15リリース。営業担当のアカウント・商談・パイプラインをClaudeに取り込むプラグインで、37個の事前構築済みセールススキルが付属する。商談前の準備、案件レビュー、パイプラインダッシュボードの作成、フォーキャスト送付までをClaude内で完結できる。Salesforceのベータ申込を通過した組織向けに、全有料プランで提供。",
-      "source_title": "Release notes | Claude Help Center",
-      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "id": 2122,
+      "title": "Messages APIのオンデマンド圧縮で会話を任意タイミングで畳む",
+      "point": "9/14にMessages APIへ「オンデマンドcompaction」がベータ追加（`compact-2026-09-04` ベータヘッダ）。トップレベルの `compaction` パラメータを送ると、APIが送信済みメッセージを要約した署名付き `compaction` ブロックを返す。以降のリクエストではそのブロックを当該メッセージ群の代わりに先頭へ置く。圧縮タイミングを自分で決められ、バックグラウンド実行も可能。直近ターンは要約後も原文のまま残せ、preserved thinking対応モデルではその思考ブロックも有効なまま保てる。",
+      "source_title": "Claude Platform release notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
       "tags": [
-        "新機能",
-        "MCP/プラグイン"
+        "API",
+        "モデル",
+        "新機能"
       ],
-      "first_date": "2026-09-17",
-      "last_date": "2026-09-19",
+      "first_date": "2026-09-22",
+      "last_date": "2026-09-22",
       "appearances": 5
     },
     {
@@ -5158,6 +5235,61 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2119,
+      "title": "`/skill-doctor` で未使用スキルのトークン代を実測する",
+      "point": "Claude Code v2.1.252以降の `/skill-doctor` は、セッションに読み込まれた全スキルについて「発火回数」と「毎ターン消費しているコンテキストトークン数」を表示する。スキルは説明1行がシステムプロンプトに常駐するため、一度も発火しなくても毎ターン課金される。実測したところ未使用スキルだけで約4,590トークンを消費していた例が報告されている。スキルを増やす前に、まず今あるものの費用対効果を見ること。",
+      "source_title": "/skill-doctor で未使用スキルのトークン代を実測したら4,590でした",
+      "source_url": "https://qiita.com/kai_kou/items/374a95f0dcb28ba8ff45",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-09-22",
+      "last_date": "2026-09-22",
+      "appearances": 4
+    },
+    {
+      "id": 2127,
+      "title": "ライブアーティファクトは「作って終わり」でなく更新され続ける成果物",
+      "point": "ライブアーティファクトはClaudeが一度作った後も更新し続ける成果物で、開くたびに接続済みコネクタから最新データを取りに行く。2026/08/19以降に作成したアーティファクトは共有可能（特定の人または組織全体）で、Web版からも開ける。チャットのテーブルで済ませていた定点確認は、アーティファクト化すると翌日以降の再質問が不要になる。",
+      "source_title": "Use artifacts in Claude Cowork",
+      "source_url": "https://support.claude.com/en/articles/14729249-use-artifacts-in-claude-cowork",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-22",
+      "last_date": "2026-09-22",
+      "appearances": 4
+    },
+    {
+      "id": 2112,
+      "title": "Claude Code 2.1.277：CLAUDE.mdが無いプロジェクトではAGENTS.mdを読む",
+      "point": "CLAUDE.mdを置いていないプロジェクトで、Claude CodeがAGENTS.mdをプロジェクト指示として読み込むようになった。参照先は `/config` の「Project instructions」で切り替えられる。複数のコーディングエージェントを併用しているチームは、共通仕様をAGENTS.mdに集約し、Claude固有の指示だけをCLAUDE.mdに残す運用がしやすくなる。ただしBedrock／Vertex／Foundryでは未対応。",
+      "source_title": "Claude Code changelog 2.1.277",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-09-21",
+      "last_date": "2026-09-21",
+      "appearances": 4
+    },
+    {
+      "id": 2113,
+      "title": "claude.aiで有効化したスキル・プラグインをターミナルセッションへ同期する",
+      "point": "2.1.275で、claude.aiアカウントでサインインしているターミナルセッションに、そのアカウントで有効なスキルとプラグインが同期されるようになった。Web側で整備した資産をCLIで再設定せずに使える。同期したくない場合は `syncClaudeAiSkills: false` / `syncClaudeAiPlugins: false` でオプトアウトする。",
+      "source_title": "Claude Code changelog 2.1.275",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-21",
+      "last_date": "2026-09-21",
+      "appearances": 4
     },
     {
       "id": 2084,
@@ -6900,6 +7032,47 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2124,
+      "title": "一つだけ選ぶなら「検証手段を与えること」",
+      "point": "Claude Codeの運用知見で最も効果が大きいのは検証（verification）＝Claudeが自分の出力を自力で確認できる手段を用意すること。テストコマンド、型チェック、lint、再現手順のいずれかを渡せるかどうかでハルシネーション率が変わる。加えて、大規模な取り組みでは scope / 決定事項 / 未解決の疑問 / 受け入れ基準を `plan.md` や `tasks.md` に残し、セッションをまたいで参照させる。",
+      "source_title": "50 Claude Code Tips and Best Practices For Daily Use",
+      "source_url": "https://www.builder.io/blog/claude-code-tips-best-practices",
+      "tags": [
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-09-22",
+      "last_date": "2026-09-22",
+      "appearances": 3
+    },
+    {
+      "id": 2111,
+      "title": "Claude Code 2.1.278：auto modeの分類器をサーバー側実行にして課金を減らす",
+      "point": "Claude API・Enterprise利用者、およびBedrock／Vertex／Foundry／ゲートウェイ経由のauto modeが、既定でサーバーサイド分類器を使うようになった。分類器のオーバーヘッド分は課金されない。課金されるローカルフォールバックに落ちた場合は警告が出る。Bedrock等でオプトアウトしたい場合は `CLAUDE_CODE_AUTO_MODE_SERVER=0` を設定する。`/status` に「Auto mode server」行が追加され、現在のセッションがどちらで動いているか確認できる。",
+      "source_title": "Claude Code changelog 2.1.278",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-09-21",
+      "last_date": "2026-09-21",
+      "appearances": 3
+    },
+    {
+      "id": 2117,
+      "title": "TaskOutputツールが廃止：バックグラウンドタスクの出力はReadで読む",
+      "point": "非推奨だったTaskOutputツールが2.1.277で削除された。バックグラウンドタスクの出力は、Claudeが出力ファイルをReadツールで読む方式に一本化される。あわせて `taskOutputMaxChars` 設定と `TASK_MAX_OUTPUT_LENGTH` 環境変数が無効化されたため、これらに依存した設定ファイルやスクリプトは見直しが必要。",
+      "source_title": "Claude Code changelog 2.1.277",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-09-21",
+      "last_date": "2026-09-21",
+      "appearances": 3
     },
     {
       "id": 2097,
@@ -9619,6 +9792,36 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2120,
+      "title": "Agent Skillsは「ときどき見直す」運用を前提にする",
+      "point": "スキルは作って終わりではなく、定期的な棚卸しが必要。プロジェクトの進行でスキルの前提が古くなる、似たスキルが増えて発火が競合する、といった劣化が起きる。MCPとの使い分けの目安は「APIで外部サービスと連携する＝MCP」「プロジェクト固有の手順・知識を覚えさせる＝Agent Skills」で、多くのユースケースはSkillsで足りる。",
+      "source_title": "Claude Codeの Agent Skills は、ときどき見直したほうがいい",
+      "source_url": "https://syu-m-5151.hatenablog.com/entry/2026/09/17/140349",
+      "tags": [
+        "API",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-22",
+      "last_date": "2026-09-22",
+      "appearances": 2
+    },
+    {
+      "id": 2123,
+      "title": "Fable 5.1 / Mythos 5.1 はキャッシュ読み取りが入力価格の2.5%",
+      "point": "9/1以降、Fable 5.1とMythos 5.1のプロンプトキャッシュ読み取りは$0.25/MTok＝基本入力価格の0.025倍。他モデルの0.1倍と比べて1/4の単価になっている（キャッシュ書き込み価格は据え置き）。大きな静的コンテキストを何十ターンも参照し続ける長時間エージェントほど効く設計変更なので、モデル選定時にトークン単価だけでなくキャッシュ単価も比較すること。",
+      "source_title": "Prompt caching pricing",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing#prompt-caching",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-22",
+      "last_date": "2026-09-22",
+      "appearances": 2
     },
     {
       "id": 2095,
@@ -13328,6 +13531,59 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2128,
+      "title": "チームで「AI変更ログ」を技術変更ログの横に置く",
+      "point": "成熟したClaude Code運用チームは、通常の変更ログとは別に小さな「AI変更ログ」を維持している。記録項目は、どのアシスタントを使ったか／どのタスクを任せたか／どの検査が通ったか／レビュアーが何を直したか／その変更が追加作業を生んだか。4週間ほど溜めると、どのワークフローが安全でどこに教育が必要かが見える実務的なコーチング資料になる。",
+      "source_title": "39 Claude Code Best Practices: A Guide for Engineering Teams",
+      "source_url": "https://axify.io/blog/claude-code-best-practices",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-09-22",
+      "last_date": "2026-09-22",
+      "appearances": 1
+    },
+    {
+      "id": 2114,
+      "title": "ctrl+enterの「送信キー」でキュー済みメッセージを一括送信する",
+      "point": "2.1.275で、現在のターンを中断してキューに溜めたメッセージをまとめて送る送信キー（ctrl+enter、または ctrl+x ctrl+s）が追加された。長い処理の途中で方針を変えたいときに、応答完了を待たずに指示を差し込める。送信済み・キュー中のメッセージはモデルに届くまでグレー表示される。",
+      "source_title": "Claude Code changelog 2.1.275",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-21",
+      "last_date": "2026-09-21",
+      "appearances": 1
+    },
+    {
+      "id": 2115,
+      "title": "サブエージェントの結果をヘッダー付きで隔離し、指示として解釈させない",
+      "point": "2.1.277で、サブエージェントの返り値がメインエージェントに届く際に「サブエージェント出力」であることを示すヘッダーが付き、本文がインデントされるよう変更された。サブエージェントの出力に含まれる文字列が、セッション自身への指示として読まれてしまう経路を塞ぐ変更。外部データを読ませるサブエージェントを組む場合の安全性が上がる。",
+      "source_title": "Claude Code changelog 2.1.277",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-09-21",
+      "last_date": "2026-09-21",
+      "appearances": 1
+    },
+    {
+      "id": 2116,
+      "title": "プロンプト内の不可視Unicode文字を自動除去し、送信前に確認する",
+      "point": "2.1.277で、プロンプトに含まれる不可視のUnicode書式文字・タグ文字が除去され、クリーニング後のプロンプトが送信前に表示されるようになった。Webページや外部ドキュメントからコピーしたテキストに仕込まれた見えない指示を、そのままモデルへ渡してしまうリスクを減らせる。貼り付け中心の運用をしている場合は表示内容を一度確認する習慣をつけたい。",
+      "source_title": "Claude Code changelog 2.1.277",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-21",
+      "last_date": "2026-09-21",
+      "appearances": 1
     },
     {
       "id": 2096,
@@ -23177,6 +23433,22 @@
   ],
   "daily": [
     {
+      "date": "2026-09-22",
+      "highlights": [
+        "`/skill-doctor` でスキルの「死荷重」を洗い出す — 未発火スキルは毎ターン課金される固定費、実測して削る",
+        "プロンプトキャッシュを壊す3大要因 — 日付入りシステムプロンプト・JSONキー順・ツール定義の並び順",
+        "Messages APIのオンデマンド圧縮 — `compact-2026-09-04` ベータで任意タイミングに会話を畳む"
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "highlights": [
+        "auto modeの分類器がサーバー側実行に — 2.1.278でAPI/Enterprise等の既定が変わり、分類器オーバーヘッド分の課金が不要になった",
+        "CLAUDE.mdが無ければAGENTS.mdを読む — 2.1.277でClaude Codeがマルチエージェント標準ファイルを正式サポート",
+        "サブエージェント出力の指示混入を遮断 — 2.1.277で結果がヘッダー付き・インデント表示となり、返り値が指示として解釈されなくなった"
+      ]
+    },
+    {
       "date": "2026-09-19",
       "highlights": [
         "Claude Code Projects ベータ — コーディネーターが並列スレッドを指揮し、共有メモリで文脈を引き継ぐ新Projects",
@@ -24485,5 +24757,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-21T08:00:05.118804"
+  "generated_at": "2026-09-22T08:00:05.152712"
 }
