@@ -303,6 +303,20 @@
       "appearances": 28
     },
     {
+      "id": 2139,
+      "title": "`Completed` を品質保証と取り違えない",
+      "point": "Agent viewの一覧に出る1行要約は会話全体の記録ではなく、最新出力を短くまとめた表示で更新にも間隔がある。要約だけを見て「止まった」「終わった」と判断せず、入力待ちならSpaceで質問を読み、成果が出たらEnterで差分と検証結果を確認する。PRが表示されていてもレビューとCIの結果を見てから取り込む。「目標状態」（一覧APIがページ番号方式で動く）と「観測できる結果」（応答形式のテストが通る／空の結果が空配列になる）を分けて書くと、`Completed` は観測結果の1つにすぎないと扱える。",
+      "source_title": "Claude Codeの Agent view とセッション間通信は使ったほうがいい",
+      "source_url": "https://syu-m-5151.hatenablog.com/entry/2026/09/21/104258",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-09-23",
+      "last_date": "2026-09-23",
+      "appearances": 27
+    },
+    {
       "id": 1980,
       "title": "再開したサブエージェントのプロンプトキャッシュ再利用が復旧した",
       "point": "フォアグラウンドで起動したサブエージェントを再開するとツール一覧とシステムプロンプト接頭辞が変化し、そのエージェントのプロンプトキャッシュが効かなくなる不具合が修正された。エージェントチームや再開サブエージェントで、SubagentStartフックのコンテキストと事前読み込みスキルが2ターン目以降に接頭辞から外れる問題も併せて解消。長時間の分業運用でキャッシュヒット率が戻るため、費用と初動レイテンシが改善する。",
@@ -1467,6 +1481,20 @@
       "appearances": 11
     },
     {
+      "id": 2141,
+      "title": "並行作業は `worktree.baseRef` で基準ブランチを揃えてから始める",
+      "point": "`claude --worktree <名前>` で作られるworktreeは既定ではリモートの既定ブランチが基準になる。手元の機能ブランチで積んだ変更を前提にしたいなら `settings.json` に `{\"worktree\": {\"baseRef\": \"head\"}}` を設定する（既存設定への追記であり全体の置き換えではない）。ただしHEADを選んでも未コミットの編集がすべて複製されるわけではないので、「さっき変えたAPIを前提に画面を作って」と頼むなら、その変更が新しいworktreeにも存在するかを確認する。ファイルが分かれても、起動サーバーのポートや接続先DBまでは自動で別物にならない点にも注意。",
+      "source_title": "Choose the base branch - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/worktrees#choose-the-base-branch",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-09-23",
+      "last_date": "2026-09-23",
+      "appearances": 10
+    },
+    {
       "id": 1963,
       "title": "サブエージェント並列は3〜5が実用上限",
       "point": "同時起動が5を超えると、サマリのマージ工数が並列化で得た時間を上回る。またサブエージェント自身のコンテキストは安くないため、システムプロンプトは短く保ち、手順はスキル側に置くのが定石。10ファイル以上の探索や、独立した3つ以上の作業がサブエージェント適用の目安。",
@@ -1794,6 +1822,20 @@
       "first_date": "2026-06-08",
       "last_date": "2026-06-08",
       "appearances": 10
+    },
+    {
+      "id": 2138,
+      "title": "Agent view / Subagent / Agent teams / Worktrees を役割で使い分ける",
+      "point": "混同しやすい4機能の切り分け。「今の依頼の一部を調査して結果を返してほしい」＝Subagents、「独立した仕事をいくつか開始して進み具合を見たい」＝Agent view（`claude agents`）、「複数の担当をClaude自身に組織させたい」＝Agent teams、「同じリポジトリのファイル編集を分けたい」＝Worktrees。Agent viewで扱うのは自分が開始して進める複数セッションで、Subagentのように親会話の下請けではない。なお `/agents`（Subagent管理）とシェルの `claude agents`（バックグラウンドセッション一覧）は別物。既存の対話セッションは `/bg` でバックグラウンドへ移すと一覧に出る。",
+      "source_title": "Claude Codeの Agent view とセッション間通信は使ったほうがいい",
+      "source_url": "https://syu-m-5151.hatenablog.com/entry/2026/09/21/104258",
+      "tags": [
+        "Claude Code",
+        "エージェント"
+      ],
+      "first_date": "2026-09-23",
+      "last_date": "2026-09-23",
+      "appearances": 9
     },
     {
       "id": 2058,
@@ -3105,6 +3147,19 @@
       "appearances": 7
     },
     {
+      "id": 2140,
+      "title": "セッション間メッセージには「決定済み／未確定／相手への依頼」を分けて書く",
+      "point": "`@ui-worker に…` のように受信側をメンションして判断を渡せるが、届くのはメッセージの文章だけで、会話履歴・ファイル・差分は転送されない。「API対応は完了した」とだけ送ると相手は必要な情報も揃ったと解釈しかねないので、決定済み／実装済み／未確定／相手への依頼を分けて送る。メッセージはユーザーの代わりに権限を承認しないため、受信側の権限確認は続く。受信方法は `crossSessionInbound` の `accept`／`hold`／`refuse` で調整でき、届かないときは再送を繰り返す前に受信側の状態を見る。同じ決定を複数の仕事で使うならコミットやIssueなど後から読める場所へ残す。",
+      "source_title": "Cross-session messaging - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/cross-session-messaging",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-09-23",
+      "last_date": "2026-09-23",
+      "appearances": 6
+    },
+    {
       "id": 2072,
       "title": "Salesforce in Claude（ベータ）で商談情報をClaudeに取り込む",
       "point": "9月15日公開。アカウント・商談・パイプラインをClaudeへ取り込むプラグインで、37種の営業向け既成スキルが同梱される。商談前の準備、案件レビュー、パイプラインダッシュボードの作成、予測の送信までClaude上で完結する。Salesforceのベータ申込で承認された組織を対象に、全有料プランでベータ提供。",
@@ -4085,6 +4140,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 2136,
+      "title": "自作Marketplaceの自動更新はデフォルト無効",
+      "point": "Claude CodeにはMarketplace単位の自動更新があるが、自作や非公式の配布元ではデフォルトで無効。登録しただけでは更新忘れは防げない。`/plugin` → `Marketplaces` → 対象を選択 → `Enable auto-update` まで設定する。有効にすると起動後にバックグラウンドで一覧と導入済みPluginが更新される。ただし自動化されるのは「新しいバージョンを探して取得する」作業までで、バージョン番号を据え置けば自動更新でも同じバージョンと判断される。素早く取り込みたい自分用Skillと、内容を読んでから更新したい外部Hookは、Marketplaceごと分ける判断もある。",
+      "source_title": "Configure auto-updates - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/discover-plugins#configure-auto-updates",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-23",
+      "last_date": "2026-09-23",
+      "appearances": 5
     },
     {
       "id": 2122,
@@ -7034,6 +7104,34 @@
       "appearances": 4
     },
     {
+      "id": 2134,
+      "title": "`claude plugin eval` はΔ（with/without差分）で効果を判定する",
+      "point": "`claude plugin eval` は各テストケースを2回走らせる。Pluginを読み込んだwithアームと、外したwithoutアーム。その差分Δがそのプラグインの寄与になる。withが1.0でwithoutが0.33なら実際に振る舞いを足している可能性が高いが、両方1.0なら一貫性やスタイルには役立っていても、そのケースでは追加能力を証明できていない。1回だけの実行は結果がぶれるためデフォルトの3回実行で比較し、対象の依頼とモデルを揃える。評価もモデルを呼ぶので利用枠やAPI料金を消費する点は手動確認との違い。",
+      "source_title": "Test plugins with evals - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/plugin-evals",
+      "tags": [
+        "API",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-23",
+      "last_date": "2026-09-23",
+      "appearances": 3
+    },
+    {
+      "id": 2135,
+      "title": "Pluginの「更新を取得した」と「会話に反映された」を分ける",
+      "point": "更新は4段階（開発元の編集 → 配布元のバージョン → 導入先の取得 → 実行中セッションへの反映）に分かれ、「更新した」がどの段階を指すかで意味が変わる。手順としては `/plugin marketplace update <名前>` で一覧を更新し、`/plugin update <plugin>@<marketplace>` で導入済みを更新する。取得しても今の会話に反映されたとは限らないので、`/reload-plugins` を案内されたら実行し、反映保留の表示が出たら更新済みの動作として扱わない。検証は新しい会話で同じ入力を投げ直す。",
+      "source_title": "Claude Codeの Plugins は設定したほうがいい",
+      "source_url": "https://syu-m-5151.hatenablog.com/entry/2026/09/22/124945",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-23",
+      "last_date": "2026-09-23",
+      "appearances": 3
+    },
+    {
       "id": 2124,
       "title": "一つだけ選ぶなら「検証手段を与えること」",
       "point": "Claude Codeの運用知見で最も効果が大きいのは検証（verification）＝Claudeが自分の出力を自力で確認できる手段を用意すること。テストコマンド、型チェック、lint、再現手順のいずれかを渡せるかどうかでハルシネーション率が変わる。加えて、大規模な取り組みでは scope / 決定事項 / 未解決の疑問 / 受け入れ基準を `plan.md` や `tasks.md` に残し、セッションをまたいで参照させる。",
@@ -9792,6 +9890,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2132,
+      "title": "社内共有するSkillはPluginにまとめて配布する",
+      "point": "SkillはMarkdownなのでコピーで渡せるが、コピー後のファイルには以降の改善が自動で届かない。配布元を直しても読み込みエラーにならないため、古い手順が残っていることに気づきにくい。1台のPCで自分だけが使うなら `~/.claude/skills/` で足りるが、他の人へ継続して配るならPluginを配布単位にし、インストールと更新の手順を揃える。Skillが1つだけでもPlugin化する価値があり、「どのバージョンを使っているか分かる」ことは更新だけでなく問題調査にも効く。",
+      "source_title": "Claude Codeの Plugins は設定したほうがいい",
+      "source_url": "https://syu-m-5151.hatenablog.com/entry/2026/09/22/124945",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-23",
+      "last_date": "2026-09-23",
+      "appearances": 2
     },
     {
       "id": 2120,
@@ -13531,6 +13642,33 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2133,
+      "title": "同じPluginにまとめる目安は「一緒に変更し、一緒に検証したいか」",
+      "point": "概要を書くSkillと、その概要を読むSubagentのように、片方を直したらもう片方も同時に届けたいものは同じPluginにする。別々に更新すると、書く側が項目を変えたのに読む側は古い項目を要求する状態が生まれる。逆に、記事の推敲とDB調査のように使う場面と変更理由が離れているものを同梱すると、片方のためにもう片方の変更も受け取ることになる。ファイルの種類や数ではなく、変更の影響を同じ範囲で確かめられるかを基準にする。",
+      "source_title": "Claude Codeの Plugins は設定したほうがいい",
+      "source_url": "https://syu-m-5151.hatenablog.com/entry/2026/09/22/124945",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-23",
+      "last_date": "2026-09-23",
+      "appearances": 1
+    },
+    {
+      "id": 2137,
+      "title": "配布物の外にあるファイルへ依存させない（`${CLAUDE_PLUGIN_ROOT}`）",
+      "point": "「手元では動くのに他の人がインストールすると動かない」典型原因が、Pluginディレクトリ外への依存。Skillがプラグイン外の `shared/review-guide.md` を読みに行くと、キャッシュへコピーされるのはPluginディレクトリだけなので外側は含まれない。相対パスか否かではなく、参照先が配布物に含まれるかが問題。配布先でも必要な資料はPluginに含め、処理からPluginの場所を知る必要があるときは `${CLAUDE_PLUGIN_ROOT}` を使う。開発者のホームディレクトリの絶対パスを共有設定へ埋め込まない。対象プロジェクトのREADMEのように「実行先で探す情報」は同梱せず、見つからなければ不足として報告させる。",
+      "source_title": "Plugin caching and file resolution - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/plugins-reference#plugin-caching-and-file-resolution",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-23",
+      "last_date": "2026-09-23",
+      "appearances": 1
     },
     {
       "id": 2128,
@@ -23433,6 +23571,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-23",
+      "highlights": [
+        "共有するSkillはPluginにまとめる — コピー配布は「直すたびに配り直す仕事」が残る、配布元・バージョン・更新経路を持たせる",
+        "`claude plugin eval` はΔ（with/without差分）で読む — 両アームとも満点ならその依頼では効果を示せていない",
+        "Agent viewの`Completed`は品質保証ではない — 観測結果の1つにすぎず、差分・テスト・統合後の起動まで人が確認する"
+      ]
+    },
+    {
       "date": "2026-09-22",
       "highlights": [
         "`/skill-doctor` でスキルの「死荷重」を洗い出す — 未発火スキルは毎ターン課金される固定費、実測して削る",
@@ -24757,5 +24903,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-22T08:00:05.152712"
+  "generated_at": "2026-09-23T08:00:05.286930"
 }
