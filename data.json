@@ -93,6 +93,20 @@
       "appearances": 35
     },
     {
+      "id": 2146,
+      "title": "Opus 5.5のeffort既定はmedium：明示してeffortごとに測り直す",
+      "point": "Opus 5の既定highに対しOpus 5.5はmedium。「40%安い」は既定mediumで測った値で、同じeffortならOpus 5より1ターンの思考量はむしろ多い傾向（特にxhigh/max）。モデル名だけ変えると考える深さが一段下がるので、effortを明示し段階ごとに品質とコストを比べ直す（移行ガイドの最初の推奨）。Claude Codeでは設定ファイル最上位の `effortLevel` はOpus 5.5に効かず、モデル別・プロジェクト単位の指定が必要な点に注意。",
+      "source_title": "Claude Opus 5.5 は切り替えるべきか - はてなベース",
+      "source_url": "https://hatenabase.jp/blog/claude-opus-5-5-release/",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-09-24",
+      "last_date": "2026-09-24",
+      "appearances": 34
+    },
+    {
       "id": 2037,
       "title": "インストールしたプラグインは「Customize」で自社ワークフローに寄せる",
       "point": "プラグインはスキル・スラッシュコマンド・コネクタ・サブエージェントを職務単位でまとめたパッケージ。素のClaudeは指示すればできるが、プラグインは「その領域のワークフローと使うアプリを最初から知っている専門家」にする位置付け、という整理。インストール後は Customize → Plugins →（プラグイン名）→ Customize から専用のCoworkタスクが開き、Claudeと対話しながら自組織向けに調整できる。導入直後に一度これを通しておくと、汎用設定のまま使うより噛み合いが良くなる。",
@@ -242,6 +256,22 @@
       "first_date": "2026-06-22",
       "last_date": "2026-06-22",
       "appearances": 30
+    },
+    {
+      "id": 2152,
+      "title": "会話途中のシステムメッセージでツールを定義し、キャッシュを壊さず差し替える",
+      "point": "Claude APIで `inline-tools-2026-09-15` betaヘッダーを付けると、会話途中のシステムメッセージ内の `tool_addition` ブロックにツールの完全な定義を載せられる。`tools` を編集せずに、ツール追加・スキーマ変更・サーバーツールの新版への切替ができ、プロンプトキャッシュも無効化されない。MCPコネクタの `mcp-client-2026-09-15` ヘッダーを併用すると定義にMCPツールセットを指定でき、取得したツール一覧は応答の `mcp_tool_listing` ブロックに記録されて固定される。",
+      "source_title": "Anthropic Release Notes (Claude Developer Platform 2026-09-22) - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "API",
+        "プロンプト",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-24",
+      "last_date": "2026-09-24",
+      "appearances": 29
     },
     {
       "id": 2008,
@@ -1481,6 +1511,21 @@
       "appearances": 11
     },
     {
+      "id": 2153,
+      "title": "Opus 5.5のfast modeは「2倍料金で最大2.5倍速」と割り切って使う",
+      "point": "Opus 5.5のfast mode（リサーチプレビュー）は最大2.5倍速で、単価は入力$8／出力$40と通常の2倍。Claude Codeでは `/fast` で切替え（extra usageの有効化が必要）、APIでは `speed: \"fast\"` と `fast-mode-2026-02-01` ヘッダーを指定する。使えるのはClaude CodeとClaude APIのみで、Bedrock・Google Cloud・Foundry経由では不可。やり取りの多い対話ループに絞り、大型ジョブは標準速度に回すのが基本。",
+      "source_title": "Claude Opus 5.5 は切り替えるべきか - はてなベース",
+      "source_url": "https://hatenabase.jp/blog/claude-opus-5-5-release/",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-09-24",
+      "last_date": "2026-09-24",
+      "appearances": 10
+    },
+    {
       "id": 2141,
       "title": "並行作業は `worktree.baseRef` で基準ブランチを揃えてから始める",
       "point": "`claude --worktree <名前>` で作られるworktreeは既定ではリモートの既定ブランチが基準になる。手元の機能ブランチで積んだ変更を前提にしたいなら `settings.json` に `{\"worktree\": {\"baseRef\": \"head\"}}` を設定する（既存設定への追記であり全体の置き換えではない）。ただしHEADを選んでも未コミットの編集がすべて複製されるわけではないので、「さっき変えたAPIを前提に画面を作って」と頼むなら、その変更が新しいworktreeにも存在するかを確認する。ファイルが分かれても、起動サーバーのポートや接続先DBまでは自動で別物にならない点にも注意。",
@@ -2170,6 +2215,22 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 2150,
+      "title": "computer useは `computer_toolset_20260801` へ移行する",
+      "point": "Opus 5.5ではClaude APIとGoogle Cloud上で旧 `computer_20251124` を宣言すると400（Amazon Bedrockでは引き続き動作）。新toolsetはbetaヘッダー・名前・画面サイズの指定が不要。エージェントループ側も、操作種別が `input.action` ではなく `tool_use` の `name` に入る、1ターンに複数の `tool_use` が返る、結果に `toolset_name` を付ける、の3点を直す。browser use toolは変更不要。",
+      "source_title": "Claude Opus 5.5 リリース、Opus 5 からの移行で400エラーになる4つの破壊的変更と対処コード - Qiita",
+      "source_url": "https://qiita.com/kai_kou/items/5c80fa141ff45a82f71d",
+      "tags": [
+        "API",
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-09-24",
+      "last_date": "2026-09-24",
+      "appearances": 8
     },
     {
       "id": 2125,
@@ -3145,6 +3206,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 2147,
+      "title": "Opus 5.5はthinkingを無効化できない：深さはeffortで調整",
+      "point": "`thinking: {\"type\": \"disabled\"}` や `budget_tokens` 指定は400エラー。`thinking` フィールドを削除し `output_config.effort` で深さを決める。トークン節約のためにthinkingを切っていた箇所は低いeffortへ置き換える。応答の先頭にthinkingブロックが来るため、`content[0]` のように位置で取り出すコードは `type` で選ぶ形に直す。Claude Codeでも思考トークンを0にする設定は効かない。",
+      "source_title": "Claude Opus 5.5 リリース、Opus 5 からの移行で400エラーになる4つの破壊的変更と対処コード - Qiita",
+      "source_url": "https://qiita.com/kai_kou/items/5c80fa141ff45a82f71d",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-09-24",
+      "last_date": "2026-09-24",
+      "appearances": 6
     },
     {
       "id": 2140,
@@ -9892,6 +9967,35 @@
       "appearances": 3
     },
     {
+      "id": 2148,
+      "title": "`tool_choice` の any／tool は400：auto＋strict tool useに移す",
+      "point": "Fable 5.1と同様、Opus 5.5で使える `tool_choice` は `auto` と `none` のみ。トークンカウントのエンドポイントにも同じ検証がかかる。スキーマどおりのJSONが欲しい場合は `auto` のままツールに `\"strict\": true` を付けるかstructured outputsへ移し、特定ツールを使わせたいことはプロンプトに書く。SDKの型は通ってしまうため実行時に初めて400になる点に注意。構造化抽出で多用されがちなので、4つの破壊的変更の中で修正範囲が最も広くなりやすい。",
+      "source_title": "Migrating to Claude Opus 5.5 - Claude Platform Docs",
+      "source_url": "https://platform.claude.com/docs/en/models/opus-5-5/migration-guide",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-24",
+      "last_date": "2026-09-24",
+      "appearances": 2
+    },
+    {
+      "id": 2151,
+      "title": "ツール間の途中経過がthinkingブロックに：UIが黙るなら `display` を変える",
+      "point": "Opus 5.5ではツール呼び出しの合間に書く短い進捗メモが `text` ではなく `thinking` ブロックで返る。既定の `display: \"omitted\"` では中身が空のため、進捗をユーザーに流していたUIはエラーなしで静かになる。進捗を出し続けたいなら `thinking.display` を `\"updates\"`（beta）か `\"summarized\"` に設定し、空でないthinkingブロックを直後の `tool_use` の前に描画する。",
+      "source_title": "Claude Opus 5.5 リリース、Opus 5 からの移行で400エラーになる4つの破壊的変更と対処コード - Qiita",
+      "source_url": "https://qiita.com/kai_kou/items/5c80fa141ff45a82f71d",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-09-24",
+      "last_date": "2026-09-24",
+      "appearances": 2
+    },
+    {
       "id": 2132,
       "title": "社内共有するSkillはPluginにまとめて配布する",
       "point": "SkillはMarkdownなのでコピーで渡せるが、コピー後のファイルには以降の改善が自動で届かない。配布元を直しても読み込みエラーにならないため、古い手順が残っていることに気づきにくい。1台のPCで自分だけが使うなら `~/.claude/skills/` で足りるが、他の人へ継続して配るならPluginを配布単位にし、インストールと更新の手順を揃える。Skillが1つだけでもPlugin化する価値があり、「どのバージョンを使っているか分かる」ことは更新だけでなく問題調査にも効く。",
@@ -13642,6 +13746,51 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2145,
+      "title": "Claude Opus 5.5 リリース：Opus 5より単価2割・キャッシュ読み出し6割安",
+      "point": "9月22日公開の新5.5ファミリー初モデル（`claude-opus-5-5`）。入力$4／出力$20（Opus 5は$5／$25）、キャッシュ読み出し$0.20（同$0.50）で、典型的な負荷では約40%安く、出力は30%以上高速。1Mコンテキスト・最大出力128k。多くの作業でFable 5.1並みの性能とされ、公式は「迷ったらOpus 5.5から、足りなければFable 5.1」と位置づけ。あわせてPro/Max/Team/シート課金Enterpriseの5時間上限が引き上げられ、保存して好きな時に使えるレート制限リセットが配布された。Sonnet 5.5／Haiku 5.5は数週間以内の予定。",
+      "source_title": "Claude Opus 5.5 - Anthropic",
+      "source_url": "https://www.anthropic.com/claude-opus-5-5",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-09-24",
+      "last_date": "2026-09-24",
+      "appearances": 1
+    },
+    {
+      "id": 2149,
+      "title": "会話はappend-onlyで扱う：途中書き換え＋thinking再送は400",
+      "point": "2026年8月31日以降に作成したAPIアカウントでは、system・tools・過去メッセージを会話途中で書き換えたうえでthinkingブロックを再送すると400になる（蒸留対策のpreserved thinking）。指示やツールを変えたいときは既存部分を書き換えず、会話途中のシステムメッセージで追記する。Claude Code・claude.ai・Agent SDKは既にappend-onlyなので対応不要。ルーター等で途中からモデルを切り替える構成では、切替後にOpus 5.5の推論を引き継げない点に注意。",
+      "source_title": "Claude Opus 5.5 リリース、Opus 5 からの移行で400エラーになる4つの破壊的変更と対処コード - Qiita",
+      "source_url": "https://qiita.com/kai_kou/items/5c80fa141ff45a82f71d",
+      "tags": [
+        "Claude Code",
+        "API",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-24",
+      "last_date": "2026-09-24",
+      "appearances": 1
+    },
+    {
+      "id": 2154,
+      "title": "Claude Code 2.1.280：ダイアログの確定はEnter/Escに、y/nは既定で無効",
+      "point": "2.1.280でOpus 5.5が既定Opusモデルになったのに加え、誤入力の `y`／`n` でダイアログが確定・閉じてしまう問題が修正され、確定はEnter・取消はEscに統一された。従来の操作に戻したい場合は `keybindings.json` で `y`/`n` を `confirm:yes`/`confirm:no` に割り当てる。ほかに `CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH` でMCPツール説明の2,048文字上限を変更可能に、シンボリックリンク経由の書き込みが実際の書き込み先で権限判定されるよう修正、auto modeの安全チェック無応答時の再試行にバックオフが入った。",
+      "source_title": "Anthropic Release Notes (Claude Code 2.1.280) - Releasebot",
+      "source_url": "https://releasebot.io/updates/anthropic",
+      "tags": [
+        "Claude Code",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-24",
+      "last_date": "2026-09-24",
+      "appearances": 1
     },
     {
       "id": 2133,
@@ -23571,6 +23720,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-24",
+      "highlights": [
+        "Claude Opus 5.5 リリース — Opus 5より単価2割・キャッシュ読み出し6割安く、Claude Codeの既定Opusモデルに",
+        "effort既定がhigh→mediumに下がった — モデル名だけ差し替えると思考が浅くなる、effortを明示して測り直す",
+        "API移行は4つの400エラーに注意 — thinking無効化・強制ツール・会話の書き換え・旧computerツール"
+      ]
+    },
+    {
       "date": "2026-09-23",
       "highlights": [
         "共有するSkillはPluginにまとめる — コピー配布は「直すたびに配り直す仕事」が残る、配布元・バージョン・更新経路を持たせる",
@@ -24903,5 +25060,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-23T08:00:05.286930"
+  "generated_at": "2026-09-24T08:00:05.077072"
 }
