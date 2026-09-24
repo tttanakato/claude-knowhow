@@ -1376,6 +1376,17 @@
       "appearances": 12
     },
     {
+      "id": 2159,
+      "title": "Claude Tagの常設指示でSlackチャンネルを改善ループの場にする",
+      "point": "性能改善の専用Slackチャンネルを作り、Claude Tagに常設指示（デプロイ後の性能劣化の監視、テレメトリの点検、改善案の提案と実装など）を与えた。スレッド1本が1つの遅い箇所を担当し、報告→Claudeが原因を追ってベンチマークを作る→複数PR→フラグ付きでデプロイ→実ユーザーのデータを確認→改善すればラチェット、しなければフラグを戻す、というループを回した。スレッドの対象を狭く保つのがコツで、最大150スレッドが同時に動いた。",
+      "source_title": "How we made claude.ai 3x faster in two weeks - claude.dev",
+      "source_url": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
+      "tags": [],
+      "first_date": "2026-09-25",
+      "last_date": "2026-09-25",
+      "appearances": 11
+    },
+    {
       "id": 2050,
       "title": "`/permissions` のワイルドカードで許可リストを育てる",
       "point": "権限を全部スキップするのではなく、`/permissions` で安全なコマンドを事前許可してチームの `.claude/settings.json` にコミットするのが公式の推奨。確認プロンプトを減らしつつ、監査可能な許可リストが残る。ワイルドカード構文が完全にサポートされており、`\"Bash(bun run *)\"` や `\"Edit(/docs/**)\"` のような書き方ができる。Claude Codeの権限機構はプロンプトインジェクション検知・静的解析・サンドボックス・人間の確認を層状に組み合わせたもので、初期状態で安全な少数のコマンドが承認済み。`/permissions` で追加する分はそのベースラインへの加算として扱われる。",
@@ -2215,6 +2226,33 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 2165,
+      "title": "デザインを頼むときは、使ってほしくないスタイルを具体的に並べる",
+      "point": "デザインの方向性を指定しないと、Opus 5.5はいくつかの決まったスタイルに寄りがち。「ありきたりな見た目を避けて」と頼んでも、別の定番スタイルに置き換わるだけになりやすい。「クリーム色の背景、見出しの斜体の強調語、『01 / 02 / 03』のような番号付きセクションラベル、等幅フォントのラベル、角の丸いピル型ボタンは使わない」のように具体的に列挙する。それでも気に入らなければ、代わりに選ばれたスタイルもリストに加えて頼み直す。",
+      "source_title": "Getting the most out of Opus 5.5 in Claude and Claude Code - claude.dev",
+      "source_url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-25",
+      "last_date": "2026-09-25",
+      "appearances": 8
+    },
+    {
+      "id": 2166,
+      "title": "安全対策でフラグが立ち古いモデルに切り替わったら：/modelで戻し、切替の既定動作を選んでおく",
+      "point": "Opus 5.5はFable級の生物・サイバー安全対策を備えた初のOpusで、フラグが立ったメッセージは多くの場合古いモデルに移って処理が続く。アプリではモデル選択で戻せるが、問題のメッセージが会話に残っていると再びフラグが立つことがあるため、新しいチャットで始めるのが確実。「設定 > 機能」で「Switch models when a message is flagged」をオフにすると、切り替える前に確認される。Claude Codeでは `/model` で戻す、Escを2回押して直前のメッセージを直す、`/config` で同じ設定を変える。フラグが誤りなら `/feedback` で報告する。「推論過程を回答に書き出して」という依頼もフラグの対象なので、「その方法を選んだ理由を3文で」のように言い換える。",
+      "source_title": "Getting the most out of Opus 5.5 in Claude and Claude Code - claude.dev",
+      "source_url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-09-25",
+      "last_date": "2026-09-25",
+      "appearances": 8
     },
     {
       "id": 2150,
@@ -4215,6 +4253,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 2167,
+      "title": "Opus 5.5をコードレビューに使うなら低めのeffortから試し、見逃すバグの顔ぶれで比べる",
+      "point": "CodeRabbitの検証では、Opus 5.5の低effort構成（Standard）が既知バグ80件のうち51件を検出し、本番構成の49件をわずかに上回った。ただし本番構成が見逃した11件を見つける一方で、本番構成が見つけた9件は見逃した。effortを上げた構成（Max）は、難しいケース13件での検出は10件と最多だったが、コメント数とトークン使用量（+58〜60%）が増えた。総合スコアだけで置き換えを決めず、どのバグが漏れるようになるか、読むべきコメントがどれだけ増えるかも比べる。",
+      "source_title": "Claude Opus 5.5のコードレビュー評価 - CodeRabbit",
+      "source_url": "https://www.coderabbit.ai/ja/blog/opus-5-5-model-review",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-25",
+      "last_date": "2026-09-25",
+      "appearances": 5
     },
     {
       "id": 2136,
@@ -9967,6 +10018,20 @@
       "appearances": 3
     },
     {
+      "id": 2163,
+      "title": "CLAUDE.mdに「止まって確認する条件」と「そのまま続ける条件」を書く",
+      "point": "Opus 5.5は長い作業の途中で、次の手順を示すだけの要約や「続けますか？」で止まることがある。CLAUDE.mdに「自分の入力が要らない手順はそのまま進め、状況報告は次の操作と同じメッセージに含める。止まって聞くのは、自分がいないと進めないときと、データ削除・force push・リポジトリ外の変更など取り返しのつかない操作の前だけ」と書くと従う。止まる回数が減る分、破壊的なコマンドの許可確認はオンのままにしておく。ペアプログラミングのように毎回確認したい場合は、逆の方針を書けばよい。",
+      "source_title": "Getting the most out of Opus 5.5 in Claude and Claude Code - claude.dev",
+      "source_url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+      "tags": [
+        "CLAUDE.md",
+        "モデル"
+      ],
+      "first_date": "2026-09-25",
+      "last_date": "2026-09-25",
+      "appearances": 2
+    },
+    {
       "id": 2148,
       "title": "`tool_choice` の any／tool は400：auto＋strict tool useに移す",
       "point": "Fable 5.1と同様、Opus 5.5で使える `tool_choice` は `auto` と `none` のみ。トークンカウントのエンドポイントにも同じ検証がかかる。スキーマどおりのJSONが欲しい場合は `auto` のままツールに `\"strict\": true` を付けるかstructured outputsへ移し、特定ツールを使わせたいことはプロンプトに書く。SDKの型は通ってしまうため実行時に初めて400になる点に注意。構造化抽出で多用されがちなので、4つの破壊的変更の中で修正範囲が最も広くなりやすい。",
@@ -13746,6 +13811,73 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2158,
+      "title": "決定的なベンチマーク（CPU命令数など）を用意してClaudeに改善させ、CIのラチェットにする",
+      "point": "Anthropicはclaude.aiとデスクトップアプリの主要な操作を2週間で平均約3.1倍速くした。実時間の計測はばらつきが大きくCIの判定に使えないため、Valgrind＋`node --predictable`で測るCPU命令数、Reactのコミット数、スタイル再計算の回数など、毎回同じ値が出る指標を用意した。まずその指標が実時間と連動していることをClaudeに示させ、連動しない指標は捨てる。採用した指標は、増えるとCIを落とし、下がれば上限も下げる「ラチェット」にして、改善した分が後戻りしないようにした。",
+      "source_title": "How we made claude.ai 3x faster in two weeks - claude.dev",
+      "source_url": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-09-25",
+      "last_date": "2026-09-25",
+      "appearances": 1
+    },
+    {
+      "id": 2160,
+      "title": "Claudeは慎重に見積もりがち：ガードレールがあるなら「もっと大胆に」と明示する",
+      "point": "既定のClaudeは作業範囲を控えめにとり、実現性を留保し、見積もりに余裕を持たせる傾向がある。安全網が整っている場合は「目標は終点ではない、次は何か、野心的に」と伝えると改善が止まらずに続いた。一方で人間は、ユーザーに見える変化の良し悪し（センス）、優先順位や複雑さとの釣り合い（方向づけ）を判断する役に回る。事例では、送信1回あたり2msの改善のために保守の重いビルドプラグインを入れる900行のPRを、人間が却下している。",
+      "source_title": "How we made claude.ai 3x faster in two weeks - claude.dev",
+      "source_url": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-25",
+      "last_date": "2026-09-25",
+      "appearances": 1
+    },
+    {
+      "id": 2161,
+      "title": "AIの高速な変更を安全に出す：自動レビュー＋人の承認＋短期のフィーチャーフラグ＋段階ロールアウト",
+      "point": "2週間で3,000件超の変更を、顧客に影響する障害やロールバックなしでマージできた。すべてのPRで自動レビューと人間1名以上の承認を必須にし、最適化の前に単体テストを書き、ユーザーに見える変更は短期のフィーチャーフラグの後ろで出した。リスクが高い変更は社員→1%→全員の順に展開した。約200個に増えたフラグは、Claudeが緊急停止用か段階展開用かに分類し、不要になったものから片付けた。",
+      "source_title": "How we made claude.ai 3x faster in two weeks - claude.dev",
+      "source_url": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
+      "tags": [],
+      "first_date": "2026-09-25",
+      "last_date": "2026-09-25",
+      "appearances": 1
+    },
+    {
+      "id": 2162,
+      "title": "大規模なエージェント探索は「研究ブリーフ1本＋候補ごとのレポート＋批判的な再評価」で絞り込む",
+      "point": "Anthropicの新しい生命科学ラボでは、Claudeのエージェント約950体が21時間、約2億1,000万トークンを使ってDNAデータベースを探索し、CRISPRに似た反復配列を伴う新しい酵素系「ART」を見つけた（機能はまだ不明）。人間が関わったのは最初のプロンプトと実験だけ。進め方は、既存の文献と結果の再現で手法を確かめる→既知の系に当てはまらない候補を探す→候補ごとに人間が読めるレポートを書く→Claude自身が証拠を批判的に見直してほとんどを落とす、の順。人間が「試す価値あり」と判断した候補の特徴をClaudeへの指示に戻すことで、研究者の目利きを学ばせている。",
+      "source_title": "Claude discovers a novel enzyme system - Anthropic",
+      "source_url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+      "tags": [
+        "API",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-09-25",
+      "last_date": "2026-09-25",
+      "appearances": 1
+    },
+    {
+      "id": 2164,
+      "title": "長い作業はタスクリストをTASKS.mdに置き、会話ログではなくファイルで進み具合を見る",
+      "point": "Opus 5.5では1回の作業が長くなり、コンテキストが埋まるとClaude Codeが古いやり取りを要約する。「TASKS.mdにチェックリストを作り、終えた項目に印を付け、見つけた作業を書き足して」と頼めば、要約されてもリストは残り、何が終わって何が残っているかがすぐ分かる。作業後の報告の形も「最後は『自分待ちの事項』『変更点』『見つけたこと』の3見出しで」とCLAUDE.mdで指定できる。まず「自分待ちの事項」から読むのが推奨。",
+      "source_title": "Getting the most out of Opus 5.5 in Claude and Claude Code - claude.dev",
+      "source_url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-09-25",
+      "last_date": "2026-09-25",
+      "appearances": 1
     },
     {
       "id": 2145,
@@ -23720,6 +23852,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-25",
+      "highlights": [
+        "「計測できるものはClaudeが速くできる」 — claude.aiを2週間で約3倍速にした公式事例、決定的なベンチマークをCIのラチェットにするのが鍵",
+        "Claudeが約950エージェント・21時間で新しい酵素系を発見 — 研究ブリーフ1本＋候補ごとの人間向けレポート＋批判的な再評価という進め方が参考になる",
+        "Opus 5.5公式プレイブック — CLAUDE.mdに「止まる/続ける」条件を書き、長時間の作業ではタスクリストをファイルに置く"
+      ]
+    },
+    {
       "date": "2026-09-24",
       "highlights": [
         "Claude Opus 5.5 リリース — Opus 5より単価2割・キャッシュ読み出し6割安く、Claude Codeの既定Opusモデルに",
@@ -25060,5 +25200,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-24T08:00:05.077072"
+  "generated_at": "2026-09-25T08:00:05.191652"
 }
