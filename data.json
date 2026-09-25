@@ -10018,6 +10018,43 @@
       "appearances": 3
     },
     {
+      "id": 2172,
+      "title": "Opus 5.5でキャッシュを温存する3つのコツ",
+      "point": "Opus 5.5はOpus 5比で入出力トークンが約2割安、キャッシュ読み取りは6割安（他社比でおよそ1/5）。恩恵を受けるコツは、セッション開始時にモデルを固定し途中で切り替えない、長時間セッションでは1時間キャッシュを使う、`/usage`でキャッシュヒット率を確認して不要なコンテキストを削る、の3点。",
+      "source_title": "Coding sessions are longer and use more context - Claude",
+      "source_url": "https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-26",
+      "last_date": "2026-09-26",
+      "appearances": 2
+    },
+    {
+      "id": 2174,
+      "title": "Claude TagがSlackチャンネルで個人コネクタを使えるようになった",
+      "point": "これまでClaude Tagはチャンネルに管理者が接続した共有コネクタしか使えなかったが、自分のClaudeアカウントに繋いだGoogleドライブやカレンダー、CRMなどの個人コネクタもチャンネル内のリクエストで使えるようになった。回答を投稿前にレビューするか自動投稿にするか選べ、個人コネクタ経由の操作はそのツール自身のログに個人アカウントとして記録される（チャンネル用のサービスアカウントの記録とは別）。現在Teamプランから展開中で、Enterpriseは今後対応予定。",
+      "source_title": "Claude Tag now supports personal connectors in channels - Claude",
+      "source_url": "https://claude.com/blog/claude-tag-now-supports-personal-connectors-in-channels",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-26",
+      "last_date": "2026-09-26",
+      "appearances": 2
+    },
+    {
+      "id": 2177,
+      "title": "一度もコンパクションしていない超大規模セッションでも`/resume`が高速化",
+      "point": "v2.1.282で、一度もコンパクション（要約）されていない非常に大きなセッションを含め、大規模セッションの再開にかかる時間が改善された。長い会話を`/resume`で頻繁に呼び戻す運用でも待ち時間が減る。",
+      "source_title": "Claude Code changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-26",
+      "last_date": "2026-09-26",
+      "appearances": 2
+    },
+    {
       "id": 2163,
       "title": "CLAUDE.mdに「止まって確認する条件」と「そのまま続ける条件」を書く",
       "point": "Opus 5.5は長い作業の途中で、次の手順を示すだけの要約や「続けますか？」で止まることがある。CLAUDE.mdに「自分の入力が要らない手順はそのまま進め、状況報告は次の操作と同じメッセージに含める。止まって聞くのは、自分がいないと進めないときと、データ削除・force push・リポジトリ外の変更など取り返しのつかない操作の前だけ」と書くと従う。止まる回数が減る分、破壊的なコマンドの許可確認はオンのままにしておく。ペアプログラミングのように毎回確認したい場合は、逆の方針を書けばよい。",
@@ -13811,6 +13848,69 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2171,
+      "title": "Opus 5.5の利用実態：3〜9月でコンテキスト量2.6倍、呼び出し回数40%増",
+      "point": "Anthropicの社内データでは、3月から9月にかけて開発者のリクエストあたりコンテキスト量は2.6倍、1プロンプトあたりのモデル呼び出し回数は40%以上増え、処理時間は3.3倍に伸びた。入力対出力のトークン比率は189:1から324:1に変化し、ユーザーからの割り込みは68%減少。長時間・自律的な作業へのシフトが数字で裏付けられており、タスクの重さをターン数だけで測る発想は古くなりつつある。",
+      "source_title": "Coding sessions are longer and use more context - Claude",
+      "source_url": "https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-26",
+      "last_date": "2026-09-26",
+      "appearances": 1
+    },
+    {
+      "id": 2173,
+      "title": "Opus 5.5は出力生成が3割以上高速：長時間・自律型のタスクに割り当てる",
+      "point": "Opus 5.5はOpus 5比で出力生成が30%以上速く、単純作業より複雑で自由度の高いタスクほど必要なターン数が少なく済む。効率化の効果が最も大きいのは長時間・コンテキスト過多・自律性の高い作業なので、そうしたタスクを優先的にOpus 5.5へ回すのが推奨されている。",
+      "source_title": "Coding sessions are longer and use more context - Claude",
+      "source_url": "https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-26",
+      "last_date": "2026-09-26",
+      "appearances": 1
+    },
+    {
+      "id": 2175,
+      "title": "Claude Code v2.1.282：ワイド端末でも文章幅を読みやすく保つ`maxProseWidth`",
+      "point": "横に広いターミナルでは地の文が際限なく伸びて読みにくくなりがちだったが、`maxProseWidth`設定で文章部分の最大幅を制限できるようになった。表やコードブロックは従来通り画面幅いっぱいに表示される。",
+      "source_title": "Claude Code changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-09-26",
+      "last_date": "2026-09-26",
+      "appearances": 1
+    },
+    {
+      "id": 2176,
+      "title": "プロジェクト設定でテレメトリが無効化されている場合に`/status`・`claude doctor`で通知",
+      "point": "v2.1.282から、プロジェクトの設定ファイルにあるテレメトリ関連の環境変数が無視されていたり、テレメトリを無効にしていたりする場合、起動時の通知および`/status`・`claude doctor`の項目でそれと分かるようになった。意図しない設定漏れに気づきやすい。",
+      "source_title": "Claude Code changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-26",
+      "last_date": "2026-09-26",
+      "appearances": 1
+    },
+    {
+      "id": 2178,
+      "title": "`/artifacts`一覧がキーボード・マウス操作に対応し見やすく整列",
+      "point": "v2.1.282で`/artifacts`の一覧表示が改善され、タイトルが1列に揃い、詳細情報が単語の途中で切れずまるごと省略されるようになった。PgUp/PgDn・Home/End・マウスホイール・クリックでの操作にも対応した。",
+      "source_title": "Claude Code changelog - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-09-26",
+      "last_date": "2026-09-26",
+      "appearances": 1
     },
     {
       "id": 2158,
@@ -23852,6 +23952,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-26",
+      "highlights": [
+        "Claude Opus 5.5は長時間コーディング前提の設計 — 3〜9月でコンテキスト量2.6倍・呼び出し回数40%増でも出力は3割以上高速化",
+        "Claude TagがSlackで個人コネクタに対応 — 自分のGoogleドライブやカレンダーをチャンネル内のリクエストでも使える",
+        "Claude Code v2.1.282公開 — ワイド端末向け表示幅設定、テレメトリ無効通知、巨大セッションの再開高速化など"
+      ]
+    },
+    {
       "date": "2026-09-25",
       "highlights": [
         "「計測できるものはClaudeが速くできる」 — claude.aiを2週間で約3倍速にした公式事例、決定的なベンチマークをCIのラチェットにするのが鍵",
@@ -25200,5 +25308,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-25T08:00:05.191652"
+  "generated_at": "2026-09-26T08:00:05.089897"
 }
