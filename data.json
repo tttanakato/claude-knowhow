@@ -10018,6 +10018,36 @@
       "appearances": 3
     },
     {
+      "id": 2183,
+      "title": "`/doctor prompt-audit`でCLAUDE.mdの「古いモデル向け指示」を検出",
+      "point": "Claude Code v2.1.283で追加。`/doctor prompt-audit`（`/checkup prompt-audit`でも起動）がCLAUDE.md・skills・agents・commandsを走査し、古いモデル世代向けに書かれたプロンプトパターンを洗い出して改善提案をまとめる。停滞したパスや矛盾する指示ファイルが報告の先頭に来るよう改良済み。",
+      "source_title": "Release v2.1.283 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-27",
+      "last_date": "2026-09-27",
+      "appearances": 2
+    },
+    {
+      "id": 2185,
+      "title": "`--system-prompt`と`--append-system-prompt`がテキスト＋ファイル指定を同時対応に",
+      "point": "これまでどちらか一方だった`--system-prompt`／`--append-system-prompt`のテキスト直接指定と`-file`形式によるファイル読み込みが、同時に併用できるようになった。ファイルの内容が先に展開される仕様。",
+      "source_title": "Release v2.1.283 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-09-27",
+      "last_date": "2026-09-27",
+      "appearances": 2
+    },
+    {
       "id": 2172,
       "title": "Opus 5.5でキャッシュを温存する3つのコツ",
       "point": "Opus 5.5はOpus 5比で入出力トークンが約2割安、キャッシュ読み取りは6割安（他社比でおよそ1/5）。恩恵を受けるコツは、セッション開始時にモデルを固定し途中で切り替えない、長時間セッションでは1時間キャッシュを使う、`/usage`でキャッシュヒット率を確認して不要なコンテキストを削る、の3点。",
@@ -13848,6 +13878,98 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2182,
+      "title": "Claudeプラグイン提出ポータルが公開、MCP利用は今年110倍に急増",
+      "point": "Anthropicは有料プラン開発者向けにプラグイン提出ポータルを公開。単体のMCPコネクタか、MCPサーバーとSkillsを束ねたプラグインバンドルの2形式で提出でき、送信時に自動安全性スキャンが走る。公開後はプロダクト別インストール数や検索流入といった分析も確認できる。背景にはMCP利用量が今年だけで110倍に急増した事情がある。",
+      "source_title": "Build plugins for Claude with the directory submission portal - Claude",
+      "source_url": "https://claude.com/blog/build-plugins-for-claude",
+      "tags": [
+        "API",
+        "MCP/プラグイン",
+        "生産性"
+      ],
+      "first_date": "2026-09-27",
+      "last_date": "2026-09-27",
+      "appearances": 1
+    },
+    {
+      "id": 2184,
+      "title": "`availableModelsMatch`と`deniedModels`でモデル利用を組織単位に厳格制御",
+      "point": "`availableModelsMatch`を`\"exact\"`にすると、`availableModels`に列挙したバージョンのモデルしか使えなくなり、新モデルが出ても明示的に許可するまで自動では使えない。`deniedModels`は許可リストに含まれていても特定モデルを個別にブロックできる管理者向け設定。",
+      "source_title": "Release v2.1.283 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-27",
+      "last_date": "2026-09-27",
+      "appearances": 1
+    },
+    {
+      "id": 2186,
+      "title": "MCPツールが返す画像がファイル保存され、Bash/Readで開けるように",
+      "point": "MCPツールが返す画像結果が自動的にファイルとしても保存されるようになり、BashやReadなど他のツールから直接開けるようになった。MCP経由で受け取った画像をパイプラインの後工程に渡す作業が楽になる。",
+      "source_title": "Release v2.1.283 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-27",
+      "last_date": "2026-09-27",
+      "appearances": 1
+    },
+    {
+      "id": 2187,
+      "title": "Claude Codeの起動・初回応答をさらに高速化",
+      "point": "セッション初回応答の末尾で行っていたパターンコンパイル処理を、応答をストリーユングしている最中に前倒しで実行するよう変更。加えてAPI接続の使い回しで初回リクエストも高速化。`claude -p`とClaude Code Remoteは対話UIの読み込み自体を省略するようになった。",
+      "source_title": "Release v2.1.283 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-09-27",
+      "last_date": "2026-09-27",
+      "appearances": 1
+    },
+    {
+      "id": 2188,
+      "title": "`/context`がMCPサーバーの指示トークンもカウント対象に",
+      "point": "これまで`/context`の集計から漏れていたMCPサーバーの指示（システムプロンプトへの注入分）が、独立した行として表示され合計トークン数にも反映されるようになった。コンテキスト逼迫の原因特定がしやすくなる。",
+      "source_title": "Release v2.1.283 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-27",
+      "last_date": "2026-09-27",
+      "appearances": 1
+    },
+    {
+      "id": 2189,
+      "title": "コンパクションのスピナーが要約トークンをストリーミング表示するように改善",
+      "point": "これまでパーセンテージのプログレスバーだったコンパクション中の表示が、開始時点からのタイマーと、生成中の要約トークン数をリアルタイムに数えるスピナーに変更された。処理の進み具合が体感的につかみやすい。",
+      "source_title": "Release v2.1.283 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "tags": [],
+      "first_date": "2026-09-27",
+      "last_date": "2026-09-27",
+      "appearances": 1
+    },
+    {
+      "id": 2190,
+      "title": "Claude Tag：「Claudeが検索できるSlackチャンネル」を管理者が制限可能に",
+      "point": "Claude TagのSlack検索範囲を、Claudeが追加済みの公開チャンネルのみに限定できる管理者設定が追加された。組織・ワークスペース・チャンネル単位で設定でき、意図しない範囲までSlack内検索が及ぶのを防げる。",
+      "source_title": "Release v2.1.283 · anthropics/claude-code",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "tags": [],
+      "first_date": "2026-09-27",
+      "last_date": "2026-09-27",
+      "appearances": 1
     },
     {
       "id": 2171,
@@ -23952,6 +24074,14 @@
   ],
   "daily": [
     {
+      "date": "2026-09-27",
+      "highlights": [
+        "Claudeプラグイン提出ポータルが公開 — サードパーティ開発者が審査状況やインストール分析を追跡できる新窓口。MCP利用量は今年だけで110倍に急増",
+        "Claude Code v2.1.283で`/doctor prompt-audit`が登場 — CLAUDE.md・skills・agentsに残る「古いモデル向け指示」を自動検出し改善案を提示",
+        "v2.1.283でモデル利用の組織統制が強化 — `availableModelsMatch`と`deniedModels`で許可・禁止モデルを厳密指定可能に"
+      ]
+    },
+    {
       "date": "2026-09-26",
       "highlights": [
         "Claude Opus 5.5は長時間コーディング前提の設計 — 3〜9月でコンテキスト量2.6倍・呼び出し回数40%増でも出力は3割以上高速化",
@@ -25308,5 +25438,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-26T08:00:05.089897"
+  "generated_at": "2026-09-27T08:00:05.537737"
 }
