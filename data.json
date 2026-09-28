@@ -5433,6 +5433,35 @@
       "appearances": 5
     },
     {
+      "id": 2198,
+      "title": "Claude Code Artifactsの共有が「常に最新版」トグルに対応、ダッシュボード用途に拡大",
+      "point": "セッションの作業をライブ更新される共有Webページに変えるArtifacts機能で、「常に最新版を共有」をオンにすると閲覧者は常に最新の状態を見られ、オフにすれば特定バージョンに固定できる。複数バージョンは保持され、共有パネルから切り替え可能。コネクタ経由でデータを取り込み続けるダッシュボード的な使い方にも対応する。2026年6月18日にTeam/Enterprise限定ベータとして発表され、今回Pro/Max個人ユーザーにも公開リンク共有が広がった。",
+      "source_title": "Claude Code Artifacts Sharing",
+      "source_url": "https://claude-media.com/articles/claude-code-artifacts-sharing",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-28",
+      "last_date": "2026-09-28",
+      "appearances": 4
+    },
+    {
+      "id": 2199,
+      "title": "Cowork内蔵ブラウザとClaude in Chromeの使い分け指針",
+      "point": "Claude Desktopアプリのサイドパネルで動く内蔵ブラウザは、拡張機能なしでページの読み取り・クリック・フォーユ入力ができ、サイトごとに独立したログイン状態を持つ。一方Claude in Chromeは既にログイン済みの手元のChromeで動くため、CRM更新や受信トレイ処理など「今開いているページ」の操作に向く。内蔵ブラウザはフォーム入力やダッシュボードのデータ取得を任せて他の作業を並行する用途に向くと整理されている。金融口座や医療情報、他人の個人情報を扱う用途にはどちらも避けるようAnthropicは注意喚起している。",
+      "source_title": "Cowork Built-in Browser vs Claude in Chrome",
+      "source_url": "https://claude-media.com/articles/cowork-built-in-browser",
+      "tags": [
+        "API",
+        "製品機能"
+      ],
+      "first_date": "2026-09-28",
+      "last_date": "2026-09-28",
+      "appearances": 4
+    },
+    {
       "id": 2119,
       "title": "`/skill-doctor` で未使用スキルのトークン代を実測する",
       "point": "Claude Code v2.1.252以降の `/skill-doctor` は、セッションに読み込まれた全スキルについて「発火回数」と「毎ターン消費しているコンテキストトークン数」を表示する。スキルは説明1行がシステムプロンプトに常駐するため、一度も発火しなくても毎ターン課金される。実測したところ未使用スキルだけで約4,590トークンを消費していた例が報告されている。スキルを増やす前に、まず今あるものの費用対効果を見ること。",
@@ -7228,6 +7257,38 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2197,
+      "title": "ClaudeのチャットとCoworkが統合、Claude Docs/Slidesが同時始動",
+      "point": "2026年9月16日、AnthropicはClaudeの「チャット」と「Cowork」を1つの体験に統合。これまで別モードだった雑談と大規模タスクを1つの会話内で行える。同時に共同編集ツール「Claude Docs」「Claude Slides」が登場し、Claudeが下書きした資料・スライドを直接編集し、リンクで共有できる。スライドはその場で発表するか、PowerPoint/PDFとして書き出せる。「Claude Design」もチャットに統合されつつ単体アプリとしても継続。展開はPro/Maxから順次、既存のタスク・プロジェクト・Artifacts・Connectors・Skillsはそのまま引き継がれる。",
+      "source_title": "Claude Cowork Integration into Claude Chat",
+      "source_url": "https://claude-media.com/articles/cowork-is-now-claude-2026-09",
+      "tags": [
+        "API",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-09-28",
+      "last_date": "2026-09-28",
+      "appearances": 3
+    },
+    {
+      "id": 2202,
+      "title": "`/doctor prompt-audit`でCLAUDE.mdの「効かなくなった指示」を検出",
+      "point": "Claude Code 2.1.283で追加された`/doctor prompt-audit`（`/checkup prompt-audit`でも起動）は、CLAUDE.md・skills・agents・commandsを走査し、削除済みファイルパスへの参照、名称変更されたコマンドへの参照、複数ファイル間で矛盾する指示といった「効かなくなった行」を名指しで検出する。モデル更新のたびに指示書を継ぎ足してきたユーザーほど恩恵が大きいと解説されている。",
+      "source_title": "【9/26 AIニュース】AIに渡している指示書、効かなくなった行をClaude Codeが名指しする",
+      "source_url": "https://note.com/generativeai_new/n/nfec0ce724dea",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト",
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-09-28",
+      "last_date": "2026-09-28",
+      "appearances": 3
     },
     {
       "id": 2134,
@@ -10016,6 +10077,21 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2201,
+      "title": "今週のCLI3社まとめ：Opus 5.5のデフォルト化とsymlink書き込みバグ修正",
+      "point": "2026年9月27日週の振り返りでは、Claude CodeでOpus 5.5（$4/$20 per MTok）がデフォルトのOpusモデルになったことに加え、v2.1.280でシンボリックリンク経由の書き込み権限判定バグが修正され、v2.1.281では`\"attribution\": false`という短縮記法が使えるようになり、auto-modeの安全性判定がサーバー側classifierに移行したと整理されている。同記事はCodex CLI（GPT-6 Sol/Luna追加）やGemini CLI（プロンプトインジェクション対策強化）の動きも横並びで比較している。",
+      "source_title": "今週の Claude Code・Codex・Gemini CLI 変更点まとめ(2026年9月27日週)",
+      "source_url": "https://qiita.com/aicoding-guide/items/4f153113509e2730df34",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-28",
+      "last_date": "2026-09-28",
+      "appearances": 2
     },
     {
       "id": 2183,
@@ -13878,6 +13954,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2200,
+      "title": "「AIツールを自由に使えるか」がエンジニアの市場価値を左右する時代に",
+      "point": "フリーランスエンジニア向けの実践記事では、CLAUDE.mdはプロジェクト固有ルールのみに絞って薄く保つ、権限設定とHooksの二重の安全層を敷く、レビュー・調査・実装用にサブエージェントを分けてコンテキストを分離する、繰り返し作業はカスタムスラッシュコマンド化する、非同期タスクはPlan Modeで戦略を練ってから実装に入る、といった土台を紹介。その上で「AIツールを自由に使える環境かどうかが、給与交渉そのものより重要になってきている」とし、Git logの分析でスキル投資を可視化するなど、勤務先選びやキャリア判断にも実践テクニックの延長として言及している。",
+      "source_title": "Claude Code実践Tips15選：フリーランスエンジニアの市場価値を上げる設定術",
+      "source_url": "https://qiita.com/sescore/items/70cccbb575e6f5d02508",
+      "tags": [
+        "CLAUDE.md",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-09-28",
+      "last_date": "2026-09-28",
+      "appearances": 1
     },
     {
       "id": 2182,
@@ -24074,6 +24165,13 @@
   ],
   "daily": [
     {
+      "date": "2026-09-28",
+      "highlights": [
+        "ClaudeのチャットとCoworkが1つの体験に統合され、共同編集ツール「Claude Docs」「Claude Slides」が同時に始動 — モード切替をやめて1つの会話の中で雑談から大きめのプロジェクトまで扱えるようになり、資料・スライド作成もチャットのまま完結する",
+        "Claude Code Artifactsの共有機能が「常に最新版を共有」トグルに対応し、ダッシュボード用途へ拡大 — コネクタ経由でデータを取り込み続けるライブなダッシュボードとして公開できるようになった"
+      ]
+    },
+    {
       "date": "2026-09-27",
       "highlights": [
         "Claudeプラグイン提出ポータルが公開 — サードパーティ開発者が審査状況やインストール分析を追跡できる新窓口。MCP利用量は今年だけで110倍に急増",
@@ -25438,5 +25536,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-28T08:00:05.166743"
+  "generated_at": "2026-09-29T08:00:05.116419"
 }
