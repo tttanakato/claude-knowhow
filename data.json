@@ -2744,6 +2744,20 @@
       "appearances": 8
     },
     {
+      "id": 2206,
+      "title": "Claude Sonnet 5.5がSonnet 5の後継に：30%高速・同価格",
+      "point": "Sonnet 5.5はOpus 5.5に続くミドル層モデルで、Sonnet 5より出力が約30%高速。バグ修正、文書作成、UI改善、スライド作成など「範囲が明確な日常タスク」に最適とされる。Sonnetとして初めてOpus 5相当のサイバー安全策が入った。※Claude Codeでの既定モデル切替は未確認。",
+      "source_title": "VentureBeat",
+      "source_url": "https://venturebeat.com/technology/anthropic-launches-claude-sonnet-5-5-with-30-cost-reduction-per-task-due-to-faster-speeds-and-fewer-tool-calls",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-09-29",
+      "last_date": "2026-09-29",
+      "appearances": 7
+    },
+    {
       "id": 2121,
       "title": "プロンプトキャッシュを壊す3大要因を潰す",
       "point": "キャッシュは接頭辞の完全一致で判定されるため、(1) システムプロンプト内の「今日は2026-09-22です」のような日付は翌日以降の全リクエストでキャッシュを殺す→ユーザーメッセージ側か末尾の非キャッシュブロックへ移す、(2) テンプレートがJSONオブジェクトを再シリアライズするとキー順が揺れて失敗する→シリアライザを固定するかオブジェクトでなく文字列を渡す、(3) ツール定義も接頭辞の一部なので並び順を決定的にソートする。なお5分TTLはローリングで、ヒットのたびに延長される。",
@@ -7259,6 +7273,19 @@
       "appearances": 4
     },
     {
+      "id": 2207,
+      "title": "Sonnet 5.5はLow/Mediumでも高精度：effort設定でコスト最適化",
+      "point": "一部ベンチマークでLow/Medium effortがSonnet 5の最高設定に匹敵し、コストは約1/10という報告。日常タスクはMediumから試し、足りなければ上げる運用が有効。（以前の「Sonnet 5はmediumだと失敗しやすい」という知見とは異なるため、自環境で検証を推奨）",
+      "source_title": "VentureBeat",
+      "source_url": "https://venturebeat.com/technology/anthropic-launches-claude-sonnet-5-5-with-30-cost-reduction-per-task-due-to-faster-speeds-and-fewer-tool-calls",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-29",
+      "last_date": "2026-09-29",
+      "appearances": 3
+    },
+    {
       "id": 2197,
       "title": "ClaudeのチャットとCoworkが統合、Claude Docs/Slidesが同時始動",
       "point": "2026年9月16日、AnthropicはClaudeの「チャット」と「Cowork」を1つの体験に統合。これまで別モードだった雑談と大規模タスクを1つの会話内で行える。同時に共同編集ツール「Claude Docs」「Claude Slides」が登場し、Claudeが下書きした資料・スライドを直接編集し、リンクで共有できる。スライドはその場で発表するか、PowerPoint/PDFとして書き出せる。「Claude Design」もチャットに統合されつつ単体アプリとしても継続。展開はPro/Maxから順次、既存のタスク・プロジェクト・Artifacts・Connectors・Skillsはそのまま引き継がれる。",
@@ -10077,6 +10104,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2208,
+      "title": "`/doctor prompt-audit`で旧モデル向けの古い指示を棚卸しする",
+      "point": "v2.1.283で追加（`/checkup prompt-audit`でも可）。「段階的に考えて」「必ず確認」など旧モデル向けの過剰強調・矛盾指示・固定手順を検出。プロジェクト固有仕様やセキュリティ制約は残す方針で、単なる削除機能ではない。整理でコスト約14.6%減・精度約5.3%向上という報告（個人の検証結果で、一般化は要注意）。",
+      "source_title": "note（だいあろごす）",
+      "source_url": "https://note.com/dialogs_develop/n/ncb20c8764e7a?hl=en",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-29",
+      "last_date": "2026-09-29",
+      "appearances": 2
     },
     {
       "id": 2201,
@@ -13954,6 +13995,34 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2209,
+      "title": "管理設定`deniedModels`／`availableModelsMatch`でモデル利用を制御する",
+      "point": "v2.1.283で追加。特定モデルのブロックやモデルバージョンの厳密一致を管理設定で指定でき、チームでの意図しないモデル使用を防げる。ゲートウェイ向けに`x-claude-code-prompt-id`ヘッダーも追加。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-09-29",
+      "last_date": "2026-09-29",
+      "appearances": 1
+    },
+    {
+      "id": 2210,
+      "title": "Claude Code v2.1.280〜281：Opus 5.5が既定モデルに",
+      "point": "9/22にOpus 5.5が既定モデルとなり（v2.1.280）、9/23にサポートが追加（v2.1.281）。`claude update`で最新化し、`/model`で確認する。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-09-29",
+      "last_date": "2026-09-29",
+      "appearances": 1
     },
     {
       "id": 2200,
@@ -24165,6 +24234,13 @@
   ],
   "daily": [
     {
+      "date": "2026-09-29",
+      "highlights": [
+        "Claude Sonnet 5.5が登場（9/28）: Sonnet 5比で出力が約30%高速、ツール呼び出し削減でタスク単価も最大30%低減。価格は据え置き（入力$2／出力$10／キャッシュ読取$0.20 per 1M）。",
+        "Claude Code v2.1.283の`/doctor prompt-audit`: CLAUDE.md・Skills・Agents・Commandsから旧モデル向けの過剰な指示を洗い出せる。"
+      ]
+    },
+    {
       "date": "2026-09-28",
       "highlights": [
         "ClaudeのチャットとCoworkが1つの体験に統合され、共同編集ツール「Claude Docs」「Claude Slides」が同時に始動 — モード切替をやめて1つの会話の中で雑談から大きめのプロジェクトまで扱えるようになり、資料・スライド作成もチャットのまま完結する",
@@ -25536,5 +25612,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-29T08:00:05.116419"
+  "generated_at": "2026-09-30T08:00:05.203751"
 }
