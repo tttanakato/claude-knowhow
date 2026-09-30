@@ -4269,6 +4269,19 @@
       "appearances": 6
     },
     {
+      "id": 2218,
+      "title": "`/mcp reconnect all`と「Yes, but ask again next time」でMCP・auto modeの運用を楽にする",
+      "point": "v2.1.284で追加。失敗したMCPサーバーを一括再接続でき、auto modeの作業ディレクトリ外の読み取りに「今回だけ許可・次回また確認」の選択肢が入った。`/usage`にゲートウェイの利用上限が金額表示される。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-09-30",
+      "last_date": "2026-09-30",
+      "appearances": 5
+    },
+    {
       "id": 2167,
       "title": "Opus 5.5をコードレビューに使うなら低めのeffortから試し、見逃すバグの顔ぶれで比べる",
       "point": "CodeRabbitの検証では、Opus 5.5の低effort構成（Standard）が既知バグ80件のうち51件を検出し、本番構成の49件をわずかに上回った。ただし本番構成が見逃した11件を見つける一方で、本番構成が見つけた9件は見逃した。effortを上げた構成（Max）は、難しいケース13件での検出は10件と最多だったが、コメント数とトークン使用量（+58〜60%）が増えた。総合スコアだけで置き換えを決めず、どのバグが漏れるようになるか、読むべきコメントがどれだけ増えるかも比べる。",
@@ -5445,6 +5458,23 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2214,
+      "title": "Claude Code v2.1.285：`claude --desktop`と`allowedProviders`管理設定",
+      "point": "9/29リリース。`claude --desktop`（`--continue`/`--resume <id>`併用可）でデスクトップアプリへ移行、`claude plugin configure <plugin>`でプラグイン設定を閲覧・変更、`allowedProviders`でAnthropic／Bedrock／Vertex AI等の利用先を制限。`CLAUDE_CODE_DISABLE_WEB_FETCH`でWebFetch無効化も可能。`/resume`は実行中のバックグラウンドセッションを開けるようになった。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "API",
+        "新機能",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-09-30",
+      "last_date": "2026-09-30",
+      "appearances": 4
     },
     {
       "id": 2198,
@@ -7271,6 +7301,21 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2216,
+      "title": "Sonnet 5.5のAPI破壊的変更5点：Sonnet 5向けコードは移行前に確認",
+      "point": "9/28リリースのAPI変更。`thinking: disabled`の代わりに`between_tools`を使う、`tool_choice`の`any`/`tool`は400エラー、thinkingブロックはアカウント紐付け、旧`computer_20251124`は不可、Advisorツールは旧モデル（Opus 4.8/4.7・Sonnet 5）をアドバイザーにできない。",
+      "source_title": "Claude Platform Release Notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-09-30",
+      "last_date": "2026-09-30",
+      "appearances": 3
     },
     {
       "id": 2207,
@@ -10104,6 +10149,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2217,
+      "title": "Sonnet 5.5はツール呼び出しをまとめ、スクリーンショット＋CSSの視覚デバッグに向く",
+      "point": "複数ファイル変更やバグ修正でツール呼び出しを効率的にバッチ化。壊れたダッシュボードのスクリーンショットとCSSを突き合わせ、最小修正を数秒で提案した例が紹介されている。Medium開始→複雑なら High、という運用を推奨（Maxが Xhighより低い場面もあるとの報告。1記事の結果で一般化は注意）。",
+      "source_title": "Analytics Vidhya",
+      "source_url": "https://www.analyticsvidhya.com/blog/2026/09/claude-sonnet-5-5-review/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-30",
+      "last_date": "2026-09-30",
+      "appearances": 2
     },
     {
       "id": 2208,
@@ -13995,6 +14053,33 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2215,
+      "title": "Sonnet 5.5の「30%低コスト」は単価でなくトークン削減：medium/highを実測比較する",
+      "point": "基本単価は据え置きで、必要トークン・ツール呼び出しが減ることで作業当たりの費用が下がる、という整理。架空の業務データで初回合否・所要時間・修正回数・人の修正時間を記録し、両設定が同じく正答する作業はmediumを候補にするなど段階導入を提案。※記事側も性能の実測は未実施と明記しており、自環境での検証が前提。",
+      "source_title": "ふくふくの読みもの（9/29）",
+      "source_url": "https://hukuhuku.co.jp/blog/ai-for-business/ab-24-claude-sonnet-55",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-09-30",
+      "last_date": "2026-09-30",
+      "appearances": 1
+    },
+    {
+      "id": 2219,
+      "title": "Sonnet 5.5は速さで試行回数を増やし、人の確認・修正時間込みで評価する",
+      "point": "出力が約30%高速なため、反復作業で試行を増やしやすい。ただしAIの応答速度だけでなく、確認と修正を含めた総時間で生産性を判断するのがコツ。",
+      "source_title": "Qiita（9/28）",
+      "source_url": "https://qiita.com/sin-aiagent/items/e4a1312e537e54fc945c",
+      "tags": [
+        "モデル",
+        "生産性"
+      ],
+      "first_date": "2026-09-30",
+      "last_date": "2026-09-30",
+      "appearances": 1
     },
     {
       "id": 2209,
@@ -24234,6 +24319,13 @@
   ],
   "daily": [
     {
+      "date": "2026-09-30",
+      "highlights": [
+        "Claude Code v2.1.285（9/29）: `claude --desktop`でデスクトップアプリをカレントディレクトリ／セッションで開ける。管理設定`allowedProviders`でAPIプロバイダを制限可能に。",
+        "Sonnet 5.5の「最大30%低コスト」は単価ではなくトークン削減の結果: medium/highを実測比較してから任せる範囲を広げる運用が推奨されている（9/29）。"
+      ]
+    },
+    {
       "date": "2026-09-29",
       "highlights": [
         "Claude Sonnet 5.5が登場（9/28）: Sonnet 5比で出力が約30%高速、ツール呼び出し削減でタスク単価も最大30%低減。価格は据え置き（入力$2／出力$10／キャッシュ読取$0.20 per 1M）。",
@@ -25612,5 +25704,5 @@
       ]
     }
   ],
-  "generated_at": "2026-09-30T08:00:05.203751"
+  "generated_at": "2026-10-01T08:00:05.206775"
 }
