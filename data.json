@@ -93,6 +93,19 @@
       "appearances": 35
     },
     {
+      "id": 2229,
+      "title": "設定の肥大化対策にeffortを明示する",
+      "point": "Sonnet 5.5ではeffortが実質必須指定。well-specifiedはmedium、難問はhighから始め、thinking budgetの固定値は使わない。",
+      "source_title": "Sonnet 5.5 Migration Guide",
+      "source_url": "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-10-01",
+      "last_date": "2026-10-01",
+      "appearances": 34
+    },
+    {
       "id": 2146,
       "title": "Opus 5.5のeffort既定はmedium：明示してeffortごとに測り直す",
       "point": "Opus 5の既定highに対しOpus 5.5はmedium。「40%安い」は既定mediumで測った値で、同じeffortならOpus 5より1ターンの思考量はむしろ多い傾向（特にxhigh/max）。モデル名だけ変えると考える深さが一段下がるので、effortを明示し段階ごとに品質とコストを比べ直す（移行ガイドの最初の推奨）。Claude Codeでは設定ファイル最上位の `effortLevel` はOpus 5.5に効かず、モデル別・プロジェクト単位の指定が必要な点に注意。",
@@ -474,6 +487,20 @@
       "first_date": "2026-06-26",
       "last_date": "2026-06-26",
       "appearances": 23
+    },
+    {
+      "id": 2224,
+      "title": "Sonnet 5.5はOpus 5.5の低コスト版：用途で使い分ける",
+      "point": "9/28公開。Opus 5.5（9/22公開、Opus 5比で運用コスト約40%減）の下位に位置する、高速・低コストの5.5ファミリー第2弾。日常の実装はSonnet、設計・難所のみOpusという従来の使い分けが続く。API・Bedrock・Google Cloud・Microsoft Foundryで提供。",
+      "source_title": "Claude Platform Release Notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-10-01",
+      "last_date": "2026-10-01",
+      "appearances": 21
     },
     {
       "id": 1144,
@@ -1520,6 +1547,17 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 2227,
+      "title": "権限ダイアログに「Yes, but ask again next time」",
+      "point": "2.1.284の追加。今回だけ許可して次回は再確認させる選択肢で、恒久許可を避けつつ作業を止めない運用ができる。",
+      "source_title": "Claude Code CHANGELOG",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "tags": [],
+      "first_date": "2026-10-01",
+      "last_date": "2026-10-01",
+      "appearances": 10
     },
     {
       "id": 2153,
@@ -3258,6 +3296,34 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 2223,
+      "title": "Sonnet 4.5 退役（11/30）：Sonnet 5.5へ移行チェックリストで計画的に切替",
+      "point": "退役まで約2か月。移行時の変更点は①assistant prefillは400エラー（structured outputsやuserメッセージへ）②`thinking`未指定でもadaptive thinkingが既定ON（`max_tokens`再検討、thinkingブロックはそのまま返す）③`tool_choice`のany/tool強制は不可→`auto`＋`strict: true`④`temperature`/`top_p`/`top_k`の非既定値は削除⑤`output_config.effort`を明示（まずmedium、難問はhigh）。",
+      "source_title": "Sonnet 5.5 Migration Guide",
+      "source_url": "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-10-01",
+      "last_date": "2026-10-01",
+      "appearances": 6
+    },
+    {
+      "id": 2226,
+      "title": "`/doctor prompt-audit`でCLAUDE.mdとスキルの無駄を診断する",
+      "point": "Claude Code 2.1.283で追加された診断機能。CLAUDE.mdやスキルを分析して肥大・重複を洗い出す用途（過去の`/skill-doctor`や`/doctor`と併用）。出力の詳細は未確認。",
+      "source_title": "Claude Code CHANGELOG",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト"
+      ],
+      "first_date": "2026-10-01",
+      "last_date": "2026-10-01",
+      "appearances": 6
     },
     {
       "id": 2147,
@@ -14055,6 +14121,36 @@
       "appearances": 2
     },
     {
+      "id": 2225,
+      "title": "Sonnet 5.5のthinkingはアカウント束縛：別アカウントへ履歴を持ち回さない",
+      "point": "Sonnet 5.5のthinkingブロックは生成したアカウント（または連携アカウント）でのみ有効。マルチアカウント構成やセッション引き継ぎのエージェント設計では、thinkingを他アカウントへ渡さない前提で作る。（詳細運用は公式で要確認）",
+      "source_title": "Claude Platform Release Notes",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-10-01",
+      "last_date": "2026-10-01",
+      "appearances": 1
+    },
+    {
+      "id": 2228,
+      "title": "Claude Code 2.1.285：Sonnet 5.5既定化とWebFetch制御用の環境変数",
+      "point": "既定モデルがSonnet 5.5に。Web取得の挙動を環境変数で制御可能になり、デスクトップ連携・プラグイン設定・MCP接続やセッション管理の修正も入った。固定したい場合は`ANTHROPIC_DEFAULT_MODEL`等で明示する。",
+      "source_title": "Claude Code CHANGELOG",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "tags": [
+        "Claude Code",
+        "API",
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-01",
+      "last_date": "2026-10-01",
+      "appearances": 1
+    },
+    {
       "id": 2215,
       "title": "Sonnet 5.5の「30%低コスト」は単価でなくトークン削減：medium/highを実測比較する",
       "point": "基本単価は据え置きで、必要トークン・ツール呼び出しが減ることで作業当たりの費用が下がる、という整理。架空の業務データで初回合否・所要時間・修正回数・人の修正時間を記録し、両設定が同じく正答する作業はmediumを候補にするなど段階導入を提案。※記事側も性能の実測は未実施と明記しており、自環境での検証が前提。",
@@ -24319,6 +24415,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-01",
+      "highlights": [
+        "Sonnet 4.5の廃止予告（9/30発表）: `claude-sonnet-4-5-20250929` は2026年11月30日に退役。Sonnet 5.5への移行では、prefill廃止・thinking既定ON・`tool_choice`強制不可・サンプリング系パラメータ削除に注意。",
+        "Claude Code 2.1.283〜2.1.285: Sonnet 5.5が既定モデルに。`/doctor prompt-audit`でCLAUDE.mdやスキルを診断可能。"
+      ]
+    },
+    {
       "date": "2026-09-30",
       "highlights": [
         "Claude Code v2.1.285（9/29）: `claude --desktop`でデスクトップアプリをカレントディレクトリ／セッションで開ける。管理設定`allowedProviders`でAPIプロバイダを制限可能に。",
@@ -25704,5 +25807,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-01T08:00:05.206775"
+  "generated_at": "2026-10-02T08:00:05.256787"
 }
