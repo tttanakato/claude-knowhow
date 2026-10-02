@@ -10217,6 +10217,20 @@
       "appearances": 3
     },
     {
+      "id": 2239,
+      "title": "危険な`rm`の保護がリダイレクト付きでも効くように修正",
+      "point": "出力リダイレクトを付けると危険な`rm`の安全確認が外れる不具合が2.1.287で修正。あわせてOpus 5.5/Sonnet 5.5間のモデル切替でMCP告知が書き換わる問題や、画面読み上げモードの不具合も修正された。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-02",
+      "last_date": "2026-10-02",
+      "appearances": 2
+    },
+    {
       "id": 2217,
       "title": "Sonnet 5.5はツール呼び出しをまとめ、スクリーンショット＋CSSの視覚デバッグに向く",
       "point": "複数ファイル変更やバグ修正でツール呼び出しを効率的にバッチ化。壊れたダッシュボードのスクリーンショットとCSSを突き合わせ、最小修正を数秒で提案した例が紹介されている。Medium開始→複雑なら High、という運用を推奨（Maxが Xhighより低い場面もあるとの報告。1記事の結果で一般化は注意）。",
@@ -14119,6 +14133,105 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2233,
+      "title": "Claude Code Mods：プラグインでツール呼び出し・プロンプト・UIを書き換える",
+      "point": "Modは「Claude Codeが自分のプロセス内で呼ぶ関数」を持つプラグイン。ツール呼び出しのブロック／書き換え、プロンプト加工、独自の`/command`、ペインやスピナーの描画変更などができる。自分で書くか、Claude Codeに「書いて」と頼める。`/plugin install 名前@マーケットプレース`で導入し、CLIとデスクトップのCodeタブで動く（VS Code拡張はフック実行のみで描画なし）。v2.1.287以降で既定ON。",
+      "source_title": "Mods overview - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/plugins/mods/overview",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-02",
+      "last_date": "2026-10-02",
+      "appearances": 1
+    },
+    {
+      "id": 2234,
+      "title": "Modは「自分の権限で動くコード」：導入前に`claude plugin validate`で確認する",
+      "point": "Modはサンドボックス対象外で、ファイル読み書き・プロセス起動・通信・環境変数（APIキー含む）の参照、承認前のツール呼び出し許可までできる。導入前にプラグインのディレクトリで`claude plugin validate ./some-mod`を実行すると、処理するイベント（`hooks:`）と依頼する操作（`calls:`）を実行せずに一覧できる。車載開発など機密コードを扱う環境では、社内レビュー済みの配布元のみに限定したい。",
+      "source_title": "Mods overview - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/plugins/mods/overview",
+      "tags": [
+        "API",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-02",
+      "last_date": "2026-10-02",
+      "appearances": 1
+    },
+    {
+      "id": 2235,
+      "title": "Modを止める3段階：個別／セッション単位／全体",
+      "point": "個別は`/plugin`のInstalledタブで無効化・削除、1セッションだけ全停止なら`claude --safe-mode`、常時全停止は`~/.claude/settings.json`に`\"disableAllHooks\": true`。組織管理者は`allowManagedModsOnly`で許可するModを制限できる。なお`--safe-mode`等でもビルトインModは止まらない。確認は`/plugin`の「N mod active」表示。",
+      "source_title": "Mods overview - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/plugins/mods/overview",
+      "tags": [
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-02",
+      "last_date": "2026-10-02",
+      "appearances": 1
+    },
+    {
+      "id": 2236,
+      "title": "ビルトインMod「You should know」：長い作業を見張る副エージェント",
+      "point": "作業中にClaudeの横で動く副エージェントが、見落としそうな点をプロンプト上部にメモ表示する。既定は無効で、`/plugin enable cc-plugin-you-should-know@builtin`で有効化。ファーストパーティのセッションかつテレメトリ有効時のみ動作（組織によっては利用不可）。出力の質は未検証。",
+      "source_title": "Claude Code 2.1.287 Adds Claude Mods",
+      "source_url": "https://ccleaks.com/news/claude-code-2-1-287-oct-2026",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-02",
+      "last_date": "2026-10-02",
+      "appearances": 1
+    },
+    {
+      "id": 2237,
+      "title": "設定フック・スキル・MCP・Modの使い分け",
+      "point": "既存スクリプトでイベントを許可／拒否／記録したいだけなら設定フック、同じ指示を貼り続けるならスキル、外部システムに触れるならMCP、UI描画やイベントの書き換えが要るときだけMod、という整理。Modは強力な分、最後の手段として検討する。",
+      "source_title": "Mods overview - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/plugins/mods/overview",
+      "tags": [
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-02",
+      "last_date": "2026-10-02",
+      "appearances": 1
+    },
+    {
+      "id": 2238,
+      "title": "MCPのURLプロンプト対応と`n:`フィルタ：2.1.287の運用改善",
+      "point": "MCPサーバー（2025-11-25プロトコル）がサインイン等のURLプロンプトを出せるように。サーバー側で接続に失敗する場合は`bareElicitationCapability`設定で回避可能。またagentsビューに`n:<text>`でセッション／タスク名を絞り込むフィルタが追加された。",
+      "source_title": "Claude Code 2.1.287 Adds Claude Mods",
+      "source_url": "https://ccleaks.com/news/claude-code-2-1-287-oct-2026",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-02",
+      "last_date": "2026-10-02",
+      "appearances": 1
+    },
+    {
+      "id": 2240,
+      "title": "2.1.287：npmの`latest`/`next`は2.1.287、`stable`は2.1.285のまま",
+      "point": "安定運用したい環境は`stable`チャンネルが2.1.285に留まる点に注意。Modsを試すなら2.1.287以降が必要で、`claude --version`で確認する。VS Code拡張でも「Run in background」などが改善された。",
+      "source_title": "Claude Code 2.1.287 Adds Claude Mods",
+      "source_url": "https://ccleaks.com/news/claude-code-2-1-287-oct-2026",
+      "tags": [],
+      "first_date": "2026-10-02",
+      "last_date": "2026-10-02",
+      "appearances": 1
     },
     {
       "id": 2225,
@@ -24415,6 +24528,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-02",
+      "highlights": [
+        "Claude Code 2.1.287で「Mods」が登場: プラグインに入れたTypeScript/JavaScript関数でClaude Code本体の挙動やUIを書き換えられる。ただしサンドボックス外で自分の権限で動くため、導入元の見極めが必須。",
+        "Modsは信頼できる配布元から入れ、導入前に`claude plugin validate`で中身を確認するのが安全運用の要点。"
+      ]
+    },
+    {
       "date": "2026-10-01",
       "highlights": [
         "Sonnet 4.5の廃止予告（9/30発表）: `claude-sonnet-4-5-20250929` は2026年11月30日に退役。Sonnet 5.5への移行では、prefill廃止・thinking既定ON・`tool_choice`強制不可・サンプリング系パラメータ削除に注意。",
@@ -25807,5 +25927,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-02T08:00:05.256787"
+  "generated_at": "2026-10-03T08:00:05.624862"
 }
