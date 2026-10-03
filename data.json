@@ -711,6 +711,19 @@
       "appearances": 18
     },
     {
+      "id": 2245,
+      "title": "自動コンパクトの「Prompt is too long」と`--resume`の文脈欠落を修正",
+      "point": "自動コンパクト時にプロンプト超過エラーが出る問題と、コンパクション後に`--resume`でファイルや文脈が落ちる問題が2.1.288で修正された。長い作業を中断・再開する運用で効果が大きい。再開後の文脈が正しいかは自分でも確認したい。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-10-03",
+      "last_date": "2026-10-03",
+      "appearances": 17
+    },
+    {
       "id": 2099,
       "title": "重要情報はプロンプトの先頭と末尾に配置する",
       "point": "関連情報が文脈の先頭または末尾にあるときに精度が最も高くなり、中盤に埋もれると30%以上の精度低下が起きるとされる。重要な指示は最初と最後に置き、中央には置かない。また、システムプロンプトを空にしないこと（3文でも長いユーザーメッセージより効く）、例示と指示の一貫性を保つこと（「簡潔に」と書きながら500語の例を置くとClaudeは例に従う）も重要。",
@@ -1918,6 +1931,17 @@
       "appearances": 10
     },
     {
+      "id": 2247,
+      "title": "`/code-review --max-findings <n>|all`で指摘件数を制御する",
+      "point": "レビューの指摘件数を数値または`all`で指定できる。まず少数で重要度の高いものを見て、必要なら`all`で網羅する使い分けができる。ASPICEのレビュー記録のように網羅性が要る場面では`all`が候補。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-10-03",
+      "last_date": "2026-10-03",
+      "appearances": 9
+    },
+    {
       "id": 2138,
       "title": "Agent view / Subagent / Agent teams / Worktrees を役割で使い分ける",
       "point": "混同しやすい4機能の切り分け。「今の依頼の一部を調査して結果を返してほしい」＝Subagents、「独立した仕事をいくつか開始して進み具合を見たい」＝Agent view（`claude agents`）、「複数の担当をClaude自身に組織させたい」＝Agent teams、「同じリポジトリのファイル編集を分けたい」＝Worktrees。Agent viewで扱うのは自分が開始して進める複数セッションで、Subagentのように親会話の下請けではない。なお `/agents`（Subagent管理）とシェルの `claude agents`（バックグラウンドセッション一覧）は別物。既存の対話セッションは `/bg` でバックグラウンドへ移すと一覧に出る。",
@@ -2780,6 +2804,31 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 2244,
+      "title": "Modsの`$.ui.selection()`で選択テキストを取得する",
+      "point": "フルスクリーンモードで選択中のテキストをModが取得できる。選択範囲を引数にした独自コマンド（例: 選んだログ行だけを要約）を作る足場になる。Modは自分の権限で動くため、導入前の確認は従来どおり必要。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-10-03",
+      "last_date": "2026-10-03",
+      "appearances": 7
+    },
+    {
+      "id": 2249,
+      "title": "MCPが追加OAuthスコープを要求したとき再認証を促す",
+      "point": "MCPサーバーが追加スコープを求めた際、再認証プロンプトが出るようになった。権限が足りず黙って失敗する状況が減る。付与するスコープは必要最小限かを確認してから承認したい。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-03",
+      "last_date": "2026-10-03",
+      "appearances": 7
     },
     {
       "id": 2206,
@@ -14135,6 +14184,59 @@
       "appearances": 2
     },
     {
+      "id": 2246,
+      "title": "Ctrl+Cで消したプロンプトを↑キーで復元できる",
+      "point": "誤ってCtrl+Cで入力を消しても、上矢印で下書きを戻せる。長いプロンプトの書き直しを避けられる小さな改善。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-10-03",
+      "last_date": "2026-10-03",
+      "appearances": 1
+    },
+    {
+      "id": 2248,
+      "title": "Ctrl+Fでセッション名検索、Alt+↑/↓でエージェントグループ間移動",
+      "point": "多数のセッションを並行運用するときの探索コストを下げる操作。前日追加の`n:`フィルタと併用できる。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-10-03",
+      "last_date": "2026-10-03",
+      "appearances": 1
+    },
+    {
+      "id": 2250,
+      "title": "クラウドセッションでGitHub CLIなしでも組み込み`gh api`が使える",
+      "point": "`gh`が入っていないクラウドセッションでも、組み込みの`gh api`でGitHub APIを呼べる。環境構築なしでIssueやPRの情報取得が可能になる。認証範囲の詳細は未確認。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-10-03",
+      "last_date": "2026-10-03",
+      "appearances": 1
+    },
+    {
+      "id": 2251,
+      "title": "非対話セッションの途中タイムアウトから部分応答で再開する",
+      "point": "非対話実行中にAPIが途中でタイムアウトしても、部分応答の続きから処理が進む。スケジュール実行やCIでの失敗リトライが減ることが期待できる。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API",
+        "自動化"
+      ],
+      "first_date": "2026-10-03",
+      "last_date": "2026-10-03",
+      "appearances": 1
+    },
+    {
       "id": 2233,
       "title": "Claude Code Mods：プラグインでツール呼び出し・プロンプト・UIを書き換える",
       "point": "Modは「Claude Codeが自分のプロセス内で呼ぶ関数」を持つプラグイン。ツール呼び出しのブロック／書き換え、プロンプト加工、独自の`/command`、ペインやスピナーの描画変更などができる。自分で書くか、Claude Codeに「書いて」と頼める。`/plugin install 名前@マーケットプレース`で導入し、CLIとデスクトップのCodeタブで動く（VS Code拡張はフック実行のみで描画なし）。v2.1.287以降で既定ON。",
@@ -24528,6 +24630,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-03",
+      "highlights": [
+        "2.1.288でModsにテキスト選択取得APIが追加: `$.ui.selection()`により、フルスクリーン表示中に選択した文字列をModから扱えるようになった。",
+        "長時間セッションの安定性向上: 自動コンパクトの「Prompt is too long」エラーや、`--resume`でファイル・文脈が失われる問題が修正された。"
+      ]
+    },
+    {
       "date": "2026-10-02",
       "highlights": [
         "Claude Code 2.1.287で「Mods」が登場: プラグインに入れたTypeScript/JavaScript関数でClaude Code本体の挙動やUIを書き換えられる。ただしサンドボックス外で自分の権限で動くため、導入元の見極めが必須。",
@@ -25927,5 +26036,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-03T08:00:05.624862"
+  "generated_at": "2026-10-04T08:00:05.160946"
 }
