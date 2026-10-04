@@ -2806,6 +2806,17 @@
       "appearances": 8
     },
     {
+      "id": 2255,
+      "title": "サンドボックス自動許可でもBashのdeny/askルールが効くよう修正",
+      "point": "環境変数の展開プレフィックスや単独の変数代入が先頭にあるコマンドで、Bashルールが素通りする問題が修正された。ネストした複合コマンドのルールがMod承認をまたいで残らない問題（管理端末）も直っている。`permissions.deny`に頼っている場合は2.1.289以降へ更新し、実際に拒否されるか自分でも確認したい。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-10-04",
+      "last_date": "2026-10-04",
+      "appearances": 7
+    },
+    {
       "id": 2244,
       "title": "Modsの`$.ui.selection()`で選択テキストを取得する",
       "point": "フルスクリーンモードで選択中のテキストをModが取得できる。選択範囲を引数にした独自コマンド（例: 選んだログ行だけを要約）を作る足場になる。Modは自分の権限で動くため、導入前の確認は従来どおり必要。",
@@ -10266,6 +10277,19 @@
       "appearances": 3
     },
     {
+      "id": 2260,
+      "title": "`plugin list/update/eval`の古いキャッシュ表示と、シンボリックリンク`--plugin-dir`のホットリロードを修正",
+      "point": "ローカルフォルダ由来のプラグインが古い内容で表示される問題が直り、`claude plugin validate`もマーケットプレイス定義が同居するフォルダで取りこぼさなくなった。自作プラグインの開発ループが安定する。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-04",
+      "last_date": "2026-10-04",
+      "appearances": 2
+    },
+    {
       "id": 2239,
       "title": "危険な`rm`の保護がリダイレクト付きでも効くように修正",
       "point": "出力リダイレクトを付けると危険な`rm`の安全確認が外れる不具合が2.1.287で修正。あわせてOpus 5.5/Sonnet 5.5間のモデル切替でMCP告知が書き換わる問題や、画面読み上げモードの不具合も修正された。",
@@ -14182,6 +14206,66 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2256,
+      "title": "IDEでの@メンション/変更/シンボリックリンク選択ファイルにもRead denyルールが適用される",
+      "point": "これまでIDE経由で選択・メンションされたファイルにRead denyが適用されない場合があった。機密ファイルを`deny`で守っている環境では影響が大きい修正。適用範囲の細部は未確認。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-10-04",
+      "last_date": "2026-10-04",
+      "appearances": 1
+    },
+    {
+      "id": 2257,
+      "title": "Modに`agent.spawn`が追加され、`$.agent.list()`でidle/waiting状態を取得できる",
+      "point": "Modからチームメイト（サブエージェント）を起動でき、プラグインのフックイベントで同一のエージェントIDを追跡できる。並行エージェントの状態を見える化するModの足場になる。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-04",
+      "last_date": "2026-10-04",
+      "appearances": 1
+    },
+    {
+      "id": 2258,
+      "title": "アップグレード後にインストール済みModが読み込まれない問題を修正",
+      "point": "Claude Code更新後にModが無効化されたように見える問題が直った。Modを日常運用している人は、更新後に動作確認する習慣を残しつつ、再インストールは不要になる。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-10-04",
+      "last_date": "2026-10-04",
+      "appearances": 1
+    },
+    {
+      "id": 2259,
+      "title": "Modの描画エラーが他のModやセッションを巻き込まなくなった",
+      "point": "Modの`ui.render`が例外を投げても、そのModだけが失敗し`ui.fault`が上がる。失敗した帯/ペインにはMod名が表示されるため、原因Modの特定が早い。複数作者のModを重ねる運用で効く。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-10-04",
+      "last_date": "2026-10-04",
+      "appearances": 1
+    },
+    {
+      "id": 2261,
+      "title": "VSCodeで2.1.288の`claude auth status`変更による頻繁なサインアウトが元に戻った",
+      "point": "2.1.288でVSCode利用者に出ていた頻繁なサインアウトが戻された。該当していた場合は2.1.289へ更新する。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-10-04",
+      "last_date": "2026-10-04",
+      "appearances": 1
     },
     {
       "id": 2246,
@@ -24630,6 +24714,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-04",
+      "highlights": [
+        "権限ルール（deny/ask）の抜け穴を複数修正: サンドボックス自動許可時に、環境変数プレフィックスや変数代入の後ろに置かれたコマンドでBashルールが効かない問題が修正された。権限設計に頼る運用では早めの更新が望ましい。",
+        "Mod/プラグイン周りの安定化: アップグレード後にインストール済みModが読み込まれない問題、Modの描画エラーでセッションが落ちる問題などが修正された。"
+      ]
+    },
+    {
       "date": "2026-10-03",
       "highlights": [
         "2.1.288でModsにテキスト選択取得APIが追加: `$.ui.selection()`により、フルスクリーン表示中に選択した文字列をModから扱えるようになった。",
@@ -26036,5 +26127,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-04T08:00:05.160946"
+  "generated_at": "2026-10-05T08:00:04.911771"
 }
