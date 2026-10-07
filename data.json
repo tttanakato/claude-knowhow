@@ -42,6 +42,32 @@
       "appearances": 45
     },
     {
+      "id": 2277,
+      "title": "Agentツールに`effort`パラメータ追加：サブエージェントを指定の思考レベルで実行（2.1.292）",
+      "point": "探索など軽い作業は低effort、設計・検証は高effortと、サブエージェント単位で使い分けられる。コストと品質の調整に有効（実際の効果は未検証）。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-10-07",
+      "last_date": "2026-10-07",
+      "appearances": 44
+    },
+    {
+      "id": 2278,
+      "title": "`claude plugin install --marketplace <source>`：マーケットプレイス追加とインストールを1コマンドで（2.1.292）",
+      "point": "必要ならマーケットプレイスを追加したうえでプラグインを導入。`marketplace add`と同じポリシーチェックが適用される。チームへの導入手順を1行にできる。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-07",
+      "last_date": "2026-10-07",
+      "appearances": 40
+    },
+    {
       "id": 2030,
       "title": "本日から週次上限が恒久+25%、ただし暫定ブースト終了で実質は約17%減",
       "point": "Pro・Max・Team・シート課金Enterpriseの週次上限が、本日9月14日から恒久的にベースライン+25%となる。同時に夏季の暫定+50%ブーストが終了するため、ブーストを使えていたユーザーの体感は減少になる。計算はベースラインを100とすると、暫定期間は150、本日以降は125で、125÷150＝約0.83、すなわち約17%減。「+25%」と「17%減」はどちらも正しく、基準点が違うだけ。週後半に重い作業を寄せている運用では枯渇時期が前倒しになる可能性があるため、effort設定とモデル選択で消費を落とす前提に組み直しておくとよい。",
@@ -458,6 +484,20 @@
       "first_date": "2026-07-02",
       "last_date": "2026-07-02",
       "appearances": 24
+    },
+    {
+      "id": 2280,
+      "title": "Modで`prompt.autocomplete`イベントと`$.model.complete`のプロンプトキャッシュに対応（2.1.292）",
+      "point": "Modからプロンプト入力欄の補完候補を追加でき、`$.model.complete`ではテキストブロックに`cache: true`を付けてキャッシュ可能。繰り返し呼ぶModのコスト削減向け。`agent.spawn`フックにはワークフローエージェントも渡るようになり、Modが拒否できる。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-10-07",
+      "last_date": "2026-10-07",
+      "appearances": 23
     },
     {
       "id": 1793,
@@ -4435,6 +4475,20 @@
       "appearances": 6
     },
     {
+      "id": 2282,
+      "title": "Claude Desktop v2.26454.0（10/6、同梱Claude Code 2.1.289）：SSH・Cowork関連の安定化",
+      "point": "SSHセッションがリモート環境不通時にLocalへ切り替わる問題、worktreeでのファイル編集スキップ、送信失敗時のメッセージ/ファイル消失を修正。macOSのcomputer useは`.vimrc`や`.aws`等の隠しファイルを編集・保存しなくなった。scheduled taskのクラウド同期不具合も修正。",
+      "source_title": "Claude Desktop Changelog",
+      "source_url": "https://claude.com/docs/cowork/changelog",
+      "tags": [
+        "Claude Code",
+        "製品機能"
+      ],
+      "first_date": "2026-10-07",
+      "last_date": "2026-10-07",
+      "appearances": 5
+    },
+    {
       "id": 2271,
       "title": "`claude attach <name>` / `claude logs <name>`：セッション名の一部をIDの代わりに使える（2.1.290）",
       "point": "バックグラウンドセッションの操作で、長いIDの代わりに名前の一部で指定可能。複数セッションを並行運用する際の手間が減る。",
@@ -7478,6 +7532,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2281,
+      "title": "Claude for Startups拡充：Claude Team 1年分とAPIクレジット$1,000",
+      "point": "設立5年以内、または過去2年以内に資金調達した企業が対象。Team最大5席、$1,000のAPIクレジット、Claude Marketplace、Applied AIチームのオフィスアワーが付く。申請はプログラムページ経由。",
+      "source_title": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/06/anthropic-gives-startups-a-free-year-of-enterprise-service-and-1000-in-token-credits/",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-10-07",
+      "last_date": "2026-10-07",
+      "appearances": 3
     },
     {
       "id": 2216,
@@ -14257,6 +14324,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2279,
+      "title": "`CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS`：529（過負荷）時の再試行待ち時間を調整（2.1.292）",
+      "point": "過負荷エラーのバックオフ基準遅延を環境変数で延長可能。長時間の自動実行・並列エージェントで529が頻発する場合に有効。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-10-07",
+      "last_date": "2026-10-07",
+      "appearances": 1
     },
     {
       "id": 2268,
@@ -24790,6 +24871,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-07",
+      "highlights": [
+        "Claude Code 2.1.292（10/6）：Agentツールに`effort`パラメータ追加。サブエージェントごとに思考の深さを指定できる。",
+        "Claude for Startups拡充（10/6）：設立5年以内または直近2年に資金調達した企業にClaude Team 1年分（最大5席）と$1,000のAPIクレジット。"
+      ]
+    },
+    {
       "date": "2026-10-06",
       "highlights": [
         "Claude Code 2.1.291（10/6）：クラウドセッションで権限プロンプトへの回答が落ちる不具合と、終了時に最後のメッセージが失われる不具合を修正。",
@@ -26216,5 +26304,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-07T08:00:04.814047"
+  "generated_at": "2026-10-08T08:00:05.078787"
 }
