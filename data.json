@@ -68,6 +68,20 @@
       "appearances": 40
     },
     {
+      "id": 2287,
+      "title": "Haiku 5.5の料金とキャッシュ単価を見積もりに反映する",
+      "point": "100K以下は入力$0.10／出力$0.50、キャッシュ読取$0.01、書込$0.125。100K超は入力$0.50／出力$2.50に上がるため、長文プロンプトは単価が変わる。Sonnet 5.5もキャッシュ読取が$0.20→$0.10に半減。",
+      "source_title": "VentureBeat",
+      "source_url": "https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-10-08",
+      "last_date": "2026-10-08",
+      "appearances": 39
+    },
+    {
       "id": 2030,
       "title": "本日から週次上限が恒久+25%、ただし暫定ブースト終了で実質は約17%減",
       "point": "Pro・Max・Team・シート課金Enterpriseの週次上限が、本日9月14日から恒久的にベースライン+25%となる。同時に夏季の暫定+50%ブーストが終了するため、ブーストを使えていたユーザーの体感は減少になる。計算はベースラインを100とすると、暫定期間は150、本日以降は125で、125÷150＝約0.83、すなわち約17%減。「+25%」と「17%減」はどちらも正しく、基準点が違うだけ。週後半に重い作業を寄せている運用では枯渇時期が前倒しになる可能性があるため、effort設定とモデル選択で消費を落とす前提に組み直しておくとよい。",
@@ -131,6 +145,19 @@
       "first_date": "2026-09-13",
       "last_date": "2026-09-13",
       "appearances": 35
+    },
+    {
+      "id": 2288,
+      "title": "Haiku 5.5はeffortを調整できる（既定medium）",
+      "point": "Haiku級で初のeffort設定対応。コストと知能のトレードオフを調整できる。Terminal-Bench 4.0はmax effortで39.2%、medium付近で約20%（VentureBeat報道、ベンダー値）。用途に応じてeffortを選ぶ。",
+      "source_title": "VentureBeat",
+      "source_url": "https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-10-08",
+      "last_date": "2026-10-08",
+      "appearances": 34
     },
     {
       "id": 2273,
@@ -225,6 +252,21 @@
       "first_date": "2026-08-18",
       "last_date": "2026-08-18",
       "appearances": 33
+    },
+    {
+      "id": 2292,
+      "title": "Claude Code 2.1.294：指示文で書いた`prompt`／`agent`フックの判定を修正",
+      "point": "「〜をブロックする」と書いたフックが許可してしまう不具合を修正。Stop／SubagentStopの「ビルドが壊れていたら続行」型の判定も改善され、途中停止しにくくなる。命令文型フックを使っている場合は更新推奨。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-10-08",
+      "last_date": "2026-10-08",
+      "appearances": 32
     },
     {
       "id": 2031,
@@ -622,6 +664,20 @@
       "first_date": "2026-05-21",
       "last_date": "2026-05-21",
       "appearances": 21
+    },
+    {
+      "id": 2290,
+      "title": "Max／Team向けに月次API creditが付与",
+      "point": "Max 5xは$100、Max 20xは$200、Teamは共有で最大$500（VentureBeat報道）。Claude Codeを使うCIやAPI実験の費用に充てられる可能性がある（適用条件は未確認、公式で要確認）。",
+      "source_title": "VentureBeat",
+      "source_url": "https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-10-08",
+      "last_date": "2026-10-08",
+      "appearances": 20
     },
     {
       "id": 1644,
@@ -1996,6 +2052,20 @@
       "first_date": "2026-06-08",
       "last_date": "2026-06-08",
       "appearances": 10
+    },
+    {
+      "id": 2286,
+      "title": "Claude Haiku 5.5：低コスト・高速モデルを分類／要約／サブエージェントに使う",
+      "point": "モデルIDは`claude-haiku-5-5`。要約・圧縮・DBクエリ・分類などの大量処理や、Opus 5.5／Sonnet 5.5配下のサブエージェント向けとされる。複雑なエージェント的コーディングはSonnet／Opusが引き続き推奨。トークナイザ更新で同じ作業でもトークン数が若干増える点に注意。",
+      "source_title": "Introducing Claude Haiku 5.5",
+      "source_url": "https://www.anthropic.com/claude-haiku-5-5",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-10-08",
+      "last_date": "2026-10-08",
+      "appearances": 9
     },
     {
       "id": 2247,
@@ -5689,6 +5759,22 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2291,
+      "title": "Claude Code 2.1.293：`subagentStatusLine`に`agentType`、modの`$.tool.register`に`isDeferred`",
+      "point": "ステータスライン用スクリプトがカスタムサブエージェントの種別を判別可能に。`isDeferred: false`でツールのスキーマを最初からプロンプトに載せられる（既定はツール検索経由）。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "自動化",
+        "エージェント"
+      ],
+      "first_date": "2026-10-08",
+      "last_date": "2026-10-08",
+      "appearances": 4
     },
     {
       "id": 2214,
@@ -14324,6 +14410,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2289,
+      "title": "Haiku 5.5のサイバー系制限は厳格化：既定でペネトレーションテストをブロック",
+      "point": "Haiku 4.5より安全対策が厳しく、広い用途には検証プログラムへの申請が必要。セキュリティ関連の自動化にHaikuを使う場合は挙動確認を。",
+      "source_title": "VentureBeat",
+      "source_url": "https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna",
+      "tags": [
+        "自動化",
+        "モデル"
+      ],
+      "first_date": "2026-10-08",
+      "last_date": "2026-10-08",
+      "appearances": 1
     },
     {
       "id": 2279,
@@ -24871,6 +24971,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-08",
+      "highlights": [
+        "Claude Haiku 5.5 公開（10/7）：入力$0.10／出力$0.50（100Kトークン以下）。Haiku 4.5比で約75%安価（Anthropic試算）。Haiku級で初のeffort調整に対応し、サブエージェント用途に推奨。",
+        "Claude Code 2.1.293（10/7）：`claude-haiku-5-5`が追加されHaikuの既定モデルに。"
+      ]
+    },
+    {
       "date": "2026-10-07",
       "highlights": [
         "Claude Code 2.1.292（10/6）：Agentツールに`effort`パラメータ追加。サブエージェントごとに思考の深さを指定できる。",
@@ -26304,5 +26411,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-08T08:00:05.078787"
+  "generated_at": "2026-10-09T08:00:05.016789"
 }
