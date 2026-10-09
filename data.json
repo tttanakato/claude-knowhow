@@ -4545,6 +4545,20 @@
       "appearances": 6
     },
     {
+      "id": 2298,
+      "title": "無人運用向け：リトライ待機の上限を `CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS` で制御",
+      "point": "429／529エラーを待ち続ける無人リトライモードの最大待機時間を設定できる。定期実行・CI用途でのハング防止に有効。`[1m]`モデルでゲートウェイがcontext-1mベータを拒否しても再送で失敗しなくなった。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-10-09",
+      "last_date": "2026-10-09",
+      "appearances": 5
+    },
+    {
       "id": 2282,
       "title": "Claude Desktop v2.26454.0（10/6、同梱Claude Code 2.1.289）：SSH・Cowork関連の安定化",
       "point": "SSHセッションがリモート環境不通時にLocalへ切り替わる問題、worktreeでのファイル編集スキップ、送信失敗時のメッセージ/ファイル消失を修正。macOSのcomputer useは`.vimrc`や`.aws`等の隠しファイルを編集・保存しなくなった。scheduled taskのクラウド同期不具合も修正。",
@@ -7618,6 +7632,17 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2296,
+      "title": "フックの失敗時動作を `onFailure: \"block\"` でフェイルクローズにする",
+      "point": "command／HTTPフックが起動不能・タイムアウト・異常終了した場合、従来は処理が通ってしまうことがあったが、`block`指定でアクションを止められる。コミット前チェックや危険コマンド禁止などのガード用途に有効。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-10-09",
+      "last_date": "2026-10-09",
+      "appearances": 3
     },
     {
       "id": 2281,
@@ -14410,6 +14435,44 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2297,
+      "title": "MCPツール説明の上限が2,048→16,384文字に拡大／サブエージェントのskills事前読込は最大32",
+      "point": "ツール検索経由で読み込まれるMCPツール説明が長くても切り詰められにくくなる。詳細な説明を持つMCPサーバーの使い勝手が改善。Claude.aiコネクタはMCPプロトコル2026-07-28を既定でネゴシエート（旧方式は`MCP_PROTOCOL_NEGOTIATION=legacy`）。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-09",
+      "last_date": "2026-10-09",
+      "appearances": 1
+    },
+    {
+      "id": 2299,
+      "title": "端末のProgram Status Protocol（OSC 7501）で作業中／入力待ち／完了を表示",
+      "point": "対応ターミナルでClaude Codeの状態を表示可能に。複数セッションを並走させる際の入力待ち見落とし防止に役立つ。modには`$.ui.notify`（ネイティブ通知）も追加。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-10-09",
+      "last_date": "2026-10-09",
+      "appearances": 1
+    },
+    {
+      "id": 2300,
+      "title": "利用ポリシー更新（11/12施行）：物理機器連携・監視・選挙関連の規定を確認する",
+      "point": "持続的で無目的な虐待的行為の禁止、傷害の恐れがある物理機器に接続する際は有資格者の監視・停止と安全側への状態遷移が必要、兵器はソフト／部品も対象と明確化。通常の不満表明や研究・テストは対象外とされる。車載・HILなど実機連携の運用ルール確認の契機に（適用範囲は公式ポリシー原文で要確認）。",
+      "source_title": "The Register",
+      "source_url": "https://www.theregister.com/ai-and-ml/2026/10/09/anthropic-asks-users-to-stop-being-mean-to-claude/5302218",
+      "tags": [],
+      "first_date": "2026-10-09",
+      "last_date": "2026-10-09",
+      "appearances": 1
     },
     {
       "id": 2289,
@@ -24971,6 +25034,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-09",
+      "highlights": [
+        "Claude Code 2.1.295（10/8）：フックに `onFailure: \"block\"` を追加。起動失敗・タイムアウト時に許可ではなく「ブロック」へ倒せるため、安全系フックの信頼性が上がる。",
+        "Anthropic利用ポリシー更新（10/9報道、施行は11月12日）：物理機器との連携に人間の監視・停止手段が必要になるなど。自動車ソフト領域でClaudeを実機連携させる場合は要確認。"
+      ]
+    },
+    {
       "date": "2026-10-08",
       "highlights": [
         "Claude Haiku 5.5 公開（10/7）：入力$0.10／出力$0.50（100Kトークン以下）。Haiku 4.5比で約75%安価（Anthropic試算）。Haiku級で初のeffort調整に対応し、サブエージェント用途に推奨。",
@@ -26411,5 +26481,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-09T08:00:05.016789"
+  "generated_at": "2026-10-10T08:00:04.992788"
 }
