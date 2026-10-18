@@ -7686,6 +7686,20 @@
       "appearances": 4
     },
     {
+      "id": 2342,
+      "title": "サブエージェントの既定動作が変更：fork既定ONをSDK・デスクトップ・VS Codeにも拡大",
+      "point": "`claude -p`、Agent SDK、デスクトップアプリ、VS Codeでfork subagentが既定ON（`CLAUDE_CODE_FORK_SUBAGENT=0`で無効化）。デスクトップ/VS Codeではメイン会話のサブエージェントは常にバックグラウンド実行になる。",
+      "source_title": "Claude Code Changelog 2.1.302",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API",
+        "エージェント"
+      ],
+      "first_date": "2026-10-18",
+      "last_date": "2026-10-18",
+      "appearances": 3
+    },
+    {
       "id": 2296,
       "title": "フックの失敗時動作を `onFailure: \"block\"` でフェイルクローズにする",
       "point": "command／HTTPフックが起動不能・タイムアウト・異常終了した場合、従来は処理が通ってしまうことがあったが、`block`指定でアクションを止められる。コミット前チェックや危険コマンド禁止などのガード用途に有効。",
@@ -14513,6 +14527,105 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2339,
+      "title": "`CLAUDE_CODE_AUTO_MODE_MODEL`でauto modeのクライアント側分類器のモデルを選ぶ",
+      "point": "auto modeの安全判定（クライアント側分類器）に使うモデルを環境変数で指定できる。サーバー側auto modeのモデルは変わらない。",
+      "source_title": "Claude Code Changelog 2.1.302",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-10-18",
+      "last_date": "2026-10-18",
+      "appearances": 1
+    },
+    {
+      "id": 2340,
+      "title": "auto modeのサーバー側分類器：長すぎる会話は全拒否でなく自動コンパクト",
+      "point": "会話が安全チェックに長すぎる場合、これまでは確認対象のツール呼び出しがすべて拒否されたが、圧縮して継続するようになった。長時間の無人運用で止まりにくくなる。",
+      "source_title": "Claude Code Changelog 2.1.302",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-10-18",
+      "last_date": "2026-10-18",
+      "appearances": 1
+    },
+    {
+      "id": 2341,
+      "title": "`/config`の「Idle compaction」でアイドル時の自動圧縮をオン/オフ",
+      "point": "長時間放置した会話の自動圧縮を`/config`から切り替え可能。圧縮後の通知にも止め方が表示される。",
+      "source_title": "Claude Code Changelog 2.1.302",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-10-18",
+      "last_date": "2026-10-18",
+      "appearances": 1
+    },
+    {
+      "id": 2343,
+      "title": "サードパーティプロバイダーの`claude -p`/SDKは権限モード未指定ならdefaultで開始",
+      "point": "テレメトリOFFまたは新規インストール時、権限モード無指定のセッションはdefault。auto運用は`--permission-mode auto`を明示する。",
+      "source_title": "Claude Code Changelog 2.1.302",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-10-18",
+      "last_date": "2026-10-18",
+      "appearances": 1
+    },
+    {
+      "id": 2344,
+      "title": "prompt/agentフックは同一イベントで同時12件まで",
+      "point": "同じイベントに多数のフックを付けても同時実行は最大12、残りは待機。フック設計時の並列前提に注意。",
+      "source_title": "Claude Code Changelog 2.1.302",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-10-18",
+      "last_date": "2026-10-18",
+      "appearances": 1
+    },
+    {
+      "id": 2345,
+      "title": "スタンドアロンClaude Design（claude.ai/design）は12/14に終了",
+      "point": "`/design-sync`・`/design-login`にも終了告知が表示される。標準のDesign機能への移行を検討。",
+      "source_title": "Claude Code Changelog 2.1.302",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-10-18",
+      "last_date": "2026-10-18",
+      "appearances": 1
+    },
+    {
+      "id": 2346,
+      "title": "ルーティンの「実行されなかった理由」バナーと失敗途中の再実行による二重投稿の修正",
+      "point": "クラウドセッションの上限などで実行されなかった理由がルーティン画面に表示される。途中失敗したルーティンが1時間以上後に最初からやり直され、同じレポートを二重投稿する不具合も修正。",
+      "source_title": "Claude Code Changelog 2.1.302",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [],
+      "first_date": "2026-10-18",
+      "last_date": "2026-10-18",
+      "appearances": 1
+    },
+    {
+      "id": 2347,
+      "title": "プラグイン多数環境の起動高速化（特にWindows）",
+      "point": "プラグインのコマンド/エージェントファイル読み込みのファイルシステム呼び出しが大幅減。",
+      "source_title": "Claude Code Changelog 2.1.302",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-18",
+      "last_date": "2026-10-18",
+      "appearances": 1
     },
     {
       "id": 2313,
@@ -25181,6 +25294,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-18",
+      "highlights": [
+        "auto modeの分類器モデルを指定可能に＋長い会話は拒否でなく圧縮：`CLAUDE_CODE_AUTO_MODE_MODEL`で分類器のモデルを選べ、サーバー側分類器では長すぎる会話が自動圧縮されるようになりました。",
+        "スタンドアロン Claude Design は 12/14 に終了：`/design-sync` 等を使っている場合は移行計画が必要です。"
+      ]
+    },
+    {
       "date": "2026-10-13",
       "highlights": [
         "新規の公式発表なし：10/13付けの新リリース・新規tipsは確認できませんでした。最新は Claude Code 2.1.296（10/9）、Platform「動的ワークフロー(beta)」（10/9）。"
@@ -26654,5 +26774,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-18T08:00:06.022839"
+  "generated_at": "2026-10-19T08:01:40.304789"
 }
