@@ -426,6 +426,17 @@
       "appearances": 29
     },
     {
+      "id": 2367,
+      "title": "指示は「目標・手順・注意点・検証方法・ツール」の5点で伝える",
+      "point": "曖昧な指示は曖昧な結果になる。特に検証方法を示すと、Claudeが自分でミスを直せる。",
+      "source_title": "How I Get the Best Out of Claude: 8 Habits",
+      "source_url": "https://itsyashverma.com/blog/how-to-use-claude-better",
+      "tags": [],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 28
+    },
+    {
       "id": 1993,
       "title": "会話途中のツール変更がプロンプトキャッシュを壊さなくなった",
       "point": "MCPサーバーの再接続、アップグレードによるツール消失、`/model` 切替、claude.aiコネクタのツール変更など、会話の途中でツール一覧が変わるとキャッシュミスと拡張思考の消失を招いていた。2.1.267では対応モデルに対して追加ツールを「遅延定義（deferred definitions）」として渡すようになり、ツール一覧の書き換えを避ける設計に変わった。コミット・PRの帰属テキストも会話ノートとして更新される方式に変更されている。長時間セッションのコストとレイテンシに直結する修正。",
@@ -924,6 +935,19 @@
       "first_date": "2026-06-01",
       "last_date": "2026-06-01",
       "appearances": 17
+    },
+    {
+      "id": 2372,
+      "title": "依頼は「目的・背景・完了条件・実行前に質問」の4要素で組み立てる",
+      "point": "推奨構成はOpus 5.5（medium）＋Auto権限モード。依頼前に質問させることで手戻りを減らす。",
+      "source_title": "Claude & Claude Code Updates: October 2026",
+      "source_url": "https://aimaker.substack.com/p/claude-code-updates-october-2026",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 16
     },
     {
       "id": 2044,
@@ -1685,6 +1709,19 @@
       "appearances": 11
     },
     {
+      "id": 2377,
+      "title": "「Keep computer awake」＋Remote Controlでスマホから操作",
+      "point": "ノートPCは蓋を閉じるとスリープするため注意。",
+      "source_title": "Claude & Claude Code Updates: October 2026",
+      "source_url": "https://aimaker.substack.com/p/claude-code-updates-october-2026",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 10
+    },
+    {
       "id": 2316,
       "title": "`/code-review` の結果が生のJSONでなく番号付きリストで出る",
       "point": "クラウドセッション・Agent SDK・IDE連携で、指摘が番号付きリストとして表示されるよう修正。",
@@ -2081,6 +2118,30 @@
       "appearances": 10
     },
     {
+      "id": 2370,
+      "title": "Claudeが話しすぎる時は簡潔な文章ルールをCLAUDE.mdへ",
+      "point": "ASD-STE100のような簡潔な文章規則や出力スタイル変更が有効。effortを下げても回答は短くならない。",
+      "source_title": "How I Get the Best Out of Claude: 8 Habits",
+      "source_url": "https://itsyashverma.com/blog/how-to-use-claude-better",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 9
+    },
+    {
+      "id": 2371,
+      "title": "`/compact`は満杯になる前に意図的に実行する",
+      "point": "良い結果の直後に実行し、失敗した試行やエラーログなど捨てる内容を指定する。",
+      "source_title": "How I Get the Best Out of Claude: 8 Habits",
+      "source_url": "https://itsyashverma.com/blog/how-to-use-claude-better",
+      "tags": [],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 9
+    },
+    {
       "id": 2286,
       "title": "Claude Haiku 5.5：低コスト・高速モデルを分類／要約／サブエージェントに使う",
       "point": "モデルIDは`claude-haiku-5-5`。要約・圧縮・DBクエリ・分類などの大量処理や、Opus 5.5／Sonnet 5.5配下のサブエージェント向けとされる。複雑なエージェント的コーディングはSonnet／Opusが引き続き推奨。トークナイザ更新で同じ作業でもトークン数が若干増える点に注意。",
@@ -2452,6 +2513,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 2369,
+      "title": "コネクタは必要なものだけ有効化し`/context`で確認",
+      "point": "入れすぎるとコンテキストを圧迫する。連携は読み取り専用アカウントを使い、書き込みはブロックか承認制にする。",
+      "source_title": "How I Get the Best Out of Claude: 8 Habits",
+      "source_url": "https://itsyashverma.com/blog/how-to-use-claude-better",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 8
     },
     {
       "id": 2270,
@@ -2981,6 +3055,20 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 2368,
+      "title": "エージェントを増やすより「並列化できる作業」に分ける",
+      "point": "同じファイルを複数エージェントに編集させない。並列で独立して進められる単位に分割する。",
+      "source_title": "How I Get the Best Out of Claude: 8 Habits",
+      "source_url": "https://itsyashverma.com/blog/how-to-use-claude-better",
+      "tags": [
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 7
     },
     {
       "id": 2255,
@@ -10572,6 +10660,28 @@
       "appearances": 3
     },
     {
+      "id": 2373,
+      "title": "ローカルファイル不要のタスクはクラウド実行に任せる",
+      "point": "「Settings → Capabilities → Run in the cloud」で、PCを閉じても継続。GitHub接続などの事前準備が必要な点が課題。",
+      "source_title": "Claude & Claude Code Updates: October 2026",
+      "source_url": "https://aimaker.substack.com/p/claude-code-updates-october-2026",
+      "tags": [],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 2
+    },
+    {
+      "id": 2378,
+      "title": "メモリを確認・編集・削除し、インポート/エクスポートも活用",
+      "point": "機密性の高いトピックは既定でメモリに含まれない。",
+      "source_title": "Claude & Claude Code Updates: October 2026",
+      "source_url": "https://aimaker.substack.com/p/claude-code-updates-october-2026",
+      "tags": [],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 2
+    },
+    {
       "id": 2315,
       "title": "Bashの権限チェック：`BASH_ARGV0` を使うコマンドは承認が必要に",
       "point": "`BASH_ARGV0`変数を代入して使う一部コマンドが自動承認されていた問題を修正し、確認プロンプトが出るようになった。自動承認運用の安全性向上。",
@@ -14527,6 +14637,53 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2366,
+      "title": "長い会話は精度が落ちる：作業ごとに新規チャットへ",
+      "point": "コンテキストが埋まるほど詳細の見落としや誤りが増える。作業を切り替えるたびに新しいチャットを始め、長くなったら要約して移す。",
+      "source_title": "How I Get the Best Out of Claude: 8 Habits",
+      "source_url": "https://itsyashverma.com/blog/how-to-use-claude-better",
+      "tags": [],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 1
+    },
+    {
+      "id": 2374,
+      "title": "Claude Designがartifactsへ統合：スタンドアロン版は12/14終了",
+      "point": "既存デザインシステムはArtifactsページから移行可能。共有範囲・コメント・版比較が使え、HTML/Markdown/PDF/PPTXへ書き出せる。",
+      "source_title": "Claude & Claude Code Updates: October 2026",
+      "source_url": "https://aimaker.substack.com/p/claude-code-updates-october-2026",
+      "tags": [],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 1
+    },
+    {
+      "id": 2375,
+      "title": "並列セッションの新機能（ネスト・フォローアップ提案・環境保存）",
+      "point": "並列タスクごとにサブセッションが作られ結果がメインへ戻る。提案作業をワンクリックで別セッション化でき、サイドバーで作業中/確認待ちを把握できる。",
+      "source_title": "Claude & Claude Code Updates: October 2026",
+      "source_url": "https://aimaker.substack.com/p/claude-code-updates-october-2026",
+      "tags": [
+        "新機能",
+        "生産性"
+      ],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 1
+    },
+    {
+      "id": 2376,
+      "title": "内蔵ブラウザのログイン維持（Cookieインポート／1Password連携）",
+      "point": "パスワードを共有せずにログイン作業を任せられる。",
+      "source_title": "Claude & Claude Code Updates: October 2026",
+      "source_url": "https://aimaker.substack.com/p/claude-code-updates-october-2026",
+      "tags": [],
+      "first_date": "2026-10-25",
+      "last_date": "2026-10-25",
+      "appearances": 1
     },
     {
       "id": 2339,
@@ -25294,6 +25451,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-25",
+      "highlights": [
+        "長い会話は精度が落ちる／compactは満杯になる前に意図的に行う: 作業ごとに新規チャットへ切り替え、良い結果が出た直後に残す内容・捨てる内容を指定して`/compact`する。",
+        "ローカルファイル不要のタスクはクラウドで継続実行: 「Settings → Capabilities → Run in the cloud」でPCを閉じても動き続ける。"
+      ]
+    },
+    {
       "date": "2026-10-18",
       "highlights": [
         "auto modeの分類器モデルを指定可能に＋長い会話は拒否でなく圧縮：`CLAUDE_CODE_AUTO_MODE_MODEL`で分類器のモデルを選べ、サーバー側分類器では長すぎる会話が自動圧縮されるようになりました。",
@@ -26774,5 +26938,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-25T08:00:06.009804"
+  "generated_at": "2026-10-26T08:00:05.664252"
 }
