@@ -4685,6 +4685,48 @@
       "appearances": 6
     },
     {
+      "id": 2384,
+      "title": "MonitorツールがBedrock/Vertex/Foundryでも利用可能に",
+      "point": "2.1.310でMonitorツールとプラグインmonitorがクラウド経由の環境でも使える。非対話セッションでMCPツール呼び出しがタイムアウトした際は、再実行しないようClaudeに伝えるエラー文に変更。`effort`ベータ値を拒否するゲートウェイ配下の失敗や、\"Prompt is too long\"後のコンパクションが密なテキストを残しすぎる問題も修正。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-26",
+      "last_date": "2026-10-26",
+      "appearances": 5
+    },
+    {
+      "id": 2386,
+      "title": "Claude Securityが継続スキャンと修正追跡に対応",
+      "point": "Claude Enterprise向けパブリックベータ。脆弱性対応を一度きりのレポートでなく継続的な作業キューとして運用したいチーム向け。検出精度は未公表。",
+      "source_title": "Anthropic Launch Week Oct 2026",
+      "source_url": "https://www.orcarouter.ai/blog/anthropic-launch-week-october-2026-what-shipped",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-10-26",
+      "last_date": "2026-10-26",
+      "appearances": 5
+    },
+    {
+      "id": 2388,
+      "title": "モデル選択：Haiku 5.5は大量処理・低コスト用",
+      "point": "10/7公開のHaiku 5.5は最安・最速のクラス。Sonnet 5.5（9/28）は高速低コスト、Opus 5.5（9/22）はFable 5.1に近い性能でOpus 5比約40%低コストとされる。用途別に使い分ける。Duetの基盤はOpus 5.5でAPIからも利用可能と報じられている。",
+      "source_title": "Claude Release notes",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "API",
+        "モデル"
+      ],
+      "first_date": "2026-10-26",
+      "last_date": "2026-10-26",
+      "appearances": 5
+    },
+    {
       "id": 2298,
       "title": "無人運用向け：リトライ待機の上限を `CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS` で制御",
       "point": "429／529エラーを待ち続ける無人リトライモードの最大待機時間を設定できる。定期実行・CI用途でのハング防止に有効。`[1m]`モデルでゲートウェイがcontext-1mベータを拒否しても再送で失敗しなくなった。",
@@ -14637,6 +14679,58 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2382,
+      "title": "Claude Duetをウェイトリスト登録し、承認フローと操作制限を事前に把握する",
+      "point": "毎朝の要約ブリーフを届け、メールやカレンダー等の連携アプリを定期確認する先回り型エージェント。アカウントのメモリ・スキル・連携アプリを引き継ぐ。送信・支払い・削除前は承認制で、証券取引や口座間送金は承認があっても実行されない。現状は米国のPro/Max限定。スレッドの読み違い等の懸念も指摘されており、連携アプリは必要最小限にするのが無難。日本での提供時期は未確認。",
+      "source_title": "Anthropic Launch Week Oct 2026: What Actually Shipped",
+      "source_url": "https://www.orcarouter.ai/blog/anthropic-launch-week-october-2026-what-shipped",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-10-26",
+      "last_date": "2026-10-26",
+      "appearances": 1
+    },
+    {
+      "id": 2383,
+      "title": "`sed -i`と`rm`の権限挙動変更：自動化スクリプトを見直す（Claude Code 2.1.309）",
+      "point": "`sed -i`は標準のBash権限プロンプトを通る。bypass permissionsモードでの`rm`/`rmdir`は即拒否され書き換えのヒントが出る。無人実行のワークフローは影響確認を。`claude ultrareview`はワークスペース信頼が必須で、CI等では`--trust-workspace`を付ける。62件のバグ修正（主にサンドボックス・権限・フック）も含む。",
+      "source_title": "Claude Code Changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "Claude Code",
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-10-26",
+      "last_date": "2026-10-26",
+      "appearances": 1
+    },
+    {
+      "id": 2385,
+      "title": "Code ReviewがGA（10/15）：正式導入を検討する",
+      "point": "一般提供になり、チームでの正式導入検討の対象にしやすくなった。提供プランや料金の詳細は今回の情報源では確認できていない。公式で要確認。",
+      "source_title": "Anthropic Launch Week Oct 2026",
+      "source_url": "https://www.orcarouter.ai/blog/anthropic-launch-week-october-2026-what-shipped",
+      "tags": [],
+      "first_date": "2026-10-26",
+      "last_date": "2026-10-26",
+      "appearances": 1
+    },
+    {
+      "id": 2387,
+      "title": "Docs/Slides/Designがベータ終了、Dashboards/Motionがベータ公開（10/8）",
+      "point": "Docs・Slides・Designは無料プランを含む全プランで利用可能。Claude DashboardsとClaude Motionはベータ。資料作成は専用タイプから始めるとその場で編集・共有できる。",
+      "source_title": "Anthropic Launch Week Oct 2026",
+      "source_url": "https://www.orcarouter.ai/blog/anthropic-launch-week-october-2026-what-shipped",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-10-26",
+      "last_date": "2026-10-26",
+      "appearances": 1
     },
     {
       "id": 2366,
@@ -25451,6 +25545,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-26",
+      "highlights": [
+        "Claude Duet（10/21、リサーチプレビュー）: 毎朝ブリーフを届け、連携アプリを監視する先回り型エージェント。米国のPro/Max向けでウェイトリスト制。送信・支払い・削除の前には必ず承認を求める。",
+        "Claude Code 2.1.309/2.1.310（10/22〜23）: `sed -i`は通常のBash権限確認に、bypass permissionsモードの`rm`/`rmdir`は即拒否に変更。`claude ultrareview`はワークスペース信頼が必須（スクリプトでは`--trust-workspace`）。"
+      ]
+    },
+    {
       "date": "2026-10-25",
       "highlights": [
         "長い会話は精度が落ちる／compactは満杯になる前に意図的に行う: 作業ごとに新規チャットへ切り替え、良い結果が出た直後に残す内容・捨てる内容を指定して`/compact`する。",
@@ -26938,5 +27039,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-26T08:00:05.664252"
+  "generated_at": "2026-10-27T08:00:03.936563"
 }
