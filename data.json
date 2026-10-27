@@ -3623,6 +3623,19 @@
       "appearances": 7
     },
     {
+      "id": 2397,
+      "title": "Claude 5.5ファミリーをタスクで使い分ける",
+      "point": "Opus 5.5は難度の高い持続的作業、Sonnet 5.5は性能・速度・コストのバランス型、Haiku 5.5は高頻度の定型作業向け。",
+      "source_title": "Claude's 10 Big Updates",
+      "source_url": "https://www.ai.joaoqueiros.com/blog/claude-ten-updates-models-cowork-motion-projects-mods-duncan",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-10-27",
+      "last_date": "2026-10-27",
+      "appearances": 6
+    },
+    {
       "id": 2304,
       "title": "サブエージェントの `autoCompactWindow` で早めに自動コンパクトする",
       "point": "サブエージェントのfrontmatterまたは `--agents` 定義で指定すると、メイン会話より早くコンパクトされる。あわせて `CLAUDE_CODE_WORKFLOW_SUBAGENT_MODEL` で、ワークフローの全エージェントを単一モデルに固定可能（他のサブエージェントは各自のモデルのまま）。",
@@ -5955,6 +5968,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2392,
+      "title": "`ultrathink` が xhigh effort で実行される（v2.1.311）",
+      "point": "v2.1.311で、`ultrathink` キーワードは対応モデルでxhigh effortの推論として動作する仕様に変更。難しい設計判断やデバッグの局面で、キーワードを付けるだけで深い推論を引き出せる。必要時のみ使うとコスト管理しやすい（※使い分けの指針は筆者の補足で、公式記載ではありません）。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-10-27",
+      "last_date": "2026-10-27",
+      "appearances": 4
     },
     {
       "id": 2291,
@@ -14679,6 +14706,115 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2393,
+      "title": "v2.1.311の安定性改善：CLAUDE.mdの長いリストによる起動フリーズ等を修正",
+      "point": "56件のバグ修正。CLAUDE.md内の長いリスト項目で起動時にフリーズする問題や、1Mコンテキストの使用量エラーで停止する問題を解消。Pro/Maxの起動時間も短縮。古いバージョンで不具合がある場合は `claude update` を試す価値あり。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-10-27",
+      "last_date": "2026-10-27",
+      "appearances": 1
+    },
+    {
+      "id": 2394,
+      "title": "bypass permissionsでの危険な `rm`/`rmdir` は即拒否・`sed -i` は通常プロンプトへ（v2.1.309）",
+      "point": "権限スキップモードでも破壊的削除は拒否され書き換えのヒントが出る。`claude ultrareview` はワークスペースの信頼確認が必須に。自動化運用時の安全性が向上。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-10-27",
+      "last_date": "2026-10-27",
+      "appearances": 1
+    },
+    {
+      "id": 2395,
+      "title": "Bedrock/Vertex/FoundryでMonitorツールが利用可能に（v2.1.310）",
+      "point": "ログ等のバックグラウンドイベントを会話に流し込むMonitorツールがクラウド基盤経由でも使える。Enterpriseではクラウドセッション/Remote Controlの権限をカスタムロールで管理可能。auto modeの事前確認プロンプトも改善。",
+      "source_title": "Claude Code changelog",
+      "source_url": "https://code.claude.com/docs/en/changelog",
+      "tags": [
+        "プロンプト",
+        "製品機能"
+      ],
+      "first_date": "2026-10-27",
+      "last_date": "2026-10-27",
+      "appearances": 1
+    },
+    {
+      "id": 2396,
+      "title": "Claude Duet：能動的に連絡してくるエージェント（10/21 リサーチプレビュー）",
+      "point": "Pro/Max向け。Claudeが先にメッセージを送る形のエージェントアプリ。承認ルールやアクセス範囲の設計が使いこなしの鍵（詳細は各報道・解説を参照）。",
+      "source_title": "Release notes",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-10-27",
+      "last_date": "2026-10-27",
+      "appearances": 1
+    },
+    {
+      "id": 2398,
+      "title": "Docs・Slides・Designアーティファクトが全プランで利用可能（10/8ベータ解除）",
+      "point": "チャット内で編集可能なテンプレート成果物を作成可能。無料プラン含む全プラン対象。Dashboards（BigQuery/Snowflake等に接続、有料ベータ）やMotion（MP4書き出し、Team/Enterpriseベータ）も併せて確認したい。",
+      "source_title": "Claude's 10 Big Updates",
+      "source_url": "https://www.ai.joaoqueiros.com/blog/claude-ten-updates-models-cowork-motion-projects-mods-duncan",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-10-27",
+      "last_date": "2026-10-27",
+      "appearances": 1
+    },
+    {
+      "id": 2399,
+      "title": "Claude Code mods：TypeScriptで拡張（サンドボックス非隔離に注意）",
+      "point": "イベントへの反応やUI追加ができる拡張機能。Anthropicによればサンドボックスされないため、信頼できるコードのみ導入すること。",
+      "source_title": "Claude's 10 Big Updates",
+      "source_url": "https://www.ai.joaoqueiros.com/blog/claude-ten-updates-models-cowork-motion-projects-mods-duncan",
+      "tags": [
+        "Claude Code",
+        "API"
+      ],
+      "first_date": "2026-10-27",
+      "last_date": "2026-10-27",
+      "appearances": 1
+    },
+    {
+      "id": 2400,
+      "title": "Claude Code Projects刷新：目標単位で並列クラウドセッション管理",
+      "point": "Pro/Maxの一部で段階的ベータ。5時間制限で途切れた際の「まとめ」用追加枠も案内されている（週間上限に加算、新規メッセージは不可）。",
+      "source_title": "Claude's 10 Big Updates",
+      "source_url": "https://www.ai.joaoqueiros.com/blog/claude-ten-updates-models-cowork-motion-projects-mods-duncan",
+      "tags": [
+        "Claude Code",
+        "新機能",
+        "生産性"
+      ],
+      "first_date": "2026-10-27",
+      "last_date": "2026-10-27",
+      "appearances": 1
+    },
+    {
+      "id": 2401,
+      "title": "週次ダイジェストで機能を追う：`/skill-doctor`・`/doctor`・agent view",
+      "point": "`/skill-doctor` でスキルのコンテキスト消費と使用頻度を確認、`/doctor`(`/checkup`) で環境診断、`claude agents` で全セッション一覧。公式のWhat's newが最も信頼できる情報源。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-10-27",
+      "last_date": "2026-10-27",
+      "appearances": 1
     },
     {
       "id": 2382,
@@ -25545,6 +25681,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-27",
+      "highlights": [
+        "Claude Code v2.1.311（10/26）: `ultrathink` が対応モデルで xhigh effort として実行されるようになり、起動時のフリーズ等56件を修正。",
+        "Claude Duet（10/21、Pro/Max向けリサーチプレビュー）: Claudeが能動的に動くエージェントアプリ。"
+      ]
+    },
+    {
       "date": "2026-10-26",
       "highlights": [
         "Claude Duet（10/21、リサーチプレビュー）: 毎朝ブリーフを届け、連携アプリを監視する先回り型エージェント。米国のPro/Max向けでウェイトリスト制。送信・支払い・削除の前には必ず承認を求める。",
@@ -27039,5 +27182,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-27T08:00:03.936563"
+  "generated_at": "2026-10-28T08:00:05.351293"
 }
