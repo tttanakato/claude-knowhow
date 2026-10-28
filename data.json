@@ -3623,6 +3623,17 @@
       "appearances": 7
     },
     {
+      "id": 2407,
+      "title": "出力を必ず検算させる（Vega-Lite・Looker Studio・solve_ivp等）",
+      "point": "グラフはPNG化して目視確認、計算フィールドは式を検算、微分方程式は解析解と比較するなど、Claudeに結果を確認させるループを組み込む。",
+      "source_title": "Claude(クロード)の最新情報 (2026/10/28)",
+      "source_url": "https://claude-media.com/latest",
+      "tags": [],
+      "first_date": "2026-10-28",
+      "last_date": "2026-10-28",
+      "appearances": 6
+    },
+    {
       "id": 2397,
       "title": "Claude 5.5ファミリーをタスクで使い分ける",
       "point": "Opus 5.5は難度の高い持続的作業、Sonnet 5.5は性能・速度・コストのバランス型、Haiku 5.5は高頻度の定型作業向け。",
@@ -4696,6 +4707,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 2405,
+      "title": "承認なしで`rm`を実行できる環境変数に注意し、サンドボックスと併用する",
+      "point": "v2.1.311で `CLAUDE_CODE_EVEN_MORE_DANGEROUSLY_SKIP_PERMISSIONS=1` が追加。従来の skip-permissions でも残っていた `rm`/`rmdir` の確認や `rm -rf ~` のブロックを無効化する。デフォルト動作は不変。使うならサンドボックス、バックアップ、権限を絞った認証情報が前提。",
+      "source_title": "Tech Insider (2026/10/28)",
+      "source_url": "https://tech-insider.org/claude-code-v2-1-311-skip-permissions-rm-no-approval-2026/",
+      "tags": [],
+      "first_date": "2026-10-28",
+      "last_date": "2026-10-28",
+      "appearances": 5
     },
     {
       "id": 2384,
@@ -14706,6 +14728,72 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2406,
+      "title": "VBAマクロの出力を「正解」にしてPythonへ置き換える",
+      "point": "旧マクロの出力を基準にし、移行後コードの結果と突き合わせて検算する手順。oletoolsでマクロをテキスト化して棚卸しする方法、64bit対応（PtrSafe）も同日掲載。",
+      "source_title": "Claude(クロード)の最新情報 (2026/10/28)",
+      "source_url": "https://claude-media.com/latest",
+      "tags": [],
+      "first_date": "2026-10-28",
+      "last_date": "2026-10-28",
+      "appearances": 1
+    },
+    {
+      "id": 2408,
+      "title": "GASの自動化は検証用ラベル・二重発火対策で安全に試す",
+      "point": "Gmail自動ラベル分けは検証用ラベルで試す、フォーム送信トリガーは通知・転記・二重発火を考慮、エラー調査は `clasp logs` の出力を活用する。",
+      "source_title": "Claude(クロード)の最新情報 (2026/10/28)",
+      "source_url": "https://claude-media.com/latest",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-10-28",
+      "last_date": "2026-10-28",
+      "appearances": 1
+    },
+    {
+      "id": 2409,
+      "title": "WordPress保守をClaude Codeで分割する（プラグイン競合の二分探索・PHPUnit・PHP 8互換）",
+      "point": "debug.logと二分探索で競合を切り分け、wp-envとStop hookでテスト失敗をClaudeに戻す、PHPCompatibilityWPで互換性を洗う。",
+      "source_title": "Claude(クロード)の最新情報 (2026/10/28)",
+      "source_url": "https://claude-media.com/latest",
+      "tags": [
+        "Claude Code",
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-28",
+      "last_date": "2026-10-28",
+      "appearances": 1
+    },
+    {
+      "id": 2410,
+      "title": "Claude Desktopのworktree使用時の既知問題（LFS・Open in Zed）を回避する（過去17回※worktree全般）",
+      "point": "WindowsでworktreeのLFSがポインタのままになる件、Open in Zedが空ウィンドウになる件の原因と回避策が公開されている（詳細は元記事参照、私は未確認）。",
+      "source_title": "Claude(クロード)の最新情報 (2026/10/28)",
+      "source_url": "https://claude-media.com/latest",
+      "tags": [
+        "Claude Code",
+        "製品機能"
+      ],
+      "first_date": "2026-10-28",
+      "last_date": "2026-10-28",
+      "appearances": 1
+    },
+    {
+      "id": 2411,
+      "title": "v2.1.312/311のアップデートを確認する（Monitorツール、5時間制限表記）",
+      "point": "v2.1.312(10/27)は利用上限メッセージが「5-hour limit」表記に、全画面でクリック送信が可能に。v2.1.310(10/23)でBedrock等でもMonitorツール利用可。10/28公開ではないため参考扱い。",
+      "source_title": "Gradually Claude Code Changelog",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-10-28",
+      "last_date": "2026-10-28",
+      "appearances": 1
     },
     {
       "id": 2393,
@@ -25681,6 +25769,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-28",
+      "highlights": [
+        "Claude Code v2.1.311 で、`rm` も承認なしで実行できる環境変数が追加された（オプトイン、危険度が高いのでサンドボックス併用が前提）。",
+        "「VBA→Python移行は“既存マクロの出力を正解”にして置き換える」など、検算・検証を軸にした実務Tipsが本日大量に公開されている。"
+      ]
+    },
+    {
       "date": "2026-10-27",
       "highlights": [
         "Claude Code v2.1.311（10/26）: `ultrathink` が対応モデルで xhigh effort として実行されるようになり、起動時のフリーズ等56件を修正。",
@@ -27182,5 +27277,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-28T08:00:05.351293"
+  "generated_at": "2026-10-29T08:00:03.973154"
 }
