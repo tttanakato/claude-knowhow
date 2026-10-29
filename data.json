@@ -68,6 +68,23 @@
       "appearances": 40
     },
     {
+      "id": 2420,
+      "title": "v2.1.312：未認識モデル名への短縮プロンプトとフック上限",
+      "point": "Bedrock/Vertex/Foundry/Mantleで推論プロファイルARN等は短いプロンプトになる（CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT=0で復元）。プロンプト/エージェントフックは同時24件まで。safety_eventのOTel送信は廃止。大きなCLAUDE.mdの上書き不具合も修正。（10/27リリース、解説10/29）",
+      "source_title": "Key Updates in Claude Code v2.1.312",
+      "source_url": "https://dev.classmethod.jp/en/articles/20261028-cc-updates-v2-1-312/",
+      "tags": [
+        "CLAUDE.md",
+        "プロンプト",
+        "エージェント",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-10-29",
+      "last_date": "2026-10-29",
+      "appearances": 39
+    },
+    {
       "id": 2287,
       "title": "Haiku 5.5の料金とキャッシュ単価を見積もりに反映する",
       "point": "100K以下は入力$0.10／出力$0.50、キャッシュ読取$0.01、書込$0.125。100K超は入力$0.50／出力$2.50に上がるため、長文プロンプトは単価が変わる。Sonnet 5.5もキャッシュ読取が$0.20→$0.10に半減。",
@@ -424,6 +441,20 @@
       "first_date": "2026-08-26",
       "last_date": "2026-08-26",
       "appearances": 29
+    },
+    {
+      "id": 2421,
+      "title": "クラウド実行＋並列セッション＋スマホ操作を使い分ける",
+      "point": "ローカルファイル不要のタスクはクラウド実行でPC電源オフでも継続。常時起動できるPCなら「Keep computer awake」＋Remote Control、できないならクラウド。クラウド用クレジットは11/4失効。（10/25）",
+      "source_title": "Claude Code Desktop Now Runs in the Cloud, in Parallel, and From Your Phone",
+      "source_url": "https://aimaker.substack.com/p/claude-code-updates-october-2026",
+      "tags": [
+        "生産性",
+        "製品機能"
+      ],
+      "first_date": "2026-10-29",
+      "last_date": "2026-10-29",
+      "appearances": 28
     },
     {
       "id": 2367,
@@ -1272,6 +1303,19 @@
       "first_date": "2026-05-22",
       "last_date": "2026-05-22",
       "appearances": 14
+    },
+    {
+      "id": 2418,
+      "title": "Claude Design／Slides／Motionがアプリに統合",
+      "point": "DesignとSlidesは無料プラン含む全プランで利用可。Motionは説明からアニメを生成しMP4出力（Team/Enterpriseベータ）。（10/29）",
+      "source_title": "Claude just dropped 8 new features",
+      "source_url": "https://clubjam.substack.com/p/claude-just-dropped-8-new-features",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-10-29",
+      "last_date": "2026-10-29",
+      "appearances": 13
     },
     {
       "id": 2085,
@@ -2515,6 +2559,17 @@
       "appearances": 9
     },
     {
+      "id": 2415,
+      "title": "Side chats（/btw）でClaudeの作業を止めずに質問する",
+      "point": "デスクトップのCodeタブで Ctrl+;（Mac: Cmd+;）または /btw で、実行中タスクを中断せず別途質問できる。（10/29）",
+      "source_title": "Claude just dropped 8 new features",
+      "source_url": "https://clubjam.substack.com/p/claude-just-dropped-8-new-features",
+      "tags": [],
+      "first_date": "2026-10-29",
+      "last_date": "2026-10-29",
+      "appearances": 8
+    },
+    {
       "id": 2369,
       "title": "コネクタは必要なものだけ有効化し`/context`で確認",
       "point": "入れすぎるとコンテキストを圧迫する。連携は読み取り専用アカウントを使い、書き込みはブロックか承認制にする。",
@@ -3621,6 +3676,35 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 2416,
+      "title": "Claude Projects：大きな目標を並列スレッドに分割",
+      "point": "大目標を複数エージェントのスレッドに分け、進捗を1会話に集約（Claude Codeでベータ、Pro/Max）。使用量が大きい点に注意。（10/29）",
+      "source_title": "Claude just dropped 8 new features",
+      "source_url": "https://clubjam.substack.com/p/claude-just-dropped-8-new-features",
+      "tags": [
+        "Claude Code",
+        "エージェント",
+        "新機能",
+        "生産性"
+      ],
+      "first_date": "2026-10-29",
+      "last_date": "2026-10-29",
+      "appearances": 6
+    },
+    {
+      "id": 2419,
+      "title": "Dashboards：ツール接続でライブ更新、数値クリックで出典確認",
+      "point": "有料プランのベータ。数字の根拠をたどれるため、レビュー用途に向く。（10/29）",
+      "source_title": "Claude just dropped 8 new features",
+      "source_url": "https://clubjam.substack.com/p/claude-just-dropped-8-new-features",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-10-29",
+      "last_date": "2026-10-29",
+      "appearances": 6
     },
     {
       "id": 2407,
@@ -5990,6 +6074,19 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2417,
+      "title": "Claude Mods：パネル・コマンド・ルールでClaude Codeを拡張",
+      "point": "説明文からmod（拡張）を生成可能。早期アクセスで技術者向け。（10/29）",
+      "source_title": "Claude just dropped 8 new features",
+      "source_url": "https://clubjam.substack.com/p/claude-just-dropped-8-new-features",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-10-29",
+      "last_date": "2026-10-29",
+      "appearances": 4
     },
     {
       "id": 2392,
@@ -14728,6 +14825,30 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2422,
+      "title": "作業ツリーを共有してチームに引き継ぐ（Delta）",
+      "point": "/delta share で会話と未コミットの変更を共有リンク化し、相手は /delta join で参加。タイムゾーン跨ぎのPR前引き継ぎに有効（ベータ・サードパーティ）。（10/27）",
+      "source_title": "Claude Code is now multiplayer",
+      "source_url": "https://delta.dev/blog/claude-code-multiplayer",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-10-29",
+      "last_date": "2026-10-29",
+      "appearances": 1
+    },
+    {
+      "id": 2423,
+      "title": "注意：新環境変数で権限スキップがさらに緩和（要リスク判断）",
+      "point": "CLAUDE_CODE_EVEN_MORE_DANGEROUSLY_SKIP_PERMISSIONS で rm も無確認実行可能になると報道。changelog未記載。業務環境での使用は非推奨。※報道ベースで未検証。（10/27）",
+      "source_title": "The Register",
+      "source_url": "https://theregister.com/ai-and-ml/2026/10/27/anthropic-now-lets-claude-users-jump-out-of-plane-without-parachute/5305807",
+      "tags": [],
+      "first_date": "2026-10-29",
+      "last_date": "2026-10-29",
+      "appearances": 1
     },
     {
       "id": 2406,
@@ -25769,6 +25890,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-29",
+      "highlights": [
+        "Claudeが8つの新機能を一挙公開（Duet・Motion・Dashboards・Side chats・Mods等）。特にClaude Codeの Side chats（/btw）は、作業を止めずに質問できる実用tip。",
+        "Claude Code v2.1.312：Bedrock/Vertex等で未認識モデル名に短いシステムプロンプトを適用、フックの並列上限24。企業・クラウド利用者は設定見直しが必要。"
+      ]
+    },
+    {
       "date": "2026-10-28",
       "highlights": [
         "Claude Code v2.1.311 で、`rm` も承認なしで実行できる環境変数が追加された（オプトイン、危険度が高いのでサンドボックス併用が前提）。",
@@ -27277,5 +27405,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-29T08:00:03.973154"
+  "generated_at": "2026-10-30T08:00:03.967753"
 }
