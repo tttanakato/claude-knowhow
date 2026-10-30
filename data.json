@@ -68,6 +68,23 @@
       "appearances": 40
     },
     {
+      "id": 2432,
+      "title": "v2.1.312：大きなCLAUDE.mdの上書き不具合修正と短縮プロンプト",
+      "point": "大きなCLAUDE.md／ルールファイルを部分読みのまま上書きする問題を修正（Writeは全体読込か編集で対応）。Bedrock/Vertex/Foundry/Mantleの未知モデル名では短いシステムプロンプト（CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT=0で無効化）。使用量表示は「5-hour limit」に変更。（10/27確認。Releasebotの確認日であり実リリース日ではない可能性あり）",
+      "source_title": "Releasebot: Claude Code",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "CLAUDE.md",
+        "Claude Code",
+        "プロンプト",
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-10-30",
+      "last_date": "2026-10-30",
+      "appearances": 39
+    },
+    {
       "id": 2420,
       "title": "v2.1.312：未認識モデル名への短縮プロンプトとフック上限",
       "point": "Bedrock/Vertex/Foundry/Mantleで推論プロファイルARN等は短いプロンプトになる（CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT=0で復元）。プロンプト/エージェントフックは同時24件まで。safety_eventのOTel送信は廃止。大きなCLAUDE.mdの上書き不具合も修正。（10/27リリース、解説10/29）",
@@ -1463,6 +1480,19 @@
       "appearances": 13
     },
     {
+      "id": 2431,
+      "title": "履歴分析・設定点検コマンドで運用を改善する",
+      "point": "/insights（セッション分析レポート）、/skill-doctor（スキルごとのコンテキスト消費）、/doctor prompt-audit（古い指示・矛盾の検出）、/fewer-permission-prompts（許可リスト追加）。※個人Gist（10/5作成）の内容で非公式、プランや環境で利用可否が異なる。",
+      "source_title": "Claude Code features you might have missed (Oct 2026)",
+      "source_url": "https://gist.github.com/tsomersu/13870258f8e09baef92c65f3c4ff2806",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-10-30",
+      "last_date": "2026-10-30",
+      "appearances": 12
+    },
+    {
       "id": 2052,
       "title": "検証手段を与えることがClaude Code最大の品質改善策",
       "point": "公式のパワーユーザー向けガイドが「このガイドで最も効果が大きいのは検証。1つだけ採用するならこれにすること」と明言している。Claudeが自分でフィードバックループを閉じられれば、出力が正しくなるまで自分で反復する。検証の形は領域ごとに違い、bashコマンド、テストスイート、シミュレータ、ブラウザテストなどになるが、原則は同じで「領域固有の検証手段に投資する」こと。フロントエンドならChrome拡張を入れる（ブラウザを使わせずにWebサイトを作らせても良い出来にはならない、という比喩で説明されている）。組み込み・車載系なら、シミュレータやHILのログを読ませる経路を用意するのが対応物になる。",
@@ -2160,6 +2190,19 @@
       "first_date": "2026-06-08",
       "last_date": "2026-06-08",
       "appearances": 10
+    },
+    {
+      "id": 2428,
+      "title": "送信・支払い・署名・削除の承認依頼は内容を読んでから承認する",
+      "point": "承認ステップがプロンプトインジェクション（メールやWebに仕込まれた指示）への防波堤になる。下書きや要約も必ず確認。支払いは都度確認・1回限りカードが使われる。",
+      "source_title": "Claude Duet 使い始め（公式ヘルプ）",
+      "source_url": "https://support.claude.com/ja/articles/17631495",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-10-30",
+      "last_date": "2026-10-30",
+      "appearances": 9
     },
     {
       "id": 2370,
@@ -3110,6 +3153,19 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 2429,
+      "title": "既存のメモリ・スキル・コネクタをそのまま活かす／不要な参照はオフにする",
+      "point": "Duetは設定済みのメモリ・スキル・接続アプリを初回から使う。過去チャットを参照させたくない場合は設定でオフ。解除時は連携解除に加え、メモリのリセットも必要（学習済み情報が残るため）。",
+      "source_title": "公式ヘルプ",
+      "source_url": "https://support.claude.com/ja/articles/17631495",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-30",
+      "last_date": "2026-10-30",
+      "appearances": 7
     },
     {
       "id": 2368,
@@ -6076,6 +6132,20 @@
       "appearances": 5
     },
     {
+      "id": 2433,
+      "title": "毎週のWhat's newダイジェストで新機能を追う",
+      "point": "公式の週次ダイジェストは直近でWeek 37（9/7〜11）まで掲載。`claude plugin eval`、`/skill-doctor`、`maxEffortLevel`など。10月分は未掲載のため、最新はchangelogで確認。",
+      "source_title": "What's new - Claude Code Docs",
+      "source_url": "https://code.claude.com/docs/en/whats-new",
+      "tags": [
+        "新機能",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-10-30",
+      "last_date": "2026-10-30",
+      "appearances": 4
+    },
+    {
       "id": 2417,
       "title": "Claude Mods：パネル・コマンド・ルールでClaude Codeを拡張",
       "point": "説明文からmod（拡張）を生成可能。早期アクセスで技術者向け。（10/29）",
@@ -7960,6 +8030,17 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2427,
+      "title": "Duetは「メール＋カレンダーのみ」から始め、利用上限の減り方を見て絞る",
+      "point": "定期チェックやバックグラウンド作業もプランの利用上限を消費する。数日おきに減り方を確認し、監視対象や通知頻度を絞る。勤務先アカウント接続前に社内AI利用ポリシーを確認する。（10/21公開、10/23追記）",
+      "source_title": "What Is Claude Duet, and Should You Join the Waitlist?",
+      "source_url": "https://theaicareerlab.com/blog/what-is-claude-duet-2026",
+      "tags": [],
+      "first_date": "2026-10-30",
+      "last_date": "2026-10-30",
+      "appearances": 3
     },
     {
       "id": 2342,
@@ -14825,6 +14906,17 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2430,
+      "title": "Tasks／Makeタブと毎朝のブリーフで作業の優先度を把握する",
+      "point": "Tasksタブで進行中と入力待ちを確認（完了にできるのは自分のみ）。成果物はMakeタブに表示。時間に敏感な連絡は人が対応する（緊急度の判断ミスや通知遅延があり得る）。",
+      "source_title": "公式ヘルプ",
+      "source_url": "https://support.claude.com/ja/articles/17631495",
+      "tags": [],
+      "first_date": "2026-10-30",
+      "last_date": "2026-10-30",
+      "appearances": 1
     },
     {
       "id": 2422,
@@ -25890,6 +25982,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-30",
+      "highlights": [
+        "Claude Duet（研究プレビュー）は、最初の1週間はメール・カレンダーだけを連携し、送信・支払い・署名・削除の承認は必ず内容を読んでから行うのが安全な使い始め方。",
+        "Claude Code v2.1.312（10/27確認）では、大きなCLAUDE.mdを部分読みのまま上書きする不具合が修正された。CLAUDE.mdを多用する人は更新推奨。"
+      ]
+    },
+    {
       "date": "2026-10-29",
       "highlights": [
         "Claudeが8つの新機能を一挙公開（Duet・Motion・Dashboards・Side chats・Mods等）。特にClaude Codeの Side chats（/btw）は、作業を止めずに質問できる実用tip。",
@@ -27405,5 +27504,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-30T08:00:03.967753"
+  "generated_at": "2026-10-31T08:00:04.152332"
 }
