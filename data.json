@@ -529,6 +529,19 @@
       "appearances": 27
     },
     {
+      "id": 2440,
+      "title": "Opus 4.8高速モードは11/30に削除予定、Opus 5.5への移行を計画する",
+      "point": "Opus 4.8の高速モードは10/30付で非推奨となり、11/30以降はエラーになる（標準Opus 4.8へのフォールバックなし）。高速化を維持するにはOpus 5.5への移行が案内されている。",
+      "source_title": "Claude Code Changelog (gradually.ai)",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-10-31",
+      "last_date": "2026-10-31",
+      "appearances": 26
+    },
+    {
       "id": 1788,
       "title": "Claude 5世代のコンテキストエンジニアリング新ルール",
       "point": "Anthropicは Opus 5 / Fable 5 向けにClaude Codeのシステムプロンプトを80%以上削除したが、コーディング評価で計測可能な性能低下はなかったと説明。モデル性能の向上により「指示を足す」より「ノイズを削る」ことが効く局面に移行している。プロンプトを磨くより、タスクを取り巻く構造（前提ファイル・スキル・検証手段）の設計が主要なレバーになる。",
@@ -1781,6 +1794,17 @@
       "first_date": "2026-05-04",
       "last_date": "2026-05-04",
       "appearances": 11
+    },
+    {
+      "id": 2438,
+      "title": "`permissions.blockWritesOutsideWorkingDirectories`で作業ディレクトリ外への書き込みを全モードで禁止する（v2.1.314）",
+      "point": "Write/Edit/NotebookEditが作業ディレクトリ外へ書き込むのを、すべての権限モードで拒否できる設定が追加された。Auto Modeやバイパスモード運用時の安全策として使える。",
+      "source_title": "Claude Code Changelog (gradually.ai)",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [],
+      "first_date": "2026-10-31",
+      "last_date": "2026-10-31",
+      "appearances": 10
     },
     {
       "id": 2377,
@@ -3155,6 +3179,19 @@
       "appearances": 8
     },
     {
+      "id": 2443,
+      "title": "AIコーディングツールの内蔵ブラウザ脆弱性（EMBRACE）に備えて、機密フォルダの権限を絞る",
+      "point": "Claude Desktopを含む5ツールが対象で、ウェブワーカー経由でフォルダ制限を回避しSSH鍵等を読まれる可能性が報じられた。パッチ状況は記事では不明なので、最新版への更新と作業フォルダの限定を推奨。",
+      "source_title": "AI News Today, October 31 (AI Weekly)",
+      "source_url": "https://aiweekly.co/ai-news-today",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-10-31",
+      "last_date": "2026-10-31",
+      "appearances": 7
+    },
+    {
       "id": 2429,
       "title": "既存のメモリ・スキル・コネクタをそのまま活かす／不要な参照はオフにする",
       "point": "Duetは設定済みのメモリ・スキル・接続アプリを初回から使う。過去チャットを参照させたくない場合は設定でオフ。解除時は連携解除に加え、メモリのリセットも必要（学習済み情報が残るため）。",
@@ -3732,6 +3769,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 2437,
+      "title": "`ultrathink`キーワード無効化の環境変数と、xhigh effortでの実行（v2.1.311/316）",
+      "point": "v2.1.311で対話モードの`ultrathink`が対応モデルでxhigh effort実行になり、v2.1.316で`CLAUDE_CODE_DISABLE_ULTRATHINK`により無効化できるようになった。意図せず高コストな推論が走るのを避けたい場合に有効。",
+      "source_title": "Claude Code Changelog (gradually.ai)",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-10-31",
+      "last_date": "2026-10-31",
+      "appearances": 6
     },
     {
       "id": 2416,
@@ -4847,6 +4898,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 2441,
+      "title": "Maxプラン改称とUltraの5時間上限撤廃：利用枠の考え方が変わる",
+      "point": "$100/月のMax 5xは「Max」、$200/月のMax 20xは「Ultra」に改称（料金据え置き）。認証済みUltraは5時間の利用枠が撤廃された（AI Weeklyの記載。公式発表は未確認）。",
+      "source_title": "AI News Today, October 31 (AI Weekly)",
+      "source_url": "https://aiweekly.co/ai-news-today",
+      "tags": [],
+      "first_date": "2026-10-31",
+      "last_date": "2026-10-31",
+      "appearances": 5
     },
     {
       "id": 2405,
@@ -6130,6 +6192,19 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2439,
+      "title": "VS Code/Claude Desktopのコードタブでアイドル時の自動圧縮を使う（v2.1.314）",
+      "point": "アイドル時にコンテキストが自動圧縮されるようになり、長時間セッションの手動`/compact`の手間を減らせる。",
+      "source_title": "Claude Code Changelog (gradually.ai)",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-10-31",
+      "last_date": "2026-10-31",
+      "appearances": 4
     },
     {
       "id": 2433,
@@ -8030,6 +8105,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2442,
+      "title": "改ざん版VS Code拡張2.1.313の事案：拡張機能の更新は公式版を確認する",
+      "point": "公式拡張`anthropic.claude-code`の改ざん版2.1.313がCursorのマーケットプレイスに10/29の約11時間掲載され、SSHバックドアを含んでいた。インストールした場合は侵害前提で対応し、クリーンな2.1.314以降へ更新する（AI Weekly記載。未確認情報を含む）。",
+      "source_title": "AI News Today, October 31 (AI Weekly)",
+      "source_url": "https://aiweekly.co/ai-news-today",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-10-31",
+      "last_date": "2026-10-31",
+      "appearances": 3
     },
     {
       "id": 2427,
@@ -25982,6 +26070,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-31",
+      "highlights": [
+        "Claude Code v2.1.314/316で、`blockWritesOutsideWorkingDirectories`（作業ディレクトリ外への書き込み禁止）と`ultrathink`無効化の環境変数が追加された。",
+        "公式VS Code拡張の改ざん版（2.1.313）事案が報じられており、拡張機能を使う場合は2.1.314以降へ更新して確認すること。"
+      ]
+    },
+    {
       "date": "2026-10-30",
       "highlights": [
         "Claude Duet（研究プレビュー）は、最初の1週間はメール・カレンダーだけを連携し、送信・支払い・署名・削除の承認は必ず内容を読んでから行うのが安全な使い始め方。",
@@ -27504,5 +27599,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-31T08:00:04.152332"
+  "generated_at": "2026-11-01T08:00:03.962764"
 }
