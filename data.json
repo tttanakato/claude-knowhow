@@ -68,6 +68,21 @@
       "appearances": 40
     },
     {
+      "id": 2449,
+      "title": "CLAUDE.mdは短く保ち、古い「念押しプロンプト」を見直す",
+      "point": "コードを読めば分かることは書かず、コードに残らない決めごとだけを書く（目安200行未満）。大文字での強調や「よく考えて」といった念押しは最新モデルではほぼ不要とされる。※「200行」は記事の目安で、公式の上限値かは未確認。",
+      "source_title": "Claude Codeの使い方をマスター｜開発者本人が教えるコツと最新仕様の違い",
+      "source_url": "https://ai.cbagames.jp/2026/10/29/claude-code-tips-from-creator/",
+      "tags": [
+        "CLAUDE.md",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-11-01",
+      "last_date": "2026-11-01",
+      "appearances": 39
+    },
+    {
       "id": 2432,
       "title": "v2.1.312：大きなCLAUDE.mdの上書き不具合修正と短縮プロンプト",
       "point": "大きなCLAUDE.md／ルールファイルを部分読みのまま上書きする問題を修正（Writeは全体読込か編集で対応）。Bedrock/Vertex/Foundry/Mantleの未知モデル名では短いシステムプロンプト（CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT=0で無効化）。使用量表示は「5-hour limit」に変更。（10/27確認。Releasebotの確認日であり実リリース日ではない可能性あり）",
@@ -358,6 +373,31 @@
       "first_date": "2026-08-17",
       "last_date": "2026-08-17",
       "appearances": 32
+    },
+    {
+      "id": 2448,
+      "title": "「質問→計画→検証手段を渡す」の基本動線を守る",
+      "point": "コードを書かせる前に既存の使われ方や経緯を質問し、大きな変更は計画を承認してから実装させる。テスト実行コマンドを伝えて結果付きで報告させ、同じ問題を2回直して解決しなければ会話をリセットする（10/29公開）。作業前にGitでコミットしておくと巻き戻せない操作に備えられる。",
+      "source_title": "Claude Codeの使い方をマスター｜開発者本人が教えるコツと最新仕様の違い",
+      "source_url": "https://ai.cbagames.jp/2026/10/29/claude-code-tips-from-creator/",
+      "tags": [],
+      "first_date": "2026-11-01",
+      "last_date": "2026-11-01",
+      "appearances": 31
+    },
+    {
+      "id": 2453,
+      "title": "検証を最優先にし、worktreeで並列セッションを回す",
+      "point": "公式のパワーユーザー向けtipsでは、Claudeが自分の出力を確認できる手段を用意することが最重要とされる。`claude --worktree`で3〜5セッションを並列化し、`/batch`で移行作業を分散、`/btw`で作業を止めずに質問できる（更新日は「1週間以上前」とのみ表示。日付は未確認）。",
+      "source_title": "Claude Code power user tips",
+      "source_url": "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips",
+      "tags": [
+        "Claude Code",
+        "生産性"
+      ],
+      "first_date": "2026-11-01",
+      "last_date": "2026-11-01",
+      "appearances": 31
     },
     {
       "id": 2035,
@@ -996,6 +1036,17 @@
       "first_date": "2026-06-01",
       "last_date": "2026-06-01",
       "appearances": 17
+    },
+    {
+      "id": 2452,
+      "title": "使用上限の節約：往復を減らし、繰り返し参照する資料はProjectsのナレッジに入れる",
+      "point": "事前に計画して具体的に依頼し、似た依頼はまとめて送る。長い会話は新規会話へ切り替え、不要なツールをオフにしeffortを下げる。使用量はSettings > Usageで確認できる（9/29公開・10/19更新。24時間以内の記事ではない）。",
+      "source_title": "Claudeの使用上限と使用量を節約する6つのコツ",
+      "source_url": "https://claude-media.com/articles/claude-usage-limit-saving-tips",
+      "tags": [],
+      "first_date": "2026-11-01",
+      "last_date": "2026-11-01",
+      "appearances": 16
     },
     {
       "id": 2372,
@@ -8107,6 +8158,33 @@
       "appearances": 4
     },
     {
+      "id": 2447,
+      "title": "`CLAUDE_CODE_SUBAGENT_EFFORT`でサブエージェントのeffortを一括指定する（v2.1.316）",
+      "point": "サブエージェントが動く際の思考レベルを環境変数で指定できる。調査系は低め、レビュー系は高めなど、コストと精度の配分を設定側で固定しやすくなる。あわせて`CLAUDE_CODE_DISABLE_ULTRATHINK`で`ultrathink`キーワードも無効化できる（10/31）。",
+      "source_title": "Claude Code Changelog (gradually.ai)",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-11-01",
+      "last_date": "2026-11-01",
+      "appearances": 3
+    },
+    {
+      "id": 2450,
+      "title": "作業ディレクトリ外への書き込みを`blockWritesOutsideWorkingDirectories`で禁止する（v2.1.314, 10/30）",
+      "point": "Write/Edit/NotebookEditが全権限モードで作業ディレクトリ外へ書けなくなる。自動化・無人運用時の安全策になる。",
+      "source_title": "Claude Code Changelog (gradually.ai)",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-11-01",
+      "last_date": "2026-11-01",
+      "appearances": 3
+    },
+    {
       "id": 2442,
       "title": "改ざん版VS Code拡張2.1.313の事案：拡張機能の更新は公式版を確認する",
       "point": "公式拡張`anthropic.claude-code`の改ざん版2.1.313がCursorのマーケットプレイスに10/29の約11時間掲載され、SSHバックドアを含んでいた。インストールした場合は侵害前提で対応し、クリーンな2.1.314以降へ更新する（AI Weekly記載。未確認情報を含む）。",
@@ -11015,6 +11093,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2451,
+      "title": "Opus 4.8高速モードは11/30に削除：Opus 5.5へ移行を計画する（10/30非推奨）",
+      "point": "非推奨は10/30、削除は11/30。高速化を使い続ける場合は移行先の確認が必要。",
+      "source_title": "Claude Code Changelog (gradually.ai)",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-11-01",
+      "last_date": "2026-11-01",
+      "appearances": 2
     },
     {
       "id": 2373,
@@ -26070,6 +26161,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-01",
+      "highlights": [
+        "Claude Code v2.1.316（10/31）で、サブエージェントの思考レベルを環境変数`CLAUDE_CODE_SUBAGENT_EFFORT`で一括指定できるようになった。",
+        "「開発者本人が語るコツ」の解説記事（10/29公開）は、「いきなり書かせず質問→計画→検証手段を渡す」という基本動線を再確認する内容。"
+      ]
+    },
+    {
       "date": "2026-10-31",
       "highlights": [
         "Claude Code v2.1.314/316で、`blockWritesOutsideWorkingDirectories`（作業ディレクトリ外への書き込み禁止）と`ultrathink`無効化の環境変数が追加された。",
@@ -27599,5 +27697,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-01T08:00:03.962764"
+  "generated_at": "2026-11-02T08:00:04.872561"
 }
