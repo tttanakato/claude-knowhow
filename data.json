@@ -4964,6 +4964,20 @@
       "appearances": 6
     },
     {
+      "id": 2490,
+      "title": "無人運用は`permissions.denyInsteadOfPrompting`で停止を避ける（2.1.319）",
+      "point": "承認待ちになる呼び出しを拒否してターンを継続。端末・サブエージェント・チームメイトに適用。拒否された処理の取りこぼし確認は必要。",
+      "source_title": "DEV: This week in Claude Code",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-8-2026-485k",
+      "tags": [
+        "プロンプト",
+        "エージェント"
+      ],
+      "first_date": "2026-11-09",
+      "last_date": "2026-11-09",
+      "appearances": 5
+    },
+    {
       "id": 2476,
       "title": "`permissions.denyInsteadOfPrompting`：承認待ちになる呼び出しを拒否して処理を続ける（2.1.319）",
       "point": "本来ユーザー承認を待つツール呼び出しを自動拒否し、ターンを止めずに続行する新設定。無人実行（スケジュール／CI）でハングを避けたいときに有効。拒否された処理が漏れないよう結果の確認は必要。",
@@ -8185,6 +8199,17 @@
       "appearances": 4
     },
     {
+      "id": 2491,
+      "title": "LLMゲートウェイ経由のauto modeは`CLAUDE_CODE_AUTO_MODE_SERVER`で挙動を選ぶ（2.1.319）",
+      "point": "検証できない呼び出しは確認/拒否になる。従来の分類器維持は`=0`、サーバー側チェックを有効化は`=1`。",
+      "source_title": "DEV: This week in Claude Code",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-8-2026-485k",
+      "tags": [],
+      "first_date": "2026-11-09",
+      "last_date": "2026-11-09",
+      "appearances": 3
+    },
+    {
       "id": 2477,
       "title": "auto modeはゲートウェイ／テレメトリ無効環境で「確認できない呼び出し」を確認or拒否に（2.1.319）",
       "point": "サーバー側分類器が使えない環境では、組み込み分類器へフォールバックせず、確認または拒否になる。従来のクライアント側分類器を使い続けるには`CLAUDE_CODE_AUTO_MODE_SERVER=0`。LLMゲートウェイ経由で使う人は挙動変化に注意。",
@@ -11144,6 +11169,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2492,
+      "title": "`CLAUDE_CODE_DISABLE_FEATURE_FLAGS`はアイドル時コンパクションも止める副作用に注意（2.1.319）",
+      "point": "フラグ取得を止めるとアイドルコンパクションの条件も満たせなくなる。長時間セッションのコンテキスト管理に影響し得る。",
+      "source_title": "DEV: This week in Claude Code",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-8-2026-485k",
+      "tags": [],
+      "first_date": "2026-11-09",
+      "last_date": "2026-11-09",
+      "appearances": 2
     },
     {
       "id": 2478,
@@ -15175,6 +15211,33 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2488,
+      "title": "ログイン有効期限を`claude auth status`で確認し、切れる前に再ログインする（2.1.318）",
+      "point": "保存済みclaude.aiログインの期限が`loginExpiresAt`等で見える。期限10日前から警告が出る。スケジュール実行が認証切れで止まるのを防げる。",
+      "source_title": "DEV: This week in Claude Code (week of Nov 8, 2026)",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-8-2026-485k",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-11-09",
+      "last_date": "2026-11-09",
+      "appearances": 1
+    },
+    {
+      "id": 2489,
+      "title": "Webツール／シェルツールがアカウントのメールアドレスを外部送信する前に確認を求める（2.1.317）",
+      "point": "意図せず個人情報（メールアドレス）がネットワークへ出るのを防ぐ確認が追加。自動化スクリプトで該当プロンプトが出る場合は内容を確認する。",
+      "source_title": "DEV: This week in Claude Code (week of Nov 8, 2026)",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-8-2026-485k",
+      "tags": [
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-11-09",
+      "last_date": "2026-11-09",
+      "appearances": 1
     },
     {
       "id": 2480,
@@ -26290,6 +26353,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-09",
+      "highlights": [
+        "2.1.318：ログイン有効期限を可視化。`claude auth status`の`loginExpiresAt`、`claude -p`のJSON出力`credential_expires_at`、期限10日前からstderr警告。無人・スケジュール運用の「突然の認証切れ」対策に有効。",
+        "2.1.319の`permissions.denyInsteadOfPrompting`（再掲）：承認待ちで止まる代わりに拒否して続行。定期実行の設計で要検討。"
+      ]
+    },
+    {
       "date": "2026-11-08",
       "highlights": [
         "Claude Code 2.1.319（11/7）：MCPタスクが端末でも即バックグラウンド化され、`permissions.denyInsteadOfPrompting`で「承認待ちで止まる」代わりに拒否して処理を続行できる。無人運用・自動化の設計に効く。",
@@ -27837,5 +27907,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-09T08:00:05.649426"
+  "generated_at": "2026-11-10T14:49:19.659558"
 }
