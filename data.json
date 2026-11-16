@@ -640,6 +640,19 @@
       "appearances": 24
     },
     {
+      "id": 2521,
+      "title": "定期実行・`/loop`は`allowed-tools`やフックを宣言したスキルの実行前に確認を求めるように（2.1.325）",
+      "point": "スケジュール実行や`/loop`で、`allowed-tools`／hooksを持つスキルが承認待ちで止まる可能性がある。無人運用のスキル構成と許可設定を事前に点検する。",
+      "source_title": "Releasebot Claude Code",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 23
+    },
+    {
       "id": 2280,
       "title": "Modで`prompt.autocomplete`イベントと`$.model.complete`のプロンプトキャッシュに対応（2.1.292）",
       "point": "Modからプロンプト入力欄の補完候補を追加でき、`$.model.complete`ではテキストブロックに`cache: true`を付けてキャッシュ可能。繰り返し呼ぶModのコスト削減向け。`agent.spawn`フックにはワークフローエージェントも渡るようになり、Modが拒否できる。",
@@ -3822,6 +3835,20 @@
       "appearances": 7
     },
     {
+      "id": 2517,
+      "title": "別モデルのサブエージェントは自身のモデル基準でファイル読み込み量を調整するように（2.1.325）",
+      "point": "独自モデル指定のサブエージェントが`opusplan`/`haiku`設定時にプランモード用モデルへ置き換わる問題も修正。モデルを使い分ける構成の挙動が安定。",
+      "source_title": "DEV: This week in Claude Code (week of Nov 15, 2026)",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-15-2026-4pmm",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 6
+    },
+    {
       "id": 2475,
       "title": "MCPタスクが端末で即バックグラウンド化：長時間ツールを待たずに作業を進める（2.1.319）",
       "point": "端末セッションでMCPツールのタスクが即座にバックグラウンドへ移り、完了時に結果がClaudeへ報告される。従来の「待つ」挙動に戻すには`CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND`を設定。",
@@ -6286,6 +6313,28 @@
       "appearances": 5
     },
     {
+      "id": 2513,
+      "title": "サンドボックス内Bashの自動許可は`sandbox.autoAllowBashIfSandboxed: true`で明示する（2.1.325）",
+      "point": "2.1.325からサンドボックス内Bashも通常の許可フローに従う。無人・定期実行で承認待ち停止を避けたい場合は設定を明示。あわせて一部の複合Bashコマンドも確認対象に。",
+      "source_title": "Releasebot Claude Code",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 4
+    },
+    {
+      "id": 2515,
+      "title": "変数値に`*`を含むBash許可ルール（例：`Bash(PORT=* npm run dev)`）を見直す（2.1.323）",
+      "point": "2.1.323から起動時に警告が出る。意図より広い許可になり得るため、具体的な値に絞る。",
+      "source_title": "DEV: This week in Claude Code (week of Nov 15, 2026)",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-15-2026-4pmm",
+      "tags": [],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 4
+    },
+    {
       "id": 2439,
       "title": "VS Code/Claude Desktopのコードタブでアイドル時の自動圧縮を使う（v2.1.314）",
       "point": "アイドル時にコンテキストが自動圧縮されるようになり、長時間セッションの手動`/compact`の手間を減らせる。",
@@ -8197,6 +8246,57 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2516,
+      "title": "プラグインは`plugin.json`の`engines[\"claude-code\"]`で対応バージョン範囲を宣言し、`claude plugin validate --strict`で検査する（2.1.323）",
+      "point": "範囲外のClaude Codeではインストール・更新・読み込みされない。validateはTypeScriptフックモジュールを型チェックし、`--strict`で警告を失敗扱いにできる（CI向き）。",
+      "source_title": "DEV: This week in Claude Code (week of Nov 15, 2026)",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-15-2026-4pmm",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 3
+    },
+    {
+      "id": 2518,
+      "title": "`/context`の後に`/compact`しても未回答メッセージが要約で消えなくなった（2.1.323）",
+      "point": "連続`/compact`や`/context`直後の`/compact`で、未回答の依頼が要約に吸収される問題を修正。異常終了後に再開したセッションで直近ターンが欠ける問題も2.1.325で修正。",
+      "source_title": "DEV: This week in Claude Code (week of Nov 15, 2026)",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-15-2026-4pmm",
+      "tags": [],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 3
+    },
+    {
+      "id": 2519,
+      "title": "Fable既定モデルがClaude Fable 5.2に（2.1.321）",
+      "point": "1Mコンテキスト、$8/$40 per Mtok（キャッシュ読み取り$0.20）。保存済みのFable 5.1選択は`fable`へ移行。コスト見積りの更新が必要。",
+      "source_title": "DEV: This week in Claude Code (week of Nov 15, 2026)",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-15-2026-4pmm",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 3
+    },
+    {
+      "id": 2524,
+      "title": "夜間自動実行のターン数を約3割削減：確認は1回、JSONはWrite直書き、検索は1テーマ1回",
+      "point": "状況確認を1スクリプトに集約、Bashヒアドキュメント（権限で弾かれやすい）を避けWriteツールで直接書く、同テーマ検索の繰り返しを禁止。筆者環境で平均185→129ターン。※個人の実測（いいね数は少数）。",
+      "source_title": "Qiita: Claude Code夜間自動実行の実費——113ターン$5.27、3つの削減策（11/15）",
+      "source_url": "https://qiita.com/Sidejob/items/6b14e73bf8c82e69b71b",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 3
     },
     {
       "id": 2491,
@@ -11169,6 +11269,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2520,
+      "title": "Vertexのglobal/us/euでfast modeが利用可能に（2.1.322）",
+      "point": "Vertexが拒否した場合は標準速度へ自動フォールバック。",
+      "source_title": "Releasebot Claude Code",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 2
     },
     {
       "id": 2492,
@@ -15211,6 +15322,77 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2511,
+      "title": "Code Modeは「多ファイル定型変更・絞り込み検索・並列コマンド」で使い、単発修正では使わない",
+      "point": "効くのは同一パターンの多ファイル変更、読む前に結果を絞りたい検索、独立した複数コマンドの同時実行。待機するコードは10分で停止（許可待ち時間を含む）。対話型ターミナルの`claude`のみ対応で、`-p`・Agent SDK・VS Code・Desktop・クラウドでは不可。効果確認は`Ctrl+O`のトランスクリプトでCode行が差分中心か許可プロンプト中心かを見る。",
+      "source_title": "DEV: Claude Code Code Mode: what it is, how to enable it, when it pays（11/16）",
+      "source_url": "https://dev.to/joancomadran/claude-code-code-mode-what-it-is-how-to-enable-it-when-it-pays-1n20",
+      "tags": [
+        "API",
+        "プロンプト",
+        "自動化",
+        "エージェント",
+        "生産性",
+        "製品機能"
+      ],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 1
+    },
+    {
+      "id": 2512,
+      "title": "Code Modeの有効化は環境変数＋ユーザー設定、`/status`で確認する",
+      "point": "`CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1 claude`で起動し、常用はユーザーの`~/.claude/settings.json`の`env`に記載（記事ではプロジェクト設定では効かないとの報告）。初回の確認で有効化。筆者の1回の試行では1リクエストあたり約1.4万トークンの固定コンテキスト削減、一方で処理は遅くなった。Code Modeで始めたセッションはCode Mode有効時のみ再開可、Remote Control・Claude in Chromeは使えなくなる。※公式ドキュメントは本日取得できず未検証。",
+      "source_title": "wmedia: Code Mode in Claude Code: turn it on（11/13）",
+      "source_url": "https://wmedia.es/en/tips/claude-code-code-mode-turn-on",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 1
+    },
+    {
+      "id": 2514,
+      "title": "2.1.321以上へ更新し、パス保護のdenyルールを再点検する（cp/mv経由の抜け穴修正）",
+      "point": "旧版ではディレクトリへの`cp`/`mv`で書かれたファイルにdenyルールや保護ファイル確認が効かなかった。読み取り専用Bashがサンドボックス外で無確認実行される不具合、MCP OAuthでリダイレクト先へ秘密情報が送られ得る不具合も修正。",
+      "source_title": "DEV: This week in Claude Code (week of Nov 15, 2026)",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-15-2026-4pmm",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 1
+    },
+    {
+      "id": 2522,
+      "title": "プロジェクト外・未信頼リポジトリでの読み取り専用gitも確認対象に（2.1.325）",
+      "point": "追加ディレクトリ配下の`.claude`設定へのサンドボックス書き込みも拒否。複数リポジトリを横断する作業では確認プロンプトが増える想定で。",
+      "source_title": "Releasebot Claude Code",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 1
+    },
+    {
+      "id": 2523,
+      "title": "MCPの回答待ちタスクを`/tasks`で再表示できる（2.1.325）",
+      "point": "バックグラウンドのMCPタスクがユーザー回答待ちになるとClaudeに通知され、`/tasks`で質問を再確認できる。VS Codeではプロンプト候補（Tabで採用）も追加。",
+      "source_title": "Releasebot Claude Code",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-16",
+      "last_date": "2026-11-16",
+      "appearances": 1
     },
     {
       "id": 2488,
@@ -26353,6 +26535,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-16",
+      "highlights": [
+        "Code Mode（実験的・オプトイン, 2.1.323）：Claudeがツール呼び出しをJavaScriptでまとめて実行。多ファイルの定型変更・フィルタ付き検索・並列コマンドで効き、小さな単発修正や長時間ビルドには不向き。",
+        "2.1.325でサンドボックス内Bashも通常の許可フローに：従来どおりプロンプトなしで動かすには `sandbox.autoAllowBashIfSandboxed: true` の明示が必要。自動化運用は設定見直しを。"
+      ]
+    },
+    {
       "date": "2026-11-09",
       "highlights": [
         "2.1.318：ログイン有効期限を可視化。`claude auth status`の`loginExpiresAt`、`claude -p`のJSON出力`credential_expires_at`、期限10日前からstderr警告。無人・スケジュール運用の「突然の認証切れ」対策に有効。",
@@ -27907,5 +28096,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-16T08:00:05.571811"
+  "generated_at": "2026-11-17T08:00:05.519339"
 }
