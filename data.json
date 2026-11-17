@@ -2280,6 +2280,20 @@
       "appearances": 10
     },
     {
+      "id": 2529,
+      "title": "Code Mode＋autoモードでは、書き込み系ツールにask/denyルールとPreToolUseフックを残す",
+      "point": "通常の許可ルールはコード内の各ツール呼び出しにも適用される。MCPツールのルールは`mcp__<server>__<tool>`の完全名で書く。autoモードの分類器は実行前にスクリプト全体を一括審査するだけで、実行時に計算された値は見えないため、必ず制御したい呼び出しは明示ルールで縛る。",
+      "source_title": "Fixter: Claude Code Code Mode（11/16）",
+      "source_url": "https://fixter.dev/blog/claude-code-code-mode",
+      "tags": [
+        "自動化",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-17",
+      "last_date": "2026-11-17",
+      "appearances": 9
+    },
+    {
       "id": 2428,
       "title": "送信・支払い・署名・削除の承認依頼は内容を読んでから承認する",
       "point": "承認ステップがプロンプトインジェクション（メールやWebに仕込まれた指示）への防波堤になる。下書きや要約も必ず確認。支払いは都度確認・1回限りカードが使われる。",
@@ -2688,6 +2702,20 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 2533,
+      "title": "タスクを切り替えるときは`/clear`して利用制限の消費を抑える",
+      "point": "Claude Codeは毎ターン会話全体を再送するため、無関係な履歴を持ち越すほど制限を消費する。あわせてルーチン作業ではeffortを下げ、モデルは日常＝Sonnet、難所＝Opus、小修正＝Haikuと使い分ける。",
+      "source_title": "TrueFoundry: Claude Code Limits (Nov 2026)（11/16更新）",
+      "source_url": "https://www.truefoundry.com/blog/claude-code-limits-explained",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-11-17",
+      "last_date": "2026-11-17",
+      "appearances": 8
     },
     {
       "id": 2415,
@@ -3241,6 +3269,20 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 2534,
+      "title": "CLAUDE.mdは必須ルールだけに絞り、未使用のMCPサーバーはオフにする",
+      "point": "CLAUDE.mdもMCPのツール定義も毎リクエストに載る。詳細は別ファイルに逃がして必要時に読ませ、そのセッションで使わないMCPは無効化する。",
+      "source_title": "TrueFoundry: Claude Code Limits (Nov 2026)（11/16更新）",
+      "source_url": "https://www.truefoundry.com/blog/claude-code-limits-explained",
+      "tags": [
+        "CLAUDE.md",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-17",
+      "last_date": "2026-11-17",
+      "appearances": 7
     },
     {
       "id": 2443,
@@ -3833,6 +3875,17 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 2537,
+      "title": "モードを選ぶより「誰向けか・完成形は何か」を伝え、曖昧ならClaudeにインタビューさせる",
+      "point": "依頼の目的と完成条件を先に書くと、Claude側が適切なツールや形式を選びやすい。繰り返す手順はSkillsに保存し、Memoryは有効にして同じ前提を何度も説明しない。",
+      "source_title": "Chetan Pujari: The full map of Claude (November 2026)（11/16）",
+      "source_url": "https://chetanpujari.substack.com/p/the-full-map-of-claude-november-2026",
+      "tags": [],
+      "first_date": "2026-11-17",
+      "last_date": "2026-11-17",
+      "appearances": 6
     },
     {
       "id": 2517,
@@ -4989,6 +5042,19 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 2535,
+      "title": "`ANTHROPIC_API_KEY`が設定されていないか確認する（意図しないAPI課金を防ぐ）",
+      "point": "環境変数にAPIキーがあると、サブスクリプションではなくAPI課金で動く。意図しない場合は解除する。",
+      "source_title": "TrueFoundry: Claude Code Limits (Nov 2026)（11/16更新）",
+      "source_url": "https://www.truefoundry.com/blog/claude-code-limits-explained",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-11-17",
+      "last_date": "2026-11-17",
+      "appearances": 5
     },
     {
       "id": 2490,
@@ -6311,6 +6377,28 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2536,
+      "title": "大きな仕事は制限リセット直後に始め、事前に`/status`で残りを確認する",
+      "point": "上限到達時の選択肢は、リセット待ち・保存済みリセット（9月追加）・使用クレジット・プラン変更。長時間ジョブの途中停止を避ける段取りとして有効。",
+      "source_title": "TrueFoundry: Claude Code Limits (Nov 2026)（11/16更新）",
+      "source_url": "https://www.truefoundry.com/blog/claude-code-limits-explained",
+      "tags": [],
+      "first_date": "2026-11-17",
+      "last_date": "2026-11-17",
+      "appearances": 4
+    },
+    {
+      "id": 2538,
+      "title": "他人が読むものはDocs、表はSheets、計画の可視化はWhiteboardと出力先を使い分ける",
+      "point": "Slidesは完成後にPowerPoint/PDFへ書き出せる。Sheets・Whiteboard・Dataは有料プラン。導入はデスクトップアプリ→Memory確認→アカウントを1つ接続→1つのツールを1週間毎日使う、の小さな順番を推奨。",
+      "source_title": "Chetan Pujari: The full map of Claude (November 2026)（11/16）",
+      "source_url": "https://chetanpujari.substack.com/p/the-full-map-of-claude-november-2026",
+      "tags": [],
+      "first_date": "2026-11-17",
+      "last_date": "2026-11-17",
+      "appearances": 4
     },
     {
       "id": 2513,
@@ -8246,6 +8334,19 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2528,
+      "title": "Code Modeは大量の結果を扱う調査・大きなMCP出力で使い、小タスクは通常モード",
+      "point": "2.1.323以降が必要（古ければ`claude update`）。筆者の調査テストではトークン63%減・完了29%高速・参照ソース数も増加と報告。ただし1人の計測で、公式ドキュメントにはトークン・速度の数値は載っていない。自分の作業で効果を測ってから常用する。",
+      "source_title": "DEV: Claude Code Has a Code Mode Now（11/16）",
+      "source_url": "https://dev.to/shreyshah/claude-code-has-a-code-mode-now-31mm",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-17",
+      "last_date": "2026-11-17",
+      "appearances": 3
     },
     {
       "id": 2516,
@@ -11269,6 +11370,32 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2530,
+      "title": "`Ctrl+O`でCode Modeが書いたJavaScriptを確認する",
+      "point": "会話画面にはツール呼び出ししか出ない。`Ctrl+O`でトランスクリプトを開き、Code行を展開して実行コードを読む（もう一度`Ctrl+O`で戻る）。想定外の書き込みや広すぎる検索がないかのレビューに使う。",
+      "source_title": "Fixter: Claude Code Code Mode（11/16）",
+      "source_url": "https://fixter.dev/blog/claude-code-code-mode",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-11-17",
+      "last_date": "2026-11-17",
+      "appearances": 2
+    },
+    {
+      "id": 2532,
+      "title": "Opus 4.6/4.5・Sonnet 4.5・Haiku 4.5の出力にもテキスト透かし。サンプリング設定の変更に注意",
+      "point": "11/16から対象プラットフォームで旧モデルの生成テキストにも透かしが入る。`temperature`・`top_p`・`top_k`を既定以外にすると透かしが入らない場合がある。生成物の出所管理をする組織は、モデルと設定の組み合わせを確認しておく。",
+      "source_title": "Claude Platform release notes（11/16）",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-11-17",
+      "last_date": "2026-11-17",
+      "appearances": 2
     },
     {
       "id": 2520,
@@ -15322,6 +15449,17 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2531,
+      "title": "Code Modeの使えない環境と、管理設定での一括無効化を把握する",
+      "point": "Bedrock・Google Cloud・Microsoft Foundry、HIPAA/ゼロデータ保持環境では使えない。プロジェクト設定では有効化できず（ユーザー設定の`env`か起動時の環境変数）、管理者はmanaged settingsで変数を`0`にすると全端末で無効化できる。待機を含め前景10分で停止、auto/bypassPermissionsのバックグラウンドは最大2時間。起動しない理由は`/status`で確認。",
+      "source_title": "techbytes: Codemode in Claude Code（11/15）",
+      "source_url": "https://techbytes.app/posts/codemode-in-claude-code/",
+      "tags": [],
+      "first_date": "2026-11-17",
+      "last_date": "2026-11-17",
+      "appearances": 1
     },
     {
       "id": 2511,
@@ -26535,6 +26673,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-17",
+      "highlights": [
+        "Code Modeは「結果が積み上がる大仕事」で使う：調査用テストで「トークン63%減・29%高速」との個人報告（11/16）。小さな作業は通常モードのままでよい。",
+        "Code Mode＋autoモードでは分類器任せにしない：分類器はスクリプト全体を実行前に一度見るだけで、実行時に決まる値（検索結果のパスなど）は見えない。書き込み系ツールにはask/denyルールやPreToolUseフックを残す。"
+      ]
+    },
+    {
       "date": "2026-11-16",
       "highlights": [
         "Code Mode（実験的・オプトイン, 2.1.323）：Claudeがツール呼び出しをJavaScriptでまとめて実行。多ファイルの定型変更・フィルタ付き検索・並列コマンドで効き、小さな単発修正や長時間ビルドには不向き。",
@@ -28096,5 +28241,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-17T08:00:05.519339"
+  "generated_at": "2026-11-18T08:00:05.514460"
 }
