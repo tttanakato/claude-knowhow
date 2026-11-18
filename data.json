@@ -723,6 +723,20 @@
       "appearances": 23
     },
     {
+      "id": 2548,
+      "title": "Opus 5.5を基本に、effortをモデルごとに設定し、`claude -p`ではモデルを固定する",
+      "point": "筆者の検証ではOpus maxはmediumの約7倍、Fable highはOpus maxの1/3未満のコストで同程度の結果。グローバルの`effortLevel`は両モデルに効かないため`/effort`か`/model`で個別設定。保存済みのFable設定をスクリプトが引き継ぐ場合があるので明示指定。Proプランは初回からFableが使用クレジット課金。比較は同じ実タスクで`/usage`の合計を見る（1人の検証であり一般化は注意）。",
+      "source_title": "Substack: Claude Fable 5.2 or Opus 5.5（11/18）",
+      "source_url": "https://anubhavgoyal10.substack.com/p/claude-fable-52-or-opus-55-which",
+      "tags": [
+        "自動化",
+        "モデル"
+      ],
+      "first_date": "2026-11-18",
+      "last_date": "2026-11-18",
+      "appearances": 21
+    },
+    {
       "id": 2224,
       "title": "Sonnet 5.5はOpus 5.5の低コスト版：用途で使い分ける",
       "point": "9/28公開。Opus 5.5（9/22公開、Opus 5比で運用コスト約40%減）の下位に位置する、高速・低コストの5.5ファミリー第2弾。日常の実装はSonnet、設計・難所のみOpusという従来の使い分けが続く。API・Bedrock・Google Cloud・Microsoft Foundryで提供。",
@@ -1555,6 +1569,19 @@
       "first_date": "2026-05-27",
       "last_date": "2026-05-27",
       "appearances": 13
+    },
+    {
+      "id": 2550,
+      "title": "Remote Controlは応答がスマホ・ブラウザにストリーミング表示。プロキシ環境はCONNECT対応を確認",
+      "point": "v2.1.326で返答が書かれるそばから表示されるようになった。一方、プロキシ経由はCONNECTトンネルを使うため、CONNECTを拒否するプロキシではエラーで停止する。社内プロキシ環境で使う場合は事前に動作確認を。",
+      "source_title": "GitHub: Release v2.1.326",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.326",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-11-18",
+      "last_date": "2026-11-18",
+      "appearances": 12
     },
     {
       "id": 2431,
@@ -3269,6 +3296,17 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 2547,
+      "title": "機能が動かないときは`/status`の新しい行と起動時警告をまず確認する",
+      "point": "v2.1.326で、プロバイダや`DISABLE_TELEMETRY`等の環境変数で無効化された機能を`/status`に表示。`--allowedTools`/`--disallowedTools`/`--tools`の書式が不完全だと起動時に警告。隠れた起動通知は`Ctrl+O`で見られる。`/help <コマンド>`で組み込みコマンドの使い方も確認できる。",
+      "source_title": "GitHub: Release v2.1.326",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.326",
+      "tags": [],
+      "first_date": "2026-11-18",
+      "last_date": "2026-11-18",
+      "appearances": 7
     },
     {
       "id": 2534,
@@ -8336,6 +8374,17 @@
       "appearances": 4
     },
     {
+      "id": 2546,
+      "title": "Code Modeのフックは`REPL`ツールにマッチさせ`tool_input.code`を検査する",
+      "point": "有効化は`~/.claude/settings.json`（ユーザー設定）の`CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1`。プロジェクト設定では無視される。起動しなければ`CI`・`IS_DEMO`を外す。Code Modeで始めたセッションはCode Mode有効時のみ再開可能。フックでは`cd`前置で`git push`が隠れる連結コマンドにも注意。無効化は`0`を設定（どちらかに`0`があれば`1`より優先）。",
+      "source_title": "Flavio Copes: How to use Code Mode in Claude Code（11/18）",
+      "source_url": "https://flaviocopes.com/claude-code-code-mode/",
+      "tags": [],
+      "first_date": "2026-11-18",
+      "last_date": "2026-11-18",
+      "appearances": 3
+    },
+    {
       "id": 2528,
       "title": "Code Modeは大量の結果を扱う調査・大きなMCP出力で使い、小タスクは通常モード",
       "point": "2.1.323以降が必要（古ければ`claude update`）。筆者の調査テストではトークン63%減・完了29%高速・参照ソース数も増加と報告。ただし1人の計測で、公式ドキュメントにはトークン・速度の数値は載っていない。自分の作業で効果を測ってから常用する。",
@@ -11370,6 +11419,39 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2542,
+      "title": "v2.1.326更新後、autoモードのワイルドカード許可ルールが効いているか確認する",
+      "point": "`$HOME`で始まるルールなど一部のワイルドカード許可は無視され、分類器の安全性チェックで評価される。Windowsのバックスラッシュパスのルールも同様。完全一致のルールは引き続き有効。普段確認なしで通っていた操作が止まらないか、更新直後に試す。",
+      "source_title": "Classmethod: Claude Code v2.1.326の主な変更点（11/17）",
+      "source_url": "https://dev.classmethod.jp/en/articles/20261117-cc-updates-v2-1-326/",
+      "tags": [],
+      "first_date": "2026-11-18",
+      "last_date": "2026-11-18",
+      "appearances": 2
+    },
+    {
+      "id": 2543,
+      "title": "サンドボックスからホーム配下へ書き込むツールは`sandbox.filesystem.allowWrite`で明示許可する",
+      "point": "macOS・Linux・WSLで、機密性の高い一部のホーム配下フォルダにサンドボックス内コマンドが既定で書き込めなくなった（対象フォルダ名はCHANGELOGに記載なし）。ビルドツール等が失敗したらユーザー設定か管理設定で許可を追加。`.credentials.json`などの認証ファイルへのファイルツール書き込みも拒否されるようになった。",
+      "source_title": "Classmethod（11/17）",
+      "source_url": "https://dev.classmethod.jp/en/articles/20261117-cc-updates-v2-1-326/",
+      "tags": [],
+      "first_date": "2026-11-18",
+      "last_date": "2026-11-18",
+      "appearances": 2
+    },
+    {
+      "id": 2549,
+      "title": "Claude Meetingsは「決定と提案を分け、担当・期日は明示合意のみ」と指示する",
+      "point": "参加者に文字起こしの同意を取ってから追加（現状Google Meetのみ）。指示例：確定事項と提案を分ける／合意のない担当者・期日は空欄／名前・金額・日付の不確かな箇所を指摘。顧客との会議前は外部ゲスト設定を確認し、共有前に必ず人がレビューする。Team向けの新規招待・自動参加は障害後に一時停止との記載あり（最新状況はステータスページで確認）。",
+      "source_title": "Kingy AI: Claude Meetings（11/17更新）",
+      "source_url": "https://kingy.ai/blog/claude-meetings/",
+      "tags": [],
+      "first_date": "2026-11-18",
+      "last_date": "2026-11-18",
+      "appearances": 2
     },
     {
       "id": 2530,
@@ -15449,6 +15531,34 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2544,
+      "title": "管理設定の`autoMode.environment`には`\"$defaults\"`を先頭に入れる",
+      "point": "`\"$defaults\"`を含めないと組み込みエントリ（機密対象の定義など）がすべて置き換わる。Claude DesktopとAgent SDKも対象。組織で管理設定を配布している場合は配布前に見直す。",
+      "source_title": "Classmethod（11/17）",
+      "source_url": "https://dev.classmethod.jp/en/articles/20261117-cc-updates-v2-1-326/",
+      "tags": [
+        "API",
+        "エージェント",
+        "製品機能"
+      ],
+      "first_date": "2026-11-18",
+      "last_date": "2026-11-18",
+      "appearances": 1
+    },
+    {
+      "id": 2545,
+      "title": "Code Mode＋エージェントチームは「問い・許可範囲・完了の証拠」を決めてから委任する",
+      "point": "v2.1.326からエージェントチーム有効のままCode Modeが使える（既定のin-process表示ではチームメイトもCode Mode、split paneでは非Code Mode）。どちらも実験的機能なので狭い評価用途に限り、固定タスクで従来手順と比較する。実行時に決まる値はレビュー時に見えないため、計画だけでなく結果も確認する。",
+      "source_title": "remio: Claude Code v2.1.326 Adds Code Mode for Teams（11/18）",
+      "source_url": "https://www.remio.ai/post/claude-code-v2-1-326-adds-code-mode-for-teams",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-11-18",
+      "last_date": "2026-11-18",
+      "appearances": 1
     },
     {
       "id": 2531,
@@ -26673,6 +26783,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-18",
+      "highlights": [
+        "v2.1.326に上げたらautoモードの許可ルールを再確認：`Bash($HOME/scripts/*)`のような`$HOME`始まり等のワイルドカード許可は無視され、安全性チェックに回るようになった。無人実行・スケジュール実行が途中で止まらないか確認する。",
+        "Opus 5.5とFable 5.2はモデルより「effort」がコストを決める：ある検証ではOpus max はOpus mediumの約7倍のコスト。`claude -p`のスクリプトではモデルを明示指定する。"
+      ]
+    },
+    {
       "date": "2026-11-17",
       "highlights": [
         "Code Modeは「結果が積み上がる大仕事」で使う：調査用テストで「トークン63%減・29%高速」との個人報告（11/16）。小さな作業は通常モードのままでよい。",
@@ -28241,5 +28358,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-18T08:00:05.514460"
+  "generated_at": "2026-11-19T08:00:05.541149"
 }
