@@ -1065,6 +1065,20 @@
       "appearances": 17
     },
     {
+      "id": 2557,
+      "title": "`/code-review` はバグ・CLAUDE.md違反専用、リファクタ観点は `/simplify` と使い分ける",
+      "point": "v2.1.328から、多くのモデルで `/code-review` はバグとCLAUDE.md違反のみを報告。再利用・簡素化・効率化の改善提案が欲しいときは `/simplify` を別途実行する。レビューの目的（不具合検出か、保守性向上か）でコマンドを分けるとノイズが減る。",
+      "source_title": "Claude Code Changelog（gradually.ai, v2.1.328）",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "CLAUDE.md",
+        "モデル"
+      ],
+      "first_date": "2026-11-19",
+      "last_date": "2026-11-19",
+      "appearances": 16
+    },
+    {
       "id": 2452,
       "title": "使用上限の節約：往復を減らし、繰り返し参照する資料はProjectsのナレッジに入れる",
       "point": "事前に計画して具体的に依頼し、似た依頼はまとめて送る。長い会話は新規会話へ切り替え、不要なツールをオフにしeffortを下げる。使用量はSettings > Usageで確認できる（9/29公開・10/19更新。24時間以内の記事ではない）。",
@@ -2307,6 +2321,21 @@
       "appearances": 10
     },
     {
+      "id": 2554,
+      "title": "Code Modeは環境変数で有効化し、定型の多ファイル変更・絞り込み検索・並列コマンドで使う",
+      "point": "`CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1` を起動前に設定（常用は `~/.claude/settings.json` の `env`）。初回に確認プロンプトが出る。プロジェクト設定では有効化できないため、リポジトリ側から勝手にONにされない。v2.1.323以上・対話ターミナル必須、エージェントチームは v2.1.326以上。待機中のコードは権限確認待ちを含め10分で停止。変数を0にするとどこからでも無効化でき、再開時も変数が1のままである必要がある。",
+      "source_title": "Anthropic Adds Code Mode To Claude Code（Dataconomy, 11/19）",
+      "source_url": "https://dataconomy.com/2026/11/19/anthropic-adds-code-mode-to-claude-code-for-chained/",
+      "tags": [
+        "プロンプト",
+        "エージェント",
+        "生産性"
+      ],
+      "first_date": "2026-11-19",
+      "last_date": "2026-11-19",
+      "appearances": 9
+    },
+    {
       "id": 2529,
       "title": "Code Mode＋autoモードでは、書き込み系ツールにask/denyルールとPreToolUseフックを残す",
       "point": "通常の許可ルールはコード内の各ツール呼び出しにも適用される。MCPツールのルールは`mcp__<server>__<tool>`の完全名で書く。autoモードの分類器は実行前にスクリプト全体を一括審査するだけで、実行時に計算された値は見えないため、必ず制御したい呼び出しは明示ルールで縛る。",
@@ -3296,6 +3325,19 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 2559,
+      "title": "`/status` でスキル・エージェント・フックの設定ミスを一括点検する",
+      "point": "v2.1.327で `/status` が、壊れたagent/skill/commandファイル、キーバインドのエラー、一度もマッチしないフックmatcherを一覧表示するようになった。v2.1.328では、エンドポイント未設定のOpenTelemetryエクスポーター（データ消失の恐れ）も `/status`・`claude doctor` で警告。「スキルが効かない」ときの最初の確認先に。",
+      "source_title": "Claude Code Changelog（gradually.ai, v2.1.327〜328）",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "エージェント"
+      ],
+      "first_date": "2026-11-19",
+      "last_date": "2026-11-19",
+      "appearances": 7
     },
     {
       "id": 2547,
@@ -5080,6 +5122,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 2558,
+      "title": "Bedrock・Google Cloud・Foundry利用でも、権限モード未指定の対話セッションはautoモードで始まる",
+      "point": "v2.1.328で、Opus 4.6／Sonnet 4.6をAmazon Bedrock、Google CloudのAgent Platform、Microsoft Foundry、Claude apps gateway経由で使う場合も、権限モード未指定ならautoモードが既定に。従来の挙動（都度確認）を望む組織は、設定で権限モードを明示しておく。",
+      "source_title": "Claude Code Changelog（gradually.ai, v2.1.328）",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-11-19",
+      "last_date": "2026-11-19",
+      "appearances": 5
     },
     {
       "id": 2535,
@@ -8372,6 +8428,48 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2555,
+      "title": "Code Mode＋autoモードでも、実行時に決まる書き込み先はask/denyルールとPreToolUseフックで守る",
+      "point": "autoモードの分類器は「JavaScriptプログラム単位」で審査し、実行時に計算される値までは見えない。一方、`deny`/`ask` ルールと `PreToolUse` フックはスクリプト内の各ツール呼び出しに引き続き適用される。編集対象が実行時に決まる処理では明示ルールを残すのが安全。APIの「Programmatic Tool Calling」が呼べるツールを事前定義するのに対し、Code Modeは既存の権限設定が実行内容を制御する点が違い。",
+      "source_title": "XenoSpectrum（11/18）",
+      "source_url": "https://xenospectrum.com/en/claude-code-mode-tool-permissions/",
+      "tags": [
+        "API",
+        "自動化"
+      ],
+      "first_date": "2026-11-19",
+      "last_date": "2026-11-19",
+      "appearances": 3
+    },
+    {
+      "id": 2556,
+      "title": "Code Modeの出力を秘匿化するなら、UserPromptSubmitではなくPostToolUseの `updatedToolOutput` を使う",
+      "point": "v2.1.328で、Code Modeスクリプトの出力に対してUserPromptSubmitフックが走らなくなった。機密値のマスキング等は `PostToolUse` フックで `updatedToolOutput` を返す形に移行する。",
+      "source_title": "Claude Code Changelog（gradually.ai, v2.1.328 / 11/19）",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "プロンプト",
+        "自動化"
+      ],
+      "first_date": "2026-11-19",
+      "last_date": "2026-11-19",
+      "appearances": 3
+    },
+    {
+      "id": 2561,
+      "title": "ワークツリーと `/export` の上書き事故防止が強化",
+      "point": "v2.1.327で `ExitWorktree` は未保存作業が残る可能性のあるワークツリー削除前に確認、`/export` は既存ファイル上書き前に確認するようになった。並列ワークツリー運用での作業消失リスクが下がる。",
+      "source_title": "Claude Code Changelog（gradually.ai, v2.1.327）",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "Claude Code",
+        "生産性"
+      ],
+      "first_date": "2026-11-19",
+      "last_date": "2026-11-19",
+      "appearances": 3
     },
     {
       "id": 2546,
@@ -15531,6 +15629,46 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2560,
+      "title": "MCPサーバーのトークンは `claude mcp add-json <name> -` で標準入力から渡す",
+      "point": "v2.1.327で追加。サーバー定義JSONをstdinから読むため、トークンがコマンドライン（シェル履歴やプロセス一覧）に残らない。セッション内からは使えない。また `claude mcp add --scope project` は、トップレベルにサーバーが並ぶ `.mcp.json` を上書きせず停止するようになった。",
+      "source_title": "Claude Code Changelog（gradually.ai, v2.1.327）",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-19",
+      "last_date": "2026-11-19",
+      "appearances": 1
+    },
+    {
+      "id": 2562,
+      "title": "Claude Desktopの更新チャネルを選ぶ（Stable／Latest）",
+      "point": "既定は「Stable」（検証を経た版を低頻度で配信）。「Latest」はほぼ毎日更新され、修正・新機能が早く届く。業務PCはStable、検証用はLatestと使い分けるのが無難。",
+      "source_title": "Claude Updates - November 2026（Releasebot, 11/17）",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-11-19",
+      "last_date": "2026-11-19",
+      "appearances": 1
+    },
+    {
+      "id": 2563,
+      "title": "Claude Platformの「Linked billing（β）」でAPIキーを共有せず外部ツールに課金連携",
+      "point": "対応する外部ツールに自組織を連携すると、APIキーを渡さずに利用料を自組織へ請求させられる。ツールごとに承認・上限設定・利用額確認・解除が可能。ただしリクエストは連携先組織で実行されるため、自組織のIP許可リスト・暗号鍵・データ保持設定は適用されない点に注意（機密を扱う開発では要確認）。",
+      "source_title": "Claude Updates - November 2026（Releasebot, 11/17）",
+      "source_url": "https://releasebot.io/updates/anthropic/claude",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-11-19",
+      "last_date": "2026-11-19",
+      "appearances": 1
     },
     {
       "id": 2544,
@@ -26783,6 +26921,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-19",
+      "highlights": [
+        "Claude Code「Code Mode」（実験機能）の解説記事が相次いで公開：Claudeがツール呼び出しをJavaScriptでまとめて実行し、結果だけを受け取る方式。多ファイルの定型変更や並列コマンドで効果大。ただしユーザー設定でのみ有効化でき、`-p`・Agent SDK・Desktop・Bedrock等では使えない。",
+        "Claude Code v2.1.328（11/19）で `/code-review` の役割が明確化：バグとCLAUDE.md違反の報告に絞られ、再利用・簡素化・効率化の指摘は `/simplify` に分担。"
+      ]
+    },
+    {
       "date": "2026-11-18",
       "highlights": [
         "v2.1.326に上げたらautoモードの許可ルールを再確認：`Bash($HOME/scripts/*)`のような`$HOME`始まり等のワイルドカード許可は無視され、安全性チェックに回るようになった。無人実行・スケジュール実行が途中で止まらないか確認する。",
@@ -28358,5 +28503,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-19T08:00:05.541149"
+  "generated_at": "2026-11-20T08:00:05.824516"
 }
