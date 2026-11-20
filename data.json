@@ -55,6 +55,20 @@
       "appearances": 44
     },
     {
+      "id": 2574,
+      "title": "Bedrock等で既定になったautoモードは `disableAutoMode` で無効化できる",
+      "point": "v2.1.328以降、Opus 4.6／Sonnet 4.6をBedrock・Google CloudのAgent Platform・Foundry等で使う場合も、権限モード未指定の対話セッションはautoモードで開始。従来どおり都度確認にしたい組織は `disableAutoMode` 設定でオフにする。",
+      "source_title": "Claude Media（11/19）",
+      "source_url": "https://claude-media.com/",
+      "tags": [
+        "エージェント",
+        "モデル"
+      ],
+      "first_date": "2026-11-20",
+      "last_date": "2026-11-20",
+      "appearances": 40
+    },
+    {
       "id": 2278,
       "title": "`claude plugin install --marketplace <source>`：マーケットプレイス追加とインストールを1コマンドで（2.1.292）",
       "point": "必要ならマーケットプレイスを追加したうえでプラグインを導入。`marketplace add`と同じポリシーチェックが適用される。チームへの導入手順を1行にできる。",
@@ -1065,6 +1079,17 @@
       "appearances": 17
     },
     {
+      "id": 2575,
+      "title": "設定破損系の不具合修正が多いので、早めに v2.1.329 へ更新する",
+      "point": "保存中に `~/.claude.json` がリセットされる問題、macOSキーチェーンで繰り返しサインアウトされる問題、`/terminal-setup` がVS Codeの設定を壊す問題、`/teleport` が開いている会話を置き換える問題、Code Modeのメモリ暴走などが修正（修正91件）。`claude update` 後に `claude --version` で確認する。",
+      "source_title": "Claude Code 2.1.329 変更一覧（claudeupdates.dev）",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.329",
+      "tags": [],
+      "first_date": "2026-11-20",
+      "last_date": "2026-11-20",
+      "appearances": 16
+    },
+    {
       "id": 2557,
       "title": "`/code-review` はバグ・CLAUDE.md違反専用、リファクタ観点は `/simplify` と使い分ける",
       "point": "v2.1.328から、多くのモデルで `/code-review` はバグとCLAUDE.md違反のみを報告。再利用・簡素化・効率化の改善提案が欲しいときは `/simplify` を別途実行する。レビューの目的（不具合検出か、保守性向上か）でコマンドを分けるとノイズが減る。",
@@ -1583,6 +1608,19 @@
       "first_date": "2026-05-27",
       "last_date": "2026-05-27",
       "appearances": 13
+    },
+    {
+      "id": 2569,
+      "title": "対象なしの `/code-review` はブランチ全体を既定ブランチと比較してレビューする",
+      "point": "v2.1.329から、引数なしの `/code-review` は現在のブランチ全体を既定ブランチとの差分でレビューする。PR番号を渡す場合（`/code-review <pr>`）は `gh pr diff` を使うよう修正された。前日（v2.1.328）の「バグ・CLAUDE.md違反に特化」と合わせ、リファクタ観点は `/simplify` で。",
+      "source_title": "Claude Code 2.1.329 変更一覧（claudeupdates.dev）",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.329",
+      "tags": [
+        "CLAUDE.md"
+      ],
+      "first_date": "2026-11-20",
+      "last_date": "2026-11-20",
+      "appearances": 12
     },
     {
       "id": 2550,
@@ -2321,6 +2359,19 @@
       "appearances": 10
     },
     {
+      "id": 2572,
+      "title": "`/status` の「Marketplace auto-update」行と `/mcp` の「Server message」行で状態を点検する",
+      "point": "`/status` にプラグインマーケットプレイスの自動更新状態、`/mcp` にMCPサーバーからのメッセージ行が追加。「プラグインが古いまま」「MCPが動かない」ときの最初の確認先になる。",
+      "source_title": "Claude Code 2.1.329 変更一覧（claudeupdates.dev）",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.329",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-20",
+      "last_date": "2026-11-20",
+      "appearances": 9
+    },
+    {
       "id": 2554,
       "title": "Code Modeは環境変数で有効化し、定型の多ファイル変更・絞り込み検索・並列コマンドで使う",
       "point": "`CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1` を起動前に設定（常用は `~/.claude/settings.json` の `env`）。初回に確認プロンプトが出る。プロジェクト設定では有効化できないため、リポジトリ側から勝手にONにされない。v2.1.323以上・対話ターミナル必須、エージェントチームは v2.1.326以上。待機中のコードは権限確認待ちを含め10分で停止。変数を0にするとどこからでも無効化でき、再開時も変数が1のままである必要がある。",
@@ -2758,6 +2809,17 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 2570,
+      "title": "ゲートウェイ経由で出力が途中で切れるなら `CLAUDE_CODE_MAX_OUTPUT_TOKENS` を設定する",
+      "point": "v2.1.326で入った「`max_tokens` 上限到達時の自動リトライ」が v2.1.329で削除された。社内ゲートウェイやプロキシ経由で長い出力が途切れる場合は、環境変数 `CLAUDE_CODE_MAX_OUTPUT_TOKENS` で上限を明示する。",
+      "source_title": "Claude Code 2.1.329 変更一覧（claudeupdates.dev）",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.329",
+      "tags": [],
+      "first_date": "2026-11-20",
+      "last_date": "2026-11-20",
+      "appearances": 8
     },
     {
       "id": 2533,
@@ -3957,6 +4019,17 @@
       "appearances": 7
     },
     {
+      "id": 2573,
+      "title": "Code ModeはOpenTelemetry有効環境でも使える／無効化は管理設定で行う",
+      "point": "v2.1.329でCode ModeがOpenTelemetry有効時にも動くようになり、テレメトリや機能フラグがオフでも起動するようになった。組織として使わせたくない場合は、管理設定（managed settings）の `env` で `CLAUDE_CODE_EXPERIMENTAL_CODE_MODE` を `\"0\"` にして止める必要がある。",
+      "source_title": "Claude Code 2.1.329 変更一覧（claudeupdates.dev）",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.329",
+      "tags": [],
+      "first_date": "2026-11-20",
+      "last_date": "2026-11-20",
+      "appearances": 6
+    },
+    {
       "id": 2537,
       "title": "モードを選ぶより「誰向けか・完成形は何か」を伝え、曖昧ならClaudeにインタビューさせる",
       "point": "依頼の目的と完成条件を先に書くと、Claude側が適切なツールや形式を選びやすい。繰り返す手順はSkillsに保存し、Memoryは有効にして同じ前提を何度も説明しない。",
@@ -5122,6 +5195,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 6
+    },
+    {
+      "id": 2567,
+      "title": "Code Modeで「必ず止めるべき」PreToolUseフックには `\"onFailure\": \"block\"` を付ける",
+      "point": "v2.1.329で、PreToolUseフックがエラーで終わってもCode Modeのツール呼び出しを拒否しない仕様に変更。秘密情報の書き込み防止など、フックで遮断していた処理は `\"onFailure\": \"block\"` を設定しないと素通りする。11/13公開の解説記事（「エラー時は既定で拒否」）は古い挙動なので注意。",
+      "source_title": "Claude Code 2.1.329 変更一覧（claudeupdates.dev, 11/19）",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.329",
+      "tags": [],
+      "first_date": "2026-11-20",
+      "last_date": "2026-11-20",
+      "appearances": 5
     },
     {
       "id": 2558,
@@ -6471,6 +6555,20 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2568,
+      "title": "`/tasks` でスケジュールタスク・`/loop` 起動予定・フォークをまとめて確認する",
+      "point": "`/tasks` の一覧に、スケジュール済みタスク、`/loop` のウェイクアップ、ゴール、フォークが加わった。旧版で保存したスケジュールタスクは、新しいサインイン済みセッションでは基本的に再登録が必要（そのセッション自身のタスクを `--resume` した場合は引き続き動く）。アップデート後は「定期実行が止まっていないか」を `/tasks` で確認するのが安全。",
+      "source_title": "Claude Code 2.1.329 変更一覧（claudeupdates.dev）",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.329",
+      "tags": [
+        "自動化",
+        "新機能"
+      ],
+      "first_date": "2026-11-20",
+      "last_date": "2026-11-20",
+      "appearances": 4
     },
     {
       "id": 2536,
@@ -11517,6 +11615,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2571,
+      "title": "フォルダを信頼する前に、信頼ダイアログで「フックの定義場所」を確認する",
+      "point": "信頼ダイアログに、そのフォルダのフックがどのファイルで宣言されているかが表示されるようになった。外部から取得したリポジトリを開くときは、意図しないフックが仕込まれていないかここで確認できる。",
+      "source_title": "Claude Code 2.1.329 変更一覧（claudeupdates.dev）",
+      "source_url": "https://www.claudeupdates.dev/version/2.1.329",
+      "tags": [],
+      "first_date": "2026-11-20",
+      "last_date": "2026-11-20",
+      "appearances": 2
     },
     {
       "id": 2542,
@@ -26921,6 +27030,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-20",
+      "highlights": [
+        "Code Modeのフックの挙動が変わった：v2.1.329から、PreToolUseフックがエラーで終わってもCode Modeのツール呼び出しは止まらなくなった。必ず止めたいフックには `\"onFailure\": \"block\"` を明示する。安全装置としてフックを使っている人は要確認。",
+        "`/tasks` でスケジュール済みタスク・`/loop` の起動予定・フォークも一覧できるようになった。ただし旧バージョンで保存したスケジュールタスクは、新しいサインイン済みセッションで登録し直す必要がある。"
+      ]
+    },
+    {
       "date": "2026-11-19",
       "highlights": [
         "Claude Code「Code Mode」（実験機能）の解説記事が相次いで公開：Claudeがツール呼び出しをJavaScriptでまとめて実行し、結果だけを受け取る方式。多ファイルの定型変更や並列コマンドで効果大。ただしユーザー設定でのみ有効化でき、`-p`・Agent SDK・Desktop・Bedrock等では使えない。",
@@ -28503,5 +28619,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-20T08:00:05.824516"
+  "generated_at": "2026-11-21T08:00:05.485196"
 }
