@@ -2811,6 +2811,20 @@
       "appearances": 9
     },
     {
+      "id": 2579,
+      "title": "Team / Enterprise で Computer use（ベータ）が使えるように",
+      "point": "11/20のリリースノートで、Computer use が Team / Enterprise 向けにベータ提供開始。Claudeがスクリーンショットで画面を確認し、許可したデスクトップアプリをクリック・入力で操作する。新しいClaude Desktop、およびWeb・モバイル（Computer access をオンにした場合）から利用可能。組織ごとに段階的に展開中のため、まだ表示されない組織もある。",
+      "source_title": "Release notes | Claude Help Center",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "tags": [
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-11-21",
+      "last_date": "2026-11-21",
+      "appearances": 8
+    },
+    {
       "id": 2570,
       "title": "ゲートウェイ経由で出力が途中で切れるなら `CLAUDE_CODE_MAX_OUTPUT_TOKENS` を設定する",
       "point": "v2.1.326で入った「`max_tokens` 上限到達時の自動リトライ」が v2.1.329で削除された。社内ゲートウェイやプロキシ経由で長い出力が途切れる場合は、環境変数 `CLAUDE_CODE_MAX_OUTPUT_TOKENS` で上限を明示する。",
@@ -11617,6 +11631,19 @@
       "appearances": 3
     },
     {
+      "id": 2580,
+      "title": "有効化は「Chat and Cowork unified」→「Computer use」の順にオン",
+      "point": "既定はオフ。Owner / Primary Owner が「Organization settings > Capabilities」で、まず「Chat and Cowork unified」をオンにし、その後「Claude Desktop」欄の Computer use をオンにする。Enterpriseではカスタムロール単位で利用者を絞れる。組み込みロールは有効化と同時に使えるようになるため、絞りたい場合は先にロール設計をしておく。",
+      "source_title": "Set up computer use for Team and Enterprise plans",
+      "source_url": "https://support.claude.com/en/articles/18483812-set-up-computer-use-for-team-and-enterprise-plans",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-11-21",
+      "last_date": "2026-11-21",
+      "appearances": 2
+    },
+    {
       "id": 2571,
       "title": "フォルダを信頼する前に、信頼ダイアログで「フックの定義場所」を確認する",
       "point": "信頼ダイアログに、そのフォルダのフックがどのファイルで宣言されているかが表示されるようになった。外部から取得したリポジトリを開くときは、意図しないフックが仕込まれていないかここで確認できる。",
@@ -15738,6 +15765,61 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2581,
+      "title": "「App access」で操作できるアプリを許可リスト／ブロックリストで制限する",
+      "point": "管理画面の「App access」で、ブロックリストまたは許可リストを設定できる。指定はMacがバンドルID、Windowsがexe名。許可リスト方式にすると、最新版でないClaude Desktopの利用者は操作できなくなるため、展開前にDesktopの更新を徹底する。",
+      "source_title": "Set up computer use for Team and Enterprise plans",
+      "source_url": "https://support.claude.com/en/articles/18483812-set-up-computer-use-for-team-and-enterprise-plans",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-11-21",
+      "last_date": "2026-11-21",
+      "appearances": 1
+    },
+    {
+      "id": 2582,
+      "title": "Computer use 利用時の注意：サンドボックスなし・フォルダ制限は効かない",
+      "point": "Claudeとアプリの間にサンドボックスはなく、Coworkのフォルダ単位の制限も Computer use には適用されない。スクリーンショットはチャットと一緒に保存される。機密情報が映る画面での利用はルール化しておく。なお、Coworkのタスク内とClaude Codeでは使えず、HIPAA構成・Claude CodeのZDR・CMEK・FERPAなどの組織では有効化できない。",
+      "source_title": "Set up computer use for Team and Enterprise plans",
+      "source_url": "https://support.claude.com/en/articles/18483812-set-up-computer-use-for-team-and-enterprise-plans",
+      "tags": [
+        "Claude Code",
+        "製品機能"
+      ],
+      "first_date": "2026-11-21",
+      "last_date": "2026-11-21",
+      "appearances": 1
+    },
+    {
+      "id": 2583,
+      "title": "MDMで一括管理するなら `computerUseEnabled` キー（Desktop 5.1231.0以降）",
+      "point": "端末管理（MDM）で Computer use の可否を配布する場合は `computerUseEnabled` キーを使う。Claude Desktop 5.1231.0 以降が必要。11/17に追加されたDesktopのリリースチャンネル（Stable / Latest）と合わせて、社内で使うバージョンを揃えておくとよい。",
+      "source_title": "Set up computer use for Team and Enterprise plans",
+      "source_url": "https://support.claude.com/en/articles/18483812-set-up-computer-use-for-team-and-enterprise-plans",
+      "tags": [
+        "新機能",
+        "製品機能"
+      ],
+      "first_date": "2026-11-21",
+      "last_date": "2026-11-21",
+      "appearances": 1
+    },
+    {
+      "id": 2584,
+      "title": "既存のClaude契約でClaude Codeを動かすデザインエディタ「Onlook」（Launch HN）",
+      "point": "オープンソースのデザイン用エディタOnlookが、手持ちのClaude（またはChatGPT）契約を使ってMac上でClaude Code等を動かす形で紹介された。Hacker Newsで91ポイント、GitHubスター約2.7万。UIをビジュアルに触りながらClaude Codeに実装させたい場合の選択肢。※第三者ツールで、11/20のまとめ記事経由の情報。",
+      "source_title": "Agent Tools Today (20 Nov 2026)",
+      "source_url": "https://munderdiffl.in/blog/agent-tools-today-2026-11-20/",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-11-21",
+      "last_date": "2026-11-21",
+      "appearances": 1
     },
     {
       "id": 2560,
@@ -27030,6 +27112,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-21",
+      "highlights": [
+        "Computer use（ベータ）が Team / Enterprise プランで段階提供開始（11/20）。Claudeが画面を見て、許可されたデスクトップアプリを操作できる。新しいClaude Desktopのほか、「Computer access」をオンにすればWeb・モバイルからも使える。",
+        "既定はオフで、管理者の有効化が必要。アプリの許可／ブロックリストを先に決めてから展開するのが安全。Claudeとアプリの間にサンドボックスはない点に注意。"
+      ]
+    },
+    {
       "date": "2026-11-20",
       "highlights": [
         "Code Modeのフックの挙動が変わった：v2.1.329から、PreToolUseフックがエラーで終わってもCode Modeのツール呼び出しは止まらなくなった。必ず止めたいフックには `\"onFailure\": \"block\"` を明示する。安全装置としてフックを使っている人は要確認。",
@@ -28619,5 +28708,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-21T08:00:05.485196"
+  "generated_at": "2026-11-22T08:00:06.734794"
 }
