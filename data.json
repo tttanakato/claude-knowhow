@@ -1610,6 +1610,19 @@
       "appearances": 13
     },
     {
+      "id": 2591,
+      "title": "`/loop`・スケジュールタスクは最長30日に。古いタスクは作り直す",
+      "point": "`/loop` とスケジュールタスクの実行期間の上限が7日から30日に延びた。ただし、v2.1.330 より前に作ったタスクは7日で終了するため、長く回したい場合は作り直す。v2.1.329 からは `/tasks` で予定中のタスクを一覧表示し、`x` キーで停止できる。",
+      "source_title": "Classmethod（11/21）",
+      "source_url": "https://dev.classmethod.jp/en/articles/20261121-cc-updates-v2-1-330/",
+      "tags": [
+        "自動化"
+      ],
+      "first_date": "2026-11-22",
+      "last_date": "2026-11-22",
+      "appearances": 12
+    },
+    {
       "id": 2569,
       "title": "対象なしの `/code-review` はブランチ全体を既定ブランチと比較してレビューする",
       "point": "v2.1.329から、引数なしの `/code-review` は現在のブランチ全体を既定ブランチとの差分でレビューする。PR番号を渡す場合（`/code-review <pr>`）は `gh pr diff` を使うよう修正された。前日（v2.1.328）の「バグ・CLAUDE.md違反に特化」と合わせ、リファクタ観点は `/simplify` で。",
@@ -2809,6 +2822,28 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 2589,
+      "title": "不要な自動チャートは `/config` で各自オフにする",
+      "point": "`/config` で「Auto charts」を検索するとオフにできる。サーバー名を指定して、特定のサーバーだけ対象から外すこともできる。この設定はプロジェクト設定ではなくユーザー設定から読まれるため、チームで止めたい場合も各メンバーが自分でオフにする必要がある。",
+      "source_title": "easel in Claude Code（wmedia.es, 11/21）",
+      "source_url": "https://wmedia.es/en/tips/claude-code-easel-charts-terminal",
+      "tags": [],
+      "first_date": "2026-11-22",
+      "last_date": "2026-11-22",
+      "appearances": 8
+    },
+    {
+      "id": 2595,
+      "title": "`/config` の検索が賢くなった：「effort」でModel設定にたどり着ける",
+      "point": "v2.1.330 で `/config` の検索が改善され、「effort」と入力するとModel設定の項目が見つかるようになった。項目名を正確に覚えていなくても、目的の言葉で探せる。",
+      "source_title": "Releasebot: Claude Code Updates（11/21更新）",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [],
+      "first_date": "2026-11-22",
+      "last_date": "2026-11-22",
+      "appearances": 8
     },
     {
       "id": 2579,
@@ -4031,6 +4066,30 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 7
+    },
+    {
+      "id": 2588,
+      "title": "組み込みmod「easel」でターミナル内にチャートを描く",
+      "point": "v2.1.330 で、チャート描画用の組み込みmod「easel」が追加された。数値を含む結果のあとに「chart this」と頼むと、bars・line・columns・sparks・share などの形式でグラフにしてくれる。MCPのメトリクス結果（Prometheus・Grafana・Datadogなど）にも自動でチャートが付く。対象は Pro / Max（Team / Enterprise は利用可能な環境のみ）、macOS / Linux、claude.ai でサインインした場合。",
+      "source_title": "Key Updates in Claude Code v2.1.330（Classmethod, 11/21）",
+      "source_url": "https://dev.classmethod.jp/en/articles/20261121-cc-updates-v2-1-330/",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-22",
+      "last_date": "2026-11-22",
+      "appearances": 6
+    },
+    {
+      "id": 2590,
+      "title": "チャート用データは64KiB以内になるよう事前集計しておく",
+      "point": "チャートのツール呼び出しは64KiBの上限に収める必要がある。ログやメトリクスの生データをそのまま渡すのではなく、先にClaudeに集計（時間単位の平均、上位N件など）させてから描画を頼むと失敗しにくい。",
+      "source_title": "easel in Claude Code（wmedia.es, 11/21）",
+      "source_url": "https://wmedia.es/en/tips/claude-code-easel-charts-terminal",
+      "tags": [],
+      "first_date": "2026-11-22",
+      "last_date": "2026-11-22",
+      "appearances": 6
     },
     {
       "id": 2573,
@@ -8540,6 +8599,20 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2593,
+      "title": "ヘッドレスCIでは作業フォルダ向けの `rm` が拒否されるようになった",
+      "point": "承認できる人がいないヘッドレス実行（CIなど）では、作業フォルダを対象にした `rm` コマンドが拒否されるようになった。CIでClaude Codeにクリーンアップまでさせている場合は、削除処理をパイプライン側のスクリプトに移すなど、ジョブの設計を見直す。",
+      "source_title": "Key Updates in Claude Code v2.1.330（Classmethod, 11/21）",
+      "source_url": "https://dev.classmethod.jp/en/articles/20261121-cc-updates-v2-1-330/",
+      "tags": [
+        "Claude Code",
+        "自動化"
+      ],
+      "first_date": "2026-11-22",
+      "last_date": "2026-11-22",
+      "appearances": 3
     },
     {
       "id": 2555,
@@ -15765,6 +15838,30 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2592,
+      "title": "claude.ai コネクタは `deniedMcpServers` の serverUrl でまとめてブロックする",
+      "point": "動作が変わった。serverName で指定した場合は、そのコネクタ1つだけが非表示になる。同じURLを共有するclaude.aiコネクタをすべて止めたい場合は、`deniedMcpServers` に正確な serverUrl を書く。管理設定でコネクタを制限している組織は、既存の設定が意図どおり効いているか確認する。",
+      "source_title": "Key Updates in Claude Code v2.1.330（Classmethod, 11/21）",
+      "source_url": "https://dev.classmethod.jp/en/articles/20261121-cc-updates-v2-1-330/",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-22",
+      "last_date": "2026-11-22",
+      "appearances": 1
+    },
+    {
+      "id": 2594,
+      "title": "サインインリンクのエラーは `CLAUDE_CODE_FULL_SIGN_IN_LINK=1` で回避",
+      "point": "短縮されたサインインリンクでエラーになる環境では、環境変数 `CLAUDE_CODE_FULL_SIGN_IN_LINK=1` を設定すると完全なリンクが表示される。リモート環境やコピー＆ペーストが崩れる端末で役立つ。現在のバージョンは `claude --version` で確認し、`claude update` で更新できる。",
+      "source_title": "Claude Code Changelog（gradually.ai, 11/22確認）",
+      "source_url": "https://www.gradually.ai/en/changelogs/claude-code/",
+      "tags": [],
+      "first_date": "2026-11-22",
+      "last_date": "2026-11-22",
+      "appearances": 1
     },
     {
       "id": 2581,
@@ -27112,6 +27209,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-22",
+      "highlights": [
+        "組み込みチャート mod「easel」: Claude Code v2.1.330 から、数値の結果に「chart this」と頼むとターミナル内にグラフを描けるようになった。",
+        "`/loop`・スケジュールタスクが最長30日に: ただし、更新前に作ったタスクは7日で終わるので作り直しが必要。"
+      ]
+    },
+    {
       "date": "2026-11-21",
       "highlights": [
         "Computer use（ベータ）が Team / Enterprise プランで段階提供開始（11/20）。Claudeが画面を見て、許可されたデスクトップアプリを操作できる。新しいClaude Desktopのほか、「Computer access」をオンにすればWeb・モバイルからも使える。",
@@ -28708,5 +28812,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-22T08:00:06.734794"
+  "generated_at": "2026-11-23T08:00:05.654192"
 }
