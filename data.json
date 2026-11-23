@@ -82,6 +82,19 @@
       "appearances": 40
     },
     {
+      "id": 2599,
+      "title": "auto modeが既定に：確認を残したいなら `permissions.defaultMode` を明示する",
+      "point": "ターミナルとVS Codeのセッションは、権限モードを設定していなければauto modeで始まります。auto modeでは確認ダイアログの代わりに、別の分類モデルが操作を審査します。確認を残したい場合は、`~/.claude/settings.json` に `\"permissions\": {\"defaultMode\": \"default\"}` を書きます。1回だけなら `claude --permission-mode manual` でも切り替えられます。プロジェクトの `.claude/settings.json` に書いた `defaultMode: \"auto\"` は無視されるので注意してください。",
+      "source_title": "Claude Code auto mode: the new default（SSD Nodes, 11/22）",
+      "source_url": "https://www.ssdnodes.com/learn/claude-code-auto-mode-permissions",
+      "tags": [
+        "モデル"
+      ],
+      "first_date": "2026-11-23",
+      "last_date": "2026-11-23",
+      "appearances": 39
+    },
+    {
       "id": 2449,
       "title": "CLAUDE.mdは短く保ち、古い「念押しプロンプト」を見直す",
       "point": "コードを読めば分かることは書かず、コードに残らない決めごとだけを書く（目安200行未満）。大文字での強調や「よく考えて」といった念押しは最新モデルではほぼ不要とされる。※「200行」は記事の目安で、公式の上限値かは未確認。",
@@ -208,6 +221,19 @@
       "first_date": "2026-09-13",
       "last_date": "2026-09-13",
       "appearances": 35
+    },
+    {
+      "id": 2603,
+      "title": "Ubuntuでは bubblewrap を入れて `/sandbox` を有効にする",
+      "point": "`sudo apt-get install bubblewrap socat` を実行したあと、Claude Codeを再起動して `/sandbox` を実行します。読み取り範囲（`denyRead` / `allowRead`）と接続先のドメイン（`allowedDomains`）は、プロジェクトの `.claude/settings.json` の `sandbox` で指定できます。`bypassPermissions` はroot・sudoでは使えず、VPSなど大事なデータがあるホストでも使わないよう勧めています。",
+      "source_title": "SSD Nodes（11/22）",
+      "source_url": "https://www.ssdnodes.com/learn/claude-code-auto-mode-permissions",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-11-23",
+      "last_date": "2026-11-23",
+      "appearances": 34
     },
     {
       "id": 2288,
@@ -1219,6 +1245,17 @@
       "first_date": "2026-04-09",
       "last_date": "2026-04-09",
       "appearances": 16
+    },
+    {
+      "id": 2602,
+      "title": "権限ルールは deny → ask → allow の順で判定。秘密ファイルはdenyに入れる",
+      "point": "最初に一致したルールが適用されるため、allowルールでdenyルールを上書きすることはできません。`Read(./.env)` や `Read(./secrets/**)` をdenyに入れて、認証情報を読ませないようにします。`git push` などはaskルールに入れておくと、auto modeでも確認を求められます。",
+      "source_title": "SSD Nodes（11/22）",
+      "source_url": "https://www.ssdnodes.com/learn/claude-code-auto-mode-permissions",
+      "tags": [],
+      "first_date": "2026-11-23",
+      "last_date": "2026-11-23",
+      "appearances": 15
     },
     {
       "id": 2034,
@@ -2824,6 +2861,17 @@
       "appearances": 9
     },
     {
+      "id": 2601,
+      "title": "共有マシンでは managed-settings で auto / bypass を止める",
+      "point": "`\"permissions\": {\"disableAutoMode\": \"disable\", \"disableBypassPermissionsMode\": \"disable\"}` を `/etc/claude-code/managed-settings.json` に置くと、マシン全体でこれらのモードを無効にできます。値は文字列の \"disable\" です。",
+      "source_title": "SSD Nodes（11/22）",
+      "source_url": "https://www.ssdnodes.com/learn/claude-code-auto-mode-permissions",
+      "tags": [],
+      "first_date": "2026-11-23",
+      "last_date": "2026-11-23",
+      "appearances": 8
+    },
+    {
       "id": 2589,
       "title": "不要な自動チャートは `/config` で各自オフにする",
       "point": "`/config` で「Auto charts」を検索するとオフにできる。サーバー名を指定して、特定のサーバーだけ対象から外すこともできる。この設定はプロジェクト設定ではなくユーザー設定から読まれるため、チームで止めたい場合も各メンバーが自分でオフにする必要がある。",
@@ -3436,6 +3484,19 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 2608,
+      "title": "取り消せない操作には人間の承認を挟む",
+      "point": "ゼロトラストのガイドでも、削除や外部への送信のような取り消せない操作は人間が承認するよう求めています。Claude Codeでは、手順4のaskルールや、`rm` の承認（v2.1.330で強化）で実現できます。",
+      "source_title": "explainx（11/22）",
+      "source_url": "https://explainx.ai/blog/anthropic-zero-trust-ai-agents-enterprise-framework-november-2026",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-11-23",
+      "last_date": "2026-11-23",
+      "appearances": 7
     },
     {
       "id": 2559,
@@ -8601,6 +8662,19 @@
       "appearances": 4
     },
     {
+      "id": 2604,
+      "title": "`denyInsteadOfPrompting` で、確認が必要な操作を自動で拒否する",
+      "point": "v2.1.319以降で使えます。確認を求めるはずの呼び出しを、確認せずにそのまま拒否します。拒否が20回続くとそのターンは終了し、`-p` で実行していれば `error_during_execution` が返ります。",
+      "source_title": "SSD Nodes（11/22）",
+      "source_url": "https://www.ssdnodes.com/learn/claude-code-auto-mode-permissions",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-11-23",
+      "last_date": "2026-11-23",
+      "appearances": 3
+    },
+    {
       "id": 2593,
       "title": "ヘッドレスCIでは作業フォルダ向けの `rm` が拒否されるようになった",
       "point": "承認できる人がいないヘッドレス実行（CIなど）では、作業フォルダを対象にした `rm` コマンドが拒否されるようになった。CIでClaude Codeにクリーンアップまでさせている場合は、削除処理をパイプライン側のスクリプトに移すなど、ジョブの設計を見直す。",
@@ -11702,6 +11776,20 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2605,
+      "title": "`claude mcp add-json <name> -` で、トークンをコマンド履歴に残さない",
+      "point": "v2.1.327で追加されました。MCPサーバーの設定JSONを標準入力から読み込むので、トークンがコマンドラインや履歴に残りません。Claude Codeのセッション内では使えません。",
+      "source_title": "This week in Claude Code（DEV, 11/22更新）",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-22-2026-1ofi",
+      "tags": [
+        "Claude Code",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-23",
+      "last_date": "2026-11-23",
+      "appearances": 2
     },
     {
       "id": 2580,
@@ -15838,6 +15926,46 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2600,
+      "title": "CIでは `dontAsk` と `--allowedTools` を組み合わせる",
+      "point": "無人で動かす場合は `claude -p \"...\" --permission-mode dontAsk --allowedTools \"Bash(npm test)\" \"Read\"` のように、許可するツールを明示して実行します。`dontAsk` はShift+Tabで切り替えるモードの中には出てきません。",
+      "source_title": "SSD Nodes（11/22）",
+      "source_url": "https://www.ssdnodes.com/learn/claude-code-auto-mode-permissions",
+      "tags": [],
+      "first_date": "2026-11-23",
+      "last_date": "2026-11-23",
+      "appearances": 1
+    },
+    {
+      "id": 2606,
+      "title": "v2.1.327より前にproject scopeで `mcp add/remove` を使った場合は `.mcp.json` を確認する",
+      "point": "以前のバージョンには、`.mcp.json` の `$schema` や他のツールのキーが消えてしまう不具合がありました（v2.1.327で修正）。思い当たる場合は、ファイルの中身を確認しておきましょう。",
+      "source_title": "This week in Claude Code（DEV, 11/22更新）",
+      "source_url": "https://dev.to/aicoding-guide/this-week-in-claude-code-codex-and-gemini-cli-week-of-november-22-2026-1ofi",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-23",
+      "last_date": "2026-11-23",
+      "appearances": 1
+    },
+    {
+      "id": 2607,
+      "title": "エージェントにゼロトラストを：ID・短期トークン・MCPツールの許可リスト",
+      "point": "Anthropicのガイドを3段階（Foundation / Enterprise / Advanced）に分けて解説した記事です。最初の段階では、エージェントごとの暗号学的ID、長期APIキーではなく短期トークン、デフォルト拒否のRBAC、エージェントIDを付けた操作ログが求められています。実務の手順としては、エージェントと使っているツール（MCPサーバーやスケジュールジョブを含む）の棚卸し、MCPツールのエージェント単位での許可リスト化、信頼できない情報を取り込むメモリと権限の強いツールを分けることが挙げられています。",
+      "source_title": "Zero Trust for AI Agents: Anthropic's 3-Tier Guide（explainx, 11/22）",
+      "source_url": "https://explainx.ai/blog/anthropic-zero-trust-ai-agents-enterprise-framework-november-2026",
+      "tags": [
+        "API",
+        "自動化",
+        "エージェント",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-23",
+      "last_date": "2026-11-23",
+      "appearances": 1
     },
     {
       "id": 2592,
@@ -27209,6 +27337,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-23",
+      "highlights": [
+        "auto modeが既定になったので、権限モードを明示的に決めておく: 何も設定していない対話セッションはauto modeで始まります。従来どおり確認を求めてほしい場合は、ユーザー設定で `permissions.defaultMode` を指定します。",
+        "エージェントにもゼロトラストを: エージェントごとにIDと短期トークンを持たせ、MCPツールはエージェント単位で許可リスト化します。取り消せない操作には人間の承認を挟みます。"
+      ]
+    },
+    {
       "date": "2026-11-22",
       "highlights": [
         "組み込みチャート mod「easel」: Claude Code v2.1.330 から、数値の結果に「chart this」と頼むとターミナル内にグラフを描けるようになった。",
@@ -28812,5 +28947,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-23T08:00:05.654192"
+  "generated_at": "2026-11-24T08:00:05.631390"
 }
