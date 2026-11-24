@@ -638,6 +638,17 @@
       "appearances": 26
     },
     {
+      "id": 2619,
+      "title": "設定 > Usage で5時間枠・週間枠を確認し、長い会話は新しい会話へ",
+      "point": "消費状況を定期的に確認し、長くなった会話は要点を引き継いで新規会話に切り替える。長い履歴は毎回読み直されるため消費が増える。",
+      "source_title": "Claudeの使用上限と使用量を節約する6つのコツ",
+      "source_url": "https://claude-media.com/articles/claude-usage-limit-saving-tips",
+      "tags": [],
+      "first_date": "2026-11-24",
+      "last_date": "2026-11-24",
+      "appearances": 25
+    },
+    {
       "id": 2024,
       "title": "`CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS` で並列エージェント数を引き上げる",
       "point": "Workflowツールの1実行あたりの同時エージェント数の上限を、環境変数で1〜256の範囲に設定できるようになった。推論待ちが支配的なfan-out（大量ファイルの分類・要約など、各エージェントの処理が軽く待ち時間が長いケース）で並列度を上げるための設定。ただしトークン消費は並列数にほぼ比例するため、上限に達しやすい週次枠との兼ね合いで決める必要がある。I/O待ちではなく推論待ちの作業に限定するのが前提。",
@@ -1103,6 +1114,20 @@
       "first_date": "2026-06-01",
       "last_date": "2026-06-01",
       "appearances": 17
+    },
+    {
+      "id": 2621,
+      "title": "Claude Code の /tasks で予定タスク・/loop・フォークを一覧管理",
+      "point": "/tasks でセッション内の予定タスク、/loop の待機、目標、フォークをまとめて確認できる。/loop・定期タスクはセッション稼働中なら最長30日（従来7日）に延長。/config 検索も改善（「effort」で Model 設定が見つかる）。※リリースノートの最終更新は11/23で、24時間以内かは境界的。",
+      "source_title": "Claude Code Updates & Release Notes（Releasebot）",
+      "source_url": "https://releasebot.io/updates/anthropic/claude-code",
+      "tags": [
+        "Claude Code",
+        "新機能"
+      ],
+      "first_date": "2026-11-24",
+      "last_date": "2026-11-24",
+      "appearances": 16
     },
     {
       "id": 2575,
@@ -2409,6 +2434,20 @@
       "appearances": 10
     },
     {
+      "id": 2612,
+      "title": "Claude Code の /advisor で重要判断だけ上位モデルに相談させる",
+      "point": "通常のモデルで作業を進め、設計判断など重要な場面だけ上位モデルを呼ぶ。枠の消費を抑える使い方として紹介。数値効果は記事内でも伝聞扱いなので、自分の環境で /usage を見て確認するのが安全。",
+      "source_title": "Claude got 7 new features. You need maybe 2.（Chetan Pujari, 2026-11-24）",
+      "source_url": "https://chetanpujari.substack.com/p/claude-got-7-new-features-you-need",
+      "tags": [
+        "Claude Code",
+        "モデル"
+      ],
+      "first_date": "2026-11-24",
+      "last_date": "2026-11-24",
+      "appearances": 9
+    },
+    {
       "id": 2572,
       "title": "`/status` の「Marketplace auto-update」行と `/mcp` の「Server message」行で状態を点検する",
       "point": "`/status` にプラグインマーケットプレイスの自動更新状態、`/mcp` にMCPサーバーからのメッセージ行が追加。「プラグインが古いまま」「MCPが動かない」ときの最初の確認先になる。",
@@ -2859,6 +2898,19 @@
       "first_date": "2026-03-27",
       "last_date": "2026-03-27",
       "appearances": 9
+    },
+    {
+      "id": 2620,
+      "title": "大きなスキル（claude-api スキル等）のコンテキスト消費に注意",
+      "point": "コミュニティ日報で、claude-api スキルが約156kトークンを一度に読み込みコンテキストを使い切る問題（issue #1487）が話題に。重いスキルは必要時だけ有効化する。",
+      "source_title": "AI CLI 工具社区动态日报 2026-11-24（GitHub Issue #2096）",
+      "source_url": "https://github.com/Chestnuts-Sisyphus/gittok/issues/2096",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-11-24",
+      "last_date": "2026-11-24",
+      "appearances": 8
     },
     {
       "id": 2601,
@@ -8662,6 +8714,17 @@
       "appearances": 4
     },
     {
+      "id": 2614,
+      "title": "Sheets で数式付きスプレッドシートを作らせる",
+      "point": "数式が入った表を Claude が直接作成。セル数上限（約20万セルという話）は記事内でも伝聞のため、大規模データでは事前確認を推奨。",
+      "source_title": "Claude got 7 new features. You need maybe 2.",
+      "source_url": "https://chetanpujari.substack.com/p/claude-got-7-new-features-you-need",
+      "tags": [],
+      "first_date": "2026-11-24",
+      "last_date": "2026-11-24",
+      "appearances": 3
+    },
+    {
       "id": 2604,
       "title": "`denyInsteadOfPrompting` で、確認が必要な操作を自動で拒否する",
       "point": "v2.1.319以降で使えます。確認を求めるはずの呼び出しを、確認せずにそのまま拒否します。拒否が20回続くとそのターンは終了し、`-p` で実行していれば `error_during_execution` が返ります。",
@@ -11776,6 +11839,43 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2613,
+      "title": "Whiteboards で図を作り、一部だけ指定して直させる",
+      "point": "Claude 内の共有ボードでフロー図や構成図を作成。全体を作り直させず、修正したい部分だけを指定して直せる。全プランで利用可能だがベータ。",
+      "source_title": "Claude got 7 new features. You need maybe 2.",
+      "source_url": "https://chetanpujari.substack.com/p/claude-got-7-new-features-you-need",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-11-24",
+      "last_date": "2026-11-24",
+      "appearances": 2
+    },
+    {
+      "id": 2615,
+      "title": "Meetings で Google Meet に参加させて議事録を取る",
+      "point": "Claude が会議参加者として入りメモを作成。Team/Enterprise 限定・Google Meet のみ・ベータ。個人プランでは使えない点に注意。",
+      "source_title": "Claude got 7 new features. You need maybe 2.",
+      "source_url": "https://chetanpujari.substack.com/p/claude-got-7-new-features-you-need",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-11-24",
+      "last_date": "2026-11-24",
+      "appearances": 2
+    },
+    {
+      "id": 2616,
+      "title": "送信前にゴール・前提・材料を埋めて往復を減らす",
+      "point": "欠けた依頼は聞き返しを生み、往復ぶん使用量が増える。「何を作るか」「読み手・環境」「使う資料」を先に書いてから送る。",
+      "source_title": "Claudeの使用上限と使用量を節約する6つのコツ（claude-media, 2026-11-24更新）",
+      "source_url": "https://claude-media.com/articles/claude-usage-limit-saving-tips",
+      "tags": [],
+      "first_date": "2026-11-24",
+      "last_date": "2026-11-24",
+      "appearances": 2
     },
     {
       "id": 2605,
@@ -15926,6 +16026,30 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2617,
+      "title": "関連する依頼は1通にまとめ、繰り返し使う資料はプロジェクトへ",
+      "point": "同じ資料に対する複数の質問は1メッセージにまとめるとキャッシュが効きやすい。何度も参照する資料はプロジェクトに入れておく（有料プランでは RAG モードで容量が広がる）。",
+      "source_title": "Claudeの使用上限と使用量を節約する6つのコツ",
+      "source_url": "https://claude-media.com/articles/claude-usage-limit-saving-tips",
+      "tags": [],
+      "first_date": "2026-11-24",
+      "last_date": "2026-11-24",
+      "appearances": 1
+    },
+    {
+      "id": 2618,
+      "title": "使わないコネクタはオフにし、定型作業はエフォートを下げる",
+      "point": "有効なツール・コネクタが多いとその分コンテキストを使う。不要なものは切り、定型作業では推論の深さ（エフォート）を下げて消費を抑える。",
+      "source_title": "Claudeの使用上限と使用量を節約する6つのコツ",
+      "source_url": "https://claude-media.com/articles/claude-usage-limit-saving-tips",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-24",
+      "last_date": "2026-11-24",
+      "appearances": 1
     },
     {
       "id": 2600,
@@ -27337,6 +27461,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-24",
+      "highlights": [
+        "Claude Code の `/advisor`: 普段は軽いモデルで作業し、重要な判断のときだけ上位モデルに相談させる仕組み。枠の消費を抑えられると紹介されている（削減幅は伝聞で、筆者自身の検証ではない）。",
+        "「送る前に3点を埋める」節約術: ゴール・前提・材料をそろえてから送ると聞き返しが減り、使用量の節約につながる。"
+      ]
+    },
+    {
       "date": "2026-11-23",
       "highlights": [
         "auto modeが既定になったので、権限モードを明示的に決めておく: 何も設定していない対話セッションはauto modeで始まります。従来どおり確認を求めてほしい場合は、ユーザー設定で `permissions.defaultMode` を指定します。",
@@ -28947,5 +29078,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-24T08:00:05.631390"
+  "generated_at": "2026-11-25T08:00:05.566967"
 }
