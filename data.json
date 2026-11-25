@@ -8714,6 +8714,17 @@
       "appearances": 4
     },
     {
+      "id": 2630,
+      "title": "Claude Ship を有効化する前に支出上限（spend limit）を設定する",
+      "point": "トークン従量課金のため、Organization settings > Usage で Code Review の月間上限と Approvals 用の上限を先に設定しておく。PR Steward は上限を設定しない限り制限がない点に注意（二次情報。上限の適用範囲は公式ドキュメントで要確認）。",
+      "source_title": "Claude Ship Lets Anthropic Agents Approve Routine GitHub PRs（THE D*AI*LY BRIEF, 2026-11-25）",
+      "source_url": "https://www.beri.net/article/claude-ship-code-review-pr-steward-claude-approvals-beta-observe-mode-zdr-hipaa-cmek-excluded-token-billing-spend-limits",
+      "tags": [],
+      "first_date": "2026-11-25",
+      "last_date": "2026-11-25",
+      "appearances": 3
+    },
+    {
       "id": 2614,
       "title": "Sheets で数式付きスプレッドシートを作らせる",
       "point": "数式が入った表を Claude が直接作成。セル数上限（約20万セルという話）は記事内でも伝聞のため、大規模データでは事前確認を推奨。",
@@ -11839,6 +11850,30 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2626,
+      "title": "アプリの権限は「既定」から始め、フルアクセスは自作・信頼アプリだけに付与する",
+      "point": "権限は3段階。既定（ブラウザ相当）、アプリ権限（通知・グローバルショートカット・常時前面表示・メニューバー）、フルアクセス（プログラム実行やファイル読み書き・削除を都度確認なしで実行）。Anthropicはインストール前にアプリを審査しないため、フルアクセスは自作か完全に信頼できる作成者のアプリに限定する。更新のたびに権限の再確認が出る。",
+      "source_title": "Claudeデスクトップアプリ化とは？使い方と権限・注意点（digirise.ai, 2026-11-25）",
+      "source_url": "https://digirise.ai/chaen-ai-lab/claude-artifacts-install-as-desktop-app/",
+      "tags": [
+        "API"
+      ],
+      "first_date": "2026-11-25",
+      "last_date": "2026-11-25",
+      "appearances": 2
+    },
+    {
+      "id": 2631,
+      "title": "ZDR・HIPAA・CMEK 構成の組織は Claude Ship 対象外：導入前に組織設定を確認",
+      "point": "Zero Data Retention、HIPAA構成、顧客管理の暗号鍵（CMEK）を使う組織は利用不可。FERPA・Access Transparency 設定も事前確認を推奨。該当する場合は別組織での検証を検討する。",
+      "source_title": "Anthropic launches Claude Ship beta（Verdict, 2026-11-25）",
+      "source_url": "https://www.verdict.co.uk/anthropic-launches-claude-ship/",
+      "tags": [],
+      "first_date": "2026-11-25",
+      "last_date": "2026-11-25",
+      "appearances": 2
     },
     {
       "id": 2613,
@@ -16026,6 +16061,58 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2625,
+      "title": "アーティファクトを「Install as app」でデスクトップアプリとしてインストールする",
+      "point": "Claude Desktop（Mac/Windows）でアーティファクトを開き、共有メニュー・タイトルメニュー・右クリックのいずれかから「Install as app」を選ぶと、専用ウィンドウで起動するアプリになる。パッケージ化や署名は不要。元のアーティファクトを編集するとアプリも自動更新される。コネクタもそのまま使える。ベータで全プラン対象（Enterpriseは管理者が有効化する必要あり）。",
+      "source_title": "Claude Now Lets You Install Artifacts as Desktop Apps（MacRumors, 2026-11-25）",
+      "source_url": "https://www.macrumors.com/2026/11/25/claude-install-artifacts-desktop-apps/",
+      "tags": [
+        "新機能",
+        "MCP/プラグイン",
+        "製品機能"
+      ],
+      "first_date": "2026-11-25",
+      "last_date": "2026-11-25",
+      "appearances": 1
+    },
+    {
+      "id": 2627,
+      "title": "インストール前に動作条件と対象外アーティファクトを確認する",
+      "point": "Claude Desktop 6.28899.0以降・サインイン・ネット接続が必要で、オフライン起動不可。Linux・Web・モバイルは非対応。Docs/Slides/Sheets由来、レガシーartifact、Cowork由来のlive artifactはインストール不可。macOSは「Claude Apps」フォルダ、Windowsはスタートメニュー/デスクトップから起動。アプリからのClaude呼び出しはプランの利用上限に含まれる。Teamではフルアクセスは管理者が有効化するまで無効、HIPAA対応組織は利用不可。",
+      "source_title": "Anthropic now allows installing artifacts as desktop apps（TestingCatalog, 2026-11-25）",
+      "source_url": "https://www.testingcatalog.com/anthropic-now-allows-installing-artifacts-as-desktop-apps/",
+      "tags": [
+        "製品機能"
+      ],
+      "first_date": "2026-11-25",
+      "last_date": "2026-11-25",
+      "appearances": 1
+    },
+    {
+      "id": 2628,
+      "title": "Claude Ship：個別PRは `/ship`、レビューの深さは Quick / Standard / Deep から選ぶ",
+      "point": "Claude Ship は Code Review（一般提供）、PR Steward（失敗チェック・マージ競合・指摘対応を支援、承認やマージはしない／ベータ）、Claude Approvals（リポジトリごとのポリシーで自動承認／ベータ）の3構成。GitHub対象、Team/Enterprise向け。個別PRには `/ship` コマンド、リポジトリ全体は設定で有効化。課金はトークン従量制。",
+      "source_title": "Anthropic launches Claude Ship beta to support developer workflows（Verdict, 2026-11-25）",
+      "source_url": "https://www.verdict.co.uk/anthropic-launches-claude-ship/",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-11-25",
+      "last_date": "2026-11-25",
+      "appearances": 1
+    },
+    {
+      "id": 2629,
+      "title": "Claude Approvals は `mode: observe` で2〜4週間、人間レビュアーの判断と比較してから本番化する",
+      "point": "まず低リスクな変更が多い1リポジトリで Code Review だけを有効化し、頻度は「PR作成後に1回」、深さは Standard で開始。Approvals のポリシーは最初 observe モードで運用し、人の判断と突き合わせる。`seats: 0` や `claude: approves` など自動承認を広げる設定は責任者の承認を得る。CIは別の必須チェックとして残す。",
+      "source_title": "Claude Ship Lets Anthropic Agents Approve Routine GitHub PRs（THE D*AI*LY BRIEF, 2026-11-25）",
+      "source_url": "https://www.beri.net/article/claude-ship-code-review-pr-steward-claude-approvals-beta-observe-mode-zdr-hipaa-cmek-excluded-token-billing-spend-limits",
+      "tags": [],
+      "first_date": "2026-11-25",
+      "last_date": "2026-11-25",
+      "appearances": 1
     },
     {
       "id": 2617,
@@ -27461,6 +27548,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-25",
+      "highlights": [
+        "アーティファクトを「Install as app」でデスクトップアプリ化（ベータ）: 作ったツールを専用ウィンドウ・Dock/スタートメニューから起動できる。権限は既定のまま始め、フルアクセスは自作・信頼できるアプリだけに。",
+        "Claude Ship は「1リポジトリ・Standard・observeモード」で小さく始める: PRのレビュー・修正・自動承認を担うエージェント群。先に支出上限を設定してから有効化するのが推奨。"
+      ]
+    },
+    {
       "date": "2026-11-24",
       "highlights": [
         "Claude Code の `/advisor`: 普段は軽いモデルで作業し、重要な判断のときだけ上位モデルに相談させる仕組み。枠の消費を抑えられると紹介されている（削減幅は伝聞で、筆者自身の検証ではない）。",
@@ -29078,5 +29172,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-25T08:00:05.566967"
+  "generated_at": "2026-11-26T08:00:05.864731"
 }
