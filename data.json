@@ -212,6 +212,17 @@
       "appearances": 36
     },
     {
+      "id": 2636,
+      "title": "Bashサンドボックスを有効にしつつ「読み取り制限は deny ルール頼み」と理解しておく",
+      "point": "`/sandbox`（または `sandbox.enabled`）で Bash をサンドボックス化する。ただしサンドボックスだけでは読み取りは制限されず、deny ルールに書いたパスが OS レベルで拒否される仕組みなので、両方を組み合わせて設定する。",
+      "source_title": "Claude Code のセキュリティ、2026年11月時点のベストプラクティス（Zenn, 2026-11-25）",
+      "source_url": "https://zenn.dev/happy_elements/articles/27e14ff6754044",
+      "tags": [],
+      "first_date": "2026-11-26",
+      "last_date": "2026-11-26",
+      "appearances": 35
+    },
+    {
       "id": 2022,
       "title": "`!` 始まりの権限ルールと `tee` 経由の書き込みの穴が塞がれた",
       "point": "`!` で始まるdeny/askルールが、それを記述した設定ソースの外まで適用されてしまう不具合が修正された。今後は自身のソース内でのみ有効となり、単独の `!` 否定は無視される。加えて、Bashの `tee` が書き込む先のファイルに `Edit()` のdenyルールと書き込みパスチェックが効いていなかった問題も修正され、`Bash(tee:*)` の許可ルールが作業ディレクトリ外への書き込みを覆わなくなった。権限ルールで機密領域を守る設計をしているなら更新が必要。",
@@ -1114,6 +1125,17 @@
       "first_date": "2026-06-01",
       "last_date": "2026-06-01",
       "appearances": 17
+    },
+    {
+      "id": 2635,
+      "title": "Read の deny ルールで機密ファイル（.env・~/.ssh・~/.aws）を読ませない",
+      "point": "機密ファイルは deny ルールで読み取りを禁止し、`git push` や `gh pr create` のような外部に影響する操作は ask にして実行前に確認させる。`Bash(*)` や `Bash(npx *)` のような広すぎる allow ルールは避け、`/permissions` と `.claude/settings.local.json` を定期的に見直す。",
+      "source_title": "Claude Code のセキュリティ、2026年11月時点のベストプラクティス（Zenn, 2026-11-25）",
+      "source_url": "https://zenn.dev/happy_elements/articles/27e14ff6754044",
+      "tags": [],
+      "first_date": "2026-11-26",
+      "last_date": "2026-11-26",
+      "appearances": 16
     },
     {
       "id": 2621,
@@ -5383,6 +5405,19 @@
       "appearances": 6
     },
     {
+      "id": 2637,
+      "title": "MCP のトークンは値を直接書かず `${VAR}` で参照する",
+      "point": "MCP 設定ファイルにトークンを直書きせず、環境変数参照にする。MCPサーバー・フック・プラグインは追加や更新のたびに中身を確認する。",
+      "source_title": "Claude Code のセキュリティ、2026年11月時点のベストプラクティス（Zenn, 2026-11-25）",
+      "source_url": "https://zenn.dev/happy_elements/articles/27e14ff6754044",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-26",
+      "last_date": "2026-11-26",
+      "appearances": 5
+    },
+    {
       "id": 2567,
       "title": "Code Modeで「必ず止めるべき」PreToolUseフックには `\"onFailure\": \"block\"` を付ける",
       "point": "v2.1.329で、PreToolUseフックがエラーで終わってもCode Modeのツール呼び出しを拒否しない仕様に変更。秘密情報の書き込み防止など、フックで遮断していた処理は `\"onFailure\": \"block\"` を設定しないと素通りする。11/13公開の解説記事（「エラー時は既定で拒否」）は古い挙動なので注意。",
@@ -6741,6 +6776,17 @@
       "first_date": "2026-03-05",
       "last_date": "2026-03-05",
       "appearances": 5
+    },
+    {
+      "id": 2645,
+      "title": "Max/Ultra の Fable リセットは Settings > Usage で残数を確認してから使う",
+      "point": "Max・Ultra 契約者には利用期間に応じて1〜3回の Fable 無料リセットがあり、Settings の Usage から確認・使用できる（回数条件は二次情報のため要確認）。",
+      "source_title": "November Claude Updates Bring Native Spreadsheets to Your Chat（Geeky Gadgets, 2026-11-26）",
+      "source_url": "https://www.geeky-gadgets.com/anthropic-claude-november-2026-features/",
+      "tags": [],
+      "first_date": "2026-11-26",
+      "last_date": "2026-11-26",
+      "appearances": 4
     },
     {
       "id": 2568,
@@ -8712,6 +8758,44 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2640,
+      "title": "「Install as app」用のアーティファクトは、作らせる段階で必要な権限をプロンプトに明示する",
+      "point": "メニューバー・通知・フルアクセスなど、必要な権限だけを最初の依頼文で指定し、不要ならフルアクセスは使わないよう指示する。承認は版ごとなので、編集のたびに出る権限確認を惰性で通さない。コネクタが使えないときはダミーデータではなく「未接続」表示にさせると誤解を防げる。",
+      "source_title": "How to turn a Claude artifact into a Mac or Windows app, and lock down its permissions（DEV Community, 2026-11-25）",
+      "source_url": "https://dev.to/kargatharaaakash/how-to-turn-a-claude-artifact-into-a-mac-or-windows-app-and-lock-down-its-permissions-4fb0",
+      "tags": [
+        "プロンプト",
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-26",
+      "last_date": "2026-11-26",
+      "appearances": 3
+    },
+    {
+      "id": 2643,
+      "title": "Sheets は非公開で始まり、リンク共有は閲覧のみ。CSV/XLSX で入出力できる",
+      "point": "「リンクを知っている全員」で共有しても閲覧専用で、閲覧者はサインインが必要。既存データは CSV/XLSX で取り込み・書き出しできる。",
+      "source_title": "November Claude Updates Bring Native Spreadsheets to Your Chat（Geeky Gadgets, 2026-11-26）",
+      "source_url": "https://www.geeky-gadgets.com/anthropic-claude-november-2026-features/",
+      "tags": [],
+      "first_date": "2026-11-26",
+      "last_date": "2026-11-26",
+      "appearances": 3
+    },
+    {
+      "id": 2644,
+      "title": "Claude Meetings は先にオーナーが Google カレンダー連携を許可する",
+      "point": "Team/Enterprise 向けベータ。メンバーがカレンダーを接続する前に、オーナーが Google Calendar へのアクセスを許可しておく必要がある。要約や文字起こしは招待された組織メンバーに届く。",
+      "source_title": "November Claude Updates Bring Native Spreadsheets to Your Chat（Geeky Gadgets, 2026-11-26）",
+      "source_url": "https://www.geeky-gadgets.com/anthropic-claude-november-2026-features/",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-11-26",
+      "last_date": "2026-11-26",
+      "appearances": 3
     },
     {
       "id": 2630,
@@ -11850,6 +11934,17 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2641,
+      "title": "フルアクセスのアプリはコードをインライン化させ、外部読み込みを避ける",
+      "point": "外部から読み込むコードは権限確認なしに中身が変わりうるため、フルアクセスを与えるアプリは全コードをアーティファクト内に収めさせる。フルアクセスは Free/Pro/Max/Ultra では自作アプリのみ、Team/Enterprise では組織内のアプリにも付与可能。アプリからの呼び出しはプランの利用上限に含まれる。",
+      "source_title": "How to turn a Claude artifact into a Mac or Windows app...（DEV Community, 2026-11-25）",
+      "source_url": "https://dev.to/kargatharaaakash/how-to-turn-a-claude-artifact-into-a-mac-or-windows-app-and-lock-down-its-permissions-4fb0",
+      "tags": [],
+      "first_date": "2026-11-26",
+      "last_date": "2026-11-26",
+      "appearances": 2
     },
     {
       "id": 2626,
@@ -16061,6 +16156,43 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2638,
+      "title": "質問攻めスキル（grill-me）は「1問ずつ」「十分詰まったら打ち切る」「/retroで振り返る」",
+      "point": "質問が続きすぎたら仕様が固まった時点で自分の判断で次工程へ進んでよい。「いまは1つの質問に集中したい」と伝えて話題の拡散を防ぐ。用語集（GLOSSARY.md）には動詞も入れ、具体的な場面で言い換えて確認する。作業後は `/retro` で振り返り、AIの指摘を Lint ルールやリファクタリングに落とし込む。",
+      "source_title": "なんとなくgrill-meしている人に伝えたい、作者本人から学んだSkillsの使い方（Zenn, 2026-11-25）",
+      "source_url": "https://zenn.dev/mediaforce/articles/27df1f22a00546",
+      "tags": [],
+      "first_date": "2026-11-26",
+      "last_date": "2026-11-26",
+      "appearances": 1
+    },
+    {
+      "id": 2639,
+      "title": "書類業務は「1案件1フォルダ・原本と成果物を分離・送信は人」で Claude Code に任せる",
+      "point": "公式原本（raw/）と成果物（output/）を分け、原本は書き換えない。knowledge.md には数字や期限の出典を残す。Excel/Word/PDF への書き込みは openpyxl・python-docx・PyMuPDF などで行い、書き込み後は画面で目視確認。送信・押印・電子認証は人が担当する。",
+      "source_title": "Claude CodeとLLM Wikiで全国の自治体の入札参加資格を、一人で回す（Zenn, 2026-11-25）",
+      "source_url": "https://zenn.dev/wisevine/articles/97b7ba8db70657",
+      "tags": [
+        "Claude Code"
+      ],
+      "first_date": "2026-11-26",
+      "last_date": "2026-11-26",
+      "appearances": 1
+    },
+    {
+      "id": 2642,
+      "title": "他人が共有したアプリを入れる前に、使うコネクタを確認する",
+      "point": "インストールしたアプリは自分のコネクタを使って動くため、他人作のアーティファクトは導入前にどのコネクタを使うか確認する。Team は機能オン・フルアクセスはオフが既定、Enterprise はオーナーが Organization settings で有効化する必要がある。",
+      "source_title": "Claude Install as app: Turn Artifacts into Mac and Windows Apps（DEV Community, 2026-11-25）",
+      "source_url": "https://dev.to/epifive/claude-install-as-app-turn-artifacts-into-mac-and-windows-apps-c1g",
+      "tags": [
+        "MCP/プラグイン"
+      ],
+      "first_date": "2026-11-26",
+      "last_date": "2026-11-26",
+      "appearances": 1
     },
     {
       "id": 2625,
@@ -27548,6 +27680,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-26",
+      "highlights": [
+        "Claude Code のセキュリティ設定（2026年11月時点版）: `.env` や `~/.ssh` などを Read の deny ルールで遮断し、`git push` は ask に。Bashサンドボックスは有効化するが、読み取り制限は deny ルール側で効く点に注意。",
+        "「アプリとしてインストール」は最小権限で: 作らせるときにプロンプトで必要な権限を明示し、承認は版ごとに見直す。フルアクセスのアプリはコードをインライン化させる。"
+      ]
+    },
+    {
       "date": "2026-11-25",
       "highlights": [
         "アーティファクトを「Install as app」でデスクトップアプリ化（ベータ）: 作ったツールを専用ウィンドウ・Dock/スタートメニューから起動できる。権限は既定のまま始め、フルアクセスは自作・信頼できるアプリだけに。",
@@ -29172,5 +29311,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-26T08:00:05.864731"
+  "generated_at": "2026-11-27T08:00:05.667537"
 }
