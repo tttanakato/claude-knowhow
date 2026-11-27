@@ -1890,6 +1890,19 @@
       "appearances": 12
     },
     {
+      "id": 2658,
+      "title": "例は3〜5件を example タグで囲み、長い文書は質問より上に置く",
+      "point": "形式やスタイルを揃えたいときは few-shot の例を3〜5件タグで区切って渡し、長文資料はプロンプトの前半、質問は末尾に置く。",
+      "source_title": "12 Claude Tips and Hidden Features Most People Miss (2026)（DEV Community）",
+      "source_url": "https://dev.to/epifive/12-claude-tips-and-hidden-features-most-people-miss-2026-1icl",
+      "tags": [
+        "プロンプト"
+      ],
+      "first_date": "2026-11-27",
+      "last_date": "2026-11-27",
+      "appearances": 11
+    },
+    {
       "id": 2159,
       "title": "Claude Tagの常設指示でSlackチャンネルを改善ループの場にする",
       "point": "性能改善の専用Slackチャンネルを作り、Claude Tagに常設指示（デプロイ後の性能劣化の監視、テレメトリの点検、改善案の提案と実装など）を与えた。スレッド1本が1つの遅い箇所を担当し、報告→Claudeが原因を追ってベンチマークを作る→複数PR→フラグ付きでデプロイ→実ユーザーのデータを確認→改善すればラチェット、しなければフラグを戻す、というループを回した。スレッドの対象を狭く保つのがコツで、最大150スレッドが同時に動いた。",
@@ -2922,6 +2935,21 @@
       "appearances": 9
     },
     {
+      "id": 2649,
+      "title": "Sonnet 4.5 退役（11/30）前に旧モデルIDを全検索し、CIで残存を検出する",
+      "point": "コードと設定から旧モデルIDをあらゆる表記で検索し、呼び出し箇所ごとにプラットフォームと停止日を記録する（Bedrock と Claude API で日付が異なる）。後継モデルでツール使用や構造化出力のパースを実プロンプトで確認し、モデルIDは設定値化して段階的に展開。404/model-not-found のアラートと、旧IDが残るとCIを失敗させるチェックを入れる。",
+      "source_title": "What to Do Before Claude Sonnet 4.5 Shuts Down on November 30, 2026（DEV Community, 2026-11-25 23:15 UTC 更新）",
+      "source_url": "https://dev.to/aideprecations/what-to-do-before-claude-sonnet-45-shuts-down-on-november-30-2026-55g4",
+      "tags": [
+        "API",
+        "プロンプト",
+        "モデル"
+      ],
+      "first_date": "2026-11-27",
+      "last_date": "2026-11-27",
+      "appearances": 8
+    },
+    {
       "id": 2620,
       "title": "大きなスキル（claude-api スキル等）のコンテキスト消費に注意",
       "point": "コミュニティ日報で、claude-api スキルが約156kトークンを一度に読み込みコンテキストを使い切る問題（issue #1487）が話題に。重いスキルは必要時だけ有効化する。",
@@ -3558,6 +3586,20 @@
       "first_date": "2026-04-01",
       "last_date": "2026-04-01",
       "appearances": 8
+    },
+    {
+      "id": 2653,
+      "title": "Claude Data（旧 Dashboards）がベータを卒業し有料プランで利用可能に",
+      "point": "ダッシュボード機能が「Claude Data」に名称変更され正式提供。数値を継続的に見る用途に使える。なお同記事は有料プランの主力モデルを「Fable 5.2」としているが、公式では未確認（不確か）。",
+      "source_title": "Anthropic Claude November 2026 Feature Updates Explored（Geeky Gadgets, 2026-11-26）",
+      "source_url": "https://www.geeky-gadgets.com/anthropic-claude-november-2026-features/",
+      "tags": [
+        "モデル",
+        "新機能"
+      ],
+      "first_date": "2026-11-27",
+      "last_date": "2026-11-27",
+      "appearances": 7
     },
     {
       "id": 2608,
@@ -6778,6 +6820,43 @@
       "appearances": 5
     },
     {
+      "id": 2650,
+      "title": "Claude Meetings（beta）はオーナーがカレンダーアクセスを許可してから使う",
+      "point": "Team/Enterprise 向けベータ。メンバーがカレンダーを接続する前に、オーナーが Google Calendar へのアクセスを許可する必要がある。Team では既定で有効、Enterprise ではオーナーが有効化する。",
+      "source_title": "Anthropic Claude November 2026 Feature Updates Explored（Geeky Gadgets, 2026-11-26）",
+      "source_url": "https://www.geeky-gadgets.com/anthropic-claude-november-2026-features/",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-11-27",
+      "last_date": "2026-11-27",
+      "appearances": 4
+    },
+    {
+      "id": 2651,
+      "title": "Claude Sheets（beta）は一文やCSV/XLSXから始め、変更セルのハイライトで差分を確認する",
+      "point": "有料プランでベータ提供。説明文1行から表を作る、既存のCSV/XLSXを取り込む、のどちらでも開始でき、Claudeが変更したセルが強調表示されるので確認しやすい。",
+      "source_title": "Anthropic Claude November 2026 Feature Updates Explored（Geeky Gadgets, 2026-11-26）",
+      "source_url": "https://www.geeky-gadgets.com/anthropic-claude-november-2026-features/",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-11-27",
+      "last_date": "2026-11-27",
+      "appearances": 4
+    },
+    {
+      "id": 2654,
+      "title": "毎回伝える指示は Project instructions に置く",
+      "point": "通常のチャット間では文脈は引き継がれないため、繰り返す前提や指示はプロジェクトの指示・ナレッジに入れておく。",
+      "source_title": "12 Claude Tips and Hidden Features Most People Miss (2026)（DEV Community, 2026-11-26 06:29 UTC 更新）",
+      "source_url": "https://dev.to/epifive/12-claude-tips-and-hidden-features-most-people-miss-2026-1icl",
+      "tags": [],
+      "first_date": "2026-11-27",
+      "last_date": "2026-11-27",
+      "appearances": 4
+    },
+    {
       "id": 2645,
       "title": "Max/Ultra の Fable リセットは Settings > Usage で残数を確認してから使う",
       "point": "Max・Ultra 契約者には利用期間に応じて1〜3回の Fable 無料リセットがあり、Settings の Usage から確認・使用できる（回数条件は二次情報のため要確認）。",
@@ -8758,6 +8837,17 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 4
+    },
+    {
+      "id": 2655,
+      "title": "機密性の高い相談は、最初のメッセージ前にメモリをオフにするかインコグニトチャットで",
+      "point": "メモリに残したくない話題は、会話を始める前にメモリを切るかインコグニトチャットを使う。途中で切り替えるより確実。",
+      "source_title": "12 Claude Tips and Hidden Features Most People Miss (2026)（DEV Community）",
+      "source_url": "https://dev.to/epifive/12-claude-tips-and-hidden-features-most-people-miss-2026-1icl",
+      "tags": [],
+      "first_date": "2026-11-27",
+      "last_date": "2026-11-27",
+      "appearances": 3
     },
     {
       "id": 2640,
@@ -11934,6 +12024,30 @@
       "first_date": "2026-03-06",
       "last_date": "2026-03-06",
       "appearances": 3
+    },
+    {
+      "id": 2652,
+      "title": "Personal Finance（beta）は読み取り専用：最大2年分の取引を分析、送金はできない",
+      "point": "米国の Pro/Max/Ultra 向け。Plaid 経由で最大2年分の取引履歴を読み取り専用で参照し、資金移動はできない設計。家計の質問に使える。",
+      "source_title": "Anthropic Claude November 2026 Feature Updates Explored（Geeky Gadgets, 2026-11-26）",
+      "source_url": "https://www.geeky-gadgets.com/anthropic-claude-november-2026-features/",
+      "tags": [
+        "新機能"
+      ],
+      "first_date": "2026-11-27",
+      "last_date": "2026-11-27",
+      "appearances": 2
+    },
+    {
+      "id": 2657,
+      "title": "100ページを超えるPDFは、図表が重要なら分割してアップロードする",
+      "point": "記事によると101〜1000ページのPDFはテキストのみとして読まれるため、グラフや図の読み取りが必要なら100ページ以下に分割する（閾値は記事記載の値で、公式未確認）。",
+      "source_title": "12 Claude Tips and Hidden Features Most People Miss (2026)（DEV Community）",
+      "source_url": "https://dev.to/epifive/12-claude-tips-and-hidden-features-most-people-miss-2026-1icl",
+      "tags": [],
+      "first_date": "2026-11-27",
+      "last_date": "2026-11-27",
+      "appearances": 2
     },
     {
       "id": 2641,
@@ -16156,6 +16270,17 @@
       "first_date": "2026-03-04",
       "last_date": "2026-03-04",
       "appearances": 2
+    },
+    {
+      "id": 2656,
+      "title": "設定 > Capabilities の「ファイルの作成と編集」を有効にしておく",
+      "point": "アーティファクトやスキルはこの設定に依存するため、ファイル生成系がうまく動かないときはまずここを確認する。",
+      "source_title": "12 Claude Tips and Hidden Features Most People Miss (2026)（DEV Community）",
+      "source_url": "https://dev.to/epifive/12-claude-tips-and-hidden-features-most-people-miss-2026-1icl",
+      "tags": [],
+      "first_date": "2026-11-27",
+      "last_date": "2026-11-27",
+      "appearances": 1
     },
     {
       "id": 2638,
@@ -27680,6 +27805,13 @@
   ],
   "daily": [
     {
+      "date": "2026-11-27",
+      "highlights": [
+        "Sonnet 4.5 の退役（11/30）まであと3日: リポジトリと設定から旧モデルIDを洗い出し（Bedrock のリージョン接頭辞付きIDも含む）、後継モデルで実プロンプトを検証してから段階的に切り替える。CIで旧IDの残存を検出すると安全。",
+        "Claude Meetings はオーナー側の許可が先: Team/Enterprise のメンバーがカレンダーを接続する前に、オーナーが Google Calendar へのアクセスを許可しておく必要がある。"
+      ]
+    },
+    {
       "date": "2026-11-26",
       "highlights": [
         "Claude Code のセキュリティ設定（2026年11月時点版）: `.env` や `~/.ssh` などを Read の deny ルールで遮断し、`git push` は ask に。Bashサンドボックスは有効化するが、読み取り制限は deny ルール側で効く点に注意。",
@@ -29311,5 +29443,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-27T08:00:05.667537"
+  "generated_at": "2026-11-28T08:00:05.743683"
 }
